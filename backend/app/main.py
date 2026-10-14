@@ -12,24 +12,27 @@ from backend.app.services.rag_service import rag_service
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
+import threading
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     """
     Lifespan event handler:
-    Pre-warms embedding models, CrossEncoder, and database connections
-    on application startup so first user query has zero cold-start delay.
+    Binds the listening port immediately to pass Render health checks,
+    while pre-warming models in the background.
     """
-    print("=" * 60)
-    print("🚀 Initializing YouTube Video RAG Backend...")
-    print(f"📦 Qdrant Target Collection: {settings.COLLECTION_NAME}")
-    print(f"🧠 Embedding Model: {settings.EMBEDDING_MODEL_NAME}")
-    print(f"🎯 Re-Ranker Model: {settings.RERANKER_MODEL_NAME}")
-    print("=" * 60)
+    print("=" * 60, flush=True)
+    print("🚀 Initializing YouTube Video RAG Backend...", flush=True)
+    print(f"📦 Qdrant Target Collection: {settings.COLLECTION_NAME}", flush=True)
+    print(f"🧠 Embedding Model: {settings.EMBEDDING_MODEL_NAME}", flush=True)
+    print(f"🎯 Re-Ranker Model: {settings.RERANKER_MODEL_NAME}", flush=True)
+    print("=" * 60, flush=True)
     
-    rag_service.initialize_models()
-    print("✅ Models and Vector Store initialized successfully!\n")
+    # Pre-warm models in background thread so port binds immediately
+    threading.Thread(target=rag_service.initialize_models, daemon=True).start()
+    print("✅ Port opened immediately; models pre-warming in background!\n", flush=True)
     yield
-    print("🛑 Shutting down YouTube Video RAG Backend...")
+    print("🛑 Shutting down YouTube Video RAG Backend...", flush=True)
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -89,4 +92,11 @@ def root_info():
             "health": f"{settings.API_V1_STR}/health"
         }
     }
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.environ.get("PORT", 10000))
+    print(f"⚡ Starting server on 0.0.0.0:{port}...", flush=True)
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
 
