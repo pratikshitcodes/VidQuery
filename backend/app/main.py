@@ -22,17 +22,17 @@ async def lifespan(app: FastAPI):
     while pre-warming models in the background.
     """
     print("=" * 60, flush=True)
-    print("🚀 Initializing YouTube Video RAG Backend...", flush=True)
-    print(f"📦 Qdrant Target Collection: {settings.COLLECTION_NAME}", flush=True)
-    print(f"🧠 Embedding Model: {settings.EMBEDDING_MODEL_NAME}", flush=True)
-    print(f"🎯 Re-Ranker Model: {settings.RERANKER_MODEL_NAME}", flush=True)
+    print("[INIT] Initializing YouTube Video RAG Backend...", flush=True)
+    print(f"[QDRANT] Qdrant Target Collection: {settings.COLLECTION_NAME}", flush=True)
+    print(f"[MODEL] Embedding Model: {settings.EMBEDDING_MODEL_NAME}", flush=True)
+    print(f"[RERANK] Re-Ranker Model: {settings.RERANKER_MODEL_NAME}", flush=True)
     print("=" * 60, flush=True)
     
     # Pre-warm models in background thread so port binds immediately
     threading.Thread(target=rag_service.initialize_models, daemon=True).start()
-    print("✅ Port opened immediately; models pre-warming in background!\n", flush=True)
+    print("[OK] Port opened immediately; models pre-warming in background!\n", flush=True)
     yield
-    print("🛑 Shutting down YouTube Video RAG Backend...", flush=True)
+    print("[SHUTDOWN] Shutting down YouTube Video RAG Backend...", flush=True)
 
 app = FastAPI(
     title=settings.PROJECT_NAME,

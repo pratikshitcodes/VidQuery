@@ -13,19 +13,19 @@ class RerankerService:
     def initialize(self):
         """Loads the CrossEncoder model into memory if enabled."""
         if not self.enabled:
-            print("ℹ️ Local Cross-Encoder disabled to stay within 512MB RAM; using Qdrant cosine ranking.", flush=True)
+            print("[INFO] Local Cross-Encoder disabled to stay within 512MB RAM; using Qdrant cosine ranking.", flush=True)
             return
 
         if self.reranker is None:
             try:
-                print("⏳ Loading CrossEncoder reranker model...", flush=True)
+                print("[LOAD] Loading CrossEncoder reranker model...", flush=True)
                 import torch
                 torch.set_num_threads(1)
                 from sentence_transformers import CrossEncoder
                 self.reranker = CrossEncoder(settings.RERANKER_MODEL_NAME)
-                print("✅ Reranker model loaded successfully!", flush=True)
+                print("[OK] Reranker model loaded successfully!", flush=True)
             except Exception as e:
-                print(f"⚠️ Could not load CrossEncoder ({e}); falling back to Qdrant ranking.", flush=True)
+                print(f"[WARN] Could not load CrossEncoder ({e}); falling back to Qdrant ranking.", flush=True)
                 self.reranker = None
                 self.enabled = False
 

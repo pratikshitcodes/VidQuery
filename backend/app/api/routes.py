@@ -45,6 +45,9 @@ def query_dp_knowledge(request: QueryRequest):
         response = rag_service.process_query(request)
         return response
     except Exception as e:
+        import traceback
+        print(f"[ERROR] RAG pipeline failed: {e}", flush=True)
+        traceback.print_exc()
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error executing RAG pipeline: {str(e)}"

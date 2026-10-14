@@ -1,4 +1,11 @@
 import os
+
+# Prevent thread thrashing and tokenizer deadlocks in cloud containers
+os.environ["PYTHONIOENCODING"] = "utf-8"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+
 from dotenv import load_dotenv
 
 # Load from root .env or environment

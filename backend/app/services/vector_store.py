@@ -17,12 +17,12 @@ class VectorStoreService:
                 timeout=60
             )
         if self.embedding_model is None:
-            print("⏳ Loading SentenceTransformer embedding model...", flush=True)
+            print("[LOAD] Loading SentenceTransformer embedding model...", flush=True)
             import torch
             torch.set_num_threads(1)
             from sentence_transformers import SentenceTransformer
             self.embedding_model = SentenceTransformer(settings.EMBEDDING_MODEL_NAME)
-            print("✅ Embedding model loaded successfully!", flush=True)
+            print("[OK] Embedding model loaded successfully!", flush=True)
 
     def check_health(self) -> bool:
         """Verifies connection to Qdrant collection."""
