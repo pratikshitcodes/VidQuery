@@ -1,14 +1,9 @@
-import os
-import sys
-
-# Pre-download and cache model weights during the build phase
-# so runtime queries never spend time downloading over the network.
+# Pre-cache FastEmbed ONNX model during build phase
 try:
-    import torch
-    torch.set_num_threads(1)
-    from sentence_transformers import SentenceTransformer
-    print("[BUILD] Pre-caching SentenceTransformer('all-MiniLM-L6-v2')...", flush=True)
-    SentenceTransformer("all-MiniLM-L6-v2")
-    print("[BUILD] Model successfully cached into local container layer!", flush=True)
+    print("[BUILD] Pre-caching FastEmbed ONNX model ('sentence-transformers/all-MiniLM-L6-v2')...", flush=True)
+    from fastembed import TextEmbedding
+    model = TextEmbedding("sentence-transformers/all-MiniLM-L6-v2")
+    list(model.embed(["warmup"]))
+    print("[BUILD] FastEmbed ONNX model cached successfully!", flush=True)
 except Exception as e:
     print(f"[BUILD-WARN] Model pre-cache skipped: {e}", flush=True)

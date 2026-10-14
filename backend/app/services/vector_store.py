@@ -18,15 +18,13 @@ class VectorStoreService:
             )
 
     def initialize(self):
-        """Initializes Qdrant connection and loads the embedding model into memory."""
+        """Initializes Qdrant connection and loads FastEmbed ONNX model (~40MB RAM)."""
         self._init_client()
         if self.embedding_model is None:
-            print("[LOAD] Loading SentenceTransformer embedding model...", flush=True)
-            import torch
-            torch.set_num_threads(1)
-            from sentence_transformers import SentenceTransformer
-            self.embedding_model = SentenceTransformer(settings.EMBEDDING_MODEL_NAME)
-            print("[OK] Embedding model loaded successfully!", flush=True)
+            print("[LOAD] Initializing FastEmbed (ONNX, ultra-low memory)...", flush=True)
+            from fastembed import TextEmbedding
+            self.embedding_model = TextEmbedding("sentence-transformers/all-MiniLM-L6-v2")
+            print("[OK] FastEmbed ONNX model loaded successfully!", flush=True)
 
     def check_health(self) -> bool:
         """Verifies connection to Qdrant collection without loading heavy ML models."""
@@ -38,14 +36,14 @@ class VectorStoreService:
 
     def search_candidates(self, query: str, limit: int = 15) -> Tuple[List[Any], float]:
         """
-        Embeds the query and searches Qdrant for top candidate chunks.
+        Embeds the query using FastEmbed and searches Qdrant for top candidate chunks.
         Returns candidates and latency in milliseconds.
         """
         if self.client is None or self.embedding_model is None:
             self.initialize()
 
         t0 = time.perf_counter()
-        query_vector = self.embedding_model.encode(query).tolist()
+        query_vector = list(self.embedding_model.embed([query]))[0].tolist()
         
         results = self.client.query_points(
             collection_name=settings.COLLECTION_NAME,
