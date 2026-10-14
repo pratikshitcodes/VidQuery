@@ -1,16 +1,18 @@
 import time
 from typing import List, Tuple, Any
-from sentence_transformers import CrossEncoder
 from backend.app.config import settings
 
 class RerankerService:
     def __init__(self):
-        self.reranker: CrossEncoder = None
+        self.reranker = None
 
     def initialize(self):
         """Loads the CrossEncoder model into memory."""
         if self.reranker is None:
+            print("⏳ Loading CrossEncoder reranker model...", flush=True)
+            from sentence_transformers import CrossEncoder
             self.reranker = CrossEncoder(settings.RERANKER_MODEL_NAME)
+            print("✅ Reranker model loaded successfully!", flush=True)
 
     def rerank(self, query: str, candidates: List[Any], top_k: int = 5) -> Tuple[List[Tuple[Any, float]], float]:
         """

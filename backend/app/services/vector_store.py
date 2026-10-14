@@ -1,13 +1,12 @@
 import time
 from typing import List, Tuple, Any
 from qdrant_client import QdrantClient
-from sentence_transformers import SentenceTransformer
 from backend.app.config import settings
 
 class VectorStoreService:
     def __init__(self):
         self.client: QdrantClient = None
-        self.embedding_model: SentenceTransformer = None
+        self.embedding_model = None
 
     def initialize(self):
         """Initializes Qdrant connection and loads the embedding model into memory."""
@@ -18,7 +17,10 @@ class VectorStoreService:
                 timeout=60
             )
         if self.embedding_model is None:
+            print("⏳ Loading SentenceTransformer embedding model...", flush=True)
+            from sentence_transformers import SentenceTransformer
             self.embedding_model = SentenceTransformer(settings.EMBEDDING_MODEL_NAME)
+            print("✅ Embedding model loaded successfully!", flush=True)
 
     def check_health(self) -> bool:
         """Verifies connection to Qdrant collection."""
