@@ -8,14 +8,18 @@ class VectorStoreService:
         self.client: QdrantClient = None
         self.embedding_model = None
 
-    def initialize(self):
-        """Initializes Qdrant connection and loads the embedding model into memory."""
+    def _init_client(self):
+        """Initializes the Qdrant client connection if not already connected."""
         if self.client is None:
             self.client = QdrantClient(
                 url=settings.QDRANT_URL,
                 api_key=settings.QDRANT_API_KEY,
-                timeout=60
+                timeout=15
             )
+
+    def initialize(self):
+        """Initializes Qdrant connection and loads the embedding model into memory."""
+        self._init_client()
         if self.embedding_model is None:
             print("[LOAD] Loading SentenceTransformer embedding model...", flush=True)
             import torch
@@ -25,10 +29,9 @@ class VectorStoreService:
             print("[OK] Embedding model loaded successfully!", flush=True)
 
     def check_health(self) -> bool:
-        """Verifies connection to Qdrant collection."""
+        """Verifies connection to Qdrant collection without loading heavy ML models."""
         try:
-            if self.client is None:
-                self.initialize()
+            self._init_client()
             return self.client.collection_exists(settings.COLLECTION_NAME)
         except Exception:
             return False
