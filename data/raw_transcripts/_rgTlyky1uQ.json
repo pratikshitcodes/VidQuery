@@ -1,0 +1,1232 @@
+[
+  {
+    "start": 0.0,
+    "end": 4.96,
+    "text": "Hey, V1 welcome to another lecture of the dynamic programming playlist."
+  },
+  {
+    "start": 4.96,
+    "end": 10.4,
+    "text": "I hope you guys are doing extremely well  So  Dpongritz is what we wear to me."
+  },
+  {
+    "start": 10.4,
+    "end": 16.75,
+    "text": "So you're gonna do the third problem from dp on grits It's going to be a slightly different"
+  },
+  {
+    "start": 16.75,
+    "end": 23.03,
+    "text": "problem than the couple of others that we have done in the Playlist okay, so if you're not"
+  },
+  {
+    "start": 23.03,
+    "end": 30.36,
+    "text": "following the playlist man, you're missing on a lot of premium stuff Please make sure follow the playlist"
+  },
+  {
+    "start": 30.36,
+    "end": 35.73,
+    "text": "because you want to learn dp in the best possible way so what is the problem?"
+  },
+  {
+    "start": 35.73,
+    "end": 41.45,
+    "text": "Trace problem will be on grits and that's minimum path  Some so what is it saying?"
+  },
+  {
+    "start": 41.45,
+    "end": 47.59,
+    "text": "Is saying there's something like Ninja land is a country in the shape of a 2D grid Where"
+  },
+  {
+    "start": 47.59,
+    "end": 53.38,
+    "text": "n rows and n columns each point on the grid has some cost associated with it right?"
+  },
+  {
+    "start": 53.38,
+    "end": 58.54,
+    "text": "I need to find a path from the left which is 0 0 to the bottom right which"
+  },
+  {
+    "start": 58.54,
+    "end": 63.43,
+    "text": "is n minus 1 m minus 1 And you need to minimize the sum of the cost of"
+  },
+  {
+    "start": 63.43,
+    "end": 69.64,
+    "text": "all numbers along the path You need to tell the minimum sum of that path So this question"
+  },
+  {
+    "start": 69.64,
+    "end": 75.52,
+    "text": "was actually asked to me in my Microsoft internship interview So an amazing question"
+  },
+  {
+    "start": 75.52,
+    "end": 81.45,
+    "text": "Basically it states if you start turn from here and you go here So basically 0 0 1"
+  },
+  {
+    "start": 81.45,
+    "end": 86.37,
+    "text": "2 so if you if you just start turn from a 0 0 and you know reach the"
+  },
+  {
+    "start": 86.37,
+    "end": 91.14,
+    "text": "end Which is 0 comma 2 what is the minimal that you will take now?"
+  },
+  {
+    "start": 91.14,
+    "end": 98.01,
+    "text": "There can be a lot of paths now when I say there will be a lot of paths what does that signify?"
+  },
+  {
+    "start": 98.01,
+    "end": 104.16,
+    "text": "And basically signifies for an example I can say one of the paths is five 11 five two"
+  },
+  {
+    "start": 104.16,
+    "end": 110.6,
+    "text": "remember you're only allowed to move in the bottom or in the right You cannot move up and"
+  },
+  {
+    "start": 110.6,
+    "end": 117.62,
+    "text": "all these only couple of directions That's the bottom and that's the right So basically I can say"
+  },
+  {
+    "start": 117.62,
+    "end": 123.84,
+    "text": "if I move in the white box direction that everything the path sum will be five plus 11"
+  },
+  {
+    "start": 123.84,
+    "end": 129.41,
+    "text": "plus five plus two Which gives me 16 plus five 20 and plus to 23 Now this sum"
+  },
+  {
+    "start": 129.41,
+    "end": 135.77,
+    "text": "that you got you have to minimize this that's the question This sum that you have to you"
+  },
+  {
+    "start": 135.77,
+    "end": 141.34,
+    "text": "have got you have to minimize it so I can see okay Stray what if I start turn"
+  },
+  {
+    "start": 141.34,
+    "end": 146.04,
+    "text": "five I go to nine I go to five and then I go to two I'm like okay"
+  },
+  {
+    "start": 146.04,
+    "end": 151.32,
+    "text": "Let's add this up five plus nine plus five plus two So if I add this up I"
+  },
+  {
+    "start": 151.32,
+    "end": 157.32,
+    "text": "think I get something as 21 you can try out all the other paths and you'll see that"
+  },
+  {
+    "start": 157.32,
+    "end": 158.4,
+    "text": "this is what is"
+  },
+  {
+    "start": 158.4,
+    "end": 166.64,
+    "text": "The minimal that you will get and this is your answer now  How do you solve such kind of problems again paths all paths?"
+  },
+  {
+    "start": 166.64,
+    "end": 172.95,
+    "text": "So why not greedy that's that's a very very good question that might be rising Stray why not"
+  },
+  {
+    "start": 172.95,
+    "end": 179.13,
+    "text": "follow greedy Why not follow greedy path Okay, make sense mix a lot of sense why don't you"
+  },
+  {
+    "start": 179.13,
+    "end": 180.57,
+    "text": "follow a greedy path?"
+  },
+  {
+    "start": 180.57,
+    "end": 187.37,
+    "text": "It's understand how Generally you understand that a greedy has not to be followed So imagine I give"
+  },
+  {
+    "start": 187.37,
+    "end": 191.01,
+    "text": "you a great a great rather something like this, okay?"
+  },
+  {
+    "start": 191.01,
+    "end": 197.46,
+    "text": "Give you a great something like this and I am like giving you something like okay Movia having"
+  },
+  {
+    "start": 197.46,
+    "end": 202.75,
+    "text": "one one two and I'm over here having a ten and as you I'm giving you eight As"
+  },
+  {
+    "start": 202.75,
+    "end": 208.86,
+    "text": "you're giving you two I'm giving you hundred and Over here I'm giving you five over here."
+  },
+  {
+    "start": 208.86,
+    "end": 215.31,
+    "text": "I'm giving you something like 10 okay now if you start greedy leap from ten Gradually you know"
+  },
+  {
+    "start": 215.31,
+    "end": 221.01,
+    "text": "you can move right or you can move Dubbed right so what you see is over here either"
+  },
+  {
+    "start": 221.01,
+    "end": 226.71,
+    "text": "you can move to eight or either you can move to ten But the greedyness will be like"
+  },
+  {
+    "start": 226.71,
+    "end": 232.41,
+    "text": "let's move to eight because it will give you a lesser cost path So you will move to"
+  },
+  {
+    "start": 232.41,
+    "end": 237.2,
+    "text": "eight now when you move to eight again there'll be a couple of options"
+  },
+  {
+    "start": 237.2,
+    "end": 242.48,
+    "text": "Either you move to two or either you move to five so the greedy nature of yours will"
+  },
+  {
+    "start": 242.48,
+    "end": 247.5,
+    "text": "say I'll move to two and From two there is no option you have to move to hundred"
+  },
+  {
+    "start": 247.5,
+    "end": 252.84,
+    "text": "than to two So what you saw was you ended up taking this path which is having hundred"
+  },
+  {
+    "start": 252.84,
+    "end": 258.56,
+    "text": "which is a very huge number Now by the cost of the path will significantly rise correct but"
+  },
+  {
+    "start": 258.56,
+    "end": 264.46,
+    "text": "over here if I would have followed probably this path I think this would have been the minimal"
+  },
+  {
+    "start": 264.46,
+    "end": 270.36,
+    "text": "path right if I had followed this path So why did this happen because of uniformity The values"
+  },
+  {
+    "start": 270.36,
+    "end": 277.65,
+    "text": "are not uniform they're not saying the values will increase increase increase or decrease decrease It might increase"
+  },
+  {
+    "start": 277.65,
+    "end": 284.94,
+    "text": "it might decrease so what happens is Today's decision might affect you tomorrow because of increasing probably super"
+  },
+  {
+    "start": 284.94,
+    "end": 292.04,
+    "text": "increased values or super decreased values So whenever there is something as uniformed Relax whenever there is no"
+  },
+  {
+    "start": 292.04,
+    "end": 298.2,
+    "text": "uniformity in the values You cannot apply a green nature because in future it might affect you got"
+  },
+  {
+    "start": 298.2,
+    "end": 303.48,
+    "text": "this thereby thereby in such cases what you can do is you can be like okay What I'll"
+  },
+  {
+    "start": 303.48,
+    "end": 308.88,
+    "text": "do is I'll apply something as dp but before dp what's the step don't directly go to dp"
+  },
+  {
+    "start": 308.88,
+    "end": 314.85,
+    "text": "What are you seeing at the figure of the minimum possible cost paths right so if you're looking"
+  },
+  {
+    "start": 314.85,
+    "end": 314.96,
+    "text": "to"
+  },
+  {
+    "start": 314.96,
+    "end": 322.51,
+    "text": "Figure out the minimal cost path what's the first way Try out all paths that's the first way"
+  },
+  {
+    "start": 322.51,
+    "end": 329.08,
+    "text": "try out all paths and in those all paths Tell me the path Tell me the path which"
+  },
+  {
+    "start": 329.08,
+    "end": 337.04,
+    "text": "has minimal cost So whenever I say all paths What does that signify what algorithm that says that"
+  },
+  {
+    "start": 337.04,
+    "end": 346.4,
+    "text": "definitely says recursion because recursion is something that Pries out all possible paths correct so what are the"
+  },
+  {
+    "start": 346.4,
+    "end": 355.1,
+    "text": "rules of writing recurrence relationships 3 rules that have taught you what are the three rules the fields"
+  },
+  {
+    "start": 355.1,
+    "end": 362.65,
+    "text": "are very simple Express the recurrence in terms of indexes over here it's a 2 degree grid so"
+  },
+  {
+    "start": 362.65,
+    "end": 370.45,
+    "text": "express the Stuff in terms of rows and columns as ij second Explore all paths Explore all paths"
+  },
+  {
+    "start": 370.45,
+    "end": 379.07,
+    "text": "third Take the best take the minimal path as the question recommends minimal maximum count whatever So if"
+  },
+  {
+    "start": 379.07,
+    "end": 387.03,
+    "text": "all of these three steps You can again write any possible recursion So why don't you follow these"
+  },
+  {
+    "start": 387.03,
+    "end": 390.88,
+    "text": "three paths so can I say I'll write a recursion"
+  },
+  {
+    "start": 390.88,
+    "end": 396.11,
+    "text": "Where ij will mean where ij will mean if I'm doing a grid if I'm again doing a"
+  },
+  {
+    "start": 396.11,
+    "end": 401.0,
+    "text": "grid and this position as ij ij will mean this is i and this is j ij will"
+  },
+  {
+    "start": 401.0,
+    "end": 406.76,
+    "text": "mean the minimal cost in order to reach from here to here The minimal cost in order to"
+  },
+  {
+    "start": 406.76,
+    "end": 411.52,
+    "text": "reach from 0 0 to ij Is what your equation should give me so if I ask f"
+  },
+  {
+    "start": 411.52,
+    "end": 415.61,
+    "text": "of n minus 1 m minus 1 it will give me the cost from 0 0 to n"
+  },
+  {
+    "start": 415.61,
+    "end": 421.44,
+    "text": "minus 1 and m minus 1 and that is what you require Correct, so let's quickly write down"
+  },
+  {
+    "start": 421.44,
+    "end": 427.4,
+    "text": "the recurrence relationship So can I say i'll write f of i comma j i definitely can write"
+  },
+  {
+    "start": 427.4,
+    "end": 432.43,
+    "text": "f of i comma j about your base case Can I say the base case is quite simple"
+  },
+  {
+    "start": 432.43,
+    "end": 438.66,
+    "text": "similar to the previous question that we did if we reach our destination We can say that okay"
+  },
+  {
+    "start": 438.66,
+    "end": 444.69,
+    "text": "we have reached our destination let's return the values stored at a of 0 0 because this is"
+  },
+  {
+    "start": 444.69,
+    "end": 449.92,
+    "text": "going to be a part of my path Let's understand this guy will be a part of your"
+  },
+  {
+    "start": 449.92,
+    "end": 450.26,
+    "text": "path."
+  },
+  {
+    "start": 450.26,
+    "end": 455.96,
+    "text": "Don't you think so why don't you return this because this has to be added to the path"
+  },
+  {
+    "start": 455.96,
+    "end": 459.31,
+    "text": "Correct and what about what about the other steps?"
+  },
+  {
+    "start": 459.31,
+    "end": 466.48,
+    "text": "You know this will be i lesser than 0 or j lesser than 0 assuming your recursion is moving in all the paths"
+  },
+  {
+    "start": 466.48,
+    "end": 472.64,
+    "text": "Move out of the boundary moves left of the boundary similar so what will you return you'll try"
+  },
+  {
+    "start": 472.64,
+    "end": 479.13,
+    "text": "to return something So that the answer is not This path is not taken into consideration Remember if"
+  },
+  {
+    "start": 479.13,
+    "end": 485.03,
+    "text": "you are starting from here I'll take the red pen we're starting from here you moved up you"
+  },
+  {
+    "start": 485.03,
+    "end": 490.08,
+    "text": "moved up you moved up and this is out of boundary This is out of grid but you"
+  },
+  {
+    "start": 490.08,
+    "end": 496.04,
+    "text": "don't want this to be added this has to return something so that this path summation is not"
+  },
+  {
+    "start": 496.04,
+    "end": 502.53,
+    "text": "This has to return something so that this path summation is not considered so what will you return?"
+  },
+  {
+    "start": 502.53,
+    "end": 509.08,
+    "text": "Generally remember if you're trying to find minimum paths you'll try to return such a big value Such"
+  },
+  {
+    "start": 509.08,
+    "end": 514.45,
+    "text": "a big value So that when you add this big value the path get the maximum cost path"
+  },
+  {
+    "start": 514.45,
+    "end": 520.08,
+    "text": "gets a maximum cost and you never take this Got it so I've written the base cases step"
+  },
+  {
+    "start": 520.08,
+    "end": 526.04,
+    "text": "one is done of expressing in terms of indexes and writing the base What's the next step the"
+  },
+  {
+    "start": 526.04,
+    "end": 530.89,
+    "text": "next step is very simple if I go upwards or if I go left towards now can I"
+  },
+  {
+    "start": 530.89,
+    "end": 536.33,
+    "text": "say if I go upwards The current element is what I'm saying okay this will be a part"
+  },
+  {
+    "start": 536.33,
+    "end": 541.24,
+    "text": "of my path The current element ij ij you will be a part of my path but I'll"
+  },
+  {
+    "start": 541.24,
+    "end": 542.88,
+    "text": "go up and I'll figure out"
+  },
+  {
+    "start": 542.88,
+    "end": 544.97,
+    "text": "How to reach from here to here?"
+  },
+  {
+    "start": 544.97,
+    "end": 550.76,
+    "text": "That's what we mean by up Let's understand what do you mean by up imagine this is your"
+  },
+  {
+    "start": 550.76,
+    "end": 556.22,
+    "text": "grid and Assume you are standing over here and this is your grid so if I say I'll"
+  },
+  {
+    "start": 556.22,
+    "end": 561.74,
+    "text": "take this I'll move here that means you have to move from now here to here So this"
+  },
+  {
+    "start": 561.74,
+    "end": 567.67,
+    "text": "portion you have to solve this portion you have to solve so this is what you've taken So"
+  },
+  {
+    "start": 567.67,
+    "end": 572.65,
+    "text": "it'll be like okay So I'll be like okay I'll take area of a of j I'll have"
+  },
+  {
+    "start": 572.65,
+    "end": 576.89,
+    "text": "to go up so if I have to go up from there have to find out Is 0"
+  },
+  {
+    "start": 576.89,
+    "end": 582.28,
+    "text": "what is the minimal cost similarly if I'm going left I will have to take a of ij"
+  },
+  {
+    "start": 582.28,
+    "end": 587.13,
+    "text": "and I will have to go to the left and from there From there like if I go"
+  },
+  {
+    "start": 587.13,
+    "end": 592.92,
+    "text": "left same thing same thing see if I go somewhere from left I know this portion will be"
+  },
+  {
+    "start": 592.92,
+    "end": 598.64,
+    "text": "there but from here to here This matrix I have to figure out what is the minimal part"
+  },
+  {
+    "start": 598.64,
+    "end": 605.58,
+    "text": "from here to here after figure out That's what this recursion does recursion does that for you correct?"
+  },
+  {
+    "start": 605.58,
+    "end": 610.77,
+    "text": "So at the end of the day so again step two is done which is exploring all the"
+  },
+  {
+    "start": 610.77,
+    "end": 616.63,
+    "text": "parts what's the next Take the minimal of both of them take the minimal of both of them"
+  },
+  {
+    "start": 616.63,
+    "end": 618.52,
+    "text": "so what are you waiting for?"
+  },
+  {
+    "start": 618.52,
+    "end": 624.24,
+    "text": "Take the minimal of the upward and the left word correct the upward and the left word"
+  },
+  {
+    "start": 624.24,
+    "end": 624.9,
+    "text": "That's it."
+  },
+  {
+    "start": 624.9,
+    "end": 627.94,
+    "text": "So this is the upward and the left word again."
+  },
+  {
+    "start": 627.94,
+    "end": 634.96,
+    "text": "Why upward because you're moving from the bottom to 0 0  You're not moving from 0 0 till the bottom again."
+  },
+  {
+    "start": 634.96,
+    "end": 636.68,
+    "text": "Why are you moving upward?"
+  },
+  {
+    "start": 636.68,
+    "end": 643.56,
+    "text": "Because you're solving the question in the reverse fashion the question stated in the right and the down"
+  },
+  {
+    "start": 643.56,
+    "end": 649.85,
+    "text": "So you're doing it in the opposite fashion there by up and left similar like you're moving from"
+  },
+  {
+    "start": 649.85,
+    "end": 655.34,
+    "text": "the bottom to the top again the predict is it's a the dp 8 lecture that's the first"
+  },
+  {
+    "start": 655.34,
+    "end": 660.77,
+    "text": "lecture of the grid if you have not seen that please go back and watch it Okay, so"
+  },
+  {
+    "start": 660.77,
+    "end": 666.93,
+    "text": "we have seen in the previous lecture like in the lecture 8 so please please please follow the"
+  },
+  {
+    "start": 666.93,
+    "end": 673.15,
+    "text": "playlist We have seen in the lecture 8 that if the recursion is something like we're moving in"
+  },
+  {
+    "start": 673.15,
+    "end": 679.64,
+    "text": "the up and left They will be there will be overlapping subtropics and if there will be overlapping"
+  },
+  {
+    "start": 679.64,
+    "end": 681.56,
+    "text": "subtropics What can we apply?"
+  },
+  {
+    "start": 681.56,
+    "end": 689.7,
+    "text": "Memo I shouldn't correct we can apply something as  Memo I shouldn't so how do you apply my action again very simple trick?"
+  },
+  {
+    "start": 689.7,
+    "end": 696.19,
+    "text": "Very very simple trick the rule to apply or should I show you some overlapping Supplements I think"
+  },
+  {
+    "start": 696.19,
+    "end": 701.28,
+    "text": "doesn't make sense because I've already shown you whenever we did up and left"
+  },
+  {
+    "start": 701.28,
+    "end": 708.44,
+    "text": "They were problems which were overlapping so you can easily do that So we have to apply Memo"
+  },
+  {
+    "start": 708.44,
+    "end": 714.2,
+    "text": "I should again On what I j so what's the value of I j The maximum value is"
+  },
+  {
+    "start": 714.2,
+    "end": 719.26,
+    "text": "n minus 1 and m minus 1 so there will be a dp of n and m declared"
+  },
+  {
+    "start": 719.26,
+    "end": 726.18,
+    "text": "as minus 1 so declared it as minus 1 after that Right before the result Stored and return"
+  },
+  {
+    "start": 726.18,
+    "end": 734.5,
+    "text": "and before Before calling the recursion if that state has been Previously visited why don't you return that"
+  },
+  {
+    "start": 734.5,
+    "end": 735.9,
+    "text": "visited state yes?"
+  },
+  {
+    "start": 735.9,
+    "end": 742.75,
+    "text": "Why don't you return that visit state step 3 step one step sorry step two step three and"
+  },
+  {
+    "start": 742.75,
+    "end": 749.44,
+    "text": "step one is the decoration So Memo I should have been done and once I've done the Memo"
+  },
+  {
+    "start": 749.44,
+    "end": 756.29,
+    "text": "I shouldn't again the time complexity is n cross m The space complexity is n cross m but"
+  },
+  {
+    "start": 756.29,
+    "end": 762.75,
+    "text": "a recursion stack space of the path Lent and what is the path length m minus 1 plus"
+  },
+  {
+    "start": 762.75,
+    "end": 771.46,
+    "text": "n minus 1 again previous lecture previous lectures guys please please water previous lectures So the path length"
+  },
+  {
+    "start": 771.46,
+    "end": 777.2,
+    "text": "is this m minus 1 plus n minus 1 So Memo I shouldn't What is the next step"
+  },
+  {
+    "start": 777.2,
+    "end": 787.08,
+    "text": "tabulation We have to convert this into a tabulated solution how do you do this again wide straight"
+  },
+  {
+    "start": 787.08,
+    "end": 795.66,
+    "text": "forward I have told you already I and Jay to parameters where are the states from 0 to"
+  },
+  {
+    "start": 795.66,
+    "end": 801.65,
+    "text": "n minus 1 is what I will be J will be from 0 to m minus 1 so"
+  },
+  {
+    "start": 801.65,
+    "end": 810.03,
+    "text": "if you remember the previous Great classes very simple I equal to 0 till n minus 1 J"
+  },
+  {
+    "start": 810.03,
+    "end": 816.52,
+    "text": "equal to 0 till n minus 1 m minus 1 And there'll be dp of n and m"
+  },
+  {
+    "start": 816.52,
+    "end": 822.91,
+    "text": "And we know if at any moment i is equal to 0 and j is equal to 0"
+  },
+  {
+    "start": 822.91,
+    "end": 830.99,
+    "text": "Right down the recurrence dp of ij is equal to array of 0 0 correct or else There"
+  },
+  {
+    "start": 830.99,
+    "end": 838.47,
+    "text": "will be up there will be a down sorry left rather Now and the dp of ij will"
+  },
+  {
+    "start": 838.47,
+    "end": 848.25,
+    "text": "take the minimum of up comma rather not down left Else is completed follow-up is completed and you"
+  },
+  {
+    "start": 848.25,
+    "end": 854.94,
+    "text": "can print the answer to be dp of n minus 1 m minus 1 you see how we"
+  },
+  {
+    "start": 854.94,
+    "end": 859.52,
+    "text": "can easily solve dp on grits it's so so simple"
+  },
+  {
+    "start": 859.52,
+    "end": 864.39,
+    "text": "You know up will be very simple array of aj plus dp of up is i minus 1"
+  },
+  {
+    "start": 864.39,
+    "end": 869.82,
+    "text": "j similar to the previous classes guys This will be a of ij plus dp of i comma"
+  },
+  {
+    "start": 869.82,
+    "end": 874.9,
+    "text": "j minus 1 simple and you know you know Basic stuff will be if i has to be"
+  },
+  {
+    "start": 874.9,
+    "end": 880.26,
+    "text": "greater than 0 if j has to be greater than 0 Let's make sure you do the stuff"
+  },
+  {
+    "start": 880.26,
+    "end": 885.76,
+    "text": "Because if i is not greater than 0 then this portion will not be there j is not"
+  },
+  {
+    "start": 885.76,
+    "end": 891.54,
+    "text": "greater than 0 Then this portion will not be there so make sure you add this guy if"
+  },
+  {
+    "start": 891.54,
+    "end": 896.41,
+    "text": "and if only i is greater than 0 Make sure you add this guy if and if j"
+  },
+  {
+    "start": 896.41,
+    "end": 902.89,
+    "text": "is greater than 0 otherwise it will just be these guys So everyone everyone of you knows this"
+  },
+  {
+    "start": 902.89,
+    "end": 908.81,
+    "text": "now Perfect so that's that's how we can easily do the stuff Now since we have done it"
+  },
+  {
+    "start": 908.81,
+    "end": 915.63,
+    "text": "in the tabulated form how do you do space optimization Think of taught you in the previous lecture"
+  },
+  {
+    "start": 915.63,
+    "end": 921.69,
+    "text": "how to do space optimization very very simple You know You are the 0 through first i is"
+  },
+  {
+    "start": 921.69,
+    "end": 927.47,
+    "text": "0 when you compute the first true then i goes to one when you compute the next Room"
+  },
+  {
+    "start": 927.47,
+    "end": 933.11,
+    "text": "then i goes to two you compute the next room i goes to three you compute the next"
+  },
+  {
+    "start": 933.11,
+    "end": 935.84,
+    "text": "room And every time what you require is"
+  },
+  {
+    "start": 935.84,
+    "end": 940.21,
+    "text": "either dp of i minus 1 j or dp of i of j minus 1 so this is"
+  },
+  {
+    "start": 940.21,
+    "end": 947.25,
+    "text": "nothing but the current row And this is nothing but the previous row so just carry the previous"
+  },
+  {
+    "start": 947.25,
+    "end": 953.63,
+    "text": "row and the current row I've already taught you this in the lecture 8 of the grits how"
+  },
+  {
+    "start": 953.63,
+    "end": 959.93,
+    "text": "do you do this I've already taught you this i'm not teaching you over here I was just"
+  },
+  {
+    "start": 959.93,
+    "end": 967.49,
+    "text": "teaching you how the recurrence will change if the question is slightly So i'm not explaining in depth"
+  },
+  {
+    "start": 967.49,
+    "end": 975.2,
+    "text": "because it's an extension it's an extension of the playlist So I'm assuming you've watched the lecture 8"
+  },
+  {
+    "start": 975.2,
+    "end": 983.06,
+    "text": "completely on that soul basis i'm just going on writing the Reconciliation chips because it's more or less"
+  },
+  {
+    "start": 983.06,
+    "end": 989.58,
+    "text": "the extension of those problems minor changes So what i can do is i can definitely say n"
+  },
+  {
+    "start": 989.58,
+    "end": 995.14,
+    "text": "is grid dot size It's a start of it Let's make sure this is the acting So m"
+  },
+  {
+    "start": 995.14,
+    "end": 1000.85,
+    "text": "is definitely a grid of zero dot size perfect That's n and m so can i say the"
+  },
+  {
+    "start": 1000.85,
+    "end": 1007.82,
+    "text": "answer initially will be written f up n minus 1 m minus 1 and Definitely grid again definitely"
+  },
+  {
+    "start": 1007.82,
+    "end": 1012.34,
+    "text": "i can see this oh yeah, can I guarantee f i and t i i and t j"
+  },
+  {
+    "start": 1012.34,
+    "end": 1014.8,
+    "text": "and i can say vector of vector of"
+  },
+  {
+    "start": 1014.8,
+    "end": 1020.5,
+    "text": "int grid i can can i say if i is at any moment zero and and j is"
+  },
+  {
+    "start": 1020.5,
+    "end": 1026.74,
+    "text": "at any moment zero i can return something as grid of i j i can if i is"
+  },
+  {
+    "start": 1026.74,
+    "end": 1034.13,
+    "text": "going lesser than zero or j is going lesser than zero as a same moment i can return"
+  },
+  {
+    "start": 1034.13,
+    "end": 1041.88,
+    "text": "something like int max or probably a bigger number like one and i Perfect i can sell go"
+  },
+  {
+    "start": 1041.88,
+    "end": 1047.67,
+    "text": "up which means i'll take grid of i j plus f of i minus 1 j grid i"
+  },
+  {
+    "start": 1047.67,
+    "end": 1053.73,
+    "text": "can i can say i will go left which means i can take grid of i j plus"
+  },
+  {
+    "start": 1053.73,
+    "end": 1059.79,
+    "text": "f of i comma j minus 1 comma grid i can And what i can return is the"
+  },
+  {
+    "start": 1059.79,
+    "end": 1067.54,
+    "text": "minimal of left comma up Done so if i just quickly run this up You'll see everything is"
+  },
+  {
+    "start": 1067.54,
+    "end": 1075.65,
+    "text": "running but i'll not submit it because we need to memorize it otherwise we know we will get"
+  },
+  {
+    "start": 1075.65,
+    "end": 1082.6,
+    "text": "something as uh t l e So how do you memorize again very simple this is how you"
+  },
+  {
+    "start": 1082.6,
+    "end": 1090.53,
+    "text": "memorize declare the dp pass the dp scope it paste understand this will be dp pass the dp"
+  },
+  {
+    "start": 1090.53,
+    "end": 1090.88,
+    "text": "here"
+  },
+  {
+    "start": 1090.88,
+    "end": 1098.56,
+    "text": "pass the dp here That's the first step declare and pass it next step initialize water vans are"
+  },
+  {
+    "start": 1098.56,
+    "end": 1105.83,
+    "text": "you storing next step at the same state as called at the same state as called return this"
+  },
+  {
+    "start": 1105.83,
+    "end": 1111.63,
+    "text": "dp of i j done and i think that that should be it where on this it will"
+  },
+  {
+    "start": 1111.63,
+    "end": 1118.17,
+    "text": "be working fine it does let's submit this it is it is a need giving me a correct"
+  },
+  {
+    "start": 1118.17,
+    "end": 1125.93,
+    "text": "answer okay so the reclosion and my my action does work what about the tabulation again we know"
+  },
+  {
+    "start": 1125.93,
+    "end": 1132.06,
+    "text": "the tabulation is quite similar so we'll be like dp of n vector of n m of a"
+  },
+  {
+    "start": 1132.06,
+    "end": 1138.43,
+    "text": "minus instead of minus one you can put a 0 now what are the states we know the"
+  },
+  {
+    "start": 1138.43,
+    "end": 1144.07,
+    "text": "states are very simple i and i equal to 0 i less of the n i plus plus"
+  },
+  {
+    "start": 1144.07,
+    "end": 1149.79,
+    "text": "correct over your what are the states i j equal to 0 j less of the n j"
+  },
+  {
+    "start": 1149.79,
+    "end": 1154.94,
+    "text": "plus plus what is the next if i is equal to 0 j is equal to 0 i"
+  },
+  {
+    "start": 1154.94,
+    "end": 1160.09,
+    "text": "can say dp of i j is equal to the grid of i j perfect now can I"
+  },
+  {
+    "start": 1160.09,
+    "end": 1167.28,
+    "text": "say one thing in else there will be up path which will be initially let's assume grid of"
+  },
+  {
+    "start": 1167.28,
+    "end": 1167.52,
+    "text": "i j"
+  },
+  {
+    "start": 1167.52,
+    "end": 1173.8,
+    "text": "there will be left path which is initially grid of i j taking current but the up path"
+  },
+  {
+    "start": 1173.8,
+    "end": 1179.48,
+    "text": "if if if the i is greater than 0 then the up will be adding something like dp"
+  },
+  {
+    "start": 1179.48,
+    "end": 1185.39,
+    "text": "of the previous guy but if i is not greater than 0 remember there is a base case"
+  },
+  {
+    "start": 1185.39,
+    "end": 1192.11,
+    "text": "if it's not greater than 0 then you return something like so so that this path is neglected"
+  },
+  {
+    "start": 1192.11,
+    "end": 1198.16,
+    "text": "so that this path is neglected similarly can you do for the left yes we can if the"
+  },
+  {
+    "start": 1198.16,
+    "end": 1203.7,
+    "text": "j is greater than 0 we say left path will be taking dp of i of the previous"
+  },
+  {
+    "start": 1203.7,
+    "end": 1209.68,
+    "text": "guy the left guy or else the left will be taking no path that's it simple as that"
+  },
+  {
+    "start": 1209.68,
+    "end": 1214.92,
+    "text": "so in this way i can easily find out the left as well as the up so once"
+  },
+  {
+    "start": 1214.92,
+    "end": 1219.87,
+    "text": "i have figured out the left as well as the up i know dp of i j will"
+  },
+  {
+    "start": 1219.87,
+    "end": 1226.37,
+    "text": "be minimum of the left or the up paths right and once i've done this another answer will"
+  },
+  {
+    "start": 1226.37,
+    "end": 1231.1,
+    "text": "be at dp of n minus 1 and m minus 1 so once i've done this i can"
+  },
+  {
+    "start": 1231.1,
+    "end": 1237.97,
+    "text": "definitely return this right i have a website and some of the scoots super quick run spine so"
+  },
+  {
+    "start": 1237.97,
+    "end": 1245.65,
+    "text": "next step space optimization which no one does let's analyze so whenever there is something like i minus"
+  },
+  {
+    "start": 1245.65,
+    "end": 1246.96,
+    "text": "1 what am i seeing"
+  },
+  {
+    "start": 1246.96,
+    "end": 1254.02,
+    "text": "i'm requiring the previous row is i'm requiring the previous row and another dp over here is dp"
+  },
+  {
+    "start": 1254.02,
+    "end": 1259.97,
+    "text": "of j minus 1 i means the current row dp of i means current rows previous call so"
+  },
+  {
+    "start": 1259.97,
+    "end": 1267.7,
+    "text": "i require the previous rows j call them this means let's understand this means requiring previous rows j"
+  },
+  {
+    "start": 1267.7,
+    "end": 1274.02,
+    "text": "call this means current rows j minus 1 column is what i require so what if instead of"
+  },
+  {
+    "start": 1274.02,
+    "end": 1280.41,
+    "text": "dp of i like the current row i can store the current rows something like vector of int"
+  },
+  {
+    "start": 1280.41,
+    "end": 1286.28,
+    "text": "the current row what if i store it like it makes sense so can i see the current"
+  },
+  {
+    "start": 1286.28,
+    "end": 1292.75,
+    "text": "rows this car say i'll take from curves j minus 1 absolutely makes sense and away i can"
+  },
+  {
+    "start": 1292.75,
+    "end": 1298.4,
+    "text": "say car of j because the current has this sorry away here i can say car of j"
+  },
+  {
+    "start": 1298.4,
+    "end": 1303.23,
+    "text": "right next lot of about this dp of i j i minus 1 j if on the side"
+  },
+  {
+    "start": 1303.23,
+    "end": 1310.14,
+    "text": "require the previous so probably to start up with i can say there is no previous so initially"
+  },
+  {
+    "start": 1310.14,
+    "end": 1316.16,
+    "text": "it will be everything 0 so i can say away here this is the previous okay you know"
+  },
+  {
+    "start": 1316.16,
+    "end": 1322.85,
+    "text": "fixants so we have taken the previous rows j column i have taken the current rows and away"
+  },
+  {
+    "start": 1322.85,
+    "end": 1325.52,
+    "text": "we can compute the current like this"
+  },
+  {
+    "start": 1325.52,
+    "end": 1331.62,
+    "text": "the current will be computing so once the entire current has been computed the value of i will"
+  },
+  {
+    "start": 1331.62,
+    "end": 1336.68,
+    "text": "increase in the next time the value of i will go to the next and for that next"
+  },
+  {
+    "start": 1336.68,
+    "end": 1342.78,
+    "text": "this current which has been computed will become previous so i have just do it three this will"
+  },
+  {
+    "start": 1342.78,
+    "end": 1347.97,
+    "text": "be current now and at the end of the day n minus 1 means whenever this fall loop"
+  },
+  {
+    "start": 1347.97,
+    "end": 1353.42,
+    "text": "ends whenever this fall loop ends i's value will end up at n this fall loop will end"
+  },
+  {
+    "start": 1353.42,
+    "end": 1357.77,
+    "text": "when i is equal to n so for i equal to n who will be the previous n"
+  },
+  {
+    "start": 1357.77,
+    "end": 1363.48,
+    "text": "minus 1 so just write in and if i just summet this it will be running space optimization"
+  },
+  {
+    "start": 1363.48,
+    "end": 1369.51,
+    "text": "is very easy see color tensor summet it'll be accepted check this on accepted as simple as it"
+  },
+  {
+    "start": 1369.51,
+    "end": 1375.28,
+    "text": "can get so it's not tough to space optimize there's only a trick whenever you see i minus"
+  },
+  {
+    "start": 1375.28,
+    "end": 1381.38,
+    "text": "1 or something like that you try to space optimize and it's very simple store the previous row"
+  },
+  {
+    "start": 1381.38,
+    "end": 1386.5,
+    "text": "use it store it again use it store it again use it store it again use it that's"
+  },
+  {
+    "start": 1386.5,
+    "end": 1391.62,
+    "text": "all you will be to write right so yeah i hope i was able to make you understand"
+  },
+  {
+    "start": 1391.62,
+    "end": 1397.33,
+    "text": "the third problem on the grits just in case i did please please please make sure like it"
+  },
+  {
+    "start": 1397.33,
+    "end": 1402.32,
+    "text": "to follow our tradition again you can definitely comment understood under the"
+  },
+  {
+    "start": 1402.32,
+    "end": 1407.15,
+    "text": "comment section or US so that i get to know you have understood the entire lecture and yes"
+  },
+  {
+    "start": 1407.15,
+    "end": 1412.4,
+    "text": "with this let's by the way if you're new to the channel you can definitely consider subscribing to"
+  },
+  {
+    "start": 1412.4,
+    "end": 1416.9,
+    "text": "us and with this i'll be wrapping up this lecture let's be in the next one till then"
+  },
+  {
+    "start": 1416.9,
+    "end": 1417.28,
+    "text": "bye bye"
+  }
+]

@@ -1,0 +1,757 @@
+[
+  {
+    "start": 0.0,
+    "end": 3.37,
+    "text": "every one will come back to take it forward."
+  },
+  {
+    "start": 3.37,
+    "end": 13.78,
+    "text": "So in this video we will be solving a bit different  problem and the problem is long this common substrate, substrate, not sub sequence."
+  },
+  {
+    "start": 13.78,
+    "end": 16.31,
+    "text": "So what is  actually a substrate?"
+  },
+  {
+    "start": 16.31,
+    "end": 20.44,
+    "text": "In the previous video we did learn about sub sequence."
+  },
+  {
+    "start": 20.44,
+    "end": 27.1,
+    "text": "The definition of sub sequence was it can be something like a Gp that is a sub sequence"
+  },
+  {
+    "start": 27.1,
+    "end": 33.76,
+    "text": "when you say it's not a sub sequence can not be consecutive but a sub string whenever I"
+  },
+  {
+    "start": 33.76,
+    "end": 41.11,
+    "text": "say sub string it has to be consecutive remember this it has to be consecutive that means either"
+  },
+  {
+    "start": 41.11,
+    "end": 46.08,
+    "text": "ABC, either BC, either CJK, either JKL, it has to be consecutive."
+  },
+  {
+    "start": 46.08,
+    "end": 49.6,
+    "text": "It cannot have any characters left in between."
+  },
+  {
+    "start": 49.6,
+    "end": 58.86,
+    "text": "So the  definition of a sub string is any portion any consecutive portion of a string taken out is known as a  substrate."
+  },
+  {
+    "start": 58.86,
+    "end": 63.91,
+    "text": "Now given a string S1 given a string S2 the question is different."
+  },
+  {
+    "start": 63.91,
+    "end": 70.26,
+    "text": "Longest common is same but it is not sub sequence it is sub string because if I was"
+  },
+  {
+    "start": 70.26,
+    "end": 77.45,
+    "text": "talking about longest common sub sequence you would have said ACGK, ACGK and P as well this is"
+  },
+  {
+    "start": 77.45,
+    "end": 79.52,
+    "text": "longest common sub sequence"
+  },
+  {
+    "start": 79.52,
+    "end": 83.24,
+    "text": "of length 5 and talking about sub string."
+  },
+  {
+    "start": 83.24,
+    "end": 90.86,
+    "text": "So when talking about sub string the longest common  sub string will be CJK and CJK."
+  },
+  {
+    "start": 90.86,
+    "end": 98.21,
+    "text": "It can be the entastoring as well but over here we are seeing a length 3 yes over"
+  },
+  {
+    "start": 98.21,
+    "end": 100.93,
+    "text": "here we are seeing a length 3."
+  },
+  {
+    "start": 100.93,
+    "end": 107.1,
+    "text": "So the question arises is how do you solve this  particular problem?"
+  },
+  {
+    "start": 107.1,
+    "end": 111.27,
+    "text": "Can you solve this using the previous formula?"
+  },
+  {
+    "start": 111.27,
+    "end": 115.81,
+    "text": "You can but you have to do certain  modifications."
+  },
+  {
+    "start": 115.81,
+    "end": 120.35,
+    "text": "You can but you have to do a certain modification."
+  },
+  {
+    "start": 120.35,
+    "end": 128.15,
+    "text": "So let's actually look back  at what did we do in LCS the longest common sub sequence?"
+  },
+  {
+    "start": 128.15,
+    "end": 130.87,
+    "text": "How did we solve this problem?"
+  },
+  {
+    "start": 130.87,
+    "end": 133.5,
+    "text": "Let's  actually write the DP."
+  },
+  {
+    "start": 133.5,
+    "end": 135.5,
+    "text": "So what did you write?"
+  },
+  {
+    "start": 135.5,
+    "end": 141.76,
+    "text": "You wrote DP of IJ is equal to 1 plus DP of I minus  1 and J minus 1."
+  },
+  {
+    "start": 141.76,
+    "end": 150.83,
+    "text": "That does make sense if they're matching, yes if they're matching that is what you wrote and they're"
+  },
+  {
+    "start": 150.83,
+    "end": 157.91,
+    "text": "not matching that you wrote something like DP of IJ is equal to max of DP of I"
+  },
+  {
+    "start": 157.91,
+    "end": 161.27,
+    "text": "minus 1J and DP of I comma J minus 1."
+  },
+  {
+    "start": 161.27,
+    "end": 163.72,
+    "text": "Now why does this not work?"
+  },
+  {
+    "start": 163.72,
+    "end": 165.6,
+    "text": "Why does this longest"
+  },
+  {
+    "start": 165.6,
+    "end": 168.86,
+    "text": "why does this not matching not work?"
+  },
+  {
+    "start": 168.86,
+    "end": 175.02,
+    "text": "Let's analyze by taking a very very shorter version of the  example."
+  },
+  {
+    "start": 175.02,
+    "end": 181.09,
+    "text": "So if I take ACD and C let's say ACD and probably something as EXD."
+  },
+  {
+    "start": 181.09,
+    "end": 189.97,
+    "text": "So in the longest common sub sequence what will happen is initially we'll have DD common and we'll"
+  },
+  {
+    "start": 189.97,
+    "end": 196.58,
+    "text": "end up doing one and then we'll say let's shrink the string to AC and AX."
+  },
+  {
+    "start": 196.58,
+    "end": 203.65,
+    "text": "Now when it does no finds C and X what it says is let's omit one portion let's"
+  },
+  {
+    "start": 203.65,
+    "end": 207.73,
+    "text": "omit one portion then still compare A and AX."
+  },
+  {
+    "start": 207.73,
+    "end": 215.25,
+    "text": "That is what it says let's omit one portion let's compare A and AX let's try to see"
+  },
+  {
+    "start": 215.25,
+    "end": 222.59,
+    "text": "if we can figure out something or it says hey let's omit X let's compare AC and A"
+  },
+  {
+    "start": 222.59,
+    "end": 225.67,
+    "text": "and over here it is like okay X E."
+  },
+  {
+    "start": 225.67,
+    "end": 233.55,
+    "text": "So let's omit A and try to compare which gets it if you omitingly you're getting AX and"
+  },
+  {
+    "start": 233.55,
+    "end": 241.07,
+    "text": "other way it says let's omit X and compare A and A and eventually it compares A and"
+  },
+  {
+    "start": 241.07,
+    "end": 243.15,
+    "text": "A and gives a plus one."
+  },
+  {
+    "start": 243.15,
+    "end": 244.88,
+    "text": "This is the problem"
+  },
+  {
+    "start": 244.88,
+    "end": 251.56,
+    "text": "this is the problem and why does this happen because because of the omitting that you're doing you're"
+  },
+  {
+    "start": 251.56,
+    "end": 255.73,
+    "text": "omitting this and you're still comparing with the entire thing."
+  },
+  {
+    "start": 255.73,
+    "end": 262.61,
+    "text": "So you're doing a disruption you are breaking the consecutive rule now if there's a comparison between A"
+  },
+  {
+    "start": 262.61,
+    "end": 267.9,
+    "text": "and A and this D and D was compared you know there is someone in between who was"
+  },
+  {
+    "start": 267.9,
+    "end": 273.92,
+    "text": "who was there that's why you omitted this you shrink one portion of the string not the both"
+  },
+  {
+    "start": 273.92,
+    "end": 275.38,
+    "text": "not both the portions."
+  },
+  {
+    "start": 275.38,
+    "end": 282.59,
+    "text": "thereby in else in the longest comments of sequence this works because you're allowed to have not consecutive"
+  },
+  {
+    "start": 282.59,
+    "end": 288.54,
+    "text": "but oh yeah there is a line which says you have to have consecutive thereby this line does"
+  },
+  {
+    "start": 288.54,
+    "end": 294.63,
+    "text": "not works because you cannot omit it you cannot omit it you need to be consecutive in nature"
+  },
+  {
+    "start": 294.63,
+    "end": 300.39,
+    "text": "okay so how do you solve this particular problem so can we write a recursion we can but"
+  },
+  {
+    "start": 300.39,
+    "end": 306.54,
+    "text": "then we have to use one more third variable thereby there will be three states which are will"
+  },
+  {
+    "start": 306.54,
+    "end": 312.76,
+    "text": "not determine thereby what we will do is we'll try to write the tabulation format but in order"
+  },
+  {
+    "start": 312.76,
+    "end": 320.16,
+    "text": "to write the tabulation format you have to understand how does actual the long this common subsequent tabulation"
+  },
+  {
+    "start": 320.16,
+    "end": 326.57,
+    "text": "works so please watch out two videos one is a D bit 25 where I've taught the tabulation"
+  },
+  {
+    "start": 326.57,
+    "end": 332.83,
+    "text": "the other is the D bit 26 where I've taught what was the tabulation like what was the"
+  },
+  {
+    "start": 332.83,
+    "end": 339.09,
+    "text": "tab what was the table rather table exactly mean I've taught that in D bit 26 where I"
+  },
+  {
+    "start": 339.09,
+    "end": 344.76,
+    "text": "printed their Cs so let's say an example of AB CD and AB ZD okay so over here"
+  },
+  {
+    "start": 344.76,
+    "end": 351.91,
+    "text": "the longest common sub sequences ABD and ABD but the longest common substring is AB let's see how"
+  },
+  {
+    "start": 351.91,
+    "end": 357.8,
+    "text": "will you find this up so as usual we will be following one piece indexing so 0 1"
+  },
+  {
+    "start": 357.8,
+    "end": 362.22,
+    "text": "2 3 4 and 0 1 2 3 4 so this is what we have written and this"
+  },
+  {
+    "start": 362.22,
+    "end": 367.08,
+    "text": "is our D bit okay this is our D bit so AB ZD will be on the column"
+  },
+  {
+    "start": 367.08,
+    "end": 372.46,
+    "text": "and I will be over here which is AB CD okay so how do you usually fill up"
+  },
+  {
+    "start": 372.46,
+    "end": 379.31,
+    "text": "you usually fill up on the column wise because this is means this portion and this means this"
+  },
+  {
+    "start": 379.31,
+    "end": 385.13,
+    "text": "portion so this is the D bit table that we will fill up so whenever I'm at here"
+  },
+  {
+    "start": 385.13,
+    "end": 391.24,
+    "text": "let's see what's ring do you have A and D are the matching are they matching so you"
+  },
+  {
+    "start": 391.24,
+    "end": 396.62,
+    "text": "can definitely put up a 1 away here how did you put up a 1 away here what"
+  },
+  {
+    "start": 396.62,
+    "end": 398.32,
+    "text": "is if they are matching"
+  },
+  {
+    "start": 398.32,
+    "end": 404.77,
+    "text": "what did it was you said one plus the previous guys and the previous guys will be zeros"
+  },
+  {
+    "start": 404.77,
+    "end": 411.81,
+    "text": "these are non-useable rows and columns those eros okay perfect now you go away here and you say"
+  },
+  {
+    "start": 411.81,
+    "end": 417.29,
+    "text": "A and AB okay so does this A match with the speed no so thereby 0 next you"
+  },
+  {
+    "start": 417.29,
+    "end": 421.88,
+    "text": "go to Z and you say A does this A match with Z no so as 0 next"
+  },
+  {
+    "start": 421.88,
+    "end": 427.07,
+    "text": "you go to A and D does this match no so as 0 perfect let's come to the"
+  },
+  {
+    "start": 427.07,
+    "end": 433.22,
+    "text": "exposition you are over here and you're over here which is A and B for here so does"
+  },
+  {
+    "start": 433.22,
+    "end": 440.41,
+    "text": "this be match with this A no ideally ideally since it's this is consecutive you are not dependent"
+  },
+  {
+    "start": 440.41,
+    "end": 448.56,
+    "text": "on the previous guys since this is consecutive you're not dependent on the previous guys remember this because"
+  },
+  {
+    "start": 448.56,
+    "end": 455.67,
+    "text": "you don't want any interruption because if they do not match I don't want any interruption to be"
+  },
+  {
+    "start": 455.67,
+    "end": 463.23,
+    "text": "carried forward in the previous L longest common sub sequence you would have taken the maximum of this"
+  },
+  {
+    "start": 463.23,
+    "end": 469.68,
+    "text": "or this why because because this A was matching over here so you were like okay in this"
+  },
+  {
+    "start": 469.68,
+    "end": 476.27,
+    "text": "AB and this A the longest common sub sequence is off length 1 because that is the longest"
+  },
+  {
+    "start": 476.27,
+    "end": 476.64,
+    "text": "count"
+  },
+  {
+    "start": 476.64,
+    "end": 483.51,
+    "text": "but in substring you don't carry anything because we don't have a substring we don't have a substring"
+  },
+  {
+    "start": 483.51,
+    "end": 488.54,
+    "text": "thereby a 0 so you put a 0 remember this you put a 0 okay next you'll come"
+  },
+  {
+    "start": 488.54,
+    "end": 494.32,
+    "text": "over here and there is B and there is B right but they are matching they are matching"
+  },
+  {
+    "start": 494.32,
+    "end": 500.31,
+    "text": "say like okay they are matching let's see in the previous guy did the match they did and"
+  },
+  {
+    "start": 500.31,
+    "end": 505.41,
+    "text": "there was a one if they matched and they had a length of 1 why can't I take"
+  },
+  {
+    "start": 505.41,
+    "end": 510.65,
+    "text": "that one one for himself a previous one so I'll be like okay I can put it too"
+  },
+  {
+    "start": 510.65,
+    "end": 517.25,
+    "text": "so whenever they are matching I can actually take the previous guy because I don't need any break"
+  },
+  {
+    "start": 517.25,
+    "end": 523.03,
+    "text": "there is no breaking I can directly go to the previous guy and ask did you guys match"
+  },
+  {
+    "start": 523.03,
+    "end": 528.61,
+    "text": "and if you match you must have some value so why don't I take this perfect next if"
+  },
+  {
+    "start": 528.61,
+    "end": 533.51,
+    "text": "come over here this is Z this is B and on matching this put a 0 next you"
+  },
+  {
+    "start": 533.51,
+    "end": 538.68,
+    "text": "come across here B and D not matching this put a 0 next C and D not patching"
+  },
+  {
+    "start": 538.68,
+    "end": 542.97,
+    "text": "just put a 0 next C and B not matching put a 0 next C and Z not"
+  },
+  {
+    "start": 542.97,
+    "end": 548.0,
+    "text": "matching put a 0 next C and D not matching put a 0 no one is matching next"
+  },
+  {
+    "start": 548.0,
+    "end": 552.64,
+    "text": "D and A not matching D and B not matching D and Z not matching 0 0 0"
+  },
+  {
+    "start": 552.64,
+    "end": 558.13,
+    "text": "D and D matching so 1 why 1 because because D and D was matching so you went"
+  },
+  {
+    "start": 558.13,
+    "end": 563.98,
+    "text": "to the previous guy you went to the previous guy C and Z since they did not match"
+  },
+  {
+    "start": 563.98,
+    "end": 570.48,
+    "text": "they had a 0 value they buy there's no one there's no one for the previous consecutive you"
+  },
+  {
+    "start": 570.48,
+    "end": 574.96,
+    "text": "only had a one if if this C like oh yeah we had a C oh yeah we"
+  },
+  {
+    "start": 574.96,
+    "end": 580.81,
+    "text": "had a C then what would have happened this C would have matched this C and it was"
+  },
+  {
+    "start": 580.81,
+    "end": 587.17,
+    "text": "said cooking I'm having a match so go to the previous go to the previous and see they're"
+  },
+  {
+    "start": 587.17,
+    "end": 592.66,
+    "text": "saying they have a too much they have a too much so they have a too much you"
+  },
+  {
+    "start": 592.66,
+    "end": 597.86,
+    "text": "take this two and you say 2 plus 1 away up they have I would have said 3"
+  },
+  {
+    "start": 597.86,
+    "end": 604.0,
+    "text": "again you come over D and D they're matching so like okay they're matching so 1 go to"
+  },
+  {
+    "start": 604.0,
+    "end": 610.21,
+    "text": "the previous go to the previous and see how many of them matching they think we have a"
+  },
+  {
+    "start": 610.21,
+    "end": 615.7,
+    "text": "3 match 3 consecutive match so take this 3 and a 4 so this becomes 4 so what"
+  },
+  {
+    "start": 615.7,
+    "end": 621.63,
+    "text": "I analyzed was since it is for consecutive they buy this guy can be said we do not"
+  },
+  {
+    "start": 621.63,
+    "end": 627.48,
+    "text": "need to do any breaking like we did a breaking like we did a breaking here and we"
+  },
+  {
+    "start": 627.48,
+    "end": 629.6,
+    "text": "moved to AX we did a breaking"
+  },
+  {
+    "start": 629.6,
+    "end": 635.36,
+    "text": "we moved to ACX there is no need to do any breaking yes they buy you can directly"
+  },
+  {
+    "start": 635.36,
+    "end": 640.84,
+    "text": "put a 0 this is the slide change that you have to do in the previous code and"
+  },
+  {
+    "start": 640.84,
+    "end": 646.88,
+    "text": "you'll be able to code this okay so coming back to the table coming back to the table"
+  },
+  {
+    "start": 646.88,
+    "end": 653.78,
+    "text": "so let's actually come back to the original stuff which was actually a PCD and this was something"
+  },
+  {
+    "start": 653.78,
+    "end": 659.33,
+    "text": "like X-Z or something like this so if I again re do the table what what is the"
+  },
+  {
+    "start": 659.33,
+    "end": 664.66,
+    "text": "value that it will have it will have a value like 0 and it will have a what"
+  },
+  {
+    "start": 664.66,
+    "end": 671.63,
+    "text": "is the longest common substrate can I say the maximum value in the entire matrix the maximum value"
+  },
+  {
+    "start": 671.63,
+    "end": 677.75,
+    "text": "in the entire dp because this two signifies a b is equality baby can I say the maximum"
+  },
+  {
+    "start": 677.75,
+    "end": 683.58,
+    "text": "value in the matrix is contained the answer I can I can and that is the answer the"
+  },
+  {
+    "start": 683.58,
+    "end": 690.48,
+    "text": "max value so without waiting let's get started the code so we are in the longest common substrate"
+  },
+  {
+    "start": 690.48,
+    "end": 696.45,
+    "text": "so what I will do is I will just copy paste the code for longest common sub sequence"
+  },
+  {
+    "start": 696.45,
+    "end": 701.71,
+    "text": "let's copy paste that and what will do is we will just put a 0 and this is"
+  },
+  {
+    "start": 701.71,
+    "end": 707.11,
+    "text": "STR let's give it a S and T other thing what is the answer the answer is the"
+  },
+  {
+    "start": 707.11,
+    "end": 710.24,
+    "text": "maximum value you can reiitrate and find the"
+  },
+  {
+    "start": 710.24,
+    "end": 715.37,
+    "text": "maximum value of what you can do is you know dp of ij is just getting filled over"
+  },
+  {
+    "start": 715.37,
+    "end": 721.01,
+    "text": "here this is the value whenever it is getting a value otherwise it's 0 every time so what"
+  },
+  {
+    "start": 721.01,
+    "end": 725.38,
+    "text": "you can do is you can be like okay I can keep answer equal to 0 and I"
+  },
+  {
+    "start": 725.38,
+    "end": 730.38,
+    "text": "can be like okay answer equal to max of answer common dp of ij right and I will"
+  },
+  {
+    "start": 730.38,
+    "end": 735.64,
+    "text": "like fine let's return the answer and I can be like fine let's now run this off and"
+  },
+  {
+    "start": 735.64,
+    "end": 741.41,
+    "text": "see if this is running it is it is and now let's quickly somebody so you understood there's"
+  },
+  {
+    "start": 741.41,
+    "end": 746.48,
+    "text": "this is just a minor change I will do this minor change I think you will be able"
+  },
+  {
+    "start": 746.48,
+    "end": 752.12,
+    "text": "to solve any particular problem so this is n into m again there is something like i minus"
+  },
+  {
+    "start": 752.12,
+    "end": 757.89,
+    "text": "1 and whenever there is something like i minus 1 what do you do you have space optimization"
+  },
+  {
+    "start": 757.89,
+    "end": 763.66,
+    "text": "there is no need to carry two rows it just do space optimization again I have been teaching"
+  },
+  {
+    "start": 763.66,
+    "end": 769.3,
+    "text": "space optimization from lecture 1 please go back and watch if you have not m plus 1 comma"
+  },
+  {
+    "start": 769.3,
+    "end": 774.56,
+    "text": "0 something which you can and the m plus 1 comma 0 is again something which you can"
+  },
+  {
+    "start": 774.56,
+    "end": 779.69,
+    "text": "over here it will be previous this is dp of i so this will become curve this will"
+  },
+  {
+    "start": 779.69,
+    "end": 784.76,
+    "text": "be again curve and this will be curve again and how I want to get simply to wear"
+  },
+  {
+    "start": 784.76,
+    "end": 788.48,
+    "text": "is you can replace previous equal to curve and again simply"
+  },
+  {
+    "start": 788.48,
+    "end": 794.66,
+    "text": "run this so okay I'm sorry my bad you have also replaced over here you can actually omit"
+  },
+  {
+    "start": 794.66,
+    "end": 802.03,
+    "text": "this because you actually initializing everything with zeros there is no need of these guys you know omit"
+  },
+  {
+    "start": 802.03,
+    "end": 807.65,
+    "text": "this I think the should be fine yeah yes so if you sum it this we actually solve"
+  },
+  {
+    "start": 807.65,
+    "end": 813.69,
+    "text": "this using a two like two one dimension arrays and an n into m cross space the longest"
+  },
+  {
+    "start": 813.69,
+    "end": 821.48,
+    "text": "common substring gets solved so guys I hope you have understood the longest common substring does the variation"
+  },
+  {
+    "start": 821.48,
+    "end": 828.01,
+    "text": "of the longest common sub sequence so this in case you did please please please make sure you"
+  },
+  {
+    "start": 828.01,
+    "end": 834.4,
+    "text": "like this video and if you did to the channel please do consider subscribing to us and here"
+  },
+  {
+    "start": 834.4,
+    "end": 840.56,
+    "text": "with this I'll be wrapping up this video let's be in the next one till then bye thinking"
+  }
+]

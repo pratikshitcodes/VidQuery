@@ -1,0 +1,267 @@
+[
+  {
+    "start": 0.0,
+    "end": 55.04,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] If you are welcome back to the channel, I hope you guys are doing extremely well. So welcome to the third lecture of the dynamic programming playlist. It's a wonderful question. Frog jump. So just to make sure you have watched the previous couple of lectures before attending this one because I have a perfect flow which I will continue. So if you're like if you're just watching this lecture three suddenly you might feel alienated. So please watch out the previous couple of lectures. So what is the problem statement? So there's a frog on the first step of a n-sterex. So the frog wants to reach the n-sterex. height i is the height of the i plus 1-sterex. So there is given in terms of zero-based indexing. So the energy lost in the jump is given by height i minus 1 and height j minus 1."
+  },
+  {
+    "start": 42.54,
+    "end": 99.65,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] height i is the height of the i plus 1-sterex. So there is given in terms of zero-based indexing. So the energy lost in the jump is given by height i minus 1 and height j minus 1. So basically the frog can jump from the i-sterex to the j-sterex. And the energy will be height of i minus 1 minus i of j minus 1. In the frog, if the frog is in the i-sterex, he can jump from either. He can jump either to i plus 1-sterex or to i plus 2-sterex. Basically he can take a jump to the 1 in plus 1 index or to the plus 2 index. Your task is to find the minimum total energy used by the frog  to reach the first step to the n-sterex. So that is what the question states. So for an example as a stick, the first example 10, 20, 30 and 10. And I'll try to explain you this. Let's think the first example, which is 10, 20, 30 and 10."
+  },
+  {
+    "start": 86.05,
+    "end": 142.9,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] So that is what the question states. So for an example as a stick, the first example 10, 20, 30 and 10. And I'll try to explain you this. Let's think the first example, which is 10, 20, 30 and 10. So basically there's a frog. Now if I consider this a 0123, the frog wants to reach from 0 to 3. I have converted the problem into 0-based indexing. So even if n is 4, it's ideally the question was from 1 to 4, but I've converted it into 0-based indexing. So if the frog starts from here and he can only jump one or two places, what is the minimum energy that he'll require? So for example, if the frog is here, the frog is here and the frog says that, I will jump from here to here, then the energy that he will require is 10. And then he decides the deal jump from here to here. Then the energy again required will be n."
+  },
+  {
+    "start": 131.28,
+    "end": 186.87,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] will jump from here to here, then the energy that he will require is 10. And then he decides the deal jump from here to here. Then the energy again required will be n. It's a difference of them. Absolute difference of them. He can. So after that he decides that he'll jump from here to here. That's again the absolute difference which is 20. So this path will give him 40. The energy that he will take will be 40. Let's try out some of the paths. What if I decide I will jump from here to here, which will take me 10? What if I decide I'll jump from here to here? So that again takes me a plus n correct. So this path gives me 20 which is definitely better than the previous one. What if I decide I'll take this a couple jump because I cannot jump more than a couple of steps. So this will be 20. And then I'll decide I'll jump a one step."
+  },
+  {
+    "start": 176.55,
+    "end": 232.24,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] What if I decide I'll take this a couple jump because I cannot jump more than a couple of steps. So this will be 20. And then I'll decide I'll jump a one step. So that will be a plus 20 again. This is again 40. So if you see I've tried out one possible way, two possible way, three possible way. And the minimum that I in powder is 20. And after telling me which is the minimum, what is the minimum energy that you can take? And there is also the question is, now, can I say this? Can I say this? That the question again gives me an idea that you are trying all ways. So if you remember the previous lecture I told you,  if you're trying all possible ways, then it's a recursion. Right? And then you can either count the all ways or you can find the best. So can I say over here, you're trying all possible ways. Way number one, way number two, way number three."
+  },
+  {
+    "start": 220.46,
+    "end": 277.87,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] Right? And then you can either count the all ways or you can find the best. So can I say over here, you're trying all possible ways. Way number one, way number two, way number three. And you're taking the best possible and that's 20. Why will a 3D solution not work over here? That might be a question that comes to your head. So that's the first thing that I will be talking about. Why a 3D solution doesn't work? Let's understand that. Then after that we'll think why we need to try all possible ways  and need to take the best way out. So when I say 3D that means you are standing from 10. So you know from 10 you can go to 20 or go to 30. So you saw that if you jump till 20, that's the minimum. So you jumped. And from 20, you could have either jumped to 30 or to 10. Both are taking 10, both are taking 10. So you can jump anywhere so you jump this. This is 3D basically when you're moving, you're trying to jump the minimal possible jump possible, whichever takes"
+  },
+  {
+    "start": 263.0,
+    "end": 318.63,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] And from 20, you could have either jumped to 30 or to 10. Both are taking 10, both are taking 10. So you can jump anywhere so you jump this. This is 3D basically when you're moving, you're trying to jump the minimal possible jump possible, whichever takes minimal energy, you're trying to jump that. But why a 3D solution doesn't work? Let's check that out. Now when I say a 3D solution doesn't work so let's check the stress case. So if the frog was here, if the frog was here, 3D Lee, a from here, he will try to move here because in moving here, they'll take him 30, and he'll take him 20. The 3D option will be to move to 10. So let's 3D remove to 10, which will cost him at 20. Okay. Now again from here, he can move here, which is 50,  or he can move here, which is 0. So 3D will move to 0. So let's move to 0. So it'll take him 0 energy. Again from here, 3D he can move here, which will cost him 40,  or this will cost him 50."
+  },
+  {
+    "start": 307.92,
+    "end": 364.32,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] So 3D will move to 0. So let's move to 0. So it'll take him 0 energy. Again from here, 3D he can move here, which will cost him 40,  or this will cost him 50. So 3D will take the 40, while a staff. So he will move from here to here, which will be again 40. So in total, the costing will be 60. As in total, the costing will be 60. Now whatever tries some other way,  let's try that out. If the frog is here, and it decides he will be going till 60. That will cost him 30 buck, right? And if it decides after that he'll go to 60 again, that will cost him 0, and after that he decides he'll go 50, that will cost him 10. So at total of 40 will be the costing,  a total of 40 will be the costing. So we did realize the 3D way, it not give you the correct path,  because you started really, but you lost out. Probably somewhere, right?"
+  },
+  {
+    "start": 349.81,
+    "end": 408.82,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] So at total of 40 will be the costing,  a total of 40 will be the costing. So we did realize the 3D way, it not give you the correct path,  because you started really, but you lost out. Probably somewhere, right? So that's why that's why. It's better if you try all possible ways, because sometimes it will happen that initially you took the better way, but you lost out on something significant, like this 60 to 60 would have been 0. You lost out in future. So in such cases, 3D doesn't work, and you have to try recursion. Now when I say recursion,  buzz onto the second lecture. What is over here? recursion is try all possible ways. So you have to try all possible ways, okay? So in order to try all possible ways, you have to write recursion. Correct? Over here they're asking you which path did take the minimum energy."
+  },
+  {
+    "start": 394.16,
+    "end": 449.48,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] So you have to try all possible ways, okay? So in order to try all possible ways, you have to write recursion. Correct? Over here they're asking you which path did take the minimum energy. So you have to find the path with the minimum energy. Correct? And do you remember the previous lecture? What does this step number one? Express the problem in terms of index? Do all steps on that index? Remember this. To write recursion, do all steps on that index. Step three, over here they're asking you to find the minimum energy. Minimum energy that you took. So take the minimal of all steps. Take the minimal of all steps. This is how you write recursion, okay? So can I say I'm wanting to reach the index n minus one?"
+  },
+  {
+    "start": 434.73,
+    "end": 490.29,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] Minimum energy that you took. So take the minimal of all steps. Take the minimal of all steps. This is how you write recursion, okay? So can I say I'm wanting to reach the index n minus one? I'm assuming zero based indexing. So I'm wanting to reach the index n minus one. So what do I want? What does f of n minus one signify? Minimum energy required? Minimum energy required to reach n minus one from zero index. That is what the recursion will signify. Can I express the recursion in terms of index? That's my first step. I'd like yes you can. How? There are array indexes. There are array indexes still n minus one. So I'll consider every array index as an index. So okay, that's fine. So I can be like okay, that's absolutely fine. So let's do it."
+  },
+  {
+    "start": 475.7,
+    "end": 533.57,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] How? There are array indexes. There are array indexes still n minus one. So I'll consider every array index as an index. So okay, that's fine. So I can be like okay, that's absolutely fine. So let's do it. So can I say what will be f of zero? Like common sense. What will be the costing in order to reach from zero to zero? That's going to be zero. Because f of n minus one was stating the costing from n minus one to zero. So in order to reach zero to zero, the costing will be zero. So I know one thing for sure that the costing for this guy will be zero. No matter what you do. No matter what you do. Now let's so we are figured out what is the index. That will be the array index. Next thing is do all stuffs on that index. Yes do all stuffs on that index. Now what is what what is the frog allowed to do?"
+  },
+  {
+    "start": 518.82,
+    "end": 575.38,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] Now let's so we are figured out what is the index. That will be the array index. Next thing is do all stuffs on that index. Yes do all stuffs on that index. Now what is what what is the frog allowed to do? The frog is allowed to either jump plus one or to either jump plus two. So why don't you do that? Do all stuffs on that index? Please do it. So what you will do is you'll say okay, I will do all stuffs on that index. So if I do a single jump like I can say it as the left recursion. So the single jump will say f of index minus one. I'm doing this. But if I'm jumping, yes the question arises. If I'm jumping from an index to an index minus one,  what is the energy that is being consumed? I know in order to jump from index to index minus one, the energy consumed is array of index minus array of index minus one."
+  },
+  {
+    "start": 560.4,
+    "end": 616.72,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] If I'm jumping from an index to an index minus one,  what is the energy that is being consumed? I know in order to jump from index to index minus one, the energy consumed is array of index minus array of index minus one. That is what the energy is consumed. Can I say this is what the energy will be consumed to jump from index to index minus one. And then again ask the recursion. Here recursion. I have reached index minus one. Now it's your job to tell me from index minus one to zero how much it will cost you. Because you will do the job. I'll ask the recursion to tell what will be the costing from index minus one to zero because I know the costing from index to index minus one. I've taken that. So that's what I'll do. First up done. Now can I say the right recursion will be very simple. It will be if I take couple of jumps."
+  },
+  {
+    "start": 603.45,
+    "end": 659.88,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] I know the costing from index to index minus one. I've taken that. So that's what I'll do. First up done. Now can I say the right recursion will be very simple. It will be if I take couple of jumps. The costing this time will be a of index minus a of index minus two. Absolutely makes sense. So I've done all the stuff. But then it will be slightly careful. Can I do an index minus two always? The answer to that is yes you can do it. If it is not the first index because if you are standing at the first index, you cannot jump to because that will take you to minus one. You cannot jump to. So you need to write a case like this. If index is greater than one, then only I can take the right jump otherwise I cannot. Like makes sense because if you add the first index,  you'll not be able to take the right jump. So that is absolutely making sense."
+  },
+  {
+    "start": 645.27,
+    "end": 700.27,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] If index is greater than one, then only I can take the right jump otherwise I cannot. Like makes sense because if you add the first index,  you'll not be able to take the right jump. So that is absolutely making sense. So I'm like okay fine that's fine. Now what's the next stuff? Take the minimal because the question stated minimum energy. Add the question stated maximum energy. The question is something else you have done it. But in this the question stated find the minimum energy. So there is a way in which you jump from index to index minus one. There's a way in which you jump from index to index minus two. And ask the recursion to find out the remaining answer. So can I say you need the minimal answer. So you're going to return the minimal of left comma right. That's how you can write the recurrence as I told you."
+  },
+  {
+    "start": 686.33,
+    "end": 741.52,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] And ask the recursion to find out the remaining answer. So can I say you need the minimal answer. So you're going to return the minimal of left comma right. That's how you can write the recurrence as I told you. Follow three techniques. You'll be able to write any recurrence relationships. Yes. Now you have written the recurrence relationship. That is absolutely perfect. So we have understood the recurrence relationship. Now it's time to see if there are overlapping sub problems. And how is this recursion actually working? Right. So we know we know we are at F of five because if I write down the indexes, it's like zero one two three four five. So we know we are at F of five. Now at F of five where can we go? We know that either we can take a jump to F of four. Or either we can take a jump to F of three. That's definitely known to us."
+  },
+  {
+    "start": 728.91,
+    "end": 784.36,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] So we know we are at F of five. Now at F of five where can we go? We know that either we can take a jump to F of four. Or either we can take a jump to F of three. That's definitely known to us. So I can be like okay. If I'm at F of five and there's this recursion call. Then the left recursion will be like okay F of four. Plus absolute of whatever height there is. So what is the height? 60 minus 50 there's this height of absolute 10. And then there's the recursion of right which is F of three. Plus again and height difference of these couple of guys which is three and five. 10 minus 50 is 40. So you can be like absolute of 40. Now at first this recursion will go. Come back and then this will go and come back. Then you return the minimum of these. Right. This is how the recursion is actually working. So that's how I'm drawing the recursion tree."
+  },
+  {
+    "start": 770.24,
+    "end": 825.93,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] Now at first this recursion will go. Come back and then this will go and come back. Then you return the minimum of these. Right. This is how the recursion is actually working. So that's how I'm drawing the recursion tree. So F of four will say F of three and F of two. F of three will say F of two and F of one. F of two will say F of one and F of zero understood. Right. So do you observe overlapping sub problems? At least I am I'm able to do it. By the way F of one will go to F of zero as well. I'm able to do it. So if I mark the overlapping sub problems,  there is one. First one. Another one. So I have figured out if F of three. And so if F of three answer I'm figuring out. Then if of three answer why will I again figure out. So there are overlapping sub problems. So if there are overlapping sub problems,  can I say answer to those sub problems will be similar?"
+  },
+  {
+    "start": 813.64,
+    "end": 870.36,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] Then if of three answer why will I again figure out. So there are overlapping sub problems. So if there are overlapping sub problems,  can I say answer to those sub problems will be similar? There by I can apply. Memorization to this particular recursion. Got it. So I'm understanding that okay. I can definitely apply Memorization. So you can easily apply Memorization. But I just in case to complete the recursion tree. I'll quickly draw it. So in order to reach zero, I'll take zero amount. So F of one, what would I have? What it would have done ideally? In F of one was this recursion. So F of one went and there was a left recursion call of F of zero. Plus the jump from one to zero. So absolute of something. A jump from one to zero. So absolute of something. Let's see. One to zero will cost you 20. So you can add it 20. What about the right recursion?"
+  },
+  {
+    "start": 856.39,
+    "end": 911.52,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] Plus the jump from one to zero. So absolute of something. A jump from one to zero. So absolute of something. Let's see. One to zero will cost you 20. So you can add it 20. What about the right recursion? Can I see? Since we are standing at the first index,  there will be no right recursion. Because you can have jump couple of index. So I can say right is probably some bigger value. Now F of zero will return you zero for sure. This will return you zero. So the left took 20 and the right took 20. So what will you return? You return the minimum of both of them which is 20 comma. Let's assume this to be some intamax max. So it's 20. What you return as F of one again makes sense. Because if you are standing at F of one,  what is the cost that you will take from one to zero? That's one way."
+  },
+  {
+    "start": 896.7,
+    "end": 952.26,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] Let's assume this to be some intamax max. So it's 20. What you return as F of one again makes sense. Because if you are standing at F of one,  what is the cost that you will take from one to zero? That's one way. There's only one way which is 20. So that is what we have stored. Cool. So I have drawn this particular recursion. Nice. Now we are at F of two. So F of two would have called the left recursion as F of one. Plus a jump from two to one. Plus a jump from two to one which will cost him 55. So that cost it in 50. And there'll be a right jump which will be directly to F of zero. Now there will be a jump from two to zero which will cost him 30. So there'll be a 30. Now you remember F of one. This had a value of 20. So it'll return with a 20. So this guy gave him 20."
+  },
+  {
+    "start": 938.33,
+    "end": 995.64,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] Now there will be a jump from two to zero which will cost him 30. So there'll be a 30. Now you remember F of one. This had a value of 20. So it'll return with a 20. So this guy gave him 20. So 20 plus 50 will give him 70. F of zero will be how much? Zero. So zero plus 30 gives him 30. Which one will F of two give the minimum? So it'll return 30. So F of two got 30. Perfect. So again, makes sense because if I logically explain you,  let me raise this. If I logically give you an explanation,  well this makes sense is this will make sense because  if I'm standing at F of two. Yes, if I'm standing at F of two,  there are a couple of ways. One is this one is the switch will cost him 20 plus 50 which is 70. Another one is this which is 30. So 30 is what we have got right."
+  },
+  {
+    "start": 981.04,
+    "end": 1038.66,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] Yes, if I'm standing at F of two,  there are a couple of ways. One is this one is the switch will cost him 20 plus 50 which is 70. Another one is this which is 30. So 30 is what we have got right. Now again similarly F of three. When you're at F of three, understand there is a left call of F of two plus the absolute difference which is from three to two. So if I'm doing from three to two, it's 50. So you can just take a plus 50. So what is F of two? It has returned you as 30. Correct? What's the right jump? The right jump is about F of one plus what? Now will you F of one? So from one to three will be zero. One to three will be zero. So plus zero. Now will you go and do the recursion call of F of one? Will you go and do again F of zero?"
+  },
+  {
+    "start": 1025.28,
+    "end": 1083.84,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] So from one to three will be zero. One to three will be zero. So plus zero. Now will you go and do the recursion call of F of one? Will you go and do again F of zero? F of one is already computed. You see? So it's overlapping sub problem. You can directly take the value from the dpr as 20. This gives you 20. This gives you 80. Which one will you take? The 20 obviously are. So F of three becomes 20. Perfect. So remember I'm storing the values of F of three F of two F of one. It probably some dpr as we have seen in my lecture one. Next you're at F of four. So F of four what is that doing? It's again calling F of three plus absolute of three to four will be 50. So 50. And it's calling F of two plus four to two will be zero."
+  },
+  {
+    "start": 1070.11,
+    "end": 1129.49,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] So F of four what is that doing? It's again calling F of three plus absolute of three to four will be 50. So 50. And it's calling F of two plus four to two will be zero. So I can do zero. What's F of three? If I write what's F of three? 20 what's F of two? 30. So 20 plus 50 70 this is 30. But you know today 30 again. An overlapping sub problem ignored. You did not F of two will not go deep into recursion because the  moment you call F of two. It will directly get the value 30 and return 30. So you got the minimum as 30 so F of four becomes 30. Perfect. Next step is this particular step F of three. So when I'm at F of five what's happening? I'm saying okay I can definitely go to F of four plus absolute of jumping from four to five  which is 10."
+  },
+  {
+    "start": 1117.69,
+    "end": 1175.75,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] So when I'm at F of five what's happening? I'm saying okay I can definitely go to F of four plus absolute of jumping from four to five  which is 10. So let's take 10. Similarly if I am jumping from five to three. If I'm jumping from five to three. Can I say it's 40? Yes. So plus 40 of F of three. Now carefully observed F of four is already 30. F of three is already 20. 30 plus 10 gives you 40 20 plus 40 gives you 60 which one will you take 40 or 60? Definitely 40. So this value is 40. thereby this recursion is also solved. So did you observe something? They have multiple sub problems that I ended up solving. Repeatedly overlapping sub problems as I said. So this is how generally a recursion tends to work. It goes on goes on because if a problem has been solved."
+  },
+  {
+    "start": 1161.08,
+    "end": 1218.46,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] They have multiple sub problems that I ended up solving. Repeatedly overlapping sub problems as I said. So this is how generally a recursion tends to work. It goes on goes on because if a problem has been solved. If you have already like if you already know what's some. What's the summation from 0 to 3? Why do you want to recompute it again? This we use it. That's what I've done and I've got the answer as 40 which was indeed the answer. This is how the recursion re-works and how you get the minimal possible. Generally if you draw this recursion tree by yourself you'll understand much more. But in general if you can remember these three stops three lines. Explain the problem in terms of index. Do all stuffs on that index. Take the minimum of all those stuffs. And then write the records. The ones you've written the records."
+  },
+  {
+    "start": 1206.79,
+    "end": 1263.07,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] Explain the problem in terms of index. Do all stuffs on that index. Take the minimum of all those stuffs. And then write the records. The ones you've written the records. How do you convert a recurrence into or dynamic programming solution? That's the next question. How do you convert a recurrence into or dp? So that's when you say memo, i.e. Okay. So take to apply Memories. Look at the parameters changing. Yes. Look at the parameters changing. Like which parameters are changing. Just look at them. You'll be like, Strava, there is only one parameter changing which is the one parameter. Let's come back. It's index. What are the maximum value of index? Let's look at the recursion tree. Five. So you'll require a six size array because in a six size array they'll be indexed by."
+  },
+  {
+    "start": 1248.58,
+    "end": 1305.74,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] Let's come back. It's index. What are the maximum value of index? Let's look at the recursion tree. Five. So you'll require a six size array because in a six size array they'll be indexed by. So you can definitely create a dp size of six over here which is indagly dp of n plus one. Remember three steps. Step one is this declare an array of size. Step two. Before returning add it up. dp of index. Before returning add it up. Store it and return. Step. So this is step two. What step three? Whenever you call an index. Yes. Whenever you call a recursion check. If it has been previously computed or not. If dp of index has been previously computed. No need to solve it again. Return dp of index. Done. Line number three. Converts a recursion to a memoization."
+  },
+  {
+    "start": 1290.79,
+    "end": 1346.94,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] If it has been previously computed or not. If dp of index has been previously computed. No need to solve it again. Return dp of index. Done. Line number three. Converts a recursion to a memoization. So I've converted a dp solution. In this converted a recursion solution into a dynamic programming. And if I talk about the time complexity. What will be it? One step two step three step four step five steps. These steps are constant because these are problems are not solved. So these steps are constant five steps. So n steps. So I can say the time complexity to be ego of n because there are n steps. I can say there is recursion stack space of ego of one. And in an array size of ego of n use. This is how the recursion will look alike. So it's now time to a coded and probably summited. And after that we can optimize this into tabulation."
+  },
+  {
+    "start": 1332.07,
+    "end": 1388.88,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] I can say there is recursion stack space of ego of one. And in an array size of ego of n use. This is how the recursion will look alike. So it's now time to a coded and probably summited. And after that we can optimize this into tabulation. And after that, probably into space optimization. So in the code, you're basically given n and given the heights. So I know I know I have to write a recursion solution. So probably I have to turn the in terms of index. And let's carry the height as well. Now the Java people, you can easily code it because I've explained the pseudo code  while explaining. So should not be a big issue for Java people as well. So I'll take anti function. Now I know the H cases if index reaches 0. I know the answer will be 0. And I know there will be electric caution call. And I know there will be a right recursion call. But we know one thing the right recursion call will always not happen."
+  },
+  {
+    "start": 1374.09,
+    "end": 1432.62,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] Now I know the H cases if index reaches 0. I know the answer will be 0. And I know there will be electric caution call. And I know there will be a right recursion call. But we know one thing the right recursion call will always not happen. So probably we can initially store that as intmax because this is not going to happen always. If index is greater than 1, then we can have the right as f of index minus 2 and pass on the heights. And then a plus of absolute of heights. Like you can just hide of index minus heights of index minus 2. There's something which you can definitely do. And over here what you can do is the same stuff. This makes sure you copy paste. And instead of index minus 2 do all the stuff. And that's how you do it. And then if they what you do you return minimum of left comma right correct."
+  },
+  {
+    "start": 1418.91,
+    "end": 1479.3,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] This makes sure you copy paste. And instead of index minus 2 do all the stuff. And that's how you do it. And then if they what you do you return minimum of left comma right correct. Now the question is very simple. So you can probably say return f of n minus 1 because that's the last index. And you can do all heights. So if I run this over this run, let's second up. Okay, so it says okay. So intmax it is not picking. So probably we have to use hash include bits, STD, C++, not H. Generally, generally it is added over there not your wire. They have not added it but not an issue. Let's quickly run this off. It's fair on it. You can see so far on it. You can see the first three test cases are running fine. And then there's a time limit exceeded because it's the simple recursive solution."
+  },
+  {
+    "start": 1464.96,
+    "end": 1521.76,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] It's fair on it. You can see so far on it. You can see the first three test cases are running fine. And then there's a time limit exceeded because it's the simple recursive solution. So how to convert this into a dp convert a 300 dp array of size n plus 1 because that's the maximum. Initialize that with minus 1. Now pass a dp. Oh yeah, just make sure you have a vector of int and you can just create a dp by reference. Make sure always carry the dp. That's the next step. Done. So step one of initialization and carrying on the parameters is done. Was an step. Step two is storing the answer before returning for the sub problem f. Done. Was an step. If the answer has come across, just check this is and it'll dp of index."
+  },
+  {
+    "start": 1508.06,
+    "end": 1564.65,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] Was an step. Step two is storing the answer before returning for the sub problem f. Done. Was an step. If the answer has come across, just check this is and it'll dp of index. So if I just do these changes and if I now run. Vingo works fine. All the rest cases. If I submit them,  you'll see it's it's absolutely correct. So this is how you can do the memoization stuff very, very easily. So in our, say in the first lecture told you after memoation, it's very important to understand how do we, or do the tabulation one and after that we will do the space optimization. What is memoation? Top down. Why? Let's understand. So in the recursion, if you observe, what did you do? You had a top portion, but first the down answers like you went from top to top."
+  },
+  {
+    "start": 1552.01,
+    "end": 1609.78,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] What is memoation? Top down. Why? Let's understand. So in the recursion, if you observe, what did you do? You had a top portion, but first the down answers like you went from top to top. Correct? What is tabulation? It's the exact top position. Yes, I repeat. It's the exact top position. Bottom up. Okay. That means you'll start from the bottom and you'll go up. So always look at the  recursion tree. Always look at the recursion tree. What's at the bottom? Yes. So you'll go up and then you'll fill it. You'll take zero. You'll fill one. Then you'll fill  two. Then you'll fill three. Then you'll fill four. You'll fill five. You'll go from the bottom to the. So that's tabulation. Understood? Now what did I tell you? Intagulation. What's the first step? Step one is to see in memoation how much BPRIDD use? We know we used our BP array of size n plus one."
+  },
+  {
+    "start": 1596.46,
+    "end": 1653.59,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] So that's tabulation. Understood? Now what did I tell you? Intagulation. What's the first step? Step one is to see in memoation how much BPRIDD use? We know we used our BP array of size n plus one. So just without thinking anything of you can  initialize that. Okay. So without thinking anything you can initialize that. In other  way it will be n. Like even if you initialize any it will work because we have used zero based indexing. So make sure everything is initialized with minus one or you can initialize that with zero doesn't  matter over here. So first thing is done. What's the next time? Look for the base case because  in recursion it'll stop down. It's downpour like bottom up. So what's the base case? Let's look at  the base case sets index equal to zero returns zero index equal to zero."
+  },
+  {
+    "start": 1642.92,
+    "end": 1698.06,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] It's downpour like bottom up. So what's the base case? Let's look at  the base case sets index equal to zero returns zero index equal to zero. Index equal to zero. So whatever is that you'll write that. BP of zero is equal to zero just write it. After that  just look at the recursion state these lines when will it be executed? I can be like it will be executed at one two three four and so on till n minus one of the index makes sense because the worst call that I'll make will be n minus one. So it will be executed for sure. I will like yes. So please write it. I equal to one ln minus one run a fall loop. Perfect. What's the next step? Just go ahead look at the recursion. What am I doing? What's the what's the stop down on the index?"
+  },
+  {
+    "start": 1683.64,
+    "end": 1742.58,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] So please write it. I equal to one ln minus one run a fall loop. Perfect. What's the next step? Just go ahead look at the recursion. What am I doing? What's the what's the stop down on the index? Yes. Deplace this with dp and write it. So the first step is very simple. I can say if I take first step it will be dp of index minus one plus absolute of array of index minus array of index minus one. Simple. I can say second step will only implicate if I is greater than one  remember super super super super. Second step will only implement if that's true. So dp of index minus two plus absolute of a of index minus a of index minus two as simple as it gets and what do you store."
+  },
+  {
+    "start": 1729.96,
+    "end": 1788.39,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] So dp of index minus two plus absolute of a of index minus a of index minus two as simple as it gets and what do you store. Store it dp of index will be minimum of dp of index minus sorry dp of first step and second step as simple as it can get and if you write this it's definitely going to work wonders. So I'll try to show you over here like I just erase this and over here if I just write the same thing like you'll see over here. If I write the same thing like I'll write dp of 0 to be 0 for anti i equal to one i less than n i plus plus okay and I can write i and the"
+  },
+  {
+    "start": 1774.22,
+    "end": 1833.04,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] If I write the same thing like I'll write dp of 0 to be 0 for anti i equal to one i less than n i plus plus okay and I can write i and the first step will be very simple dp of i minus one plus absolute of heights i minus heights of height i minus one right and what about the second step I can say the second step will be very simple. I can initially keep it as index correct and what I can say is second step will only be implicated if index is greater than one and the second step will be nothing but dp of i minus two plus absolute of heights of i minus heights of i minus two as simple as it gets and the dp of i will be minimum of dp of i minus one sorry minimum"
+  },
+  {
+    "start": 1819.9,
+    "end": 1878.67,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] i minus two plus absolute of heights of i minus heights of i minus two as simple as it gets and the dp of i will be minimum of dp of i minus one sorry minimum of first step comma second step and what do you need to return? You need to return the answer will always be stored at the last index and thereby if I just take this off now and now if I try to run you see it's running and I've tried to sum it works fine so we can convert this into tabulation so easily by a recursion can be converted into a tabulation now the question arises can we reduce the space because over here we are we are definitely reducing the uh stack space that we used over here this is reduced but there's still a big of n being used because as I"
+  },
+  {
+    "start": 1867.77,
+    "end": 1924.43,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] we are we are definitely reducing the uh stack space that we used over here this is reduced but there's still a big of n being used because as I can see we are still using a dp of n array and the time complexity cannot be reduced but can I omit this? Let's see can we omit this? I did tell you one thing anytime there is something like index minus one index minus two there can always be an space if this as a thumb rule there will always be an space optimization if there is something like index minus one and index minus two always these states can be now let me or there is something assume you are at index zero one two three four and so on till n minus one okay initially initially as you just as you you are over here and this is nothing but dp of i and you are saying this as dp of i minus one"
+  },
+  {
+    "start": 1913.33,
+    "end": 1972.18,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] on till n minus one okay initially initially as you just as you you are over here and this is nothing but dp of i and you are saying this as dp of i minus one and you are saying this as dp of i minus two yes saying all right in the next step whenever i will increase can I say the i will go over here and this will be dp of i this will be dp of i minus one this will be dp of i minus two indeed I can there's no doubt I cannot in the next step can I say this will be dp of i this will be dp of i minus one this will be dp of i minus two there's no doubt so d of sub a pattern the guy who was dp of i minus one for this particular i in the next step in the next step when the i increases to the next index three the guy who was i minus one that means he was the previous he'll become the second previous of the next he'll become the"
+  },
+  {
+    "start": 1959.05,
+    "end": 2016.27,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] the next step when the i increases to the next index three the guy who was i minus one that means he was the previous he'll become the second previous of the next he'll become the second previous of the next makes sense so he'll become this so can I say dp of i minus two will become this right so do you need to carry or array can't I do this using couple of variables like think can't you do this using couple of variables can answer to that will be yeah I think we can because what we require at any particular instance i is the previous guy and the second previous guy I don't need anything more why the hell do I need to declare a dp array I don't need anything else thereby I can say okay so that makes sense let's assume I do it this way this is car i I said this is previous i"
+  },
+  {
+    "start": 2004.47,
+    "end": 2061.7,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] to declare a dp array I don't need anything else thereby I can say okay so that makes sense let's assume I do it this way this is car i I said this is previous i and I said this is previous to i instead of storing them into an array in the next step I know this will become car i another car i will become previous i and the previous i will become previous to i so can I just use couple of variables where I say previous to i for the next step whenever you've done all the steps the previous i will become the previous to i because whoever is previous will become second previous for the next step and whoever is the current guy like whatever is the value of dp of i that will become the previous for the next step so if you just keep on doing this you will no more require anything"
+  },
+  {
+    "start": 2049.02,
+    "end": 2105.09,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] is the current guy like whatever is the value of dp of i that will become the previous for the next step so if you just keep on doing this you will no more require anything so can I say this can I say this instead of dp of 0 can I carry a previous equal to 0 make sense i can and can I carry a previous or 2 equal to a probability 0 as well because for the first for the first you'll require dp of index minus 1 which I can represent as previous now correct and this I can represent as previous to because that has what we recommend and after that can I say in the next step the previous to will be previous and the previous will be nothing but third i and this guy will be third i make sense make sense and what will be the answer at the end whenever you exceed i"
+  },
+  {
+    "start": 2092.33,
+    "end": 2151.84,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] will be previous and the previous will be nothing but third i and this guy will be third i make sense make sense and what will be the answer at the end whenever you exceed i will go beyond n minus 1 and whenever this fall loop ends the value of i will be n is the value of i will be over here and for this guy for this guy previous will be at n minus 1 and you always require the answer of n minus 1 so you can say whatever is the answer for previous will be your answer so you can easily print the answer as previous so if you do this you will be able to get your space optimized and you'll know more be requiring a dp array so if i try to write this in the code probably i'll delete this and i can keep a previous or equal to 0 i can keep a previous or 2 as well as 0 and i can"
+  },
+  {
+    "start": 2140.28,
+    "end": 2195.58,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] i try to write this in the code probably i'll delete this and i can keep a previous or equal to 0 i can keep a previous or 2 as well as 0 and i can just omit this to previous and i can just omit this to previous or 2 and i can be like this to be correct and i can say the previous 2 will become previous now and the previous guy will be for the next step will be correct and at the end of the day instead of dp of n because i will be at n minus 1 so i can definitely return something as previous so we're on this here it works let's omit and as working fine so we have done a space optimization yes we have done a space optimization so this is how this problem can be easily solved so this is how i can space optimized"
+  },
+  {
+    "start": 2184.14,
+    "end": 2240.4,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] we have done a space optimization yes we have done a space optimization so this is how this problem can be easily solved so this is how i can space optimized it i hope you have understood this space optimization now there's a follow up to this wonderful problem okay now this question stated you can jump to i plus 1 and you can jump to i plus 2 that's the that you put now this follow up states the follow up states there can be key jumps yes the follow up states that they can be k jumps and instead of i plus 1 you can jump to i plus 1 i plus 2 i plus 3 till i plus k that's what i'm seeing so if i change the question to this can you solve this problem now i'll give you this as a homework okay so take this question as a homework i want you to do k if you if you are using k jumps then probably you cannot use space"
+  },
+  {
+    "start": 2229.31,
+    "end": 2285.3,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] now i'll give you this as a homework okay so take this question as a homework i want you to do k if you if you are using k jumps then probably you cannot use space optimization because then there will not be a couple of stuff there will be k previous elements that you have to carry you will not be able to use stop the tie told you but yeah the stuff that i gave you was the follow up is very simple right to do it using k jumps i will expect the codes in the comment section and i'll be discussing this problem right before starting the lecture before starting the lecture before i'll definitely be discussing this problem k jumps where i'll tell you how to change this problem slightly and you'll be able to do this problem for k jumps so guys if you have both this video till now and if you want this to do everything you know what to do this is what i"
+  },
+  {
+    "start": 2275.89,
+    "end": 2324.64,
+    "text": "[Video: DP 3: Frog Jump (1 or 2 Stairs)] be able to do this problem for k jumps so guys if you have both this video till now and if you want this to do everything you know what to do this is what i expect even if you are very very very lazy please comment u s u s means understood and this is something which you should always do you are watching these videos because it takes a lot of effort to make these kind of videos and yes if you are new to the channel please please do consider subscribing and please do share this channel among your college mates friends wherever you can and if you haven't checked out our SD sheet yet oh man what are you doing it's an SD sheet link in the description go and check it out that's the ultimate resource for please mits man and yeah with this all let's have a this video and grab a milk in the next one tomorrow."
+  }
+]

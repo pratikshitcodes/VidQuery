@@ -1,0 +1,952 @@
+[
+  {
+    "start": 0.0,
+    "end": 5.47,
+    "text": "We'll go back to take you forward where we are trying to take you forward."
+  },
+  {
+    "start": 5.47,
+    "end": 11.61,
+    "text": "So DPA team is what we will be doing today But before that I'd love to address some"
+  },
+  {
+    "start": 11.61,
+    "end": 17.6,
+    "text": "of the comments That way there in the DPS 17 video What was DPS 17 video find the"
+  },
+  {
+    "start": 17.6,
+    "end": 23.74,
+    "text": "number of subsets yes find the number of subsets who some is EQ valid to k okay and"
+  },
+  {
+    "start": 23.74,
+    "end": 29.88,
+    "text": "in that video in that video a Lot of people were saying me strive what if the array"
+  },
+  {
+    "start": 29.88,
+    "end": 35.57,
+    "text": "is given us to as zero comma zero comma one and The sum is one your code will"
+  },
+  {
+    "start": 35.57,
+    "end": 42.82,
+    "text": "just give you the answer as one subset Ideally it should have been four subsets because zero comma"
+  },
+  {
+    "start": 42.82,
+    "end": 49.4,
+    "text": "one where I consider this zero and this one Then zero comma one where I consider the next"
+  },
+  {
+    "start": 49.4,
+    "end": 55.83,
+    "text": "zero and next one Zero comma zero where I consider both the zeros and one and then just"
+  },
+  {
+    "start": 55.83,
+    "end": 62.19,
+    "text": "the one so ideally The answer should have been four so how did the previous code pass?"
+  },
+  {
+    "start": 62.19,
+    "end": 67.96,
+    "text": "So if I just go back to the code of the number of subsets if you carefully see"
+  },
+  {
+    "start": 67.96,
+    "end": 74.32,
+    "text": "in the test cases It's clearly written the numbers will be creed as I need to do that."
+  },
+  {
+    "start": 74.32,
+    "end": 75.8,
+    "text": "That's why I did not"
+  },
+  {
+    "start": 75.8,
+    "end": 83.01,
+    "text": "Consider that case because we were clearly told that there will be no  cases where there will be zero."
+  },
+  {
+    "start": 83.01,
+    "end": 88.95,
+    "text": "That is the only reason it did pass Now how do you solve this problem imagine I just"
+  },
+  {
+    "start": 88.95,
+    "end": 94.89,
+    "text": "change the constraints to be EQ to zero like I say all the array of elements will be"
+  },
+  {
+    "start": 94.89,
+    "end": 101.25,
+    "text": "greater than equal to zero So in that case how will you solve this particular problem is a"
+  },
+  {
+    "start": 101.25,
+    "end": 102.52,
+    "text": "big concern right?"
+  },
+  {
+    "start": 102.52,
+    "end": 106.2,
+    "text": "So can I see this can I see this that if it is zero?"
+  },
+  {
+    "start": 106.2,
+    "end": 112.21,
+    "text": "does zero all the sum No because a nation of zero or removal of zero will never alter"
+  },
+  {
+    "start": 112.21,
+    "end": 117.73,
+    "text": "the sum the sum will still stay the same So that is the idea that we will take"
+  },
+  {
+    "start": 117.73,
+    "end": 124.38,
+    "text": "into consideration and we will compute the number of zeros and the number of zeros come out to"
+  },
+  {
+    "start": 124.38,
+    "end": 130.39,
+    "text": "be two Because the array was zero comma zero comma one number of zeros come out to be"
+  },
+  {
+    "start": 130.39,
+    "end": 136.05,
+    "text": "two in how many ways Two zeros can be represented one is this one is this one is"
+  },
+  {
+    "start": 136.05,
+    "end": 141.78,
+    "text": "this One is double zero one is the empty subset and we're just add one to both of"
+  },
+  {
+    "start": 141.78,
+    "end": 147.86,
+    "text": "them which was the subset that I was creating I'll get zero one I'll get zero one I'll"
+  },
+  {
+    "start": 147.86,
+    "end": 153.02,
+    "text": "get zero one I'll get just the one so if I can figure out how many ways I"
+  },
+  {
+    "start": 153.02,
+    "end": 154.92,
+    "text": "can represent the two zeros"
+  },
+  {
+    "start": 154.92,
+    "end": 160.43,
+    "text": "How many ways I can represent the two zeros then the answer will be there So how many"
+  },
+  {
+    "start": 160.43,
+    "end": 166.33,
+    "text": "ways can you represent the two zeros it's two to the power n comes from the algorithm power"
+  },
+  {
+    "start": 166.33,
+    "end": 171.9,
+    "text": "set So if you don't know the algorithm please check it out the number of ways in which"
+  },
+  {
+    "start": 171.9,
+    "end": 178.31,
+    "text": "you can represent numbers are to the power n into the original answer where the original answer was"
+  },
+  {
+    "start": 178.31,
+    "end": 183.43,
+    "text": "one So To the power two into one is four into one is four subsets So that's one"
+  },
+  {
+    "start": 183.43,
+    "end": 189.2,
+    "text": "of the ways you'll solve it where you say that you're going to compute the power like the"
+  },
+  {
+    "start": 189.2,
+    "end": 194.71,
+    "text": "number of zeros and then You just do power to the power n into what the answer you're"
+  },
+  {
+    "start": 194.71,
+    "end": 200.15,
+    "text": "getting from the written S case But the question is how do you correct it how do you"
+  },
+  {
+    "start": 200.15,
+    "end": 205.92,
+    "text": "Correct it because that is the biggest Stop that we have to understand So why did it fail"
+  },
+  {
+    "start": 205.92,
+    "end": 210.78,
+    "text": "let's go to the code so in the code if you carefully see there is a line if"
+  },
+  {
+    "start": 210.78,
+    "end": 216.42,
+    "text": "some equal equal to zero So eventually what happens is if I give you an array like zero"
+  },
+  {
+    "start": 216.42,
+    "end": 221.93,
+    "text": "comma zero comma one and And I am starting from here Which is the second index with a"
+  },
+  {
+    "start": 221.93,
+    "end": 227.11,
+    "text": "sum one so whenever I say don't eat yes whenever I say don't take I'll go to one"
+  },
+  {
+    "start": 227.11,
+    "end": 230.92,
+    "text": "comma one but whenever I say take I'll go to one comma zero"
+  },
+  {
+    "start": 230.92,
+    "end": 235.87,
+    "text": "Because if I take this guy this one will be one minus one and this is where I'll"
+  },
+  {
+    "start": 235.87,
+    "end": 239.59,
+    "text": "go So if I go to f of one comma zero I get a zero and if you"
+  },
+  {
+    "start": 239.59,
+    "end": 244.92,
+    "text": "remember in the code the first line itself stated if some is equal to equal to zero So"
+  },
+  {
+    "start": 244.92,
+    "end": 250.86,
+    "text": "this is why you return one so these couple of zeros are actually not considered thereby there is"
+  },
+  {
+    "start": 250.86,
+    "end": 254.89,
+    "text": "a problem so what I can say is I need to go deep yes I need to go"
+  },
+  {
+    "start": 254.89,
+    "end": 259.97,
+    "text": "deep instead of returning from here I need to go to non take which will take to my"
+  },
+  {
+    "start": 259.97,
+    "end": 264.8,
+    "text": "zero comma zero I'll again Go to here when I am at zero comma zero then I have"
+  },
+  {
+    "start": 264.8,
+    "end": 269.82,
+    "text": "to think of something so basically I have to go deep So in the first thing that I"
+  },
+  {
+    "start": 269.82,
+    "end": 275.21,
+    "text": "will do in the code is I'll remove this if some equal to zero because that is something"
+  },
+  {
+    "start": 275.21,
+    "end": 280.66,
+    "text": "which is creating problem And I have to go deep till index Equal to zero and that's when"
+  },
+  {
+    "start": 280.66,
+    "end": 285.55,
+    "text": "I think of the base case And that's when I think of the base case now what will"
+  },
+  {
+    "start": 285.55,
+    "end": 290.81,
+    "text": "be the base case is let's think If you are just standing at the index zero that means"
+  },
+  {
+    "start": 290.81,
+    "end": 295.89,
+    "text": "just have a single element right and imagine if the sum is zero If the sum is zero"
+  },
+  {
+    "start": 295.89,
+    "end": 301.15,
+    "text": "and the element is zero What options do you have It will extra go either you can take"
+  },
+  {
+    "start": 301.15,
+    "end": 306.85,
+    "text": "this guy into your subsequent because then also the sum will not be altered or striver if we"
+  },
+  {
+    "start": 306.85,
+    "end": 310.0,
+    "text": "will not take it then also there will be no problem"
+  },
+  {
+    "start": 310.0,
+    "end": 315.54,
+    "text": "So there are two options with the single guy there are two options You say I'll take the"
+  },
+  {
+    "start": 315.54,
+    "end": 321.58,
+    "text": "zero into consideration or you'll say I'm not going to take this into consideration So I can say"
+  },
+  {
+    "start": 321.58,
+    "end": 326.36,
+    "text": "if it is a zero and the sum is zero I will have two options either I'll take"
+  },
+  {
+    "start": 326.36,
+    "end": 331.27,
+    "text": "the zero or I'll not take this zero So the first base case is very simple if a"
+  },
+  {
+    "start": 331.27,
+    "end": 336.18,
+    "text": "sum is zero and and array of Zero is also zero then I can return or two that's"
+  },
+  {
+    "start": 336.18,
+    "end": 341.72,
+    "text": "the first base case because there can be two possible ways in which you can form the sub"
+  },
+  {
+    "start": 341.72,
+    "end": 346.94,
+    "text": "sequence by taking it or by not taking it Let's think of the other case I'm at zero"
+  },
+  {
+    "start": 346.94,
+    "end": 351.91,
+    "text": "and we have some five and the sum is zero So if you're looking at some zero and"
+  },
+  {
+    "start": 351.91,
+    "end": 356.94,
+    "text": "if you decide to take this guy Then the sum will be altered so you just have one"
+  },
+  {
+    "start": 356.94,
+    "end": 362.73,
+    "text": "way which is not taking because if you don't take this Then the sub sequence will still have"
+  },
+  {
+    "start": 362.73,
+    "end": 367.57,
+    "text": "a sum zero Then I can say else if Or you can just write it if because there's"
+  },
+  {
+    "start": 367.57,
+    "end": 373.23,
+    "text": "a written statement if sum is equal to zero You return one because there's only one way if"
+  },
+  {
+    "start": 373.23,
+    "end": 377.89,
+    "text": "this is five at the zero index and the sum is five Then if I don't take it"
+  },
+  {
+    "start": 377.89,
+    "end": 382.73,
+    "text": "then the sum will not go to zero which is Problem because it will not go if I"
+  },
+  {
+    "start": 382.73,
+    "end": 387.64,
+    "text": "don't take it but if I take it then minus five will happen and the sum will go"
+  },
+  {
+    "start": 387.64,
+    "end": 388.08,
+    "text": "to zero"
+  },
+  {
+    "start": 388.08,
+    "end": 392.8,
+    "text": "So again a single way so can I say either this or some equal equal to array of"
+  },
+  {
+    "start": 392.8,
+    "end": 398.07,
+    "text": "zero Then it'll return one and all the other cases are return zero So that's how we can"
+  },
+  {
+    "start": 398.07,
+    "end": 403.46,
+    "text": "modify by removing the first line of if statements Now what I'll do is I'll just open the"
+  },
+  {
+    "start": 403.46,
+    "end": 408.48,
+    "text": "console and probably I'll give one test case And three is the RSI is one is the sum"
+  },
+  {
+    "start": 408.48,
+    "end": 409.33,
+    "text": "zero zero one."
+  },
+  {
+    "start": 409.33,
+    "end": 412.18,
+    "text": "So ideally this should run  Let's check it out."
+  },
+  {
+    "start": 412.18,
+    "end": 417.63,
+    "text": "So you see the answer is now coming out to be four which they're not expecting because The"
+  },
+  {
+    "start": 417.63,
+    "end": 423.5,
+    "text": "code has been written like the tester has written the code in terms of numbers greater than equal"
+  },
+  {
+    "start": 423.5,
+    "end": 427.8,
+    "text": "to one There is a problem but you see the answer coming out to be true."
+  },
+  {
+    "start": 427.8,
+    "end": 432.76,
+    "text": "So that's the slide change that you will do in some equal to Like you have to just"
+  },
+  {
+    "start": 432.76,
+    "end": 437.78,
+    "text": "assume the sum equal to zero and let it travel to the last index just let it travel"
+  },
+  {
+    "start": 437.78,
+    "end": 443.77,
+    "text": "to the last index Without actually stopping it in between so that's the minus change that you'll so"
+  },
+  {
+    "start": 443.77,
+    "end": 448.25,
+    "text": "enough of d p 17 Now let's come back to the original stuff which is d p 18"
+  },
+  {
+    "start": 448.25,
+    "end": 449.64,
+    "text": "So what is the problem?"
+  },
+  {
+    "start": 449.64,
+    "end": 455.51,
+    "text": "The problem is eight partitions with given difference So a given an array which is using an array"
+  },
+  {
+    "start": 455.51,
+    "end": 461.44,
+    "text": "partition So given an array right partition it into two subsets two subsets Such that the union is"
+  },
+  {
+    "start": 461.44,
+    "end": 466.72,
+    "text": "the original array that means you can take an array and partition them into two subsets"
+  },
+  {
+    "start": 466.72,
+    "end": 472.88,
+    "text": "Let the sum of the elements of these two subsets we s1 and s2 fine given a difference"
+  },
+  {
+    "start": 472.88,
+    "end": 479.04,
+    "text": "the Count the number of partitions in which s1 is greater Than or equal to s2 and the"
+  },
+  {
+    "start": 479.04,
+    "end": 486.21,
+    "text": "difference between s1 and s2 is equal to d So basically if I understand the question properly there"
+  },
+  {
+    "start": 486.21,
+    "end": 492.51,
+    "text": "is an array given you have to Basically divide them into two parts So that this part is"
+  },
+  {
+    "start": 492.51,
+    "end": 499.03,
+    "text": "giving you an s1 which is greater than equal to s2 and the difference between s1 and minus"
+  },
+  {
+    "start": 499.03,
+    "end": 505.26,
+    "text": "s2 should be equal to d And if to count how many different subsets can you divide them"
+  },
+  {
+    "start": 505.26,
+    "end": 511.71,
+    "text": "into such that this is true So let's take one of the examples something like five two six"
+  },
+  {
+    "start": 511.71,
+    "end": 517.43,
+    "text": "four so predict five two six four This is the array and the d is given a string"
+  },
+  {
+    "start": 517.43,
+    "end": 522.65,
+    "text": "so if I take this I can be like the two subsets will be five two and Six"
+  },
+  {
+    "start": 522.65,
+    "end": 527.79,
+    "text": "and four So this will give me a sum of 10 this will give me a seven and"
+  },
+  {
+    "start": 527.79,
+    "end": 534.89,
+    "text": "you will get the difference as Three so get the difference as three now Subset means sub sequences"
+  },
+  {
+    "start": 534.89,
+    "end": 541.05,
+    "text": "so it's not that it has to be consecutive you can pick up from anywhere So Think most"
+  },
+  {
+    "start": 541.05,
+    "end": 543.6,
+    "text": "of you have understood the question"
+  },
+  {
+    "start": 543.6,
+    "end": 550.46,
+    "text": "It's pretty much similar to the dp 15 that we did but over here we need to Check"
+  },
+  {
+    "start": 550.46,
+    "end": 558.26,
+    "text": "this out because that's the main concern that we will be having okay So what is the problem"
+  },
+  {
+    "start": 558.26,
+    "end": 565.12,
+    "text": "telling us to find the selling is to find how many sub set up there Which have a"
+  },
+  {
+    "start": 565.12,
+    "end": 571.98,
+    "text": "difference s1 minus s2 equal to d Where s1 is greater than s2 right so can I say"
+  },
+  {
+    "start": 571.98,
+    "end": 578.58,
+    "text": "can I say this that S1 can also be written as total sum minus s2 if total sum"
+  },
+  {
+    "start": 578.58,
+    "end": 586.47,
+    "text": "is the total summation of array limits because We just remove s2 sum you'll be left out with"
+  },
+  {
+    "start": 586.47,
+    "end": 592.9,
+    "text": "s1 sum right so can I just replace this and can I it will be like total sum"
+  },
+  {
+    "start": 592.9,
+    "end": 599.33,
+    "text": "Minus s2 minus s2 equal to do yes thereby it will be total sum minus d if I"
+  },
+  {
+    "start": 599.33,
+    "end": 605.59,
+    "text": "take the d other side and 2 into s2 there by s2 will be total sum minus d"
+  },
+  {
+    "start": 605.59,
+    "end": 612.88,
+    "text": "by 2 so can I say I'm looking for Subset yes I'm looking for subsets which are having"
+  },
+  {
+    "start": 612.88,
+    "end": 620.16,
+    "text": "yes, which are having Summation as total sum minus d by 2 so the question was down to"
+  },
+  {
+    "start": 620.16,
+    "end": 628.11,
+    "text": "Count find the count of subsets Who sum is total sum minus the difference by 2 and this"
+  },
+  {
+    "start": 628.11,
+    "end": 635.88,
+    "text": "is nothing but dp 17 dp 17 with a modified target with a modified target We have just"
+  },
+  {
+    "start": 635.88,
+    "end": 642.46,
+    "text": "modified the target It has easy as it can get but do we have edge cases?"
+  },
+  {
+    "start": 642.46,
+    "end": 651.23,
+    "text": "We definitely know that the constraints told us that the numbers will be like all the numbers of"
+  },
+  {
+    "start": 651.23,
+    "end": 658.36,
+    "text": "i will be greater than equal to 0 So we know one thing for sure this cannot go"
+  },
+  {
+    "start": 658.36,
+    "end": 666.95,
+    "text": "negative Definitely this cannot go negative it has to be greater than equal to 0 that's one of"
+  },
+  {
+    "start": 666.95,
+    "end": 674.63,
+    "text": "the cases that total sum minus d has to be greater than 0 why because if I'm looking"
+  },
+  {
+    "start": 674.63,
+    "end": 678.01,
+    "text": "for a sum and that's what is the sum?"
+  },
+  {
+    "start": 678.01,
+    "end": 685.32,
+    "text": "This sum is sum of a subset So if it's a subset and the numbers are greater than"
+  },
+  {
+    "start": 685.32,
+    "end": 692.91,
+    "text": "0 how can a sum of a subset be negative thereby this element has to be greater than"
+  },
+  {
+    "start": 692.91,
+    "end": 695.28,
+    "text": "0 A dividing by 2 so again"
+  },
+  {
+    "start": 695.28,
+    "end": 701.12,
+    "text": "There is no fractions all the numbers are 0s 1s 2 so all are integers so if all"
+  },
+  {
+    "start": 701.12,
+    "end": 708.07,
+    "text": "i integers you can't have a decimal right thereby the other edge case would be total sum minus"
+  },
+  {
+    "start": 708.07,
+    "end": 713.39,
+    "text": "d has to be even has to be even right so there are two edge cases has to"
+  },
+  {
+    "start": 713.39,
+    "end": 719.74,
+    "text": "be positive because all the numbers are greater than equal to 0 so that so the sum has"
+  },
+  {
+    "start": 719.74,
+    "end": 725.58,
+    "text": "to be 0 greater than 0 and it has to be even because you don't have decimals so"
+  },
+  {
+    "start": 725.58,
+    "end": 732.53,
+    "text": "just check for these couple of cases and then the question boils down to count of subsets Yes,"
+  },
+  {
+    "start": 732.53,
+    "end": 739.11,
+    "text": "that is what the question boils down to So we need the number of subsets concept right so"
+  },
+  {
+    "start": 739.11,
+    "end": 745.61,
+    "text": "this copy paste the entire changed code that we wrote for 0s and now we'll paste it over"
+  },
+  {
+    "start": 745.61,
+    "end": 751.59,
+    "text": "here right and over here can I say this that we require the total sum so that's 0"
+  },
+  {
+    "start": 751.59,
+    "end": 757.57,
+    "text": "and then we can easily go across the array and we can add total sum plus equal to"
+  },
+  {
+    "start": 757.57,
+    "end": 764.07,
+    "text": "ID that is something which you have to right also next stuff we know the total sum minus"
+  },
+  {
+    "start": 764.07,
+    "end": 769.17,
+    "text": "d has to be greater than 0 so if it is less than 0 that goes as false"
+  },
+  {
+    "start": 769.17,
+    "end": 770.72,
+    "text": "and total sum minus d"
+  },
+  {
+    "start": 770.72,
+    "end": 776.47,
+    "text": "has to be even so if it's odd it's still gone so I can just return a false"
+  },
+  {
+    "start": 776.47,
+    "end": 782.69,
+    "text": "so we have pretty much done with the false now we just need to a two return find"
+  },
+  {
+    "start": 782.69,
+    "end": 788.52,
+    "text": "ways and we call the array and we give the target as total sum minus d by 2"
+  },
+  {
+    "start": 788.52,
+    "end": 794.35,
+    "text": "so if I can just find the number of subsets where total sum minus d by 2 it"
+  },
+  {
+    "start": 794.35,
+    "end": 800.8,
+    "text": "does work but over here they have asked since the answer may be 2 large you have to"
+  },
+  {
+    "start": 800.8,
+    "end": 806.7,
+    "text": "return more 0 10 to the power 9 plus 7 so earlier you can just declare a mod"
+  },
+  {
+    "start": 806.7,
+    "end": 812.22,
+    "text": "equal to 1 in 9 plus 7 and over here just make sure you give a mod that"
+  },
+  {
+    "start": 812.22,
+    "end": 818.82,
+    "text": "should be fine let's so that was about the memo I should but how can we optimise this"
+  },
+  {
+    "start": 818.82,
+    "end": 826.36,
+    "text": "obviously we can write tabulation so what I'll do is I'll copy paste the tabulation that we wrote"
+  },
+  {
+    "start": 826.36,
+    "end": 833.59,
+    "text": "over here but this is definitely not going to work because it does not handles the case where"
+  },
+  {
+    "start": 833.59,
+    "end": 839.49,
+    "text": "we have 0s so what did we change if you remember we moved sum of 0 so please"
+  },
+  {
+    "start": 839.49,
+    "end": 845.39,
+    "text": "remove sum of 0 because this is our sum of 0 at every next so we remove this"
+  },
+  {
+    "start": 845.39,
+    "end": 846.16,
+    "text": "first case"
+  },
+  {
+    "start": 846.16,
+    "end": 854.43,
+    "text": "this let's think about this afterwards let's write the other cases what's the first case if sum is"
+  },
+  {
+    "start": 854.43,
+    "end": 859.75,
+    "text": "0 and the number is 0 at nx 0 so if the number is 0 and then dp"
+  },
+  {
+    "start": 859.75,
+    "end": 864.9,
+    "text": "of 0 at 0 will be 2 else dp of 0 at 0 will be 1 basically I'm"
+  },
+  {
+    "start": 864.9,
+    "end": 873.25,
+    "text": "saying at index 0 if the sum is 0 because the first parameter represents index the second parameter"
+  },
+  {
+    "start": 873.25,
+    "end": 879.16,
+    "text": "represents up so if at 0 the sum is also 0 and the number is also 0 so"
+  },
+  {
+    "start": 879.16,
+    "end": 885.24,
+    "text": "we have two cases a cannot take or else if I'm at index 0 and the sum is"
+  },
+  {
+    "start": 885.24,
+    "end": 891.32,
+    "text": "0 but the number is not 0 and there is only one way which is not take so"
+  },
+  {
+    "start": 891.32,
+    "end": 898.49,
+    "text": "the way one case what about this case number 0 less of the equal to target because at"
+  },
+  {
+    "start": 898.49,
+    "end": 905.07,
+    "text": "the 0th index there can be a number assume 5 and the target is also 5 so there"
+  },
+  {
+    "start": 905.07,
+    "end": 912.16,
+    "text": "is only one way so you might think this is correct but this will fail what if number"
+  },
+  {
+    "start": 912.16,
+    "end": 917.64,
+    "text": "of 0 is 1 0 only then it should have been it will come as dp of 0"
+  },
+  {
+    "start": 917.64,
+    "end": 923.46,
+    "text": "of 0 as 1 which is wrong so make sure the number of 0 is not equal to"
+  },
+  {
+    "start": 923.46,
+    "end": 929.44,
+    "text": "0 in that case anywhere anywhere I explain the case of 5 if it contains"
+  },
+  {
+    "start": 929.44,
+    "end": 935.04,
+    "text": "5 then it will just have one way right so you just write at 5 there's only one"
+  },
+  {
+    "start": 935.04,
+    "end": 940.06,
+    "text": "way but if it is having 0 then it is bound to have two ways so this is"
+  },
+  {
+    "start": 940.06,
+    "end": 945.87,
+    "text": "the two ways if it is not having 0 it is having other numbers like 7 there's this"
+  },
+  {
+    "start": 945.87,
+    "end": 951.61,
+    "text": "only one way in which you can make the sum 0 those cases is what I've written so"
+  },
+  {
+    "start": 951.61,
+    "end": 957.71,
+    "text": "if you just now try to submit it this is definitely going to run find so let's submit"
+  },
+  {
+    "start": 957.71,
+    "end": 964.17,
+    "text": "this it does run and if I submit this it will definitely give me accepted answer so what's"
+  },
+  {
+    "start": 964.17,
+    "end": 969.84,
+    "text": "the next step why did it give us a wrong answer oh we forgot to apply modulo to"
+  },
+  {
+    "start": 969.84,
+    "end": 976.59,
+    "text": "it so please apply modulo to it very important concept please make sure you apply modulo to it"
+  },
+  {
+    "start": 976.59,
+    "end": 983.91,
+    "text": "every time you submit so after applying modulo I will be submitting this and this should definitely be"
+  },
+  {
+    "start": 983.91,
+    "end": 990.8,
+    "text": "working fine so what is the next step the next step is definitely space optimization so you know"
+  },
+  {
+    "start": 990.8,
+    "end": 997.19,
+    "text": "in order to do space optimization it's very simple it just omit this and you keep one row"
+  },
+  {
+    "start": 997.19,
+    "end": 1003.15,
+    "text": "so vector of end previous of target plus 1 comma 0 current of target plus 1 comma 0"
+  },
+  {
+    "start": 1003.15,
+    "end": 1005.44,
+    "text": "right and over here you can just"
+  },
+  {
+    "start": 1005.44,
+    "end": 1011.98,
+    "text": "do previous y all second just do previous and over here also you just can do previous sanity"
+  },
+  {
+    "start": 1011.98,
+    "end": 1017.81,
+    "text": "and once you've done this you know a dp of index minus 1 it changes to previous dp"
+  },
+  {
+    "start": 1017.81,
+    "end": 1023.57,
+    "text": "of index minus 1 it changes to previous and over here at dp of index it's more of"
+  },
+  {
+    "start": 1023.57,
+    "end": 1029.76,
+    "text": "like curve and the previous will be curve if you remember at over here instead of dp of"
+  },
+  {
+    "start": 1029.76,
+    "end": 1035.88,
+    "text": "n minus 1 if you remember well it's going to be previous so these are the changes that"
+  },
+  {
+    "start": 1035.88,
+    "end": 1042.35,
+    "text": "you do and it becomes space optimized as well so you see we solved this using the dimension"
+  },
+  {
+    "start": 1042.35,
+    "end": 1049.53,
+    "text": "the tabulation and the space optimization so just in case guys if you have understood the entire code"
+  },
+  {
+    "start": 1049.53,
+    "end": 1056.85,
+    "text": "the entire explanation and the correction that I did please please please make sure you like this video"
+  },
+  {
+    "start": 1056.85,
+    "end": 1064.1,
+    "text": "and if you need to the channel please do consider subscribing and yes to continue our tradition please"
+  },
+  {
+    "start": 1064.1,
+    "end": 1071.57,
+    "text": "do write understood in the comment section so that I to get motivated that you are understanding whatever"
+  },
+  {
+    "start": 1071.57,
+    "end": 1077.61,
+    "text": "I'm explaining so yeah with this so let's up of this video and we didn't the next one"
+  },
+  {
+    "start": 1077.61,
+    "end": 1079.04,
+    "text": "then go by taking in"
+  }
+]

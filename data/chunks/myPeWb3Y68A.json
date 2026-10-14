@@ -1,0 +1,222 @@
+[
+  {
+    "start": 0.0,
+    "end": 57.18,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] If you are welcome back to take you forward. So today we will be solving the problem  dp20 and what is the problem? The problem will be minimum coins Yes, this problem is again a problem on the pattern of dp on sub sequences that we have been doing and if you remember dp on sub sequences It's very easy pick and non-pick is what do you generally use to solve dp on sub sequences? So it's a similar kind of problem. So what does the problem state? So the problem states that you're basically given an array which denotes denomination of coins assume the denomination of coins are 1, 2, 3 like you have coins which have denominations as 1, 2 and 3. Okay, and you're given a target  Assume the target is given as 7. Okay, so what they're asking you is  What is the minimum number of coins? Yes, what is the minimum number of coins?"
+  },
+  {
+    "start": 44.67,
+    "end": 102.2,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] Okay, and you're given a target  Assume the target is given as 7. Okay, so what they're asking you is  What is the minimum number of coins? Yes, what is the minimum number of coins? That you will require in order to form this particular target So over here I can say if I take one coin of three denomination Another coin of three denomination Another coin of one denomination that will add up to give us the given target and How many number of coins did we use? The answer to that will be three. So you have to minimize this number of coins like they can be otherwise as well You can take two you can take two two two twice and then you can take a one this also gives you a target But over here the number of coins required is four. I don't want that the question clearly states you have to figure out The minimum number of coins"
+  },
+  {
+    "start": 90.48,
+    "end": 148.18,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] gives you a target But over here the number of coins required is four. I don't want that the question clearly states you have to figure out The minimum number of coins required Now you might be saying striver or this is very simple We are just gonna take the target and whichever is the maximum value would divide via it like Greatie way like the first approach so you will like we can definitely solve those using a greedy So if it was greedy you would have been like okay these are the arrelements and the target required is 7 pick up the biggest coin which is three can I have it? Yes, it divides it by  twice so I can have two denominations of coin three  Right and what is the leftover part? 7 minus 7 minus Two denomination of three which is 7 minus six left over is one Which is the next biggest coin two can it divide?"
+  },
+  {
+    "start": 139.14,
+    "end": 200.18,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] 7 minus 7 minus Two denomination of three which is 7 minus six left over is one Which is the next biggest coin two can it divide? No zero denominations of two which is the next biggest coin one can it divide yes one denomination of one And after this one minus one denomination of one will be zero left So we like okay I'll require two coins here one coin here with sums up to give me three coins 3d does work for this test case, but it might feel so can we figure a test case where greedy fields Assume I give you something like nine six five one okay and these are the denomination of coins And I'm looking for a target of 11 okay I'm looking for a target of 11 so Will this fail if you apply greedy the biggest coin is nine and it will like 11 by nine One denomination of nine left over is two six cannot be applied five cannot be applied One can"
+  },
+  {
+    "start": 187.26,
+    "end": 248.19,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] this fail if you apply greedy the biggest coin is nine and it will like 11 by nine One denomination of nine left over is two six cannot be applied five cannot be applied One can be applied twice so you'll be right I'll be requiring Three coins in order to form the target of 11 But actually If you pick six and five the requirement of coins will be two and we saw that if we follow the greedy method It does fail again why same reason uniformity there is no uniformity there right you There's a nine but It might happen the next couple of elements might be something which It gives you better values so uniformity is not they like if you Nine to six differences three six to five differences one one to five differences four But there is no uniformity in the differences of coin There why you don't know what is the next denomination Hence"
+  },
+  {
+    "start": 233.6,
+    "end": 294.73,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] Nine to six differences three six to five differences one one to five differences four But there is no uniformity in the differences of coin There why you don't know what is the next denomination Hence something like greedy can not be applied in such cases and that's when we think of what trying out all combos to form target and This is something which we have done in which problem Napsack Over there we have to figure out the maximum value over here over here we have to figure out which is the minimum count Right so try out all the combos and take the combo that has minimum coins Take the combo that has minimum coins Right so the problem is to figure out minimum coins So what is the rule what is the standard rule to write the recurrence and how did I all combos There's only one way that has if you write the recurrence or recursion and"
+  },
+  {
+    "start": 281.45,
+    "end": 340.8,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] minimum coins So what is the rule what is the standard rule to write the recurrence and how did I all combos There's only one way that has if you write the recurrence or recursion and then you can think of Dp tabulation and everything so Rules Remember the rules guys I've been teaching that forever now what are the rules first rule is Express the recurrence in terms of First is index and obviously you're looking to form something in an app sack also you had a back Over here also you're looking for a target so the second recurrence will be target which I can call it as E right then Express yes then express Third you have to take the minimal of all right if you take the minimal of all because over here the question clearly states Find out how many minimum coins will you require? So what is the question stating the question is stating to find out the minimum coins correct So"
+  },
+  {
+    "start": 326.46,
+    "end": 382.21,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] all right if you take the minimal of all because over here the question clearly states Find out how many minimum coins will you require? So what is the question stating the question is stating to find out the minimum coins correct So can I say I have to write a function that returns the minimal coin so if I'm writing N minus one and target So that means if there is an array like this yes, if there is an array like this Where this is 0 and this is N minus one I'm saying Till N minus one till the entire array What are the minimum coins that will be required to form this target this will tell me is it two is it three is it four is it five What are the minimum coins this f will tell me whatever is the question that is what the f Generally resembles so this f is going to tell me what are the minimum number of coins that are very Quiring to form the target and for this portion of the array N minus one"
+  },
+  {
+    "start": 371.41,
+    "end": 429.99,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] f Generally resembles so this f is going to tell me what are the minimum number of coins that are very Quiring to form the target and for this portion of the array N minus one means the array ends over here So I can say can start easily okay, so let's write the vector inch now So we have an index okay and we have a target So let's forget about the base case and what did we learn about this Express all possibilities Generally in sub sequences there are two possibilities either you take the coin We take the coin or you do not take the coin but over here there will be Slite difference let's understand why so if you carefully see if you carefully see whenever we took the coin three We used two additions of that right we used two additions of that So the question states there is an infinite yes, there"
+  },
+  {
+    "start": 422.31,
+    "end": 482.57,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] that right we used two additions of that So the question states there is an infinite yes, there is an infinite supply of coins In the previous questions a single element was just used once like in the knapsack what you did was view stool If you steal or stole whatever an element you just stole it once but over here This denomination can be used once twice twice as many times as possible Right now you might be thinking driver than the best thing is divided like if you're using it do a 7 by 3 And they're using it twice a twice will that make sense no because it might happen you don't need always like assume there is something in 25 25 by 3 is 8 times you don't need to use it eight times Probably there might be a case where you just have to take seven denominations of 3"
+  },
+  {
+    "start": 470.72,
+    "end": 527.09,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] assume there is something in 25 25 by 3 is 8 times you don't need to use it eight times Probably there might be a case where you just have to take seven denominations of 3 make it 21 And the probability take two denominations and make it 25 there might be cases like this It's always not necessary that if you're using a denomination you end up using the entire portion I will again repeat a zoom there was a target of 25 and the denomination is 3 it does not necessarily Nessusually means that if you're taking the denomination of 3 you take eight denominations of 3 It can be 70 nominations it can be 60 nominations it can be five denominations it can be any number of denominations that you can make sense so I'll be like okay They can be two cases one is I decide I will not take that's for sure and if I not take"
+  },
+  {
+    "start": 515.8,
+    "end": 576.46,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] be any number of denominations that you can make sense so I'll be like okay They can be two cases one is I decide I will not take that's for sure and if I not take Am I adding to the number of coins because the function what is the duty of the function to return the number of coins So make sure when you're not taking you count you count the number of coins So number of coins counted will be zero and if you're not taking it what happens to the self you had an array rate You probably are standing over here and this is your portion and if you do not take it you have to move back So please move back so when you move back it'll be index minus one and target Perfect and what about take so if you're taking right if you're taking now you're looking for minimal If you remember I told you whenever you're looking for maximum Assign everything to intervene"
+  },
+  {
+    "start": 568.1,
+    "end": 623.31,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] looking for minimal If you remember I told you whenever you're looking for maximum Assign everything to intervene so that it's not considered whenever you're looking for minimum Assign everything to intmax so that it is not considered so if you're taking it Make sure take is considered as int Max Okay now when can you take it so This array You are at this index and assume this is six the target is Three can you take this denomination will it make sense to take this denomination? That's there is no because if you take it denomination of six But you're looking for a target of three so it does not make sense so before taking any denomination Just make sure you ask Does the coin at that index Is lesser than the target that I'm looking for if it is"
+  },
+  {
+    "start": 610.43,
+    "end": 669.91,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] of three so it does not make sense so before taking any denomination Just make sure you ask Does the coin at that index Is lesser than the target that I'm looking for if it is Then I can take it If you're taking a coin into your denomination, let's understand if you're taking a coin What is this function doing this function is counting coins? This function is counting coins so how many coins are you taking one And rest for the remaining target you have to figure out right for the remaining target is T minus coins of index Because if you're took up if you're took up a coin If This is the array and there was three and the target was eight So if you took this three if you took this three this eight will reduce to five now that's what I'm doing over here This eight will reduce to five and now you look for what are the minimum in which I can form this five That's why"
+  },
+  {
+    "start": 658.19,
+    "end": 713.45,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] eight will reduce to five now that's what I'm doing over here This eight will reduce to five and now you look for what are the minimum in which I can form this five That's why you'll again call this function choice you will again call this function by taking it But there's a question What will happen to this index Because if this tree is picked only once you add one But if you go back you will not be allowed to pick it one small So the best thing that you do is you say I'm gonna stand over here itself Yes, I'm gonna stand over here itself and I'm gonna pick it again So I will call the index again and this time with the reduced so basically what I used to Did was if there was a three and the target was eight So I was looking What are the minimum number of ways in which I can form eight in this portion of the array?"
+  },
+  {
+    "start": 699.35,
+    "end": 760.54,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] with the reduced so basically what I used to Did was if there was a three and the target was eight So I was looking What are the minimum number of ways in which I can form eight in this portion of the array? Now if I picked up once This will be five and I'll again look in this array in how many ways can I form five? That's my that's my motive that's my thinking make sense So what it was I stayed at the same index remember this is a thumb rule whenever there is an infinite supply of anything infinite supply multiple use Such statements whenever there is infinite supply a multiple use such statements Always when you consider take it will stand at the same index It won't move to the previous index it will stand at the same index now you might have a question What's driver if it stands at the same index it will keep standing no First it was eight when you picked up Three next will become"
+  },
+  {
+    "start": 748.3,
+    "end": 807.94,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] at the same index now you might have a question What's driver if it stands at the same index it will keep standing no First it was eight when you picked up Three next will become five when you pick up three next this five will become two and then you can not pick up this tree hence Ultimately will move you will move at a moment because by picking up by picking up you're reducing the target You're reducing the target as much as possible. So eventually you will move So that's the funder of take you always standard the index remember this whenever there is something like infinite supply Something like multiple use you always will stand at the same index and you'll just alter the target Yes, you'll just alter the target whatever like I have much possible you have altered it so that's what you have done and I would you need to return the minimum of the combo"
+  },
+  {
+    "start": 795.08,
+    "end": 850.82,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] the target Yes, you'll just alter the target whatever like I have much possible you have altered it so that's what you have done and I would you need to return the minimum of the combo of ache or not take is what you have to return So this is what you'll do you'll return the minimum of a can not take have a written the recurrence express Regrets minimum of all what is the next thing the next thing is B skis and I've already taught you that how do you write B skis whenever there is a case of B skis and you're starting at n minus one You always look at the last index which is zero and then you start thinking in terms of a single array containing a single element and a possible target so this is an array at index zero and possibly containing a value six and a target seven not tell me one thing"
+  },
+  {
+    "start": 837.95,
+    "end": 895.87,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] terms of a single array containing a single element and a possible target so this is an array at index zero and possibly containing a value six and a target seven not tell me one thing if this is containing a value six and a target seven can this target be achieved like what are the minimum number of coins if I ask you what are the minimum number of coins that you will take to achieve this target equal to seven is my question what are the minimum number of coins that you will take in order to achieve the target seven and you answer to that will be striver the answer will be zero because I cannot achieve the target seven using a coin determination of six but what if I tell you that this is seven now your answer will be striver we can achieve it because it will take us"
+  },
+  {
+    "start": 881.68,
+    "end": 940.73,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] cannot achieve the target seven using a coin determination of six but what if I tell you that this is seven now your answer will be striver we can achieve it because it will take us one denomination of seven to achieve this target seven now let me quickly change something if I change the target to be probably that's a 12 and the over here it's four then you'll be like striver we'll be requiring three denominations is the minimal that I will require in order to achieve this target why are the denomination four so can I say if the target is divisible by this fold just very very logical if this target is divisible by this fold then I return the minimum as target by denomination right and if it is not then I'll return and it's not possible so thereby"
+  },
+  {
+    "start": 925.99,
+    "end": 983.23,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] just very very logical if this target is divisible by this fold then I return the minimum as target by denomination right and if it is not then I'll return and it's not possible so thereby the minimum number of coins is infinite no matter how many coins you bring you cannot don't return zero otherwise the minimum steps will be counted as zero don't return zero so let's write down the base case so you know the base case will be very simple if index is equal to zero and then you'll have to write something so I know and we have always assuming these cases the coins will always have a denomination of greater than zero because there will never be a denomination of coins like that's common sense so if array of I or rather if target modulo array of I is"
+  },
+  {
+    "start": 969.14,
+    "end": 1026.94,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] will always have a denomination of greater than zero because there will never be a denomination of coins like that's common sense so if array of I or rather if target modulo array of I is equal to zero we will return what will it turn target by a of I because that's the minimum that we will require or else there is like we cannot form it we will return intamax that is how you can easily do this stuff right and just to make sure that it is no overflow probably you can return something as one e9 again why because see you're adding one plus one plus if any of the function gives intamax it'll be one e9 okay if any of the function basically gives like it's one plus one plus any of the function gives intamax so intamax plus one plus one will go overflow thereby to in order to have"
+  },
+  {
+    "start": 1015.94,
+    "end": 1071.22,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] function basically gives like it's one plus one plus any of the function gives intamax so intamax plus one plus one will go overflow thereby to in order to have see if the I'm returning one e9 okay what's the next piece let's take an example and try to drew the brighter on the recursion tree so that the stuff gets more clear to you so let's take this example and do a brighter on the recursion tree so that you understand how this is working so initially we are like if we're just straight right we are at f of two and they're looking to form eight you can take like you cannot take or you can take so as you may do not take you move to the previous index with the same target but if you take if we decide to take this guy so eight minus three that you know like the target will reduce to five now and there'll be a plus one of coin so you still stay"
+  },
+  {
+    "start": 1060.54,
+    "end": 1121.27,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] you take if we decide to take this guy so eight minus three that you know like the target will reduce to five now and there'll be a plus one of coin so you still stay at the same index the target reduces to five perfect now you're at f of one eight you're saying in this portion can you form eight can you form eight and over what you'll do is you'll take and take so if you not take you'll move to zero and you will be at eight correct and over here if you take it if you decide to take it plus one coin and if you take it there is two there is two so eventually what happens is you still stand it one but there is a reduction in the target that you're looking for six at zero eight what happens you are at this and you're looking for a target of eight there will be eight coins required of denominations one right so here it turns eight coins perfect this guy returns eight coins f of one six will again be not so f of"
+  },
+  {
+    "start": 1108.35,
+    "end": 1164.25,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] target of eight there will be eight coins required of denominations one right so here it turns eight coins perfect this guy returns eight coins f of one six will again be not so f of zero six so f of zero six there'll be six denominations make sense and if you take again one and if you take two it will be something like six minus two will be four and plus one over here and f of one four will again be not take which will be f of zero four which will again return four denominations and if you take it it will be f of one comma two you see every portion like every combination is being is being checked out thoroughly now add to one comma two what can you do again you can not take which will take it zero comma two which will return two denominations and f of one comma zero again you can"
+  },
+  {
+    "start": 1152.11,
+    "end": 1212.6,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] now add to one comma two what can you do again you can not take which will take it zero comma two which will return two denominations and f of one comma zero again you can go across this is how it tends to work like this is zero denominations one denomination of two another denomination of two another denomination of two like four denominations of two also make eight all two denominations of two four denominations of one or three denominations of two one or two denominations of like every every angle is being seen on this particular recursion tree but what are the time complexity of this recursion your now over here is it to the barren in all the other cases it is but over here it is we greater than like we we greater than we go off to the barren because for a particular index you're taking it and you're still standing on the same index so in order to analyze this you have to say that"
+  },
+  {
+    "start": 1201.0,
+    "end": 1258.88,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] we greater than we go off to the barren because for a particular index you're taking it and you're still standing on the same index so in order to analyze this you have to say that for every index the options that you have is not exactly true to the barren it can go beyond that thereby we can like in general in the interview you don't have to explain so much in call it as exponential because you cannot theoretically prove the time complexity so you can call it as exponential saying that every time our recurrence picks up it stands at the same index so for an index now we don't have two ways there can be multiple ways right so there can be a lot of ways the time complexity is exponential as of now whatever the space complexity they're using an auxiliary space of a bigo of n can we see this again no it's way way more than that why because if you are standing at the same index and if you look"
+  },
+  {
+    "start": 1249.09,
+    "end": 1308.93,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] an auxiliary space of a bigo of n can we see this again no it's way way more than that why because if you are standing at the same index and if you look at the recursion tree because of the standing of the same index the auxiliary space is not bigo often it can go beyond beyond then that so at max it will be like assuming the minimum quantity nomination is one at max it can go up to ego of target assuming it reduces by one one one one it can go to target so again a very different problem in terms of time complexity in the space complexity the next step will be to definitely memorize this we can see that it's a very different problem like it's not the typical problem where you can easily say critical to the bar and because of this particular standing on the current index it tends to be far greater than the obvious problem so what's the next step obviously memorize and how do you memorize if"
+  },
+  {
+    "start": 1295.98,
+    "end": 1358.72,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] to the bar and because of this particular standing on the current index it tends to be far greater than the obvious problem so what's the next step obviously memorize and how do you memorize if there are overlapping sub problems so if you take bigger examples there will be overlapping sub problems and in order to memorize you look at which parameters are changing one is index one is target so whatever index is given to you and assuming the max target is target you'll require this size dp array in order to have it memorized so make sure you memorize it and you know step is very simple how do you memorize for go back yeah you basically write dp of index target equal to and over here you write if dp of index target is not equal to minus one you return dp of index target that's it that's what you easily do it couple of steps and you can memorize any recursion into dynamic"
+  },
+  {
+    "start": 1343.97,
+    "end": 1403.63,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] if dp of index target is not equal to minus one you return dp of index target that's it that's what you easily do it couple of steps and you can memorize any recursion into dynamic programming now the moment you memorize this yes the moment you memorize this who are the time complexity now bg of n into target and the space complexity is not around bg of n into t but still the auxiliary space is around bg of target so I can be on that so this has to be still reduced and how can you reduce it very simple tabulation is a way to go yes so what are the steps to tabulate I've already told you it's very simple first base case second look at the parameters that are changing first parameter index next parameter target and write it"
+  },
+  {
+    "start": 1394.65,
+    "end": 1454.7,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] case second look at the parameters that are changing first parameter index next parameter target and write it in the opposite fashion third copy copy the recurrence you can convert any any memory I show into tabulation it's it's a matter of seconds so let's analyze the base case so we have to declare a dp of n and target plus one that's for sure so in order to analyze the base case let's look at the base case actually so what is the base case stating over here it states if index is zero and if the target is modulated of a of i what can be the values of target always think like don't think this target as the initial target it is not target when the index is zero like there might be a call for zero comma six there might be a call for zero comma seven there might"
+  },
+  {
+    "start": 1441.38,
+    "end": 1496.56,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] this target as the initial target it is not target when the index is zero like there might be a call for zero comma six there might be a call for zero comma seven there might be a call for zero comma eight it can be anything it can be anything so can I say the target can be anything from zero to e it can be anything from zero to t make sense so for anything from zero to t what does it have e by a of i if it is getting divided why don't you write that that's very simple to write go ahead and write it for any target from zero to the original target given to you if the target is modulated of a of i is equal to equal to zero or again probably write this in some other lines if the target t modulated of a of zero is equal"
+  },
+  {
+    "start": 1485.72,
+    "end": 1547.09,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] modulated of a of i is equal to equal to zero or again probably write this in some other lines if the target t modulated of a of zero is equal to zero I can say dp of zero target is equal to a of or other target by a of zero else dp of zero target will be intmax that's what you wrote simple this is how the base case will be as simple as that just look over there and try to copy paste what about this your recursion runs from n minus one to zero zero is the base case works tabulation bottom up which is the bottom case one says start from one till n minus one whatever target you start it from target till zero go in the opposite fashion so it will be zero till target that's it I think I'm pretty much not so next step is copy the records"
+  },
+  {
+    "start": 1539.68,
+    "end": 1600.91,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] zero till target that's it I think I'm pretty much not so next step is copy the records so I'll show you that in the code now so basically given this minimum element function and the i norm and the target okay so we can write the function so let's start off to write the function i and df i and indx i and dp and you can get the vector as norms no you need anything else I don't think so i can say the base case is a very simple if indx is equal to zero if the target is more let's quickly check out if all the elements are greater than one yeah it is it is greater than one so if t moderated of a of zero or numps of zero rather is equal to zero we can definitely return something as what to say really something as t divided by numps of zero make sense or else we will return something"
+  },
+  {
+    "start": 1587.84,
+    "end": 1646.03,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] zero or numps of zero rather is equal to zero we can definitely return something as what to say really something as t divided by numps of zero make sense or else we will return something as one in again not an index and there will be a not take case can I say the not take case will be very simple or zero plus f of index minus one the target sales stays as the same as the numps and can I say the take case initially will be in top max because we are looking for or rather you can just keep it as an index yeah that's perfect so what about the take case I definitely can pick it if it is less than equal to target and if I pick it there will be one coin and will still stay at the same because we can reuse it and the target reduces by numps of index and I can just pass on the numps and it goes and I can return the max of take and"
+  },
+  {
+    "start": 1634.94,
+    "end": 1696.89,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] at the same because we can reuse it and the target reduces by numps of index and I can just pass on the numps and it goes and I can return the max of take and not take that should be fine and we will be returning the answer as f of n minus one and obviously n is not given over here so please make sure you can compute the n by taking numps rather numps dot size okay perfect and we can just pass on the target and the nump array and you should be fine let's quickly run this off so I can get some wrong answers it's because they've clearly stated if the answer is not possible bring to minus one so what we need to make sure is this make sure over here if yes just make sure over here probably you can keep the answer as this and then make sure if if yes if the answer is because what are you returning you're returning something as one in nine right so if by chance the answer goes somewhere beyond"
+  },
+  {
+    "start": 1683.96,
+    "end": 1744.36,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] answer as this and then make sure if if yes if the answer is because what are you returning you're returning something as one in nine right so if by chance the answer goes somewhere beyond one in nine as number of steps return minus one or else whatever the answer is told you can just directly return it and then this should be fine now as you can see this is fine now and if I someone does this will this will definitely give Tery why am I submit take this now it's time to memorize this so let's quickly try to memorize this and in order to memorize this I'll take a vector d p r a and a size n and a vector another eight a target plus one and comma minus one and I can easily pass on the d p array over here let's call the d p array over here vector vector eight and d p where the d p will go over here also the d p will go and over here the d p will come across d"
+  },
+  {
+    "start": 1731.41,
+    "end": 1788.07,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] p array over here let's call the d p array over here vector vector eight and d p where the d p will go over here also the d p will go and over here the d p will come across d p of index and d capital and over here if d p of index t is not equal to minus one return d p of index and t right and we can just or now quickly run this off and say if this is running fine there's now let's quickly submit this this is this is accepted but as I said the auxiliary space has to be removed as I never like as I don't like memorization because of the x-trogs, e-l-e-stacks space time to convert this into yeah tabulation first step make it zero this make sure this is numbs because we're gonna copy paste and we"
+  },
+  {
+    "start": 1780.52,
+    "end": 1843.68,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] first step make it zero this make sure this is numbs because we're gonna copy paste and we have used numbs over here and it's a first piece piece for i and d equal to i have already described this zero for every t lesser than target and t plus plus what is it going to be if the t is modulated by numbs of index that's zero then d p of zero of t will be the same thing that we have written over here else if it is not then d p of zero and t will be one in i the same thing that we have written over here if it is then this otherwise not written it wasn't next thing changing parameters index from one to n perfect next changing parameter target from zero to target with the right it wasn't next"
+  },
+  {
+    "start": 1832.8,
+    "end": 1889.67,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] one to n perfect next changing parameter target from zero to target with the right it wasn't next thing but we just take it go by now copy paste this is the same thing and just make sure instead of this write this portion I have taken to us just omit this change it instead of this write this changes of the done instead of it done have this over here instead of f of n minus one make it d p of n minus one target and change this I think we're pretty much done let me just quickly yeah it's like this is it so if"
+  },
+  {
+    "start": 1880.47,
+    "end": 1938.6,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] I think we're pretty much done let me just quickly yeah it's like this is it so if you do this you're getting all the right answers let's see if this is correct so this is giving time limit exceeded partially accepted probably they would love you to space optimizes so let's quickly do a space optimization on this so as you know you'll be requiring a previous of target plus one comma zero and a current of a target plus one comma zero so why can you space optimise again the same reason that I've been teaching in the last 19 lectures whenever you see something like index minus one has just the previous row that unit it just the previous row so please do get first of all this is what the previous will be because in the first row d p"
+  },
+  {
+    "start": 1926.9,
+    "end": 1985.14,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] index minus one has just the previous row that unit it just the previous row so please do get first of all this is what the previous will be because in the first row d p of zero first row is done whatever the next thing instead of d p of index minus one this is going to be previous instead of d p of index this is going to be current instead of d p of index this is going to be current and right over here it is previous equal to current and what is over here it can be previous or index or curve what do we feel like so you just declare a couple of same columns size same number of and then you just make sure that instead of computing in terms of d p just take it draw wise and just transfer the code so if you see if I run this off I think this should be running yeah if I somewhat this let's see if this passes all the test cases or not it does it does so"
+  },
+  {
+    "start": 1973.14,
+    "end": 2028.2,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] wise and just transfer the code so if you see if I run this off I think this should be running yeah if I somewhat this let's see if this passes all the test cases or not it does it does so the space optimization solution is passing all the test cases that amulation memories in basalt that amulation did not not sure why it's it's mostly because I tell you the reason a lot of times happens is you can design test cases in such a way in mma action you actually don't visit all the all the end into target states so you might be visiting very less amount of states and there is an auxiliary space but you must be visiting a lot lesser number of states but if you look over here it exactly visits any target states all the states end into target states are visited over here that's the reason mostly sometimes it might happen but most of the time it does not so probably they have designed the test cases in such a way so guys that will be"
+  },
+  {
+    "start": 2017.68,
+    "end": 2052.24,
+    "text": "[Video: DP 20: Minimum Coins (Coin Change)] visited over here that's the reason mostly sometimes it might happen but most of the time it does not so probably they have designed the test cases in such a way so guys that will be it for this video I hope you have understood this entire video so just in case you did please make sure like this video if you know if you are new to the channel please please please do consider subscribing and to continue our tradition please make sure you comment understood before leaving off this video and yeah with this let's stop all this video and we can the next one ill and go buy it again yeah you're golden"
+  }
+]

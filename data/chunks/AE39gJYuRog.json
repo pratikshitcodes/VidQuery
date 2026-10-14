@@ -1,0 +1,342 @@
+[
+  {
+    "start": 0.0,
+    "end": 57.5,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] Hey everyone welcome back to the channel. I hope you guys are doing extremely well. Today is the 7th lecture of the dynamic programming playlist and this problem is quite interesting because you're going to learn a lot of stuff. Yes. Trust me when this video ends  your bill like wow. Dynamic programming is so, so super cool. So, question goes by the name Ananya  streaming. So, Ninja is planning this end-day long training schedule. Each day he can perform  any one of these three activities. So, there are three activities that the Ninja can perform  running fighting practice or learning new moves, a forget about these stuff. Each activity has  some merit points on each day. So, there are three activities. If you perform any activity on a  given day you get some points. Now, as Ninja has to improve all his skills, he can't do the same  activity in two consecutive days."
+  },
+  {
+    "start": 44.53,
+    "end": 105.78,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] So, there are three activities. If you perform any activity on a  given day you get some points. Now, as Ninja has to improve all his skills, he can't do the same  activity in two consecutive days. That means, if on the first day he has done running on the second  day he again cannot run. So, two activities cannot be done on consecutive days. Something similar to  the lecture five where it was stated that you cannot pick up consecutive numbers. But over here you have to perform something like you cannot skip the next day. You have to perform something. This is  where the question is slightly different. So, can you help Ninja? Find out the maximum merit points  that the Ninja can earn if he has end days. Now, you're given a 2D array of size n cross 3. It's  a slightly different one. n cross 3. So, basically there will be three columns and n rows  with the points corresponding to each day and activity."
+  },
+  {
+    "start": 91.99,
+    "end": 148.97,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] Now, you're given a 2D array of size n cross 3. It's  a slightly different one. n cross 3. So, basically there will be three columns and n rows  with the points corresponding to each day and activity. The task is to calculate the maximum  number of merit points that Ninja can earn. So, let me just explain you what does this mean. So,  basically it means these are the three columns. So, this is running. This is some activity  second. I can say first activity, second activity, third activity. This is what I can easily say. And this is day one and this is day two points. If there was someone else, it would have been day  three. It has as simple as it can get. This is how it looks. So, I can say this is definitely  a day one or zero whatever you can call it. This is a day one. So, you you have to perform on two  given days."
+  },
+  {
+    "start": 135.39,
+    "end": 191.41,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] It has as simple as it can get. This is how it looks. So, I can say this is definitely  a day one or zero whatever you can call it. This is a day one. So, you you have to perform on two  given days. So, greedy again. The first step that always comes to our brain is greedy. So, first of all, if I perform on the zero or three day, my greedy nature will say on the zero three, I have three tasks that I can perform. Which one gives me the maximum? And the answer that comes up is 50. 50 gives me  the maximum. So, what I will do is I will take 50 and perform it. Right? So, that is greedy. Next,  on the first day, I know since I have performed 50, I cannot perform 100. That is what the question  is. If you have performed a certain task like this was the task whatever is fighting practice  something. If this task has been performed on the next day, you cannot perform that."
+  },
+  {
+    "start": 178.55,
+    "end": 234.64,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] That is what the question  is. If you have performed a certain task like this was the task whatever is fighting practice  something. If this task has been performed on the next day, you cannot perform that. Yeah, on the  next day, you can do, but on the exact next day, you cannot do. On consecutive days, you cannot perform  two tasks. So, this cannot be performed. So, either of five or either of 11. So, the maximum is 11  that you can take. So, 11. If I sum this up, you will get 61. At max, you can collect 61  minute points. What is this? The maximum? Now, the answer to that is no, this is not the maximum. You did greedy but you will fail. Why? Because since you did greedy, you took 50, you missed out on  something which was much bigger in the next step. So, ideally better would have been if you  would have taken 10 correct and then you would have taken 100. So, if you would have taken 10 on the"
+  },
+  {
+    "start": 225.7,
+    "end": 287.42,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] So, ideally better would have been if you  would have taken 10 correct and then you would have taken 100. So, if you would have taken 10 on the again perform this task, then you would have performed this task. There by the total would have been  110 which is indeed the maximum merit points that you can earn. That is what the question states. So, we observed that greedy fails and whenever greedy fails, you know what what you need to do. First thing comes, try all possible ways. Yes, you are going to try all possible ways. That's  the, that's definitely the first thing that comes to my mind. And whenever I say try all possible ways, the first thing that comes to my mind is let's apply recursion and try to do every possible stuff that I can do. Right. Now, if you remember, in order to write recurrence, I have to  three steps, what are the three steps?"
+  },
+  {
+    "start": 274.56,
+    "end": 335.93,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] apply recursion and try to do every possible stuff that I can do. Right. Now, if you remember, in order to write recurrence, I have to  three steps, what are the three steps? Step number one, express every possible  problem in terms of index. Second, do stuff on that index. Very, very important, do stuff  on that index. Third, according to the question like over here, the question states, find the maximum  merit points. So, if to find the max, if to find the max. So, if you follow these three steps, you can definitely write any of the recurrence relationships. Correct. Now, if I ask you, in this particular question, can I see, can I say, I can, I can definitely do an index because we have day zero, we can treat that as an index, we have day one, we can treat that as an index. So, the day can be treated as an index because I have to decide on a given day what I'm trying to do."
+  },
+  {
+    "start": 321.06,
+    "end": 380.28,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] can definitely do an index because we have day zero, we can treat that as an index, we have day one, we can treat that as an index. So, the day can be treated as an index because I have to decide on a given day what I'm trying to do. So, I have, I have definitely decided what is going to be an index. So, I can say, okay,  fine, here listen, struggle. We have decided that the day is going to be my index. So, that's  the first thing index is day, like I'm naming the variable as day, but yeah, that's that's what  overall. So, we have decided, whatever we are going to do is going to be on the day. On the zero  day, we're going to do something. On the first day, we're going to do something. On the second  day, we're going to do something. Whatever we do, we'll be on the index. So, first step is that,  we have decided the index. Okay. Now, before thinking of any other logic, because I don't,  I don't want you to plan the code."
+  },
+  {
+    "start": 368.24,
+    "end": 426.63,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] Whatever we do, we'll be on the index. So, first step is that,  we have decided the index. Okay. Now, before thinking of any other logic, because I don't,  I don't want you to plan the code. Before deciding anything, let's understand do stops. Okay, let's understand do stops. So, generally, we will be doing recursion, which is definitely top down and I generally tend to write it from nth minus 1 at nx to the 0 at nx that is how I do it, you can do it the opposite way where you take it from 0 at nx to the n at n, n minus 1 at nx, that is absolutely okay. So, can I say can I say let's assume that the multiple days, let's assume  there are multiple days, okay. And your recursion is somewhere over here and there are three activities  on these days. Activity 1, activity 2, activity 3. Now, when your recursion is over here and you have  already performed this, this, this."
+  },
+  {
+    "start": 412.02,
+    "end": 469.84,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] And your recursion is somewhere over here and there are three activities  on these days. Activity 1, activity 2, activity 3. Now, when your recursion is over here and you have  already performed this, this, this. In order to select a task over here, in order to select a task  on this particular day, ask yourself, what do you require? Ask yourself, what do you require? You will like Striva, in order to perform any of the tasks, click either I can perform this, the task 1 or the task 2 or the task 3. There is something that I require and what is that  something? I need to know what was the last task performed. Like if you are going in this direction,  someone has to tell you what did you perform here? Because if someone doesn't tell you what  did you perform here, how can you maintain the question, how can you solve the question of"
+  },
+  {
+    "start": 460.65,
+    "end": 516.55,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] Because if someone doesn't tell you what  did you perform here, how can you maintain the question, how can you solve the question of not performing two similar tasks on two consecutive days? Because the question clearly states,  you cannot perform two similar tasks on two consecutive days. So, thereby, always remember, according to the condition, I repeat, according to the condition, along with the index, you can add a parameter in the recurrence. Because over here, in order to decide, what stuff I will do on an index, I need to know what I did on the previous index, I repeat, I need to know what I did on the previous index, because if someone comes and tells me that hey Striva, previously, I did the task 3. Then over here, in this, I cannot perform the task 3."
+  },
+  {
+    "start": 504.98,
+    "end": 560.32,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] the previous index, because if someone comes and tells me that hey Striva, previously, I did the task 3. Then over here, in this, I cannot perform the task 3. So,  someone has to tell me on the last day, what did you do? Yes, what did you do? Because if you  don't tell me what did you do, how will I do? Got it? So, what I will do is, I will have the  experiment of which is last. This is how you solve, go step by step, you solved index, did you decide to do a stuff, but then you realized, oh, in order to do a stuff on an index, I need to know what task was done on the last day. There, by you, introduced another variable, as last, where you will say last, that means this task was done on the last day. Got it? That's how you think. That's how you think of recurrence."
+  },
+  {
+    "start": 547.47,
+    "end": 602.59,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] There, by you, introduced another variable, as last, where you will say last, that means this task was done on the last day. Got it? That's how you think. That's how you think of recurrence. So, we have a sign like we have done this first step, first step is done of recurrence relationships, which is identifying along with index if you need something else. So, we identified along with index, we need, sorry, rather, the last  day, the last task whatever you did. So, let's, let's keep it quite simple, because we will be  having zero based indexing arrays. So, let's keep it something like task, let's keep the numbers  very straightforward. I can we keep something like assume, if I'm passing, last as zero means task, one was done or task zero, like the first task was done. If I'm passing one, the task one was done."
+  },
+  {
+    "start": 590.74,
+    "end": 647.05,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] I can we keep something like assume, if I'm passing, last as zero means task, one was done or task zero, like the first task was done. If I'm passing one, the task one was done. If I'm passing two, that means a task two was done. Remember all zero based indexing I'm not  just to be familiar with arrays. And if I'm passing three, that means no task was done. No task was done. Again, when will the case of three arrays? You're very smart. Your very smart,  isn't it? When will the case of three arrays? Obviously, obviously, when you start from the last day, which is n minus one a day, because when you start on the last day, what options do you have? You have an option of performing this task or this task or this task. Any task you can perform. And thereby you go across all the possible paths, correct?"
+  },
+  {
+    "start": 635.18,
+    "end": 690.25,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] You have an option of performing this task or this task or this task. Any task you can perform. And thereby you go across all the possible paths, correct? So, that's how you decide. So, I can say, I can say initially, the call will be made for f of n minus one comma three, which states, what does this recurrence means? Give me the maximum merit point. Yes, give me the  maximum merit points that you can earn on the array that starts from zero,  n set n minus one. And before n minus one, you perform three means no task were performed. Good. So, if someone writes f of two comma one, it means give me the max merit points, give me the max merit points that you can get if you perform the task like, if you perform"
+  },
+  {
+    "start": 676.58,
+    "end": 736.69,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] Good. So, if someone writes f of two comma one, it means give me the max merit points, give me the max merit points that you can get if you perform the task like, if you perform the task from zero to the second index, zero to the second index, what maximum you can get in this particular section of the array, given that you performed task one right at the third index. This is what f will be signifying. I hope that makes sense. Okay. Now, let's go on and write the records. So,  can I say the recurrence will be quite simple? As usual, if I'm starting from n minus one, where will it go n minus one and minus two, n minus three, it'll go until zero. And zero will be the  stopping point for you. The base case, very straightforward. Whenever you're solving problems on  index, zero is bound to be a base case."
+  },
+  {
+    "start": 722.3,
+    "end": 779.36,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] two, n minus three, it'll go until zero. And zero will be the  stopping point for you. The base case, very straightforward. Whenever you're solving problems on  index, zero is bound to be a base case. So, I can be like, okay,  straightaway, we have realized that zero is going to be my base case. And fine, zero is going to be my  base case. Now, can I say if I've reached the zeroth index or probably this push this gap,  there will be three tasks over here, right? Then there will be three tasks. And are these three tasks, you will have to perform the largest one, which is not equivalent to whatever you're performed here, which is not equivalent to whatever you're performed here, make sense? So, what I can say is,  okay, straightaway, let's do one thing. We know there are three tasks."
+  },
+  {
+    "start": 765.12,
+    "end": 821.42,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] whatever you're performed here, which is not equivalent to whatever you're performed here, make sense? So, what I can say is,  okay, straightaway, let's do one thing. We know there are three tasks. And you know that this is the  last gap, right? So, straightaway do one thing. Just run a follow from i equal to zero to past number two. And if this i is not equal to the last task, probably you can keep a max equal to zero. Can you just give me the max of max of max of maxi or probably you can keep this is maxi, maxi comma whatever task, like, as you mode, but task you are having task of i on the zero the next or at the whole, let's write it properly task of on the zeroth day task i. Whatever maximum you're getting, can I show all your turn this?"
+  },
+  {
+    "start": 808.95,
+    "end": 866.67,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] i on the zero the next or at the whole, let's write it properly task of on the zeroth day task i. Whatever maximum you're getting, can I show all your turn this? Can I say this is my base case? Think properly. Makes sense because you were having tasks zero one two, correct? You said something  was performed in the last day. So, during that apart from that consider all the tasks and take the maximum of them and return makes sense because the last last portion you just if this was performed, you don't take this and you take this in this and the maximum of that kind of makes sense, right? So, we have figured out the base case. Now, if you figured out the base case, I think you have  also figured out what will you be doing on that given day."
+  },
+  {
+    "start": 854.67,
+    "end": 910.16,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] So, we have figured out the base case. Now, if you figured out the base case, I think you have  also figured out what will you be doing on that given day. You will like, strive the best thing that I can do is, I can try out performing the task, performing every task, apart from the last task that I perform, again makes sense. So, what else is, okay? If you perform something on the last, I'll not perform it, but apart from that, I'll try out all the possible base, okay, kind of makes sense. So, what I'll do is, I'll say it's the same thing again, I'll keep maximum as zero, and I'll similarly run loop from i equal to zero, L2, and I will say, if i is not equal to last, that means if you have not performed the task on the last day, then you"
+  },
+  {
+    "start": 898.03,
+    "end": 955.72,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] I'll similarly run loop from i equal to zero, L2, and I will say, if i is not equal to last, that means if you have not performed the task on the last day, then you can perform this task. Now, others erase this because you have  understood this quite clearly, you know? Now, if you are performing a task,  you know to me how much points will you earn? If you are performing a task, that's very simple, on that given day, on that given day, we perform the task, this is the number of points you will earn, correct? And if you're performing this task, you're earning this much points, for this portion of the array, you have to find the answer, but that is something which recursion will do for you, right? So, you'll like, okay, let's go to the previous day,  that's a very, very important step."
+  },
+  {
+    "start": 943.42,
+    "end": 1000.51,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] have to find the answer, but that is something which recursion will do for you, right? So, you'll like, okay, let's go to the previous day,  that's a very, very important step. Whenever you go to the previous day, whenever you're going to the previous day, and asking, the function to find the answer, the function to find the answer, you have to tell that guy, but hey, I performed the task on the last day, I performed the task on the last day. So, please tell him that I have performed this particular task. If you perform the second task,  tell him you perform the second task. If you perform the first task, tell him you perform the first task, so that whenever this guy is, whenever this guy is encountered, he doesn't again perform the first task. So, you will be like, go to the previous day and tell him that on the, on on"
+  },
+  {
+    "start": 989.85,
+    "end": 1047.86,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] is, whenever this guy is encountered, he doesn't again perform the first task. So, you will be like, go to the previous day and tell him that on the, on on this particular day, like right before this, you perform the I-TAS, so do not perform that. So, can I say the current,  plus the reduced array is what the total merit points will be, right? thereby, if I'm doing it on all the task, if I'm doing it on all the task, can I say the maximum of all the task, the maximum of all the task will be indeed, my answer, that makes sense. So, I will say let's return maximum, because that is the maximum  merit points that I can definitely make. So, if I just keep the recurrence together, this is how it looks quite straightforward, quite simple, just make sure you perform every task, apart from the task that has performed in the other day."
+  },
+  {
+    "start": 1033.88,
+    "end": 1089.31,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] So, if I just keep the recurrence together, this is how it looks quite straightforward, quite simple, just make sure you perform every task, apart from the task that has performed in the other day. So, if whenever you start off with F of N-1, whenever you start  with F of N-1, you can pass on three, right? So, whenever you are at the last index, which is N-1, you try out this task, then you try out this task, then you try out this task, because this will be three and the task numbers are from 0 to 2 and the task numbers are from 0 to 2. So, you can try  all the task when you start off with, right? So, this is what the recurrence or the recurrence will  look something like. So, in order to understand, if there are overlapping subproblems or not or how does the recurrence work"
+  },
+  {
+    "start": 1076.54,
+    "end": 1136.15,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] So, this is what the recurrence or the recurrence will  look something like. So, in order to understand, if there are overlapping subproblems or not or how does the recurrence work just in case you are not comfortable with the recurrence, let's quickly draw the recurrence tree by taking any equal to 4, where this is day 0, this is day 1, this is day 2 and this is day 3, okay? And the task 0 is like this, the task 0 task 1  and task 2. That is what the points you will get if you perform them on days 0s and 1s. So, ideally, what you did was you started from the bottom, like the blast row, which is the third row and you said three, what does three signify if you remember well, three signified that none of the task have been performed in the previous day, because this is the last day when you are starting off. So, before this, there was no days, so none of the tasks have been performed."
+  },
+  {
+    "start": 1124.15,
+    "end": 1183.95,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] of the task have been performed in the previous day, because this is the last day when you are starting off. So, before this, there was no days, so none of the tasks have been performed. So, what are the  options that you have if you are over here? Logically, you can perform either task 0 or task 1 or  that's on you, you can perform any one there, right? So, what you will do is you will be like, okay, let's perform the task 0, let's perform the task 1, let's perform the task 2, you try to perform every possible task. So, you'll be like, okay, let's go to f of 2 and since you perform the task 0, tell them that you are perform the task 0, go to f of 2, tell them you perform the task 1, go to f of 2 and tell them you perform the task 2, why do you do this? If you are over here and if you are saying you are performing the task 0, so whenever you go to the next day, like the next day, you don't want to perform 10,"
+  },
+  {
+    "start": 1172.48,
+    "end": 1227.58,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] you do this? If you are over here and if you are saying you are performing the task 0, so whenever you go to the next day, like the next day, you don't want to perform 10, thereby you told him, hey, eggs 0, do not perform 0, say you will go and perform only T1 and T2, which is task 1 and task 2, got it, so that's how it will work. Now, if I carefully observe, we are at f of 2 0 and you know whenever there are three recursion calls, which one then should happen first, this one, then this one, then this one, let's perform f of 2 0 at first. So, if you are at f of 2 0, that means over here, 0 means you cannot perform this, thereby you have two either this or either this, so you can be like I can perform task 1 or I can perform task 2, you don't have any other options, are you don't have,"
+  },
+  {
+    "start": 1215.4,
+    "end": 1270.74,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] this, thereby you have two either this or either this, so you can be like I can perform task 1 or I can perform task 2, you don't have any other options, are you don't have, so you will like okay, if I'm performing task 1 and day 2, I'll go to day 1 and I will be like taking task 1 because I'll have to tell day 1 that I have performed task 1 in the previous day, similarly I have to go to 1 and I'll trip to tell him that task 2, please carry task 2, task 2 has been performed quickly, okay, make sense, okay, this recursion will happen first and then this, let's do f of 1 1, so when you are at f of 1, which means you are at here and they're saying 1 has been performed, thereby you cannot perform task 1, so you can perform task 0 and task 2, perform it, so you can perform task 0"
+  },
+  {
+    "start": 1256.76,
+    "end": 1317.13,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] are at f of 1, which means you are at here and they're saying 1 has been performed, thereby you cannot perform task 1, so you can perform task 0 and task 2, perform it, so you can perform task 0 and task 2, so if I perform task 0, I'll be like I will go to 0 with task 0, I'll go to 0 with task 2, this is only what I can do, okay, make sense again, now, a very very interesting question to you, so where where you, you're like f of 1 1 and you called something like you perform the task 0, so if you perform the task 0, what will be the points that you'll add on f of 1 1, you're performing the task 0, so on f of task 0, 3, 3 is what you'll add, if you perform task 0, so 3 plus you're calling this f of 0, 0, 0, remember this, so whenever this f of 0, 0 goes it's a base case, if you remember the recurrence, it's a base case, let's go"
+  },
+  {
+    "start": 1305.02,
+    "end": 1364.4,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] so 3 plus you're calling this f of 0, 0, 0, remember this, so whenever this f of 0, 0 goes it's a base case, if you remember the recurrence, it's a base case, let's go back to the recurrence, it's a base case whenever the day comes to 0 it's a base case, so in the base case, what did you do, let's come back, you know this, that 0 has been performed previously, so either of this or either of this, and you don't have any anywhere else to go, so if this is the only day remaining, then you don't have to think of the future, so the maximum of that is 3, thereby this guide and stored down a 3, so this element comes out to be got it, similarly there will be this call which will be task 2, so if you perform task 2 which is 6, so if you perform this task, you"
+  },
+  {
+    "start": 1350.22,
+    "end": 1411.95,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] so this element comes out to be got it, similarly there will be this call which will be task 2, so if you perform task 2 which is 6, so if you perform this task, you can either take 2 or you can either take 1 on this guide, thereby this returns 2, so you will return 2, so this will be 2, now 3 plus 3 is 6, 6 plus 2 is 8, which one will you take, you will like, let's take 8, let's take 8, it makes a pretty much sense, so I'll take 8, so I'll just take 8, perfect, F of 11 is 8, now we have F of 12, so definitely F of 11 is returning 8, so let's come back to the next solution, which is you're at F of 12, so whenever you add F of 12, what will happen, you will like, let's call F of 0, let's perform task 0, let's call"
+  },
+  {
+    "start": 1397.51,
+    "end": 1456.97,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] back to the next solution, which is you're at F of 12, so whenever you add F of 12, what will happen, you will like, let's call F of 0, let's perform task 0, let's call F of 0, let's perform task 1, that's what you'll do, so again, same thing will happen, if you perform task 0, you will get 3 plus and F of 0, 0 will return 3, and if you perform F of 0 1 that's task 1, you will get task 1 for 4, so 4 plus F of 0 1 will be what, if you perform 0 1, that means you're coming here and you're saying you cannot perform this, so either of 3 or 2, 3 you'll get, right, so either 7 or 6, they have I this gives you 6, perfect, so you're getting 6, let's not try to write it again, now you're at here, so whenever you add F of 20, it states, okay, I"
+  },
+  {
+    "start": 1443.91,
+    "end": 1502.46,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] or 6, they have I this gives you 6, perfect, so you're getting 6, let's not try to write it again, now you're at here, so whenever you add F of 20, it states, okay, I cannot perform task 0, whenever you add this guy, remember this, it is saying that you are over here, you cannot perform task 0, so either you can do this, which is task 1, gives you 1 point, so one plus you called F of 11, because you perform the task 1 or you can be like, let's perform 6, so it's like 6 plus F of 1, come on 2, so either you perform the task 1 or task 2, because task 0 was there, right, so 1 plus F of 11, what is F of 11, 8, what is F of 12, 6, so 9 and 12, which one is maximum 12, so you return 12, got it, now you'll start seeing overlapping sub problems, I hope we've"
+  },
+  {
+    "start": 1489.66,
+    "end": 1551.32,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] F of 11, what is F of 11, 8, what is F of 12, 6, so 9 and 12, which one is maximum 12, so you return 12, got it, now you'll start seeing overlapping sub problems, I hope we've got the basic hazard recursion working, so the first, I'll just show you one more, so over here if you are doing the task 1, you'll be like task 0 and task 2, so F of 1, 0 and F of 1, 2, so if you carefully see, to be still seeing overlapping, yeah, there's the first overlapping sub problems that you'll see, so you saw an overlapping sub problems, so if if the value of NL larger you'll tend to see a lot more overlapping sub problems, like over here if you go T 0 and T 1, it will like F of 1, 0, so again overlapping sub problems, over here, kind of, yeah, so you will, the the more you enlarge it, you will see overlapping sub problems, and this is how they will solve each other and after that you"
+  },
+  {
+    "start": 1537.77,
+    "end": 1597.41,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] overlapping sub problems, over here, kind of, yeah, so you will, the the more you enlarge it, you will see overlapping sub problems, and this is how they will solve each other and after that you can easily get the answer, so we have again concluded that there are overlapping sub problems and if there are overlapping sub problems what do you need to do, you need to do one thing, what does that, my eyes should, yeah, and what is the easy step, you go back and say okay, hit function, what are your changing parameters, or what are your states, I see there are two states, one is index the other is D, oh sorry, last one is index or D and the other is last, it is two parameters, for which you have to give an answer, like we have being said F of N minus 1 3, stating give me the entire arrays maximum earning point given that"
+  },
+  {
+    "start": 1583.98,
+    "end": 1640.42,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] is last, it is two parameters, for which you have to give an answer, like we have being said F of N minus 1 3, stating give me the entire arrays maximum earning point given that the task 3 has been done, so two guys dependent, so there was the first guy D and there was the next guy last, how much is the value D, it can be like 0, it can be like 1, it can be like 2, N minus 1, so there are n different values that D can have, what is the possible value of last if I ask you on a very simple term, like Straywell last can be 0, 1, 2, 3 nothing more than that, so four different values which are 0, 1, 2 tasks 0 task 1 task 2 and 3 which states that all of these tasks have been performed, none of these tasks have been performed, so there are n 4,"
+  },
+  {
+    "start": 1627.61,
+    "end": 1689.47,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] values which are 0, 1, 2 tasks 0 task 1 task 2 and 3 which states that all of these tasks have been performed, none of these tasks have been performed, so there are n 4, for every N state there can be four different possible, thereby you will require an n cross 4 D, P size array, therefore, there by you will require an n 4 initialized with minus 1, n 4 initialized with minus 1 and also first step definitely over here you tend to write D, P of index last equal to maxing and over here just one line if D p of index last not equal to minus 1 return D p of index last 2 D d p done, if I reiterate always the first parameter will be index, next depending on what stuff you are doing in order to preserve the condition you might require more and that's when the second parameter is introduced, if you"
+  },
+  {
+    "start": 1681.0,
+    "end": 1736.48,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] to preserve the condition you might require more and that's when the second parameter is introduced, if you regard some more, remember these three tricks you can write any recurrence in the world, so let's try to code this up, what we are given is the n in the points, so I'll try to write the recurrence at first, so the first thing was D and then the end and then the vector again and end and points, now I know one thing for sure if the day is the 0th day, then I need to figure out the maximum among them apart from the whatever was done on the last day, so I'll keep it as maximum 0 and I can say go across to all the task or rather limit a task or task equal to 0, I can go across to task another"
+  },
+  {
+    "start": 1723.42,
+    "end": 1785.86,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] on the last day, so I'll keep it as maximum 0 and I can say go across to all the task or rather limit a task or task equal to 0, I can go across to task another little bit three task, so task plus plus plus and we can say maxi okay, we need just need to make sure this task is not equal to the task done on the last rather than the last rather, so thereby this will be maximum equal to max of what maxi comma points on the day 0 and definitely on the task, so on the day 0 whatever task it will be, so just make sure you take it off and you're done the maxi. And if that's not the case, I will be like okay maximum 0, if it's any other day, I will perform again the similar thing, probably I'll be performing all the tasks again, I mean task"
+  },
+  {
+    "start": 1777.26,
+    "end": 1836.0,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] I will perform again the similar thing, probably I'll be performing all the tasks again, I mean task got there tasks will be this, okay by the way three, if I can be like task plus plus, now what I can do is if the task was not done on the last day let's do the task but if I do the task, how many points will I generate the points that I'll generate will be points on the day this task if I perform plus I'll have to go to the minus one day to solve the smallest problem and I'll have to tell him that hey listen this is the task that I did on the current day I have to pass on the points so that he gives me the answer once he gives me the answer whatever he gives or these are the code of the maximum, so I'll take the maximum and once I have the maximum I"
+  },
+  {
+    "start": 1824.46,
+    "end": 1882.97,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] so that he gives me the answer once he gives me the answer whatever he gives or these are the code of the maximum, so I'll take the maximum and once I have the maximum I can definitely add this one, I just make sense, I think this is like a quite good so now I can return the function n minus one initially start up with three and we can definitely pass on the points, I should be fine, so I'll just give it a run. So as you can see there is time limit exceeded, so let's memorize it, so that's that's the way you can create BpVDables, Bp and then you can give the first size which is n then you can declare the second one which is vector of int, four size and a minus one that's how you declare it two these are a 2d dp array of n cross it for in vector, why vector because I generally write prefer vectors it's very easier to pass in reference that's the only"
+  },
+  {
+    "start": 1870.61,
+    "end": 1928.16,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] how you declare it two these are a 2d dp array of n cross it for in vector, why vector because I generally write prefer vectors it's very easier to pass in reference that's the only reason job people can try to be do arrays not a big stuff, by the way for job of people find the code links in the description okay, so dp is done and yeah calling f over here so you can just pass on the dp by r right over here you can say dp of probability and then there's something that's lost, you can just give it like this and right before returning just make sure you check it across if dp of delus this problem has been previously solved if this problem has been previously solved what you can do is dp of d and you can say last, nip is written that and now let's code this up it gives me a correct answer now let's"
+  },
+  {
+    "start": 1915.51,
+    "end": 1971.28,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] problem has been previously solved what you can do is dp of d and you can say last, nip is written that and now let's code this up it gives me a correct answer now let's quickly submit this as you see I was solving this before this class and yeah it runs so we used a recursion last time I had an action in order to solve this particular problem that's time to check out the next possible stuff which is tabulation just in order to reduce the stack space so what's the next the next step is tabulation because the recursion as we saw we were using something like the time complexity of memory and we'll be n-processed because there are n-cross full steps understand how many different states we can have that's n-cross 4 right like not in all cases"
+  },
+  {
+    "start": 1964.28,
+    "end": 2023.88,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] understand how many different states we can have that's n-cross 4 right like not in all cases we'll have full states but yeah let's let's assume for the worst case it's n-cross full states that we if it gives me observe for every state we were actually running a fall loop of size 2 like for every state or size 3 rather so for every state you're running a fall loop of size 3 so I can say it's n-crossed 12 is the time complexity of b go off the recursion stack space will be n because at max you'll go for n days but the space complexity will be n-crossed 4 so this will be the recursion plus mmo ish and time complexity and this is an extra is this is an extra that you have to omit and this you cannot reduce so how can we first omit this recursion stack space so we will be doing something as"
+  },
+  {
+    "start": 2011.1,
+    "end": 2067.71,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] this is an extra is this is an extra that you have to omit and this you cannot reduce so how can we first omit this recursion stack space so we will be doing something as definite which is tabulation what did I tell you what's the first rule of tabulation declare the similar size yes declare the similar size dp array it's a first thing that you'll do can really clear the similar size dp array next whatever base case you have written on index 0 right you have written on index 0 now whenever you're doing 2ds because these are 2ds right whenever you're doing something as 2ddp what should you keep generally in your brain what can be d whenever you come across you try to think in this perspective of base cases okay so"
+  },
+  {
+    "start": 2059.88,
+    "end": 2117.52,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] be d whenever you come across you try to think in this perspective of base cases okay so that's a trick you'll be like striver over here index if it is 0 either last can be 0 or it can be 1 or it can be 2 so I can say there are base cases like 0 comma 0 0 comma 1 0 comma 2 in all of these recursion calls do you agree in all of these recursion calls or 0 comma 3 rather in all of these recursion calls do you agree that this base cases this particular base case will be executed you agree right because if index is 0 no matter what is the value of last they will be executed now let's analyze what if it is 0 if it is 0 then you end up taking the maximum"
+  },
+  {
+    "start": 2103.47,
+    "end": 2162.5,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] because if index is 0 no matter what is the value of last they will be executed now let's analyze what if it is 0 if it is 0 then you end up taking the maximum of task 1 and task 2 if it is 0 if it is 1 you end up taking maximum of task 0 and task 2 if it is 2 you end up taking the maximum of task 0 and task 1 if it is 3 which might be the case if there is a signal day then you might directly call 0 3 you will end up taking task 0 task all these guys so can I say the first form of tabulation will be nothing but I can simply write that as dp of 0 0 will be max of"
+  },
+  {
+    "start": 2154.05,
+    "end": 2212.53,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] will be nothing but I can simply write that as dp of 0 0 will be max of so max of array of the 0 on the 0 d task 1 or task 2 right similarly the dp of 0 1 will be max of array of task 0 and array of day 0 task 2 similarly dp of 0 2 will be max of array of 0 0 array of 0 task 1 similarly dp of 0 3 like I'm just writing it like this you could have used the similar fall look to write it like anyways while writing the code we'll do that this was done in order to explain you so these are the base cases, base cases"
+  },
+  {
+    "start": 2204.4,
+    "end": 2263.32,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] do that this was done in order to explain you so these are the base cases, base cases are done right now what's the next thing? Next thing is this you have to convert this into a dp solution now this portion of the code this portion of the code is executed when when the value of this particular day becomes equal to 0 so equal to 1 2 3 4 and so until n minus 1 whenever this becomes equal to this you execute that correct and what can be the possible values of last I again ask you the same question and to that you will be like a striver it will be like similar to 1 comma it can be 0 it can be this it can be this it can"
+  },
+  {
+    "start": 2249.26,
+    "end": 2312.51,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] ask you the same question and to that you will be like a striver it will be like similar to 1 comma it can be 0 it can be this it can be this it can be this it makes sense for 2 it can be 0 it can be 1 it can be 2 it can be 3 for 3 day 3 it can be last can be 0 last can be 1 last can be 2 last can be 3 right so we we can definitely follow this so thereby we know for everyday so let's first write the code for day so if I know that I'm gonna start because what is tabulation previous class case what is tabulation tabulation is nothing but bottom up so from 0 to the up like if I show you the recursion tree you'll start from here then you'll compute this then you'll compute this then you'll compute this bottom"
+  },
+  {
+    "start": 2303.29,
+    "end": 2358.88,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] tree you'll start from here then you'll compute this then you'll compute this then you'll compute this bottom up bottom up recursion top down this is what you require as the answer but you go down you go down you go down then you figure the answer top down okay so what I know is let's come back what I know is I have I equal to or I can say day equal to 1 and I'll go on till the day n minus 1 now over here can I say for everyday for everyday there are 4 different task values 0 1 to 3 4 so I can say for everyday there are 4 different task values from 0 to 3 again makes sense done I once you have written the fall loop it's just copy pasting the recursion part"
+  },
+  {
+    "start": 2344.65,
+    "end": 2404.36,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] can say for everyday there are 4 different task values from 0 to 3 again makes sense done I once you have written the fall loop it's just copy pasting the recursion part once you have written the fall loop it's just copy pasting the recursion part so whatever was written over here yes whatever you have written over here this copy pasted I just copy pasted that so I can say now you have to perform past correct so if if this is or you can say this is last rather instead of task because this is last so can I say over here you'll just copy pasted what did you write you wrote I equal to or task equal to 0 to 2 and if like you just compute it similar just write the similar stuff like it's getting a bit messy over here but you can write the similar stuff like instead of f it will"
+  },
+  {
+    "start": 2391.32,
+    "end": 2447.52,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] to 2 and if like you just compute it similar just write the similar stuff like it's getting a bit messy over here but you can write the similar stuff like instead of f it will be dp of day minus 1 and i is basically this guy that's what it will be so what I'll do is I'll write this in code and then I'll come back again because it's absolutely getting messy over here so in order to write the tabulation what you will do is you'll declare dp area of n crossbow and so quickly write something like 0 on 0 we max of or definitely points of 0 of 1 comma points of 0 comma 2 that's very obvious and so below I can just copy pasted this thing for the other task which is task 1 so if you're doing task 1 this will be 0 and 2 and if you're doing task 2 this will"
+  },
+  {
+    "start": 2436.12,
+    "end": 2491.15,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] I can just copy pasted this thing for the other task which is task 1 so if you're doing task 1 this will be 0 and 2 and if you're doing task 2 this will be definitely 0 and 1 correct and for the last guy it's very simple it'll be 0 and 3 which means all the task you'll stay all the task so that so max of points of 0 comma 1 that's what you can definitely do so yeah if taken all the tree guys so that's the beastly's now what did I say where does the day start from the day start from 1 till n so this go until n have any last can you have for day number of class that you can have is definitely from 0 till 3 so you can just go on last plus plus now what did I say just copy pasted what device written over here whatever is written"
+  },
+  {
+    "start": 2478.02,
+    "end": 2536.28,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] class that you can have is definitely from 0 till 3 so you can just go on last plus plus now what did I say just copy pasted what device written over here whatever is written over here just try to copy pasted this stuff okay so let's copy pasted this stuff in terms of task you see me copy so I need the maximum now remember what am I looking to compute I'm looking to compute dp of last correct so now we can keep this as 0 so we're trying to compute it okay and assume assume sorry assume I'm taking a max see variable and at the end of the day whenever I'll compute this and then the day whenever I'll compute this I'll store the max see how do you convert the I'm going to copy this exact same thing for i and it task I'm not copy pasting because"
+  },
+  {
+    "start": 2528.79,
+    "end": 2588.97,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] I'm going to copy this exact same thing for i and it task I'm not copy pasting because the indentation will go wrong task there are three tasks so I'll just go like this what is written over here if the task is not equal to last right I write the same thing see I'm writing the same thing task not equal to last how many point does it gather point equal to points of data same thing see same thing plus instead of f now you're doing bottom of this f would have been computed and stored in your dp so dp of day minus 1 very good comma task setting this off okay done next you'll update max see equal to max of max c comma point so out of all points whatever you got this it'll just take it across so"
+  },
+  {
+    "start": 2581.57,
+    "end": 2638.99,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] c comma point so out of all points whatever you got this it'll just take it across so instead of storing maximum what you can do is you can directly store it in the dp that's the better version so he's to so he's stored it in the dp add yeah this keep it dp of day last there's just using a max see variable what I did was I just used this particular stuff so I'll just omit this and where is the answer was the initial call that you made your recursion the initial call that you made your recursion was f of n minus 1 dp fn minus 1 and 3 so this made it just make it and how are you going to do is you can definitely run this and you see this running fine yeah and it is somiton was tabulation task oh was it if you ever written recursion I"
+  },
+  {
+    "start": 2626.2,
+    "end": 2686.49,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] and how are you going to do is you can definitely run this and you see this running fine yeah and it is somiton was tabulation task oh was it if you ever written recursion I was not I told you not in the starting of the dp playlist once I dg dp you'll never forget it so that's that's how I wrote the wonderful recursion and I just told you how to make sure the first couple of all loops are at once for loop serity whatever is the recurrence how do you just write them once you write them you get your particular answer that's how simple it is there takes a time complexity of b go of n cross 4 cross 3 because there are three loops and the space complexity is still n cross 4 we have eliminated the recursion stack space but how do you eliminate this that's where something as space of t myjson comes in yes so"
+  },
+  {
+    "start": 2678.45,
+    "end": 2735.77,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] stack space but how do you eliminate this that's where something as space of t myjson comes in yes so let's learn now if I show you the code how do you determine that there can be a space of imagination whenever you see that dp of d last is actually using something like point and if I just cover this off like I can just write it over here which is nothing but this like I just write it in one line which is this dp of d last is nothing but max of some dp of d last come up something plus something right now this something is a previous state of dp of d minus 1 remember whenever you're computing dp of d last and you're taking d minus 1 so that's when you can space optimize whenever there is something like minus"
+  },
+  {
+    "start": 2727.66,
+    "end": 2787.04,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] you're taking d minus 1 so that's when you can space optimize whenever there is something like minus 1 minus 2 then we can think of space optimization let's see how so specifically how did this problem how was this problem solved like if there are multiple days we created a dp at a right of like assume assume over here n is 5 and there were dp at a something like this task one task 0 task 2 task 3 and the days were like 0 1 2 3 4 5 so initially what you did was initially you filled these guys why share in the code or that's what you have done over here this is what you have done you've initially filled that right then you went on to fill this fill this fill this fill this but when you are trying to fill this what was the line that you wrote so let me just write it over here so that I"
+  },
+  {
+    "start": 2775.9,
+    "end": 2832.67,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] on to fill this fill this fill this fill this but when you are trying to fill this what was the line that you wrote so let me just write it over here so that I just I don't have to again switch on switch last equal to something plus dp of d minus 1 comma task right that's what you wrote so basically if I carefully observe what can be task task can be anything like this so in order to compute this row this row what did you require you required this particular rows values because d minus 1 this is either this value that this value that is value that is value this is what you're required so assume you computed these guys and then you move to the next what did you require when you're trying to compute the row 2 you just require these values there is no more requirement of these guys it's not required using"
+  },
+  {
+    "start": 2819.55,
+    "end": 2877.07,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] and then you move to the next what did you require when you're trying to compute the row 2 you just require these values there is no more requirement of these guys it's not required using these values you can actually compute and then again in the next using these values you can again compute these guys and again when you go back this guys you answer correct so do we need to store an entire array can't we do something at this let's start off with a very small array and what we do is we store this guy this guy this guy this guy over m and then created dummy size 4 array and tried to compute them and then again store it and then use this compute the next and then again store it then again use this to compute the next then again store it and"
+  },
+  {
+    "start": 2862.77,
+    "end": 2921.17,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] array and tried to compute them and then again store it and then use this compute the next and then again store it then again use this to compute the next then again store it and at the end compute the last and then this will be the answer can I do this right just store a size 4 array if I just store a size 4 array I don't require an n cross 4 array because there's no need to store previous information because what I require is just the previous guy thereby I'll do a space optimization now so I will be like I don't need the entire thing so what I'll do is hey why can't I just do this I think I can definitely do this I will be like I'll declare a size 4 array and I will I'll make the see I just made first 4 is"
+  },
+  {
+    "start": 2910.77,
+    "end": 2970.89,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] can definitely do this I will be like I'll declare a size 4 array and I will I'll make the see I just made first 4 is declared so what I can say is this is declared declared first 4 is declared next I'm at dp so instead now what I'm doing is I'm trying to compute the current D which means I'm trying to create this which means I'm trying to create this I will simply I'll simply keep something at this vector of n temporary of size 4 is what I'm looking to create and what I'll do is instead of dp I'll just create temporary okay so this is for the current one so the current day will be stored in temporary and this dp of day minus one now I know"
+  },
+  {
+    "start": 2963.03,
+    "end": 3021.45,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] the current day will be stored in temporary and this dp of day minus one now I know the previous is this current dp like the previous guy so what I can do is or probably in order to name it better so that you understand we can just make it previous so the previous row is over here so what I can do is previous instead of day minus one I can directly take it because I just I'm concerned with 4 values so I can directly take it once the stamp is computed after this entire iteration what I can do is I can say okay it has been computed now let's make the dps stamp so that again on the next day again on the next day when this guy has been computed this can serve as for this guy and we can again compute this"
+  },
+  {
+    "start": 3008.7,
+    "end": 3065.17,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] let's make the dps stamp so that again on the next day again on the next day when this guy has been computed this can serve as for this guy and we can again compute this so we keep on doing and at the end of the day instead of this I can say the previous has my answer sorry this will be previous the previous has my answer right and once the previous has yarn so you can definitely run it let's see if it runs yeah it runs and now let's try to submit it it runs look at the time 4 26 came in some morning and I hope I was able to make you understand at the time complexity now boils down to n cross 4 cross 3 but whatever the space you're just using a 4 size which is as good as constant which is as good as constant I converted a 2d matrix in this to"
+  },
+  {
+    "start": 3052.87,
+    "end": 3108.38,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] to n cross 4 cross 3 but whatever the space you're just using a 4 size which is as good as constant which is as good as constant I converted a 2d matrix in this to as good as constant like 1d again cross 4 into 4 which is very very good so that's about this piece optimization I think I'm gone with voice because it's it's a very very long video so guys I hope I was able to explain you the entire problem all the three approaches just in case I was please please please give me a like because it takes a hell lot of effort to make this content and please do consider commenting US because that else me that okay the people who watching the video are understanding it this is please please am an artist do it on every video if you're watching it US or understood is what you need to comment and also guys if you're new to this channel please"
+  },
+  {
+    "start": 3097.2,
+    "end": 3128.24,
+    "text": "[Video: DP 7: Ninja's Training (2D DP)] it this is please please am an artist do it on every video if you're watching it US or understood is what you need to comment and also guys if you're new to this channel please do consider subscribing us because that's numbers do motivate me to work more and more and I'll be wrapping up this video but yes if you haven't checked out our SD sheet the link is in the description make sure you check it out with this all let's sum let's rub up this and meet in the next video till then bye bye"
+  }
+]

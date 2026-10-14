@@ -1,0 +1,1912 @@
+[
+  {
+    "start": 0.0,
+    "end": 2.33,
+    "text": "Hey, we welcome back to the channel."
+  },
+  {
+    "start": 2.33,
+    "end": 4.98,
+    "text": "I hope you guys are doing extremely well."
+  },
+  {
+    "start": 4.98,
+    "end": 9.12,
+    "text": "So this is the 11th lecture of the dynamic programming playlist."
+  },
+  {
+    "start": 9.12,
+    "end": 14.17,
+    "text": "Yes Till now we have done D p on grits like we have done three problems on the"
+  },
+  {
+    "start": 14.17,
+    "end": 20.19,
+    "text": "d p on grits Where there was a shuttle pattern where we always stated that the starting point"
+  },
+  {
+    "start": 20.19,
+    "end": 23.75,
+    "text": "is 0 0 and the ending point is n minus 1 and m minus 1."
+  },
+  {
+    "start": 23.75,
+    "end": 28.35,
+    "text": "This was the pattern of questions that we have done  Now going forward."
+  },
+  {
+    "start": 28.35,
+    "end": 30.36,
+    "text": "I'll be solving three problems."
+  },
+  {
+    "start": 30.36,
+    "end": 37.03,
+    "text": "Yes three problems where we will be having variable starting points Yes might be there like there might"
+  },
+  {
+    "start": 37.03,
+    "end": 43.05,
+    "text": "be a variable or fixed starting point and the ending point will also be Variable when we will"
+  },
+  {
+    "start": 43.05,
+    "end": 47.06,
+    "text": "see the questions you will understand what does variable mean?"
+  },
+  {
+    "start": 47.06,
+    "end": 49.84,
+    "text": "But yeah, the variable it will be variable."
+  },
+  {
+    "start": 49.84,
+    "end": 55.34,
+    "text": "That's that's going to be the next set of three questions So in order to start off We"
+  },
+  {
+    "start": 55.34,
+    "end": 58.71,
+    "text": "will be taking the first question which is triangle."
+  },
+  {
+    "start": 58.71,
+    "end": 65.31,
+    "text": "So yeah without without wasting any time Let's get started Even it states that you're given a triangle"
+  },
+  {
+    "start": 65.31,
+    "end": 71.59,
+    "text": "array that's basically a triangle your task is to return the minimum Parts from to reach from the"
+  },
+  {
+    "start": 71.59,
+    "end": 77.35,
+    "text": "top until the bottom room The triangle array will have n rows and the i-throw will have i"
+  },
+  {
+    "start": 77.35,
+    "end": 78.32,
+    "text": "plus 1 elements"
+  },
+  {
+    "start": 78.32,
+    "end": 85.15,
+    "text": "So let's understand this so basically there will be n roots and the i-throw will be having i"
+  },
+  {
+    "start": 85.15,
+    "end": 91.16,
+    "text": "plus 1 elements now you can move only to add just a number of row below each step"
+  },
+  {
+    "start": 91.16,
+    "end": 96.21,
+    "text": "for example if you are at an index j in a row i then you can move to"
+  },
+  {
+    "start": 96.21,
+    "end": 101.48,
+    "text": "i or i plus 1 index in the row j plus 1 and it's each step I'll explain"
+  },
+  {
+    "start": 101.48,
+    "end": 103.86,
+    "text": "you this So this is the example."
+  },
+  {
+    "start": 103.86,
+    "end": 109.72,
+    "text": "So let me just quickly write this down over in the iPad So if you see over here"
+  },
+  {
+    "start": 109.72,
+    "end": 116.99,
+    "text": "what the question stated was this is the zero-throw it will have One element there's the first row"
+  },
+  {
+    "start": 116.99,
+    "end": 124.49,
+    "text": "it will have two elements second row will have three elements So that's why it's Right angle triangle"
+  },
+  {
+    "start": 124.49,
+    "end": 130.2,
+    "text": "but this now it states that if you are over here yes if you're over here On a"
+  },
+  {
+    "start": 130.2,
+    "end": 136.51,
+    "text": "given row you can move Right to the bottom of the next row or you can move Diagonally"
+  },
+  {
+    "start": 136.51,
+    "end": 143.19,
+    "text": "to the next row so basically assume you are standing over here You can move either to here"
+  },
+  {
+    "start": 143.19,
+    "end": 149.05,
+    "text": "or you can move either to six but you can't move to ten or neither you can move"
+  },
+  {
+    "start": 149.05,
+    "end": 154.84,
+    "text": "to eight So either you can move diagonally diagonally or right straight bottom"
+  },
+  {
+    "start": 154.84,
+    "end": 160.7,
+    "text": "So they have said that there is a starting point Okay, so over here we need to understand"
+  },
+  {
+    "start": 160.7,
+    "end": 167.09,
+    "text": "that the starting point is fixed Okay, so the starting point is Fixed what about the ending point"
+  },
+  {
+    "start": 167.09,
+    "end": 173.68,
+    "text": "they're saying that the ending point might vary is the ending point might vary Because what they are"
+  },
+  {
+    "start": 173.68,
+    "end": 179.74,
+    "text": "concerned is as long as you're reaching the last row you can either reach her You can either"
+  },
+  {
+    "start": 179.74,
+    "end": 185.21,
+    "text": "reach her or you can either reach her or you can either reach her as long as you're"
+  },
+  {
+    "start": 185.21,
+    "end": 191.34,
+    "text": "reaching the star ending Ending row we are satisfied and in order to reach from the first row"
+  },
+  {
+    "start": 191.34,
+    "end": 197.07,
+    "text": "till the last row There might be a path how many different paths can be there you might"
+  },
+  {
+    "start": 197.07,
+    "end": 202.21,
+    "text": "go from here to here Then from here to here then from here to here They can be"
+  },
+  {
+    "start": 202.21,
+    "end": 208.01,
+    "text": "some path like one two three three two seven seven to ten They can be something like one"
+  },
+  {
+    "start": 208.01,
+    "end": 213.61,
+    "text": "two three eight right bottom They can be a lot of paths okay and in these paths which"
+  },
+  {
+    "start": 213.61,
+    "end": 218.95,
+    "text": "ever path takes the minimum path You have to tell me that so for an example I can"
+  },
+  {
+    "start": 218.95,
+    "end": 223.83,
+    "text": "say I can go from one to two two three And to eight and this is like eight"
+  },
+  {
+    "start": 223.83,
+    "end": 228.44,
+    "text": "plus to his turn 13 14 so 14 is the minimum path So we can try out all"
+  },
+  {
+    "start": 228.44,
+    "end": 232.2,
+    "text": "the paths and the minimum that you will get is in need 14"
+  },
+  {
+    "start": 232.2,
+    "end": 238.28,
+    "text": "So going across how do you identify that a greedy solution is will fail again uniform It's the"
+  },
+  {
+    "start": 238.28,
+    "end": 244.62,
+    "text": "concept that I have explained you in the previous videos if you have seen It's not uniform because"
+  },
+  {
+    "start": 244.62,
+    "end": 246.3,
+    "text": "it might happen over here."
+  },
+  {
+    "start": 246.3,
+    "end": 255.68,
+    "text": "Gradually you choose to  And again, greedily you choose three and  Like greedily you're choosing right and  Might happen somewhere down the line."
+  },
+  {
+    "start": 255.68,
+    "end": 261.89,
+    "text": "There is a very small of value you miss out just because you're choosing something Which is very"
+  },
+  {
+    "start": 261.89,
+    "end": 268.1,
+    "text": "very small on the upper half so uniformity is not there because the values Might be bigger might"
+  },
+  {
+    "start": 268.1,
+    "end": 274.83,
+    "text": "be lesser So whenever there is no uniformity in the increased increment of values or decrement of values"
+  },
+  {
+    "start": 274.83,
+    "end": 280.91,
+    "text": "Then we can see that something like a greedy can not be applied something like a greedy cannot"
+  },
+  {
+    "start": 280.91,
+    "end": 284.15,
+    "text": "be applied So what do we tend to apply over there?"
+  },
+  {
+    "start": 284.15,
+    "end": 290.81,
+    "text": "Yes, we try out all the paths we try out  All the  Pots right and how do you do that again very simple?"
+  },
+  {
+    "start": 290.81,
+    "end": 295.92,
+    "text": "We know we just have one way to try out all the paths that is we travel through"
+  },
+  {
+    "start": 295.92,
+    "end": 301.81,
+    "text": "all the paths and that can be done using Recursion and by using recursion, what you need to"
+  },
+  {
+    "start": 301.81,
+    "end": 307.37,
+    "text": "do is need to find the path which gives you the minimum Some and once you've done this"
+  },
+  {
+    "start": 307.37,
+    "end": 308.15,
+    "text": "you're done."
+  },
+  {
+    "start": 308.15,
+    "end": 310.09,
+    "text": "So in the great good problems."
+  },
+  {
+    "start": 310.09,
+    "end": 314.44,
+    "text": "What have I told you after all you represent everything in terms of"
+  },
+  {
+    "start": 314.44,
+    "end": 320.15,
+    "text": "Indexes and what are the indexes of I have I and Jay because in a great way we"
+  },
+  {
+    "start": 320.15,
+    "end": 326.6,
+    "text": "will always have the row number and the call And number what is the next thing that I've"
+  },
+  {
+    "start": 326.6,
+    "end": 327.26,
+    "text": "told you?"
+  },
+  {
+    "start": 327.26,
+    "end": 328.87,
+    "text": "Explore all the paths."
+  },
+  {
+    "start": 328.87,
+    "end": 335.32,
+    "text": "So if you remember over here Yes over here the paths what kind of paths are there either"
+  },
+  {
+    "start": 335.32,
+    "end": 341.84,
+    "text": "you can go here Either you can go diagonally right and after that you take the minimal of"
+  },
+  {
+    "start": 341.84,
+    "end": 348.65,
+    "text": "all the paths and if you write these three steps down You can easily write any recurrence can"
+  },
+  {
+    "start": 348.65,
+    "end": 356.05,
+    "text": "you write any recurrence right you can but now the question arises Striver in all the previous videos"
+  },
+  {
+    "start": 356.05,
+    "end": 362.13,
+    "text": "We did know that the ending point was something like n minus one and m minus one So"
+  },
+  {
+    "start": 362.13,
+    "end": 367.77,
+    "text": "Striver we started from the back like f of n minus one m minus one and we did"
+  },
+  {
+    "start": 367.77,
+    "end": 374.73,
+    "text": "write the recursion But over here there is not a fixed ending part that is very obvious because"
+  },
+  {
+    "start": 374.73,
+    "end": 379.79,
+    "text": "we can either end here We can either end here we can either end here."
+  },
+  {
+    "start": 379.79,
+    "end": 385.94,
+    "text": "So there is no fixed ending point So logically it will not make sense if I write the"
+  },
+  {
+    "start": 385.94,
+    "end": 389.02,
+    "text": "recurrence because I might be ending here."
+  },
+  {
+    "start": 389.02,
+    "end": 390.71,
+    "text": "I might be ending here."
+  },
+  {
+    "start": 390.71,
+    "end": 393.64,
+    "text": "So they can be four different recurrence"
+  },
+  {
+    "start": 393.64,
+    "end": 400.12,
+    "text": "One that starts from here the other that starts from here the other that starts from here the"
+  },
+  {
+    "start": 400.12,
+    "end": 407.3,
+    "text": "other that starts from here There will be four different kind of recurrence in the previous Video there"
+  },
+  {
+    "start": 407.3,
+    "end": 413.36,
+    "text": "was only one recurrence that he called and you got the answer But over here you have to"
+  },
+  {
+    "start": 413.36,
+    "end": 419.49,
+    "text": "call four different recurrence one is from here one is from here one is from here one is"
+  },
+  {
+    "start": 419.49,
+    "end": 426.53,
+    "text": "from here and In all the four recurrence whichever recurrence gives you the minimum path that will be"
+  },
+  {
+    "start": 426.53,
+    "end": 432.45,
+    "text": "a answer right But whenever you see that there is a single fixed point like I can see"
+  },
+  {
+    "start": 432.45,
+    "end": 439.07,
+    "text": "That there is a single fixed point Logically it is preferable that you start from right the top"
+  },
+  {
+    "start": 439.07,
+    "end": 442.69,
+    "text": "and it's Try to go down that's the preferable logic."
+  },
+  {
+    "start": 442.69,
+    "end": 449.45,
+    "text": "So we will try to implement that preferable logic Instead of starting from the back which we have"
+  },
+  {
+    "start": 449.45,
+    "end": 455.51,
+    "text": "usually done in all the problems we will not do because Over here we have to start from"
+  },
+  {
+    "start": 455.51,
+    "end": 462.55,
+    "text": "four different columns basically the number of columns is what I have to start That's not preferable."
+  },
+  {
+    "start": 462.55,
+    "end": 467.64,
+    "text": "That's why what we do is we start the recursion From f of 0 0 and what we"
+  },
+  {
+    "start": 467.64,
+    "end": 472.6,
+    "text": "say is hey listen Over here f of 0 0 signifies the minimum pass minimum"
+  },
+  {
+    "start": 472.6,
+    "end": 477.07,
+    "text": "path sum  0 0  Last row and in last row it can be any column."
+  },
+  {
+    "start": 477.07,
+    "end": 482.12,
+    "text": "I don't I don't care  It can start from 0 0 and go till the last row."
+  },
+  {
+    "start": 482.12,
+    "end": 488.05,
+    "text": "So we have figured out the recurrence has to start from Instead of f of n minus 1"
+  },
+  {
+    "start": 488.05,
+    "end": 494.28,
+    "text": "m minus 1 we know the recurrence will start from 0 comma 0 that is something which we"
+  },
+  {
+    "start": 494.28,
+    "end": 500.07,
+    "text": "have Figure out and I've told you the reason right at same rate the recurrence."
+  },
+  {
+    "start": 500.07,
+    "end": 506.81,
+    "text": "So we know the recurrence is something like i comma j Correct, so what do we initially write"
+  },
+  {
+    "start": 506.81,
+    "end": 513.04,
+    "text": "if I'm writing this represent ij then we have to write the base case What is the base"
+  },
+  {
+    "start": 513.04,
+    "end": 518.02,
+    "text": "case what am I doing try to think in that direction what am I doing?"
+  },
+  {
+    "start": 518.02,
+    "end": 524.69,
+    "text": "I know that I'm starting from here  I know that I'm starting from here and I am going down."
+  },
+  {
+    "start": 524.69,
+    "end": 527.11,
+    "text": "I will go down and when do I end?"
+  },
+  {
+    "start": 527.11,
+    "end": 529.75,
+    "text": "From this row can I go further down?"
+  },
+  {
+    "start": 529.75,
+    "end": 531.65,
+    "text": "Where is your destination?"
+  },
+  {
+    "start": 531.65,
+    "end": 534.87,
+    "text": "Generally the destination is your base case."
+  },
+  {
+    "start": 534.87,
+    "end": 538.39,
+    "text": "I know the destination is the n minus 1 through."
+  },
+  {
+    "start": 538.39,
+    "end": 544.54,
+    "text": "So I know whenever I reach n minus 1 The next row whichever value is there that will"
+  },
+  {
+    "start": 544.54,
+    "end": 549.96,
+    "text": "simply get added to the answer So what I can do is okay if I reach n minus"
+  },
+  {
+    "start": 549.96,
+    "end": 555.88,
+    "text": "1 through by any chance if I reach n minus 1 through I can say that please please"
+  },
+  {
+    "start": 555.88,
+    "end": 562.34,
+    "text": "Return whatever is there on that jth column like if I'm reaching any of the columns yes if"
+  },
+  {
+    "start": 562.34,
+    "end": 566.79,
+    "text": "I'm reaching This guy I'll return 8 to be added to the answer."
+  },
+  {
+    "start": 566.79,
+    "end": 573.32,
+    "text": "I'll return 9 I'll return 6 I'll return 10 whichever column I end it I'll be returning that"
+  },
+  {
+    "start": 573.32,
+    "end": 579.28,
+    "text": "so that is how we will be doing this Correct, so we have figured out the first base"
+  },
+  {
+    "start": 579.28,
+    "end": 581.94,
+    "text": "case what can be the other base case?"
+  },
+  {
+    "start": 581.94,
+    "end": 588.9,
+    "text": "Can you try to think yes you probably can try to think so if I if I talk about where am I moving?"
+  },
+  {
+    "start": 588.9,
+    "end": 594.93,
+    "text": "I'm moving till bottom and to the right Will we ever go out of boundary try to think"
+  },
+  {
+    "start": 594.93,
+    "end": 600.96,
+    "text": "for this guy This is the extremist guy on the zero throw does it have a Diagonal yes"
+  },
+  {
+    "start": 600.96,
+    "end": 606.92,
+    "text": "does this guy have a diagonal yes does this guy have a diagonal yes If we reach the"
+  },
+  {
+    "start": 606.92,
+    "end": 612.95,
+    "text": "last row so I know no matter How you move because we can only move down and diagonal"
+  },
+  {
+    "start": 612.95,
+    "end": 619.34,
+    "text": "we will never Never go outside this boundary so we know that there will be no out outside"
+  },
+  {
+    "start": 619.34,
+    "end": 626.3,
+    "text": "boundary conditions So there is only one base case so Step one completed Step two explore all the"
+  },
+  {
+    "start": 626.3,
+    "end": 632.04,
+    "text": "paths and we know we are looking for minimum paths of what kind of path is there"
+  },
+  {
+    "start": 632.04,
+    "end": 636.33,
+    "text": "One is this I know this is nothing but I plus one j we go to the next"
+  },
+  {
+    "start": 636.33,
+    "end": 641.12,
+    "text": "row and the same column And we know this is I plus one next row but the right"
+  },
+  {
+    "start": 641.12,
+    "end": 646.91,
+    "text": "column right column will mean I plus one j plus one everyone knows that Right what's the next"
+  },
+  {
+    "start": 646.91,
+    "end": 652.2,
+    "text": "step the next step is very simple Explore all the paths so what paths do you have you"
+  },
+  {
+    "start": 652.2,
+    "end": 654.13,
+    "text": "have one down path with states?"
+  },
+  {
+    "start": 654.13,
+    "end": 659.73,
+    "text": "The current you will take and you will ask like basically took the current and you said go"
+  },
+  {
+    "start": 659.73,
+    "end": 665.02,
+    "text": "down and figure out the answer Of the rest of matrix use you took the current and you"
+  },
+  {
+    "start": 665.02,
+    "end": 670.43,
+    "text": "said go down figure out the answer The rest of the matrix so you're saying okay go down"
+  },
+  {
+    "start": 670.43,
+    "end": 676.34,
+    "text": "and figure out the answer with the rest of the matrix Or you're saying good diagonal and Figure"
+  },
+  {
+    "start": 676.34,
+    "end": 681.69,
+    "text": "out the answer for the rest of the matrix from that step so that's what you've done So"
+  },
+  {
+    "start": 681.69,
+    "end": 688.1,
+    "text": "basically what does this condition mean you're basically saying okay listen take one and go to this guy"
+  },
+  {
+    "start": 688.1,
+    "end": 693.33,
+    "text": "So this guy states I have to figure out the answer That I'll take from here to reach"
+  },
+  {
+    "start": 693.33,
+    "end": 699.06,
+    "text": "here Right if you'd have gone diagonally What have been going here so you have taken one and"
+  },
+  {
+    "start": 699.06,
+    "end": 705.22,
+    "text": "you're saying you're here now You're asking in this triangle from here in order to reach out figure"
+  },
+  {
+    "start": 705.22,
+    "end": 710.7,
+    "text": "out the minimal cost path some So you have written one down and one diagonal and if take"
+  },
+  {
+    "start": 710.7,
+    "end": 713.56,
+    "text": "it the path some the current and the remaining"
+  },
+  {
+    "start": 713.56,
+    "end": 722.66,
+    "text": "That it will give so what we have done the next step is also done  Explore all the paths what is the third step?"
+  },
+  {
+    "start": 722.66,
+    "end": 726.16,
+    "text": "Minimal of all the paths yes, so can I see?"
+  },
+  {
+    "start": 726.16,
+    "end": 732.74,
+    "text": "I will return the minimal of Digd and dg which is down and diagonal so I can just"
+  },
+  {
+    "start": 732.74,
+    "end": 740.79,
+    "text": "Complete the function this is how the recurrence will be free see forward Right so you have written"
+  },
+  {
+    "start": 740.79,
+    "end": 748.27,
+    "text": "down the recurrence now if I ask you the time complexity What will be the time complexity of"
+  },
+  {
+    "start": 748.27,
+    "end": 749.49,
+    "text": "this recursion?"
+  },
+  {
+    "start": 749.49,
+    "end": 755.99,
+    "text": "Now how many like if I ask you how many rows in columns are there then the first"
+  },
+  {
+    "start": 755.99,
+    "end": 763.14,
+    "text": "row has one column So basically one column then the next row has two column next row has"
+  },
+  {
+    "start": 763.14,
+    "end": 769.56,
+    "text": "three column and so on we have n plus One columns at the last and it row that's"
+  },
+  {
+    "start": 769.56,
+    "end": 776.06,
+    "text": "all I think n in column rather we have exactly n column at the last Roop so what"
+  },
+  {
+    "start": 776.06,
+    "end": 783.05,
+    "text": "we know is these are the number of rows and for every column we have couple of options"
+  },
+  {
+    "start": 783.05,
+    "end": 789.15,
+    "text": "Is it to go down or to go water so we can say twice into twice across every"
+  },
+  {
+    "start": 789.15,
+    "end": 789.4,
+    "text": "one"
+  },
+  {
+    "start": 789.4,
+    "end": 795.48,
+    "text": "Right so two to the power the summation of this Two to the power summation of this which"
+  },
+  {
+    "start": 795.48,
+    "end": 803.43,
+    "text": "is exponential in nature because you're going twice for every one right recursion And the space complexity there'll"
+  },
+  {
+    "start": 803.43,
+    "end": 809.72,
+    "text": "be a stack space involved one with the stack space Going from the zero through to the water"
+  },
+  {
+    "start": 809.72,
+    "end": 814.63,
+    "text": "so the length of the rows which is b go off n so I can do the recursion"
+  },
+  {
+    "start": 814.63,
+    "end": 820.71,
+    "text": "as this and you know how to Convert the recursion like how to optimize this the best way"
+  },
+  {
+    "start": 820.71,
+    "end": 827.21,
+    "text": "is to figure out are there Overlapping sub problems and I will not be doing any more recursion"
+  },
+  {
+    "start": 827.21,
+    "end": 833.64,
+    "text": "Because this is the 11th lecture of the dp series and I'm of the assumption that You're being"
+  },
+  {
+    "start": 833.64,
+    "end": 840.21,
+    "text": "seeing the dp series from the first lecture so you all know what is overlapping sub problems If"
+  },
+  {
+    "start": 840.21,
+    "end": 844.22,
+    "text": "you want to figure out Are there overlapping sub problems?"
+  },
+  {
+    "start": 844.22,
+    "end": 849.34,
+    "text": "What we just need to do is you need to start from f of zero zero Go across"
+  },
+  {
+    "start": 849.34,
+    "end": 854.39,
+    "text": "to f of one comma zero go across to f of one comma one keep on going This"
+  },
+  {
+    "start": 854.39,
+    "end": 859.3,
+    "text": "will be f of the next one will be a two comma zero the next one will be"
+  },
+  {
+    "start": 859.3,
+    "end": 864.14,
+    "text": "f of two comma one This will be like f of two comma one this will be f"
+  },
+  {
+    "start": 864.14,
+    "end": 865.8,
+    "text": "of or something like one"
+  },
+  {
+    "start": 865.8,
+    "end": 871.72,
+    "text": "Sorry two comma two so you see the first step This is the first step where you get"
+  },
+  {
+    "start": 871.72,
+    "end": 879.15,
+    "text": "overlapping sub problems So we are seeing there will always be overlapping sub problems if you draw the"
+  },
+  {
+    "start": 879.15,
+    "end": 884.56,
+    "text": "tree I said I'll not draw but still I did draw So if you draw this you will"
+  },
+  {
+    "start": 884.56,
+    "end": 892.43,
+    "text": "see that there are overlapping sub problems and you know whenever there are overlapping sub problems What can"
+  },
+  {
+    "start": 892.43,
+    "end": 893.15,
+    "text": "you apply?"
+  },
+  {
+    "start": 893.15,
+    "end": 901.52,
+    "text": "Yes, you can apply something as  Memo I-ation yes, you can apply something as memo I-ation now what's the next step?"
+  },
+  {
+    "start": 901.52,
+    "end": 903.68,
+    "text": "Can I see this can I see this?"
+  },
+  {
+    "start": 903.68,
+    "end": 909.45,
+    "text": "But if I can apply memo I should I'd figure out What can be the maximum value of"
+  },
+  {
+    "start": 909.45,
+    "end": 912.12,
+    "text": "i what can be the maximum value of j?"
+  },
+  {
+    "start": 912.12,
+    "end": 917.46,
+    "text": "I know we can act max have n rows and n columns So we will be requiring an"
+  },
+  {
+    "start": 917.46,
+    "end": 920.13,
+    "text": "n cross n dp So what's the next step?"
+  },
+  {
+    "start": 920.13,
+    "end": 921.36,
+    "text": "Very simple guys."
+  },
+  {
+    "start": 921.36,
+    "end": 926.41,
+    "text": "You just take dp of ij done next if dp of ij is not equal to minus one"
+  },
+  {
+    "start": 926.41,
+    "end": 932.33,
+    "text": "you can return dp of ij that's what all that's that's what you just need to do and"
+  },
+  {
+    "start": 932.33,
+    "end": 939.11,
+    "text": "if you're able to do this I should be absolutely fine with the memo-ation solution So once you"
+  },
+  {
+    "start": 939.11,
+    "end": 943.88,
+    "text": "convert it into a memo-ation solution what is the time complexity?"
+  },
+  {
+    "start": 943.88,
+    "end": 949.23,
+    "text": "Can I say the time complexity will be the number of states which is n into n and"
+  },
+  {
+    "start": 949.23,
+    "end": 955.05,
+    "text": "the space complexity I get a lot be exactly n into n because It's a triangle right like"
+  },
+  {
+    "start": 955.05,
+    "end": 960.73,
+    "text": "if you if you think it properly it's a triangle So one state two states of these will"
+  },
+  {
+    "start": 960.73,
+    "end": 965.81,
+    "text": "be the number of states which is 1 plus 2 plus 3 plus this portion of the dp"
+  },
+  {
+    "start": 965.81,
+    "end": 971.76,
+    "text": "will not be required but I'm not going into depth You will you can understand if you just"
+  },
+  {
+    "start": 971.76,
+    "end": 977.91,
+    "text": "do a dryer non-yosself I'm not going into the depth so the time complexity like you can just"
+  },
+  {
+    "start": 977.91,
+    "end": 984.66,
+    "text": "generally see if this is the time complexity and the space complexity will be this Which is recursion"
+  },
+  {
+    "start": 984.66,
+    "end": 990.88,
+    "text": "stack space and I've already told you about what is recursion stack space So this is the time"
+  },
+  {
+    "start": 990.88,
+    "end": 994.49,
+    "text": "complexity and the recursion stack space perfect guys."
+  },
+  {
+    "start": 994.49,
+    "end": 1000.17,
+    "text": "Okay, so how do you Remove the stack space Because you know in a lot of platforms you"
+  },
+  {
+    "start": 1000.17,
+    "end": 1005.79,
+    "text": "will get daily time limit exceeded So in order to do that you just need to write the"
+  },
+  {
+    "start": 1005.79,
+    "end": 1012.81,
+    "text": "tabu-lation method So first This is going to be slightly different from the previous ones in the previous"
+  },
+  {
+    "start": 1012.81,
+    "end": 1013.41,
+    "text": "problems."
+  },
+  {
+    "start": 1013.41,
+    "end": 1018.76,
+    "text": "We did recursion from n minus 1 till 0 and Over here we did the recursion from 0"
+  },
+  {
+    "start": 1018.76,
+    "end": 1024.38,
+    "text": "to rather the last row so it isn't like now we will be calling just because we wrote"
+  },
+  {
+    "start": 1024.38,
+    "end": 1025.72,
+    "text": "the recursion from a"
+  },
+  {
+    "start": 1025.72,
+    "end": 1032.47,
+    "text": "0 to n last row it doesn't mean it's a bottom up Right recursion always is stop down"
+  },
+  {
+    "start": 1032.47,
+    "end": 1039.22,
+    "text": "is always stop down Because this is where you start you go down you go down then you"
+  },
+  {
+    "start": 1039.22,
+    "end": 1046.77,
+    "text": "compute the base keys then you Reacccommodate to get the final answer so stop down when you go"
+  },
+  {
+    "start": 1046.77,
+    "end": 1053.44,
+    "text": "so never ever right so Over here the recursion that you wrote was from 0 to n minus"
+  },
+  {
+    "start": 1053.44,
+    "end": 1060.27,
+    "text": "1 So the base case will be like the Tabulation will be the opposite it's a thumb rule"
+  },
+  {
+    "start": 1060.27,
+    "end": 1068.78,
+    "text": "whatever you write for recursion the opposite Is the tabulation right so that's something which is a thumb"
+  },
+  {
+    "start": 1068.78,
+    "end": 1075.13,
+    "text": "rule Now let's look at the base case let's go across so by the way of the first"
+  },
+  {
+    "start": 1075.13,
+    "end": 1082.44,
+    "text": "thing in tabulation everyone knows is Declare a dp of size n cross n as something which you"
+  },
+  {
+    "start": 1082.44,
+    "end": 1088.22,
+    "text": "have to declare correct now going across What do I see in the recursion?"
+  },
+  {
+    "start": 1088.22,
+    "end": 1092.56,
+    "text": "This is the base case how many base cases can we have?"
+  },
+  {
+    "start": 1092.56,
+    "end": 1098.99,
+    "text": "If I'm saying i is n minus 1 what would be the possible values of j the possible"
+  },
+  {
+    "start": 1098.99,
+    "end": 1103.81,
+    "text": "values of j if I just go out of the example 0 1 2 3 as I can"
+  },
+  {
+    "start": 1103.81,
+    "end": 1103.96,
+    "text": "be"
+  },
+  {
+    "start": 1103.96,
+    "end": 1111.04,
+    "text": "Four different rules They can be four to say four different columns Because once you might reach here"
+  },
+  {
+    "start": 1111.04,
+    "end": 1116.99,
+    "text": "this might be base case You might reach here this is a base case you might reach here"
+  },
+  {
+    "start": 1116.99,
+    "end": 1122.31,
+    "text": "this is a base case You might reach here this is a base case So there can be"
+  },
+  {
+    "start": 1122.31,
+    "end": 1128.97,
+    "text": "four different base cases agreed so if I'm saying that there can be four different base cases I"
+  },
+  {
+    "start": 1128.97,
+    "end": 1133.94,
+    "text": "just need to write it so I know for sure that j there can be j equal to"
+  },
+  {
+    "start": 1133.94,
+    "end": 1139.68,
+    "text": "0 till j lesser than answer all the columns and I know n minus 1 will stick common"
+  },
+  {
+    "start": 1139.68,
+    "end": 1145.91,
+    "text": "But this column number will always change because if I be the first call and every time I"
+  },
+  {
+    "start": 1145.91,
+    "end": 1151.72,
+    "text": "just need to make sure I take the value from the matrix because this is what I have"
+  },
+  {
+    "start": 1151.72,
+    "end": 1158.17,
+    "text": "been doing in the recursion We have been writing this only right return this What can be the"
+  },
+  {
+    "start": 1158.17,
+    "end": 1158.31,
+    "text": "j?"
+  },
+  {
+    "start": 1158.31,
+    "end": 1162.58,
+    "text": "j can be 0 1 2 and 3 which is up till n minus 1 That's what I"
+  },
+  {
+    "start": 1162.58,
+    "end": 1169.45,
+    "text": "wrote in the base case So something different from the previous ones we have written the base case"
+  },
+  {
+    "start": 1169.45,
+    "end": 1176.04,
+    "text": "ourselves So you have written this particular base case What is the next step the next step is"
+  },
+  {
+    "start": 1176.04,
+    "end": 1180.04,
+    "text": "definitely writing the fall loop so we need to understand"
+  },
+  {
+    "start": 1180.04,
+    "end": 1186.82,
+    "text": "If we write the recurrence from 0 to n minus 1 the tab the tabulation will be opposite"
+  },
+  {
+    "start": 1186.82,
+    "end": 1192.89,
+    "text": "why Because you know the base cases n at n minus 1 so you fill the table from"
+  },
+  {
+    "start": 1192.89,
+    "end": 1198.02,
+    "text": "n minus 1 then n minus 2 then to n minus 3 and so on you go until"
+  },
+  {
+    "start": 1198.02,
+    "end": 1203.86,
+    "text": "0 comma 0 so you go opposite right so what I know is There will be the row"
+  },
+  {
+    "start": 1203.86,
+    "end": 1210.25,
+    "text": "number i Will definitely start from n minus 2 there's no need to do for n minus 1"
+  },
+  {
+    "start": 1210.25,
+    "end": 1217.43,
+    "text": "because you've already done for it We go till 0 and i minus minus now remember whenever you"
+  },
+  {
+    "start": 1217.43,
+    "end": 1224.13,
+    "text": "write tabulation You go and see what are the recurrences there is a i and there's a j"
+  },
+  {
+    "start": 1224.13,
+    "end": 1230.52,
+    "text": "So for an i what can be the particular j's you're thinking your brain So if I see"
+  },
+  {
+    "start": 1230.52,
+    "end": 1236.2,
+    "text": "if i is 0 what can be the possible j If like for 0 through there will be"
+  },
+  {
+    "start": 1236.2,
+    "end": 1241.48,
+    "text": "0 columns i will like yes if i is 1 how many j's can be there 0 and"
+  },
+  {
+    "start": 1241.48,
+    "end": 1246.29,
+    "text": "1 if i is to how many j's can be there 012 if i is 3 how many"
+  },
+  {
+    "start": 1246.29,
+    "end": 1252.76,
+    "text": "j's can be there 0123 because it's a triangle it's a triangle So can I say What is"
+  },
+  {
+    "start": 1252.76,
+    "end": 1258.2,
+    "text": "the value of i That's equivalent to the number of columns it can have"
+  },
+  {
+    "start": 1258.2,
+    "end": 1265.08,
+    "text": "So i figured out how many possible columns will i have for a particular i So first variable"
+  },
+  {
+    "start": 1265.08,
+    "end": 1272.27,
+    "text": "you will write and then you'll create a nested loop that's a tabulation concept for j So create"
+  },
+  {
+    "start": 1272.27,
+    "end": 1279.76,
+    "text": "the nested loop for the tabulation concept So i create a nested loop for the tabulation concept and"
+  },
+  {
+    "start": 1279.76,
+    "end": 1285.89,
+    "text": "go did i tell you The nested now you might ask okay striver now how is the nested"
+  },
+  {
+    "start": 1285.89,
+    "end": 1292.24,
+    "text": "loop right now the nested loop will also run in the similar fashion How did j move j"
+  },
+  {
+    "start": 1292.24,
+    "end": 1299.81,
+    "text": "move like plus plus right plus one something you run the nested loop in the opposite direction Which"
+  },
+  {
+    "start": 1299.81,
+    "end": 1304.95,
+    "text": "is j equal to i g greater than equal to 0 j minus minus If I move in"
+  },
+  {
+    "start": 1304.95,
+    "end": 1311.99,
+    "text": "both of them in the plus plus the tabulation will be the opposite that's it That's the simple"
+  },
+  {
+    "start": 1311.99,
+    "end": 1319.25,
+    "text": "tabulation nested for every i you write the particular j that's it and after that Copy which the"
+  },
+  {
+    "start": 1319.25,
+    "end": 1325.68,
+    "text": "recurrence what are the recurrence a of ij plus f of i plus 1 j that's the recurrence"
+  },
+  {
+    "start": 1325.68,
+    "end": 1331.73,
+    "text": "relationship right so you write dp of i plus 1 j with the other one you wrote dg"
+  },
+  {
+    "start": 1331.73,
+    "end": 1336.12,
+    "text": "equal to a of ij is a of ij plus dp of i plus 1 and j plus"
+  },
+  {
+    "start": 1336.12,
+    "end": 1338.92,
+    "text": "1 perfect and then you wrote dp of ij"
+  },
+  {
+    "start": 1338.92,
+    "end": 1345.69,
+    "text": "equal to minimum of d comma dg what will be answer what is the recursion that you call"
+  },
+  {
+    "start": 1345.69,
+    "end": 1351.98,
+    "text": "to get the answer The recursion that you call to get the answer was f of 0 comma"
+  },
+  {
+    "start": 1351.98,
+    "end": 1357.57,
+    "text": "0 so over here the answer will be print of dp of 0 and 0 that's it That"
+  },
+  {
+    "start": 1357.57,
+    "end": 1364.57,
+    "text": "is the answer yes that is the answer perfect so what is the time complexity now Again, we"
+  },
+  {
+    "start": 1364.57,
+    "end": 1371.02,
+    "text": "go off n into n because that's that's the kind of like near about n into n because"
+  },
+  {
+    "start": 1371.02,
+    "end": 1377.47,
+    "text": "over here It's not exactly n loop it's the number of rows so you can say that it's"
+  },
+  {
+    "start": 1377.47,
+    "end": 1385.57,
+    "text": "slightly less than that Why a near about what would the space complexity no more recursion stacks piece"
+  },
+  {
+    "start": 1385.57,
+    "end": 1392.42,
+    "text": "by the way I think in the Memoration part oh please we just wrote a recursion tax piece"
+  },
+  {
+    "start": 1392.42,
+    "end": 1399.89,
+    "text": "we did not write the Tabulation that was used so the recursion stack space has been omitted and"
+  },
+  {
+    "start": 1399.89,
+    "end": 1406.66,
+    "text": "I just left off with this n cross it n matrix that you're using for this particular dp"
+  },
+  {
+    "start": 1406.66,
+    "end": 1413.9,
+    "text": "table So we have made sure that the space complexity of the recursion the of the stack space"
+  },
+  {
+    "start": 1413.9,
+    "end": 1415.16,
+    "text": "has been removed"
+  },
+  {
+    "start": 1415.16,
+    "end": 1416.87,
+    "text": "Can we optimize this yes?"
+  },
+  {
+    "start": 1416.87,
+    "end": 1422.55,
+    "text": "Why I did tell you if there is something like I plus one if there is something like"
+  },
+  {
+    "start": 1422.55,
+    "end": 1427.27,
+    "text": "I plus one you can always to it So why don't you do it I was the rule"
+  },
+  {
+    "start": 1427.27,
+    "end": 1435.34,
+    "text": "just stole the previous keep exchanging remember So what's the next thing space optimization and there's the specialty"
+  },
+  {
+    "start": 1435.34,
+    "end": 1441.49,
+    "text": "about the series isn't it What have I told you whenever you see something like I minus one"
+  },
+  {
+    "start": 1441.49,
+    "end": 1447.1,
+    "text": "like till now it was I minus one because it was a previous Over here we are seeing"
+  },
+  {
+    "start": 1447.1,
+    "end": 1452.5,
+    "text": "something as What are we seeing I plus one so how how will this dp a table fill"
+  },
+  {
+    "start": 1452.5,
+    "end": 1460.16,
+    "text": "up so I'll always recommend in order to understand space complexity better Like or space optimization better Try"
+  },
+  {
+    "start": 1460.16,
+    "end": 1465.15,
+    "text": "to do a dry run of the stable format that the guy to show her why it does"
+  },
+  {
+    "start": 1465.15,
+    "end": 1471.17,
+    "text": "like we have seen his videos You will understand how he like he just comes up and writes"
+  },
+  {
+    "start": 1471.17,
+    "end": 1476.57,
+    "text": "the formula and fills up the dp table So now you know how to how to derive this"
+  },
+  {
+    "start": 1476.57,
+    "end": 1482.11,
+    "text": "particular formula Now you can just fill up the dp table so if you try to fill up"
+  },
+  {
+    "start": 1482.11,
+    "end": 1488.54,
+    "text": "the dp table what happens is the last row is the base case Which is automatically filling like"
+  },
+  {
+    "start": 1488.54,
+    "end": 1492.23,
+    "text": "I'm just filling up like random numbers it's not zero."
+  },
+  {
+    "start": 1492.23,
+    "end": 1493.8,
+    "text": "It's some dots and then"
+  },
+  {
+    "start": 1493.8,
+    "end": 1499.57,
+    "text": "You start from this guy and then you are like fill up this fill up this fill up"
+  },
+  {
+    "start": 1499.57,
+    "end": 1505.13,
+    "text": "this Then you go to this guy and you like fill up this fill up this then you"
+  },
+  {
+    "start": 1505.13,
+    "end": 1510.69,
+    "text": "go to this guy and you say fill up this And whatever is here you say this is"
+  },
+  {
+    "start": 1510.69,
+    "end": 1515.22,
+    "text": "my answer So how did the dp table fill up first the base case?"
+  },
+  {
+    "start": 1515.22,
+    "end": 1520.78,
+    "text": "In order to get this what he did was you took this guy plus this or this guy"
+  },
+  {
+    "start": 1520.78,
+    "end": 1526.55,
+    "text": "plus this Right in order to fill up this guy what he did was you took this plus"
+  },
+  {
+    "start": 1526.55,
+    "end": 1531.96,
+    "text": "this or this plus this That is what this line is doing if I g plus dp like"
+  },
+  {
+    "start": 1531.96,
+    "end": 1536.93,
+    "text": "the next guy If I g plus dp that's what it is doing if you try to do"
+  },
+  {
+    "start": 1536.93,
+    "end": 1543.29,
+    "text": "a dry and and order fill up this it's taking this plus this or this plus this Similarly"
+  },
+  {
+    "start": 1543.29,
+    "end": 1548.99,
+    "text": "in order to fill up this it's taking this plus this or this plus this so can I"
+  },
+  {
+    "start": 1548.99,
+    "end": 1555.5,
+    "text": "see in order for like in order to solve any Roo I'm just requiring this particular row In"
+  },
+  {
+    "start": 1555.5,
+    "end": 1562.3,
+    "text": "order to solve this row I'm just requiring this particular row in order to solve this row I'm"
+  },
+  {
+    "start": 1562.3,
+    "end": 1567.78,
+    "text": "just requiring this particular row so can I say once this is the base case?"
+  },
+  {
+    "start": 1567.78,
+    "end": 1575.08,
+    "text": "I compute this particular row and I'm not requiring this I'll just delete it then I compute this row"
+  },
+  {
+    "start": 1575.08,
+    "end": 1581.95,
+    "text": "I'll not require this deleted then I'll compute this row I'll not require a deleted so can I"
+  },
+  {
+    "start": 1581.95,
+    "end": 1588.52,
+    "text": "say Instead of storing the entire triangle I just need to store two rows Two rows one is"
+  },
+  {
+    "start": 1588.52,
+    "end": 1595.46,
+    "text": "the previous or like the Front row and one is the current row that you're traversing and once"
+  },
+  {
+    "start": 1595.46,
+    "end": 1602.33,
+    "text": "this current row is computed and you move to this guy This current row becomes the front row"
+  },
+  {
+    "start": 1602.33,
+    "end": 1607.93,
+    "text": "can I see this I can that's what you have to just do in the court Just make"
+  },
+  {
+    "start": 1607.93,
+    "end": 1615.25,
+    "text": "sure you Stow this particular guy like what you can do is always remember always always always Try"
+  },
+  {
+    "start": 1615.25,
+    "end": 1621.37,
+    "text": "to create a like over here you can say the front row so you can write something as"
+  },
+  {
+    "start": 1621.37,
+    "end": 1627.19,
+    "text": "front row of size n and Over here instead of this you can write front of g and"
+  },
+  {
+    "start": 1627.19,
+    "end": 1633.46,
+    "text": "the front row is computed So the front is computed by this next This is front I plus"
+  },
+  {
+    "start": 1633.46,
+    "end": 1639.96,
+    "text": "one is front Inter I plus one is front say right front right now instead of carrying dp"
+  },
+  {
+    "start": 1639.96,
+    "end": 1645.26,
+    "text": "of i g Because dp of i g means understand dp of i g means This guy this"
+  },
+  {
+    "start": 1645.26,
+    "end": 1651.16,
+    "text": "guy this guy since of dp of i j what you say is you just create this particular"
+  },
+  {
+    "start": 1651.16,
+    "end": 1651.4,
+    "text": "row"
+  },
+  {
+    "start": 1651.4,
+    "end": 1656.69,
+    "text": "It's create one more row so what you basically do is you say okay What I'm going to"
+  },
+  {
+    "start": 1656.69,
+    "end": 1662.04,
+    "text": "do is I'm not going to do anything I will like let's create the current row Like you"
+  },
+  {
+    "start": 1662.04,
+    "end": 1666.82,
+    "text": "can create a lesser size but I'll just take it cut and instead of dp of i g"
+  },
+  {
+    "start": 1666.82,
+    "end": 1672.49,
+    "text": "you will like curve of j And once the entire row has been Created by this particular fall"
+  },
+  {
+    "start": 1672.49,
+    "end": 1678.48,
+    "text": "loop You know this particular current for the next i will become the front So you'll say front"
+  },
+  {
+    "start": 1678.48,
+    "end": 1679.5,
+    "text": "who's the front?"
+  },
+  {
+    "start": 1679.5,
+    "end": 1684.91,
+    "text": "The current will be the front for the next i because i will go minus minus that's the"
+  },
+  {
+    "start": 1684.91,
+    "end": 1691.22,
+    "text": "space optimization And once you do the space optimization You can be like okay, I've done the space"
+  },
+  {
+    "start": 1691.22,
+    "end": 1697.65,
+    "text": "optimization So now the time complexity is still the same But the space complexity has boiled down to"
+  },
+  {
+    "start": 1697.65,
+    "end": 1702.43,
+    "text": "be co-off and It's twice off and but yeah, it's a sneer about be confident."
+  },
+  {
+    "start": 1702.43,
+    "end": 1708.48,
+    "text": "We're not using an n-cross and matrix We're just using couple of rows and we're able to compute"
+  },
+  {
+    "start": 1708.48,
+    "end": 1713.39,
+    "text": "the entire answer and can I see can I see at the end of the D Whenever you're"
+  },
+  {
+    "start": 1713.39,
+    "end": 1718.93,
+    "text": "doing i minus minus in the first loop You're doing i minus minus over here what are the"
+  },
+  {
+    "start": 1718.93,
+    "end": 1724.09,
+    "text": "ending point of i when this loop ends i will be minus one And the current will be"
+  },
+  {
+    "start": 1724.09,
+    "end": 1727.08,
+    "text": "stored in front So the answer will be stored in"
+  },
+  {
+    "start": 1727.08,
+    "end": 1734.56,
+    "text": "front of zero Right Very obvious that's how you can space optimize this particular stuff So i've already"
+  },
+  {
+    "start": 1734.56,
+    "end": 1740.68,
+    "text": "written the pseudo codes in the iPad but i'll still write the code so that you have a"
+  },
+  {
+    "start": 1740.68,
+    "end": 1747.73,
+    "text": "quick Revision kind of a thing so i basically give in the triangle and n which Recommencing number"
+  },
+  {
+    "start": 1747.73,
+    "end": 1754.06,
+    "text": "of rows so what you can do is you can definitely write a function So let's quickly write"
+  },
+  {
+    "start": 1754.06,
+    "end": 1760.39,
+    "text": "a function where we we know that we will have couple of changing parameters which is i d"
+  },
+  {
+    "start": 1760.39,
+    "end": 1766.72,
+    "text": "i j We will be requiring this vector triangle and the end so let's quickly take this off"
+  },
+  {
+    "start": 1766.72,
+    "end": 1773.27,
+    "text": "I know that if we reach the last row that's over right So we can definitely return Triangle"
+  },
+  {
+    "start": 1773.27,
+    "end": 1778.88,
+    "text": "n minus one j so that's the base case that we have covered and There will be a"
+  },
+  {
+    "start": 1778.88,
+    "end": 1783.7,
+    "text": "d which will be a triangle i j plus f of i plus one j Which will be"
+  },
+  {
+    "start": 1783.7,
+    "end": 1789.17,
+    "text": "secretly the down part there will be a d g which will be triangle i j plus f"
+  },
+  {
+    "start": 1789.17,
+    "end": 1795.36,
+    "text": "of i plus one and j plus one correct and Don't forget to pass on the extra parameters."
+  },
+  {
+    "start": 1795.36,
+    "end": 1804.36,
+    "text": "That's important  And then today you know you have to return the minimal of down and the diagonal parts so can you turn that?"
+  },
+  {
+    "start": 1804.36,
+    "end": 1810.25,
+    "text": "Over here you can return the function 0 comma 0 the triangle and the size n they can"
+  },
+  {
+    "start": 1810.25,
+    "end": 1815.23,
+    "text": "put the run it off It does run but it will give you a d li because it's"
+  },
+  {
+    "start": 1815.23,
+    "end": 1821.82,
+    "text": "a recursive solution and it'll be exponential So what do you need to do is you definitely need"
+  },
+  {
+    "start": 1821.82,
+    "end": 1826.87,
+    "text": "to create a d piece Erase of please create a d p array of size n cross n"
+  },
+  {
+    "start": 1826.87,
+    "end": 1833.11,
+    "text": "initialize with minus one Pass it as the next parameter so it just copy basis I have this"
+  },
+  {
+    "start": 1833.11,
+    "end": 1838.16,
+    "text": "will be d p so just make sure it's d p Over here I'll make sure you pass"
+  },
+  {
+    "start": 1838.16,
+    "end": 1844.33,
+    "text": "one more d p So first step is done or it just declaring and passing the parameter what's"
+  },
+  {
+    "start": 1844.33,
+    "end": 1850.99,
+    "text": "the next step Initialize the answer so please initialize the answer what's the next step if d p"
+  },
+  {
+    "start": 1850.99,
+    "end": 1855.48,
+    "text": "of i j is Not equal to minus one you can return d p of i j other"
+  },
+  {
+    "start": 1855.48,
+    "end": 1861.37,
+    "text": "trippy perfect now you can run this code Running fine and if I try to submit this It"
+  },
+  {
+    "start": 1861.37,
+    "end": 1868.45,
+    "text": "says partially accepted Because it's getting time limit exceeded as I said a lot of times will happen"
+  },
+  {
+    "start": 1868.45,
+    "end": 1875.18,
+    "text": "that the recursive Memorization will give you time limit exceeded that as when you need to do is"
+  },
+  {
+    "start": 1875.18,
+    "end": 1881.07,
+    "text": "you just need to convert that into a Tabulation format so over here what I get to is"
+  },
+  {
+    "start": 1881.07,
+    "end": 1884.68,
+    "text": "you can just put in an n of 0 and I know there is a"
+  },
+  {
+    "start": 1884.68,
+    "end": 1890.15,
+    "text": "Last row that has to be filled so kindly fill up the last row at very simple d"
+  },
+  {
+    "start": 1890.15,
+    "end": 1895.83,
+    "text": "p of the last row and the column will be nothing But the triangle of the last row"
+  },
+  {
+    "start": 1895.83,
+    "end": 1901.86,
+    "text": "and the call that's how you can easily fill that up and apart from there There'll be a"
+  },
+  {
+    "start": 1901.86,
+    "end": 1908.24,
+    "text": "couple of nested loops right starting from the back So we can just run it off There'll also"
+  },
+  {
+    "start": 1908.24,
+    "end": 1912.86,
+    "text": "be a four i and t j equal to starting in the back and it can go on"
+  },
+  {
+    "start": 1912.86,
+    "end": 1918.4,
+    "text": "Something like this and I know there will be a couple of path which is and d So"
+  },
+  {
+    "start": 1918.4,
+    "end": 1925.2,
+    "text": "we basically just need to make sure you copy this stuff that's nothing special just make sure you"
+  },
+  {
+    "start": 1925.2,
+    "end": 1930.18,
+    "text": "copy this stuff And instead of f you need to create a d p of i plus one"
+  },
+  {
+    "start": 1930.18,
+    "end": 1935.86,
+    "text": "and That's the shuttle change that you need to do instead of f I'll always be d p"
+  },
+  {
+    "start": 1935.86,
+    "end": 1940.84,
+    "text": "of the Recurrents that you call it just carry it on d p of i plus one r"
+  },
+  {
+    "start": 1940.84,
+    "end": 1945.74,
+    "text": "2 g plus one that's how you'll do it and at the end of the day you can"
+  },
+  {
+    "start": 1945.74,
+    "end": 1950.29,
+    "text": "say d p of i j will be minimal of d comma d g So once you're done"
+  },
+  {
+    "start": 1950.29,
+    "end": 1956.11,
+    "text": "this you know what will you return you will always return d p of 0 0 because that's"
+  },
+  {
+    "start": 1956.11,
+    "end": 1960.45,
+    "text": "sorry d p of s and 0 0 0 so 0 0 is what you're going to return"
+  },
+  {
+    "start": 1960.45,
+    "end": 1963.72,
+    "text": "let's quickly run this off should be on in fine"
+  },
+  {
+    "start": 1963.72,
+    "end": 1969.56,
+    "text": "Yeah, that's run it's quickly summit this off let's see if this is getting your t li This"
+  },
+  {
+    "start": 1969.56,
+    "end": 1975.85,
+    "text": "is not giving okay, so this appears to be the correct answer and you're getting your 100% school"
+  },
+  {
+    "start": 1975.85,
+    "end": 1980.9,
+    "text": "So now what are the changes that I require also next step space optimization?"
+  },
+  {
+    "start": 1980.9,
+    "end": 1986.87,
+    "text": "Let me quickly raise this off to get some space it's space optimization right so we need to"
+  },
+  {
+    "start": 1986.87,
+    "end": 1991.72,
+    "text": "delete this And we just need to store the last row so what we can do is we"
+  },
+  {
+    "start": 1991.72,
+    "end": 1996.51,
+    "text": "can say vector of end of rl front row we can call it as front rather of n"
+  },
+  {
+    "start": 1996.51,
+    "end": 2001.03,
+    "text": "comma 0 okay And it's from d p of n minus one we call it as front and"
+  },
+  {
+    "start": 2001.03,
+    "end": 2006.41,
+    "text": "make sure you also have a current row initialize this n cross 0 Now what I know is"
+  },
+  {
+    "start": 2006.41,
+    "end": 2010.74,
+    "text": "triangle of i j plus d p of i plus one so instead of i plus one as"
+  },
+  {
+    "start": 2010.74,
+    "end": 2016.12,
+    "text": "their front It's of again i plus one I'll say front very obvious instead of d p of"
+  },
+  {
+    "start": 2016.12,
+    "end": 2022.48,
+    "text": "i I'll always say curve And over here I'll make sure the front is Re-neasialized with that's what"
+  },
+  {
+    "start": 2022.48,
+    "end": 2027.14,
+    "text": "I just need to do and over here It's of d p of 0 i'll say front because"
+  },
+  {
+    "start": 2027.14,
+    "end": 2032.12,
+    "text": "that is where it will be stored in also to get curve that is fine So we just"
+  },
+  {
+    "start": 2032.12,
+    "end": 2037.3,
+    "text": "run it it is running fine and if I submit this it's going to be working fine if"
+  },
+  {
+    "start": 2037.3,
+    "end": 2041.88,
+    "text": "you see Is it is you need working fine you're getting a correct answer"
+  },
+  {
+    "start": 2041.88,
+    "end": 2048.25,
+    "text": "That is how you can easily space optimize this particular stuff So guys I hope you have understood"
+  },
+  {
+    "start": 2048.25,
+    "end": 2054.62,
+    "text": "all the three so guys I hope you have understood the recursion the Memagion the tabulation and the"
+  },
+  {
+    "start": 2054.62,
+    "end": 2061.38,
+    "text": "space optimization the Justin case you did please please please Make sure you like this video and follow"
+  },
+  {
+    "start": 2061.38,
+    "end": 2068.21,
+    "text": "our tradition please make sure you comment Understood under the comment section that that's give me a lot"
+  },
+  {
+    "start": 2068.21,
+    "end": 2074.06,
+    "text": "of motivation to keep making such kind of videos and have it this I'll be wrapping up this"
+  },
+  {
+    "start": 2074.06,
+    "end": 2074.45,
+    "text": "video."
+  },
+  {
+    "start": 2074.45,
+    "end": 2076.21,
+    "text": "Let's meet in the next one."
+  },
+  {
+    "start": 2076.21,
+    "end": 2076.47,
+    "text": "Bye."
+  },
+  {
+    "start": 2076.47,
+    "end": 2078.04,
+    "text": "Take care  I will find a"
+  }
+]

@@ -1,0 +1,2877 @@
+[
+  {
+    "start": 0.0,
+    "end": 2.72,
+    "text": "Hey everyone, welcome back to the channel."
+  },
+  {
+    "start": 2.72,
+    "end": 5.37,
+    "text": "I hope you guys are doing extremely well."
+  },
+  {
+    "start": 5.37,
+    "end": 9.32,
+    "text": "So today we will be solving the last problem  on DP on grits."
+  },
+  {
+    "start": 9.32,
+    "end": 14.62,
+    "text": "And I told you the day when we started DP on grits,  I'm gonna solve six problems."
+  },
+  {
+    "start": 14.62,
+    "end": 17.34,
+    "text": "And after that, you can solve any problem."
+  },
+  {
+    "start": 17.34,
+    "end": 21.09,
+    "text": "I repeat, any problem on DP on grits  and that did happen."
+  },
+  {
+    "start": 21.09,
+    "end": 26.98,
+    "text": "Like a lot of you, a lot of you were commenting on the previous video that without watching"
+  },
+  {
+    "start": 26.98,
+    "end": 31.77,
+    "text": "the video, just watching the question, we were able to solve the question."
+  },
+  {
+    "start": 31.77,
+    "end": 34.36,
+    "text": "But this question is slightly different."
+  },
+  {
+    "start": 34.36,
+    "end": 37.21,
+    "text": "This question will involve 3D DP concept 3D."
+  },
+  {
+    "start": 37.21,
+    "end": 41.48,
+    "text": "I have a year 2D 3D,  don't worry, I'll make it very easy for you."
+  },
+  {
+    "start": 41.48,
+    "end": 44.97,
+    "text": "So we will be learning the concept of 3D DP over here."
+  },
+  {
+    "start": 44.97,
+    "end": 47.43,
+    "text": "So without reading, let's get started."
+  },
+  {
+    "start": 47.43,
+    "end": 48.92,
+    "text": "So what is the problem?"
+  },
+  {
+    "start": 48.92,
+    "end": 51.51,
+    "text": "So the problem is ninja and his friends."
+  },
+  {
+    "start": 51.51,
+    "end": 55.65,
+    "text": "And the problem states that ninja  has a grid of size R cross C."
+  },
+  {
+    "start": 55.65,
+    "end": 58.04,
+    "text": "So there is a grid of size R cross C."
+  },
+  {
+    "start": 58.04,
+    "end": 61.34,
+    "text": "And each cell of the grid contains some chocolates."
+  },
+  {
+    "start": 61.34,
+    "end": 64.83,
+    "text": "So there is a grid and every grid has some chocolates."
+  },
+  {
+    "start": 64.83,
+    "end": 68.39,
+    "text": "Ninja has a couple of friends,  which is Alice and Bob."
+  },
+  {
+    "start": 68.39,
+    "end": 73.89,
+    "text": "And he wants to collect as many chocolates  as possible with the help of his friends."
+  },
+  {
+    "start": 73.89,
+    "end": 76.72,
+    "text": "Initially, Alice is in the top left position"
+  },
+  {
+    "start": 76.72,
+    "end": 77.93,
+    "text": "that is 0 comma 0."
+  },
+  {
+    "start": 77.93,
+    "end": 82.83,
+    "text": "And Bob is on the top right position  at a 0 comma C minus 1 in the grid."
+  },
+  {
+    "start": 82.83,
+    "end": 89.67,
+    "text": "So on the first row,  one of the like Alice is on the left corner  and the Bob is on the right corner."
+  },
+  {
+    "start": 89.67,
+    "end": 91.21,
+    "text": "So which kind of thing?"
+  },
+  {
+    "start": 91.21,
+    "end": 92.62,
+    "text": "Fixed starting point."
+  },
+  {
+    "start": 92.62,
+    "end": 97.25,
+    "text": "Each of them can move from the current cells  to the cell below them."
+  },
+  {
+    "start": 97.25,
+    "end": 102.15,
+    "text": "When anyone passes from any cell,  he will pick all the chocolates in it."
+  },
+  {
+    "start": 102.15,
+    "end": 104.63,
+    "text": "Like assume he was here, he was here."
+  },
+  {
+    "start": 104.63,
+    "end": 108.92,
+    "text": "So when he moves down,  you'll pick up all the chocolates in it."
+  },
+  {
+    "start": 108.92,
+    "end": 112.74,
+    "text": "And then number of chocolates in that cell will become 0."
+  },
+  {
+    "start": 112.74,
+    "end": 118.1,
+    "text": "If both stay in the same cell,  only one of them will pick the chocolates in it."
+  },
+  {
+    "start": 118.1,
+    "end": 121.05,
+    "text": "Like both of them cannot pick the chocolate."
+  },
+  {
+    "start": 121.05,
+    "end": 126.35,
+    "text": "If Alice and Bob are at INJ,  they can move to I, this, this, this, this, this."
+  },
+  {
+    "start": 126.35,
+    "end": 132.45,
+    "text": "So your task is to find the maximum number of chocolates ninja that means Alice and Bob can"
+  },
+  {
+    "start": 132.45,
+    "end": 136.47,
+    "text": "collect with the help of his friends by following the rules."
+  },
+  {
+    "start": 136.47,
+    "end": 138.95,
+    "text": "So let's take an example and explain."
+  },
+  {
+    "start": 138.95,
+    "end": 143.64,
+    "text": "Okay, so let's assume this is the grid  and Alice's here, Bob is here."
+  },
+  {
+    "start": 143.64,
+    "end": 148.67,
+    "text": "So how in how many ways like how can you reach the last row and what is the"
+  },
+  {
+    "start": 148.67,
+    "end": 152.56,
+    "text": "maximum part some Alice can give you and Bob can give you."
+  },
+  {
+    "start": 152.56,
+    "end": 157.11,
+    "text": "So I can say that, hey, listen, okay,  let's Alice is having two."
+  },
+  {
+    "start": 157.11,
+    "end": 160.19,
+    "text": "Let's move Alice to here, okay, that's fine."
+  },
+  {
+    "start": 160.19,
+    "end": 163.27,
+    "text": "And the next step, let's move Alice to here."
+  },
+  {
+    "start": 163.27,
+    "end": 165.44,
+    "text": "I'm like, okay, what about Bob?"
+  },
+  {
+    "start": 165.44,
+    "end": 166.98,
+    "text": "Bob is initially here."
+  },
+  {
+    "start": 166.98,
+    "end": 170.13,
+    "text": "Let's move him here, the let's move him here."
+  },
+  {
+    "start": 170.13,
+    "end": 175.8,
+    "text": "So the part that Alice takes is the green one  and the Bob takes is the blue one."
+  },
+  {
+    "start": 175.8,
+    "end": 178.32,
+    "text": "So I can say Alice, some will be 12."
+  },
+  {
+    "start": 178.32,
+    "end": 181.12,
+    "text": "Alice's some will be 12, it makes sense."
+  },
+  {
+    "start": 181.12,
+    "end": 185.74,
+    "text": "And Bob's some, I think will be five plus two, seven plus tonight."
+  },
+  {
+    "start": 185.74,
+    "end": 186.51,
+    "text": "9th and 21."
+  },
+  {
+    "start": 186.51,
+    "end": 193.23,
+    "text": "And this is the maximum part that both,  the maximum number of chocolates that both can collect."
+  },
+  {
+    "start": 193.23,
+    "end": 199.39,
+    "text": "So your task is to figure out this possible value 21  and maximizes as much as possible."
+  },
+  {
+    "start": 199.39,
+    "end": 204.85,
+    "text": "Remember this, there is this edge case,  because you, the cells are like this."
+  },
+  {
+    "start": 204.85,
+    "end": 206.67,
+    "text": "And Alice and Bob started."
+  },
+  {
+    "start": 206.67,
+    "end": 211.43,
+    "text": "So Alice took this path, okay, Alice took this path, for an example."
+  },
+  {
+    "start": 211.43,
+    "end": 213.04,
+    "text": "And Bob took this path."
+  },
+  {
+    "start": 213.04,
+    "end": 220.53,
+    "text": "So this cell is common in both the path,  so it'll just be counted once, okay,  it'll just be counted once."
+  },
+  {
+    "start": 220.53,
+    "end": 223.05,
+    "text": "So that is what the question stated."
+  },
+  {
+    "start": 223.05,
+    "end": 225.01,
+    "text": "So what is given over there?"
+  },
+  {
+    "start": 225.01,
+    "end": 228.2,
+    "text": "Let's analyze, we have a fixed starting point,"
+  },
+  {
+    "start": 228.2,
+    "end": 230.78,
+    "text": "okay, we have a fixed starting point."
+  },
+  {
+    "start": 230.78,
+    "end": 236.08,
+    "text": "We have a variable ending point,  because you don't know where you will end."
+  },
+  {
+    "start": 236.08,
+    "end": 242.5,
+    "text": "They can be multiple points of ending, because you know, it's gonna end at the last row, but"
+  },
+  {
+    "start": 242.5,
+    "end": 245.22,
+    "text": "both of Alice and Bob can end anywhere."
+  },
+  {
+    "start": 245.22,
+    "end": 250.73,
+    "text": "But we definitely know Alice starts at 0, 0,  and Bob starts at 0, M minus one."
+  },
+  {
+    "start": 250.73,
+    "end": 253.73,
+    "text": "That is something which we definitely know."
+  },
+  {
+    "start": 253.73,
+    "end": 256.94,
+    "text": "Now we'll greedy work, like we'll greedy work."
+  },
+  {
+    "start": 256.94,
+    "end": 258.2,
+    "text": "Obviously not why."
+  },
+  {
+    "start": 258.2,
+    "end": 261.27,
+    "text": "We have talked about this uniformity nature."
+  },
+  {
+    "start": 261.27,
+    "end": 264.83,
+    "text": "Did you need for a mid-neutral greedy doesn't work?"
+  },
+  {
+    "start": 264.83,
+    "end": 271.88,
+    "text": "Because it might happen, you consider someone in a path, but if you would have considered other path,"
+  },
+  {
+    "start": 271.88,
+    "end": 275.58,
+    "text": "then in the future you would have got a bigger value."
+  },
+  {
+    "start": 275.58,
+    "end": 284.72,
+    "text": "So since the value is not uniform,  someone is small, someone is growing,  someone is very less, so don't know how it's the values."
+  },
+  {
+    "start": 284.72,
+    "end": 288.0,
+    "text": "So due to uniformity, greedy cannot be applied."
+  },
+  {
+    "start": 288.0,
+    "end": 292.26,
+    "text": "So if greedy cannot be applied, what does come to your brain?"
+  },
+  {
+    "start": 292.26,
+    "end": 295.89,
+    "text": "All paths by Alice plus all paths by Bob to get the."
+  },
+  {
+    "start": 295.89,
+    "end": 303.44,
+    "text": "If I can together take them and making sure  that if there is any common one,  then I'll consider it as one."
+  },
+  {
+    "start": 303.44,
+    "end": 308.23,
+    "text": "If I can together take it,  then whatever is the maximum will be my answer."
+  },
+  {
+    "start": 308.23,
+    "end": 310.34,
+    "text": "So how do you generate all paths?"
+  },
+  {
+    "start": 310.34,
+    "end": 315.38,
+    "text": "I have to write a recursion for this  and I have to write a recursion for this."
+  },
+  {
+    "start": 315.38,
+    "end": 317.23,
+    "text": "So that's the main intuition."
+  },
+  {
+    "start": 317.23,
+    "end": 321.95,
+    "text": "So we understood that we have to write the recursion  and then we have to."
+  },
+  {
+    "start": 321.95,
+    "end": 327.95,
+    "text": "So in order to write the recurrence  because we have to make sure Alice and Bob move together."
+  },
+  {
+    "start": 327.95,
+    "end": 328.21,
+    "text": "Why?"
+  },
+  {
+    "start": 328.21,
+    "end": 333.0,
+    "text": "Because it might happen, there is a common cell  that Alice and Bob passes."
+  },
+  {
+    "start": 333.0,
+    "end": 335.23,
+    "text": "So you have to consider it at once."
+  },
+  {
+    "start": 335.23,
+    "end": 342.89,
+    "text": "That's why it's very important  that you don't be like, okay, let's do the Alice one  and get the maximum sum for Alice."
+  },
+  {
+    "start": 342.89,
+    "end": 347.81,
+    "text": "Then do the Bob one and get the maximum sum for Bob  and then just sum it up."
+  },
+  {
+    "start": 347.81,
+    "end": 348.9,
+    "text": "That can be done."
+  },
+  {
+    "start": 348.9,
+    "end": 354.39,
+    "text": "But then if to trace the path,  then you have to subtract if there is anything common."
+  },
+  {
+    "start": 354.39,
+    "end": 358.16,
+    "text": "So it will be a very long process  if you follow that path."
+  },
+  {
+    "start": 358.16,
+    "end": 366.65,
+    "text": "So instead of individually doing it,  I hope you understood why can't we do it individually  because there might be a cell in common."
+  },
+  {
+    "start": 366.65,
+    "end": 371.82,
+    "text": "Then you have to trace back the path and then if to omit that common cell in this"
+  },
+  {
+    "start": 371.82,
+    "end": 375.52,
+    "text": "example as I showed you, as you, Alice gives you the path."
+  },
+  {
+    "start": 375.52,
+    "end": 376.99,
+    "text": "Bob gives you the path."
+  },
+  {
+    "start": 376.99,
+    "end": 378.64,
+    "text": "So this is the common cell"
+  },
+  {
+    "start": 378.64,
+    "end": 380.85,
+    "text": "which have to trace and delete."
+  },
+  {
+    "start": 380.85,
+    "end": 387.04,
+    "text": "So that's something which we will not do  because there might be a lot of common cells."
+  },
+  {
+    "start": 387.04,
+    "end": 391.66,
+    "text": "So what we will do is we will try to write a recursion  together."
+  },
+  {
+    "start": 391.66,
+    "end": 394.86,
+    "text": "Yes, we'll try to write a recursion together."
+  },
+  {
+    "start": 394.86,
+    "end": 397.92,
+    "text": "What are the rules to write the recurrence?"
+  },
+  {
+    "start": 397.92,
+    "end": 399.77,
+    "text": "I've taught you the rules."
+  },
+  {
+    "start": 399.77,
+    "end": 405.96,
+    "text": "Now previously in the grid questions,  it was expressed everything in terms of i and j."
+  },
+  {
+    "start": 405.96,
+    "end": 408.81,
+    "text": "Over here, can I see express everything?"
+  },
+  {
+    "start": 408.81,
+    "end": 414.07,
+    "text": "Let's understand, express everything in terms of,  now there are two guys."
+  },
+  {
+    "start": 414.07,
+    "end": 416.99,
+    "text": "You are combining a couple of recursions."
+  },
+  {
+    "start": 416.99,
+    "end": 418.06,
+    "text": "There is Alice."
+  },
+  {
+    "start": 418.06,
+    "end": 422.83,
+    "text": "So for Alice, you can say i1 j1  and then there is Bob that's i2j2."
+  },
+  {
+    "start": 422.83,
+    "end": 427.38,
+    "text": "So I can say that express everything in terms of i1j1  and i2j2."
+  },
+  {
+    "start": 427.38,
+    "end": 431.43,
+    "text": "That's the first thing and write down all the base cases."
+  },
+  {
+    "start": 431.43,
+    "end": 434.06,
+    "text": "So and write down all the base cases."
+  },
+  {
+    "start": 434.06,
+    "end": 435.48,
+    "text": "That's the step one."
+  },
+  {
+    "start": 435.48,
+    "end": 437.9,
+    "text": "Step two is explore all the parts."
+  },
+  {
+    "start": 437.9,
+    "end": 439.47,
+    "text": "Explore all the parts."
+  },
+  {
+    "start": 439.47,
+    "end": 441.25,
+    "text": "How many parts are there?"
+  },
+  {
+    "start": 441.25,
+    "end": 442.1,
+    "text": "One is this."
+  },
+  {
+    "start": 442.1,
+    "end": 445.51,
+    "text": "The other one is this and the other one is this."
+  },
+  {
+    "start": 445.51,
+    "end": 448.21,
+    "text": "Let me just quickly check it off here."
+  },
+  {
+    "start": 448.21,
+    "end": 450.49,
+    "text": "That's these are the three ways."
+  },
+  {
+    "start": 450.49,
+    "end": 453.76,
+    "text": "And they are saying,  give me the maximum sum."
+  },
+  {
+    "start": 453.76,
+    "end": 456.68,
+    "text": "So just give me the maximum sum possible."
+  },
+  {
+    "start": 456.68,
+    "end": 457.39,
+    "text": "That's it."
+  },
+  {
+    "start": 457.39,
+    "end": 459.73,
+    "text": "That's how you write the records."
+  },
+  {
+    "start": 459.73,
+    "end": 461.43,
+    "text": "So something to observe."
+  },
+  {
+    "start": 461.43,
+    "end": 464.12,
+    "text": "We were having a fixed starting point."
+  },
+  {
+    "start": 464.12,
+    "end": 470.99,
+    "text": "And generally when we have a fixed starting point and a variable ending point, because we know it"
+  },
+  {
+    "start": 470.99,
+    "end": 473.68,
+    "text": "can end at any column in the last row."
+  },
+  {
+    "start": 473.68,
+    "end": 476.94,
+    "text": "Yes, it can end at any column in the last row."
+  },
+  {
+    "start": 476.94,
+    "end": 483.53,
+    "text": "So if there is a fixed starting point and a variable ending point, we generally tend to write"
+  },
+  {
+    "start": 483.53,
+    "end": 489.13,
+    "text": "the recursion starting from yes, starting point and then going to ending point."
+  },
+  {
+    "start": 489.13,
+    "end": 496.29,
+    "text": "Had it been both variable which we have done in DP12,  then we could have analyzed as we did in DP12."
+  },
+  {
+    "start": 496.29,
+    "end": 502.53,
+    "text": "But over a year since we have a fixed starting point, I will always recommend you to not"
+  },
+  {
+    "start": 502.53,
+    "end": 506.71,
+    "text": "think so much and directly start from fixed starting point."
+  },
+  {
+    "start": 506.71,
+    "end": 509.76,
+    "text": "The problem can be solved in the other way."
+  },
+  {
+    "start": 509.76,
+    "end": 512.52,
+    "text": "Yes, it can be solved in the other way."
+  },
+  {
+    "start": 512.52,
+    "end": 516.21,
+    "text": "But I will always recommend you to not go that path."
+  },
+  {
+    "start": 516.21,
+    "end": 521.1,
+    "text": "So thereby we will write a recursion that starts from starting point."
+  },
+  {
+    "start": 521.1,
+    "end": 526.98,
+    "text": "So can I say the starting point will be f of 0, 0, which is the Alice's composition"
+  },
+  {
+    "start": 526.98,
+    "end": 531.02,
+    "text": "and f of 0 comma m of m minus 1, which is Bob's position."
+  },
+  {
+    "start": 531.02,
+    "end": 533.64,
+    "text": "So this is what Alice is standing at."
+  },
+  {
+    "start": 533.64,
+    "end": 537.19,
+    "text": "And this is where the Bob is standing at correct."
+  },
+  {
+    "start": 537.19,
+    "end": 541.11,
+    "text": "So we can start off with taking these four parameters."
+  },
+  {
+    "start": 541.11,
+    "end": 544.23,
+    "text": "So why don't we take these four parameters?"
+  },
+  {
+    "start": 544.23,
+    "end": 545.46,
+    "text": "So let's take it."
+  },
+  {
+    "start": 545.46,
+    "end": 549.09,
+    "text": "So I won J1 is where Alice's I2, J2, where Bob is."
+  },
+  {
+    "start": 549.09,
+    "end": 551.12,
+    "text": "Now what are the base cases?"
+  },
+  {
+    "start": 551.12,
+    "end": 554.09,
+    "text": "Let's analyze what can be the base cases."
+  },
+  {
+    "start": 554.09,
+    "end": 557.43,
+    "text": "So if I am thinking of what can be the future?"
+  },
+  {
+    "start": 557.43,
+    "end": 560.33,
+    "text": "The future can be explore all the paths."
+  },
+  {
+    "start": 560.33,
+    "end": 561.64,
+    "text": "And it's a matrix."
+  },
+  {
+    "start": 561.64,
+    "end": 568.24,
+    "text": "And when I'm exploring all the paths,  I might go left so I might just cross this boundary."
+  },
+  {
+    "start": 568.24,
+    "end": 571.72,
+    "text": "I might go right so I might cross this boundary."
+  },
+  {
+    "start": 571.72,
+    "end": 573.68,
+    "text": "Will it have anything else?"
+  },
+  {
+    "start": 573.68,
+    "end": 579.12,
+    "text": "I might cross this, but I can see this is my base case  or the destination."
+  },
+  {
+    "start": 579.12,
+    "end": 581.22,
+    "text": "So I should not care so much."
+  },
+  {
+    "start": 581.22,
+    "end": 582.6,
+    "text": "Now can I see this?"
+  },
+  {
+    "start": 582.6,
+    "end": 584.05,
+    "text": "Yes, can I see this?"
+  },
+  {
+    "start": 584.05,
+    "end": 592.9,
+    "text": "That if across the boundary in the left,  or if I cross the boundary in the right,  then that path will not be considered."
+  },
+  {
+    "start": 592.9,
+    "end": 593.77,
+    "text": "Makes sense."
+  },
+  {
+    "start": 593.77,
+    "end": 596.16,
+    "text": "So base case can be of two types."
+  },
+  {
+    "start": 596.16,
+    "end": 598.55,
+    "text": "One is the destination base case."
+  },
+  {
+    "start": 598.55,
+    "end": 601.81,
+    "text": "Where you see, you have reached the last row."
+  },
+  {
+    "start": 601.81,
+    "end": 604.28,
+    "text": "One is the out of bound base case."
+  },
+  {
+    "start": 604.28,
+    "end": 607.11,
+    "text": "So always write the out of bound first."
+  },
+  {
+    "start": 607.11,
+    "end": 609.48,
+    "text": "So can I use the out of bound is,"
+  },
+  {
+    "start": 609.48,
+    "end": 613.06,
+    "text": "if Alice might cross or might cross the other one."
+  },
+  {
+    "start": 613.06,
+    "end": 616.49,
+    "text": "Or Bob might cross or might cross the other one."
+  },
+  {
+    "start": 616.49,
+    "end": 617.06,
+    "text": "Perfect."
+  },
+  {
+    "start": 617.06,
+    "end": 619.42,
+    "text": "So I've written for both of them."
+  },
+  {
+    "start": 619.42,
+    "end": 624.29,
+    "text": "And if both of them cross,  then I can return a very negative value."
+  },
+  {
+    "start": 624.29,
+    "end": 630.87,
+    "text": "Now a lot of people were asking in the comment section,  strive what if we return into mean."
+  },
+  {
+    "start": 630.87,
+    "end": 636.38,
+    "text": "Now remember, if you return into mean,  it will get added up to some integer."
+  },
+  {
+    "start": 636.38,
+    "end": 642.75,
+    "text": "If that integer is negative,  negative plus integer will go beyond the limits of integer."
+  },
+  {
+    "start": 642.75,
+    "end": 645.68,
+    "text": "There why it will give you wrong answers."
+  },
+  {
+    "start": 645.68,
+    "end": 653.05,
+    "text": "So that's why I always recommend you to probably return something, one, eight, or probably you can just"
+  },
+  {
+    "start": 653.05,
+    "end": 657.49,
+    "text": "convert that into long, if you're wanting to return into mean."
+  },
+  {
+    "start": 657.49,
+    "end": 664.07,
+    "text": "So that's a specific way why I don't return into mean because on addition of into a negative"
+  },
+  {
+    "start": 664.07,
+    "end": 666.43,
+    "text": "integer, it will go out of bound."
+  },
+  {
+    "start": 666.43,
+    "end": 668.5,
+    "text": "That says the shuttle reason."
+  },
+  {
+    "start": 668.5,
+    "end": 673.01,
+    "text": "So we have written the first base case,  which is out of bound."
+  },
+  {
+    "start": 673.01,
+    "end": 674.73,
+    "text": "What is the destination?"
+  },
+  {
+    "start": 674.73,
+    "end": 676.88,
+    "text": "Let's analyze the destination."
+  },
+  {
+    "start": 676.88,
+    "end": 679.03,
+    "text": "So I know one thing for short."
+  },
+  {
+    "start": 679.03,
+    "end": 682.11,
+    "text": "Now over here, there is a case to consider."
+  },
+  {
+    "start": 682.11,
+    "end": 684.68,
+    "text": "Alice is moving, Bob is also moving."
+  },
+  {
+    "start": 684.68,
+    "end": 690.65,
+    "text": "We'll both of them reach the destination at the same time  as my question to you."
+  },
+  {
+    "start": 690.65,
+    "end": 697.14,
+    "text": "You're like, yeah, both of them will definitely  reach the destination at the same time."
+  },
+  {
+    "start": 697.14,
+    "end": 697.43,
+    "text": "Why?"
+  },
+  {
+    "start": 697.43,
+    "end": 698.46,
+    "text": "Let's analyze."
+  },
+  {
+    "start": 698.46,
+    "end": 700.82,
+    "text": "So what are the movements given?"
+  },
+  {
+    "start": 700.82,
+    "end": 708.19,
+    "text": "The movements given are this, this,  this, no matter what you do,  no matter in which column you go."
+  },
+  {
+    "start": 708.19,
+    "end": 711.51,
+    "text": "At every step, you will move to the next row."
+  },
+  {
+    "start": 711.51,
+    "end": 714.9,
+    "text": "At the next step, you'll move to the next row."
+  },
+  {
+    "start": 714.9,
+    "end": 718.88,
+    "text": "Beat Alice or Beat Bob, you will move to the next row."
+  },
+  {
+    "start": 718.88,
+    "end": 721.09,
+    "text": "Alice, for sure, do you agree?"
+  },
+  {
+    "start": 721.09,
+    "end": 722.05,
+    "text": "You do agree."
+  },
+  {
+    "start": 722.05,
+    "end": 724.7,
+    "text": "Initially, they were at the 0th row."
+  },
+  {
+    "start": 724.7,
+    "end": 728.16,
+    "text": "Next movement, they will move to the first row."
+  },
+  {
+    "start": 728.16,
+    "end": 731.55,
+    "text": "Next movement, they'll move to the second row."
+  },
+  {
+    "start": 731.55,
+    "end": 735.24,
+    "text": "Together, Alice and Bob will move to the next row."
+  },
+  {
+    "start": 735.24,
+    "end": 739.29,
+    "text": "So I can say, Striva, instead of maintaining I1 and J1."
+  },
+  {
+    "start": 739.29,
+    "end": 743.93,
+    "text": "So I1 and I2, can't I write a single I  because I will be same."
+  },
+  {
+    "start": 743.93,
+    "end": 746.07,
+    "text": "Only the columns will change."
+  },
+  {
+    "start": 746.07,
+    "end": 749.09,
+    "text": "But they will move to row simultaneously."
+  },
+  {
+    "start": 749.09,
+    "end": 750.49,
+    "text": "I'll be like, yeah."
+  },
+  {
+    "start": 750.49,
+    "end": 753.73,
+    "text": "So what I'll do is, I will now just store I."
+  },
+  {
+    "start": 753.73,
+    "end": 755.87,
+    "text": "Yes, I will now just store I."
+  },
+  {
+    "start": 755.87,
+    "end": 762.36,
+    "text": "Instead of storing I1, J1, I'll say,  let's have a common I because Alice can be I1, J1,"
+  },
+  {
+    "start": 762.36,
+    "end": 764.17,
+    "text": "Bob can also be I1, J2."
+  },
+  {
+    "start": 764.17,
+    "end": 764.88,
+    "text": "I and J2."
+  },
+  {
+    "start": 764.88,
+    "end": 774.01,
+    "text": "So I have maintained I've just omitted one extra variable,  which because both of them were carrying similar values."
+  },
+  {
+    "start": 774.01,
+    "end": 779.75,
+    "text": "So can I say, if I reaches the last row, which is N minus 1, if I reaches"
+  },
+  {
+    "start": 779.75,
+    "end": 783.13,
+    "text": "the last row, I've reached the destination."
+  },
+  {
+    "start": 783.13,
+    "end": 786.51,
+    "text": "Now there's still a lot of things to think."
+  },
+  {
+    "start": 786.51,
+    "end": 790.84,
+    "text": "You just cannot return the Alice's cell and Bob's cell."
+  },
+  {
+    "start": 790.84,
+    "end": 794.3,
+    "text": "You have to think what do you have to think?"
+  },
+  {
+    "start": 794.3,
+    "end": 801.85,
+    "text": "You'll be like, okay, if I have reached the last cell,  Alice would have reached to some column."
+  },
+  {
+    "start": 801.85,
+    "end": 804.84,
+    "text": "Bob would have reached to some column."
+  },
+  {
+    "start": 804.84,
+    "end": 805.78,
+    "text": "Makes sense."
+  },
+  {
+    "start": 805.78,
+    "end": 809.08,
+    "text": "Now, as you, let's go back to the example."
+  },
+  {
+    "start": 809.08,
+    "end": 812.86,
+    "text": "As you, Alice reaches your and Bob reaches your."
+  },
+  {
+    "start": 812.86,
+    "end": 815.85,
+    "text": "So you can see, return this plus this."
+  },
+  {
+    "start": 815.85,
+    "end": 816.87,
+    "text": "That is okay."
+  },
+  {
+    "start": 816.87,
+    "end": 826.39,
+    "text": "But what if Alice reaches your and Bob also reaches your,  the reach to the same column, then it will only be added once."
+  },
+  {
+    "start": 826.39,
+    "end": 830.72,
+    "text": "If the reach to different columns, it gets added twice."
+  },
+  {
+    "start": 830.72,
+    "end": 835.05,
+    "text": "So I can say, okay, fine,  drive with that makes sense."
+  },
+  {
+    "start": 835.05,
+    "end": 842.92,
+    "text": "If j1 is equal to j2, then I will just return once,  which is a of i of j1 or j2, whichever you can."
+  },
+  {
+    "start": 842.92,
+    "end": 850.74,
+    "text": "But if they're not equal, then I will return a of i,  j1, that's for Alice and that's for Bob."
+  },
+  {
+    "start": 850.74,
+    "end": 852.99,
+    "text": "Does that make sense, guys?"
+  },
+  {
+    "start": 852.99,
+    "end": 858.65,
+    "text": "So what I can say is, okay, fine,  the destination has been written."
+  },
+  {
+    "start": 858.65,
+    "end": 868.31,
+    "text": "Remember, in this question, you have to always think,  always think in deep, because there is a condition as common."
+  },
+  {
+    "start": 868.31,
+    "end": 879.71,
+    "text": "You have to always write cases, thinking those stuff,  what happens when you reach,  always tell your brain to think what happens, right?"
+  },
+  {
+    "start": 879.71,
+    "end": 882.87,
+    "text": "Okay, so we have done the first thing."
+  },
+  {
+    "start": 882.87,
+    "end": 892.03,
+    "text": "You've done the path thing, explore everything,  sorry, we've done the express everything in terms of i and j."
+  },
+  {
+    "start": 892.03,
+    "end": 895.11,
+    "text": "Next thing is, explore all the parts."
+  },
+  {
+    "start": 895.11,
+    "end": 901.02,
+    "text": "So can I say, this is nothing but i plus 1 or at the i minus 1, because"
+  },
+  {
+    "start": 901.02,
+    "end": 906.1,
+    "text": "say i plus 1, j, i plus 1, j plus 1, and i plus 1, j minus 1."
+  },
+  {
+    "start": 906.1,
+    "end": 908.68,
+    "text": "These are the three directions."
+  },
+  {
+    "start": 908.68,
+    "end": 912.01,
+    "text": "Now we have to again think, let's think."
+  },
+  {
+    "start": 912.01,
+    "end": 918.25,
+    "text": "So I just draw a matrix to enable you to think,  okay, let's draw a matrix."
+  },
+  {
+    "start": 918.25,
+    "end": 921.0,
+    "text": "Assume Alice's here, Bob is here."
+  },
+  {
+    "start": 921.0,
+    "end": 925.2,
+    "text": "Now you're asking, in one step, move both Alice and Bob."
+  },
+  {
+    "start": 925.2,
+    "end": 928.73,
+    "text": "I repeat, in one step, move Alice and Bob both."
+  },
+  {
+    "start": 928.73,
+    "end": 935.18,
+    "text": "Move Alice and both Alice and Bob both,  because you're writing a recurrence together."
+  },
+  {
+    "start": 935.18,
+    "end": 941.18,
+    "text": "So you need to make sure that they move simultaneously,  that is very important."
+  },
+  {
+    "start": 941.18,
+    "end": 948.76,
+    "text": "So how do you make sure in one step,  they move Alice and Bob simultaneously,  that's very important."
+  },
+  {
+    "start": 948.76,
+    "end": 952.66,
+    "text": "Now you'll be like, okay, Strava, Alice can move ya."
+  },
+  {
+    "start": 952.66,
+    "end": 960.39,
+    "text": "And when Alice can move ya, Bob can either move ya,  Bob can either move ya, or Bob can either move ya."
+  },
+  {
+    "start": 960.39,
+    "end": 965.87,
+    "text": "So for one movement of Alice, Bob can move in any of the other movements."
+  },
+  {
+    "start": 965.87,
+    "end": 974.42,
+    "text": "Like they together can move like this,  or they together can move like this,  or they together can move like this."
+  },
+  {
+    "start": 974.42,
+    "end": 979.07,
+    "text": "For one left movement, Bob can have three different movements."
+  },
+  {
+    "start": 979.07,
+    "end": 979.97,
+    "text": "Makes sense."
+  },
+  {
+    "start": 979.97,
+    "end": 987.77,
+    "text": "Alice can move like this, Bob can move like this,  or Bob can move like this, or Bob can move like this."
+  },
+  {
+    "start": 987.77,
+    "end": 991.75,
+    "text": "For this also, it can have three different movements."
+  },
+  {
+    "start": 991.75,
+    "end": 995.05,
+    "text": "Like this, this, this, this, this, and this."
+  },
+  {
+    "start": 995.05,
+    "end": 998.48,
+    "text": "Similarly, Alice can move ya, Bob can move ya."
+  },
+  {
+    "start": 998.48,
+    "end": 1001.71,
+    "text": "Similarly, Alice can move ya, Bob can move ya."
+  },
+  {
+    "start": 1001.71,
+    "end": 1004.94,
+    "text": "Similarly, Alice can move ya, Bob can move ya."
+  },
+  {
+    "start": 1004.94,
+    "end": 1011.61,
+    "text": "So can I say, for every movement of Alice, either there are three movements of Alice, for every"
+  },
+  {
+    "start": 1011.61,
+    "end": 1016.31,
+    "text": "three movement of Alice, Bob also has three simultaneous movements."
+  },
+  {
+    "start": 1016.31,
+    "end": 1022.7,
+    "text": "So can I say in total, there will be nine combos,  or nine combos of parts that I've tried."
+  },
+  {
+    "start": 1022.7,
+    "end": 1028.32,
+    "text": "Nine combos of part one, this diagonal,  one, this diagonal, one, this diagonal."
+  },
+  {
+    "start": 1028.32,
+    "end": 1031.76,
+    "text": "Nine combos of part is what you are going to try."
+  },
+  {
+    "start": 1031.76,
+    "end": 1032.6,
+    "text": "Makes sense."
+  },
+  {
+    "start": 1032.6,
+    "end": 1034.85,
+    "text": "Now how can you try nine combos?"
+  },
+  {
+    "start": 1034.85,
+    "end": 1041.03,
+    "text": "Now one of the ways is you write all the nine, like all the nine combos individually, or"
+  },
+  {
+    "start": 1041.03,
+    "end": 1047.91,
+    "text": "probably we can do some trick here and there, and probably write all the nine combos by ourselves."
+  },
+  {
+    "start": 1047.91,
+    "end": 1050.44,
+    "text": "So let's, yeah, let's think of this."
+  },
+  {
+    "start": 1050.44,
+    "end": 1055.77,
+    "text": "So can I say, we have a movement here,  which is I plus one and G minus one."
+  },
+  {
+    "start": 1055.77,
+    "end": 1060.82,
+    "text": "Can I say there is a movement here, which is I plus one and G, can I say"
+  },
+  {
+    "start": 1060.82,
+    "end": 1065.1,
+    "text": "there is a movement here, which is I plus one and G plus one."
+  },
+  {
+    "start": 1065.1,
+    "end": 1071.7,
+    "text": "So there is a change in the row,  and the changes are like every time you're doing a plus one."
+  },
+  {
+    "start": 1071.7,
+    "end": 1073.8,
+    "text": "Like if you carefully observe,"
+  },
+  {
+    "start": 1073.8,
+    "end": 1076.64,
+    "text": "the row is always changing to plus one."
+  },
+  {
+    "start": 1076.64,
+    "end": 1082.84,
+    "text": "So there is not a requirement of,  there is no requirement of storing the row change."
+  },
+  {
+    "start": 1082.84,
+    "end": 1085.03,
+    "text": "Let's store the column change."
+  },
+  {
+    "start": 1085.03,
+    "end": 1089.26,
+    "text": "Can I say the first time the column changes  by minus one?"
+  },
+  {
+    "start": 1089.26,
+    "end": 1092.61,
+    "text": "Next time by plus zero, next time by plus one."
+  },
+  {
+    "start": 1092.61,
+    "end": 1093.49,
+    "text": "Makes sense."
+  },
+  {
+    "start": 1093.49,
+    "end": 1098.96,
+    "text": "It's like changing from minus one to plus one,  from minus one to plus one."
+  },
+  {
+    "start": 1098.96,
+    "end": 1104.28,
+    "text": "So can I say there are three different possible values  of column change?"
+  },
+  {
+    "start": 1104.28,
+    "end": 1112.01,
+    "text": "Thereby, can I run it something like this,  delta one, from minus one to plus one,  that's the first loop."
+  },
+  {
+    "start": 1112.01,
+    "end": 1116.17,
+    "text": "Next loop will be delta two,  from minus one to plus one."
+  },
+  {
+    "start": 1116.17,
+    "end": 1124.41,
+    "text": "So thereby, first time whenever it is minus one,  it assumes minus one, then at assume zero,  then at assume one."
+  },
+  {
+    "start": 1124.41,
+    "end": 1129.52,
+    "text": "Next time when this goes to zero,  it assumes minus one, zero and one."
+  },
+  {
+    "start": 1129.52,
+    "end": 1134.41,
+    "text": "Next time when this goes to plus one,  this is minus one, zero one."
+  },
+  {
+    "start": 1134.41,
+    "end": 1138.28,
+    "text": "So you're exploring three crossed three paths easily."
+  },
+  {
+    "start": 1138.28,
+    "end": 1141.12,
+    "text": "So this is what you just need to write."
+  },
+  {
+    "start": 1141.12,
+    "end": 1144.4,
+    "text": "So can I say there are three different paths?"
+  },
+  {
+    "start": 1144.4,
+    "end": 1146.52,
+    "text": "So now explore all the paths."
+  },
+  {
+    "start": 1146.52,
+    "end": 1150.6,
+    "text": "Let's explore all paths,  Alice and Bob can go together."
+  },
+  {
+    "start": 1150.6,
+    "end": 1152.11,
+    "text": "Let's explore them."
+  },
+  {
+    "start": 1152.11,
+    "end": 1158.4,
+    "text": "So can I say it will be four, probably you can write D, J1, which is the change"
+  },
+  {
+    "start": 1158.4,
+    "end": 1162.94,
+    "text": "in column of Alice, that goes from minus one to plus one."
+  },
+  {
+    "start": 1162.94,
+    "end": 1169.47,
+    "text": "And I can say the DJ2,  which is the Bob's change, which is minus one to plus one."
+  },
+  {
+    "start": 1169.47,
+    "end": 1176.63,
+    "text": "And now can I say that inside of this,  there will be the paths, which will be considered."
+  },
+  {
+    "start": 1176.63,
+    "end": 1182.92,
+    "text": "Now, so we have written the follow that generates  all the nine possible paths."
+  },
+  {
+    "start": 1182.92,
+    "end": 1186.42,
+    "text": "That's trying to write the straight changes."
+  },
+  {
+    "start": 1186.42,
+    "end": 1190.16,
+    "text": "Can I say the state change will be very simple."
+  },
+  {
+    "start": 1190.16,
+    "end": 1194.7,
+    "text": "The state change will be,  it will go to the next column."
+  },
+  {
+    "start": 1194.7,
+    "end": 1198.36,
+    "text": "Alice and Bob both will go to the next column."
+  },
+  {
+    "start": 1198.36,
+    "end": 1205.6,
+    "text": "Alice will go to DJ1, that's this particular path  where it will be minus one, zero or one."
+  },
+  {
+    "start": 1205.6,
+    "end": 1211.65,
+    "text": "And Bob will go to DJ2 plus rather G2 plus DJ2,  which is the change in Bob."
+  },
+  {
+    "start": 1211.65,
+    "end": 1218.26,
+    "text": "So in this way, I can say this is how the transition will happen and this will make"
+  },
+  {
+    "start": 1218.26,
+    "end": 1221.76,
+    "text": "sure all the nine transitions have happened."
+  },
+  {
+    "start": 1221.76,
+    "end": 1226.62,
+    "text": "Now this will be the state,  but you are at the current cell."
+  },
+  {
+    "start": 1226.62,
+    "end": 1229.88,
+    "text": "Now can I say if, if, if, if, if, if, if,"
+  },
+  {
+    "start": 1229.88,
+    "end": 1236.64,
+    "text": "J1, Alice and Bob are both at the same cell,  then you will just add it once to this."
+  },
+  {
+    "start": 1236.64,
+    "end": 1244.84,
+    "text": "And if they're not in the same cell,  then Alice is cell plus Bob cell gets added to the same function."
+  },
+  {
+    "start": 1244.84,
+    "end": 1246.99,
+    "text": "It will seem function call."
+  },
+  {
+    "start": 1246.99,
+    "end": 1254.47,
+    "text": "And all of these states, you remember in the previous great questions you used to write to and"
+  },
+  {
+    "start": 1254.47,
+    "end": 1257.81,
+    "text": "then you are like something and something."
+  },
+  {
+    "start": 1257.81,
+    "end": 1262.82,
+    "text": "And then you then you took maximum of both or maximum of three."
+  },
+  {
+    "start": 1262.82,
+    "end": 1267.52,
+    "text": "Over here, there will be nine stops that will be generated."
+  },
+  {
+    "start": 1267.52,
+    "end": 1273.97,
+    "text": "Among these maximum of all of them,  probably you can store a maxi equal to zero."
+  },
+  {
+    "start": 1273.97,
+    "end": 1278.43,
+    "text": "And you can write maxi equal to max off this comma maxi."
+  },
+  {
+    "start": 1278.43,
+    "end": 1285.91,
+    "text": "Similarly maxi equal to max off maxi comma,  this sort of all the maximum should be generated."
+  },
+  {
+    "start": 1285.91,
+    "end": 1289.09,
+    "text": "And you can directly return the maximum."
+  },
+  {
+    "start": 1289.09,
+    "end": 1293.55,
+    "text": "So in this way, you can easily write the recursive code."
+  },
+  {
+    "start": 1293.55,
+    "end": 1302.22,
+    "text": "I know it was a kind of complicated thing,  but it's not that complicated if you try to write it by yourself."
+  },
+  {
+    "start": 1302.22,
+    "end": 1306.04,
+    "text": "Now it's time to understand the time complexity."
+  },
+  {
+    "start": 1306.04,
+    "end": 1309.26,
+    "text": "Let's recurs, why would the time complexity?"
+  },
+  {
+    "start": 1309.26,
+    "end": 1315.56,
+    "text": "I can say at max, you will travel the number of rules, Alice will travel the number of"
+  },
+  {
+    "start": 1315.56,
+    "end": 1319.29,
+    "text": "rules and Bob will also travel the number of rules."
+  },
+  {
+    "start": 1319.29,
+    "end": 1322.22,
+    "text": "For every time, Alice has three options."
+  },
+  {
+    "start": 1322.22,
+    "end": 1323.54,
+    "text": "Three the barring."
+  },
+  {
+    "start": 1323.54,
+    "end": 1326.91,
+    "text": "Bob also has three options, three the barring."
+  },
+  {
+    "start": 1326.91,
+    "end": 1327.94,
+    "text": "And that's it."
+  },
+  {
+    "start": 1327.94,
+    "end": 1330.94,
+    "text": "Alice has three options for every column."
+  },
+  {
+    "start": 1330.94,
+    "end": 1334.16,
+    "text": "Bob also has three options for every column."
+  },
+  {
+    "start": 1334.16,
+    "end": 1337.97,
+    "text": "And the number of rules they have to travel is that."
+  },
+  {
+    "start": 1337.97,
+    "end": 1344.56,
+    "text": "So three n into three n is what the time complexity will be,  like near about exponential."
+  },
+  {
+    "start": 1344.56,
+    "end": 1354.81,
+    "text": "Space complexity will be again a big of n,  which is the number of rules,  because that's the auxiliary stack space,  auxiliary stack space."
+  },
+  {
+    "start": 1354.81,
+    "end": 1355.25,
+    "text": "Right?"
+  },
+  {
+    "start": 1355.25,
+    "end": 1357.3,
+    "text": "So how do you optimize this?"
+  },
+  {
+    "start": 1357.3,
+    "end": 1363.67,
+    "text": "In order to optimize this,  you just need to see if there are overlapping sub-problems."
+  },
+  {
+    "start": 1363.67,
+    "end": 1367.55,
+    "text": "Obviously, you have seen in the DP lectures till now."
+  },
+  {
+    "start": 1367.55,
+    "end": 1373.99,
+    "text": "If you're writing a recursion and in the grid, you know you will be visiting a cell from"
+  },
+  {
+    "start": 1373.99,
+    "end": 1379.48,
+    "text": "different ways, a lot of times, and there will be overlapping sub-problems."
+  },
+  {
+    "start": 1379.48,
+    "end": 1383.08,
+    "text": "And since there will be overlapping sub-problems,"
+  },
+  {
+    "start": 1383.08,
+    "end": 1387.69,
+    "text": "you can definitely apply something as memo-IA-shin."
+  },
+  {
+    "start": 1387.69,
+    "end": 1395.65,
+    "text": "So in order to apply memo-IA-shin,  you see in the recursion which parameters are there."
+  },
+  {
+    "start": 1395.65,
+    "end": 1401.71,
+    "text": "First parameter is I,  next parameter is J1,  next parameter is G2."
+  },
+  {
+    "start": 1401.71,
+    "end": 1404.69,
+    "text": "So they are all three parameters."
+  },
+  {
+    "start": 1404.69,
+    "end": 1409.85,
+    "text": "Tell me what is the maximum value of the first parameter?"
+  },
+  {
+    "start": 1409.85,
+    "end": 1415.46,
+    "text": "What can be the values of I is that the recursion will attain?"
+  },
+  {
+    "start": 1415.46,
+    "end": 1418.26,
+    "text": "It will be from 0 to n minus 1."
+  },
+  {
+    "start": 1418.26,
+    "end": 1423.6,
+    "text": "So n different values that I might attain in the recursion."
+  },
+  {
+    "start": 1423.6,
+    "end": 1428.85,
+    "text": "What will be the possible different possible values of J1?"
+  },
+  {
+    "start": 1428.85,
+    "end": 1430.21,
+    "text": "0 to m minus 1."
+  },
+  {
+    "start": 1430.21,
+    "end": 1432.2,
+    "text": "So m, what will be J2?"
+  },
+  {
+    "start": 1432.2,
+    "end": 1433.56,
+    "text": "0 to m minus 1."
+  },
+  {
+    "start": 1433.56,
+    "end": 1434.74,
+    "text": "So another m."
+  },
+  {
+    "start": 1434.74,
+    "end": 1437.63,
+    "text": "So it's an n cross m cross n DP."
+  },
+  {
+    "start": 1437.63,
+    "end": 1437.9,
+    "text": "3D."
+  },
+  {
+    "start": 1437.9,
+    "end": 1440.16,
+    "text": "Nothing, nothing special."
+  },
+  {
+    "start": 1440.16,
+    "end": 1441.25,
+    "text": "Very simple."
+  },
+  {
+    "start": 1441.25,
+    "end": 1441.52,
+    "text": "3D."
+  },
+  {
+    "start": 1441.52,
+    "end": 1443.69,
+    "text": "How do you convert this?"
+  },
+  {
+    "start": 1443.69,
+    "end": 1449.12,
+    "text": "Just write DP of I, J1, J2,  equal to maxi before returning."
+  },
+  {
+    "start": 1449.12,
+    "end": 1455.81,
+    "text": "And right here, just make sure if DP of I, J1, J2 is not equal to minus 1,"
+  },
+  {
+    "start": 1455.81,
+    "end": 1458.24,
+    "text": "return DP of I, J1, and J2."
+  },
+  {
+    "start": 1458.24,
+    "end": 1459.98,
+    "text": "So that's how it will be."
+  },
+  {
+    "start": 1459.98,
+    "end": 1463.39,
+    "text": "Now what will be the time complexity of this one?"
+  },
+  {
+    "start": 1463.39,
+    "end": 1469.37,
+    "text": "Be go off number of states n cross m cross n number of different states will always be"
+  },
+  {
+    "start": 1469.37,
+    "end": 1476.19,
+    "text": "a time complexity because apart from that, other calls will be returned by the value stored in the"
+  },
+  {
+    "start": 1476.19,
+    "end": 1476.61,
+    "text": "table."
+  },
+  {
+    "start": 1476.61,
+    "end": 1480.16,
+    "text": "So n cross n cross n but over here multiplied by 9."
+  },
+  {
+    "start": 1480.16,
+    "end": 1486.91,
+    "text": "Because for every state,  remember this, for every state,  you're running this loop of 3 cross 3."
+  },
+  {
+    "start": 1486.91,
+    "end": 1492.82,
+    "text": "You're running nine states in the previous great questions,  there were three states."
+  },
+  {
+    "start": 1492.82,
+    "end": 1497.41,
+    "text": "Into three would have been there,  into two would have been there."
+  },
+  {
+    "start": 1497.41,
+    "end": 1500.82,
+    "text": "But over here, there is something as nine states."
+  },
+  {
+    "start": 1500.82,
+    "end": 1502.42,
+    "text": "You cannot ignore nine."
+  },
+  {
+    "start": 1502.42,
+    "end": 1504.23,
+    "text": "Nine is almost near to 10."
+  },
+  {
+    "start": 1504.23,
+    "end": 1506.11,
+    "text": "It will increase one, zero."
+  },
+  {
+    "start": 1506.11,
+    "end": 1507.85,
+    "text": "So you can't ignore nine."
+  },
+  {
+    "start": 1507.85,
+    "end": 1510.01,
+    "text": "So this is the time complexity."
+  },
+  {
+    "start": 1510.01,
+    "end": 1515.16,
+    "text": "Space complexity, we go off n into m into m for the dp array and we go off"
+  },
+  {
+    "start": 1515.16,
+    "end": 1522.19,
+    "text": "n for the space, like auxiliary stack space of the recursion, auxiliary stack space of the recursion."
+  },
+  {
+    "start": 1522.19,
+    "end": 1526.37,
+    "text": "So that's what the memo, iation solution will be giving you."
+  },
+  {
+    "start": 1526.37,
+    "end": 1530.48,
+    "text": "So let's score this so that this gets into head completely."
+  },
+  {
+    "start": 1530.48,
+    "end": 1535.76,
+    "text": "And then we will think of the tabulation and then of the space of dimension."
+  },
+  {
+    "start": 1535.76,
+    "end": 1537.7,
+    "text": "Let's still a lot far away."
+  },
+  {
+    "start": 1537.7,
+    "end": 1540.22,
+    "text": "So let me now try to code this off."
+  },
+  {
+    "start": 1540.22,
+    "end": 1545.33,
+    "text": "So we know we had a function of ij1 for Alice and j2 for Bob and I will"
+  },
+  {
+    "start": 1545.33,
+    "end": 1551.37,
+    "text": "be common in both of them and both of them will definitely have the grid so can't be"
+  },
+  {
+    "start": 1551.37,
+    "end": 1553.17,
+    "text": "carried the grid as well."
+  },
+  {
+    "start": 1553.17,
+    "end": 1557.27,
+    "text": "First case will be where Alice and Bob run out of  point."
+  },
+  {
+    "start": 1557.27,
+    "end": 1562.38,
+    "text": "So can I say if j goes this or very j1 rather, j1 grows this or j2 goes"
+  },
+  {
+    "start": 1562.38,
+    "end": 1567.42,
+    "text": "this or j1 crosses the grid up like you can just carry this c as well."
+  },
+  {
+    "start": 1567.42,
+    "end": 1572.67,
+    "text": "Crosses the c it's carry the c as well so that we don't have to write it."
+  },
+  {
+    "start": 1572.67,
+    "end": 1578.64,
+    "text": "Or if j2 crosses the c like if any moment they cross the left boundary or the right"
+  },
+  {
+    "start": 1578.64,
+    "end": 1584.68,
+    "text": "boundary I can return a very negative value as minus 1, 8 not an end to mean because"
+  },
+  {
+    "start": 1584.68,
+    "end": 1587.85,
+    "text": "end to mean plus negative will be overflick."
+  },
+  {
+    "start": 1587.85,
+    "end": 1589.36,
+    "text": "That's what I can do."
+  },
+  {
+    "start": 1589.36,
+    "end": 1593.61,
+    "text": "What is the other base case when you reach the destination?"
+  },
+  {
+    "start": 1593.61,
+    "end": 1595.34,
+    "text": "What is the destination?"
+  },
+  {
+    "start": 1595.34,
+    "end": 1600.16,
+    "text": "If you buy chance or reach the last row so please carry  R as well."
+  },
+  {
+    "start": 1600.16,
+    "end": 1604.12,
+    "text": "So we reached the last destination that's the last row."
+  },
+  {
+    "start": 1604.12,
+    "end": 1610.09,
+    "text": "But if I know if Alice and Bob has reached the same position we just need to return"
+  },
+  {
+    "start": 1610.09,
+    "end": 1613.12,
+    "text": "one of like we just need to count it once."
+  },
+  {
+    "start": 1613.12,
+    "end": 1621.55,
+    "text": "So very simple we just counted once but if they have reached two different positions it's very important"
+  },
+  {
+    "start": 1621.55,
+    "end": 1628.36,
+    "text": "that you count both of them so please count Alice as well as the sky so that's done."
+  },
+  {
+    "start": 1628.36,
+    "end": 1632.09,
+    "text": "Now we know that we have to explore all parts."
+  },
+  {
+    "start": 1632.09,
+    "end": 1637.2,
+    "text": "Explore all parts of Alice and Bob's  same old t nearly asleep."
+  },
+  {
+    "start": 1637.2,
+    "end": 1640.28,
+    "text": "So why don't we explore all the parts?"
+  },
+  {
+    "start": 1640.28,
+    "end": 1646.69,
+    "text": "So for iinti equal to we know we it'll be dj1 which will start from minus 1 and"
+  },
+  {
+    "start": 1646.69,
+    "end": 1653.42,
+    "text": "dj1 goes still plus 1 and dj1 plus plus that's for the change of Alice and then for"
+  },
+  {
+    "start": 1653.42,
+    "end": 1660.56,
+    "text": "this the corresponding bob will be minus 1 till dj2 of greater than plus 1 till dj2 plus"
+  },
+  {
+    "start": 1660.56,
+    "end": 1663.16,
+    "text": "plus that's our bob will figure."
+  },
+  {
+    "start": 1663.16,
+    "end": 1669.32,
+    "text": "Now can i see i will be having all the parts so i need to store the maximum."
+  },
+  {
+    "start": 1669.32,
+    "end": 1672.32,
+    "text": "So you can just store an ainti value."
+  },
+  {
+    "start": 1672.32,
+    "end": 1674.59,
+    "text": "So over here what can i see?"
+  },
+  {
+    "start": 1674.59,
+    "end": 1681.65,
+    "text": "If Alice and Bob are at the same position then the answer yeah the value the value that"
+  },
+  {
+    "start": 1681.65,
+    "end": 1688.46,
+    "text": "you will get will be stored as something as great of only once it will be taken into"
+  },
+  {
+    "start": 1688.46,
+    "end": 1689.6,
+    "text": "consideration."
+  },
+  {
+    "start": 1689.6,
+    "end": 1696.04,
+    "text": "So once you take it into the consideration and then you move across and over here else the"
+  },
+  {
+    "start": 1696.04,
+    "end": 1702.34,
+    "text": "value that will be taken will be twice into consideration which will be i of j1 plus for"
+  },
+  {
+    "start": 1702.34,
+    "end": 1707.71,
+    "text": "bob it will be i of j2 and after that what value will do is value will call"
+  },
+  {
+    "start": 1707.71,
+    "end": 1714.01,
+    "text": "the recursion in order to compute for the remaining portion which is i plus 1 and j plus"
+  },
+  {
+    "start": 1714.01,
+    "end": 1714.44,
+    "text": "dj1 j."
+  },
+  {
+    "start": 1714.44,
+    "end": 1721.17,
+    "text": "So j1 plus dj1 rather and j2 plus dj2 and you can pass the rc and the great which is required."
+  },
+  {
+    "start": 1721.17,
+    "end": 1727.97,
+    "text": "Whatever value you generate you take the maximum of all of these states so take the maximum and"
+  },
+  {
+    "start": 1727.97,
+    "end": 1734.7,
+    "text": "once you have taken the maximum you can simply return the maximum that's how you can easily So"
+  },
+  {
+    "start": 1734.7,
+    "end": 1741.14,
+    "text": "over here you can say return initially Alice starts at 0, Bob starts at 0 and Alice starts"
+  },
+  {
+    "start": 1741.14,
+    "end": 1746.01,
+    "text": "at 0 and Bob starts at 0 and m minus 1 which is c minus 1 after that"
+  },
+  {
+    "start": 1746.01,
+    "end": 1751.38,
+    "text": "rc and great is what you will pass so this makes a pass it let's not run it"
+  },
+  {
+    "start": 1751.38,
+    "end": 1751.67,
+    "text": "off."
+  },
+  {
+    "start": 1751.67,
+    "end": 1760.04,
+    "text": "So you see that it's running absolutely fine but it will give you  really because this code is exponential in nature."
+  },
+  {
+    "start": 1760.04,
+    "end": 1765.91,
+    "text": "So in order to convert this you have to apply an emulation so 3 vector this is our"
+  },
+  {
+    "start": 1765.91,
+    "end": 1769.84,
+    "text": "e-dcran 3 vector first 3 so basically let's first write"
+  },
+  {
+    "start": 1769.84,
+    "end": 1771.35,
+    "text": "what do you require?"
+  },
+  {
+    "start": 1771.35,
+    "end": 1775.64,
+    "text": "You require this right dp of rcc that's what you require."
+  },
+  {
+    "start": 1775.64,
+    "end": 1781.21,
+    "text": "So what I'll do is instead of this I'll create a vector of n into n into a"
+  },
+  {
+    "start": 1781.21,
+    "end": 1787.68,
+    "text": "dp first size r now there's still a 2 d vector which is required inside this so vector"
+  },
+  {
+    "start": 1787.68,
+    "end": 1793.1,
+    "text": "of n perfect next r is the c is the size and inside this you can be like"
+  },
+  {
+    "start": 1793.1,
+    "end": 1798.9,
+    "text": "vector of n and inside this c is the size and minus 1 this is our u generally"
+  },
+  {
+    "start": 1798.9,
+    "end": 1804.92,
+    "text": "declared a 3 d vector so you've declared a 3 d vector pass it over here and yeah"
+  },
+  {
+    "start": 1804.92,
+    "end": 1811.69,
+    "text": "this copy base this simple enough and you just give a comma this copy based over here pass"
+  },
+  {
+    "start": 1811.69,
+    "end": 1818.61,
+    "text": "it by reference make sure pass it by reference otherwise the values will not change or dp of"
+  },
+  {
+    "start": 1818.61,
+    "end": 1824.26,
+    "text": "i g1 g2 and just make sure this dp value is not is if it's repeated you can"
+  },
+  {
+    "start": 1824.26,
+    "end": 1830.51,
+    "text": "just wrote a dp value that's it as simple as that and once you've done this can you"
+  },
+  {
+    "start": 1830.51,
+    "end": 1836.76,
+    "text": "please just run the code so make sure run it off and let's see what is the problems"
+  },
+  {
+    "start": 1836.76,
+    "end": 1843.76,
+    "text": "dp was not declared in this cop looks like okay sorry it'll be and so it's running absolutely"
+  },
+  {
+    "start": 1843.76,
+    "end": 1846.24,
+    "text": "fine let's try to submit this off"
+  },
+  {
+    "start": 1846.24,
+    "end": 1851.6,
+    "text": "and see if that is case is run using the recursion or not so we are getting a"
+  },
+  {
+    "start": 1851.6,
+    "end": 1857.51,
+    "text": "score of 100 we have to now write the tabulation one in order to understand this in a"
+  },
+  {
+    "start": 1857.51,
+    "end": 1863.56,
+    "text": "better way so my measure done now we need to reduce the we need to remove this external"
+  },
+  {
+    "start": 1863.56,
+    "end": 1870.24,
+    "text": "stack space that's where something as tabulation comes in so just a quick stuff if you feel that"
+  },
+  {
+    "start": 1870.24,
+    "end": 1876.64,
+    "text": "you don't need to learn it you can stop it away by called my measurements solution will work"
+  },
+  {
+    "start": 1876.64,
+    "end": 1883.18,
+    "text": "for 3ddp's interviews I don't think tabulation will be required so you can stop it away but if"
+  },
+  {
+    "start": 1883.18,
+    "end": 1889.65,
+    "text": "you want to learn you can definitely learn it from here so tabulation let's you know what are"
+  },
+  {
+    "start": 1889.65,
+    "end": 1896.05,
+    "text": "the first things that I have told you so in order to convert tabulation I've taught you some"
+  },
+  {
+    "start": 1896.05,
+    "end": 1901.96,
+    "text": "steps first write the base case so in order to write the base case exact same dp will"
+  },
+  {
+    "start": 1901.96,
+    "end": 1908.15,
+    "text": "be declared nm and m exact same dp will be declared let's quickly check out the base case"
+  },
+  {
+    "start": 1908.15,
+    "end": 1913.71,
+    "text": "so what was the base case in recursion can I say this is the base case where I'm"
+  },
+  {
+    "start": 1913.71,
+    "end": 1918.79,
+    "text": "saying i is n minus 1 whenever I reach i equal to n minus 1 it's the base"
+  },
+  {
+    "start": 1918.79,
+    "end": 1923.44,
+    "text": "case so can I see this can I see this that for i equal to n minus 1"
+  },
+  {
+    "start": 1923.44,
+    "end": 1931.53,
+    "text": "there can be different possible j's i know i is n minus 1 that's the base case but"
+  },
+  {
+    "start": 1931.53,
+    "end": 1939.81,
+    "text": "can I say for this particular dp of n minus 1 that's the last row because that's the"
+  },
+  {
+    "start": 1939.81,
+    "end": 1948.59,
+    "text": "base case the other two parameters might vary it might vary because if you go in the base"
+  },
+  {
+    "start": 1948.59,
+    "end": 1956.87,
+    "text": "case what can be the other two j one can be can be anywhere between the first column"
+  },
+  {
+    "start": 1956.87,
+    "end": 1965.75,
+    "text": "and the last column j two can be anywhere between the first column and the last column you"
+  },
+  {
+    "start": 1965.75,
+    "end": 1974.82,
+    "text": "never know so why don't you write that because what might happen is see Alice might end here"
+  },
+  {
+    "start": 1974.82,
+    "end": 1983.4,
+    "text": "Bob also might end here Alice might end here Bob minus see our Bobιο Alice here Bob you"
+  },
+  {
+    "start": 1983.4,
+    "end": 1991.49,
+    "text": "Alice you are bob here Alice you are beir Alice you are bob here Alice you are bob"
+  },
+  {
+    "start": 1991.49,
+    "end": 1996.82,
+    "text": "you Alice you are bob you Alice is So, can I see this?"
+  },
+  {
+    "start": 1996.82,
+    "end": 1998.3,
+    "text": "Can I see this?"
+  },
+  {
+    "start": 1998.3,
+    "end": 2003.72,
+    "text": "That if there are multiple cases, can I write something"
+  },
+  {
+    "start": 2003.72,
+    "end": 2009.72,
+    "text": "like this for G1 from 0 to m minus 1 for G2, 0 to m minus 1 again"
+  },
+  {
+    "start": 2009.72,
+    "end": 2016.55,
+    "text": "and in both the cases yes in both the cases, can I see if like I will just"
+  },
+  {
+    "start": 2016.55,
+    "end": 2019.96,
+    "text": "erase this line of 2 right it better?"
+  },
+  {
+    "start": 2019.96,
+    "end": 2028.17,
+    "text": "Can I say if Alice and Bob yes I repeat if Alice and Bob are ending at the same position?"
+  },
+  {
+    "start": 2028.17,
+    "end": 2034.9,
+    "text": "Can I say Dp of the last row the J1 and J2 would be just taking one value"
+  },
+  {
+    "start": 2034.9,
+    "end": 2040.16,
+    "text": "of grid which is the grid of n minus 1 and J1, one value?"
+  },
+  {
+    "start": 2040.16,
+    "end": 2047.17,
+    "text": "But if they are not ending at the same position, then Dp of n minus 1 and J1"
+  },
+  {
+    "start": 2047.17,
+    "end": 2053.35,
+    "text": "and J2 will be grid of n minus 1 J1 plus plus grid of n minus 1 J2."
+  },
+  {
+    "start": 2053.35,
+    "end": 2057.87,
+    "text": "So, can I say this is what the base case will be?"
+  },
+  {
+    "start": 2057.87,
+    "end": 2068.57,
+    "text": "Absolutely makes sense, it does make sense because  these are the different base cases, so done with the base cases."
+  },
+  {
+    "start": 2068.57,
+    "end": 2075.76,
+    "text": "So, base case was n minus 1 remember this base case was n minus 1, so the base"
+  },
+  {
+    "start": 2075.76,
+    "end": 2079.72,
+    "text": "case has been done, it was the next step in"
+  },
+  {
+    "start": 2079.72,
+    "end": 2088.43,
+    "text": "tabulation, the next step in tabulation comes express every state in full loops, state was i, state was"
+  },
+  {
+    "start": 2088.43,
+    "end": 2095.87,
+    "text": "j1, state was j2, so there will be three nested loops always, there will be two of there"
+  },
+  {
+    "start": 2095.87,
+    "end": 2098.07,
+    "text": "is one, there will be one."
+  },
+  {
+    "start": 2098.07,
+    "end": 2100.95,
+    "text": "Now what is i, what is tabulation?"
+  },
+  {
+    "start": 2100.95,
+    "end": 2107.21,
+    "text": "From base case to up,  the base case was n minus 1, what is the next case?"
+  },
+  {
+    "start": 2107.21,
+    "end": 2113.81,
+    "text": "n minus 2, then n minus 3, so i will be from  n minus 2 till 0, what about j1?"
+  },
+  {
+    "start": 2113.81,
+    "end": 2122.1,
+    "text": "You can run this from anywhere because we are basically concerned about the i because that is what"
+  },
+  {
+    "start": 2122.1,
+    "end": 2128.44,
+    "text": "is the base case, if you see in the base case, if you see in the base case,"
+  },
+  {
+    "start": 2128.44,
+    "end": 2135.21,
+    "text": "we are concerned about i, so j can run from anywhere, so what you will do is you"
+  },
+  {
+    "start": 2135.21,
+    "end": 2142.23,
+    "text": "know what are the possible values of j, for any given i, the j can be anything from"
+  },
+  {
+    "start": 2142.23,
+    "end": 2147.98,
+    "text": "0 to m minus 1, this j2 can be anything from 0 to m minus 1, so what"
+  },
+  {
+    "start": 2147.98,
+    "end": 2149.67,
+    "text": "are you waiting for?"
+  },
+  {
+    "start": 2149.67,
+    "end": 2155.59,
+    "text": "Just write that off, for i equal to n minus 2 till 0, for j equal to 0"
+  },
+  {
+    "start": 2155.59,
+    "end": 2157.96,
+    "text": "to m minus 1, for j equal to"
+  },
+  {
+    "start": 2157.96,
+    "end": 2163.77,
+    "text": "so, j1, j2 equal to 0 to m minus 1, perfect, this is how the looping will look"
+  },
+  {
+    "start": 2163.77,
+    "end": 2169.95,
+    "text": "like, right, and then you just need to copy the recurrence, so what i will do is, i"
+  },
+  {
+    "start": 2169.95,
+    "end": 2176.06,
+    "text": "will go into the editor and i will write it because over here i don't think i will"
+  },
+  {
+    "start": 2176.06,
+    "end": 2182.47,
+    "text": "be able to explain you much better, in the editor i will be easily able to explain you"
+  },
+  {
+    "start": 2182.47,
+    "end": 2189.4,
+    "text": "because the recurrence is written right at the top, this was the MIMA shin code, so write the"
+  },
+  {
+    "start": 2189.4,
+    "end": 2196.03,
+    "text": "tabulation now, now if you remember what we need to do is, just remove this and this will"
+  },
+  {
+    "start": 2196.03,
+    "end": 2201.91,
+    "text": "be 0 definitely, so just to make things easy, i'll just make it n and m so that"
+  },
+  {
+    "start": 2201.91,
+    "end": 2208.61,
+    "text": "i don't have issues while explaining, let's make it n and m, that perfect, so the db array"
+  },
+  {
+    "start": 2208.61,
+    "end": 2215.16,
+    "text": "is ready, so what are the first thing that we did, we wrote the number, so let's quickly"
+  },
+  {
+    "start": 2215.16,
+    "end": 2220.97,
+    "text": "write the base cases, and the base cases you know j1 will be 0, and it will go"
+  },
+  {
+    "start": 2220.97,
+    "end": 2226.78,
+    "text": "until m and j1 plus plus, so let's quickly write that j2 will be 0, j2 will go"
+  },
+  {
+    "start": 2226.78,
+    "end": 2232.52,
+    "text": "until m and j2 plus plus, and it will be dp of ij1 j2 equal to something, but"
+  },
+  {
+    "start": 2232.52,
+    "end": 2233.56,
+    "text": "over here also"
+  },
+  {
+    "start": 2233.56,
+    "end": 2239.67,
+    "text": "there was a catch if Alice and Bob tend to finish at the same position, then there will"
+  },
+  {
+    "start": 2239.67,
+    "end": 2246.06,
+    "text": "just be an addition of one that correct, but if they are happening to land at two different"
+  },
+  {
+    "start": 2246.06,
+    "end": 2252.66,
+    "text": "positions, then in that case there will be something like i and j2 perfect, so we have written"
+  },
+  {
+    "start": 2252.66,
+    "end": 2258.98,
+    "text": "the base cases, after the base cases we need to write the nested loops, and since the base"
+  },
+  {
+    "start": 2258.98,
+    "end": 2264.6,
+    "text": "case was n minus 1, this will definitely be n minus 1, this will also be n minus"
+  },
+  {
+    "start": 2264.6,
+    "end": 2269.94,
+    "text": "1, this will also be n minus 1, because it was the last row, so for the last"
+  },
+  {
+    "start": 2269.94,
+    "end": 2275.07,
+    "text": "row you'd write n minus 1, so this is the base case was n minus 1, i will"
+  },
+  {
+    "start": 2275.07,
+    "end": 2280.76,
+    "text": "start from this, and we can easily go on like this, after this, there will be a j"
+  },
+  {
+    "start": 2280.76,
+    "end": 2287.29,
+    "text": "loop which will definitely be something like from 0 to m, so let's quickly run this, and then"
+  },
+  {
+    "start": 2287.29,
+    "end": 2292.42,
+    "text": "there will be a j2 as well which will be from 0 to m again, j2 plus plus,"
+  },
+  {
+    "start": 2292.42,
+    "end": 2299.24,
+    "text": "now you don't need to do anything, just go by here whatever you wrote in the recurrence, whatever"
+  },
+  {
+    "start": 2299.24,
+    "end": 2305.99,
+    "text": "you wrote in the recurrence, copy and paste, nothing extra ordinary or out of the box, just copy"
+  },
+  {
+    "start": 2305.99,
+    "end": 2312.03,
+    "text": "and paste, so once you have copied and pasted, I just need to make sure instead of the"
+  },
+  {
+    "start": 2312.03,
+    "end": 2313.24,
+    "text": "f's you write dp,"
+  },
+  {
+    "start": 2313.24,
+    "end": 2319.47,
+    "text": "so just instead of the f's you write dp, so that's what you write, perfect, perfect, now what"
+  },
+  {
+    "start": 2319.47,
+    "end": 2323.63,
+    "text": "you'll do is you'll erase this portion, done, are we done yet?"
+  },
+  {
+    "start": 2323.63,
+    "end": 2329.13,
+    "text": "no, there is something like j1 plus dj1 and j2 plus dj2 that might go out of bond,"
+  },
+  {
+    "start": 2329.13,
+    "end": 2334.89,
+    "text": "so please make sure you write those cases, like for j1 and dj1 you can just copy paste"
+  },
+  {
+    "start": 2334.89,
+    "end": 2340.05,
+    "text": "and write over here, it has to be greater than 0 and it has to be lesser than"
+  },
+  {
+    "start": 2340.05,
+    "end": 2345.95,
+    "text": "m, correct, and there is something as j2 plus dj2 as well, so this also similarly has to"
+  },
+  {
+    "start": 2345.95,
+    "end": 2351.71,
+    "text": "be greater than 0 and lesser than m, so if that's the case, we have perfect with value"
+  },
+  {
+    "start": 2351.71,
+    "end": 2357.01,
+    "text": "and if not, yes, if not, then in that case we have to make sure that it's added"
+  },
+  {
+    "start": 2357.01,
+    "end": 2363.11,
+    "text": "with a negative number so that it's not considered, so in this way you can easily make sure"
+  },
+  {
+    "start": 2363.11,
+    "end": 2366.73,
+    "text": "this is the case and now what do you need to read out?"
+  },
+  {
+    "start": 2366.73,
+    "end": 2371.76,
+    "text": "the call was for Alice starts at 0, 0, Bob starts at 0, n minus, n minus 1,"
+  },
+  {
+    "start": 2371.76,
+    "end": 2377.32,
+    "text": "so just make sure you have that call, now let's run this off, now it's time that we"
+  },
+  {
+    "start": 2377.32,
+    "end": 2382.95,
+    "text": "submit and see if it is giving us the correct answer, let's take that out, it is, it"
+  },
+  {
+    "start": 2382.95,
+    "end": 2388.52,
+    "text": "is indeed giving us the correct answer, now we have seen, so this is the tabulation"
+  },
+  {
+    "start": 2388.52,
+    "end": 2395.11,
+    "text": "and you see it's the 3dp, 3 loops and then another, instead of looks so cool, isn't it?"
+  },
+  {
+    "start": 2395.11,
+    "end": 2400.41,
+    "text": "now but it is so easy, now the question is how do you space optimizes?"
+  },
+  {
+    "start": 2400.41,
+    "end": 2407.38,
+    "text": "so if you remember in the classes, we in the starting lectures, we space optimise 2dp to 1dp"
+  },
+  {
+    "start": 2407.38,
+    "end": 2414.42,
+    "text": "to 1dp, so the 3dp will be space optimised to how much, it will definitely be space optimised"
+  },
+  {
+    "start": 2414.42,
+    "end": 2421.31,
+    "text": "to 1 dimensionless, how can I make sure that it space optimised to 1dp less, because we see"
+  },
+  {
+    "start": 2421.31,
+    "end": 2427.75,
+    "text": "there is an use of i plus 1, so front and current concept, because the just the front"
+  },
+  {
+    "start": 2427.75,
+    "end": 2434.79,
+    "text": "row will be required, so we will be just using that concept, so instead of having this entire"
+  },
+  {
+    "start": 2434.79,
+    "end": 2441.53,
+    "text": "stuff, I can definitely have something like i and ddp of m and m because we don't require"
+  },
+  {
+    "start": 2441.53,
+    "end": 2448.34,
+    "text": "the front row, we just require 2d, we just require this portion, yes, nothing of i plus 1,"
+  },
+  {
+    "start": 2448.34,
+    "end": 2454.47,
+    "text": "so the second parameter is of m and the last parameter is also of m, so just make"
+  },
+  {
+    "start": 2454.47,
+    "end": 2461.28,
+    "text": "sure you declare it something like this and over here, instead of dp you can say front and"
+  },
+  {
+    "start": 2461.28,
+    "end": 2463.56,
+    "text": "you can also declare a current"
+  },
+  {
+    "start": 2463.56,
+    "end": 2468.87,
+    "text": "of m m perfect, I want you to have done this, instead of dp of n minus 1"
+  },
+  {
+    "start": 2468.87,
+    "end": 2475.37,
+    "text": "you can say front, because that is everywhere of dp, just make it front and over here dp"
+  },
+  {
+    "start": 2475.37,
+    "end": 2480.61,
+    "text": "of i plus 1, so make it front perfect and over here you can say dp of i"
+  },
+  {
+    "start": 2480.61,
+    "end": 2487.11,
+    "text": "so that will be current and over here this entire couple of loops and so this thing will"
+  },
+  {
+    "start": 2487.11,
+    "end": 2493.83,
+    "text": "be computed, the curve of entire 2d will be computed, once it is computed you can say front"
+  },
+  {
+    "start": 2493.83,
+    "end": 2499.07,
+    "text": "to be cut and over here instead of dp of 0 it will be front, so this is"
+  },
+  {
+    "start": 2499.07,
+    "end": 2505.12,
+    "text": "how you space optimised this, so if I just run this code you will see this is also"
+  },
+  {
+    "start": 2505.12,
+    "end": 2511.39,
+    "text": "running fine, so it is front is equal to cut, it is an invalid assignment, so why did"
+  },
+  {
+    "start": 2511.39,
+    "end": 2519.07,
+    "text": "it give invalid assignment because we are using something as array, so let us convert this into vectors,"
+  },
+  {
+    "start": 2519.07,
+    "end": 2525.93,
+    "text": "it will not give us any invalid assignments, so convert it into arrays and all let us quickly"
+  },
+  {
+    "start": 2525.93,
+    "end": 2532.65,
+    "text": "run this off, let us quickly submit this off, write does give us correct answer, so you saw"
+  },
+  {
+    "start": 2532.65,
+    "end": 2538.56,
+    "text": "only in the name it was 3d but apparently it is if 3 parameters you are taking 3"
+  },
+  {
+    "start": 2538.56,
+    "end": 2539.96,
+    "text": "parameters then you"
+  },
+  {
+    "start": 2539.96,
+    "end": 2545.16,
+    "text": "memorize 3 parameters if you take 4 parameters then you memorize 4 parameters, so there is nothing like"
+  },
+  {
+    "start": 2545.16,
+    "end": 2549.81,
+    "text": "3d 4d 5d dp, just have to understand how many states are there, how many exploration you are"
+  },
+  {
+    "start": 2549.81,
+    "end": 2554.91,
+    "text": "doing and in that sense you can easily optimize the space complexity and the time complexity, so time"
+  },
+  {
+    "start": 2554.91,
+    "end": 2559.0,
+    "text": "complexity is basically you can see 3 loops which is n cube or you can say n into"
+  },
+  {
+    "start": 2559.0,
+    "end": 2562.84,
+    "text": "m into m and this is into 3 into 3 which is 9 again and the space complexity"
+  },
+  {
+    "start": 2562.84,
+    "end": 2566.58,
+    "text": "will be 2d so that is m into m, so that is what the tabulation will be, so"
+  },
+  {
+    "start": 2566.58,
+    "end": 2572.19,
+    "text": "guys I hope you have understood the recursion, the dimension, the tabulation, the space optimations, so just in"
+  },
+  {
+    "start": 2572.19,
+    "end": 2577.19,
+    "text": "case you did please please please make sure you like this video and to continue our tradition, make"
+  },
+  {
+    "start": 2577.19,
+    "end": 2581.43,
+    "text": "sure you comment on this note if you have understood and yeah if you are new to this"
+  },
+  {
+    "start": 2581.43,
+    "end": 2586.33,
+    "text": "channel please do consider subscribing to us please please because we have got a hell lot of data"
+  },
+  {
+    "start": 2586.33,
+    "end": 2590.22,
+    "text": "such as I will go to the main content, so I have with this I will be wrapping"
+  },
+  {
+    "start": 2590.22,
+    "end": 2593.72,
+    "text": "up this video, let us be in the next one till then bye bye take care."
+  }
+]

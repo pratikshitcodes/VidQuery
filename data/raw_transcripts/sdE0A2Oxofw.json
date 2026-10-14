@@ -1,0 +1,3242 @@
+[
+  {
+    "start": 0.0,
+    "end": 3.23,
+    "text": "Hey, we are welcome back to the channel."
+  },
+  {
+    "start": 3.23,
+    "end": 6.54,
+    "text": "I hope you guys are doing extremely well."
+  },
+  {
+    "start": 6.54,
+    "end": 13.32,
+    "text": "So today we will be starting with something which is known as BP on Drets or you can"
+  },
+  {
+    "start": 13.32,
+    "end": 20.42,
+    "text": "say BP on 2D matrix or something similar to which has N rows and probably not M columns."
+  },
+  {
+    "start": 20.42,
+    "end": 24.78,
+    "text": "What similar to that is what we will be starting with."
+  },
+  {
+    "start": 24.78,
+    "end": 31.8,
+    "text": "So to start with we will be solving problems how to count paths then we will be solving"
+  },
+  {
+    "start": 31.8,
+    "end": 35.19,
+    "text": "problem how to count paths with obstacles."
+  },
+  {
+    "start": 35.19,
+    "end": 39.95,
+    "text": "Then obviously we will be doing something as minimum paths."
+  },
+  {
+    "start": 39.95,
+    "end": 42.77,
+    "text": "Now these questions are all our St."
+  },
+  {
+    "start": 42.77,
+    "end": 44.38,
+    "text": "Big big tech giants."
+  },
+  {
+    "start": 44.38,
+    "end": 49.87,
+    "text": "Okay, so right after that we will be doing something like max paths."
+  },
+  {
+    "start": 49.87,
+    "end": 53.66,
+    "text": "Some but this will be under certain conditions."
+  },
+  {
+    "start": 53.66,
+    "end": 56.0,
+    "text": "It won't be the standard way."
+  },
+  {
+    "start": 56.0,
+    "end": 60.44,
+    "text": "Right after that we will be doing the triangle problem."
+  },
+  {
+    "start": 60.44,
+    "end": 68.1,
+    "text": "And after that again we will be doing one similar problem which will be having two start points"
+  },
+  {
+    "start": 68.1,
+    "end": 72.21,
+    "text": "with two people just to understand how to elongate."
+  },
+  {
+    "start": 72.21,
+    "end": 81.0,
+    "text": "So I am very much sure after you do all these 6 problems because all these 6 problems are of different types."
+  },
+  {
+    "start": 81.0,
+    "end": 86.51,
+    "text": "If you have done all these 6 problems you can do any problem on BP on Drets or on 2D matrix."
+  },
+  {
+    "start": 86.51,
+    "end": 88.07,
+    "text": "This is my promise to you."
+  },
+  {
+    "start": 88.07,
+    "end": 93.22,
+    "text": "So you just need to make sure all the 6 problems is what you need to watch and submit."
+  },
+  {
+    "start": 93.22,
+    "end": 97.83,
+    "text": "Now I will be leaving the code studio link out over there in the description."
+  },
+  {
+    "start": 97.83,
+    "end": 100.04,
+    "text": "You can definitely submit over there."
+  },
+  {
+    "start": 100.04,
+    "end": 105.49,
+    "text": "Just in case if you want any other platform you can just take up the question in the title."
+  },
+  {
+    "start": 105.49,
+    "end": 108.9,
+    "text": "And you can do Google search if you want any other links."
+  },
+  {
+    "start": 108.9,
+    "end": 114.71,
+    "text": "But yeah I will highly recommend you to try out code studio because it's a wonderful platform and"
+  },
+  {
+    "start": 114.71,
+    "end": 118.6,
+    "text": "something which is from India so we should definitely support it."
+  },
+  {
+    "start": 118.6,
+    "end": 121.29,
+    "text": "Now what are the prerequisites for DPN Grits?"
+  },
+  {
+    "start": 121.29,
+    "end": 127.93,
+    "text": "I will highly recommend you to watch the lecture 7 as I always say because over here I have taught you a trick."
+  },
+  {
+    "start": 127.93,
+    "end": 133.56,
+    "text": "Where I have told you that if you are writing a recursion function and you have to count ways."
+  },
+  {
+    "start": 133.56,
+    "end": 134.7,
+    "text": "How do you do that?"
+  },
+  {
+    "start": 134.7,
+    "end": 136.02,
+    "text": "You write a base case."
+  },
+  {
+    "start": 136.02,
+    "end": 140.87,
+    "text": "And in that base case you either return a 1 or either you return a 0 depending on"
+  },
+  {
+    "start": 140.87,
+    "end": 142.9,
+    "text": "if your conditions are met or not."
+  },
+  {
+    "start": 142.9,
+    "end": 149.54,
+    "text": "And then you take whatever recursions you have like how many number of recursions and then you return L plus R."
+  },
+  {
+    "start": 149.54,
+    "end": 152.89,
+    "text": "So if you remember these ways that's how you count ways."
+  },
+  {
+    "start": 152.89,
+    "end": 155.7,
+    "text": "In the lecture 7 I have deeply taught you this."
+  },
+  {
+    "start": 155.7,
+    "end": 161.56,
+    "text": "So if you don't know about this please please watch it out because without this recursion on dates"
+  },
+  {
+    "start": 161.56,
+    "end": 163.83,
+    "text": "or DPN Grits will not be easy for you."
+  },
+  {
+    "start": 163.83,
+    "end": 167.0,
+    "text": "So please watch it before starting up with DPN Grits."
+  },
+  {
+    "start": 167.0,
+    "end": 173.01,
+    "text": "So to start with let's check all the first problem which is total unique parts."
+  },
+  {
+    "start": 173.01,
+    "end": 174.91,
+    "text": "Now what are they saying?"
+  },
+  {
+    "start": 174.91,
+    "end": 178.03,
+    "text": "They're saying you're present at point A."
+  },
+  {
+    "start": 178.03,
+    "end": 184.65,
+    "text": "Which is the top left cell of an m cross n matrix top left cell of an m cross n matrix."
+  },
+  {
+    "start": 184.65,
+    "end": 190.66,
+    "text": "Your destination is point B, which is the bottom right cell of the same matrix."
+  },
+  {
+    "start": 190.66,
+    "end": 196.36,
+    "text": "And it's like 0 comma 0 will be the top cell and the bottom will be m minus"
+  },
+  {
+    "start": 196.36,
+    "end": 198.26,
+    "text": "1 and n minus 1 for sure."
+  },
+  {
+    "start": 198.26,
+    "end": 204.19,
+    "text": "Your task is to find the total number of unique parts from point A to point B."
+  },
+  {
+    "start": 204.19,
+    "end": 210.43,
+    "text": "In other words you will be given the dimensions of the matrix as integers m and n."
+  },
+  {
+    "start": 210.43,
+    "end": 216.36,
+    "text": "And it has to find the total number of unique parts from the cell 0 0 like the"
+  },
+  {
+    "start": 216.36,
+    "end": 219.17,
+    "text": "point 0 0 to n minus 1 and m minus 1."
+  },
+  {
+    "start": 219.17,
+    "end": 226.24,
+    "text": "For an example if I give you a matrix of 2 cross 2 size the number of unique parts will be 2."
+  },
+  {
+    "start": 226.24,
+    "end": 228.98,
+    "text": "Let's understand this question in B."
+  },
+  {
+    "start": 228.98,
+    "end": 233.24,
+    "text": "So if I'm saying that I'm giving you a 2 cross 2 matrix."
+  },
+  {
+    "start": 233.24,
+    "end": 236.51,
+    "text": "So this is the 2 cross 2 matrix definitely."
+  },
+  {
+    "start": 236.51,
+    "end": 242.0,
+    "text": "And over here if I'm saying you you started this is your starting point."
+  },
+  {
+    "start": 242.0,
+    "end": 249.81,
+    "text": "This is your ending point because if I write down states from 0 0 to 1 comma 1 because that is the right bottom."
+  },
+  {
+    "start": 249.81,
+    "end": 252.25,
+    "text": "So how can you basically move this?"
+  },
+  {
+    "start": 252.25,
+    "end": 252.6,
+    "text": "Okay."
+  },
+  {
+    "start": 252.6,
+    "end": 259.29,
+    "text": "Now remember in the question it really states you can only move right or you can only move down."
+  },
+  {
+    "start": 259.29,
+    "end": 262.98,
+    "text": "No other movement is allowed only right or only down."
+  },
+  {
+    "start": 262.98,
+    "end": 270.79,
+    "text": "So if you move right you will end up reaching here and then again if you move right you'll end up reaching here."
+  },
+  {
+    "start": 270.79,
+    "end": 278.53,
+    "text": "So that's one of the ways and I can see the other ways you can decide you'll move here and you will reach here."
+  },
+  {
+    "start": 278.53,
+    "end": 284.46,
+    "text": "So I think there are couple of unique ways in which you can reach from 0 0 to 1 to 1."
+  },
+  {
+    "start": 284.46,
+    "end": 284.81,
+    "text": "Okay."
+  },
+  {
+    "start": 284.81,
+    "end": 289.34,
+    "text": "So if there are two ways to unique ways you have to return me to."
+  },
+  {
+    "start": 289.34,
+    "end": 291.43,
+    "text": "So how do you do this problem?"
+  },
+  {
+    "start": 291.43,
+    "end": 297.22,
+    "text": "Now if you remember how to write a recurrence that is something which I taught you."
+  },
+  {
+    "start": 297.22,
+    "end": 302.03,
+    "text": "How to write a recurrence that there is something which I taught you."
+  },
+  {
+    "start": 302.03,
+    "end": 305.45,
+    "text": "But before that we have to analyze why recursion."
+  },
+  {
+    "start": 305.45,
+    "end": 306.98,
+    "text": "So what are you doing?"
+  },
+  {
+    "start": 306.98,
+    "end": 314.65,
+    "text": "Starting from something like 0 comma 0 and if I just write it in a generic way you're starting from 0 comma 0."
+  },
+  {
+    "start": 314.65,
+    "end": 318.41,
+    "text": "And you're wanting to go till m minus 1 and n minus 1."
+  },
+  {
+    "start": 318.41,
+    "end": 320.85,
+    "text": "That is what you are looking to do."
+  },
+  {
+    "start": 320.85,
+    "end": 321.76,
+    "text": "Am I correct?"
+  },
+  {
+    "start": 321.76,
+    "end": 322.18,
+    "text": "Right."
+  },
+  {
+    "start": 322.18,
+    "end": 323.78,
+    "text": "I'm absolutely correct."
+  },
+  {
+    "start": 323.78,
+    "end": 329.0,
+    "text": "Now can I say you're basically trying out all possible ways to go from 0 0."
+  },
+  {
+    "start": 329.0,
+    "end": 331.95,
+    "text": "So m minus 1 and minus 1 all possible ways."
+  },
+  {
+    "start": 331.95,
+    "end": 334.9,
+    "text": "Now whenever you try out all possible ways."
+  },
+  {
+    "start": 334.9,
+    "end": 337.1,
+    "text": "What have I taught you till now?"
+  },
+  {
+    "start": 337.1,
+    "end": 344.31,
+    "text": "All possible ways means apply recursion as simple as that because if you have to count all possible ways."
+  },
+  {
+    "start": 344.31,
+    "end": 348.77,
+    "text": "I'll try always and I'll count them as simple as that after that."
+  },
+  {
+    "start": 348.77,
+    "end": 351.11,
+    "text": "Deepian all that comes afterwards."
+  },
+  {
+    "start": 351.11,
+    "end": 356.06,
+    "text": "But if I'm been asked to count always I'll try always as simple as that."
+  },
+  {
+    "start": 356.06,
+    "end": 358.46,
+    "text": "I'll try one way two way three way."
+  },
+  {
+    "start": 358.46,
+    "end": 360.59,
+    "text": "I'll keep counting in this way."
+  },
+  {
+    "start": 360.59,
+    "end": 362.99,
+    "text": "I can get the total number of ways."
+  },
+  {
+    "start": 362.99,
+    "end": 363.4,
+    "text": "Right."
+  },
+  {
+    "start": 363.4,
+    "end": 365.05,
+    "text": "So that is what I'll do."
+  },
+  {
+    "start": 365.05,
+    "end": 366.7,
+    "text": "So what is the question?"
+  },
+  {
+    "start": 366.7,
+    "end": 368.14,
+    "text": "How to write records?"
+  },
+  {
+    "start": 368.14,
+    "end": 372.12,
+    "text": "Now in now 1 d d p's I've taught you how to write records."
+  },
+  {
+    "start": 372.12,
+    "end": 379.88,
+    "text": "What is the step one express everything in terms of indexes remember this express everything in terms of indexes."
+  },
+  {
+    "start": 379.88,
+    "end": 383.18,
+    "text": "But over here instead of index what will you do?"
+  },
+  {
+    "start": 383.18,
+    "end": 384.42,
+    "text": "It's a 2 d matrix."
+  },
+  {
+    "start": 384.42,
+    "end": 387.65,
+    "text": "So obviously indexes will be to a 2 to indexes."
+  },
+  {
+    "start": 387.65,
+    "end": 391.43,
+    "text": "One is the index i which will represent the row number."
+  },
+  {
+    "start": 391.43,
+    "end": 395.35,
+    "text": "One will be the index j will represent the column number."
+  },
+  {
+    "start": 395.35,
+    "end": 401.46,
+    "text": "So slide change in the three rules over here express everything in terms of i and j where"
+  },
+  {
+    "start": 401.46,
+    "end": 405.24,
+    "text": "i is basically row number j is basically column number."
+  },
+  {
+    "start": 405.24,
+    "end": 405.65,
+    "text": "Right."
+  },
+  {
+    "start": 405.65,
+    "end": 406.0,
+    "text": "Next."
+  },
+  {
+    "start": 406.0,
+    "end": 412.28,
+    "text": "Explore all parts or do all stuff whichever you call it do all stuff the point number to"
+  },
+  {
+    "start": 412.28,
+    "end": 415.99,
+    "text": "stays the same if I'm counting always sum up always."
+  },
+  {
+    "start": 415.99,
+    "end": 422.49,
+    "text": "If I'm looking for max or minimal I'll take the max or minimal depending on the question if"
+  },
+  {
+    "start": 422.49,
+    "end": 428.27,
+    "text": "you are being asked to count all the ways you sum up all the ways if you're being"
+  },
+  {
+    "start": 428.27,
+    "end": 429.34,
+    "text": "asked to count."
+  },
+  {
+    "start": 429.34,
+    "end": 436.62,
+    "text": "Max and minimal you'll count the max and minimal okay depending on a question you're going to do this."
+  },
+  {
+    "start": 436.62,
+    "end": 442.9,
+    "text": "Simply follow these three steps and you can write the records for any 2 d grid and after"
+  },
+  {
+    "start": 442.9,
+    "end": 448.9,
+    "text": "that you know the steps are very easy to convert a recursion to d p to rather memory"
+  },
+  {
+    "start": 448.9,
+    "end": 454.33,
+    "text": "and then to tabular d p and probably after that to space optimization right."
+  },
+  {
+    "start": 454.33,
+    "end": 455.83,
+    "text": "So let's get started."
+  },
+  {
+    "start": 455.83,
+    "end": 459.26,
+    "text": "So what was a question the question was stating."
+  },
+  {
+    "start": 459.26,
+    "end": 464.47,
+    "text": "How many ways are there in order to reach from 0 0 to n minus or rather m"
+  },
+  {
+    "start": 464.47,
+    "end": 467.83,
+    "text": "minus 1 n minus 1 that is the question correct."
+  },
+  {
+    "start": 467.83,
+    "end": 471.76,
+    "text": "So can I say let's assume i write a recursion f of i j."
+  },
+  {
+    "start": 471.76,
+    "end": 477.19,
+    "text": "I read a recurrence f of i j where it tells me the number of unique ways the"
+  },
+  {
+    "start": 477.19,
+    "end": 483.04,
+    "text": "number of unique ways in which I can reach from 0 0 to i comma j specifically what"
+  },
+  {
+    "start": 483.04,
+    "end": 484.96,
+    "text": "I'm saying is if I'm taking"
+  },
+  {
+    "start": 484.96,
+    "end": 490.01,
+    "text": "a grid like this and assume this is my i j I'm asking in how many ways."
+  },
+  {
+    "start": 490.01,
+    "end": 494.49,
+    "text": "So what I'm saying is in how many ways can you reach from here."
+  },
+  {
+    "start": 494.49,
+    "end": 501.11,
+    "text": "So basically I'm trying to figure out the answer for this particular matrix that is what f of"
+  },
+  {
+    "start": 501.11,
+    "end": 506.88,
+    "text": "i j signify it's trying to figure out in how many ways can you reach from here to"
+  },
+  {
+    "start": 506.88,
+    "end": 509.02,
+    "text": "here if i and j is this right."
+  },
+  {
+    "start": 509.02,
+    "end": 514.57,
+    "text": "So where will we start with we will definitely start with f of m minus 1 and n"
+  },
+  {
+    "start": 514.57,
+    "end": 519.55,
+    "text": "minus 1 because this is f of n minus 1 and I won't to find in how many"
+  },
+  {
+    "start": 519.55,
+    "end": 522.04,
+    "text": "ways can I reach from here to here."
+  },
+  {
+    "start": 522.04,
+    "end": 523.96,
+    "text": "So the entire matrix right."
+  },
+  {
+    "start": 523.96,
+    "end": 529.23,
+    "text": "So I can see I'll start off with i comma j where the initials of i comma j"
+  },
+  {
+    "start": 529.23,
+    "end": 535.07,
+    "text": "will be m minus 1 and n minus 1 this is generally how you determine where to start"
+  },
+  {
+    "start": 535.07,
+    "end": 536.07,
+    "text": "off with okay."
+  },
+  {
+    "start": 536.07,
+    "end": 541.91,
+    "text": "So that's what I've done was the first step in recursion it's the base case right."
+  },
+  {
+    "start": 541.91,
+    "end": 549.24,
+    "text": "So if you remember if you remember the lecture 7 in lecture 7 I think I told you how do you count ways."
+  },
+  {
+    "start": 549.24,
+    "end": 554.93,
+    "text": "In order to count ways you have to determine a base case that returns 1 correct."
+  },
+  {
+    "start": 554.93,
+    "end": 560.98,
+    "text": "So in the base case if you have reached your destination you return 1 or you return 0"
+  },
+  {
+    "start": 560.98,
+    "end": 565.96,
+    "text": "if you haven't reached your destination that's that's your base cases."
+  },
+  {
+    "start": 565.96,
+    "end": 572.64,
+    "text": "If you reach your destination you return 1 if you haven't reached your destination you return 0 that's"
+  },
+  {
+    "start": 572.64,
+    "end": 577.42,
+    "text": "what I've taught you in the lecture 7 so why don't you do that over here."
+  },
+  {
+    "start": 577.42,
+    "end": 583.45,
+    "text": "So what I'll say is okay I know my destination is very straight forward if I'm starting from"
+  },
+  {
+    "start": 583.45,
+    "end": 587.84,
+    "text": "n minus 1 m minus 1 or rather the opposite m minus 1 and m minus 1."
+  },
+  {
+    "start": 587.84,
+    "end": 593.28,
+    "text": "I will have to go in such a way that I reach this particular guy from here correct."
+  },
+  {
+    "start": 593.28,
+    "end": 596.82,
+    "text": "So I know this is the base case where I reach 0 and 0."
+  },
+  {
+    "start": 596.82,
+    "end": 601.27,
+    "text": "So straight away say if i is equal to 0 and j is equal to equal to 0"
+  },
+  {
+    "start": 601.27,
+    "end": 606.38,
+    "text": "if that's the case I definitely know I have reached my B like the destination."
+  },
+  {
+    "start": 606.38,
+    "end": 613.39,
+    "text": "And if I've reached my destination I know the equation would have taken a path and you'd have reached here."
+  },
+  {
+    "start": 613.39,
+    "end": 615.42,
+    "text": "So why don't I count that path."
+  },
+  {
+    "start": 615.42,
+    "end": 622.49,
+    "text": "So I will say return 1 because on returning 1 it gets counted lectures 7 guys lecture 7 of recursion series."
+  },
+  {
+    "start": 622.49,
+    "end": 626.35,
+    "text": "Okay, so that's that's how you can easily count it correct."
+  },
+  {
+    "start": 626.35,
+    "end": 631.53,
+    "text": "Now what is the other base case assume you're standing at m minus 1 m n minus 1"
+  },
+  {
+    "start": 631.53,
+    "end": 636.77,
+    "text": "and there is 0 comma 0 and you kept moving up kept moving up kept moving up kept"
+  },
+  {
+    "start": 636.77,
+    "end": 642.53,
+    "text": "moving up and you exceed the boundary but it might be the other way you kept moving left"
+  },
+  {
+    "start": 642.53,
+    "end": 645.88,
+    "text": "you kept moving left and you exceeded the boundary."
+  },
+  {
+    "start": 645.88,
+    "end": 652.12,
+    "text": "So you can either exceed the boundary in the upper direction which means the row number row number"
+  },
+  {
+    "start": 652.12,
+    "end": 655.62,
+    "text": "goes less than 0 or the column number goes less than 0."
+  },
+  {
+    "start": 655.62,
+    "end": 661.1,
+    "text": "That path is something which is not a path because it took you out of the boundary and"
+  },
+  {
+    "start": 661.1,
+    "end": 666.13,
+    "text": "I wanted to travel inside the matrix in order to reach from m minus 1 n minus 1"
+  },
+  {
+    "start": 666.13,
+    "end": 666.45,
+    "text": "to 0."
+  },
+  {
+    "start": 666.45,
+    "end": 669.0,
+    "text": "So it you got out of the boundary right."
+  },
+  {
+    "start": 669.0,
+    "end": 675.05,
+    "text": "So what you will do is you will say I will not count this path this path is not under my count."
+  },
+  {
+    "start": 675.05,
+    "end": 676.26,
+    "text": "So I will return 0."
+  },
+  {
+    "start": 676.26,
+    "end": 678.42,
+    "text": "Makes sense that's what I've done."
+  },
+  {
+    "start": 678.42,
+    "end": 684.34,
+    "text": "So the base cases have been written remember this these are the base cases that have written."
+  },
+  {
+    "start": 684.34,
+    "end": 687.52,
+    "text": "So express in terms of index and right base cases."
+  },
+  {
+    "start": 687.52,
+    "end": 688.67,
+    "text": "That's a step one."
+  },
+  {
+    "start": 688.67,
+    "end": 692.36,
+    "text": "So what I've done is I made sure the step one is complete."
+  },
+  {
+    "start": 692.36,
+    "end": 694.59,
+    "text": "What is this explore do all stuffs."
+  },
+  {
+    "start": 694.59,
+    "end": 698.92,
+    "text": "Now what is all the same thing is that you can't see the same thing."
+  },
+  {
+    "start": 698.92,
+    "end": 702.61,
+    "text": "So what I've done is I made sure the step one is complete."
+  },
+  {
+    "start": 702.61,
+    "end": 704.84,
+    "text": "What is this explore do all stuffs."
+  },
+  {
+    "start": 704.84,
+    "end": 706.88,
+    "text": "Now what is all stuff over here?"
+  },
+  {
+    "start": 706.88,
+    "end": 713.88,
+    "text": "Let's analyze the question stated that I can move in the right word direction or in the bottom word direction."
+  },
+  {
+    "start": 713.88,
+    "end": 719.48,
+    "text": "So if you're moving from the bottom yes if you're moving from the bottom we can say it's"
+  },
+  {
+    "start": 719.48,
+    "end": 721.9,
+    "text": "opposite yes we can say it's opposite."
+  },
+  {
+    "start": 721.9,
+    "end": 727.44,
+    "text": "It's opposite if you're moving from here to here I can say the right one will be either"
+  },
+  {
+    "start": 727.44,
+    "end": 732.02,
+    "text": "you can move left either you can move upward it is exactly the opposite."
+  },
+  {
+    "start": 732.02,
+    "end": 737.3,
+    "text": "So if it's exactly the opposite just do because there are two ways one is up one is"
+  },
+  {
+    "start": 737.3,
+    "end": 741.12,
+    "text": "left instead of bottom and right over here it's up and left."
+  },
+  {
+    "start": 741.12,
+    "end": 742.71,
+    "text": "Why don't you explore it."
+  },
+  {
+    "start": 742.71,
+    "end": 747.88,
+    "text": "So I can say okay have couple of ways one is the upper way where I will say okay."
+  },
+  {
+    "start": 747.88,
+    "end": 753.48,
+    "text": "I will move to if I go up if I go up what happens the rule reduces again"
+  },
+  {
+    "start": 753.48,
+    "end": 760.25,
+    "text": "very big stuff the rule reduces and the column stays same if I go left what happens the"
+  },
+  {
+    "start": 760.25,
+    "end": 767.02,
+    "text": "rules because if I'm going left we are still in the same rule But we're moving a column"
+  },
+  {
+    "start": 767.02,
+    "end": 769.82,
+    "text": "back so thereby j minus one correct."
+  },
+  {
+    "start": 769.82,
+    "end": 776.66,
+    "text": "So we have done this and so explore all possible parts is also done what's the next step"
+  },
+  {
+    "start": 776.66,
+    "end": 783.5,
+    "text": "Some all the ways because you've been asked to count the total ways so kindly sum up all"
+  },
+  {
+    "start": 783.5,
+    "end": 788.79,
+    "text": "the ways So why don't you sum up all the ways so what I will do is I"
+  },
+  {
+    "start": 788.79,
+    "end": 795.09,
+    "text": "will say return up plus left so what I've done is I have returned up plus left so"
+  },
+  {
+    "start": 795.09,
+    "end": 801.93,
+    "text": "I've summed up all the possible ways over here and this is what our Recreance well be is"
+  },
+  {
+    "start": 801.93,
+    "end": 808.62,
+    "text": "this is how you can easily is this is how you can easily write a recursive solution So"
+  },
+  {
+    "start": 808.62,
+    "end": 817.17,
+    "text": "Very straight so very straight forward Express Explore some up all whatever is the question stating that's all"
+  },
+  {
+    "start": 817.17,
+    "end": 823.78,
+    "text": "you do be beyond bits so since I've done this We have done recursion right and And we"
+  },
+  {
+    "start": 823.78,
+    "end": 828.84,
+    "text": "know that for every index is and for every index we are exploring"
+  },
+  {
+    "start": 828.84,
+    "end": 835.24,
+    "text": "Two possible parts right so I can say the time complexity of recursion How many ways are there"
+  },
+  {
+    "start": 835.24,
+    "end": 841.16,
+    "text": "like how many boxes are there in the matrix having two n boxes And for every box you're"
+  },
+  {
+    "start": 841.16,
+    "end": 846.68,
+    "text": "taking two Two parts up left up left up left up left so if for every boxes you're"
+  },
+  {
+    "start": 846.68,
+    "end": 851.85,
+    "text": "taking two parts Can I say can I say all the boxes in total is all the boxes"
+  },
+  {
+    "start": 851.85,
+    "end": 857.37,
+    "text": "in total will be having two into two into two into two into two into two into two"
+  },
+  {
+    "start": 857.37,
+    "end": 863.5,
+    "text": "parts Which is two into m into n parts so the time complexity is this which is exponential"
+  },
+  {
+    "start": 863.5,
+    "end": 870.31,
+    "text": "in nature Right space complexity is a recursive stack space which will be the Part length which will"
+  },
+  {
+    "start": 870.31,
+    "end": 876.85,
+    "text": "be the part Lent then the space complexity will be the Part length why because if you're wanting"
+  },
+  {
+    "start": 876.85,
+    "end": 882.64,
+    "text": "to reach here Let's say from three comma three The part length will be you will go to"
+  },
+  {
+    "start": 882.64,
+    "end": 888.5,
+    "text": "two comma two Then you will Sorry or two comma three rather then we'll go to one comma"
+  },
+  {
+    "start": 888.5,
+    "end": 894.29,
+    "text": "three Then we'll go to zero comma three Then we'll go to zero comma two and you'll go"
+  },
+  {
+    "start": 894.29,
+    "end": 900.42,
+    "text": "to zero comma one and then you'll go to this so the parts length contains one length Uland"
+  },
+  {
+    "start": 900.42,
+    "end": 907.09,
+    "text": "three length full length five length six length So it's basically the part length is nothing but m"
+  },
+  {
+    "start": 907.09,
+    "end": 910.68,
+    "text": "minus one plus n minus one is the part length because"
+  },
+  {
+    "start": 910.68,
+    "end": 916.73,
+    "text": "Over here you took if you see carefully over here if the length was four you ended up"
+  },
+  {
+    "start": 916.73,
+    "end": 924.13,
+    "text": "taking three upward directions and you ended up taking three left two directions right there by the part"
+  },
+  {
+    "start": 924.13,
+    "end": 931.32,
+    "text": "length is this So this is the recursion stem complexity and the stack space complexity now what's the"
+  },
+  {
+    "start": 931.32,
+    "end": 934.45,
+    "text": "next time What's the next step in recursion?"
+  },
+  {
+    "start": 934.45,
+    "end": 940.43,
+    "text": "I have told you easily how do you optimize recursion in order to optimize recursion?"
+  },
+  {
+    "start": 940.43,
+    "end": 947.12,
+    "text": "What do you generally do is you try to convert that into a possible Deepy solution correct and"
+  },
+  {
+    "start": 947.12,
+    "end": 949.9,
+    "text": "how do you do this in order to do this?"
+  },
+  {
+    "start": 949.9,
+    "end": 955.74,
+    "text": "You try to do something which is known as memo i a Correct, but when can you apply"
+  },
+  {
+    "start": 955.74,
+    "end": 962.57,
+    "text": "my my a If there are overlapping sub Problems yes if there are overlapping Sub problems you tend"
+  },
+  {
+    "start": 962.57,
+    "end": 967.84,
+    "text": "to apply something like a memo i a So why don't we do that so what I'll do"
+  },
+  {
+    "start": 967.84,
+    "end": 973.32,
+    "text": "is I will take m equal to let's say three I'll take n equal to three and I'll"
+  },
+  {
+    "start": 973.32,
+    "end": 977.23,
+    "text": "try to figure out how many total ways are they correct?"
+  },
+  {
+    "start": 977.23,
+    "end": 983.56,
+    "text": "So practically speaking this is how the grid will look and you want to find how many ways"
+  },
+  {
+    "start": 983.56,
+    "end": 990.52,
+    "text": "are they reach from This particular position to this particular position right so let's do that so"
+  },
+  {
+    "start": 990.52,
+    "end": 995.0,
+    "text": "This is zero one two this is again zero one two so we start with f of two"
+  },
+  {
+    "start": 995.0,
+    "end": 999.73,
+    "text": "comma two correct Now where can f of two comma two go it can either go to the"
+  },
+  {
+    "start": 999.73,
+    "end": 1005.68,
+    "text": "upward direction which is definitely f of The row numbers reduces by one and the column stays the"
+  },
+  {
+    "start": 1005.68,
+    "end": 1011.27,
+    "text": "same or it goes with the left word direction Where the row number stays same and the column"
+  },
+  {
+    "start": 1011.27,
+    "end": 1017.1,
+    "text": "number reduces by one correct and if you know in recursion if This is the upward direction this"
+  },
+  {
+    "start": 1017.1,
+    "end": 1021.21,
+    "text": "is the left word direction Which recursion will be occurring first?"
+  },
+  {
+    "start": 1021.21,
+    "end": 1027.16,
+    "text": "Obviously this rate currents will be occurring first so let's do this recurrence Now f of one two"
+  },
+  {
+    "start": 1027.16,
+    "end": 1031.76,
+    "text": "why can it go it can definitely go to something as f of Zero two and it can"
+  },
+  {
+    "start": 1031.76,
+    "end": 1034.77,
+    "text": "definitely go to something as f of one comma one."
+  },
+  {
+    "start": 1034.77,
+    "end": 1040.11,
+    "text": "This is the upward direction This is the left direction this is the up this is the left"
+  },
+  {
+    "start": 1040.11,
+    "end": 1044.04,
+    "text": "now where can f of zero to go it can again go to the up So if it"
+  },
+  {
+    "start": 1044.04,
+    "end": 1049.01,
+    "text": "goes to the up it's minus one comma two And if it goes to the left it's basically"
+  },
+  {
+    "start": 1049.01,
+    "end": 1054.66,
+    "text": "zero comma One correct so what happens over here whenever you reach f of minus one comma two"
+  },
+  {
+    "start": 1054.66,
+    "end": 1056.07,
+    "text": "what happens over here?"
+  },
+  {
+    "start": 1056.07,
+    "end": 1061.23,
+    "text": "So if you remember the moment the row goes less than zero the there was a base cases"
+  },
+  {
+    "start": 1061.23,
+    "end": 1065.96,
+    "text": "I less than zero or or J less than zero if any of these things happen you end"
+  },
+  {
+    "start": 1065.96,
+    "end": 1067.24,
+    "text": "up returning the zero"
+  },
+  {
+    "start": 1067.24,
+    "end": 1070.97,
+    "text": "So you end up returning the zero here  Correct over here."
+  },
+  {
+    "start": 1070.97,
+    "end": 1073.85,
+    "text": "There is something like f of zero one again."
+  },
+  {
+    "start": 1073.85,
+    "end": 1078.56,
+    "text": "It can go up which is minus one comma one Or it can go to the left which"
+  },
+  {
+    "start": 1078.56,
+    "end": 1084.78,
+    "text": "is zero comma zero correct so minus one comma one will again Is the upward direction which will"
+  },
+  {
+    "start": 1084.78,
+    "end": 1091.39,
+    "text": "return zero and this guy ends up returning one because this is where your destination is Because this"
+  },
+  {
+    "start": 1091.39,
+    "end": 1097.28,
+    "text": "is where your destination is you have reached f of zero comma zero to that thereby This is"
+  },
+  {
+    "start": 1097.28,
+    "end": 1098.39,
+    "text": "your destination."
+  },
+  {
+    "start": 1098.39,
+    "end": 1104.09,
+    "text": "So how the recursion be like f of zero comma one would have called up Would have called"
+  },
+  {
+    "start": 1104.09,
+    "end": 1109.39,
+    "text": "left so the up would have been minus one comma one and the left would have been f"
+  },
+  {
+    "start": 1109.39,
+    "end": 1115.28,
+    "text": "zero comma zero This guy gets one this guy gets zero and in order you return the summation"
+  },
+  {
+    "start": 1115.28,
+    "end": 1120.32,
+    "text": "of boost which is zero plus one thereby this guy gets a value of one so I can"
+  },
+  {
+    "start": 1120.32,
+    "end": 1125.62,
+    "text": "say this guy gets a value of One so you can easily return that value one correct."
+  },
+  {
+    "start": 1125.62,
+    "end": 1131.78,
+    "text": "So thereby thereby Let's quickly raise this and try to solve this recursion Now you're at f of"
+  },
+  {
+    "start": 1131.78,
+    "end": 1137.02,
+    "text": "zero two at f of zero two would have happened you would have gone to up which is"
+  },
+  {
+    "start": 1137.02,
+    "end": 1142.28,
+    "text": "f of minus one two which gave him zero which gave him zero did have gone to left"
+  },
+  {
+    "start": 1142.28,
+    "end": 1148.47,
+    "text": "Which would have gave a given f of zero one which is one so thereby it returns zero"
+  },
+  {
+    "start": 1148.47,
+    "end": 1154.28,
+    "text": "plus one makes it a value of one say to Don't so one so let's quickly raise it"
+  },
+  {
+    "start": 1154.28,
+    "end": 1159.65,
+    "text": "So this is how it will be and in the next step yes in the next step what"
+  },
+  {
+    "start": 1159.65,
+    "end": 1165.54,
+    "text": "happens there is something like f of one two It goes up and now it goes left so"
+  },
+  {
+    "start": 1165.54,
+    "end": 1170.98,
+    "text": "f of one one will be something like f of Zero one because it has to go up"
+  },
+  {
+    "start": 1170.98,
+    "end": 1176.42,
+    "text": "and similarly it will be like I have to go left which will be f of one So"
+  },
+  {
+    "start": 1176.42,
+    "end": 1182.98,
+    "text": "if you carefully see we get our first sub problem Zero one has been solved here So there"
+  },
+  {
+    "start": 1182.98,
+    "end": 1188.5,
+    "text": "is no need to go further down into f of minus one one Which is the top and"
+  },
+  {
+    "start": 1188.5,
+    "end": 1194.02,
+    "text": "there is no need to go to the left so I got my first sub problem thereby I"
+  },
+  {
+    "start": 1194.02,
+    "end": 1201.55,
+    "text": "see there are overlapping sub problems and if there are overlapping sub problems What can we apply we"
+  },
+  {
+    "start": 1201.55,
+    "end": 1205.8,
+    "text": "can definitely apply my myation and what is the shortest?"
+  },
+  {
+    "start": 1205.8,
+    "end": 1210.72,
+    "text": "What is the shortest trick that I've told you to apply my myation?"
+  },
+  {
+    "start": 1210.72,
+    "end": 1217.56,
+    "text": "Just figure out which is the changing parameters so there are a couple of parameters correct"
+  },
+  {
+    "start": 1217.56,
+    "end": 1223.09,
+    "text": "Now one parameter was I the other parameter was j so if there was a parameter I which"
+  },
+  {
+    "start": 1223.09,
+    "end": 1228.68,
+    "text": "is changing there is a parameter j Which is changing so what is the i's maximum value?"
+  },
+  {
+    "start": 1228.68,
+    "end": 1235.64,
+    "text": "I can say it's m minus one because that is where we start the recursion call what is the j's maximum value?"
+  },
+  {
+    "start": 1235.64,
+    "end": 1240.78,
+    "text": "n minus one because that is where we start the recursion call so I can say if I"
+  },
+  {
+    "start": 1240.78,
+    "end": 1246.11,
+    "text": "require the index m minus one I will have to declare an array of size m because if"
+  },
+  {
+    "start": 1246.11,
+    "end": 1251.31,
+    "text": "I declare an array of size m I will get the index m minus one similarly in order"
+  },
+  {
+    "start": 1251.31,
+    "end": 1256.45,
+    "text": "to get on index n minus one after declare an array of size n So basically I can"
+  },
+  {
+    "start": 1256.45,
+    "end": 1260.48,
+    "text": "say I will be requiring a dp of m cross n which is a 2 d dp of"
+  },
+  {
+    "start": 1260.48,
+    "end": 1264.9,
+    "text": "m cross n So if I have a 2 ddp I can convert this into a memo iation"
+  },
+  {
+    "start": 1264.9,
+    "end": 1271.92,
+    "text": "solution So how do you convert this into a memo iation solution again very straightforward step one declared"
+  },
+  {
+    "start": 1271.92,
+    "end": 1277.06,
+    "text": "the dp declare the dp of size m and if you're using java you can easily do this"
+  },
+  {
+    "start": 1277.06,
+    "end": 1283.37,
+    "text": "if you're using c plus plus you can declare a vector and make sure everything is initialized with"
+  },
+  {
+    "start": 1283.37,
+    "end": 1289.16,
+    "text": "minus one That that is something which we have to do to make sure that we understand that"
+  },
+  {
+    "start": 1289.16,
+    "end": 1293.88,
+    "text": "these values have been previously stored After this what is the step two?"
+  },
+  {
+    "start": 1293.88,
+    "end": 1301.97,
+    "text": "Store the answer the dear returning store the answer the dear returning so kindly go across and store"
+  },
+  {
+    "start": 1301.97,
+    "end": 1308.54,
+    "text": "the answer So let's store the answer over here dp of ij equal to up plus left next"
+  },
+  {
+    "start": 1308.54,
+    "end": 1316.31,
+    "text": "step three whenever there is a call Please check if that answer has been previously stored or not"
+  },
+  {
+    "start": 1316.31,
+    "end": 1323.52,
+    "text": "if yes kindly return dp of ij that's how yes that's how you can easily convert a recursive"
+  },
+  {
+    "start": 1323.52,
+    "end": 1331.93,
+    "text": "solution to a memo iation solution and if you've converted a recursive solution to a memo iation solution"
+  },
+  {
+    "start": 1331.93,
+    "end": 1339.7,
+    "text": "the time complexity will be no more exponential rather it will be the number of states because at"
+  },
+  {
+    "start": 1339.7,
+    "end": 1344.59,
+    "text": "max you can have a call for 0 0 0 0 1 0 2 like what calls can"
+  },
+  {
+    "start": 1344.59,
+    "end": 1350.2,
+    "text": "you have if I ask you on a very generic term you can have a call for 0"
+  },
+  {
+    "start": 1350.2,
+    "end": 1354.93,
+    "text": "0 You can have a call for 0 1 you can have a call for 0 2 0"
+  },
+  {
+    "start": 1354.93,
+    "end": 1359.33,
+    "text": "3 similarly you can have a call for 1 0 1 1 1 2 1 3 2 0"
+  },
+  {
+    "start": 1359.33,
+    "end": 1364.62,
+    "text": "and so on So I can say at max you can have n cross m like what are"
+  },
+  {
+    "start": 1364.62,
+    "end": 1368.92,
+    "text": "the maximum calls of f of ij you can have you can have"
+  },
+  {
+    "start": 1368.92,
+    "end": 1375.58,
+    "text": "At max of n cross m calls for recursion thereby the time complexity is this and the space"
+  },
+  {
+    "start": 1375.58,
+    "end": 1382.54,
+    "text": "complexity is still a recursion stack space which is the path length and the path length is n"
+  },
+  {
+    "start": 1382.54,
+    "end": 1388.0,
+    "text": "minus 1 plus m minus 1 that's the path length plus a big of n cross m for"
+  },
+  {
+    "start": 1388.0,
+    "end": 1395.4,
+    "text": "the dp array that you're using so we are bold the time complexity into much better than exponential"
+  },
+  {
+    "start": 1395.4,
+    "end": 1401.46,
+    "text": "and this will be accepted so if you're in if you are in an interview you can stop"
+  },
+  {
+    "start": 1401.46,
+    "end": 1407.82,
+    "text": "over here but I will highly recommend if you get these go to the tabulation go to the"
+  },
+  {
+    "start": 1407.82,
+    "end": 1414.78,
+    "text": "space optimization eat as much as time as possible because if you know the problem if you can"
+  },
+  {
+    "start": 1414.78,
+    "end": 1422.18,
+    "text": "solve the problem it's better you impress the interview by that one problem in such whether it will"
+  },
+  {
+    "start": 1422.18,
+    "end": 1428.39,
+    "text": "like wow okay but if you stop at my my she might start asking instead of him asking"
+  },
+  {
+    "start": 1428.39,
+    "end": 1435.27,
+    "text": "you impress it all right so we have we are pretty much done the memorization form what's the"
+  },
+  {
+    "start": 1435.27,
+    "end": 1442.37,
+    "text": "next one the next one is tabulation why because we still have our recursion stack space that is"
+  },
+  {
+    "start": 1442.37,
+    "end": 1447.0,
+    "text": "being used and this somewhere might give you a deal so I don't"
+  },
+  {
+    "start": 1447.0,
+    "end": 1452.98,
+    "text": "want this extreme recursion stack space to be used so I want to omit this that's where we"
+  },
+  {
+    "start": 1452.98,
+    "end": 1459.36,
+    "text": "have to think of something as tabulation so what did I teach you for tabulation if you remember"
+  },
+  {
+    "start": 1459.36,
+    "end": 1465.27,
+    "text": "whatever is the base case in recursion just write that what is the base case away on its"
+  },
+  {
+    "start": 1465.27,
+    "end": 1469.84,
+    "text": "states i equal to 0 j equal to 0 return 1 so go by here first of all"
+  },
+  {
+    "start": 1469.84,
+    "end": 1475.01,
+    "text": "the declared an array of size dp of n m first of all declare an array of size"
+  },
+  {
+    "start": 1475.01,
+    "end": 1480.52,
+    "text": "dp of n and m what is the next thing that you will do is very straightforward it's"
+  },
+  {
+    "start": 1480.52,
+    "end": 1485.35,
+    "text": "you will be like declare the base case of 0 0 to be 1 okay so that's one"
+  },
+  {
+    "start": 1485.35,
+    "end": 1490.99,
+    "text": "of the things what of the other base case the other base case stated i lesser than 0"
+  },
+  {
+    "start": 1490.99,
+    "end": 1496.43,
+    "text": "or j lesser than 0 now this cannot be expressed in db so ignore this we will deal"
+  },
+  {
+    "start": 1496.43,
+    "end": 1503.08,
+    "text": "with it separately so what is tabulation what is tabulation now a lot of people will say tabulation"
+  },
+  {
+    "start": 1503.08,
+    "end": 1509.53,
+    "text": "is going from bottom up do you understand the meaning of bottom up do you understand the meaning"
+  },
+  {
+    "start": 1509.53,
+    "end": 1515.84,
+    "text": "of top top that's very very important so do you understand the meaning of tabulation now a lot"
+  },
+  {
+    "start": 1515.84,
+    "end": 1521.95,
+    "text": "of people will say tabulation is bottom up and they have a tendency e bottom up means going"
+  },
+  {
+    "start": 1521.95,
+    "end": 1526.76,
+    "text": "from 0 to n or something like this it's understand what is tabulation so"
+  },
+  {
+    "start": 1526.76,
+    "end": 1534.17,
+    "text": "tabulation is basically what is recursion why do we call a recursion a top down approach let's understand"
+  },
+  {
+    "start": 1534.17,
+    "end": 1540.67,
+    "text": "if you carefully observe in the recursion the call was made from here you went down you went"
+  },
+  {
+    "start": 1540.67,
+    "end": 1547.8,
+    "text": "down you went down and then you solved this base case then you accumulated the answer accumulated the"
+  },
+  {
+    "start": 1547.8,
+    "end": 1553.73,
+    "text": "answer and came back and this got its answer so you went down down down down and you"
+  },
+  {
+    "start": 1553.73,
+    "end": 1559.38,
+    "text": "got the answer and the top guy got his answer by going down they have I top down"
+  },
+  {
+    "start": 1559.38,
+    "end": 1565.74,
+    "text": "the top guy got his answer by going down but in tabulation it's to opposite you start from"
+  },
+  {
+    "start": 1565.74,
+    "end": 1572.02,
+    "text": "f of 0 0 1 then you accumulate then you take this accumulate take this accumulate and you"
+  },
+  {
+    "start": 1572.02,
+    "end": 1577.6,
+    "text": "ultimately reach f of 2 2 so you start from the down which is bottom and you go"
+  },
+  {
+    "start": 1577.6,
+    "end": 1583.18,
+    "text": "to the up so you go from down down down down down down top so down upper bottom"
+  },
+  {
+    "start": 1583.18,
+    "end": 1588.9,
+    "text": "up that's why tabulation is known as bottom up but don't it's not ego from 0 to 1"
+  },
+  {
+    "start": 1588.9,
+    "end": 1595.61,
+    "text": "is basically you start from the base case you accumulate you accumulate and you go and reach at"
+  },
+  {
+    "start": 1595.61,
+    "end": 1601.82,
+    "text": "the top when acted and you get your answer that's why we call a tabulation as the bottom"
+  },
+  {
+    "start": 1601.82,
+    "end": 1602.6,
+    "text": "up approach"
+  },
+  {
+    "start": 1602.6,
+    "end": 1609.33,
+    "text": "so we have done this right what's the next thing we have to understand so we have written"
+  },
+  {
+    "start": 1609.33,
+    "end": 1616.67,
+    "text": "the base case in 2ddp it's very important to understand what are the states I'm seeing the states"
+  },
+  {
+    "start": 1616.67,
+    "end": 1622.72,
+    "text": "are Ij what can be the possible first value of I that you have to think you will"
+  },
+  {
+    "start": 1622.72,
+    "end": 1628.24,
+    "text": "like strive the first value of I will be 0 but for this row 0 what can be"
+  },
+  {
+    "start": 1628.24,
+    "end": 1632.55,
+    "text": "the j value it can be 0 it can be 1 it can be 2 it can be"
+  },
+  {
+    "start": 1632.55,
+    "end": 1637.69,
+    "text": "3 dot dot dot n minus 1 right next what can be the value of I it can"
+  },
+  {
+    "start": 1637.69,
+    "end": 1642.23,
+    "text": "be 1 for this j will be 0 1 2 dot dot dot n minus 1 what can"
+  },
+  {
+    "start": 1642.23,
+    "end": 1646.62,
+    "text": "be the next I is value it can be 2 for this j can be 0 1 2"
+  },
+  {
+    "start": 1646.62,
+    "end": 1651.99,
+    "text": "dot dot dot dot dot n minus 1 so you get the states are like there is a"
+  },
+  {
+    "start": 1651.99,
+    "end": 1658.57,
+    "text": "state of rho that's what's show there is a state for the rho number which starts from 0"
+  },
+  {
+    "start": 1658.57,
+    "end": 1665.45,
+    "text": "goes on then n minus 1 and for every rho number there is a particular column number correct"
+  },
+  {
+    "start": 1665.45,
+    "end": 1672.03,
+    "text": "for every rho number there is a particular column number which goes from 0 to n minus 1"
+  },
+  {
+    "start": 1672.03,
+    "end": 1678.61,
+    "text": "correct so we know this for show we know this for show so just write express the states"
+  },
+  {
+    "start": 1678.61,
+    "end": 1682.84,
+    "text": "remember the step one to convert I'll write the steps so"
+  },
+  {
+    "start": 1682.84,
+    "end": 1690.56,
+    "text": "that it gets easy the steps to convert a memo I is shown to a tabulation is very"
+  },
+  {
+    "start": 1690.56,
+    "end": 1700.99,
+    "text": "simple declare base case express express rather express various states in fall loops or rather all states in"
+  },
+  {
+    "start": 1700.99,
+    "end": 1709.39,
+    "text": "fall loops 3 op the recurrence and write so step one is done which is declare base case"
+  },
+  {
+    "start": 1709.39,
+    "end": 1718.08,
+    "text": "step two express all states in fall loop over other two states so two nested loops will go"
+  },
+  {
+    "start": 1718.08,
+    "end": 1726.87,
+    "text": "copy the recurrence let's copy the recurrence what is the recurrence so can I say can I say"
+  },
+  {
+    "start": 1726.87,
+    "end": 1733.92,
+    "text": "I know one thing if I will be 0 and j will be 0 we have already expressed"
+  },
+  {
+    "start": 1733.92,
+    "end": 1740.29,
+    "text": "it so probably we can say if i is equal to equal to 0 and and j is"
+  },
+  {
+    "start": 1740.29,
+    "end": 1748.01,
+    "text": "equal to 0 there is there is no need to do anything you can just continue or you"
+  },
+  {
+    "start": 1748.01,
+    "end": 1755.73,
+    "text": "can probably write this only the better way will be to write this only dp of 0 0"
+  },
+  {
+    "start": 1755.73,
+    "end": 1760.28,
+    "text": "will be 1 instead of over here you can directly"
+  },
+  {
+    "start": 1760.28,
+    "end": 1767.19,
+    "text": "write in or else if it's not the case then probably you can think of now let's let's"
+  },
+  {
+    "start": 1767.19,
+    "end": 1773.77,
+    "text": "analyze in the recurrence in the recurrence we see if i is equal to 0 j is equal"
+  },
+  {
+    "start": 1773.77,
+    "end": 1779.36,
+    "text": "to 0 we stop here but if it's not then what we do we go to this line"
+  },
+  {
+    "start": 1779.36,
+    "end": 1784.46,
+    "text": "which says f equal to f of i minus 1 j left is equal to f of i"
+  },
+  {
+    "start": 1784.46,
+    "end": 1791.95,
+    "text": "j minus 1 correct just copy these two lines just copy these two lines okay don't think this"
+  },
+  {
+    "start": 1791.95,
+    "end": 1797.79,
+    "text": "copy up is equal to it states instead of f it'll be dp i minus 1 j this"
+  },
+  {
+    "start": 1797.79,
+    "end": 1804.37,
+    "text": "right it left will be dp i comma j minus 1 so instead of f instead of parameters"
+  },
+  {
+    "start": 1804.37,
+    "end": 1812.52,
+    "text": "I express them into d arrays because in recursion what happened was in recursion it went down solve"
+  },
+  {
+    "start": 1812.52,
+    "end": 1820.09,
+    "text": "this then again went down solve this but over here this guys already solved and it is stored"
+  },
+  {
+    "start": 1820.09,
+    "end": 1826.43,
+    "text": "in a dp array it is already stored in a dp array so just use those values now"
+  },
+  {
+    "start": 1826.43,
+    "end": 1833.92,
+    "text": "instead of going and calling and solving it use those values what you did after this a plus"
+  },
+  {
+    "start": 1833.92,
+    "end": 1835.56,
+    "text": "left in recursion so"
+  },
+  {
+    "start": 1835.56,
+    "end": 1841.09,
+    "text": "up plus left and where did you store it in dp of i j right that's what you"
+  },
+  {
+    "start": 1841.09,
+    "end": 1847.45,
+    "text": "do and this is how you can easily write a tabulation easy super easy isn't it so I've"
+  },
+  {
+    "start": 1847.45,
+    "end": 1855.75,
+    "text": "written the tabulation white simply again c plus plus j over doesn't matter pseudo-good matters so I've written"
+  },
+  {
+    "start": 1855.75,
+    "end": 1864.2,
+    "text": "the tabulation very very easily now the question arises straightforward question will arise but striver what if i"
+  },
+  {
+    "start": 1864.2,
+    "end": 1869.51,
+    "text": "is 0 this i minus 1 will be a problem i agree i agree so just make sure"
+  },
+  {
+    "start": 1869.51,
+    "end": 1876.31,
+    "text": "you probably can give if i is greater than 0 and probably something like fj is greater than"
+  },
+  {
+    "start": 1876.31,
+    "end": 1882.52,
+    "text": "0 so then only we will take this cases otherwise no simple and if i is greater than"
+  },
+  {
+    "start": 1882.52,
+    "end": 1887.75,
+    "text": "0 we will take it or we will take upward to be 0 I'll show that in the"
+  },
+  {
+    "start": 1887.75,
+    "end": 1893.88,
+    "text": "code when we do the code I'll show it we can initially keep upward equal to 0 left"
+  },
+  {
+    "start": 1893.88,
+    "end": 1900.24,
+    "text": "equal to 0 and if if these these two cases are true then it will modify those answers"
+  },
+  {
+    "start": 1900.24,
+    "end": 1906.45,
+    "text": "and this is how you'll do it if you remember in the recurrence we started with f of"
+  },
+  {
+    "start": 1906.45,
+    "end": 1911.76,
+    "text": "m minus 1 n minus 1 and then we split and got the answers so if m minus"
+  },
+  {
+    "start": 1911.76,
+    "end": 1915.64,
+    "text": "1 and n minus 1 is the ultimate answer over here the"
+  },
+  {
+    "start": 1915.64,
+    "end": 1922.93,
+    "text": "ultimate answer will be stored in dp of m minus 1 and n minus 1 only thereby you"
+  },
+  {
+    "start": 1922.93,
+    "end": 1932.31,
+    "text": "get your answer that's how you do tabulation so once you've done tabulation what is the time complexity"
+  },
+  {
+    "start": 1932.31,
+    "end": 1940.69,
+    "text": "time complexity is not n into n because it's just running couple of nested loops what is the"
+  },
+  {
+    "start": 1940.69,
+    "end": 1949.16,
+    "text": "space complexity just n cross m for the space used no recursion stack space none of it that's"
+  },
+  {
+    "start": 1949.16,
+    "end": 1957.99,
+    "text": "how you get the time complexity and the space complexity right what's the next step the next step"
+  },
+  {
+    "start": 1957.99,
+    "end": 1964.82,
+    "text": "is space of t my json can we do a space optimization what did I tell you in"
+  },
+  {
+    "start": 1964.82,
+    "end": 1973.2,
+    "text": "space optimization I told you striber if you see at any moment we are using the previous row"
+  },
+  {
+    "start": 1973.2,
+    "end": 1982.12,
+    "text": "they're just using the previous row and we're using previous column if there is a case of previous"
+  },
+  {
+    "start": 1982.12,
+    "end": 1992.5,
+    "text": "row and previous column then we can definitely space optimize so remember the space optimizations concept if there"
+  },
+  {
+    "start": 1992.5,
+    "end": 1992.68,
+    "text": "is"
+  },
+  {
+    "start": 1992.68,
+    "end": 2001.13,
+    "text": "a previous row and previous column we can space optimize it remember this that's the golden rule that's"
+  },
+  {
+    "start": 2001.13,
+    "end": 2008.27,
+    "text": "the golden rule yes now we need this for interview the answer is no I will recommend if"
+  },
+  {
+    "start": 2008.27,
+    "end": 2014.75,
+    "text": "you don't want to learn it do you can stop over here you can stop over there is"
+  },
+  {
+    "start": 2014.75,
+    "end": 2021.89,
+    "text": "not it's not an S is that you know space optimization just because I used to do seeping"
+  },
+  {
+    "start": 2021.89,
+    "end": 2029.85,
+    "text": "I know this so well but it's not required in interviews generally the interviews will also not be"
+  },
+  {
+    "start": 2029.85,
+    "end": 2038.05,
+    "text": "knowing space optimizations so you can ignore it because they won't be rejecting you on the basis of"
+  },
+  {
+    "start": 2038.05,
+    "end": 2046.01,
+    "text": "this so you can stop the video if you don't want to learn space optimization I'll still recommend"
+  },
+  {
+    "start": 2046.01,
+    "end": 2054.21,
+    "text": "you to learn who knows the interview might be understand right okay cool let's understand so what am"
+  },
+  {
+    "start": 2054.21,
+    "end": 2061.59,
+    "text": "I writing I'm specifically writing like if I write dp of ij I'm basically saying what am I"
+  },
+  {
+    "start": 2061.59,
+    "end": 2068.07,
+    "text": "using I'm using dp of the up which is j this is basically and the left which is"
+  },
+  {
+    "start": 2068.07,
+    "end": 2073.48,
+    "text": "basically i and j minus one this is the left that's what I'm using"
+  },
+  {
+    "start": 2073.48,
+    "end": 2080.58,
+    "text": "so when I'm starting off let's draw the matrix when I'm starting off if this is the matrix"
+  },
+  {
+    "start": 2080.58,
+    "end": 2086.58,
+    "text": "in the dp area how is the fall loop running the fall loop is like i equal to"
+  },
+  {
+    "start": 2086.58,
+    "end": 2092.34,
+    "text": "j and j equal to j so the fall loop will be like first it'll go here then"
+  },
+  {
+    "start": 2092.34,
+    "end": 2099.37,
+    "text": "here then here then here then here then here then here then here then here then here here"
+  },
+  {
+    "start": 2099.37,
+    "end": 2106.24,
+    "text": "yeah yeah yeah yeah yeah yeah yeah and so onårt so the fall loop basically goes in this"
+  },
+  {
+    "start": 2106.24,
+    "end": 2112.48,
+    "text": "way and fills up the dp are in this washing and we know this value we know this"
+  },
+  {
+    "start": 2112.48,
+    "end": 2119.66,
+    "text": "value for sure we definitely know this value which is one then we go across and fickle this"
+  },
+  {
+    "start": 2119.66,
+    "end": 2126.05,
+    "text": "value but for this value will there be an up for this value Will there be enough?"
+  },
+  {
+    "start": 2126.05,
+    "end": 2126.29,
+    "text": "No."
+  },
+  {
+    "start": 2126.29,
+    "end": 2128.89,
+    "text": "So, probably we can keep it as 0."
+  },
+  {
+    "start": 2128.89,
+    "end": 2129.36,
+    "text": "Right?"
+  },
+  {
+    "start": 2129.36,
+    "end": 2131.89,
+    "text": "We can initially, remember this."
+  },
+  {
+    "start": 2131.89,
+    "end": 2135.68,
+    "text": "We can initially start off with a dummy dp died."
+  },
+  {
+    "start": 2135.68,
+    "end": 2140.89,
+    "text": "dummy dp off n size and we can initially keep it as 0, 0, 0, 0, 0."
+  },
+  {
+    "start": 2140.89,
+    "end": 2141.28,
+    "text": "Kept."
+  },
+  {
+    "start": 2141.28,
+    "end": 2146.96,
+    "text": "Next, we can probably say this as temporary and we can start storing it."
+  },
+  {
+    "start": 2146.96,
+    "end": 2153.36,
+    "text": "Whatever value you get away as you may get 1, as you may get 1, as you may get 1,"
+  },
+  {
+    "start": 2153.36,
+    "end": 2155.46,
+    "text": "just as you may are getting 1."
+  },
+  {
+    "start": 2155.46,
+    "end": 2157.42,
+    "text": "So, you store it over there."
+  },
+  {
+    "start": 2157.42,
+    "end": 2157.84,
+    "text": "Right?"
+  },
+  {
+    "start": 2157.84,
+    "end": 2161.7,
+    "text": "Next, next, this is the value that you have to compute."
+  },
+  {
+    "start": 2161.7,
+    "end": 2163.45,
+    "text": "Sorry, I can't read them."
+  },
+  {
+    "start": 2163.45,
+    "end": 2165.83,
+    "text": "Thereby, you come to the next row."
+  },
+  {
+    "start": 2165.83,
+    "end": 2171.58,
+    "text": "When you come to the spinkth row and when you try to compute this guy, who is your"
+  },
+  {
+    "start": 2171.58,
+    "end": 2177.54,
+    "text": "up this guy is your up, So, Can I say, you're no more required this, you just require"
+  },
+  {
+    "start": 2177.54,
+    "end": 2181.82,
+    "text": "the value for this guy, you require the value stored at here."
+  },
+  {
+    "start": 2181.82,
+    "end": 2185.26,
+    "text": "For this guy you require the value here and here."
+  },
+  {
+    "start": 2185.26,
+    "end": 2191.15,
+    "text": "For this guy, this is the upward, this is the left, for this guy, this is the upward"
+  },
+  {
+    "start": 2191.15,
+    "end": 2194.8,
+    "text": "and left, for this guy, this is the upward and left."
+  },
+  {
+    "start": 2194.8,
+    "end": 2196.97,
+    "text": "So you just require this green."
+  },
+  {
+    "start": 2196.97,
+    "end": 2202.3,
+    "text": "So can I say, I will now say this guy to be dp  and this guy to be the temp."
+  },
+  {
+    "start": 2202.3,
+    "end": 2204.19,
+    "text": "And I can easily do my job."
+  },
+  {
+    "start": 2204.19,
+    "end": 2214.64,
+    "text": "Once this is computed, assume this is computed  like one, two, assume something like this, three, four,  assume this, I'm randomly picking up values."
+  },
+  {
+    "start": 2214.64,
+    "end": 2221.23,
+    "text": "Next, if you go to this guy and you're trying to compute this, you'll require this guy's, this"
+  },
+  {
+    "start": 2221.23,
+    "end": 2224.53,
+    "text": "value, and this value, that by this becomes dp."
+  },
+  {
+    "start": 2224.53,
+    "end": 2227.12,
+    "text": "So can I just store the previous row?"
+  },
+  {
+    "start": 2227.12,
+    "end": 2229.52,
+    "text": "Can I just store the previous row?"
+  },
+  {
+    "start": 2229.52,
+    "end": 2232.11,
+    "text": "Can I just store the previous row?"
+  },
+  {
+    "start": 2232.11,
+    "end": 2239.67,
+    "text": "Because if I'm storing the previous row, whenever I'm at the current row and I'm trying to compute,"
+  },
+  {
+    "start": 2239.67,
+    "end": 2243.79,
+    "text": "let's say this guy, I'll record this guy and this guy."
+  },
+  {
+    "start": 2243.79,
+    "end": 2249.67,
+    "text": "This guy can easily get by row  and this guy will easily get by previous row."
+  },
+  {
+    "start": 2249.67,
+    "end": 2255.09,
+    "text": "Because in order to compute this, there is no requirement  of this guy."
+  },
+  {
+    "start": 2255.09,
+    "end": 2258.52,
+    "text": "So only requirement of this up and this left."
+  },
+  {
+    "start": 2258.52,
+    "end": 2261.73,
+    "text": "There by, we can always space optimize it."
+  },
+  {
+    "start": 2261.73,
+    "end": 2262.26,
+    "text": "Got it."
+  },
+  {
+    "start": 2262.26,
+    "end": 2264.7,
+    "text": "So we can always space optimize."
+  },
+  {
+    "start": 2264.7,
+    "end": 2266.0,
+    "text": "That's the proof."
+  },
+  {
+    "start": 2266.0,
+    "end": 2271.27,
+    "text": "But what I'll do is, I'll try to show you  how to space optimize now."
+  },
+  {
+    "start": 2271.27,
+    "end": 2274.48,
+    "text": "So the best way to space optimize is this."
+  },
+  {
+    "start": 2274.48,
+    "end": 2278.75,
+    "text": "Initially, you'd be there at dp of n,  initialize at v0."
+  },
+  {
+    "start": 2278.75,
+    "end": 2281.8,
+    "text": "Because initially, what did you require?"
+  },
+  {
+    "start": 2281.8,
+    "end": 2283.78,
+    "text": "The required this portion."
+  },
+  {
+    "start": 2283.78,
+    "end": 2286.6,
+    "text": "So dp of n declare, right dp of n dt."
+  },
+  {
+    "start": 2286.6,
+    "end": 2289.35,
+    "text": "Next, you're trying to compute this."
+  },
+  {
+    "start": 2289.35,
+    "end": 2294.69,
+    "text": "So let's quickly write the same code  without doing any for the stuff."
+  },
+  {
+    "start": 2294.69,
+    "end": 2299.42,
+    "text": "Let's write the same code, which is j equal to 0 to n minus 1."
+  },
+  {
+    "start": 2299.42,
+    "end": 2305.76,
+    "text": "And I know for sure, if i is equal to 0  and n j is equal to 0, we're going to see,"
+  },
+  {
+    "start": 2305.76,
+    "end": 2307.41,
+    "text": "dp of ij equal to 1."
+  },
+  {
+    "start": 2307.41,
+    "end": 2310.38,
+    "text": "And then I'm going to continue else."
+  },
+  {
+    "start": 2310.38,
+    "end": 2312.69,
+    "text": "What was I actually writing?"
+  },
+  {
+    "start": 2312.69,
+    "end": 2317.48,
+    "text": "I was writing something as a dp of ij,  a dp of ij, right?"
+  },
+  {
+    "start": 2317.48,
+    "end": 2322.02,
+    "text": "Equal to dp of i minus 1, you're not writing the cases."
+  },
+  {
+    "start": 2322.02,
+    "end": 2325.9,
+    "text": "Like it might exceed, but they are not writing."
+  },
+  {
+    "start": 2325.9,
+    "end": 2328.54,
+    "text": "This is what I'm writing, right?"
+  },
+  {
+    "start": 2328.54,
+    "end": 2330.03,
+    "text": "No, let's analyze."
+  },
+  {
+    "start": 2330.03,
+    "end": 2335.89,
+    "text": "Instead of dp of ij, let's try to compute  this particular row on loop."
+  },
+  {
+    "start": 2335.89,
+    "end": 2340.35,
+    "text": "Yes, let's try to compute this particular row on loop."
+  },
+  {
+    "start": 2340.35,
+    "end": 2341.51,
+    "text": "So it's a row."
+  },
+  {
+    "start": 2341.51,
+    "end": 2343.08,
+    "text": "So this is the row."
+  },
+  {
+    "start": 2343.08,
+    "end": 2346.96,
+    "text": "This is the particular row that it's computing."
+  },
+  {
+    "start": 2346.96,
+    "end": 2352.0,
+    "text": "So what I'll do is, I will now say temporary of n equal to 0."
+  },
+  {
+    "start": 2352.0,
+    "end": 2357.53,
+    "text": "And instead of this, instead of this,  I will write temporary of j."
+  },
+  {
+    "start": 2357.53,
+    "end": 2360.58,
+    "text": "So I'm repeating that particular row."
+  },
+  {
+    "start": 2360.58,
+    "end": 2364.87,
+    "text": "Now over here, it's the previous guy, remember this."
+  },
+  {
+    "start": 2364.87,
+    "end": 2369.66,
+    "text": "It's the previous guy, dp of i minus 1 means previous row."
+  },
+  {
+    "start": 2369.66,
+    "end": 2372.47,
+    "text": "And I know the previous row is dp."
+  },
+  {
+    "start": 2372.47,
+    "end": 2377.26,
+    "text": "So what I can say is they can directly go to previous row."
+  },
+  {
+    "start": 2377.26,
+    "end": 2380.48,
+    "text": "And I don't need i minus 1 any further."
+  },
+  {
+    "start": 2380.48,
+    "end": 2383.6,
+    "text": "Because the previous row is dp itself."
+  },
+  {
+    "start": 2383.6,
+    "end": 2390.73,
+    "text": "Second right dp of j, the previous row,  previous row, or I can just declare it as previous."
+  },
+  {
+    "start": 2390.73,
+    "end": 2397.4,
+    "text": "And this dp, it's saying on the current row,  on the current row, the previous column."
+  },
+  {
+    "start": 2397.4,
+    "end": 2399.42,
+    "text": "So what's the current row?"
+  },
+  {
+    "start": 2399.42,
+    "end": 2401.67,
+    "text": "The current row is temporary."
+  },
+  {
+    "start": 2401.67,
+    "end": 2403.61,
+    "text": "Current row is temporary."
+  },
+  {
+    "start": 2403.61,
+    "end": 2410.2,
+    "text": "So you can be like, okay, I do not require,  I do not require to go any dp something."
+  },
+  {
+    "start": 2410.2,
+    "end": 2414.08,
+    "text": "I can just call the temporary to get the previous."
+  },
+  {
+    "start": 2414.08,
+    "end": 2416.48,
+    "text": "So dp of j plus temporary done."
+  },
+  {
+    "start": 2416.48,
+    "end": 2424.54,
+    "text": "Once, remember this once, you have computed this particular  for loop, the entire row has been computed."
+  },
+  {
+    "start": 2424.54,
+    "end": 2426.56,
+    "text": "Next, the i will increase."
+  },
+  {
+    "start": 2426.56,
+    "end": 2429.97,
+    "text": "So this temporary becomes the next previous."
+  },
+  {
+    "start": 2429.97,
+    "end": 2431.91,
+    "text": "So you can just store it."
+  },
+  {
+    "start": 2431.91,
+    "end": 2434.16,
+    "text": "You can just store it, right?"
+  },
+  {
+    "start": 2434.16,
+    "end": 2440.6,
+    "text": "So what you'll do is when this is getting computed, next when you go to the next i,"
+  },
+  {
+    "start": 2440.6,
+    "end": 2446.11,
+    "text": "you make this temporary to the previous or dp whatever you can call it."
+  },
+  {
+    "start": 2446.11,
+    "end": 2450.69,
+    "text": "In this way, you can easily space optimize  in one d array."
+  },
+  {
+    "start": 2450.69,
+    "end": 2454.64,
+    "text": "Yes, you can easily space optimize  in a 1 d array."
+  },
+  {
+    "start": 2454.64,
+    "end": 2456.97,
+    "text": "It is as simple as it can get."
+  },
+  {
+    "start": 2456.97,
+    "end": 2460.6,
+    "text": "Now most of you might not have understood this."
+  },
+  {
+    "start": 2460.6,
+    "end": 2467.67,
+    "text": "I'm not sure if I was so good that you have understood  in one go, just in case you did not."
+  },
+  {
+    "start": 2467.67,
+    "end": 2475.74,
+    "text": "What I'll recommend is do a dry run of the fall loop  by yourself, to a dry run of fall loop by yourself."
+  },
+  {
+    "start": 2475.74,
+    "end": 2478.05,
+    "text": "Okay, and fill up and fill up."
+  },
+  {
+    "start": 2478.05,
+    "end": 2481.36,
+    "text": "You will understand everything and fill up."
+  },
+  {
+    "start": 2481.36,
+    "end": 2483.74,
+    "text": "You will understand everything."
+  },
+  {
+    "start": 2483.74,
+    "end": 2488.66,
+    "text": "Why we do not require the entire,  you will understand yourself."
+  },
+  {
+    "start": 2488.66,
+    "end": 2489.04,
+    "text": "Okay?"
+  },
+  {
+    "start": 2489.04,
+    "end": 2496.04,
+    "text": "So as usual, let's try to code it  and show all of the codes just to have a quick revision."
+  },
+  {
+    "start": 2496.04,
+    "end": 2497.42,
+    "text": "So what did I say?"
+  },
+  {
+    "start": 2497.42,
+    "end": 2499.57,
+    "text": "You're given M and N, right?"
+  },
+  {
+    "start": 2499.57,
+    "end": 2504.64,
+    "text": "So you can say i and df, i and dj, and you can be like, okay, if i"
+  },
+  {
+    "start": 2504.64,
+    "end": 2510.1,
+    "text": "is equal to 0 and j is equal to 0, where it turns you, we don't want to"
+  },
+  {
+    "start": 2510.1,
+    "end": 2510.64,
+    "text": "add up."
+  },
+  {
+    "start": 2510.64,
+    "end": 2513.25,
+    "text": "So just return 1 to contest steps."
+  },
+  {
+    "start": 2513.25,
+    "end": 2515.02,
+    "text": "Reps, this is the case."
+  },
+  {
+    "start": 2515.02,
+    "end": 2517.94,
+    "text": "You say it's not possible, it turns 0."
+  },
+  {
+    "start": 2517.94,
+    "end": 2520.09,
+    "text": "The up will be quite simple."
+  },
+  {
+    "start": 2520.09,
+    "end": 2528.39,
+    "text": "And the left will be again quite simple,  which is i comma j minus 1,  and you can easily turn up plus left."
+  },
+  {
+    "start": 2528.39,
+    "end": 2532.85,
+    "text": "By this check, if then so do then require  modular dances."
+  },
+  {
+    "start": 2532.85,
+    "end": 2534.54,
+    "text": "No, so should we find?"
+  },
+  {
+    "start": 2534.54,
+    "end": 2536.8,
+    "text": "You can say return f of what?"
+  },
+  {
+    "start": 2536.8,
+    "end": 2538.83,
+    "text": "M minus 1 and M minus 1."
+  },
+  {
+    "start": 2538.83,
+    "end": 2544.66,
+    "text": "If you just do this simply,  I think you should be getting an answer."
+  },
+  {
+    "start": 2544.66,
+    "end": 2547.02,
+    "text": "Let's quickly run this code."
+  },
+  {
+    "start": 2547.02,
+    "end": 2551.66,
+    "text": "You say it's running fine,  but it'll give you a daily."
+  },
+  {
+    "start": 2551.66,
+    "end": 2556.05,
+    "text": "So it's better we just make sure to have a 2D array."
+  },
+  {
+    "start": 2556.05,
+    "end": 2560.44,
+    "text": "So in C++, this is how you basically declare our 2D."
+  },
+  {
+    "start": 2560.44,
+    "end": 2564.49,
+    "text": "In Java people just can carry,  what do you say?"
+  },
+  {
+    "start": 2564.49,
+    "end": 2567.87,
+    "text": "You can carry a 2D array that will work."
+  },
+  {
+    "start": 2567.87,
+    "end": 2569.56,
+    "text": "This carry 2D array."
+  },
+  {
+    "start": 2569.56,
+    "end": 2577.07,
+    "text": "In C++, we have to declare the sizes  that's why there's a problem in carrying 2D arrays."
+  },
+  {
+    "start": 2577.07,
+    "end": 2579.52,
+    "text": "Otherwise, I would have done."
+  },
+  {
+    "start": 2579.52,
+    "end": 2581.97,
+    "text": "So first step is this, right?"
+  },
+  {
+    "start": 2581.97,
+    "end": 2584.17,
+    "text": "Next step is initializing."
+  },
+  {
+    "start": 2584.17,
+    "end": 2585.86,
+    "text": "How's the next step?"
+  },
+  {
+    "start": 2585.86,
+    "end": 2590.25,
+    "text": "Checking if that state has been previously computed."
+  },
+  {
+    "start": 2590.25,
+    "end": 2590.67,
+    "text": "Done."
+  },
+  {
+    "start": 2590.67,
+    "end": 2594.72,
+    "text": "So what I can say is let's quickly run this off."
+  },
+  {
+    "start": 2594.72,
+    "end": 2595.99,
+    "text": "Should be fine."
+  },
+  {
+    "start": 2595.99,
+    "end": 2598.1,
+    "text": "Here we get some problem."
+  },
+  {
+    "start": 2598.1,
+    "end": 2600.21,
+    "text": "Oh, we're not passing it."
+  },
+  {
+    "start": 2600.21,
+    "end": 2600.89,
+    "text": "We here."
+  },
+  {
+    "start": 2600.89,
+    "end": 2602.75,
+    "text": "Let's quickly pass it."
+  },
+  {
+    "start": 2602.75,
+    "end": 2605.11,
+    "text": "Okay, we get a wrong answer."
+  },
+  {
+    "start": 2605.11,
+    "end": 2606.12,
+    "text": "Why is that?"
+  },
+  {
+    "start": 2606.12,
+    "end": 2608.48,
+    "text": "Okay, we have a assigned MN."
+  },
+  {
+    "start": 2608.48,
+    "end": 2611.01,
+    "text": "So yeah, sorry, that's my bad."
+  },
+  {
+    "start": 2611.01,
+    "end": 2612.36,
+    "text": "Let's do it MNN."
+  },
+  {
+    "start": 2612.36,
+    "end": 2614.14,
+    "text": "Yeah, we're working fine."
+  },
+  {
+    "start": 2614.14,
+    "end": 2617.98,
+    "text": "If you submit this,  so let's post your MN submitting."
+  },
+  {
+    "start": 2617.98,
+    "end": 2619.83,
+    "text": "Cool, time limit exceeded."
+  },
+  {
+    "start": 2619.83,
+    "end": 2622.74,
+    "text": "So it still says our time limit exceeded."
+  },
+  {
+    "start": 2622.74,
+    "end": 2626.51,
+    "text": "Probability due to the stack space that we are using."
+  },
+  {
+    "start": 2626.51,
+    "end": 2633.19,
+    "text": "So let's quickly optimize this portion  and try to have it as a 2D arrays,  I and D, DP of MN."
+  },
+  {
+    "start": 2633.19,
+    "end": 2640.79,
+    "text": "And I know one thing for sure,  the number of states will be something like I equal to 0,  I lesser than M."
+  },
+  {
+    "start": 2640.79,
+    "end": 2643.42,
+    "text": "Again, Java people, please don't cry."
+  },
+  {
+    "start": 2643.42,
+    "end": 2645.62,
+    "text": "It's the exact same, same cool."
+  },
+  {
+    "start": 2645.62,
+    "end": 2648.53,
+    "text": "If you're Java, you can also follow this."
+  },
+  {
+    "start": 2648.53,
+    "end": 2650.38,
+    "text": "Okay, lesser than MN, G++."
+  },
+  {
+    "start": 2650.38,
+    "end": 2655.0,
+    "text": "We know one thing if I is equal to 0 and G is equal to 0, you can"
+  },
+  {
+    "start": 2655.0,
+    "end": 2657.56,
+    "text": "be like DP of I, J is equal to 1, L."
+  },
+  {
+    "start": 2657.56,
+    "end": 2662.89,
+    "text": "So you can be like, you can assign an app,  0, you can assign an left as 0."
+  },
+  {
+    "start": 2662.89,
+    "end": 2668.79,
+    "text": "If I is greater than 0, then they will always be an app,  which is DP of I minus 1."
+  },
+  {
+    "start": 2668.79,
+    "end": 2673.48,
+    "text": "J if the J is greater than 0, the left will always be DP of I of J"
+  },
+  {
+    "start": 2673.48,
+    "end": 2678.88,
+    "text": "minus 1 at the end of the day, instead of returning DP of I, J equal to, you"
+  },
+  {
+    "start": 2678.88,
+    "end": 2680.44,
+    "text": "can say, up plus left."
+  },
+  {
+    "start": 2680.44,
+    "end": 2682.22,
+    "text": "So that's simple as that."
+  },
+  {
+    "start": 2682.22,
+    "end": 2683.78,
+    "text": "And what's the answer?"
+  },
+  {
+    "start": 2683.78,
+    "end": 2686.2,
+    "text": "Where's the answer stored at guys?"
+  },
+  {
+    "start": 2686.2,
+    "end": 2691.36,
+    "text": "The answer is definitely stored at,  written DP of M minus 1 and minus 1."
+  },
+  {
+    "start": 2691.36,
+    "end": 2693.5,
+    "text": "So let's quickly run this off."
+  },
+  {
+    "start": 2693.5,
+    "end": 2694.57,
+    "text": "Should we find?"
+  },
+  {
+    "start": 2694.57,
+    "end": 2696.35,
+    "text": "Rules, let's sum it this."
+  },
+  {
+    "start": 2696.35,
+    "end": 2698.99,
+    "text": "Let's see if we are getting a DL now."
+  },
+  {
+    "start": 2698.99,
+    "end": 2702.13,
+    "text": "Okay, it's still giving time limit exceeded."
+  },
+  {
+    "start": 2702.13,
+    "end": 2703.34,
+    "text": "It's interesting."
+  },
+  {
+    "start": 2703.34,
+    "end": 2705.77,
+    "text": "It's time complexity is M cross N."
+  },
+  {
+    "start": 2705.77,
+    "end": 2708.05,
+    "text": "Okay, fine, let's optimize this."
+  },
+  {
+    "start": 2708.05,
+    "end": 2711.05,
+    "text": "Let's further optimize this and let's see."
+  },
+  {
+    "start": 2711.05,
+    "end": 2712.33,
+    "text": "So what did I say?"
+  },
+  {
+    "start": 2712.33,
+    "end": 2714.83,
+    "text": "How do time out of space optimizes?"
+  },
+  {
+    "start": 2714.83,
+    "end": 2717.61,
+    "text": "The space optimization is quite simple."
+  },
+  {
+    "start": 2717.61,
+    "end": 2721.18,
+    "text": "We can say temporary of all the number of columns."
+  },
+  {
+    "start": 2721.18,
+    "end": 2723.18,
+    "text": "The number of columns are N."
+  },
+  {
+    "start": 2723.18,
+    "end": 2724.89,
+    "text": "You can definitely do 0."
+  },
+  {
+    "start": 2724.89,
+    "end": 2728.96,
+    "text": "So instead of 10,  I just make sure it's the previous DP."
+  },
+  {
+    "start": 2728.96,
+    "end": 2729.39,
+    "text": "Right?"
+  },
+  {
+    "start": 2729.39,
+    "end": 2735.31,
+    "text": "And why I can definitely have vector of N of 10, which is the current rule that has"
+  },
+  {
+    "start": 2735.31,
+    "end": 2739.73,
+    "text": "been computed because this is the current rule which is going."
+  },
+  {
+    "start": 2739.73,
+    "end": 2741.37,
+    "text": "So kindly have it as 0."
+  },
+  {
+    "start": 2741.37,
+    "end": 2741.8,
+    "text": "Right?"
+  },
+  {
+    "start": 2741.8,
+    "end": 2745.01,
+    "text": "This is if I is equal to 0,  j is equal to 0."
+  },
+  {
+    "start": 2745.01,
+    "end": 2747.44,
+    "text": "You're competing the current rule."
+  },
+  {
+    "start": 2747.44,
+    "end": 2750.08,
+    "text": "So the current rule is now temporary."
+  },
+  {
+    "start": 2750.08,
+    "end": 2753.29,
+    "text": "Understand the current rule is not temporary."
+  },
+  {
+    "start": 2753.29,
+    "end": 2755.79,
+    "text": "Stimporary of j will be one, right?"
+  },
+  {
+    "start": 2755.79,
+    "end": 2758.72,
+    "text": "Instead of left, let's try to write this."
+  },
+  {
+    "start": 2758.72,
+    "end": 2762.07,
+    "text": "Instead of DP of I minus 1,  what is I minus 1?"
+  },
+  {
+    "start": 2762.07,
+    "end": 2763.0,
+    "text": "The previous."
+  },
+  {
+    "start": 2763.0,
+    "end": 2763.57,
+    "text": "Revious."
+  },
+  {
+    "start": 2763.57,
+    "end": 2764.71,
+    "text": "What is DP of I?"
+  },
+  {
+    "start": 2764.71,
+    "end": 2766.72,
+    "text": "The current which is temple."
+  },
+  {
+    "start": 2766.72,
+    "end": 2767.24,
+    "text": "Correct?"
+  },
+  {
+    "start": 2767.24,
+    "end": 2771.43,
+    "text": "So if I have an image better,  you probably can name it current."
+  },
+  {
+    "start": 2771.43,
+    "end": 2772.93,
+    "text": "So the current is this."
+  },
+  {
+    "start": 2772.93,
+    "end": 2774.43,
+    "text": "And that's it, perfect."
+  },
+  {
+    "start": 2774.43,
+    "end": 2780.25,
+    "text": "And once you've completed the temp,  once you've completed the temp,  what do you can do?"
+  },
+  {
+    "start": 2780.25,
+    "end": 2783.45,
+    "text": "You can say, okay, fine, I've completed the temp."
+  },
+  {
+    "start": 2783.45,
+    "end": 2785.94,
+    "text": "I can be like, no, I can just swap it."
+  },
+  {
+    "start": 2785.94,
+    "end": 2793.0,
+    "text": "I can now swap it because the current,  the current guy, when I will increase,  it will become the previous."
+  },
+  {
+    "start": 2793.0,
+    "end": 2794.83,
+    "text": "So previous will be current."
+  },
+  {
+    "start": 2794.83,
+    "end": 2798.56,
+    "text": "And can I say the answer will be stored at  what is this?"
+  },
+  {
+    "start": 2798.56,
+    "end": 2799.21,
+    "text": "M minus 1."
+  },
+  {
+    "start": 2799.21,
+    "end": 2800.13,
+    "text": "This previous."
+  },
+  {
+    "start": 2800.13,
+    "end": 2803.33,
+    "text": "In previous is N minus 1, then it will be stored."
+  },
+  {
+    "start": 2803.33,
+    "end": 2805.42,
+    "text": "If I run this, I should be fine."
+  },
+  {
+    "start": 2805.42,
+    "end": 2806.53,
+    "text": "Okay, getting it."
+  },
+  {
+    "start": 2806.53,
+    "end": 2807.84,
+    "text": "DP was not assigned."
+  },
+  {
+    "start": 2807.84,
+    "end": 2808.49,
+    "text": "I have it."
+  },
+  {
+    "start": 2808.49,
+    "end": 2810.26,
+    "text": "Okay, sorry, that's my bad."
+  },
+  {
+    "start": 2810.26,
+    "end": 2813.46,
+    "text": "So DP of I means a temporary or current,  rather."
+  },
+  {
+    "start": 2813.46,
+    "end": 2816.86,
+    "text": "So if you just run this,  you see this running fine."
+  },
+  {
+    "start": 2816.86,
+    "end": 2821.24,
+    "text": "If you somewhat this,  it will again not be running all the pieces."
+  },
+  {
+    "start": 2821.24,
+    "end": 2823.27,
+    "text": "And the reason is quite simple."
+  },
+  {
+    "start": 2823.27,
+    "end": 2826.8,
+    "text": "It gives me 9 E 1 score and everything is not running."
+  },
+  {
+    "start": 2826.8,
+    "end": 2828.63,
+    "text": "The reason is I'll tell you."
+  },
+  {
+    "start": 2828.63,
+    "end": 2834.52,
+    "text": "So if you Google the same question,  great unique parts,  take you for our channel itself."
+  },
+  {
+    "start": 2834.52,
+    "end": 2837.72,
+    "text": "We'll find a solution, which is of combinatorics."
+  },
+  {
+    "start": 2837.72,
+    "end": 2843.96,
+    "text": "And the time complexity is big of a number of columns,  a number of rows, whatever you wish to."
+  },
+  {
+    "start": 2843.96,
+    "end": 2846.18,
+    "text": "And it works in better than M into N."
+  },
+  {
+    "start": 2846.18,
+    "end": 2848.34,
+    "text": "That's why we are getting the daily."
+  },
+  {
+    "start": 2848.34,
+    "end": 2849.54,
+    "text": "I'll not teach this."
+  },
+  {
+    "start": 2849.54,
+    "end": 2852.18,
+    "text": "You can never really watch this video again."
+  },
+  {
+    "start": 2852.18,
+    "end": 2854.52,
+    "text": "Like this video, I've already recorded."
+  },
+  {
+    "start": 2854.52,
+    "end": 2856.98,
+    "text": "So you can watch the solution over there."
+  },
+  {
+    "start": 2856.98,
+    "end": 2858.84,
+    "text": "And you can press on my ticket."
+  },
+  {
+    "start": 2858.84,
+    "end": 2861.96,
+    "text": "So why did I teach the this question in complete DB?"
+  },
+  {
+    "start": 2861.96,
+    "end": 2863.94,
+    "text": "Because I wanted to teach you DB."
+  },
+  {
+    "start": 2863.94,
+    "end": 2865.74,
+    "text": "Not how to solve this problem."
+  },
+  {
+    "start": 2865.74,
+    "end": 2873.61,
+    "text": "The concept was to teach you recursion in DOD,  then memorization in DOD,  then tabulation in DOD,  then space optimization in DOD."
+  },
+  {
+    "start": 2873.61,
+    "end": 2878.48,
+    "text": "And I'm very much sure that you have understood each,  each bit of the selection."
+  },
+  {
+    "start": 2878.48,
+    "end": 2883.11,
+    "text": "Just in case you have, please, please,  please make sure you like this video."
+  },
+  {
+    "start": 2883.11,
+    "end": 2887.26,
+    "text": "And if you notice the channel,  please do consider subscribing to us."
+  },
+  {
+    "start": 2887.26,
+    "end": 2889.6,
+    "text": "Like we'll be of immense, immense help."
+  },
+  {
+    "start": 2889.6,
+    "end": 2894.35,
+    "text": "And as our generation goes,  we've wanted to select you in the comment section."
+  },
+  {
+    "start": 2894.35,
+    "end": 2897.95,
+    "text": "Put up a understood comment that will do me a world of code."
+  },
+  {
+    "start": 2897.95,
+    "end": 2900.53,
+    "text": "And with this, let's talk about this video."
+  },
+  {
+    "start": 2900.53,
+    "end": 2902.51,
+    "text": "Let's read the links from Hawaii."
+  },
+  {
+    "start": 2902.51,
+    "end": 2906.54,
+    "text": "Whenever you're hiding this broken,  don't ever forget your golden."
+  },
+  {
+    "start": 2906.54,
+    "end": 2908.12,
+    "text": "I will find a light in it."
+  }
+]

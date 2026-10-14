@@ -1,0 +1,982 @@
+[
+  {
+    "start": 0.0,
+    "end": 3.65,
+    "text": "If you are welcome back to take you forward."
+  },
+  {
+    "start": 3.65,
+    "end": 6.97,
+    "text": "So today we will be solving the problem."
+  },
+  {
+    "start": 6.97,
+    "end": 12.37,
+    "text": "Minimum insertions required in order to make a string  Palentrom."
+  },
+  {
+    "start": 12.37,
+    "end": 15.61,
+    "text": "The predictors will be the LCS lecture."
+  },
+  {
+    "start": 15.61,
+    "end": 21.76,
+    "text": "And the lecture prior to this, which is  Longest Palentromic sub sequence."
+  },
+  {
+    "start": 21.76,
+    "end": 28.24,
+    "text": "So the longest common sub sequence,  and the longest Palentromic sub sequence."
+  },
+  {
+    "start": 28.24,
+    "end": 31.06,
+    "text": "So what is the question signifies?"
+  },
+  {
+    "start": 31.06,
+    "end": 34.05,
+    "text": "Now insertions can be done anywhere."
+  },
+  {
+    "start": 34.05,
+    "end": 35.21,
+    "text": "Remember this."
+  },
+  {
+    "start": 35.21,
+    "end": 38.37,
+    "text": "You can insert any character anywhere."
+  },
+  {
+    "start": 38.37,
+    "end": 41.53,
+    "text": "You can insert any character anywhere."
+  },
+  {
+    "start": 41.53,
+    "end": 42.94,
+    "text": "That's the point."
+  },
+  {
+    "start": 42.94,
+    "end": 45.6,
+    "text": "Like if you see, you have EBC W."
+  },
+  {
+    "start": 45.6,
+    "end": 46.1,
+    "text": "Right?"
+  },
+  {
+    "start": 46.1,
+    "end": 47.51,
+    "text": "This is a string."
+  },
+  {
+    "start": 47.51,
+    "end": 49.34,
+    "text": "But is this Palentrom?"
+  },
+  {
+    "start": 49.34,
+    "end": 50.92,
+    "text": "E-A-A are matching."
+  },
+  {
+    "start": 50.92,
+    "end": 52.66,
+    "text": "It's not a Palentrom."
+  },
+  {
+    "start": 52.66,
+    "end": 54.07,
+    "text": "It's a Palentrom."
+  },
+  {
+    "start": 54.07,
+    "end": 56.48,
+    "text": "It should be the same string."
+  },
+  {
+    "start": 56.48,
+    "end": 58.97,
+    "text": "It's not a Palentromic string."
+  },
+  {
+    "start": 58.97,
+    "end": 61.54,
+    "text": "So how can I make it Palentrom?"
+  },
+  {
+    "start": 61.54,
+    "end": 64.53,
+    "text": "How many insertions do I need to do?"
+  },
+  {
+    "start": 64.53,
+    "end": 69.43,
+    "text": "I can get a best way that comes to my brain as  A best way."
+  },
+  {
+    "start": 69.43,
+    "end": 70.76,
+    "text": "Not the minimum."
+  },
+  {
+    "start": 70.76,
+    "end": 76.0,
+    "text": "In case of insertions, if someone is asking me, what will I do?"
+  },
+  {
+    "start": 76.0,
+    "end": 78.1,
+    "text": "I will extract all its right."
+  },
+  {
+    "start": 78.1,
+    "end": 78.97,
+    "text": "E-A-B-C-W-A."
+  },
+  {
+    "start": 78.97,
+    "end": 81.51,
+    "text": "And then just reverse it and right."
+  },
+  {
+    "start": 81.51,
+    "end": 82.31,
+    "text": "Just right."
+  },
+  {
+    "start": 82.31,
+    "end": 86.51,
+    "text": "Same thing in the reverse way, which is double A, C, B, E."
+  },
+  {
+    "start": 86.51,
+    "end": 89.55,
+    "text": "What I did was I wrote this stuff for you."
+  },
+  {
+    "start": 89.55,
+    "end": 91.65,
+    "text": "Reverse it and wrote it here."
+  },
+  {
+    "start": 91.65,
+    "end": 93.68,
+    "text": "Can I say this is Palentrom?"
+  },
+  {
+    "start": 93.68,
+    "end": 95.71,
+    "text": "That's definitely Palentrom."
+  },
+  {
+    "start": 95.71,
+    "end": 98.61,
+    "text": "If you carefully see, it's is Palentrom."
+  },
+  {
+    "start": 98.61,
+    "end": 103.39,
+    "text": "So if I just add the reverse portion, it is bound to be Palentrom."
+  },
+  {
+    "start": 103.39,
+    "end": 109.33,
+    "text": "So I know the number of operations required over here is the length of the string."
+  },
+  {
+    "start": 109.33,
+    "end": 115.35,
+    "text": "So something I figured out is,  I can definitely make any given string a Palentrom."
+  },
+  {
+    "start": 115.35,
+    "end": 119.05,
+    "text": "I can definitely make any given string a Palentrom."
+  },
+  {
+    "start": 119.05,
+    "end": 120.21,
+    "text": "That's for sure."
+  },
+  {
+    "start": 120.21,
+    "end": 120.5,
+    "text": "How?"
+  },
+  {
+    "start": 120.5,
+    "end": 125.86,
+    "text": "I will just attach the reverse version of it and it will become Palentrom."
+  },
+  {
+    "start": 125.86,
+    "end": 129.48,
+    "text": "So I know the maximum operations that I will take."
+  },
+  {
+    "start": 129.48,
+    "end": 134.48,
+    "text": "This can be called as the maximum operations is length of the string."
+  },
+  {
+    "start": 134.48,
+    "end": 137.38,
+    "text": "Because I just reverse it and attach it."
+  },
+  {
+    "start": 137.38,
+    "end": 139.92,
+    "text": "But the question is very different."
+  },
+  {
+    "start": 139.92,
+    "end": 144.05,
+    "text": "It will ask you to find the minimum number of operations."
+  },
+  {
+    "start": 144.05,
+    "end": 148.76,
+    "text": "So how do you apply minimum number of operations in this portion?"
+  },
+  {
+    "start": 148.76,
+    "end": 154.0,
+    "text": "I will like, okay, probably I'll convert this into double A, B, C, B, W."
+  },
+  {
+    "start": 154.0,
+    "end": 156.46,
+    "text": "What I did was I kept the E here."
+  },
+  {
+    "start": 156.46,
+    "end": 157.8,
+    "text": "I kept the B here."
+  },
+  {
+    "start": 157.8,
+    "end": 159.14,
+    "text": "I kept the C here."
+  },
+  {
+    "start": 159.14,
+    "end": 161.08,
+    "text": "Can I add a double A here?"
+  },
+  {
+    "start": 161.08,
+    "end": 165.63,
+    "text": "What I added was a single E and a B right in between E and B."
+  },
+  {
+    "start": 165.63,
+    "end": 169.96,
+    "text": "And probably you can see you have added this A and this B."
+  },
+  {
+    "start": 169.96,
+    "end": 171.6,
+    "text": "That is also sensible."
+  },
+  {
+    "start": 171.6,
+    "end": 173.39,
+    "text": "Like you have ABC and W."
+  },
+  {
+    "start": 173.39,
+    "end": 174.96,
+    "text": "That's also sensible."
+  },
+  {
+    "start": 174.96,
+    "end": 178.09,
+    "text": "Or you can say about it this A and this B."
+  },
+  {
+    "start": 178.09,
+    "end": 180.33,
+    "text": "Insursions can be done anyway."
+  },
+  {
+    "start": 180.33,
+    "end": 185.18,
+    "text": "So I will be like, okay, if I, yes, if I add this A and this B to"
+  },
+  {
+    "start": 185.18,
+    "end": 188.76,
+    "text": "this particular string, now is this Appalentrom."
+  },
+  {
+    "start": 188.76,
+    "end": 189.73,
+    "text": "A, A matches."
+  },
+  {
+    "start": 189.73,
+    "end": 190.7,
+    "text": "E, E matches."
+  },
+  {
+    "start": 190.7,
+    "end": 193.46,
+    "text": "B, B matches and C is the middle one."
+  },
+  {
+    "start": 193.46,
+    "end": 194.8,
+    "text": "It is Appalentrom."
+  },
+  {
+    "start": 194.8,
+    "end": 197.49,
+    "text": "How many insertions did you require?"
+  },
+  {
+    "start": 197.49,
+    "end": 199.13,
+    "text": "It was two insertions."
+  },
+  {
+    "start": 199.13,
+    "end": 201.52,
+    "text": "So we can't do better than this."
+  },
+  {
+    "start": 201.52,
+    "end": 206.74,
+    "text": "So the question clearly states,  given any string is given any string."
+  },
+  {
+    "start": 206.74,
+    "end": 212.79,
+    "text": "You know it can be converted into a palentrom by applying the maximum operations."
+  },
+  {
+    "start": 212.79,
+    "end": 215.78,
+    "text": "That's by string plus reverse of string."
+  },
+  {
+    "start": 215.78,
+    "end": 219.51,
+    "text": "But I'm not concerned about the operation numbers."
+  },
+  {
+    "start": 219.51,
+    "end": 225.11,
+    "text": "What I'm concerned about is the minimum operation that you'll be requiring."
+  },
+  {
+    "start": 225.11,
+    "end": 232.0,
+    "text": "I want you to like take the minimum operations that tell me what are the minimum operations."
+  },
+  {
+    "start": 232.0,
+    "end": 234.77,
+    "text": "So how do you approach this problem?"
+  },
+  {
+    "start": 234.77,
+    "end": 236.54,
+    "text": "That's the first thing."
+  },
+  {
+    "start": 236.54,
+    "end": 239.08,
+    "text": "How do you approach this problem?"
+  },
+  {
+    "start": 239.08,
+    "end": 248.64,
+    "text": "I'll be like, Striva, when you want thing,  if there is a portion in the string which is palentrom,  let's keep it in depth."
+  },
+  {
+    "start": 248.64,
+    "end": 251.26,
+    "text": "Keep the palentrom portion intact."
+  },
+  {
+    "start": 251.26,
+    "end": 254.73,
+    "text": "That's the first thing that comes to my mind."
+  },
+  {
+    "start": 254.73,
+    "end": 257.35,
+    "text": "Keep the palentrom portion intact."
+  },
+  {
+    "start": 257.35,
+    "end": 259.12,
+    "text": "So what does this mean?"
+  },
+  {
+    "start": 259.12,
+    "end": 265.67,
+    "text": "When I say keep the palentrom portion intact,  let's take this example, ABC double A."
+  },
+  {
+    "start": 265.67,
+    "end": 267.06,
+    "text": "A, B, C, double A."
+  },
+  {
+    "start": 267.06,
+    "end": 270.76,
+    "text": "And I'll ask you which is the palentrom portion."
+  },
+  {
+    "start": 270.76,
+    "end": 274.54,
+    "text": "You can be like, double A is a palentrom portion."
+  },
+  {
+    "start": 274.54,
+    "end": 277.78,
+    "text": "You can be like, A is a palentrom portion."
+  },
+  {
+    "start": 277.78,
+    "end": 282.33,
+    "text": "You can be like, A is a palentrom, double A is a palentrom."
+  },
+  {
+    "start": 282.33,
+    "end": 284.41,
+    "text": "A, double A is a palentrom."
+  },
+  {
+    "start": 284.41,
+    "end": 287.49,
+    "text": "You can be like, A, B, A is a palentrom."
+  },
+  {
+    "start": 287.49,
+    "end": 290.34,
+    "text": "You can be like, A, B is a palentrom."
+  },
+  {
+    "start": 290.34,
+    "end": 292.88,
+    "text": "There can be a lot of palentroms."
+  },
+  {
+    "start": 292.88,
+    "end": 300.9,
+    "text": "Now if I'm looking to minimize the operations,  I will try to keep the longest palentrom portion intact."
+  },
+  {
+    "start": 300.9,
+    "end": 305.22,
+    "text": "I will try to keep the longest palentrom portion intact."
+  },
+  {
+    "start": 305.22,
+    "end": 308.0,
+    "text": "So for me, let's assume, I'm taking,"
+  },
+  {
+    "start": 308.0,
+    "end": 314.22,
+    "text": "this is the longest palentrom portion,  which is somewhere around triple A."
+  },
+  {
+    "start": 314.22,
+    "end": 318.29,
+    "text": "Let's assume, I say, I will keep triple A intact."
+  },
+  {
+    "start": 318.29,
+    "end": 318.7,
+    "text": "Okay."
+  },
+  {
+    "start": 318.7,
+    "end": 320.36,
+    "text": "And now I have a BC."
+  },
+  {
+    "start": 320.36,
+    "end": 322.27,
+    "text": "Now I have a BC, right?"
+  },
+  {
+    "start": 322.27,
+    "end": 327.41,
+    "text": "I know one thing, this matches with,  this and this is middle."
+  },
+  {
+    "start": 327.41,
+    "end": 334.13,
+    "text": "If I'm taking this palentrom, I know this matches with this,  and this is middle."
+  },
+  {
+    "start": 334.13,
+    "end": 339.94,
+    "text": "Another two guys, which do not have a matching,  can I make the match?"
+  },
+  {
+    "start": 339.94,
+    "end": 340.44,
+    "text": "I can."
+  },
+  {
+    "start": 340.44,
+    "end": 342.27,
+    "text": "If I say, hey, listen."
+  },
+  {
+    "start": 342.27,
+    "end": 343.27,
+    "text": "Hey, listen."
+  },
+  {
+    "start": 343.27,
+    "end": 347.83,
+    "text": "Why can't you take this BC  and put it over here again?"
+  },
+  {
+    "start": 347.83,
+    "end": 351.15,
+    "text": "I will like, okay, that does make sense."
+  },
+  {
+    "start": 351.15,
+    "end": 361.85,
+    "text": "Because if in this given string, I keep this BC like,  I'll keep A, A, A intact because that's the longest palentromic substrate."
+  },
+  {
+    "start": 361.85,
+    "end": 370.98,
+    "text": "And whichever is not a portion of it,  I will just copy paste it in the right half or wherever it is required."
+  },
+  {
+    "start": 370.98,
+    "end": 374.8,
+    "text": "And now can I say, this is a palentrom string."
+  },
+  {
+    "start": 374.8,
+    "end": 376.38,
+    "text": "Let's see, A, A, B."
+  },
+  {
+    "start": 376.38,
+    "end": 380.03,
+    "text": "So I'll be like, okay, this is not matching."
+  },
+  {
+    "start": 380.03,
+    "end": 384.0,
+    "text": "So ironically, just reverse it and put, perfect."
+  },
+  {
+    "start": 384.0,
+    "end": 390.83,
+    "text": "So I'll be like, fine, let's reverse it and put,  let's see now it is matching on it."
+  },
+  {
+    "start": 390.83,
+    "end": 392.44,
+    "text": "A, A, B, B, C, C, E."
+  },
+  {
+    "start": 392.44,
+    "end": 396.06,
+    "text": "So what I realized was, E, A was a palentrom."
+  },
+  {
+    "start": 396.06,
+    "end": 397.51,
+    "text": "So kept it intact."
+  },
+  {
+    "start": 397.51,
+    "end": 403.46,
+    "text": "The guys were not a part of palentrom,  but to just put the reverse of it."
+  },
+  {
+    "start": 403.46,
+    "end": 407.4,
+    "text": "Okay, does this work out with some other example?"
+  },
+  {
+    "start": 407.4,
+    "end": 410.29,
+    "text": "Okay, so we consider tripple, right?"
+  },
+  {
+    "start": 410.29,
+    "end": 415.51,
+    "text": "Let's erase this and let's take another palentrom for an example."
+  },
+  {
+    "start": 415.51,
+    "end": 417.36,
+    "text": "A, C, it's a, C, and A."
+  },
+  {
+    "start": 417.36,
+    "end": 419.61,
+    "text": "Like this A, this C, this A."
+  },
+  {
+    "start": 419.61,
+    "end": 423.63,
+    "text": "Okay, so we're taking A, C, A, and what is intact?"
+  },
+  {
+    "start": 423.63,
+    "end": 425.8,
+    "text": "There is a B, there is a A."
+  },
+  {
+    "start": 425.8,
+    "end": 430.06,
+    "text": "There is a B over here, there's a A over here, right?"
+  },
+  {
+    "start": 430.06,
+    "end": 433.27,
+    "text": "So you know, this A matches with this A."
+  },
+  {
+    "start": 433.27,
+    "end": 435.36,
+    "text": "These guys are palentroms."
+  },
+  {
+    "start": 435.36,
+    "end": 439.22,
+    "text": "Like these are part of my palentromic substrate."
+  },
+  {
+    "start": 439.22,
+    "end": 440.99,
+    "text": "I'll keep them intact."
+  },
+  {
+    "start": 440.99,
+    "end": 443.8,
+    "text": "These guys are looking for someone."
+  },
+  {
+    "start": 443.8,
+    "end": 446.21,
+    "text": "So this A matches with this A."
+  },
+  {
+    "start": 446.21,
+    "end": 448.54,
+    "text": "This B does not have a match."
+  },
+  {
+    "start": 448.54,
+    "end": 451.03,
+    "text": "So I'll just put a B over here."
+  },
+  {
+    "start": 451.03,
+    "end": 454.0,
+    "text": "Now this B also has a match, correct?"
+  },
+  {
+    "start": 454.0,
+    "end": 456.81,
+    "text": "This C is not matching with this A."
+  },
+  {
+    "start": 456.81,
+    "end": 460.0,
+    "text": "So I'll just have to put an A over here."
+  },
+  {
+    "start": 460.0,
+    "end": 464.06,
+    "text": "Now this A matches with this A at stays over here."
+  },
+  {
+    "start": 464.06,
+    "end": 472.26,
+    "text": "So what I did was, I kept the palentrom constant,  which is A, C, A, for this B, I put a B over here."
+  },
+  {
+    "start": 472.26,
+    "end": 475.18,
+    "text": "Now for this A, I put a A over here."
+  },
+  {
+    "start": 475.18,
+    "end": 475.99,
+    "text": "That's it."
+  },
+  {
+    "start": 475.99,
+    "end": 477.78,
+    "text": "Okay, getting an idea."
+  },
+  {
+    "start": 477.78,
+    "end": 483.14,
+    "text": "We just have to make sure that we keep the longest portion intact."
+  },
+  {
+    "start": 483.14,
+    "end": 492.07,
+    "text": "Okay, so in order to understand this in more depth,  let's see one more example, coding ninjas as the example."
+  },
+  {
+    "start": 492.07,
+    "end": 499.13,
+    "text": "So over here, which is the longest palentromic sub sequence,  which I will keep intact."
+  },
+  {
+    "start": 499.13,
+    "end": 505.14,
+    "text": "I'll like, Strava, I, N, G, N, I,  if I keep them intact, okay, let's see."
+  },
+  {
+    "start": 505.14,
+    "end": 506.28,
+    "text": "I, N, G, N, I."
+  },
+  {
+    "start": 506.28,
+    "end": 508.15,
+    "text": "Let's keep them intact."
+  },
+  {
+    "start": 508.15,
+    "end": 510.34,
+    "text": "They will be doing nothing."
+  },
+  {
+    "start": 510.34,
+    "end": 517.32,
+    "text": "For this code, I'll write them, and what I'll do is,  okay, written them, that's fine."
+  },
+  {
+    "start": 517.32,
+    "end": 525.92,
+    "text": "Now what I need to do is, there is something as  N, j, a, also, N, j, a, solts, I'll written them as well."
+  },
+  {
+    "start": 525.92,
+    "end": 535.0,
+    "text": "I'll be like, okay, for this code, for this code,  c, o, d, i, why don't you write them in the opposite fashion?"
+  },
+  {
+    "start": 535.0,
+    "end": 539.84,
+    "text": "c, o, d, i, so that this code,  matches with this."
+  },
+  {
+    "start": 539.84,
+    "end": 549.33,
+    "text": "And for this N, j, a, s, why don't I write them over here,  which is somewhere around, s, a, j, n."
+  },
+  {
+    "start": 549.33,
+    "end": 554.17,
+    "text": "So the next time, s, s, a, a, j, j, n,  n matches."
+  },
+  {
+    "start": 554.17,
+    "end": 559.88,
+    "text": "And this is bound to match because it is already  piled up."
+  },
+  {
+    "start": 559.88,
+    "end": 569.18,
+    "text": "So what I observed was, I will be keeping intact, yes, I will be keeping intact, the palindromic"
+  },
+  {
+    "start": 569.18,
+    "end": 576.35,
+    "text": "guys, and apart from that, someone like Cody and N, j, s, will get copied."
+  },
+  {
+    "start": 576.35,
+    "end": 584.0,
+    "text": "So can I say, the number of insertules that I have to do, will be the length of"
+  },
+  {
+    "start": 584.0,
+    "end": 592.72,
+    "text": "the string, minus the longest palindromic sub sequence, and this is going to be my answer."
+  },
+  {
+    "start": 592.72,
+    "end": 601.34,
+    "text": "If I can just figure out the length of the string,  I'm the longest palindromic sequence."
+  },
+  {
+    "start": 601.34,
+    "end": 612.0,
+    "text": "I know, apart, because I'm going to keep them intact,  apart from that, after taking these guys in copy paste,"
+  },
+  {
+    "start": 612.0,
+    "end": 616.58,
+    "text": "and apart from that, I'll also have to take these guys in copy paste."
+  },
+  {
+    "start": 616.58,
+    "end": 619.3,
+    "text": "It's not asking us to give us the string."
+  },
+  {
+    "start": 619.3,
+    "end": 620.89,
+    "text": "So it's not complicated."
+  },
+  {
+    "start": 620.89,
+    "end": 624.61,
+    "text": "It just requires us to give us the number of operations."
+  },
+  {
+    "start": 624.61,
+    "end": 630.25,
+    "text": "So it's simply N minus longest palindromic sub sequence,  is what you need to return."
+  },
+  {
+    "start": 630.25,
+    "end": 632.77,
+    "text": "You don't need to think anything else."
+  },
+  {
+    "start": 632.77,
+    "end": 638.68,
+    "text": "So we have already discussed the longest palindromic sub sequence  in the previous video."
+  },
+  {
+    "start": 638.68,
+    "end": 644.45,
+    "text": "So take the code from there, and then we will just supply the formula and try to submit"
+  },
+  {
+    "start": 644.45,
+    "end": 647.7,
+    "text": "it and see if this is giving us a correct answer."
+  },
+  {
+    "start": 647.7,
+    "end": 651.02,
+    "text": "So here's the problem, so I'll give in the string."
+  },
+  {
+    "start": 651.02,
+    "end": 653.34,
+    "text": "So I'll go to the previous problem."
+  },
+  {
+    "start": 653.34,
+    "end": 656.33,
+    "text": "And yeah, this is not the space optimist one."
+  },
+  {
+    "start": 656.33,
+    "end": 658.65,
+    "text": "You can use the space optimist one."
+  },
+  {
+    "start": 658.65,
+    "end": 661.57,
+    "text": "This copy is the same stuff, and right here."
+  },
+  {
+    "start": 661.57,
+    "end": 664.76,
+    "text": "So this is the longest palindromic sub sequence."
+  },
+  {
+    "start": 664.76,
+    "end": 671.99,
+    "text": "What I'll do is, I'll give, let's give, let me just,  now I return str.size minus longest palindromic of str."
+  },
+  {
+    "start": 671.99,
+    "end": 674.11,
+    "text": "And I think this should be fine."
+  },
+  {
+    "start": 674.11,
+    "end": 674.51,
+    "text": "It is."
+  },
+  {
+    "start": 674.51,
+    "end": 677.7,
+    "text": "And I'll try to submit this, it will be running."
+  },
+  {
+    "start": 677.7,
+    "end": 678.1,
+    "text": "It is."
+  },
+  {
+    "start": 678.1,
+    "end": 683.54,
+    "text": "So as you saw, just by knowing LCS,  it's all long, this palindromic sub sequence."
+  },
+  {
+    "start": 683.54,
+    "end": 687.0,
+    "text": "Just by knowing long, this palindromic sub sequence,"
+  },
+  {
+    "start": 687.0,
+    "end": 690.46,
+    "text": "we solved this particular problem, which is minimum number of insertions."
+  },
+  {
+    "start": 690.46,
+    "end": 694.1,
+    "text": "So if you know the core concept of LCS,  eventually solves a lot of problems."
+  },
+  {
+    "start": 694.1,
+    "end": 696.42,
+    "text": "So guys, I hope you have understood this problem."
+  },
+  {
+    "start": 696.42,
+    "end": 698.55,
+    "text": "Make sure you use space optimist by yourself."
+  },
+  {
+    "start": 698.55,
+    "end": 702.76,
+    "text": "And just in case you did, please, please, please, please,  make sure you like this video."
+  },
+  {
+    "start": 702.76,
+    "end": 706.17,
+    "text": "And if you need to do our channel, please do consider subscribing to us."
+  },
+  {
+    "start": 706.17,
+    "end": 708.58,
+    "text": "And yeah, with this, I'll be happy with this video."
+  },
+  {
+    "start": 708.58,
+    "end": 709.57,
+    "text": "Let's video next one."
+  },
+  {
+    "start": 709.57,
+    "end": 711.0,
+    "text": "And then we'll be by thinking."
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "start": 0.0,
+    "end": 58.86,
+    "text": "[Video: DP 27: Longest Common Substring] every one will come back to take it forward. So in this video we will be solving a bit different  problem and the problem is long this common substrate, substrate, not sub sequence. So what is  actually a substrate? In the previous video we did learn about sub sequence. The definition of sub sequence was it can be something like a Gp that is a sub sequence when you say it's not a sub sequence can not be consecutive but a sub string whenever I say sub string it has to be consecutive remember this it has to be consecutive that means either ABC, either BC, either CJK, either JKL, it has to be consecutive. It cannot have any characters left in between. So the  definition of a sub string is any portion any consecutive portion of a string taken out is known as a  substrate."
+  },
+  {
+    "start": 46.08,
+    "end": 107.1,
+    "text": "[Video: DP 27: Longest Common Substring] It cannot have any characters left in between. So the  definition of a sub string is any portion any consecutive portion of a string taken out is known as a  substrate. Now given a string S1 given a string S2 the question is different. Longest common is same but it is not sub sequence it is sub string because if I was talking about longest common sub sequence you would have said ACGK, ACGK and P as well this is longest common sub sequence of length 5 and talking about sub string. So when talking about sub string the longest common  sub string will be CJK and CJK. It can be the entastoring as well but over here we are seeing a length 3 yes over here we are seeing a length 3. So the question arises is how do you solve this  particular problem?"
+  },
+  {
+    "start": 98.21,
+    "end": 157.91,
+    "text": "[Video: DP 27: Longest Common Substring] here we are seeing a length 3. So the question arises is how do you solve this  particular problem? Can you solve this using the previous formula? You can but you have to do certain  modifications. You can but you have to do a certain modification. So let's actually look back  at what did we do in LCS the longest common sub sequence? How did we solve this problem? Let's  actually write the DP. So what did you write? You wrote DP of IJ is equal to 1 plus DP of I minus  1 and J minus 1. That does make sense if they're matching, yes if they're matching that is what you wrote and they're not matching that you wrote something like DP of IJ is equal to max of DP of I"
+  },
+  {
+    "start": 150.83,
+    "end": 207.73,
+    "text": "[Video: DP 27: Longest Common Substring] not matching that you wrote something like DP of IJ is equal to max of DP of I minus 1J and DP of I comma J minus 1. Now why does this not work? Why does this longest why does this not matching not work? Let's analyze by taking a very very shorter version of the  example. So if I take ACD and C let's say ACD and probably something as EXD. So in the longest common sub sequence what will happen is initially we'll have DD common and we'll end up doing one and then we'll say let's shrink the string to AC and AX. Now when it does no finds C and X what it says is let's omit one portion let's omit one portion then still compare A and AX."
+  },
+  {
+    "start": 196.58,
+    "end": 255.73,
+    "text": "[Video: DP 27: Longest Common Substring] Now when it does no finds C and X what it says is let's omit one portion let's omit one portion then still compare A and AX. That is what it says let's omit one portion let's compare A and AX let's try to see if we can figure out something or it says hey let's omit X let's compare AC and A and over here it is like okay X E. So let's omit A and try to compare which gets it if you omitingly you're getting AX and other way it says let's omit X and compare A and A and eventually it compares A and A and gives a plus one. This is the problem this is the problem and why does this happen because because of the omitting that you're doing you're omitting this and you're still comparing with the entire thing."
+  },
+  {
+    "start": 241.07,
+    "end": 300.39,
+    "text": "[Video: DP 27: Longest Common Substring] A and gives a plus one. This is the problem this is the problem and why does this happen because because of the omitting that you're doing you're omitting this and you're still comparing with the entire thing. So you're doing a disruption you are breaking the consecutive rule now if there's a comparison between A and A and this D and D was compared you know there is someone in between who was who was there that's why you omitted this you shrink one portion of the string not the both not both the portions. thereby in else in the longest comments of sequence this works because you're allowed to have not consecutive but oh yeah there is a line which says you have to have consecutive thereby this line does not works because you cannot omit it you cannot omit it you need to be consecutive in nature okay so how do you solve this particular problem so can we write a recursion we can but"
+  },
+  {
+    "start": 288.54,
+    "end": 344.76,
+    "text": "[Video: DP 27: Longest Common Substring] not works because you cannot omit it you cannot omit it you need to be consecutive in nature okay so how do you solve this particular problem so can we write a recursion we can but then we have to use one more third variable thereby there will be three states which are will not determine thereby what we will do is we'll try to write the tabulation format but in order to write the tabulation format you have to understand how does actual the long this common subsequent tabulation works so please watch out two videos one is a D bit 25 where I've taught the tabulation the other is the D bit 26 where I've taught what was the tabulation like what was the tab what was the table rather table exactly mean I've taught that in D bit 26 where I printed their Cs so let's say an example of AB CD and AB ZD okay so over here"
+  },
+  {
+    "start": 332.83,
+    "end": 391.24,
+    "text": "[Video: DP 27: Longest Common Substring] tab what was the table rather table exactly mean I've taught that in D bit 26 where I printed their Cs so let's say an example of AB CD and AB ZD okay so over here the longest common sub sequences ABD and ABD but the longest common substring is AB let's see how will you find this up so as usual we will be following one piece indexing so 0 1 2 3 4 and 0 1 2 3 4 so this is what we have written and this is our D bit okay this is our D bit so AB ZD will be on the column and I will be over here which is AB CD okay so how do you usually fill up you usually fill up on the column wise because this is means this portion and this means this portion so this is the D bit table that we will fill up so whenever I'm at here let's see what's ring do you have A and D are the matching are they matching so you"
+  },
+  {
+    "start": 379.31,
+    "end": 440.41,
+    "text": "[Video: DP 27: Longest Common Substring] portion so this is the D bit table that we will fill up so whenever I'm at here let's see what's ring do you have A and D are the matching are they matching so you can definitely put up a 1 away here how did you put up a 1 away here what is if they are matching what did it was you said one plus the previous guys and the previous guys will be zeros these are non-useable rows and columns those eros okay perfect now you go away here and you say A and AB okay so does this A match with the speed no so thereby 0 next you go to Z and you say A does this A match with Z no so as 0 next you go to A and D does this match no so as 0 perfect let's come to the exposition you are over here and you're over here which is A and B for here so does this be match with this A no ideally ideally since it's this is consecutive you are not dependent"
+  },
+  {
+    "start": 427.07,
+    "end": 483.51,
+    "text": "[Video: DP 27: Longest Common Substring] exposition you are over here and you're over here which is A and B for here so does this be match with this A no ideally ideally since it's this is consecutive you are not dependent on the previous guys since this is consecutive you're not dependent on the previous guys remember this because you don't want any interruption because if they do not match I don't want any interruption to be carried forward in the previous L longest common sub sequence you would have taken the maximum of this or this why because because this A was matching over here so you were like okay in this AB and this A the longest common sub sequence is off length 1 because that is the longest count but in substring you don't carry anything because we don't have a substring we don't have a substring"
+  },
+  {
+    "start": 469.68,
+    "end": 528.61,
+    "text": "[Video: DP 27: Longest Common Substring] AB and this A the longest common sub sequence is off length 1 because that is the longest count but in substring you don't carry anything because we don't have a substring we don't have a substring thereby a 0 so you put a 0 remember this you put a 0 okay next you'll come over here and there is B and there is B right but they are matching they are matching say like okay they are matching let's see in the previous guy did the match they did and there was a one if they matched and they had a length of 1 why can't I take that one one for himself a previous one so I'll be like okay I can put it too so whenever they are matching I can actually take the previous guy because I don't need any break there is no breaking I can directly go to the previous guy and ask did you guys match and if you match you must have some value so why don't I take this perfect next if"
+  },
+  {
+    "start": 517.25,
+    "end": 574.96,
+    "text": "[Video: DP 27: Longest Common Substring] there is no breaking I can directly go to the previous guy and ask did you guys match and if you match you must have some value so why don't I take this perfect next if come over here this is Z this is B and on matching this put a 0 next you come across here B and D not matching this put a 0 next C and D not patching just put a 0 next C and B not matching put a 0 next C and Z not matching put a 0 next C and D not matching put a 0 no one is matching next D and A not matching D and B not matching D and Z not matching 0 0 0 D and D matching so 1 why 1 because because D and D was matching so you went to the previous guy you went to the previous guy C and Z since they did not match they had a 0 value they buy there's no one there's no one for the previous consecutive you only had a one if if this C like oh yeah we had a C oh yeah we"
+  },
+  {
+    "start": 563.98,
+    "end": 621.63,
+    "text": "[Video: DP 27: Longest Common Substring] they had a 0 value they buy there's no one there's no one for the previous consecutive you only had a one if if this C like oh yeah we had a C oh yeah we had a C then what would have happened this C would have matched this C and it was said cooking I'm having a match so go to the previous go to the previous and see they're saying they have a too much they have a too much so they have a too much you take this two and you say 2 plus 1 away up they have I would have said 3 again you come over D and D they're matching so like okay they're matching so 1 go to the previous go to the previous and see how many of them matching they think we have a 3 match 3 consecutive match so take this 3 and a 4 so this becomes 4 so what I analyzed was since it is for consecutive they buy this guy can be said we do not"
+  },
+  {
+    "start": 610.21,
+    "end": 671.63,
+    "text": "[Video: DP 27: Longest Common Substring] 3 match 3 consecutive match so take this 3 and a 4 so this becomes 4 so what I analyzed was since it is for consecutive they buy this guy can be said we do not need to do any breaking like we did a breaking like we did a breaking here and we moved to AX we did a breaking we moved to ACX there is no need to do any breaking yes they buy you can directly put a 0 this is the slide change that you have to do in the previous code and you'll be able to code this okay so coming back to the table coming back to the table so let's actually come back to the original stuff which was actually a PCD and this was something like X-Z or something like this so if I again re do the table what what is the value that it will have it will have a value like 0 and it will have a what is the longest common substrate can I say the maximum value in the entire matrix the maximum value"
+  },
+  {
+    "start": 659.33,
+    "end": 715.37,
+    "text": "[Video: DP 27: Longest Common Substring] value that it will have it will have a value like 0 and it will have a what is the longest common substrate can I say the maximum value in the entire matrix the maximum value in the entire dp because this two signifies a b is equality baby can I say the maximum value in the matrix is contained the answer I can I can and that is the answer the max value so without waiting let's get started the code so we are in the longest common substrate so what I will do is I will just copy paste the code for longest common sub sequence let's copy paste that and what will do is we will just put a 0 and this is STR let's give it a S and T other thing what is the answer the answer is the maximum value you can reiitrate and find the maximum value of what you can do is you know dp of ij is just getting filled over"
+  },
+  {
+    "start": 701.71,
+    "end": 757.89,
+    "text": "[Video: DP 27: Longest Common Substring] STR let's give it a S and T other thing what is the answer the answer is the maximum value you can reiitrate and find the maximum value of what you can do is you know dp of ij is just getting filled over here this is the value whenever it is getting a value otherwise it's 0 every time so what you can do is you can be like okay I can keep answer equal to 0 and I can be like okay answer equal to max of answer common dp of ij right and I will like fine let's return the answer and I can be like fine let's now run this off and see if this is running it is it is and now let's quickly somebody so you understood there's this is just a minor change I will do this minor change I think you will be able to solve any particular problem so this is n into m again there is something like i minus 1 and whenever there is something like i minus 1 what do you do you have space optimization"
+  },
+  {
+    "start": 746.48,
+    "end": 802.03,
+    "text": "[Video: DP 27: Longest Common Substring] to solve any particular problem so this is n into m again there is something like i minus 1 and whenever there is something like i minus 1 what do you do you have space optimization there is no need to carry two rows it just do space optimization again I have been teaching space optimization from lecture 1 please go back and watch if you have not m plus 1 comma 0 something which you can and the m plus 1 comma 0 is again something which you can over here it will be previous this is dp of i so this will become curve this will be again curve and this will be curve again and how I want to get simply to wear is you can replace previous equal to curve and again simply run this so okay I'm sorry my bad you have also replaced over here you can actually omit this because you actually initializing everything with zeros there is no need of these guys you know omit"
+  },
+  {
+    "start": 788.48,
+    "end": 840.56,
+    "text": "[Video: DP 27: Longest Common Substring] run this so okay I'm sorry my bad you have also replaced over here you can actually omit this because you actually initializing everything with zeros there is no need of these guys you know omit this I think the should be fine yeah yes so if you sum it this we actually solve this using a two like two one dimension arrays and an n into m cross space the longest common substring gets solved so guys I hope you have understood the longest common substring does the variation of the longest common sub sequence so this in case you did please please please make sure you like this video and if you did to the channel please do consider subscribing to us and here with this I'll be wrapping up this video let's be in the next one till then bye thinking"
+  }
+]

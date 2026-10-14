@@ -1,0 +1,67 @@
+[
+  {
+    "start": 0.0,
+    "end": 55.76,
+    "text": "[Video: DP 6: House Robber II (Circular Street)] Hey, we are welcome back to the channel. I hope you guys are doing extremely well. So today is the lecture six of the dynamic programming playlist and the problem that we will be solving is house robber. Yes, now this problem is quite similar to the lecture five. So if you have not seen the lecture five, I'll recommend you to go back watch lecture five and then come across and watch this because I won't be explaining this problem indeed because this problem can be solved using the same technique that I've used in lecture five. Using the same code just there is a slight moderation in the problem. So let's read the problem. What does the problem state? So Mr. X is a professional robber planning to rob houses along the street. Each house has a certain amount of money hidden all houses along the street are arranged in a circle."
+  },
+  {
+    "start": 42.07,
+    "end": 97.44,
+    "text": "[Video: DP 6: House Robber II (Circular Street)] What does the problem state? So Mr. X is a professional robber planning to rob houses along the street. Each house has a certain amount of money hidden all houses along the street are arranged in a circle. Okay, that means the first house is the neighbor of the last one. Make sense meanwhile adjacent houses have a security system connected. The houses that are adjacent have a security system connected and it will automatically contact the police if two adjacent houses were broken into on the same night. So you're given an array, a list of non-negative very important non-negative integers array representing the amount of money at each house. Your task is to return the maximum amount of money. Mr. X can rob tonight without alerting the police. So basically it states that you have to pick up."
+  },
+  {
+    "start": 86.38,
+    "end": 141.53,
+    "text": "[Video: DP 6: House Robber II (Circular Street)] Your task is to return the maximum amount of money. Mr. X can rob tonight without alerting the police. So basically it states that you have to pick up. You have to steal from houses without alerting the police and how does the police gets elected if two adjacent houses like if you steal from two adjacent houses. Now the previous question was quite same. You're supposed to return the maximum sum of the sub sequence with a constraint that no elements are adjacent in the given array. The only difference in this problem is they're saying that the last house is that just in the first one. So it's a circular kind of thing that they have given to you. So yeah, you need to solve this of so how will you solve this is a very very good question now."
+  },
+  {
+    "start": 129.87,
+    "end": 191.6,
+    "text": "[Video: DP 6: House Robber II (Circular Street)] So it's a circular kind of thing that they have given to you. So yeah, you need to solve this of so how will you solve this is a very very good question now. Let's take the first example. Two three two ideally according to lecture five is ideally according to lecture five you could have picked this two and this two because they're not adjacent correct. Since they're not adjacent you'd have picked up and you don't got four but in lecture six in this problem this first and last guy are adjacent. So you cannot pick that. So apparently you will you're only allowed to pick this so the maximum that you can do is three so just a shuttle change the question like the lecture five had stated clearly that you will have adjacent. But over here it states that you cannot have adjacent sorry you will not have adjacent in order"
+  },
+  {
+    "start": 183.2,
+    "end": 246.76,
+    "text": "[Video: DP 6: House Robber II (Circular Street)] have adjacent. But over here it states that you cannot have adjacent sorry you will not have adjacent in order to have adjacent and the first and last are adjacent that's the change in this question. So how can you solve this question. Now you might think of a lot of logic but do you actually need to think of a logic that's the question do you actually need any new logic. Do you need new logic and answer to that is I don't think I need a new logic I can solve using the previous logic in the lecture five but how can I do that. Can I say can I say I'm definitely sure that whatever my answer will be it cannot contain both of the first and the last whatever my answer is cannot contain the first one and the last one. This is practically impossible because according to the question first and the last one are adjacent so you cannot contain them."
+  },
+  {
+    "start": 237.31,
+    "end": 296.6,
+    "text": "[Video: DP 6: House Robber II (Circular Street)] last one. This is practically impossible because according to the question first and the last one are adjacent so you cannot contain them. Make sense can I say I answer will either contain it might it might or it might not but this thing is for sure first and last will not be together. So can I say can I say if I say what if I consider the array from like a leave out the last element whatever is the array leave out the last element let's leave out the last element and consider the remaining portion of the array and. And then apply the lecture five logic in saying find the maximum sum of the sub sequence with that just remember I'm leaving out the last possible element so I've left out the last possible. Okay, makes sense but you might say but travel what if the last possible element was an answer so what I can do is okay this is a possible stop the I can do I can"
+  },
+  {
+    "start": 285.57,
+    "end": 341.9,
+    "text": "[Video: DP 6: House Robber II (Circular Street)] Okay, makes sense but you might say but travel what if the last possible element was an answer so what I can do is okay this is a possible stop the I can do I can leave out the last element and I can apply the same logic on the remaining array or I can say let's leave out the first element yes let's leave out the first element and apply the same logic on the remaining portion of the array yes the lecture five logic. Make sense now I definitely know that first and last cannot be together so either this array will give you the answer or this array will give you the answer because that's what it turns if you just think slowly. So can I say if this is giving me answer one and if this is giving me answer to like leaving out the last and leaving out the first. Can I say my answer to this question is max of both the answers."
+  },
+  {
+    "start": 326.91,
+    "end": 385.06,
+    "text": "[Video: DP 6: House Robber II (Circular Street)] you just think slowly. So can I say if this is giving me answer one and if this is giving me answer to like leaving out the last and leaving out the first. Can I say my answer to this question is max of both the answers. It's very intuitive like it's very very intuitive because first and last cannot be together thereby I do want to remove the last and apply the same logic of the previous question because the question was more or less similar. I just towards confused with the first and last I just remove that and now the question becomes very straightforward as the previous question. So it's time that we will try to code this up so Nicole just make sure that there is long long in because in the bar cube and river 9 I think. Long long in this not required long long long long would have done that's okay so what I'll do is I'll just copy paste."
+  },
+  {
+    "start": 372.7,
+    "end": 435.86,
+    "text": "[Video: DP 6: House Robber II (Circular Street)] is long long in because in the bar cube and river 9 I think. Long long in this not required long long long long would have done that's okay so what I'll do is I'll just copy paste. Let's copy paste this one. So taking the taking of the previous lecture five so this is nothing but the lecture five space optimization solution. So this is nothing but lecture five space optimization solution. Okay the last one. So we know it'll take a number sorry and it'll give me the maximum so over here. I know one thing for short I will be computing the answer for the first half if I don't take the last last element and I'll be computing for the rest half if I do not take the first element. So assume I create a couple of temporary arrays make sense and what I'll do is in these temporary arrays."
+  },
+  {
+    "start": 424.36,
+    "end": 479.58,
+    "text": "[Video: DP 6: House Robber II (Circular Street)] take the first element. So assume I create a couple of temporary arrays make sense and what I'll do is in these temporary arrays. If I is not equal to zero I know let's assume the temporary array is this one. Like temporary one contains everything apart from the first element so I can just keep it like this value in house of I okay make sense. If I is not equal to last index by the way just make sure you declare and as this value in house dot sites. Just make sure that so if this is not equal to can I say temporary to dot push back value in house I so what I did was apart from everything apart from the last element"
+  },
+  {
+    "start": 464.59,
+    "end": 520.18,
+    "text": "[Video: DP 6: House Robber II (Circular Street)] Just make sure that so if this is not equal to can I say temporary to dot push back value in house I so what I did was apart from everything apart from the last element I pushed everything into the temp two. Apart from the first element I pushed everything into the temp one that is what I've done so at the temp one ready at the temp two ready so temp one is continuing now what I know is okay I know the answer is max off if I just call the same function let's call the same function with temp one let's call the same function with temp two. Okay make sense where does this work for all of these what if that a has only single element so that's the case that I have to consider this in case the array has single elements for you can keep it away are there are single elements then you can just pick the that"
+  },
+  {
+    "start": 509.0,
+    "end": 566.6,
+    "text": "[Video: DP 6: House Robber II (Circular Street)] element so that's the case that I have to consider this in case the array has single elements for you can keep it away are there are single elements then you can just pick the that element itself because it cannot have any add just in this packet now I tried run this code. You see it is running that's quickly submitted and check yeah run to option to define so you can see by the way. So we have a lot of things that we just make sure like it because I don't make these videos late night because I have my office hours in the day so you have to make sure like it so yeah. two fifty three it works absolutely fine now this is how we can easily do it it is just a variation of the previous problem so always keep your eyes open whatever logic I'm teaching try to keep it try to implicate them by slightly changing logic don't change it whole heartedly okay. Guys this will be it for this video if you have watched the video till now please make"
+  },
+  {
+    "start": 555.91,
+    "end": 581.0,
+    "text": "[Video: DP 6: House Robber II (Circular Street)] to keep it try to implicate them by slightly changing logic don't change it whole heartedly okay. Guys this will be it for this video if you have watched the video till now please make sure like it let's follow our tradition please please do comment understood or you as. In the comment section if you have understood this problem and you can solve this problem and lead code goes by the name house Robert. Okay so with this let's wrap this video. All right."
+  }
+]

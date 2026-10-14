@@ -1,0 +1,1687 @@
+[
+  {
+    "start": 0.0,
+    "end": 3.08,
+    "text": "If you are welcome back to take you forward."
+  },
+  {
+    "start": 3.08,
+    "end": 7.97,
+    "text": "So today we will be solving the problem  dp20 and what is the problem?"
+  },
+  {
+    "start": 7.97,
+    "end": 14.33,
+    "text": "The problem will be minimum coins Yes, this problem is again a problem on the pattern of dp"
+  },
+  {
+    "start": 14.33,
+    "end": 20.62,
+    "text": "on sub sequences that we have been doing and if you remember dp on sub sequences It's very"
+  },
+  {
+    "start": 20.62,
+    "end": 26.28,
+    "text": "easy pick and non-pick is what do you generally use to solve dp on sub sequences?"
+  },
+  {
+    "start": 26.28,
+    "end": 28.66,
+    "text": "So it's a similar kind of problem."
+  },
+  {
+    "start": 28.66,
+    "end": 30.83,
+    "text": "So what does the problem state?"
+  },
+  {
+    "start": 30.83,
+    "end": 39.08,
+    "text": "So the problem states that you're basically given an array which denotes denomination of coins assume the denomination"
+  },
+  {
+    "start": 39.08,
+    "end": 44.67,
+    "text": "of coins are 1, 2, 3 like you have coins which have denominations as 1, 2 and 3."
+  },
+  {
+    "start": 44.67,
+    "end": 49.21,
+    "text": "Okay, and you're given a target  Assume the target is given as 7."
+  },
+  {
+    "start": 49.21,
+    "end": 54.31,
+    "text": "Okay, so what they're asking you is  What is the minimum number of coins?"
+  },
+  {
+    "start": 54.31,
+    "end": 57.18,
+    "text": "Yes, what is the minimum number of coins?"
+  },
+  {
+    "start": 57.18,
+    "end": 63.26,
+    "text": "That you will require in order to form this particular target So over here I can say if"
+  },
+  {
+    "start": 63.26,
+    "end": 70.95,
+    "text": "I take one coin of three denomination Another coin of three denomination Another coin of one denomination that"
+  },
+  {
+    "start": 70.95,
+    "end": 76.56,
+    "text": "will add up to give us the given target and How many number of coins did we use?"
+  },
+  {
+    "start": 76.56,
+    "end": 78.89,
+    "text": "The answer to that will be three."
+  },
+  {
+    "start": 78.89,
+    "end": 85.04,
+    "text": "So you have to minimize this number of coins like they can be otherwise as well You can"
+  },
+  {
+    "start": 85.04,
+    "end": 90.48,
+    "text": "take two you can take two two two twice and then you can take a one this also"
+  },
+  {
+    "start": 90.48,
+    "end": 95.42,
+    "text": "gives you a target But over here the number of coins required is four."
+  },
+  {
+    "start": 95.42,
+    "end": 102.2,
+    "text": "I don't want that the question clearly states you have to figure out The minimum number of coins"
+  },
+  {
+    "start": 102.2,
+    "end": 108.56,
+    "text": "required Now you might be saying striver or this is very simple We are just gonna take the"
+  },
+  {
+    "start": 108.56,
+    "end": 115.76,
+    "text": "target and whichever is the maximum value would divide via it like Greatie way like the first approach"
+  },
+  {
+    "start": 115.76,
+    "end": 121.76,
+    "text": "so you will like we can definitely solve those using a greedy So if it was greedy you"
+  },
+  {
+    "start": 121.76,
+    "end": 128.26,
+    "text": "would have been like okay these are the arrelements and the target required is 7 pick up the"
+  },
+  {
+    "start": 128.26,
+    "end": 131.23,
+    "text": "biggest coin which is three can I have it?"
+  },
+  {
+    "start": 131.23,
+    "end": 139.14,
+    "text": "Yes, it divides it by  twice so I can have two denominations of coin three  Right and what is the leftover part?"
+  },
+  {
+    "start": 139.14,
+    "end": 145.14,
+    "text": "7 minus 7 minus Two denomination of three which is 7 minus six left over is one Which"
+  },
+  {
+    "start": 145.14,
+    "end": 148.18,
+    "text": "is the next biggest coin two can it divide?"
+  },
+  {
+    "start": 148.18,
+    "end": 155.6,
+    "text": "No zero denominations of two which is the next biggest coin one can it divide yes one denomination of one"
+  },
+  {
+    "start": 155.6,
+    "end": 161.99,
+    "text": "And after this one minus one denomination of one will be zero left So we like okay I'll"
+  },
+  {
+    "start": 161.99,
+    "end": 168.23,
+    "text": "require two coins here one coin here with sums up to give me three coins 3d does work"
+  },
+  {
+    "start": 168.23,
+    "end": 174.55,
+    "text": "for this test case, but it might feel so can we figure a test case where greedy fields"
+  },
+  {
+    "start": 174.55,
+    "end": 181.53,
+    "text": "Assume I give you something like nine six five one okay and these are the denomination of coins"
+  },
+  {
+    "start": 181.53,
+    "end": 187.26,
+    "text": "And I'm looking for a target of 11 okay I'm looking for a target of 11 so Will"
+  },
+  {
+    "start": 187.26,
+    "end": 193.28,
+    "text": "this fail if you apply greedy the biggest coin is nine and it will like 11 by nine"
+  },
+  {
+    "start": 193.28,
+    "end": 200.18,
+    "text": "One denomination of nine left over is two six cannot be applied five cannot be applied One can"
+  },
+  {
+    "start": 200.18,
+    "end": 207.01,
+    "text": "be applied twice so you'll be right I'll be requiring Three coins in order to form the target"
+  },
+  {
+    "start": 207.01,
+    "end": 213.18,
+    "text": "of 11 But actually If you pick six and five the requirement of coins will be two and"
+  },
+  {
+    "start": 213.18,
+    "end": 220.08,
+    "text": "we saw that if we follow the greedy method It does fail again why same reason uniformity there"
+  },
+  {
+    "start": 220.08,
+    "end": 227.06,
+    "text": "is no uniformity there right you There's a nine but It might happen the next couple of elements"
+  },
+  {
+    "start": 227.06,
+    "end": 233.6,
+    "text": "might be something which It gives you better values so uniformity is not they like if you"
+  },
+  {
+    "start": 233.6,
+    "end": 240.82,
+    "text": "Nine to six differences three six to five differences one one to five differences four But there is"
+  },
+  {
+    "start": 240.82,
+    "end": 248.19,
+    "text": "no uniformity in the differences of coin There why you don't know what is the next denomination Hence"
+  },
+  {
+    "start": 248.19,
+    "end": 255.05,
+    "text": "something like greedy can not be applied in such cases and that's when we think of what trying"
+  },
+  {
+    "start": 255.05,
+    "end": 261.98,
+    "text": "out all combos to form target and This is something which we have done in which problem Napsack"
+  },
+  {
+    "start": 261.98,
+    "end": 268.4,
+    "text": "Over there we have to figure out the maximum value over here over here we have to figure"
+  },
+  {
+    "start": 268.4,
+    "end": 274.67,
+    "text": "out which is the minimum count Right so try out all the combos and take the combo that"
+  },
+  {
+    "start": 274.67,
+    "end": 281.45,
+    "text": "has minimum coins Take the combo that has minimum coins Right so the problem is to figure out"
+  },
+  {
+    "start": 281.45,
+    "end": 288.09,
+    "text": "minimum coins So what is the rule what is the standard rule to write the recurrence and how"
+  },
+  {
+    "start": 288.09,
+    "end": 294.73,
+    "text": "did I all combos There's only one way that has if you write the recurrence or recursion and"
+  },
+  {
+    "start": 294.73,
+    "end": 302.17,
+    "text": "then you can think of Dp tabulation and everything so Rules Remember the rules guys I've been teaching"
+  },
+  {
+    "start": 302.17,
+    "end": 308.95,
+    "text": "that forever now what are the rules first rule is Express the recurrence in terms of First is"
+  },
+  {
+    "start": 308.95,
+    "end": 315.28,
+    "text": "index and obviously you're looking to form something in an app sack also you had a back"
+  },
+  {
+    "start": 315.28,
+    "end": 321.12,
+    "text": "Over here also you're looking for a target so the second recurrence will be target which I can"
+  },
+  {
+    "start": 321.12,
+    "end": 326.46,
+    "text": "call it as E right then Express yes then express Third you have to take the minimal of"
+  },
+  {
+    "start": 326.46,
+    "end": 332.36,
+    "text": "all right if you take the minimal of all because over here the question clearly states Find out"
+  },
+  {
+    "start": 332.36,
+    "end": 334.84,
+    "text": "how many minimum coins will you require?"
+  },
+  {
+    "start": 334.84,
+    "end": 340.8,
+    "text": "So what is the question stating the question is stating to find out the minimum coins correct So"
+  },
+  {
+    "start": 340.8,
+    "end": 346.02,
+    "text": "can I say I have to write a function that returns the minimal coin so if I'm writing"
+  },
+  {
+    "start": 346.02,
+    "end": 351.05,
+    "text": "N minus one and target So that means if there is an array like this yes, if there"
+  },
+  {
+    "start": 351.05,
+    "end": 355.83,
+    "text": "is an array like this Where this is 0 and this is N minus one I'm saying Till"
+  },
+  {
+    "start": 355.83,
+    "end": 361.42,
+    "text": "N minus one till the entire array What are the minimum coins that will be required to form"
+  },
+  {
+    "start": 361.42,
+    "end": 365.95,
+    "text": "this target this will tell me is it two is it three is it four is it five"
+  },
+  {
+    "start": 365.95,
+    "end": 371.41,
+    "text": "What are the minimum coins this f will tell me whatever is the question that is what the"
+  },
+  {
+    "start": 371.41,
+    "end": 376.87,
+    "text": "f Generally resembles so this f is going to tell me what are the minimum number of coins"
+  },
+  {
+    "start": 376.87,
+    "end": 382.21,
+    "text": "that are very Quiring to form the target and for this portion of the array N minus one"
+  },
+  {
+    "start": 382.21,
+    "end": 387.49,
+    "text": "means the array ends over here So I can say can start easily okay, so let's write the"
+  },
+  {
+    "start": 387.49,
+    "end": 391.28,
+    "text": "vector inch now So we have an index okay and we have a target"
+  },
+  {
+    "start": 391.28,
+    "end": 399.68,
+    "text": "So let's forget about the base case and what did we learn about this Express all possibilities Generally"
+  },
+  {
+    "start": 399.68,
+    "end": 407.2,
+    "text": "in sub sequences there are two possibilities either you take the coin We take the coin or you"
+  },
+  {
+    "start": 407.2,
+    "end": 414.63,
+    "text": "do not take the coin but over here there will be Slite difference let's understand why so if"
+  },
+  {
+    "start": 414.63,
+    "end": 422.31,
+    "text": "you carefully see if you carefully see whenever we took the coin three We used two additions of"
+  },
+  {
+    "start": 422.31,
+    "end": 429.99,
+    "text": "that right we used two additions of that So the question states there is an infinite yes, there"
+  },
+  {
+    "start": 429.99,
+    "end": 437.83,
+    "text": "is an infinite supply of coins In the previous questions a single element was just used once like"
+  },
+  {
+    "start": 437.83,
+    "end": 445.02,
+    "text": "in the knapsack what you did was view stool If you steal or stole whatever an element you"
+  },
+  {
+    "start": 445.02,
+    "end": 452.54,
+    "text": "just stole it once but over here This denomination can be used once twice twice as many times"
+  },
+  {
+    "start": 452.54,
+    "end": 460.3,
+    "text": "as possible Right now you might be thinking driver than the best thing is divided like if you're"
+  },
+  {
+    "start": 460.3,
+    "end": 466.44,
+    "text": "using it do a 7 by 3 And they're using it twice a twice will that make sense"
+  },
+  {
+    "start": 466.44,
+    "end": 470.72,
+    "text": "no because it might happen you don't need always like"
+  },
+  {
+    "start": 470.72,
+    "end": 475.95,
+    "text": "assume there is something in 25 25 by 3 is 8 times you don't need to use it"
+  },
+  {
+    "start": 475.95,
+    "end": 482.57,
+    "text": "eight times Probably there might be a case where you just have to take seven denominations of 3"
+  },
+  {
+    "start": 482.57,
+    "end": 489.12,
+    "text": "make it 21 And the probability take two denominations and make it 25 there might be cases like"
+  },
+  {
+    "start": 489.12,
+    "end": 496.23,
+    "text": "this It's always not necessary that if you're using a denomination you end up using the entire portion"
+  },
+  {
+    "start": 496.23,
+    "end": 501.8,
+    "text": "I will again repeat a zoom there was a target of 25 and the denomination is 3 it"
+  },
+  {
+    "start": 501.8,
+    "end": 509.74,
+    "text": "does not necessarily Nessusually means that if you're taking the denomination of 3 you take eight denominations of"
+  },
+  {
+    "start": 509.74,
+    "end": 515.8,
+    "text": "3 It can be 70 nominations it can be 60 nominations it can be five denominations it can"
+  },
+  {
+    "start": 515.8,
+    "end": 521.86,
+    "text": "be any number of denominations that you can make sense so I'll be like okay They can be"
+  },
+  {
+    "start": 521.86,
+    "end": 527.09,
+    "text": "two cases one is I decide I will not take that's for sure and if I not take"
+  },
+  {
+    "start": 527.09,
+    "end": 533.22,
+    "text": "Am I adding to the number of coins because the function what is the duty of the function"
+  },
+  {
+    "start": 533.22,
+    "end": 539.42,
+    "text": "to return the number of coins So make sure when you're not taking you count you count the"
+  },
+  {
+    "start": 539.42,
+    "end": 545.55,
+    "text": "number of coins So number of coins counted will be zero and if you're not taking it what"
+  },
+  {
+    "start": 545.55,
+    "end": 548.4,
+    "text": "happens to the self you had an array rate"
+  },
+  {
+    "start": 548.4,
+    "end": 554.77,
+    "text": "You probably are standing over here and this is your portion and if you do not take it"
+  },
+  {
+    "start": 554.77,
+    "end": 560.99,
+    "text": "you have to move back So please move back so when you move back it'll be index minus"
+  },
+  {
+    "start": 560.99,
+    "end": 568.1,
+    "text": "one and target Perfect and what about take so if you're taking right if you're taking now you're"
+  },
+  {
+    "start": 568.1,
+    "end": 576.46,
+    "text": "looking for minimal If you remember I told you whenever you're looking for maximum Assign everything to intervene"
+  },
+  {
+    "start": 576.46,
+    "end": 584.23,
+    "text": "so that it's not considered whenever you're looking for minimum Assign everything to intmax so that it is"
+  },
+  {
+    "start": 584.23,
+    "end": 590.97,
+    "text": "not considered so if you're taking it Make sure take is considered as int Max Okay now when"
+  },
+  {
+    "start": 590.97,
+    "end": 596.74,
+    "text": "can you take it so This array You are at this index and assume this is six the"
+  },
+  {
+    "start": 596.74,
+    "end": 603.55,
+    "text": "target is Three can you take this denomination will it make sense to take this denomination?"
+  },
+  {
+    "start": 603.55,
+    "end": 610.43,
+    "text": "That's there is no because if you take it denomination of six But you're looking for a target"
+  },
+  {
+    "start": 610.43,
+    "end": 617.17,
+    "text": "of three so it does not make sense so before taking any denomination Just make sure you ask"
+  },
+  {
+    "start": 617.17,
+    "end": 623.31,
+    "text": "Does the coin at that index Is lesser than the target that I'm looking for if it is"
+  },
+  {
+    "start": 623.31,
+    "end": 624.64,
+    "text": "Then I can take it"
+  },
+  {
+    "start": 624.64,
+    "end": 631.44,
+    "text": "If you're taking a coin into your denomination, let's understand if you're taking a coin What is this"
+  },
+  {
+    "start": 631.44,
+    "end": 634.61,
+    "text": "function doing this function is counting coins?"
+  },
+  {
+    "start": 634.61,
+    "end": 641.01,
+    "text": "This function is counting coins so how many coins are you taking one And rest for the remaining"
+  },
+  {
+    "start": 641.01,
+    "end": 647.34,
+    "text": "target you have to figure out right for the remaining target is T minus coins of index Because"
+  },
+  {
+    "start": 647.34,
+    "end": 652.53,
+    "text": "if you're took up if you're took up a coin If This is the array and there was"
+  },
+  {
+    "start": 652.53,
+    "end": 658.19,
+    "text": "three and the target was eight So if you took this three if you took this three this"
+  },
+  {
+    "start": 658.19,
+    "end": 664.39,
+    "text": "eight will reduce to five now that's what I'm doing over here This eight will reduce to five"
+  },
+  {
+    "start": 664.39,
+    "end": 669.91,
+    "text": "and now you look for what are the minimum in which I can form this five That's why"
+  },
+  {
+    "start": 669.91,
+    "end": 676.58,
+    "text": "you'll again call this function choice you will again call this function by taking it But there's a"
+  },
+  {
+    "start": 676.58,
+    "end": 682.78,
+    "text": "question What will happen to this index Because if this tree is picked only once you add one"
+  },
+  {
+    "start": 682.78,
+    "end": 687.83,
+    "text": "But if you go back you will not be allowed to pick it one small So the best"
+  },
+  {
+    "start": 687.83,
+    "end": 693.69,
+    "text": "thing that you do is you say I'm gonna stand over here itself Yes, I'm gonna stand over"
+  },
+  {
+    "start": 693.69,
+    "end": 699.35,
+    "text": "here itself and I'm gonna pick it again So I will call the index again and this time"
+  },
+  {
+    "start": 699.35,
+    "end": 702.32,
+    "text": "with the reduced so basically what I used to"
+  },
+  {
+    "start": 702.32,
+    "end": 707.78,
+    "text": "Did was if there was a three and the target was eight So I was looking What are"
+  },
+  {
+    "start": 707.78,
+    "end": 713.45,
+    "text": "the minimum number of ways in which I can form eight in this portion of the array?"
+  },
+  {
+    "start": 713.45,
+    "end": 718.84,
+    "text": "Now if I picked up once This will be five and I'll again look in this array in"
+  },
+  {
+    "start": 718.84,
+    "end": 720.91,
+    "text": "how many ways can I form five?"
+  },
+  {
+    "start": 720.91,
+    "end": 726.93,
+    "text": "That's my that's my motive that's my thinking make sense So what it was I stayed at the"
+  },
+  {
+    "start": 726.93,
+    "end": 734.19,
+    "text": "same index remember this is a thumb rule whenever there is an infinite supply of anything infinite supply"
+  },
+  {
+    "start": 734.19,
+    "end": 742.35,
+    "text": "multiple use Such statements whenever there is infinite supply a multiple use such statements Always when you consider"
+  },
+  {
+    "start": 742.35,
+    "end": 748.3,
+    "text": "take it will stand at the same index It won't move to the previous index it will stand"
+  },
+  {
+    "start": 748.3,
+    "end": 754.25,
+    "text": "at the same index now you might have a question What's driver if it stands at the same"
+  },
+  {
+    "start": 754.25,
+    "end": 760.54,
+    "text": "index it will keep standing no First it was eight when you picked up Three next will become"
+  },
+  {
+    "start": 760.54,
+    "end": 766.35,
+    "text": "five when you pick up three next this five will become two and then you can not pick"
+  },
+  {
+    "start": 766.35,
+    "end": 772.57,
+    "text": "up this tree hence Ultimately will move you will move at a moment because by picking up by"
+  },
+  {
+    "start": 772.57,
+    "end": 778.45,
+    "text": "picking up you're reducing the target You're reducing the target as much as possible."
+  },
+  {
+    "start": 778.45,
+    "end": 780.32,
+    "text": "So eventually you will move"
+  },
+  {
+    "start": 780.32,
+    "end": 787.7,
+    "text": "So that's the funder of take you always standard the index remember this whenever there is something like"
+  },
+  {
+    "start": 787.7,
+    "end": 795.08,
+    "text": "infinite supply Something like multiple use you always will stand at the same index and you'll just alter"
+  },
+  {
+    "start": 795.08,
+    "end": 802.04,
+    "text": "the target Yes, you'll just alter the target whatever like I have much possible you have altered it"
+  },
+  {
+    "start": 802.04,
+    "end": 807.94,
+    "text": "so that's what you have done and I would you need to return the minimum of the combo"
+  },
+  {
+    "start": 807.94,
+    "end": 813.49,
+    "text": "of ache or not take is what you have to return So this is what you'll do you'll"
+  },
+  {
+    "start": 813.49,
+    "end": 820.31,
+    "text": "return the minimum of a can not take have a written the recurrence express Regrets minimum of all"
+  },
+  {
+    "start": 820.31,
+    "end": 826.21,
+    "text": "what is the next thing the next thing is B skis and I've already taught you that how"
+  },
+  {
+    "start": 826.21,
+    "end": 831.76,
+    "text": "do you write B skis whenever there is a case of B skis and you're starting at n"
+  },
+  {
+    "start": 831.76,
+    "end": 837.95,
+    "text": "minus one You always look at the last index which is zero and then you start thinking in"
+  },
+  {
+    "start": 837.95,
+    "end": 844.49,
+    "text": "terms of a single array containing a single element and a possible target so this is an array"
+  },
+  {
+    "start": 844.49,
+    "end": 850.82,
+    "text": "at index zero and possibly containing a value six and a target seven not tell me one thing"
+  },
+  {
+    "start": 850.82,
+    "end": 857.15,
+    "text": "if this is containing a value six and a target seven can this target be achieved like what"
+  },
+  {
+    "start": 857.15,
+    "end": 860.24,
+    "text": "are the minimum number of coins if I ask you"
+  },
+  {
+    "start": 860.24,
+    "end": 867.57,
+    "text": "what are the minimum number of coins that you will take to achieve this target equal to seven"
+  },
+  {
+    "start": 867.57,
+    "end": 874.66,
+    "text": "is my question what are the minimum number of coins that you will take in order to achieve"
+  },
+  {
+    "start": 874.66,
+    "end": 881.68,
+    "text": "the target seven and you answer to that will be striver the answer will be zero because I"
+  },
+  {
+    "start": 881.68,
+    "end": 889.01,
+    "text": "cannot achieve the target seven using a coin determination of six but what if I tell you that"
+  },
+  {
+    "start": 889.01,
+    "end": 895.87,
+    "text": "this is seven now your answer will be striver we can achieve it because it will take us"
+  },
+  {
+    "start": 895.87,
+    "end": 903.91,
+    "text": "one denomination of seven to achieve this target seven now let me quickly change something if I change"
+  },
+  {
+    "start": 903.91,
+    "end": 910.61,
+    "text": "the target to be probably that's a 12 and the over here it's four then you'll be like"
+  },
+  {
+    "start": 910.61,
+    "end": 918.97,
+    "text": "striver we'll be requiring three denominations is the minimal that I will require in order to achieve this"
+  },
+  {
+    "start": 918.97,
+    "end": 925.99,
+    "text": "target why are the denomination four so can I say if the target is divisible by this fold"
+  },
+  {
+    "start": 925.99,
+    "end": 933.24,
+    "text": "just very very logical if this target is divisible by this fold then I return the minimum as"
+  },
+  {
+    "start": 933.24,
+    "end": 940.73,
+    "text": "target by denomination right and if it is not then I'll return and it's not possible so thereby"
+  },
+  {
+    "start": 940.73,
+    "end": 940.96,
+    "text": "the"
+  },
+  {
+    "start": 940.96,
+    "end": 948.46,
+    "text": "minimum number of coins is infinite no matter how many coins you bring you cannot don't return zero"
+  },
+  {
+    "start": 948.46,
+    "end": 955.88,
+    "text": "otherwise the minimum steps will be counted as zero don't return zero so let's write down the base"
+  },
+  {
+    "start": 955.88,
+    "end": 961.94,
+    "text": "case so you know the base case will be very simple if index is equal to zero and"
+  },
+  {
+    "start": 961.94,
+    "end": 969.14,
+    "text": "then you'll have to write something so I know and we have always assuming these cases the coins"
+  },
+  {
+    "start": 969.14,
+    "end": 977.02,
+    "text": "will always have a denomination of greater than zero because there will never be a denomination of coins"
+  },
+  {
+    "start": 977.02,
+    "end": 983.23,
+    "text": "like that's common sense so if array of I or rather if target modulo array of I is"
+  },
+  {
+    "start": 983.23,
+    "end": 989.44,
+    "text": "equal to zero we will return what will it turn target by a of I because that's the"
+  },
+  {
+    "start": 989.44,
+    "end": 996.33,
+    "text": "minimum that we will require or else there is like we cannot form it we will return intamax"
+  },
+  {
+    "start": 996.33,
+    "end": 1002.31,
+    "text": "that is how you can easily do this stuff right and just to make sure that it is"
+  },
+  {
+    "start": 1002.31,
+    "end": 1009.88,
+    "text": "no overflow probably you can return something as one e9 again why because see you're adding one plus"
+  },
+  {
+    "start": 1009.88,
+    "end": 1015.94,
+    "text": "one plus if any of the function gives intamax it'll be one e9 okay if any of the"
+  },
+  {
+    "start": 1015.94,
+    "end": 1020.72,
+    "text": "function basically gives like it's one plus one plus any of the"
+  },
+  {
+    "start": 1020.72,
+    "end": 1026.94,
+    "text": "function gives intamax so intamax plus one plus one will go overflow thereby to in order to have"
+  },
+  {
+    "start": 1026.94,
+    "end": 1032.64,
+    "text": "see if the I'm returning one e9 okay what's the next piece let's take an example and try"
+  },
+  {
+    "start": 1032.64,
+    "end": 1038.21,
+    "text": "to drew the brighter on the recursion tree so that the stuff gets more clear to you so"
+  },
+  {
+    "start": 1038.21,
+    "end": 1044.36,
+    "text": "let's take this example and do a brighter on the recursion tree so that you understand how this"
+  },
+  {
+    "start": 1044.36,
+    "end": 1049.73,
+    "text": "is working so initially we are like if we're just straight right we are at f of two"
+  },
+  {
+    "start": 1049.73,
+    "end": 1055.3,
+    "text": "and they're looking to form eight you can take like you cannot take or you can take so"
+  },
+  {
+    "start": 1055.3,
+    "end": 1060.54,
+    "text": "as you may do not take you move to the previous index with the same target but if"
+  },
+  {
+    "start": 1060.54,
+    "end": 1065.85,
+    "text": "you take if we decide to take this guy so eight minus three that you know like the"
+  },
+  {
+    "start": 1065.85,
+    "end": 1071.22,
+    "text": "target will reduce to five now and there'll be a plus one of coin so you still stay"
+  },
+  {
+    "start": 1071.22,
+    "end": 1076.92,
+    "text": "at the same index the target reduces to five perfect now you're at f of one eight you're"
+  },
+  {
+    "start": 1076.92,
+    "end": 1082.55,
+    "text": "saying in this portion can you form eight can you form eight and over what you'll do is"
+  },
+  {
+    "start": 1082.55,
+    "end": 1087.6,
+    "text": "you'll take and take so if you not take you'll move to zero and you will be at"
+  },
+  {
+    "start": 1087.6,
+    "end": 1092.84,
+    "text": "eight correct and over here if you take it if you decide to take it plus one coin"
+  },
+  {
+    "start": 1092.84,
+    "end": 1098.28,
+    "text": "and if you take it there is two there is two so eventually what happens is you still"
+  },
+  {
+    "start": 1098.28,
+    "end": 1101.92,
+    "text": "stand it one but there is a reduction in the target that"
+  },
+  {
+    "start": 1101.92,
+    "end": 1108.35,
+    "text": "you're looking for six at zero eight what happens you are at this and you're looking for a"
+  },
+  {
+    "start": 1108.35,
+    "end": 1115.49,
+    "text": "target of eight there will be eight coins required of denominations one right so here it turns eight"
+  },
+  {
+    "start": 1115.49,
+    "end": 1121.27,
+    "text": "coins perfect this guy returns eight coins f of one six will again be not so f of"
+  },
+  {
+    "start": 1121.27,
+    "end": 1127.55,
+    "text": "zero six so f of zero six there'll be six denominations make sense and if you take again"
+  },
+  {
+    "start": 1127.55,
+    "end": 1133.26,
+    "text": "one and if you take two it will be something like six minus two will be four and"
+  },
+  {
+    "start": 1133.26,
+    "end": 1138.62,
+    "text": "plus one over here and f of one four will again be not take which will be f"
+  },
+  {
+    "start": 1138.62,
+    "end": 1144.83,
+    "text": "of zero four which will again return four denominations and if you take it it will be f"
+  },
+  {
+    "start": 1144.83,
+    "end": 1152.11,
+    "text": "of one comma two you see every portion like every combination is being is being checked out thoroughly"
+  },
+  {
+    "start": 1152.11,
+    "end": 1157.75,
+    "text": "now add to one comma two what can you do again you can not take which will take"
+  },
+  {
+    "start": 1157.75,
+    "end": 1164.25,
+    "text": "it zero comma two which will return two denominations and f of one comma zero again you can"
+  },
+  {
+    "start": 1164.25,
+    "end": 1170.96,
+    "text": "go across this is how it tends to work like this is zero denominations one denomination of two"
+  },
+  {
+    "start": 1170.96,
+    "end": 1178.82,
+    "text": "another denomination of two another denomination of two like four denominations of two also make eight all two"
+  },
+  {
+    "start": 1178.82,
+    "end": 1183.76,
+    "text": "denominations of two four denominations of one or three denominations"
+  },
+  {
+    "start": 1183.76,
+    "end": 1190.24,
+    "text": "of two one or two denominations of like every every angle is being seen on this particular recursion"
+  },
+  {
+    "start": 1190.24,
+    "end": 1195.88,
+    "text": "tree but what are the time complexity of this recursion your now over here is it to the"
+  },
+  {
+    "start": 1195.88,
+    "end": 1201.0,
+    "text": "barren in all the other cases it is but over here it is we greater than like we"
+  },
+  {
+    "start": 1201.0,
+    "end": 1206.9,
+    "text": "we greater than we go off to the barren because for a particular index you're taking it and"
+  },
+  {
+    "start": 1206.9,
+    "end": 1212.6,
+    "text": "you're still standing on the same index so in order to analyze this you have to say that"
+  },
+  {
+    "start": 1212.6,
+    "end": 1218.11,
+    "text": "for every index the options that you have is not exactly true to the barren it can go"
+  },
+  {
+    "start": 1218.11,
+    "end": 1224.14,
+    "text": "beyond that thereby we can like in general in the interview you don't have to explain so much"
+  },
+  {
+    "start": 1224.14,
+    "end": 1230.82,
+    "text": "in call it as exponential because you cannot theoretically prove the time complexity so you can call it"
+  },
+  {
+    "start": 1230.82,
+    "end": 1237.04,
+    "text": "as exponential saying that every time our recurrence picks up it stands at the same index so for"
+  },
+  {
+    "start": 1237.04,
+    "end": 1242.48,
+    "text": "an index now we don't have two ways there can be multiple ways right so there can be"
+  },
+  {
+    "start": 1242.48,
+    "end": 1249.09,
+    "text": "a lot of ways the time complexity is exponential as of now whatever the space complexity they're using"
+  },
+  {
+    "start": 1249.09,
+    "end": 1254.02,
+    "text": "an auxiliary space of a bigo of n can we see this again no it's way way more"
+  },
+  {
+    "start": 1254.02,
+    "end": 1258.88,
+    "text": "than that why because if you are standing at the same index and if you look"
+  },
+  {
+    "start": 1258.88,
+    "end": 1265.29,
+    "text": "at the recursion tree because of the standing of the same index the auxiliary space is not bigo"
+  },
+  {
+    "start": 1265.29,
+    "end": 1271.09,
+    "text": "often it can go beyond beyond then that so at max it will be like assuming the minimum"
+  },
+  {
+    "start": 1271.09,
+    "end": 1276.89,
+    "text": "quantity nomination is one at max it can go up to ego of target assuming it reduces by"
+  },
+  {
+    "start": 1276.89,
+    "end": 1282.35,
+    "text": "one one one one it can go to target so again a very different problem in terms of"
+  },
+  {
+    "start": 1282.35,
+    "end": 1289.1,
+    "text": "time complexity in the space complexity the next step will be to definitely memorize this we can see"
+  },
+  {
+    "start": 1289.1,
+    "end": 1295.98,
+    "text": "that it's a very different problem like it's not the typical problem where you can easily say critical"
+  },
+  {
+    "start": 1295.98,
+    "end": 1302.05,
+    "text": "to the bar and because of this particular standing on the current index it tends to be far"
+  },
+  {
+    "start": 1302.05,
+    "end": 1308.93,
+    "text": "greater than the obvious problem so what's the next step obviously memorize and how do you memorize if"
+  },
+  {
+    "start": 1308.93,
+    "end": 1316.21,
+    "text": "there are overlapping sub problems so if you take bigger examples there will be overlapping sub problems and"
+  },
+  {
+    "start": 1316.21,
+    "end": 1322.42,
+    "text": "in order to memorize you look at which parameters are changing one is index one is target so"
+  },
+  {
+    "start": 1322.42,
+    "end": 1328.9,
+    "text": "whatever index is given to you and assuming the max target is target you'll require this size dp"
+  },
+  {
+    "start": 1328.9,
+    "end": 1334.63,
+    "text": "array in order to have it memorized so make sure you memorize it and you know step is"
+  },
+  {
+    "start": 1334.63,
+    "end": 1336.72,
+    "text": "very simple how do you memorize"
+  },
+  {
+    "start": 1336.72,
+    "end": 1343.97,
+    "text": "for go back yeah you basically write dp of index target equal to and over here you write"
+  },
+  {
+    "start": 1343.97,
+    "end": 1350.89,
+    "text": "if dp of index target is not equal to minus one you return dp of index target that's"
+  },
+  {
+    "start": 1350.89,
+    "end": 1358.72,
+    "text": "it that's what you easily do it couple of steps and you can memorize any recursion into dynamic"
+  },
+  {
+    "start": 1358.72,
+    "end": 1367.37,
+    "text": "programming now the moment you memorize this yes the moment you memorize this who are the time complexity"
+  },
+  {
+    "start": 1367.37,
+    "end": 1373.72,
+    "text": "now bg of n into target and the space complexity is not around bg of n into t"
+  },
+  {
+    "start": 1373.72,
+    "end": 1380.31,
+    "text": "but still the auxiliary space is around bg of target so I can be on that so this"
+  },
+  {
+    "start": 1380.31,
+    "end": 1387.23,
+    "text": "has to be still reduced and how can you reduce it very simple tabulation is a way to"
+  },
+  {
+    "start": 1387.23,
+    "end": 1394.65,
+    "text": "go yes so what are the steps to tabulate I've already told you it's very simple first base"
+  },
+  {
+    "start": 1394.65,
+    "end": 1403.63,
+    "text": "case second look at the parameters that are changing first parameter index next parameter target and write it"
+  },
+  {
+    "start": 1403.63,
+    "end": 1411.62,
+    "text": "in the opposite fashion third copy copy the recurrence you can convert any any memory I show into"
+  },
+  {
+    "start": 1411.62,
+    "end": 1415.68,
+    "text": "tabulation it's it's a matter of seconds so let's"
+  },
+  {
+    "start": 1415.68,
+    "end": 1421.84,
+    "text": "analyze the base case so we have to declare a dp of n and target plus one that's"
+  },
+  {
+    "start": 1421.84,
+    "end": 1428.38,
+    "text": "for sure so in order to analyze the base case let's look at the base case actually so"
+  },
+  {
+    "start": 1428.38,
+    "end": 1434.84,
+    "text": "what is the base case stating over here it states if index is zero and if the target"
+  },
+  {
+    "start": 1434.84,
+    "end": 1441.38,
+    "text": "is modulated of a of i what can be the values of target always think like don't think"
+  },
+  {
+    "start": 1441.38,
+    "end": 1448.31,
+    "text": "this target as the initial target it is not target when the index is zero like there might"
+  },
+  {
+    "start": 1448.31,
+    "end": 1454.7,
+    "text": "be a call for zero comma six there might be a call for zero comma seven there might"
+  },
+  {
+    "start": 1454.7,
+    "end": 1460.63,
+    "text": "be a call for zero comma eight it can be anything it can be anything so can I"
+  },
+  {
+    "start": 1460.63,
+    "end": 1466.71,
+    "text": "say the target can be anything from zero to e it can be anything from zero to t"
+  },
+  {
+    "start": 1466.71,
+    "end": 1472.17,
+    "text": "make sense so for anything from zero to t what does it have e by a of i"
+  },
+  {
+    "start": 1472.17,
+    "end": 1479.1,
+    "text": "if it is getting divided why don't you write that that's very simple to write go ahead and"
+  },
+  {
+    "start": 1479.1,
+    "end": 1485.72,
+    "text": "write it for any target from zero to the original target given to you if the target is"
+  },
+  {
+    "start": 1485.72,
+    "end": 1492.03,
+    "text": "modulated of a of i is equal to equal to zero or again probably write this in some"
+  },
+  {
+    "start": 1492.03,
+    "end": 1496.56,
+    "text": "other lines if the target t modulated of a of zero is equal"
+  },
+  {
+    "start": 1496.56,
+    "end": 1502.61,
+    "text": "to zero I can say dp of zero target is equal to a of or other target by"
+  },
+  {
+    "start": 1502.61,
+    "end": 1509.77,
+    "text": "a of zero else dp of zero target will be intmax that's what you wrote simple this is"
+  },
+  {
+    "start": 1509.77,
+    "end": 1516.59,
+    "text": "how the base case will be as simple as that just look over there and try to copy"
+  },
+  {
+    "start": 1516.59,
+    "end": 1524.09,
+    "text": "paste what about this your recursion runs from n minus one to zero zero is the base case"
+  },
+  {
+    "start": 1524.09,
+    "end": 1531.93,
+    "text": "works tabulation bottom up which is the bottom case one says start from one till n minus one"
+  },
+  {
+    "start": 1531.93,
+    "end": 1539.68,
+    "text": "whatever target you start it from target till zero go in the opposite fashion so it will be"
+  },
+  {
+    "start": 1539.68,
+    "end": 1547.09,
+    "text": "zero till target that's it I think I'm pretty much not so next step is copy the records"
+  },
+  {
+    "start": 1547.09,
+    "end": 1555.1,
+    "text": "so I'll show you that in the code now so basically given this minimum element function and the"
+  },
+  {
+    "start": 1555.1,
+    "end": 1562.17,
+    "text": "i norm and the target okay so we can write the function so let's start off to write"
+  },
+  {
+    "start": 1562.17,
+    "end": 1568.22,
+    "text": "the function i and df i and indx i and dp and you can get the vector as"
+  },
+  {
+    "start": 1568.22,
+    "end": 1574.78,
+    "text": "norms no you need anything else I don't think so i can say the base case is a"
+  },
+  {
+    "start": 1574.78,
+    "end": 1576.4,
+    "text": "very simple if indx"
+  },
+  {
+    "start": 1576.4,
+    "end": 1582.47,
+    "text": "is equal to zero if the target is more let's quickly check out if all the elements are"
+  },
+  {
+    "start": 1582.47,
+    "end": 1587.84,
+    "text": "greater than one yeah it is it is greater than one so if t moderated of a of"
+  },
+  {
+    "start": 1587.84,
+    "end": 1594.27,
+    "text": "zero or numps of zero rather is equal to zero we can definitely return something as what to"
+  },
+  {
+    "start": 1594.27,
+    "end": 1600.91,
+    "text": "say really something as t divided by numps of zero make sense or else we will return something"
+  },
+  {
+    "start": 1600.91,
+    "end": 1605.99,
+    "text": "as one in again not an index and there will be a not take case can I say"
+  },
+  {
+    "start": 1605.99,
+    "end": 1611.78,
+    "text": "the not take case will be very simple or zero plus f of index minus one the target"
+  },
+  {
+    "start": 1611.78,
+    "end": 1617.57,
+    "text": "sales stays as the same as the numps and can I say the take case initially will be"
+  },
+  {
+    "start": 1617.57,
+    "end": 1623.22,
+    "text": "in top max because we are looking for or rather you can just keep it as an index"
+  },
+  {
+    "start": 1623.22,
+    "end": 1629.29,
+    "text": "yeah that's perfect so what about the take case I definitely can pick it if it is less"
+  },
+  {
+    "start": 1629.29,
+    "end": 1634.94,
+    "text": "than equal to target and if I pick it there will be one coin and will still stay"
+  },
+  {
+    "start": 1634.94,
+    "end": 1640.73,
+    "text": "at the same because we can reuse it and the target reduces by numps of index and I"
+  },
+  {
+    "start": 1640.73,
+    "end": 1646.03,
+    "text": "can just pass on the numps and it goes and I can return the max of take and"
+  },
+  {
+    "start": 1646.03,
+    "end": 1651.68,
+    "text": "not take that should be fine and we will be returning the answer as f of n minus"
+  },
+  {
+    "start": 1651.68,
+    "end": 1653.52,
+    "text": "one and obviously n is not"
+  },
+  {
+    "start": 1653.52,
+    "end": 1659.75,
+    "text": "given over here so please make sure you can compute the n by taking numps rather numps dot"
+  },
+  {
+    "start": 1659.75,
+    "end": 1665.7,
+    "text": "size okay perfect and we can just pass on the target and the nump array and you should"
+  },
+  {
+    "start": 1665.7,
+    "end": 1672.27,
+    "text": "be fine let's quickly run this off so I can get some wrong answers it's because they've clearly"
+  },
+  {
+    "start": 1672.27,
+    "end": 1678.08,
+    "text": "stated if the answer is not possible bring to minus one so what we need to make sure"
+  },
+  {
+    "start": 1678.08,
+    "end": 1683.96,
+    "text": "is this make sure over here if yes just make sure over here probably you can keep the"
+  },
+  {
+    "start": 1683.96,
+    "end": 1689.56,
+    "text": "answer as this and then make sure if if yes if the answer is because what are you"
+  },
+  {
+    "start": 1689.56,
+    "end": 1696.89,
+    "text": "returning you're returning something as one in nine right so if by chance the answer goes somewhere beyond"
+  },
+  {
+    "start": 1696.89,
+    "end": 1702.91,
+    "text": "one in nine as number of steps return minus one or else whatever the answer is told you"
+  },
+  {
+    "start": 1702.91,
+    "end": 1708.65,
+    "text": "can just directly return it and then this should be fine now as you can see this is"
+  },
+  {
+    "start": 1708.65,
+    "end": 1714.67,
+    "text": "fine now and if I someone does this will this will definitely give Tery why am I submit"
+  },
+  {
+    "start": 1714.67,
+    "end": 1720.97,
+    "text": "take this now it's time to memorize this so let's quickly try to memorize this and in order"
+  },
+  {
+    "start": 1720.97,
+    "end": 1725.74,
+    "text": "to memorize this I'll take a vector d p r a and a size n and a vector"
+  },
+  {
+    "start": 1725.74,
+    "end": 1731.41,
+    "text": "another eight a target plus one and comma minus one and I can easily pass on the d"
+  },
+  {
+    "start": 1731.41,
+    "end": 1736.94,
+    "text": "p array over here let's call the d p array over here vector vector eight and d p"
+  },
+  {
+    "start": 1736.94,
+    "end": 1738.4,
+    "text": "where the d p will go"
+  },
+  {
+    "start": 1738.4,
+    "end": 1744.36,
+    "text": "over here also the d p will go and over here the d p will come across d"
+  },
+  {
+    "start": 1744.36,
+    "end": 1750.15,
+    "text": "p of index and d capital and over here if d p of index t is not equal"
+  },
+  {
+    "start": 1750.15,
+    "end": 1756.44,
+    "text": "to minus one return d p of index and t right and we can just or now quickly"
+  },
+  {
+    "start": 1756.44,
+    "end": 1763.99,
+    "text": "run this off and say if this is running fine there's now let's quickly submit this this is"
+  },
+  {
+    "start": 1763.99,
+    "end": 1771.04,
+    "text": "this is accepted but as I said the auxiliary space has to be removed as I never like"
+  },
+  {
+    "start": 1771.04,
+    "end": 1780.52,
+    "text": "as I don't like memorization because of the x-trogs, e-l-e-stacks space time to convert this into yeah tabulation"
+  },
+  {
+    "start": 1780.52,
+    "end": 1788.07,
+    "text": "first step make it zero this make sure this is numbs because we're gonna copy paste and we"
+  },
+  {
+    "start": 1788.07,
+    "end": 1794.53,
+    "text": "have used numbs over here and it's a first piece piece for i and d equal to i"
+  },
+  {
+    "start": 1794.53,
+    "end": 1802.08,
+    "text": "have already described this zero for every t lesser than target and t plus plus what is it"
+  },
+  {
+    "start": 1802.08,
+    "end": 1808.37,
+    "text": "going to be if the t is modulated by numbs of index that's zero then d p of"
+  },
+  {
+    "start": 1808.37,
+    "end": 1814.83,
+    "text": "zero of t will be the same thing that we have written over here else if it is"
+  },
+  {
+    "start": 1814.83,
+    "end": 1820.37,
+    "text": "not then d p of zero and t will be one in i the same thing that we"
+  },
+  {
+    "start": 1820.37,
+    "end": 1821.36,
+    "text": "have written"
+  },
+  {
+    "start": 1821.36,
+    "end": 1832.8,
+    "text": "over here if it is then this otherwise not written it wasn't next thing changing parameters index from"
+  },
+  {
+    "start": 1832.8,
+    "end": 1843.68,
+    "text": "one to n perfect next changing parameter target from zero to target with the right it wasn't next"
+  },
+  {
+    "start": 1843.68,
+    "end": 1852.43,
+    "text": "thing but we just take it go by now copy paste this is the same thing and just"
+  },
+  {
+    "start": 1852.43,
+    "end": 1862.3,
+    "text": "make sure instead of this write this portion I have taken to us just omit this change it"
+  },
+  {
+    "start": 1862.3,
+    "end": 1872.73,
+    "text": "instead of this write this changes of the done instead of it done have this over here instead"
+  },
+  {
+    "start": 1872.73,
+    "end": 1880.47,
+    "text": "of f of n minus one make it d p of n minus one target and change this"
+  },
+  {
+    "start": 1880.47,
+    "end": 1889.67,
+    "text": "I think we're pretty much done let me just quickly yeah it's like this is it so if"
+  },
+  {
+    "start": 1889.67,
+    "end": 1899.52,
+    "text": "you do this you're getting all the right answers let's see if this is correct so this is"
+  },
+  {
+    "start": 1899.52,
+    "end": 1907.39,
+    "text": "giving time limit exceeded partially accepted probably they would love you to space optimizes so let's quickly do"
+  },
+  {
+    "start": 1907.39,
+    "end": 1913.87,
+    "text": "a space optimization on this so as you know you'll be requiring a previous of target plus one"
+  },
+  {
+    "start": 1913.87,
+    "end": 1919.86,
+    "text": "comma zero and a current of a target plus one comma zero so why can you space optimise"
+  },
+  {
+    "start": 1919.86,
+    "end": 1926.9,
+    "text": "again the same reason that I've been teaching in the last 19 lectures whenever you see something like"
+  },
+  {
+    "start": 1926.9,
+    "end": 1933.1,
+    "text": "index minus one has just the previous row that unit it just the previous row so please do"
+  },
+  {
+    "start": 1933.1,
+    "end": 1938.6,
+    "text": "get first of all this is what the previous will be because in the first row d p"
+  },
+  {
+    "start": 1938.6,
+    "end": 1944.38,
+    "text": "of zero first row is done whatever the next thing instead of d p of index minus one"
+  },
+  {
+    "start": 1944.38,
+    "end": 1949.95,
+    "text": "this is going to be previous instead of d p of index this is going to be current"
+  },
+  {
+    "start": 1949.95,
+    "end": 1955.31,
+    "text": "instead of d p of index this is going to be current and right over here it is"
+  },
+  {
+    "start": 1955.31,
+    "end": 1961.51,
+    "text": "previous equal to current and what is over here it can be previous or index or curve what"
+  },
+  {
+    "start": 1961.51,
+    "end": 1967.36,
+    "text": "do we feel like so you just declare a couple of same columns size same number of and"
+  },
+  {
+    "start": 1967.36,
+    "end": 1973.14,
+    "text": "then you just make sure that instead of computing in terms of d p just take it draw"
+  },
+  {
+    "start": 1973.14,
+    "end": 1978.43,
+    "text": "wise and just transfer the code so if you see if I run this off I think this"
+  },
+  {
+    "start": 1978.43,
+    "end": 1980.32,
+    "text": "should be running yeah if I"
+  },
+  {
+    "start": 1980.32,
+    "end": 1985.14,
+    "text": "somewhat this let's see if this passes all the test cases or not it does it does so"
+  },
+  {
+    "start": 1985.14,
+    "end": 1991.76,
+    "text": "the space optimization solution is passing all the test cases that amulation memories in basalt that amulation did"
+  },
+  {
+    "start": 1991.76,
+    "end": 1996.76,
+    "text": "not not sure why it's it's mostly because I tell you the reason a lot of times happens"
+  },
+  {
+    "start": 1996.76,
+    "end": 2001.7,
+    "text": "is you can design test cases in such a way in mma action you actually don't visit all"
+  },
+  {
+    "start": 2001.7,
+    "end": 2006.93,
+    "text": "the all the end into target states so you might be visiting very less amount of states and"
+  },
+  {
+    "start": 2006.93,
+    "end": 2012.1,
+    "text": "there is an auxiliary space but you must be visiting a lot lesser number of states but if"
+  },
+  {
+    "start": 2012.1,
+    "end": 2017.68,
+    "text": "you look over here it exactly visits any target states all the states end into target states are"
+  },
+  {
+    "start": 2017.68,
+    "end": 2023.32,
+    "text": "visited over here that's the reason mostly sometimes it might happen but most of the time it does"
+  },
+  {
+    "start": 2023.32,
+    "end": 2028.2,
+    "text": "not so probably they have designed the test cases in such a way so guys that will be"
+  },
+  {
+    "start": 2028.2,
+    "end": 2033.2,
+    "text": "it for this video I hope you have understood this entire video so just in case you did"
+  },
+  {
+    "start": 2033.2,
+    "end": 2038.31,
+    "text": "please make sure like this video if you know if you are new to the channel please please"
+  },
+  {
+    "start": 2038.31,
+    "end": 2045.22,
+    "text": "please do consider subscribing and to continue our tradition please make sure you comment understood before leaving off"
+  },
+  {
+    "start": 2045.22,
+    "end": 2050.04,
+    "text": "this video and yeah with this let's stop all this video and we can the next one ill"
+  },
+  {
+    "start": 2050.04,
+    "end": 2052.24,
+    "text": "and go buy it again yeah you're golden"
+  }
+]

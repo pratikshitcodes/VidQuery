@@ -1,0 +1,2932 @@
+[
+  {
+    "start": 0.0,
+    "end": 2.9,
+    "text": "Avian, welcome back to Takey Forward."
+  },
+  {
+    "start": 2.9,
+    "end": 8.14,
+    "text": "We will be starting off with the new pattern that is VP on strings."
+  },
+  {
+    "start": 8.14,
+    "end": 13.3,
+    "text": "Okay, generally in DPN strings you'll find problems of comparison."
+  },
+  {
+    "start": 13.3,
+    "end": 17.13,
+    "text": "You'll find problems of replacements, edits, etc."
+  },
+  {
+    "start": 17.13,
+    "end": 24.33,
+    "text": "So these kind of patterns is what we will be solving and we'll be doing a bunch of problems."
+  },
+  {
+    "start": 24.33,
+    "end": 30.67,
+    "text": "And again, when we complete DPN strings you can solve any problem on DPN strings."
+  },
+  {
+    "start": 30.67,
+    "end": 32.23,
+    "text": "That's my guarantee."
+  },
+  {
+    "start": 32.23,
+    "end": 39.12,
+    "text": "So to start off with, let's take the first problem which is longest common sub sequence."
+  },
+  {
+    "start": 39.12,
+    "end": 46.01,
+    "text": "Yes, but if you're understanding that, let's understand this term sub sequence in depth."
+  },
+  {
+    "start": 46.01,
+    "end": 47.65,
+    "text": "What is sub sequence?"
+  },
+  {
+    "start": 47.65,
+    "end": 50.31,
+    "text": "So where it ABC is a sub sequence."
+  },
+  {
+    "start": 50.31,
+    "end": 56.02,
+    "text": "B is a sub sequence, C is a sub sequence, ABC is a sub sequence, ABC is a"
+  },
+  {
+    "start": 56.02,
+    "end": 61.5,
+    "text": "sub sequence, ABC is a sub sequence, MB string is also a sub sequence."
+  },
+  {
+    "start": 61.5,
+    "end": 64.4,
+    "text": "What is a sub sequence in a string S?"
+  },
+  {
+    "start": 64.4,
+    "end": 67.61,
+    "text": "You see, BC, repeat F, BC is consecutive."
+  },
+  {
+    "start": 67.61,
+    "end": 73.17,
+    "text": "And maintaining the order of B and C, maintaining the order of B and C."
+  },
+  {
+    "start": 73.17,
+    "end": 78.49,
+    "text": "You see, AC, AC is not consecutive, but maintaining the order of AC."
+  },
+  {
+    "start": 78.49,
+    "end": 82.0,
+    "text": "ABC is consecutive and maintaining the order."
+  },
+  {
+    "start": 82.0,
+    "end": 83.0,
+    "text": "Very simple."
+  },
+  {
+    "start": 83.0,
+    "end": 84.84,
+    "text": "It can be consecutive."
+  },
+  {
+    "start": 84.84,
+    "end": 87.01,
+    "text": "It can not be consecutive."
+  },
+  {
+    "start": 87.01,
+    "end": 97.11,
+    "text": "But as long as it maintains the order, maintains the order in the string, then you can call it as a sub sequence,  right?"
+  },
+  {
+    "start": 97.11,
+    "end": 106.8,
+    "text": "And in order to print all these sub sequences, you might be thinking,  Trevor, how do I print all the sub sequences?"
+  },
+  {
+    "start": 106.8,
+    "end": 112.9,
+    "text": "So in order to print all the sub sequences, you can use either power set."
+  },
+  {
+    "start": 112.9,
+    "end": 117.91,
+    "text": "I have a video on this, or you can use the recursion method."
+  },
+  {
+    "start": 117.91,
+    "end": 121.08,
+    "text": "Again, I have a video on both of them."
+  },
+  {
+    "start": 121.08,
+    "end": 128.01,
+    "text": "And if you watch the video for any given string, like this string is of a length 3."
+  },
+  {
+    "start": 128.01,
+    "end": 135.61,
+    "text": "And the number of sub sequences is 8,  including the MP1 where I say, I do not pick anyone."
+  },
+  {
+    "start": 135.61,
+    "end": 142.29,
+    "text": "So for a string of length to n, the number of sub sequences is 2 to the power n."
+  },
+  {
+    "start": 142.29,
+    "end": 142.71,
+    "text": "Okay?"
+  },
+  {
+    "start": 142.71,
+    "end": 145.63,
+    "text": "So that is what sub sequences mean."
+  },
+  {
+    "start": 145.63,
+    "end": 148.89,
+    "text": "So what is longest common sub sequence?"
+  },
+  {
+    "start": 148.89,
+    "end": 150.81,
+    "text": "What does this signify?"
+  },
+  {
+    "start": 150.81,
+    "end": 153.15,
+    "text": "What does this term signify?"
+  },
+  {
+    "start": 153.15,
+    "end": 158.49,
+    "text": "So I can say, over here, A, D, E is a sub sequence, A, D, B is a"
+  },
+  {
+    "start": 158.49,
+    "end": 164.5,
+    "text": "sub sequence, A, E, C is a sub sequence, D, B, C is a sub sequence, E, C"
+  },
+  {
+    "start": 164.5,
+    "end": 168.0,
+    "text": "is a sub sequence, D, C is a sub sequence,"
+  },
+  {
+    "start": 168.0,
+    "end": 174.8,
+    "text": "There can be 2 to the power 5 sub sequences, 32 different sub sequences."
+  },
+  {
+    "start": 174.8,
+    "end": 179.71,
+    "text": "Similarly, over here, there can be 32 sub sequences."
+  },
+  {
+    "start": 179.71,
+    "end": 180.18,
+    "text": "Okay?"
+  },
+  {
+    "start": 180.18,
+    "end": 187.55,
+    "text": "So I can say this guy can generate 32 sub sequences, namely, A, D, E, B, C, A,"
+  },
+  {
+    "start": 187.55,
+    "end": 190.1,
+    "text": "D, E, E, B, A, C and so on."
+  },
+  {
+    "start": 190.1,
+    "end": 195.48,
+    "text": "And this guy can also generate 32 sub sequences, correct?"
+  },
+  {
+    "start": 195.48,
+    "end": 201.53,
+    "text": "Namingly, D, C, A, D, B, D, C, D, A, D, D, D, D, D, B and so on."
+  },
+  {
+    "start": 201.53,
+    "end": 208.71,
+    "text": "Now what you need to do is, you need to take this A, does this A exist, yes?"
+  },
+  {
+    "start": 208.71,
+    "end": 215.89,
+    "text": "So as of now, the common sub sequence, one of the common sub sequences is A."
+  },
+  {
+    "start": 215.89,
+    "end": 217.12,
+    "text": "Does D exist?"
+  },
+  {
+    "start": 217.12,
+    "end": 217.5,
+    "text": "Yes."
+  },
+  {
+    "start": 217.5,
+    "end": 220.99,
+    "text": "One of the common sub sequences is D."
+  },
+  {
+    "start": 220.99,
+    "end": 222.31,
+    "text": "Does AD exist?"
+  },
+  {
+    "start": 222.31,
+    "end": 222.59,
+    "text": "No."
+  },
+  {
+    "start": 222.59,
+    "end": 225.9,
+    "text": "So AD is not a common sub sequence."
+  },
+  {
+    "start": 225.9,
+    "end": 226.66,
+    "text": "Does AC?"
+  },
+  {
+    "start": 226.66,
+    "end": 226.94,
+    "text": "No."
+  },
+  {
+    "start": 226.94,
+    "end": 227.7,
+    "text": "Does AB?"
+  },
+  {
+    "start": 227.7,
+    "end": 227.98,
+    "text": "No."
+  },
+  {
+    "start": 227.98,
+    "end": 238.37,
+    "text": "Similarly, have to go on writing and you will see AD, B exist over here, AD, B and AD, B also exist over here."
+  },
+  {
+    "start": 238.37,
+    "end": 243.0,
+    "text": "So you will find AD, B is common in both of them."
+  },
+  {
+    "start": 243.0,
+    "end": 248.4,
+    "text": "And you have to find among all common sub sequences, which one is the longest."
+  },
+  {
+    "start": 248.4,
+    "end": 251.24,
+    "text": "So AD, B is the longest that you'll find."
+  },
+  {
+    "start": 251.24,
+    "end": 255.19,
+    "text": "Yeah, there was a, there was D, but you need the longest."
+  },
+  {
+    "start": 255.19,
+    "end": 256.85,
+    "text": "So the longest is AD, B."
+  },
+  {
+    "start": 256.85,
+    "end": 258.72,
+    "text": "What is the length of this?"
+  },
+  {
+    "start": 258.72,
+    "end": 259.14,
+    "text": "Three."
+  },
+  {
+    "start": 259.14,
+    "end": 261.08,
+    "text": "The length of this is three."
+  },
+  {
+    "start": 261.08,
+    "end": 265.1,
+    "text": "So you need to tell me the length of this, which is three."
+  },
+  {
+    "start": 265.1,
+    "end": 266.69,
+    "text": "So that's the question."
+  },
+  {
+    "start": 266.69,
+    "end": 268.28,
+    "text": "Please straightforward."
+  },
+  {
+    "start": 268.28,
+    "end": 271.95,
+    "text": "Now you might think, Strava, let's apply brute force."
+  },
+  {
+    "start": 271.95,
+    "end": 273.4,
+    "text": "Okay, that's correct."
+  },
+  {
+    "start": 273.4,
+    "end": 274.99,
+    "text": "What's the brute force?"
+  },
+  {
+    "start": 274.99,
+    "end": 277.55,
+    "text": "Generate all the 30 to sub sequences."
+  },
+  {
+    "start": 277.55,
+    "end": 281.01,
+    "text": "Generate all the 30 to sub sequences on this side."
+  },
+  {
+    "start": 281.01,
+    "end": 286.76,
+    "text": "And then do a linear comparison of both and find manually which one is the longest."
+  },
+  {
+    "start": 286.76,
+    "end": 292.99,
+    "text": "But in order to do that, you have to actually generate all the 30 to sub sequences because"
+  },
+  {
+    "start": 292.99,
+    "end": 299.5,
+    "text": "generate A, 1, compare, A, 1, compare, A, 1, compare, A, 1, compare, and get the longest among"
+  },
+  {
+    "start": 299.5,
+    "end": 299.85,
+    "text": "them."
+  },
+  {
+    "start": 299.85,
+    "end": 307.88,
+    "text": "So that's gonna be true to the power n because you have to generate all of the sub sequences, exponential in nature."
+  },
+  {
+    "start": 307.88,
+    "end": 311.76,
+    "text": "So the brute force is going to be exponential in nature."
+  },
+  {
+    "start": 311.76,
+    "end": 314.53,
+    "text": "Hence, a pattern that I will not follow."
+  },
+  {
+    "start": 314.53,
+    "end": 320.9,
+    "text": "But if you want to generate all the sub sequences, feel free to watch out the Powerset video"
+  },
+  {
+    "start": 320.9,
+    "end": 326.0,
+    "text": "or the recursion video that I will be leaving the link in the description."
+  },
+  {
+    "start": 326.0,
+    "end": 329.2,
+    "text": "Okay, so if not brute force then what?"
+  },
+  {
+    "start": 329.2,
+    "end": 337.97,
+    "text": "Then my brain says, okay, let's do some, let's generate all the sub sequences and try to do comparisons."
+  },
+  {
+    "start": 337.97,
+    "end": 345.14,
+    "text": "Okay, generate, that's what we did, generate all sub sequences and compare on weight."
+  },
+  {
+    "start": 345.14,
+    "end": 347.08,
+    "text": "That's what I'll think."
+  },
+  {
+    "start": 347.08,
+    "end": 355.01,
+    "text": "And that's a standard way, like you have to generate all sub sequences as a compare on weight."
+  },
+  {
+    "start": 355.01,
+    "end": 362.77,
+    "text": "That's a standard way that we generally do in a recursion or like and on the beyond strings."
+  },
+  {
+    "start": 362.77,
+    "end": 365.38,
+    "text": "I'll be telling you about that."
+  },
+  {
+    "start": 365.38,
+    "end": 369.76,
+    "text": "So you will be sending to follow a recursion method."
+  },
+  {
+    "start": 369.76,
+    "end": 377.6,
+    "text": "Where you will not generate these, instead of that, you will use parameters to generate them."
+  },
+  {
+    "start": 377.6,
+    "end": 379.62,
+    "text": "I'll be showing you how."
+  },
+  {
+    "start": 379.62,
+    "end": 383.5,
+    "text": "So first let's understand something in deeply."
+  },
+  {
+    "start": 383.5,
+    "end": 385.36,
+    "text": "Let's take an example."
+  },
+  {
+    "start": 385.36,
+    "end": 387.38,
+    "text": "So quickly, a CD and CD."
+  },
+  {
+    "start": 387.38,
+    "end": 392.27,
+    "text": "So these are the two strings that you're looking to solve."
+  },
+  {
+    "start": 392.27,
+    "end": 393.45,
+    "text": "A CD and C ed."
+  },
+  {
+    "start": 393.45,
+    "end": 393.87,
+    "text": "Okay."
+  },
+  {
+    "start": 393.87,
+    "end": 399.69,
+    "text": "Now if you go to generate all the sub sequences, a C, D, a C, a D, C,"
+  },
+  {
+    "start": 399.69,
+    "end": 404.67,
+    "text": "D, a C, D, a C, D, and over here we see the C, C, C, D, and"
+  },
+  {
+    "start": 404.67,
+    "end": 406.95,
+    "text": "E, C, D, C, D, and E, C, D."
+  },
+  {
+    "start": 406.95,
+    "end": 411.0,
+    "text": "That you figure out the longest being CD and CD."
+  },
+  {
+    "start": 411.0,
+    "end": 415.24,
+    "text": "So thereby this is the longest we just have lent to."
+  },
+  {
+    "start": 415.24,
+    "end": 419.31,
+    "text": "But if you generate this, that doesn't make sense."
+  },
+  {
+    "start": 419.31,
+    "end": 423.22,
+    "text": "That's why we will try to write some recurrence."
+  },
+  {
+    "start": 423.22,
+    "end": 433.16,
+    "text": "Yes, we'll try to write some recurrence that probably gives me the answer through the way, through the way is my question."
+  },
+  {
+    "start": 433.16,
+    "end": 433.57,
+    "text": "Okay."
+  },
+  {
+    "start": 433.57,
+    "end": 433.81,
+    "text": "So."
+  },
+  {
+    "start": 433.81,
+    "end": 439.19,
+    "text": "Solving this entire portion, this entire string and entire string."
+  },
+  {
+    "start": 439.19,
+    "end": 439.6,
+    "text": "Okay."
+  },
+  {
+    "start": 439.6,
+    "end": 445.22,
+    "text": "And generally, generally, what are the rules to write the recurrence?"
+  },
+  {
+    "start": 445.22,
+    "end": 449.95,
+    "text": "Let's quickly just jot down the rules to write recurrence."
+  },
+  {
+    "start": 449.95,
+    "end": 456.63,
+    "text": "And then we will try to follow those parts express everything in terms of indexes."
+  },
+  {
+    "start": 456.63,
+    "end": 457.28,
+    "text": "Explore."
+  },
+  {
+    "start": 457.28,
+    "end": 458.91,
+    "text": "Ready on that index."
+  },
+  {
+    "start": 458.91,
+    "end": 459.72,
+    "text": "That's it."
+  },
+  {
+    "start": 459.72,
+    "end": 463.63,
+    "text": "Explore possibility on that index is what we do."
+  },
+  {
+    "start": 463.63,
+    "end": 468.44,
+    "text": "Eat the best among them because you're looking for longest."
+  },
+  {
+    "start": 468.44,
+    "end": 470.4,
+    "text": "Eat the best among them."
+  },
+  {
+    "start": 470.4,
+    "end": 474.64,
+    "text": "These are the three rules that you generally follow."
+  },
+  {
+    "start": 474.64,
+    "end": 477.98,
+    "text": "Now express everything in terms of index."
+  },
+  {
+    "start": 477.98,
+    "end": 478.39,
+    "text": "Okay."
+  },
+  {
+    "start": 478.39,
+    "end": 486.62,
+    "text": "So either you can carry this entire string or you can say, Hilson probably I can have a pointer here."
+  },
+  {
+    "start": 486.62,
+    "end": 488.0,
+    "text": "Let's understand."
+  },
+  {
+    "start": 488.0,
+    "end": 493.94,
+    "text": "Probably I can have a pointer here, which is somewhere around index 2."
+  },
+  {
+    "start": 493.94,
+    "end": 497.76,
+    "text": "And f of 2 signifies the string till index 2."
+  },
+  {
+    "start": 497.76,
+    "end": 498.18,
+    "text": "Okay."
+  },
+  {
+    "start": 498.18,
+    "end": 505.05,
+    "text": "But earlier you can say I can keep a pointer here, but just again index 2 f of 2."
+  },
+  {
+    "start": 505.05,
+    "end": 508.44,
+    "text": "Again signifies the string till index 2."
+  },
+  {
+    "start": 508.44,
+    "end": 510.22,
+    "text": "Something to observe."
+  },
+  {
+    "start": 510.22,
+    "end": 514.29,
+    "text": "A single index can not express both the strings."
+  },
+  {
+    "start": 514.29,
+    "end": 518.36,
+    "text": "A single index can not express both the strings."
+  },
+  {
+    "start": 518.36,
+    "end": 522.69,
+    "text": "Thereby I will have to represent them by 2 indexes."
+  },
+  {
+    "start": 522.69,
+    "end": 530.83,
+    "text": "After represent them by 2 indexes where index 1 represents this guy index 2 represents this guy."
+  },
+  {
+    "start": 530.83,
+    "end": 536.17,
+    "text": "That's the first modification that you have to do in the rules."
+  },
+  {
+    "start": 536.17,
+    "end": 544.14,
+    "text": "Since you're dealing with couple of strings, you express them in terms of index 1 and index 2."
+  },
+  {
+    "start": 544.14,
+    "end": 545.16,
+    "text": "Very simple."
+  },
+  {
+    "start": 545.16,
+    "end": 551.35,
+    "text": "Like in all the array problems, you express everything in terms of index."
+  },
+  {
+    "start": 551.35,
+    "end": 553.64,
+    "text": "Because there was an index."
+  },
+  {
+    "start": 553.64,
+    "end": 559.49,
+    "text": "Then you decided to take not take our similar kind of things you did."
+  },
+  {
+    "start": 559.49,
+    "end": 565.6,
+    "text": "Over here, we will have index 1 and index 2, which will be representing."
+  },
+  {
+    "start": 565.6,
+    "end": 568.0,
+    "text": "So can I say if I omit this."
+  },
+  {
+    "start": 568.0,
+    "end": 574.95,
+    "text": "And I write this something as f of 2 comma 2 or rather let's write it in a"
+  },
+  {
+    "start": 574.95,
+    "end": 579.83,
+    "text": "smaller way f of 2 comma 2 what does this represent?"
+  },
+  {
+    "start": 579.83,
+    "end": 586.03,
+    "text": "L me the LCS of string 0 to 2 string 1 0 to 2 and string 2 0 to 2."
+  },
+  {
+    "start": 586.03,
+    "end": 589.98,
+    "text": "This is what this f of 2 2 will represent."
+  },
+  {
+    "start": 589.98,
+    "end": 593.93,
+    "text": "So we have understood the expressing term."
+  },
+  {
+    "start": 593.93,
+    "end": 600.88,
+    "text": "If I'm writing something as f of let's say 2 and 5 what does this signify?"
+  },
+  {
+    "start": 600.88,
+    "end": 605.29,
+    "text": "Just take signifies give me the longest common."
+  },
+  {
+    "start": 605.29,
+    "end": 613.09,
+    "text": "The longest common sequence between string f1 0 to 2 and string s2 0 to 5 a smaller"
+  },
+  {
+    "start": 613.09,
+    "end": 617.04,
+    "text": "string and a larger string signifies this."
+  },
+  {
+    "start": 617.04,
+    "end": 624.37,
+    "text": "So I hope you have got an idea what I'm meaning to say by index 1 and index 2."
+  },
+  {
+    "start": 624.37,
+    "end": 627.0,
+    "text": "So this we have figured out."
+  },
+  {
+    "start": 627.0,
+    "end": 637.71,
+    "text": "Now time to explore all possibilities because if you do not explore all possibilities, we will be having an issue."
+  },
+  {
+    "start": 637.71,
+    "end": 641.66,
+    "text": "So let's try to explore all possibilities."
+  },
+  {
+    "start": 641.66,
+    "end": 643.91,
+    "text": "Let's try to write them."
+  },
+  {
+    "start": 643.91,
+    "end": 645.6,
+    "text": "So can I see this?"
+  },
+  {
+    "start": 645.6,
+    "end": 647.0,
+    "text": "Can I see this?"
+  },
+  {
+    "start": 647.0,
+    "end": 654.57,
+    "text": "Okay, I'm having the string a cd and c ed and I'm having couple of pointers over here"
+  },
+  {
+    "start": 654.57,
+    "end": 658.13,
+    "text": "and this is index 1 and this is index 2."
+  },
+  {
+    "start": 658.13,
+    "end": 671.57,
+    "text": "So a very straightforward question is if they're matching because this d like do comparison character wise room with this do comparison character wise."
+  },
+  {
+    "start": 671.57,
+    "end": 679.67,
+    "text": "So this d and this d is matching that's something we can see this d and this d is matching."
+  },
+  {
+    "start": 679.67,
+    "end": 684.3,
+    "text": "So can I say if I just do not think of these things."
+  },
+  {
+    "start": 684.3,
+    "end": 687.33,
+    "text": "And this d and this d is matching."
+  },
+  {
+    "start": 687.33,
+    "end": 691.34,
+    "text": "Can I see I got a sub sequence of length one."
+  },
+  {
+    "start": 691.34,
+    "end": 699.8,
+    "text": "I got a sub sequence of length one that is d which is common in both of them again makes sense."
+  },
+  {
+    "start": 699.8,
+    "end": 707.01,
+    "text": "There by I can probably say one of the possibilities that I can have is I got one"
+  },
+  {
+    "start": 707.01,
+    "end": 714.75,
+    "text": "sub sequence of length and then I shrink the string and I shrink the string and say the"
+  },
+  {
+    "start": 714.75,
+    "end": 721.87,
+    "text": "new string is ac and c in which probably you can find an answer in which you can"
+  },
+  {
+    "start": 721.87,
+    "end": 724.0,
+    "text": "probably find an answer."
+  },
+  {
+    "start": 724.0,
+    "end": 731.07,
+    "text": "So does that make sense it does because if these guys are matching now you just have to"
+  },
+  {
+    "start": 731.07,
+    "end": 739.03,
+    "text": "pick these two strings and it has then what's the common what's the longest common in them because"
+  },
+  {
+    "start": 739.03,
+    "end": 741.39,
+    "text": "I've done for d which is one."
+  },
+  {
+    "start": 741.39,
+    "end": 742.28,
+    "text": "What is ac?"
+  },
+  {
+    "start": 742.28,
+    "end": 748.7,
+    "text": "Excitio or does ac this index will come here which is index one so I can see ac"
+  },
+  {
+    "start": 748.7,
+    "end": 754.96,
+    "text": "is index one over here c is index two over here which is nothing but f of one"
+  },
+  {
+    "start": 754.96,
+    "end": 761.38,
+    "text": "comma one f of one comma one why f of one comma one very simple because one for"
+  },
+  {
+    "start": 761.38,
+    "end": 768.12,
+    "text": "the steam and I shrink the string this is the string so that's f of one which means"
+  },
+  {
+    "start": 768.12,
+    "end": 770.96,
+    "text": "zero to one is the string and this."
+  },
+  {
+    "start": 770.96,
+    "end": 777.05,
+    "text": "d you took so again zero to one so f of another one is there that's how you"
+  },
+  {
+    "start": 777.05,
+    "end": 781.52,
+    "text": "can do it if they are matching so if character matches."
+  },
+  {
+    "start": 781.52,
+    "end": 785.83,
+    "text": "Index one matches with index two can I write this as."
+  },
+  {
+    "start": 785.83,
+    "end": 792.33,
+    "text": "I will add one to the answer and I'll reduce index by one and the other index by"
+  },
+  {
+    "start": 792.33,
+    "end": 798.5,
+    "text": "one as well can I see this I'll reduce index one by one and index two by one"
+  },
+  {
+    "start": 798.5,
+    "end": 805.0,
+    "text": "as well and this is going to be the recurrence if both of the guys are matching."
+  },
+  {
+    "start": 805.0,
+    "end": 812.07,
+    "text": "Okay, so we have a probably done one possibility you've done one possibility over here which is if"
+  },
+  {
+    "start": 812.07,
+    "end": 818.13,
+    "text": "both of them are matching then it's kind of very simple enough you say one plus f of"
+  },
+  {
+    "start": 818.13,
+    "end": 822.6,
+    "text": "index one minus one index to minus one and that's going to be."
+  },
+  {
+    "start": 822.6,
+    "end": 829.17,
+    "text": "to be the case if match on indexes if match on indexes that's one possibility okay now what"
+  },
+  {
+    "start": 829.17,
+    "end": 836.39,
+    "text": "about the other possibility because what if they do not match because in all the string problems you"
+  },
+  {
+    "start": 836.39,
+    "end": 843.32,
+    "text": "know in all the comparison of string problems you'll see match and not match match and not match"
+  },
+  {
+    "start": 843.32,
+    "end": 846.06,
+    "text": "in previous problems of arrays it was."
+  },
+  {
+    "start": 846.06,
+    "end": 852.48,
+    "text": "It was pick not pick over here will be match not match so matches you'll generally add to"
+  },
+  {
+    "start": 852.48,
+    "end": 859.41,
+    "text": "the answer and it'll move back by index in matches you'll generally add the answer and move back"
+  },
+  {
+    "start": 859.41,
+    "end": 864.68,
+    "text": "by index similar to pick similar to pick when you move one back one back."
+  },
+  {
+    "start": 864.68,
+    "end": 871.46,
+    "text": "Okay, so what about non match let's talk about non match what if they're not matching yes what"
+  },
+  {
+    "start": 871.46,
+    "end": 877.81,
+    "text": "if they're not matching because in the next step it'll be AC and see what if they're not"
+  },
+  {
+    "start": 877.81,
+    "end": 879.18,
+    "text": "matching let's see."
+  },
+  {
+    "start": 879.18,
+    "end": 884.88,
+    "text": "If I have AC and see and they're not matching something I know for sure is if I"
+  },
+  {
+    "start": 884.88,
+    "end": 888.0,
+    "text": "go ahead this see will match with this see."
+  },
+  {
+    "start": 888.0,
+    "end": 893.73,
+    "text": "But as of now my index one is standing here my index two is standing here so."
+  },
+  {
+    "start": 893.73,
+    "end": 901.02,
+    "text": "How will I go and compare this CNC because as of now I'm standing at you if I move them both back."
+  },
+  {
+    "start": 901.02,
+    "end": 906.75,
+    "text": "I will miss out on a comparison of C I'll miss out on a comparison of C right"
+  },
+  {
+    "start": 906.75,
+    "end": 912.11,
+    "text": "or what if there was an E here so this E would have matched with this E."
+  },
+  {
+    "start": 912.11,
+    "end": 917.91,
+    "text": "So I can also miss out on the comparison of E as well you understand if I read"
+  },
+  {
+    "start": 917.91,
+    "end": 920.29,
+    "text": "EC then what do happen this see."
+  },
+  {
+    "start": 920.29,
+    "end": 926.99,
+    "text": "And this see might match because they're standing in the other places or this E and this E"
+  },
+  {
+    "start": 926.99,
+    "end": 931.68,
+    "text": "might might not match any because they're standing at opposite."
+  },
+  {
+    "start": 931.68,
+    "end": 937.48,
+    "text": "Standing at different places thereby you have to apply your brain hearing you."
+  },
+  {
+    "start": 937.48,
+    "end": 943.43,
+    "text": "There by if you have to apply your brain in such a way that you explode both the"
+  },
+  {
+    "start": 943.43,
+    "end": 948.04,
+    "text": "possibilities yes what are the both the possibilities you say."
+  },
+  {
+    "start": 948.04,
+    "end": 951.69,
+    "text": "For example let's just to understand let's do it."
+  },
+  {
+    "start": 951.69,
+    "end": 953.48,
+    "text": "You will say hey listen."
+  },
+  {
+    "start": 953.48,
+    "end": 956.68,
+    "text": "Let's do one thing let's move only one guy."
+  },
+  {
+    "start": 956.68,
+    "end": 963.97,
+    "text": "I like okay but which guy let's try both because in both the directions you might find the answer."
+  },
+  {
+    "start": 963.97,
+    "end": 968.0,
+    "text": "I like okay this C did not match with E did not match."
+  },
+  {
+    "start": 968.0,
+    "end": 974.67,
+    "text": "But this E might match with the C I'll be like okay this C did not match with"
+  },
+  {
+    "start": 974.67,
+    "end": 977.79,
+    "text": "E but this E might match with the C."
+  },
+  {
+    "start": 977.79,
+    "end": 979.44,
+    "text": "Let's do one thing."
+  },
+  {
+    "start": 979.44,
+    "end": 982.3,
+    "text": "Let's move the index of one only."
+  },
+  {
+    "start": 982.3,
+    "end": 985.24,
+    "text": "Let's keep the index two as it is."
+  },
+  {
+    "start": 985.24,
+    "end": 991.91,
+    "text": "And since they're not matching they answer added to the longest will be zero."
+  },
+  {
+    "start": 991.91,
+    "end": 993.3,
+    "text": "Okay make sense."
+  },
+  {
+    "start": 993.3,
+    "end": 1001.09,
+    "text": "I will like that that does make sense because as this move this index I'll keep it because"
+  },
+  {
+    "start": 1001.09,
+    "end": 1005.16,
+    "text": "this guy might match in future with these guys."
+  },
+  {
+    "start": 1005.16,
+    "end": 1008.62,
+    "text": "Okay but then you'll miss out on this C."
+  },
+  {
+    "start": 1008.62,
+    "end": 1011.91,
+    "text": "Okay let's take the other way as well."
+  },
+  {
+    "start": 1011.91,
+    "end": 1019.18,
+    "text": "Where I say okay listen let's keep E C that means let's keep index one let's move C."
+  },
+  {
+    "start": 1019.18,
+    "end": 1021.0,
+    "text": "Let's move index two."
+  },
+  {
+    "start": 1021.0,
+    "end": 1023.25,
+    "text": "Let's move index two here."
+  },
+  {
+    "start": 1023.25,
+    "end": 1024.64,
+    "text": "Okay make sense."
+  },
+  {
+    "start": 1024.64,
+    "end": 1030.18,
+    "text": "Now the C and C might match out why because of match on indexes."
+  },
+  {
+    "start": 1030.18,
+    "end": 1034.77,
+    "text": "In the next step E and E will go on match on indexes."
+  },
+  {
+    "start": 1034.77,
+    "end": 1038.75,
+    "text": "And over here there's a plus zero that's sure."
+  },
+  {
+    "start": 1038.75,
+    "end": 1042.39,
+    "text": "But did you understand what I tried to do?"
+  },
+  {
+    "start": 1042.39,
+    "end": 1043.0,
+    "text": "I said,"
+  },
+  {
+    "start": 1043.0,
+    "end": 1048.7,
+    "text": "If they're not matching let's either move this or either move this."
+  },
+  {
+    "start": 1048.7,
+    "end": 1051.25,
+    "text": "There's the both depositories."
+  },
+  {
+    "start": 1051.25,
+    "end": 1053.04,
+    "text": "Okay does make sense."
+  },
+  {
+    "start": 1053.04,
+    "end": 1061.13,
+    "text": "So can I say if not match then the answer added will be zero for sure because there is no lens."
+  },
+  {
+    "start": 1061.13,
+    "end": 1063.34,
+    "text": "Okay that you're matching."
+  },
+  {
+    "start": 1063.34,
+    "end": 1067.68,
+    "text": "Okay plus F of index minus one is what you will go."
+  },
+  {
+    "start": 1067.68,
+    "end": 1075.0,
+    "text": "So I index one minus one is what you'll go and I'll keep the index two or you will go."
+  },
+  {
+    "start": 1075.0,
+    "end": 1084.28,
+    "text": "You'll keep the index one and you will go the index two minus one and you will take the max of both the guys."
+  },
+  {
+    "start": 1084.28,
+    "end": 1089.56,
+    "text": "Yes you'll take the max of either this guy or either this guy."
+  },
+  {
+    "start": 1089.56,
+    "end": 1096.54,
+    "text": "And you can easily just move this or you can easily move this and the max of this."
+  },
+  {
+    "start": 1096.54,
+    "end": 1104.46,
+    "text": "And this is what you will get the answer like either solve this guy or either solve this guy."
+  },
+  {
+    "start": 1104.46,
+    "end": 1110.25,
+    "text": "Whatever gives you the maximum answer is going to be the max answer."
+  },
+  {
+    "start": 1110.25,
+    "end": 1113.14,
+    "text": "This is what if not match will be."
+  },
+  {
+    "start": 1113.14,
+    "end": 1118.0,
+    "text": "So we have also explored all possibilities on that index."
+  },
+  {
+    "start": 1118.0,
+    "end": 1119.74,
+    "text": "Take the best among them."
+  },
+  {
+    "start": 1119.74,
+    "end": 1122.04,
+    "text": "We're taking the best among them."
+  },
+  {
+    "start": 1122.04,
+    "end": 1129.15,
+    "text": "You either take on match you either take this and they do not match you take the best of this or this."
+  },
+  {
+    "start": 1129.15,
+    "end": 1132.08,
+    "text": "So you also done take the best among them."
+  },
+  {
+    "start": 1132.08,
+    "end": 1136.4,
+    "text": "So that's how you can easily think in terms of D p on strings."
+  },
+  {
+    "start": 1136.4,
+    "end": 1138.84,
+    "text": "I'll be drawing the recursion tree."
+  },
+  {
+    "start": 1138.84,
+    "end": 1141.28,
+    "text": "I'll be drawing the recursion tree."
+  },
+  {
+    "start": 1141.28,
+    "end": 1146.23,
+    "text": "But that's how you can easily think of D p on strings or the base case."
+  },
+  {
+    "start": 1146.23,
+    "end": 1147.97,
+    "text": "We will think about that."
+  },
+  {
+    "start": 1147.97,
+    "end": 1154.04,
+    "text": "Let's try to write as of now the code in short and then I'll think about the base case."
+  },
+  {
+    "start": 1154.04,
+    "end": 1159.13,
+    "text": "So I'll be like okay, f of indexes f of index one and index two is there."
+  },
+  {
+    "start": 1159.13,
+    "end": 1160.25,
+    "text": "That's for sure."
+  },
+  {
+    "start": 1160.25,
+    "end": 1162.55,
+    "text": "Let's forget about the base case."
+  },
+  {
+    "start": 1162.55,
+    "end": 1163.88,
+    "text": "What are the cases?"
+  },
+  {
+    "start": 1163.88,
+    "end": 1165.55,
+    "text": "Match or dot match okay."
+  },
+  {
+    "start": 1165.55,
+    "end": 1172.04,
+    "text": "So if they match can I say if they match then it'll be index one equal to equal to index two."
+  },
+  {
+    "start": 1172.04,
+    "end": 1172.74,
+    "text": "It can be."
+  },
+  {
+    "start": 1172.74,
+    "end": 1174.13,
+    "text": "And what do we have?"
+  },
+  {
+    "start": 1174.13,
+    "end": 1179.85,
+    "text": "The answer is very simple one of f of index one will also move index two will also"
+  },
+  {
+    "start": 1179.85,
+    "end": 1182.36,
+    "text": "move and you can easily return them."
+  },
+  {
+    "start": 1182.36,
+    "end": 1188.92,
+    "text": "So if this line does not if this line executes the program returns over here and it goes back."
+  },
+  {
+    "start": 1188.92,
+    "end": 1198.0,
+    "text": "The rest lines will never execute remember if this if executes the program returns over here and these lines will not be executed."
+  },
+  {
+    "start": 1198.0,
+    "end": 1200.07,
+    "text": "So I'll write the next lines."
+  },
+  {
+    "start": 1200.07,
+    "end": 1201.71,
+    "text": "What is the next lines?"
+  },
+  {
+    "start": 1201.71,
+    "end": 1204.13,
+    "text": "The next line will be very simple."
+  },
+  {
+    "start": 1204.13,
+    "end": 1207.48,
+    "text": "I'll be saying either if this is not happening."
+  },
+  {
+    "start": 1207.48,
+    "end": 1210.69,
+    "text": "If this is not happening they're by no match."
+  },
+  {
+    "start": 1210.69,
+    "end": 1213.97,
+    "text": "If no match can I say the answer will be zero."
+  },
+  {
+    "start": 1213.97,
+    "end": 1219.38,
+    "text": "Plus I will move the index one by one and I'll move the index two minus one."
+  },
+  {
+    "start": 1219.38,
+    "end": 1221.73,
+    "text": "Sorry index 12 keep it like this."
+  },
+  {
+    "start": 1221.73,
+    "end": 1227.29,
+    "text": "Or I will be keeping the index one and I'll move the index two by one and I'll"
+  },
+  {
+    "start": 1227.29,
+    "end": 1229.64,
+    "text": "take the max of the best of them."
+  },
+  {
+    "start": 1229.64,
+    "end": 1232.99,
+    "text": "The best of them and that's what I will return."
+  },
+  {
+    "start": 1232.99,
+    "end": 1240.61,
+    "text": "If they're matching it's fine if they're not matching then take the max of these couple of guys and return."
+  },
+  {
+    "start": 1240.61,
+    "end": 1243.67,
+    "text": "So we just write it in a sophisticated way."
+  },
+  {
+    "start": 1243.67,
+    "end": 1251.22,
+    "text": "In a sophisticated way it will look something like this like zero plus zero doesn't have any significance."
+  },
+  {
+    "start": 1251.22,
+    "end": 1255.64,
+    "text": "This is when not match this one match as simple as it can get."
+  },
+  {
+    "start": 1255.64,
+    "end": 1259.49,
+    "text": "So that's what about that was about the possibilities."
+  },
+  {
+    "start": 1259.49,
+    "end": 1262.7,
+    "text": "But what is the other thing that's remaining?"
+  },
+  {
+    "start": 1262.7,
+    "end": 1264.2,
+    "text": "That's base case yes."
+  },
+  {
+    "start": 1264.2,
+    "end": 1266.27,
+    "text": "Something which is base case."
+  },
+  {
+    "start": 1266.27,
+    "end": 1269.26,
+    "text": "So can I say when will the base case come?"
+  },
+  {
+    "start": 1269.26,
+    "end": 1273.0,
+    "text": "Let's come back and see when will the base case come?"
+  },
+  {
+    "start": 1273.0,
+    "end": 1278.58,
+    "text": "Can I say I'm a T I'm a T at this portion would will happen."
+  },
+  {
+    "start": 1278.58,
+    "end": 1285.37,
+    "text": "You will see I'll do plus one because because this E matches with this E."
+  },
+  {
+    "start": 1285.37,
+    "end": 1293.0,
+    "text": "And thereby this index will go minus one and the other one will also go minus one."
+  },
+  {
+    "start": 1293.0,
+    "end": 1301.0,
+    "text": "But if this guy goes minus one it will go to negative because this was the zero index."
+  },
+  {
+    "start": 1301.0,
+    "end": 1308.25,
+    "text": "And if it goes to negative it's over and similarly over here this will happen."
+  },
+  {
+    "start": 1308.25,
+    "end": 1315.5,
+    "text": "They are matching index two will go to negative index two will go to negative."
+  },
+  {
+    "start": 1315.5,
+    "end": 1317.92,
+    "text": "This will become negative."
+  },
+  {
+    "start": 1317.92,
+    "end": 1322.94,
+    "text": "Oh yeah this becomes negative because they've matched."
+  },
+  {
+    "start": 1322.94,
+    "end": 1334.47,
+    "text": "So when you're comparing when you're comparing either of index one becomes negative or either of index two becomes negative."
+  },
+  {
+    "start": 1334.47,
+    "end": 1336.98,
+    "text": "What does negative signify?"
+  },
+  {
+    "start": 1336.98,
+    "end": 1340.61,
+    "text": "What does negative signify let's write?"
+  },
+  {
+    "start": 1340.61,
+    "end": 1343.68,
+    "text": "Negative means end of the string."
+  },
+  {
+    "start": 1343.68,
+    "end": 1348.89,
+    "text": "Negative means end of the string are a very simple guys."
+  },
+  {
+    "start": 1348.89,
+    "end": 1350.0,
+    "text": "If if if if."
+  },
+  {
+    "start": 1350.0,
+    "end": 1352.66,
+    "text": "App of two means string zero to two."
+  },
+  {
+    "start": 1352.66,
+    "end": 1355.39,
+    "text": "Negative will mean end of the string."
+  },
+  {
+    "start": 1355.39,
+    "end": 1358.35,
+    "text": "So can I say can I say if at any moment."
+  },
+  {
+    "start": 1358.35,
+    "end": 1362.71,
+    "text": "Index one is less than zero or index two is less than zero."
+  },
+  {
+    "start": 1362.71,
+    "end": 1371.35,
+    "text": "It's the end of string if it's the end of the string what is the longest length zero or the longest length zero guys."
+  },
+  {
+    "start": 1371.35,
+    "end": 1378.74,
+    "text": "So I can say this is zero and you can easily return either this goes negative or this goes negative."
+  },
+  {
+    "start": 1378.74,
+    "end": 1384.06,
+    "text": "You don't have anything to compare so the returning length will be zero."
+  },
+  {
+    "start": 1384.06,
+    "end": 1390.56,
+    "text": "This is how the recursive code will look like now in order to get more clarity what I'll"
+  },
+  {
+    "start": 1390.56,
+    "end": 1393.52,
+    "text": "do as I'll take this example and try to."
+  },
+  {
+    "start": 1393.52,
+    "end": 1399.36,
+    "text": "I'll try to do a recursion brief so that it gets clear on you like on a crystal"
+  },
+  {
+    "start": 1399.36,
+    "end": 1404.83,
+    "text": "clear method CED okay where are we where here we we're here okay what did."
+  },
+  {
+    "start": 1404.83,
+    "end": 1410.74,
+    "text": "First step one is the first step B one plus perfect and it'll call the function."
+  },
+  {
+    "start": 1410.74,
+    "end": 1417.54,
+    "text": "So over here it will be something like 012 012 the function call will be for f of two right."
+  },
+  {
+    "start": 1417.54,
+    "end": 1423.15,
+    "text": "What will be the next function got plus one on f of one one which will be AC"
+  },
+  {
+    "start": 1423.15,
+    "end": 1425.14,
+    "text": "and C E F of one one means."
+  },
+  {
+    "start": 1425.14,
+    "end": 1429.87,
+    "text": "So AC and C E so AC is here and E is here are the matching no so"
+  },
+  {
+    "start": 1429.87,
+    "end": 1434.0,
+    "text": "there'll be two split calls there'll be two split calls."
+  },
+  {
+    "start": 1434.0,
+    "end": 1436.12,
+    "text": "Let's do the two split calls."
+  },
+  {
+    "start": 1436.12,
+    "end": 1442.7,
+    "text": "So I do the two split calls it will be plus zero and f of zero one will be one split call."
+  },
+  {
+    "start": 1442.7,
+    "end": 1445.99,
+    "text": "And f of one zero will be another split call."
+  },
+  {
+    "start": 1445.99,
+    "end": 1453.01,
+    "text": "Basically you reduce one or reduce this one that's what you did right that's what you did either"
+  },
+  {
+    "start": 1453.01,
+    "end": 1455.57,
+    "text": "it is this or either it is this so."
+  },
+  {
+    "start": 1455.57,
+    "end": 1463.24,
+    "text": "A split of one of zero or a split of one of zero will happen okay so what does the signifier zero of one."
+  },
+  {
+    "start": 1463.24,
+    "end": 1469.23,
+    "text": "A C E and the signifies AC and C perfect we are standing over here we are standing"
+  },
+  {
+    "start": 1469.23,
+    "end": 1474.42,
+    "text": "over here we are standing over here and we are standing over here okay."
+  },
+  {
+    "start": 1474.42,
+    "end": 1481.22,
+    "text": "So this recursion will be solved at first and then this recursion will be solved at first you"
+  },
+  {
+    "start": 1481.22,
+    "end": 1486.85,
+    "text": "are understanding right f of two two will call f of one one f of one one will"
+  },
+  {
+    "start": 1486.85,
+    "end": 1491.89,
+    "text": "call this and call this and take the max of this and the max of this."
+  },
+  {
+    "start": 1491.89,
+    "end": 1494.37,
+    "text": "So f of zero one what will happen?"
+  },
+  {
+    "start": 1494.37,
+    "end": 1501.9,
+    "text": "A E are not matching then they are no we are matching and E are no we are matching so what will happen?"
+  },
+  {
+    "start": 1501.9,
+    "end": 1510.0,
+    "text": "Again two split calls will happen if they're not matching two split calls and what will be for this split call."
+  },
+  {
+    "start": 1510.0,
+    "end": 1515.86,
+    "text": "It will go to minus one comma one what will happen to this split call."
+  },
+  {
+    "start": 1515.86,
+    "end": 1522.06,
+    "text": "I'll go to f of zero zero f of zero zero understand zero is a split one is"
+  },
+  {
+    "start": 1522.06,
+    "end": 1529.09,
+    "text": "so basically you reduce so over here it gets reduced to nothing by C E and over here"
+  },
+  {
+    "start": 1529.09,
+    "end": 1531.27,
+    "text": "it gets reduced to A by C."
+  },
+  {
+    "start": 1531.27,
+    "end": 1538.14,
+    "text": "Why because you're moving this guy so A by C is what it reduces to okay again what"
+  },
+  {
+    "start": 1538.14,
+    "end": 1542.16,
+    "text": "will this return negative this guy returns zero."
+  },
+  {
+    "start": 1542.16,
+    "end": 1548.94,
+    "text": "E if you go on solving this what will happen again two split calls f of minus one"
+  },
+  {
+    "start": 1548.94,
+    "end": 1555.47,
+    "text": "comma one and f of zero comma zero or other this will be actually zero so f of"
+  },
+  {
+    "start": 1555.47,
+    "end": 1557.23,
+    "text": "zero comma minus one."
+  },
+  {
+    "start": 1557.23,
+    "end": 1565.52,
+    "text": "Right so this will also return a zero because of negative because of negative this will also return"
+  },
+  {
+    "start": 1565.52,
+    "end": 1571.88,
+    "text": "zero so f of zero one called those guys and it got zero and zero so this guy"
+  },
+  {
+    "start": 1571.88,
+    "end": 1578.41,
+    "text": "actually got a zero so this guy will return a zero and f of one zero what will"
+  },
+  {
+    "start": 1578.41,
+    "end": 1582.01,
+    "text": "happen let's analyze away what will happen."
+  },
+  {
+    "start": 1582.01,
+    "end": 1588.37,
+    "text": "C and C matches so one f of both will reduce zero and minus one so both will"
+  },
+  {
+    "start": 1588.37,
+    "end": 1595.32,
+    "text": "reduce zero will reduce to minus one one will reduce to zero because C is done C is"
+  },
+  {
+    "start": 1595.32,
+    "end": 1601.68,
+    "text": "done so you move this to here and this is over so one plus this what is this"
+  },
+  {
+    "start": 1601.68,
+    "end": 1609.38,
+    "text": "negative this guy will return zero so one plus zero this guy's value is one this guy's value"
+  },
+  {
+    "start": 1609.38,
+    "end": 1612.0,
+    "text": "is zero so f of one one called."
+  },
+  {
+    "start": 1612.0,
+    "end": 1617.91,
+    "text": "Both the guys one guy given zero the other guy given one which one will take he will"
+  },
+  {
+    "start": 1617.91,
+    "end": 1623.12,
+    "text": "take one the max of both the guys over a plus one so plus one and plus one"
+  },
+  {
+    "start": 1623.12,
+    "end": 1628.26,
+    "text": "f of two two gives you two which is the answer f of two two gives you two"
+  },
+  {
+    "start": 1628.26,
+    "end": 1630.72,
+    "text": "which is the answer and eventually."
+  },
+  {
+    "start": 1630.72,
+    "end": 1636.56,
+    "text": "C D is the string which is the longest common sub sequence so you got the answer so"
+  },
+  {
+    "start": 1636.56,
+    "end": 1641.84,
+    "text": "if all the recursion tree working perfectly and it did give you the answer."
+  },
+  {
+    "start": 1641.84,
+    "end": 1649.44,
+    "text": "Very straightforward in all the comparison of string problems if they're matching you just take both of them"
+  },
+  {
+    "start": 1649.44,
+    "end": 1652.4,
+    "text": "back and if they're not matching you take."
+  },
+  {
+    "start": 1652.4,
+    "end": 1658.74,
+    "text": "One string you shrink one string or you shrink the other string and try to do a comparison"
+  },
+  {
+    "start": 1658.74,
+    "end": 1665.01,
+    "text": "and if you able to do this you can actually solve any problem on string comparison so you"
+  },
+  {
+    "start": 1665.01,
+    "end": 1668.81,
+    "text": "can understand the movement of strings fine enough so."
+  },
+  {
+    "start": 1668.81,
+    "end": 1676.62,
+    "text": "What are we doing as of now we are actually doing recursion and we know we are applying possibilities right so."
+  },
+  {
+    "start": 1676.62,
+    "end": 1685.63,
+    "text": "The possibilities since you're trying out all all the recursions it's going to be true to the power n sub sequences of this guy."
+  },
+  {
+    "start": 1685.63,
+    "end": 1695.0,
+    "text": "You're trying out sub sequences like if you carefully observe you are trying out sub sequences AC AC you're trying out sub sequences."
+  },
+  {
+    "start": 1695.0,
+    "end": 1696.83,
+    "text": "What are we going to do?"
+  },
+  {
+    "start": 1696.83,
+    "end": 1703.54,
+    "text": "We're going to do something which we don't want and we want this to be optimized we want"
+  },
+  {
+    "start": 1703.54,
+    "end": 1710.09,
+    "text": "this to be optimized correct and how do you optimize this you have to see if there are"
+  },
+  {
+    "start": 1710.09,
+    "end": 1716.49,
+    "text": "overlapping sub problems because if there are overlapping sub problems we can apply."
+  },
+  {
+    "start": 1716.49,
+    "end": 1723.35,
+    "text": "Memo I should have already told you this and all the previous lectures we can apply memo I"
+  },
+  {
+    "start": 1723.35,
+    "end": 1730.82,
+    "text": "should let's see if there are overlapping sub problems in this particular problem F of two two was"
+  },
+  {
+    "start": 1730.82,
+    "end": 1736.15,
+    "text": "there F of one one was there F of zero one was there F of one zero was"
+  },
+  {
+    "start": 1736.15,
+    "end": 1741.79,
+    "text": "there F of zero zero was there F of minus one it's a very small set to see"
+  },
+  {
+    "start": 1741.79,
+    "end": 1749.03,
+    "text": "but if you take big examples you will see like these guys getting repeated somewhere over here."
+  },
+  {
+    "start": 1749.03,
+    "end": 1755.89,
+    "text": "or similar like you can see why there's one state repeated F of zero minus one is repeated"
+  },
+  {
+    "start": 1755.89,
+    "end": 1762.75,
+    "text": "here also also you see both the states are repeated and that's a base case that's okay but"
+  },
+  {
+    "start": 1762.75,
+    "end": 1769.53,
+    "text": "you will see if you take a bigger example you will see states being repeated you can take"
+  },
+  {
+    "start": 1769.53,
+    "end": 1776.0,
+    "text": "a bigger set of string and you'll see that the states are repeated so what does F of."
+  },
+  {
+    "start": 1776.0,
+    "end": 1781.99,
+    "text": "F of IG state means it says LCS of a string from zero to I and a string"
+  },
+  {
+    "start": 1781.99,
+    "end": 1788.99,
+    "text": "zero to zero that's what it represents right LCS of a string one zero to I and zero"
+  },
+  {
+    "start": 1788.99,
+    "end": 1795.83,
+    "text": "to zero to zero in this they want the length so if someone again comes up and ask"
+  },
+  {
+    "start": 1795.83,
+    "end": 1802.75,
+    "text": "you the same question why do you want to pre compute why do you want to re compute"
+  },
+  {
+    "start": 1802.75,
+    "end": 1806.29,
+    "text": "thereby we can easily apply memo I should."
+  },
+  {
+    "start": 1806.29,
+    "end": 1814.73,
+    "text": "What is the technique to apply memo you look out of the changing parameters one as I the other is J."
+  },
+  {
+    "start": 1814.73,
+    "end": 1821.14,
+    "text": "What is about I it's and what's about J it's M thereby you can say n cross M"
+  },
+  {
+    "start": 1821.14,
+    "end": 1827.13,
+    "text": "is what I will be requiring D P so you can easily just declare a D P of"
+  },
+  {
+    "start": 1827.13,
+    "end": 1827.97,
+    "text": "n cross M."
+  },
+  {
+    "start": 1827.97,
+    "end": 1834.81,
+    "text": "In Asia is everything to as minus one and it can just go back and add these lines"
+  },
+  {
+    "start": 1834.81,
+    "end": 1838.61,
+    "text": "over here this is the return statement right."
+  },
+  {
+    "start": 1838.61,
+    "end": 1844.52,
+    "text": "So over here you can say okay fine I'll write D P of I j equal to this"
+  },
+  {
+    "start": 1844.52,
+    "end": 1852.11,
+    "text": "is a return statement you'll say okay fine alright over here and while whenever it enters."
+  },
+  {
+    "start": 1852.11,
+    "end": 1858.1,
+    "text": "Very simple line of D P of I j is not equal to minus one and you return"
+  },
+  {
+    "start": 1858.1,
+    "end": 1861.4,
+    "text": "D P of I j that's how you easily do it."
+  },
+  {
+    "start": 1861.4,
+    "end": 1863.95,
+    "text": "That's what the function resembles."
+  },
+  {
+    "start": 1863.95,
+    "end": 1869.93,
+    "text": "So it's time to check out the code so we're given the string as and the string dot"
+  },
+  {
+    "start": 1869.93,
+    "end": 1873.43,
+    "text": "T so really you can just give us dot size right."
+  },
+  {
+    "start": 1873.43,
+    "end": 1878.75,
+    "text": "And it gives us m equal to T dot size and right here you can say return f"
+  },
+  {
+    "start": 1878.75,
+    "end": 1883.2,
+    "text": "of you can n minus one that is what you take S and D perfect."
+  },
+  {
+    "start": 1883.2,
+    "end": 1889.32,
+    "text": "Let's quickly write the function that we generally write i and the F and the i and d"
+  },
+  {
+    "start": 1889.32,
+    "end": 1896.17,
+    "text": "j make sure you pass the string by reference because every time you've created a new string it"
+  },
+  {
+    "start": 1896.17,
+    "end": 1901.05,
+    "text": "might give you daily this is what you wrote this is what you wrote."
+  },
+  {
+    "start": 1901.05,
+    "end": 1905.79,
+    "text": "Return 0 if they're matching which is S of I equal to the T of j."
+  },
+  {
+    "start": 1905.79,
+    "end": 1911.18,
+    "text": "They're going to return one plus f of i minus one j minus one and as and a"
+  },
+  {
+    "start": 1911.18,
+    "end": 1917.3,
+    "text": "T and they're not matching you return the max of either both of them and i minus one"
+  },
+  {
+    "start": 1917.3,
+    "end": 1920.8,
+    "text": "j s and t or you just go one which is s comma T."
+  },
+  {
+    "start": 1920.8,
+    "end": 1927.87,
+    "text": "That's how the group folks will look and obviously I need to optimize this by applying my machine"
+  },
+  {
+    "start": 1927.87,
+    "end": 1932.97,
+    "text": "so just a plan my machine way up which is d p of n cross vector of int"
+  },
+  {
+    "start": 1932.97,
+    "end": 1938.51,
+    "text": "and m cross minus one please make sure pass the d p over here and j pass the"
+  },
+  {
+    "start": 1938.51,
+    "end": 1943.83,
+    "text": "d p right over here you can say vector of vector and d p and it's pass on"
+  },
+  {
+    "start": 1943.83,
+    "end": 1948.0,
+    "text": "the d p over here you can just pass on the d p over here."
+  },
+  {
+    "start": 1948.0,
+    "end": 1953.75,
+    "text": "And what I can say is okay fine the next thing that I do is memorize let's quickly"
+  },
+  {
+    "start": 1953.75,
+    "end": 1960.06,
+    "text": "memorize this as a last thing you will just see please check if the state has been visited"
+  },
+  {
+    "start": 1960.06,
+    "end": 1967.21,
+    "text": "previously it has been visited previously kindly turn it and that's what the code will look like fully"
+  },
+  {
+    "start": 1967.21,
+    "end": 1967.56,
+    "text": "sure."
+  },
+  {
+    "start": 1967.56,
+    "end": 1973.73,
+    "text": "Okay that's some issue okay d p was not declared in the scope okay looks like vector has"
+  },
+  {
+    "start": 1973.73,
+    "end": 1979.62,
+    "text": "not been declared so what is says is you have to actually use hashing clout with s t"
+  },
+  {
+    "start": 1979.62,
+    "end": 1983.41,
+    "text": "d c plus dot edge because vector has not been defined."
+  },
+  {
+    "start": 1983.41,
+    "end": 1989.72,
+    "text": "So it's easy to define this and after this I think it should be running fine fine advance."
+  },
+  {
+    "start": 1989.72,
+    "end": 1996.59,
+    "text": "Yeah we're getting a hundred score and that's how the memorize your technique well be now the next"
+  },
+  {
+    "start": 1996.59,
+    "end": 2002.06,
+    "text": "step will be tabulation because we have to optimize the auxiliary stack space."
+  },
+  {
+    "start": 2002.06,
+    "end": 2008.09,
+    "text": "And the time complexity in order to solve this by memorization was we go off n cross m"
+  },
+  {
+    "start": 2008.09,
+    "end": 2011.88,
+    "text": "which we took in order to solve this using my mission."
+  },
+  {
+    "start": 2011.88,
+    "end": 2018.89,
+    "text": "And the space complexity we took was n cross m for the states storage in d p and we go off n plus m."
+  },
+  {
+    "start": 2018.89,
+    "end": 2023.44,
+    "text": "In an auxiliary stack space right now you might ask why n plus m."
+  },
+  {
+    "start": 2023.44,
+    "end": 2026.14,
+    "text": "I'll give you an example a b and cd."
+  },
+  {
+    "start": 2026.14,
+    "end": 2032.52,
+    "text": "I'll ask you to draw the recursion tree for LCS remember in match in match it was one"
+  },
+  {
+    "start": 2032.52,
+    "end": 2035.97,
+    "text": "plus and in unmatch you moved into directions."
+  },
+  {
+    "start": 2035.97,
+    "end": 2043.03,
+    "text": "So this is unmatch so you move into directions which is a by cd and the other one is a b by c."
+  },
+  {
+    "start": 2043.03,
+    "end": 2051.06,
+    "text": "When you're always because you either eliminate this or you either eliminate this again over here you again"
+  },
+  {
+    "start": 2051.06,
+    "end": 2054.59,
+    "text": "move into directions because they do not match."
+  },
+  {
+    "start": 2054.59,
+    "end": 2061.5,
+    "text": "So you either eliminate a which makes it cd or you either eliminate d which makes it a by c."
+  },
+  {
+    "start": 2061.5,
+    "end": 2067.73,
+    "text": "Over here again,  into directions you either eliminate a or you either eliminate c."
+  },
+  {
+    "start": 2067.73,
+    "end": 2070.66,
+    "text": "So if you gave me the of zone one step."
+  },
+  {
+    "start": 2070.66,
+    "end": 2076.82,
+    "text": "Two step three step four so it makes the depth is four length two plus length two."
+  },
+  {
+    "start": 2076.82,
+    "end": 2083.95,
+    "text": "Because what we did was we deleted we we deleted the we deleted scene so alternative relations."
+  },
+  {
+    "start": 2083.95,
+    "end": 2091.23,
+    "text": "If you do alternative relations they can be end relations from string S1 they can be em relations"
+  },
+  {
+    "start": 2091.23,
+    "end": 2096.41,
+    "text": "from string S2 thereby the auxiliary stack space will go as n plus m."
+  },
+  {
+    "start": 2096.41,
+    "end": 2100.16,
+    "text": "Obviously as always I'm not a big fan of n plus m."
+  },
+  {
+    "start": 2100.16,
+    "end": 2108.72,
+    "text": "So I'll have to omit this and order to omit this I have to write the tabulation I treat if bottom up approach."
+  },
+  {
+    "start": 2108.72,
+    "end": 2110.67,
+    "text": "Whatever you can call it."
+  },
+  {
+    "start": 2110.67,
+    "end": 2115.73,
+    "text": "Okay, so bottom up rules are already told you what are the rules."
+  },
+  {
+    "start": 2115.73,
+    "end": 2117.21,
+    "text": "Copy the base case."
+  },
+  {
+    "start": 2117.21,
+    "end": 2124.92,
+    "text": "I've already told you the rules copy the base case second right down the changing parameters in the"
+  },
+  {
+    "start": 2124.92,
+    "end": 2128.27,
+    "text": "opposite fashion of third copy the records."
+  },
+  {
+    "start": 2128.27,
+    "end": 2135.35,
+    "text": "If you can follow these method I can guarantee that you can write any of the tabulations of"
+  },
+  {
+    "start": 2135.35,
+    "end": 2138.07,
+    "text": "bottom up for any of the questions."
+  },
+  {
+    "start": 2138.07,
+    "end": 2142.2,
+    "text": "But copy the base case is a bit tricky over here why."
+  },
+  {
+    "start": 2142.2,
+    "end": 2146.25,
+    "text": "Because if you remember the code code was i comma j."
+  },
+  {
+    "start": 2146.25,
+    "end": 2152.17,
+    "text": "I don't know something like i less than 0 or j less than 0 and you return 0."
+  },
+  {
+    "start": 2152.17,
+    "end": 2158.16,
+    "text": "So over here this was the base case right if remember this was the base case."
+  },
+  {
+    "start": 2158.16,
+    "end": 2164.31,
+    "text": "And in the base case I can be negative and usually we did see is usually we did"
+  },
+  {
+    "start": 2164.31,
+    "end": 2169.06,
+    "text": "see in the recursion tree if you remember the recursion tree."
+  },
+  {
+    "start": 2169.06,
+    "end": 2178.16,
+    "text": "That we did in the recursion tree the base the negative was minus one minus one minus one so we stopped at minus one."
+  },
+  {
+    "start": 2178.16,
+    "end": 2184.53,
+    "text": "So we can't we can't write cases for minus one in base cases can you write for minus"
+  },
+  {
+    "start": 2184.53,
+    "end": 2190.07,
+    "text": "one because how do you write the theory of minus one that's not possible."
+  },
+  {
+    "start": 2190.07,
+    "end": 2191.59,
+    "text": "That's not possible."
+  },
+  {
+    "start": 2191.59,
+    "end": 2197.74,
+    "text": "So what we do is we do a shifting of index very simple we do a shifting of index."
+  },
+  {
+    "start": 2197.74,
+    "end": 2202.07,
+    "text": "We do a shifting of index in order to write the ablation."
+  },
+  {
+    "start": 2202.07,
+    "end": 2208.75,
+    "text": "You can still write tabulation using this but I want you to teach the shifting of index."
+  },
+  {
+    "start": 2208.75,
+    "end": 2216.49,
+    "text": "In order to write tabulation like without even shifting of index I can still write tabulation but that"
+  },
+  {
+    "start": 2216.49,
+    "end": 2220.36,
+    "text": "will be a bit tricky so I'll not go that direction."
+  },
+  {
+    "start": 2220.36,
+    "end": 2222.71,
+    "text": "Shifting of index so as of now."
+  },
+  {
+    "start": 2222.71,
+    "end": 2227.64,
+    "text": "There was index 0 1 2 like minus one was the negative index tree."
+  },
+  {
+    "start": 2227.64,
+    "end": 2235.08,
+    "text": "And we were calling these indexes like how did the function start the function call started from n"
+  },
+  {
+    "start": 2235.08,
+    "end": 2241.0,
+    "text": "minus one at m minus one at n minus one at n minus one represented this index."
+  },
+  {
+    "start": 2241.0,
+    "end": 2245.71,
+    "text": "F of zero represent this index F of one represents this index."
+  },
+  {
+    "start": 2245.71,
+    "end": 2252.39,
+    "text": "Can I do a shifting can I do a right shift of the index and I say I will call n comma n."
+  },
+  {
+    "start": 2252.39,
+    "end": 2259.36,
+    "text": "I will call n comma n yes I'll call this but over here I'll say hillson n means n minus one."
+  },
+  {
+    "start": 2259.36,
+    "end": 2269.7,
+    "text": "F of one means zero and F of zero means negative I shifted the index one right one right n means n minus one."
+  },
+  {
+    "start": 2269.7,
+    "end": 2275.29,
+    "text": "One means zero zero means minus one I shifted it one right."
+  },
+  {
+    "start": 2275.29,
+    "end": 2279.75,
+    "text": "So we're shifting it one right if so can I say."
+  },
+  {
+    "start": 2279.75,
+    "end": 2284.68,
+    "text": "F of I j if shifted I j like initially I is n and j."
+  },
+  {
+    "start": 2284.68,
+    "end": 2289.52,
+    "text": "Initially I is n and j is n you're shifted it n is."
+  },
+  {
+    "start": 2289.52,
+    "end": 2296.73,
+    "text": "Actually n minus one one is actually zero so can I say can I see that means."
+  },
+  {
+    "start": 2296.73,
+    "end": 2302.42,
+    "text": "Every I that you're giving should be treated as I minus one."
+  },
+  {
+    "start": 2302.42,
+    "end": 2311.05,
+    "text": "And every g that you're giving should be treated as j minus one because that is the meaning"
+  },
+  {
+    "start": 2311.05,
+    "end": 2317.31,
+    "text": "because as of new ascending I and j in terms of one shifted index."
+  },
+  {
+    "start": 2317.31,
+    "end": 2320.53,
+    "text": "That makes sense does makes sense."
+  },
+  {
+    "start": 2320.53,
+    "end": 2321.76,
+    "text": "So can I say."
+  },
+  {
+    "start": 2321.76,
+    "end": 2324.51,
+    "text": "Instead of greater than zero."
+  },
+  {
+    "start": 2324.51,
+    "end": 2328.68,
+    "text": "Can I write this as I equal to zero because."
+  },
+  {
+    "start": 2328.68,
+    "end": 2336.74,
+    "text": "This signified I equal to minus one, but since I've shifted it can I write I equal to"
+  },
+  {
+    "start": 2336.74,
+    "end": 2343.76,
+    "text": "zero yes I can I write instead of this j equal to zero I can the base case"
+  },
+  {
+    "start": 2343.76,
+    "end": 2345.36,
+    "text": "has been changed."
+  },
+  {
+    "start": 2345.36,
+    "end": 2350.9,
+    "text": "If I take you back to the code over here instead of n minus one, I can write"
+  },
+  {
+    "start": 2350.9,
+    "end": 2356.15,
+    "text": "n m minus one I can write m and over here I can write equal to equal to."
+  },
+  {
+    "start": 2356.15,
+    "end": 2361.76,
+    "text": "And in the geolso I can write equal to equal to but what's the other changes?"
+  },
+  {
+    "start": 2361.76,
+    "end": 2369.19,
+    "text": "Everything stays same states being called same you're doing a string comparison But I mean I'm in this"
+  },
+  {
+    "start": 2369.19,
+    "end": 2375.09,
+    "text": "one James James is one changed And now if I run this code does this wrong same It"
+  },
+  {
+    "start": 2375.09,
+    "end": 2376.47,
+    "text": "to win why will it?"
+  },
+  {
+    "start": 2376.47,
+    "end": 2380.77,
+    "text": "Because if just shifted it okay, it's giving runtime error."
+  },
+  {
+    "start": 2380.77,
+    "end": 2383.03,
+    "text": "Why does it give runtime error?"
+  },
+  {
+    "start": 2383.03,
+    "end": 2389.23,
+    "text": "Because the dp that you've declared is of nm and you're now using the states of nm So"
+  },
+  {
+    "start": 2389.23,
+    "end": 2394.99,
+    "text": "this makes sure you declare a dp of extra size m plus one and now you've done a"
+  },
+  {
+    "start": 2394.99,
+    "end": 2400.89,
+    "text": "shift thing of index One ride and it does work fine So okay, so the base case has"
+  },
+  {
+    "start": 2400.89,
+    "end": 2403.44,
+    "text": "been not the base case has changed."
+  },
+  {
+    "start": 2403.44,
+    "end": 2405.26,
+    "text": "What's the base case law?"
+  },
+  {
+    "start": 2405.26,
+    "end": 2407.67,
+    "text": "The base case is not very simple."
+  },
+  {
+    "start": 2407.67,
+    "end": 2413.28,
+    "text": "It states if I is equal to zero or j is equal to zero  We are returning zero."
+  },
+  {
+    "start": 2413.28,
+    "end": 2416.49,
+    "text": "How can I write this in simple Lehman terms?"
+  },
+  {
+    "start": 2416.49,
+    "end": 2419.26,
+    "text": "Okay, what does i equal to zero means?"
+  },
+  {
+    "start": 2419.26,
+    "end": 2427.36,
+    "text": "it means any dp of zero and this guy can be anything because this is j can be anything and what does this mean?"
+  },
+  {
+    "start": 2427.36,
+    "end": 2436.01,
+    "text": "I can be anything  But this guy has to be zero  Right and what can be the possible values of j?"
+  },
+  {
+    "start": 2436.01,
+    "end": 2439.1,
+    "text": "Anything from zero to m minus one."
+  },
+  {
+    "start": 2439.1,
+    "end": 2446.47,
+    "text": "What can be the possible values of i anything from zero to m That's one a loop it"
+  },
+  {
+    "start": 2446.47,
+    "end": 2453.48,
+    "text": "the base case a very simple j can be anything from zero to m minus one and dp"
+  },
+  {
+    "start": 2453.48,
+    "end": 2460.03,
+    "text": "of zero and j will be zero This is for this one and for this one is this"
+  },
+  {
+    "start": 2460.03,
+    "end": 2466.76,
+    "text": "i can be anything from zero to n minus one and dp of i comma zero is equal"
+  },
+  {
+    "start": 2466.76,
+    "end": 2476.22,
+    "text": "to zero base case written by shifting writing shifting indexes by one days case has been written perfect"
+  },
+  {
+    "start": 2476.22,
+    "end": 2483.14,
+    "text": "perfect Write down both these guys in opposite fashion and opposite fashion."
+  },
+  {
+    "start": 2483.14,
+    "end": 2490.42,
+    "text": "Okay, so the moment I shifted it the recursion was taking i from n to zero and j"
+  },
+  {
+    "start": 2490.42,
+    "end": 2498.25,
+    "text": "from m to zero top down top down these are the base cases what is tabulation bottom up"
+  },
+  {
+    "start": 2498.25,
+    "end": 2504.53,
+    "text": "you go up so one to n why not zero to n because zero is the base case"
+  },
+  {
+    "start": 2504.53,
+    "end": 2510.36,
+    "text": "which has already been written so one to n what about j opposite"
+  },
+  {
+    "start": 2510.36,
+    "end": 2517.99,
+    "text": "done Next copy the recurrence what are you waiting for just go back and copy the recurrence and"
+  },
+  {
+    "start": 2517.99,
+    "end": 2525.14,
+    "text": "you'll be able to easily write the tabulation format of LCS easily so what are those now?"
+  },
+  {
+    "start": 2525.14,
+    "end": 2532.69,
+    "text": "I'll go back and try to write the tabulation format  Okay, so we have this guy that's perfect."
+  },
+  {
+    "start": 2532.69,
+    "end": 2539.11,
+    "text": "It's just how matters and try to write so if you remember it was i equal to zero"
+  },
+  {
+    "start": 2539.11,
+    "end": 2545.21,
+    "text": "or rather yeah, j equal to zero was the first one j equal to zero and j less"
+  },
+  {
+    "start": 2545.21,
+    "end": 2551.07,
+    "text": "than m but then now it will go jail this dp of zero and j is zero perfect"
+  },
+  {
+    "start": 2551.07,
+    "end": 2556.85,
+    "text": "and similarly I can go as zero till n and goes dp of i and zero and zero"
+  },
+  {
+    "start": 2556.85,
+    "end": 2563.51,
+    "text": "perfect and similarly fall loops can go as anti i equal to one i less than equal to"
+  },
+  {
+    "start": 2563.51,
+    "end": 2569.69,
+    "text": "i plus plus similarly the j loop can also go on in a similar fashion of i and"
+  },
+  {
+    "start": 2569.69,
+    "end": 2575.39,
+    "text": "j equal to one j less than equal to m j plus plus and you can just copy"
+  },
+  {
+    "start": 2575.39,
+    "end": 2583.18,
+    "text": "this yes, just make sure you copy this the same thing just instead of written just remove written"
+  },
+  {
+    "start": 2583.18,
+    "end": 2590.34,
+    "text": "just remove written this copy is the same exactly same and over here just written dp of n"
+  },
+  {
+    "start": 2590.34,
+    "end": 2596.29,
+    "text": "and m and remove this I want you to do as you can also remove this portion and"
+  },
+  {
+    "start": 2596.29,
+    "end": 2602.32,
+    "text": "instead of f just make sure you write dp of i minus one j perfect and over here"
+  },
+  {
+    "start": 2602.32,
+    "end": 2608.05,
+    "text": "you can write max of dp of i minus one j and again you can just remove this"
+  },
+  {
+    "start": 2608.05,
+    "end": 2614.16,
+    "text": "portion and the common of dp of i and j minus one and again please make sure you"
+  },
+  {
+    "start": 2614.16,
+    "end": 2620.34,
+    "text": "remove this yeah and that's what it will be so if I now pray to one this probably"
+  },
+  {
+    "start": 2620.34,
+    "end": 2627.97,
+    "text": "should run if I've not done syntax mistakes again the hashing load missing again skipping us a wrong"
+  },
+  {
+    "start": 2627.97,
+    "end": 2634.15,
+    "text": "answer why is that so you just check out why is this giving us a wrong answer and"
+  },
+  {
+    "start": 2634.15,
+    "end": 2640.94,
+    "text": "then we'll get started so why did this give us a wrong answer because in the recursion if"
+  },
+  {
+    "start": 2640.94,
+    "end": 2647.58,
+    "text": "this if executed it went to back from there over here you have to just make sure you're"
+  },
+  {
+    "start": 2647.58,
+    "end": 2655.37,
+    "text": "written else okay just make sure you're written else because it will not return in recursion this line"
+  },
+  {
+    "start": 2655.37,
+    "end": 2661.78,
+    "text": "was not executed in fall looks it will be so just make sure either it is matching or"
+  },
+  {
+    "start": 2661.78,
+    "end": 2667.22,
+    "text": "not matching that is running fine now you can just go across and submit"
+  },
+  {
+    "start": 2667.22,
+    "end": 2672.61,
+    "text": "so can we do a space of imaginations yes I have always told you if there is a"
+  },
+  {
+    "start": 2672.61,
+    "end": 2679.04,
+    "text": "scope of i minus one which means previous rule i minus one which means previous rule you can"
+  },
+  {
+    "start": 2679.04,
+    "end": 2685.61,
+    "text": "always i repeat you can always space optimize the same portion so what you'll do is instead of"
+  },
+  {
+    "start": 2685.61,
+    "end": 2691.13,
+    "text": "this just make sure you have a previous of m plus one comma zero and a curve of"
+  },
+  {
+    "start": 2691.13,
+    "end": 2696.52,
+    "text": "m plus one comma zero and over here this will go as this is the zeroed guy so"
+  },
+  {
+    "start": 2696.52,
+    "end": 2702.46,
+    "text": "what I'm basically saying is okay for any zero what will happen so this is dp of zero"
+  },
+  {
+    "start": 2702.46,
+    "end": 2708.61,
+    "text": "right so you can say previous and will this be there will the column be there no there's"
+  },
+  {
+    "start": 2708.61,
+    "end": 2714.34,
+    "text": "no it of column so you need to just format this for the first row everyone is zero"
+  },
+  {
+    "start": 2714.34,
+    "end": 2721.05,
+    "text": "right so that's what over here just make sure instead of featured of i minus one that's previous"
+  },
+  {
+    "start": 2721.05,
+    "end": 2726.99,
+    "text": "over here this makes you instead of dp of i minus one it's previous over here this is"
+  },
+  {
+    "start": 2726.99,
+    "end": 2732.79,
+    "text": "fine instead of dp there'll be curve dp of i it'll be curve it makes you just curve"
+  },
+  {
+    "start": 2732.79,
+    "end": 2738.8,
+    "text": "and over here instead of dp of i this will be curve relative to this equal to previous"
+  },
+  {
+    "start": 2738.8,
+    "end": 2743.94,
+    "text": "And now I will just return the previous cat or call whatever you wish to."
+  },
+  {
+    "start": 2743.94,
+    "end": 2744.76,
+    "text": "Is this fine?"
+  },
+  {
+    "start": 2744.76,
+    "end": 2746.52,
+    "text": "Yeah, this should look fine."
+  },
+  {
+    "start": 2746.52,
+    "end": 2752.0,
+    "text": "So now you can try submitting this and you will see that this is also not running fine."
+  },
+  {
+    "start": 2752.0,
+    "end": 2752.25,
+    "text": "Why?"
+  },
+  {
+    "start": 2752.25,
+    "end": 2753.83,
+    "text": "Okay, forgot to have a..."
+  },
+  {
+    "start": 2753.83,
+    "end": 2754.15,
+    "text": "Cool."
+  },
+  {
+    "start": 2754.15,
+    "end": 2759.51,
+    "text": "So if I give a colon,  just previous column, a previous color concept and okay, okay."
+  },
+  {
+    "start": 2759.51,
+    "end": 2763.8,
+    "text": "Okay, so issue was previous equal to car will be a not car in color."
+  },
+  {
+    "start": 2763.8,
+    "end": 2764.75,
+    "text": "This is my bad."
+  },
+  {
+    "start": 2764.75,
+    "end": 2765.07,
+    "text": "Okay."
+  },
+  {
+    "start": 2765.07,
+    "end": 2768.79,
+    "text": "So if I just give it a summit,  should be running fine now."
+  },
+  {
+    "start": 2768.79,
+    "end": 2769.86,
+    "text": "Yeah, should run."
+  },
+  {
+    "start": 2769.86,
+    "end": 2770.93,
+    "text": "Give it a summit."
+  },
+  {
+    "start": 2770.93,
+    "end": 2772.51,
+    "text": "This will definitely run."
+  },
+  {
+    "start": 2772.51,
+    "end": 2777.11,
+    "text": "So guys, I hope you have understood how I took a memory of your solution."
+  },
+  {
+    "start": 2777.11,
+    "end": 2782.66,
+    "text": "And since we were having problem in tabellation, I shifted it by right so that we do not"
+  },
+  {
+    "start": 2782.66,
+    "end": 2786.38,
+    "text": "have negative advantages or negative indexes in base cases."
+  },
+  {
+    "start": 2786.38,
+    "end": 2790.41,
+    "text": "And after that, I just simply converted that into a  tabellated."
+  },
+  {
+    "start": 2790.41,
+    "end": 2794.44,
+    "text": "Once I converted that into tabellated, it is space optimization."
+  },
+  {
+    "start": 2794.44,
+    "end": 2799.04,
+    "text": "It is an extension of whatever I have taught in the previous DP lectures."
+  },
+  {
+    "start": 2799.04,
+    "end": 2802.95,
+    "text": "So if you haven't seen the  previous DP lectures, it is a job."
+  },
+  {
+    "start": 2802.95,
+    "end": 2810.39,
+    "text": "It should definitely go and also because you are missing on space  optimization, which is a very very important trick."
+  },
+  {
+    "start": 2810.39,
+    "end": 2814.8,
+    "text": "So guys, I hope I hope I have, I was able to make  you understand LCS."
+  },
+  {
+    "start": 2814.8,
+    "end": 2819.65,
+    "text": "And as you guys, I was pleased, please, please make sure you like this video."
+  },
+  {
+    "start": 2819.65,
+    "end": 2821.79,
+    "text": "I've been able to do this channel."
+  },
+  {
+    "start": 2821.79,
+    "end": 2826.08,
+    "text": "Please do consider subscribing and yeah,  to continue your duration."
+  },
+  {
+    "start": 2826.08,
+    "end": 2828.03,
+    "text": "Please make sure you are right."
+  },
+  {
+    "start": 2828.03,
+    "end": 2830.24,
+    "text": "Undisturbed in the comment section."
+  },
+  {
+    "start": 2830.24,
+    "end": 2834.72,
+    "text": "And with this, let's wrap this video and we'll see you in the next one."
+  },
+  {
+    "start": 2834.72,
+    "end": 2836.66,
+    "text": "I will find a light in the end."
+  }
+]

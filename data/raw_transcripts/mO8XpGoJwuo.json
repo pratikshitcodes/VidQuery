@@ -1,0 +1,1847 @@
+[
+  {
+    "start": 0.0,
+    "end": 3.38,
+    "text": "Hey, we are welcome back to Take You Forward."
+  },
+  {
+    "start": 3.38,
+    "end": 10.74,
+    "text": "Today we will be doing the last problem on the DPS on sub-sequences series and I'm definitely sure"
+  },
+  {
+    "start": 10.74,
+    "end": 18.18,
+    "text": "that after doing 11 problems on DPS on sub-sequences, you can solve any problem that has been given"
+  },
+  {
+    "start": 18.18,
+    "end": 20.28,
+    "text": "on the DPS on sub-sequences."
+  },
+  {
+    "start": 20.28,
+    "end": 29.14,
+    "text": "So today's problem will be a rod cutting problem and  is the 24th lecture of the ongoing dynamic programming playlist."
+  },
+  {
+    "start": 29.14,
+    "end": 31.47,
+    "text": "So what does the problem steep?"
+  },
+  {
+    "start": 31.47,
+    "end": 35.45,
+    "text": "The problem state you will be given a particular end."
+  },
+  {
+    "start": 35.45,
+    "end": 38.68,
+    "text": "So assume, over here we take an equal to 5."
+  },
+  {
+    "start": 38.68,
+    "end": 43.86,
+    "text": "And for every length, for every length you'll also be given an price."
+  },
+  {
+    "start": 43.86,
+    "end": 47.17,
+    "text": "So let's write the price  as 2, 5, 7, 8, 10."
+  },
+  {
+    "start": 47.17,
+    "end": 50.4,
+    "text": "So this is what the price array looks like."
+  },
+  {
+    "start": 50.4,
+    "end": 54.83,
+    "text": "Now the question states, you're given an equal to 5, right?"
+  },
+  {
+    "start": 54.83,
+    "end": 56.71,
+    "text": "So that's the rod length."
+  },
+  {
+    "start": 56.71,
+    "end": 58.44,
+    "text": "This is the rod length."
+  },
+  {
+    "start": 58.44,
+    "end": 66.78,
+    "text": "Now what you need to do is, you need to cut the rod into pieces,  cutting rod cutting, cut the rod into pieces."
+  },
+  {
+    "start": 66.78,
+    "end": 68.81,
+    "text": "You can be like haystriver."
+  },
+  {
+    "start": 68.81,
+    "end": 75.2,
+    "text": "I can cut the 5  rod into a length 1, a length 1, a length 1, a length 1, a length 1."
+  },
+  {
+    "start": 75.2,
+    "end": 75.82,
+    "text": "Possibly."
+  },
+  {
+    "start": 75.82,
+    "end": 80.03,
+    "text": "And for length 1, for length 2, length 3, length 4, length 5."
+  },
+  {
+    "start": 80.03,
+    "end": 84.31,
+    "text": "For length 1, the price that you  will get in the market is 2."
+  },
+  {
+    "start": 84.31,
+    "end": 87.76,
+    "text": "So the pricing that you'll get in the market is 2."
+  },
+  {
+    "start": 87.76,
+    "end": 94.59,
+    "text": "For every length of rod because you will cut the rod into pieces and it'll sell them in the market."
+  },
+  {
+    "start": 94.59,
+    "end": 98.38,
+    "text": "So the total price that you'll get in the market is 10."
+  },
+  {
+    "start": 98.38,
+    "end": 98.72,
+    "text": "Okay?"
+  },
+  {
+    "start": 98.72,
+    "end": 101.2,
+    "text": "Can we cut it in some different way?"
+  },
+  {
+    "start": 101.2,
+    "end": 103.34,
+    "text": "You can be like, yeah, Striver."
+  },
+  {
+    "start": 103.34,
+    "end": 107.96,
+    "text": "I will cut it into a piece of 1,  a piece of 2, another piece of 2."
+  },
+  {
+    "start": 107.96,
+    "end": 111.68,
+    "text": "And if I cut it into a piece of 1, I'll get a price 2."
+  },
+  {
+    "start": 111.68,
+    "end": 115.61,
+    "text": "If I cut it into pieces of 2, I'll get a price 5 and a 5."
+  },
+  {
+    "start": 115.61,
+    "end": 118.99,
+    "text": "And the total cost will be 12, which is  greater."
+  },
+  {
+    "start": 118.99,
+    "end": 125.13,
+    "text": "So in this way, you can actually cut this into several other ways, like 1, 4, probably 2,"
+  },
+  {
+    "start": 125.13,
+    "end": 129.41,
+    "text": "3, then it can be, it can be a lot of lot of ways, 1, 2, 2, 2,"
+  },
+  {
+    "start": 129.41,
+    "end": 131.27,
+    "text": "there can be a lot of ways."
+  },
+  {
+    "start": 131.27,
+    "end": 135.82,
+    "text": "So you need to tell me, what is the maximum cost that you can get?"
+  },
+  {
+    "start": 135.82,
+    "end": 141.61,
+    "text": "So this cost you have to maximize it and you can try every possible way and you will"
+  },
+  {
+    "start": 141.61,
+    "end": 143.96,
+    "text": "see that this is the maximal cost."
+  },
+  {
+    "start": 143.96,
+    "end": 149.69,
+    "text": "Even if you take like 2 and a 3, the cost that 2 will give is 5,  3 will give is 7."
+  },
+  {
+    "start": 149.69,
+    "end": 150.79,
+    "text": "That is also 12."
+  },
+  {
+    "start": 150.79,
+    "end": 154.1,
+    "text": "So the maximum cost that you'll get is 12 again."
+  },
+  {
+    "start": 154.1,
+    "end": 154.32,
+    "text": "And"
+  },
+  {
+    "start": 154.32,
+    "end": 157.1,
+    "text": "this is what the problem seems."
+  },
+  {
+    "start": 157.1,
+    "end": 163.28,
+    "text": "You have to cut the rod into pieces and it's sell that in the market."
+  },
+  {
+    "start": 163.28,
+    "end": 170.72,
+    "text": "And you have to make sure that the cost that you get from the market is the maximum"
+  },
+  {
+    "start": 170.72,
+    "end": 175.38,
+    "text": "cost and you need to print this particular value 12."
+  },
+  {
+    "start": 175.38,
+    "end": 179.59,
+    "text": "So another question is given in break it right."
+  },
+  {
+    "start": 179.59,
+    "end": 182.01,
+    "text": "So  you might get confused."
+  },
+  {
+    "start": 182.01,
+    "end": 186.13,
+    "text": "But this try to think it in the other fashion."
+  },
+  {
+    "start": 186.13,
+    "end": 189.53,
+    "text": "Try to think it in the  other fashion."
+  },
+  {
+    "start": 189.53,
+    "end": 190.69,
+    "text": "What fashion?"
+  },
+  {
+    "start": 190.69,
+    "end": 192.03,
+    "text": "Can I see this?"
+  },
+  {
+    "start": 192.03,
+    "end": 199.02,
+    "text": "You have a lot of lengths because if N is equal to 5, you know the rod lengths"
+  },
+  {
+    "start": 199.02,
+    "end": 205.11,
+    "text": "are like the rod lengths can be 1, can be 2, can be 3, can be 4, can"
+  },
+  {
+    "start": 205.11,
+    "end": 205.56,
+    "text": "be 5."
+  },
+  {
+    "start": 205.56,
+    "end": 212.55,
+    "text": "We can have 5 different rod lengths, 1 of length 1, 1 of length 2, 1 of length"
+  },
+  {
+    "start": 212.55,
+    "end": 215.69,
+    "text": "3, 1 of length 4 and 1 of length 5."
+  },
+  {
+    "start": 215.69,
+    "end": 219.63,
+    "text": "So can I see how do you collect rod lengths?"
+  },
+  {
+    "start": 219.63,
+    "end": 221.15,
+    "text": "Can I write this?"
+  },
+  {
+    "start": 221.15,
+    "end": 229.66,
+    "text": "Collect rod lengths to make N and while collecting rod lengths maximize the price can I say can"
+  },
+  {
+    "start": 229.66,
+    "end": 235.12,
+    "text": "I think the problem in the opposite fashion instead of saying"
+  },
+  {
+    "start": 235.12,
+    "end": 245.53,
+    "text": "break N into pieces of rod and sell can I say collect rod lengths and make it 10 and make sure  it is maximized."
+  },
+  {
+    "start": 245.53,
+    "end": 254.64,
+    "text": "It will like yesterday makes sense and this problem is quite of wireless similar to the N abstract"
+  },
+  {
+    "start": 254.64,
+    "end": 263.47,
+    "text": "kind of problems where we are given an array with values and weights and we collect weights and"
+  },
+  {
+    "start": 263.47,
+    "end": 265.42,
+    "text": "we try to form the N."
+  },
+  {
+    "start": 265.42,
+    "end": 268.77,
+    "text": "So this problem now becomes similar."
+  },
+  {
+    "start": 268.77,
+    "end": 270.16,
+    "text": "Can I say this?"
+  },
+  {
+    "start": 270.16,
+    "end": 274.16,
+    "text": "Can I say this for this particular example?"
+  },
+  {
+    "start": 274.16,
+    "end": 279.74,
+    "text": "Like if I just take this particular example  2, 5, 7, 8, 10."
+  },
+  {
+    "start": 279.74,
+    "end": 281.13,
+    "text": "Can I say this?"
+  },
+  {
+    "start": 281.13,
+    "end": 285.03,
+    "text": "If I don't the index number 0, 1, 2, 3, 4."
+  },
+  {
+    "start": 285.03,
+    "end": 287.82,
+    "text": "I know index 4 means length 5."
+  },
+  {
+    "start": 287.82,
+    "end": 290.61,
+    "text": "I know index 3 means length 4."
+  },
+  {
+    "start": 290.61,
+    "end": 295.44,
+    "text": "I know index 2 means  I know index 1 means length 2."
+  },
+  {
+    "start": 295.44,
+    "end": 298.23,
+    "text": "I know index 0 means length 1."
+  },
+  {
+    "start": 298.23,
+    "end": 299.35,
+    "text": "So can I do?"
+  },
+  {
+    "start": 299.35,
+    "end": 304.65,
+    "text": "Can I solve the problem  in a similar way to an abstract?"
+  },
+  {
+    "start": 304.65,
+    "end": 305.95,
+    "text": "I think I can."
+  },
+  {
+    "start": 305.95,
+    "end": 312.92,
+    "text": "So what I will do is I will try to pick lengths try to pick lengths and sum"
+  },
+  {
+    "start": 312.92,
+    "end": 315.52,
+    "text": "them up to make the given N."
+  },
+  {
+    "start": 315.52,
+    "end": 316.96,
+    "text": "This is my funder."
+  },
+  {
+    "start": 316.96,
+    "end": 319.76,
+    "text": "I try to pick them in various ways."
+  },
+  {
+    "start": 319.76,
+    "end": 328.87,
+    "text": "I try to pick length in all possible  weights and whenever I say in all possible weights what comes to your brain?"
+  },
+  {
+    "start": 328.87,
+    "end": 339.82,
+    "text": "Your brain immediately  starts saying okay best way is to draw right recurrence, right recursion rather and how do you  write recurrence?"
+  },
+  {
+    "start": 339.82,
+    "end": 342.22,
+    "text": "I have taught you that funder."
+  },
+  {
+    "start": 342.22,
+    "end": 344.46,
+    "text": "How do you write recurrence?"
+  },
+  {
+    "start": 344.46,
+    "end": 349.18,
+    "text": "I have clearly stated  you first express in terms of index."
+  },
+  {
+    "start": 349.18,
+    "end": 359.25,
+    "text": "Obviously you can express in terms of index because you  are given an array, you are given an array of rod lengths and prices."
+  },
+  {
+    "start": 359.25,
+    "end": 361.65,
+    "text": "So you will take a rod length."
+  },
+  {
+    "start": 361.65,
+    "end": 367.72,
+    "text": "So you will take a rod length and you are looking to form this particular N."
+  },
+  {
+    "start": 367.72,
+    "end": 372.59,
+    "text": "You are looking to form  this capital N which is initially 5."
+  },
+  {
+    "start": 372.59,
+    "end": 375.87,
+    "text": "So that's what explore all possibilities."
+  },
+  {
+    "start": 375.87,
+    "end": 379.55,
+    "text": "So you know what are the possibilities on D.P."
+  },
+  {
+    "start": 379.55,
+    "end": 380.91,
+    "text": "on sub sequences?"
+  },
+  {
+    "start": 380.91,
+    "end": 387.38,
+    "text": "It's not a tip and it's a stick  and it is being given you to maximize the price."
+  },
+  {
+    "start": 387.38,
+    "end": 391.36,
+    "text": "So maximize the price, maximal, maximal of all the"
+  },
+  {
+    "start": 391.36,
+    "end": 396.02,
+    "text": "possibilities I can say is what you will have to write."
+  },
+  {
+    "start": 396.02,
+    "end": 402.46,
+    "text": "So the question is pretty much similar to  what we did in unbounded Napsack."
+  },
+  {
+    "start": 402.46,
+    "end": 402.8,
+    "text": "Why?"
+  },
+  {
+    "start": 402.8,
+    "end": 406.11,
+    "text": "Because over here what are you looking?"
+  },
+  {
+    "start": 406.11,
+    "end": 409.92,
+    "text": "You're looking to  form it this particular N."
+  },
+  {
+    "start": 409.92,
+    "end": 414.33,
+    "text": "And you're trying to maximize all the possibilities."
+  },
+  {
+    "start": 414.33,
+    "end": 415.86,
+    "text": "So can I see this?"
+  },
+  {
+    "start": 415.86,
+    "end": 417.13,
+    "text": "Can I see this?"
+  },
+  {
+    "start": 417.13,
+    "end": 420.86,
+    "text": "I will start off with index and a capital N."
+  },
+  {
+    "start": 420.86,
+    "end": 424.93,
+    "text": "Now 257810 this was  the pricing of rod lengths."
+  },
+  {
+    "start": 424.93,
+    "end": 426.2,
+    "text": "Can I see this?"
+  },
+  {
+    "start": 426.2,
+    "end": 428.66,
+    "text": "If I'm writing 0, 1, 2, 3, 4."
+  },
+  {
+    "start": 428.66,
+    "end": 434.51,
+    "text": "If I'm writing F of 4,  which is F of N minus 1, comma our capital N."
+  },
+  {
+    "start": 434.51,
+    "end": 435.78,
+    "text": "Can I see this?"
+  },
+  {
+    "start": 435.78,
+    "end": 438.32,
+    "text": "What I'm asking is,  ill here."
+  },
+  {
+    "start": 438.32,
+    "end": 442.22,
+    "text": "What is the maximal cost that you can form it?"
+  },
+  {
+    "start": 442.22,
+    "end": 447.39,
+    "text": "And ill here, what is the maximal  cost that you can form it?"
+  },
+  {
+    "start": 447.39,
+    "end": 448.75,
+    "text": "And ill index 4."
+  },
+  {
+    "start": 448.75,
+    "end": 452.22,
+    "text": "What is the maximum price you can obtain?"
+  },
+  {
+    "start": 452.22,
+    "end": 455.1,
+    "text": "Maximum price, you obtain correct."
+  },
+  {
+    "start": 455.1,
+    "end": 457.9,
+    "text": "That is what the question states."
+  },
+  {
+    "start": 457.9,
+    "end": 461.97,
+    "text": "So can I say, let's forget about  the base keys."
+  },
+  {
+    "start": 461.97,
+    "end": 466.97,
+    "text": "Can I say I will be like okay, I will have a not take keys."
+  },
+  {
+    "start": 466.97,
+    "end": 468.48,
+    "text": "And if I not take,"
+  },
+  {
+    "start": 468.48,
+    "end": 475.12,
+    "text": "if I do not take that rod length, then the value added or the price added will be 0."
+  },
+  {
+    "start": 475.12,
+    "end": 480.97,
+    "text": "And I'll move  to the previous index and the weight or the N remains same."
+  },
+  {
+    "start": 480.97,
+    "end": 482.87,
+    "text": "Now when can you cut it?"
+  },
+  {
+    "start": 482.87,
+    "end": 484.45,
+    "text": "Can I say the  peak?"
+  },
+  {
+    "start": 484.45,
+    "end": 491.09,
+    "text": "Since I'm looking for maximum pricing, it will be initially intervened very obvious."
+  },
+  {
+    "start": 491.09,
+    "end": 497.33,
+    "text": "And can I say I keep only cut because if I'm looking to form N, that rod length"
+  },
+  {
+    "start": 497.33,
+    "end": 503.42,
+    "text": "has to be because if you're coming up with a value as 3 and the rod length is"
+  },
+  {
+    "start": 503.42,
+    "end": 506.11,
+    "text": "having like something like 3 or 4."
+  },
+  {
+    "start": 506.11,
+    "end": 508.8,
+    "text": "So how do you know the rod length?"
+  },
+  {
+    "start": 508.8,
+    "end": 509.67,
+    "text": "I told you."
+  },
+  {
+    "start": 509.67,
+    "end": 512.52,
+    "text": "What is the rod length for this guy?"
+  },
+  {
+    "start": 512.52,
+    "end": 513.07,
+    "text": "It's 5."
+  },
+  {
+    "start": 513.07,
+    "end": 515.92,
+    "text": "What is the rod length for this guy?"
+  },
+  {
+    "start": 515.92,
+    "end": 516.47,
+    "text": "It's 2."
+  },
+  {
+    "start": 516.47,
+    "end": 519.63,
+    "text": "Because the rod length is 1, 2, 3, 4, 5."
+  },
+  {
+    "start": 519.63,
+    "end": 521.05,
+    "text": "So can I say this?"
+  },
+  {
+    "start": 521.05,
+    "end": 522.24,
+    "text": "Can I see this?"
+  },
+  {
+    "start": 522.24,
+    "end": 528.48,
+    "text": "If the rod length, like if I try to write it in a very sophisticated way, can I"
+  },
+  {
+    "start": 528.48,
+    "end": 532.19,
+    "text": "say the rod length is nothing but index plus 1."
+  },
+  {
+    "start": 532.19,
+    "end": 533.69,
+    "text": "Again,  make sense."
+  },
+  {
+    "start": 533.69,
+    "end": 536.93,
+    "text": "The rod length is index plus 1 every day."
+  },
+  {
+    "start": 536.93,
+    "end": 543.81,
+    "text": "Can I say the rod length has to be less  than equal to the length that I'm looking for?"
+  },
+  {
+    "start": 543.81,
+    "end": 544.68,
+    "text": "Make sense."
+  },
+  {
+    "start": 544.68,
+    "end": 547.68,
+    "text": "And if it is, then I can pick this rod"
+  },
+  {
+    "start": 547.68,
+    "end": 554.41,
+    "text": "and the price added will be price of index plus function of index N minus the rod length"
+  },
+  {
+    "start": 554.41,
+    "end": 557.55,
+    "text": "because this much rod length will go off."
+  },
+  {
+    "start": 557.55,
+    "end": 559.62,
+    "text": "The rod length will go off."
+  },
+  {
+    "start": 559.62,
+    "end": 561.15,
+    "text": "Now question arises."
+  },
+  {
+    "start": 561.15,
+    "end": 563.6,
+    "text": "Do you  standard the same index?"
+  },
+  {
+    "start": 563.6,
+    "end": 564.37,
+    "text": "Yes, Baba."
+  },
+  {
+    "start": 564.37,
+    "end": 566.89,
+    "text": "Yes, you standard the same index."
+  },
+  {
+    "start": 566.89,
+    "end": 567.2,
+    "text": "Why?"
+  },
+  {
+    "start": 567.2,
+    "end": 574.7,
+    "text": "Because because if you carefully remember, you can actually pick up one as many times as you want,"
+  },
+  {
+    "start": 574.7,
+    "end": 579.29,
+    "text": "which case infinite supply of rods, infinite supply of rods."
+  },
+  {
+    "start": 579.29,
+    "end": 584.34,
+    "text": "And whenever there is an infinite supply of rods,  what do you do?"
+  },
+  {
+    "start": 584.34,
+    "end": 588.32,
+    "text": "I have already taught this in the previous lectures."
+  },
+  {
+    "start": 588.32,
+    "end": 595.21,
+    "text": "You stand at the same index,  you stand at the same index and right at the end of the day."
+  },
+  {
+    "start": 595.21,
+    "end": 598.58,
+    "text": "You can return the max of take and not take."
+  },
+  {
+    "start": 598.58,
+    "end": 599.35,
+    "text": "That's it."
+  },
+  {
+    "start": 599.35,
+    "end": 601.26,
+    "text": "What about the base case?"
+  },
+  {
+    "start": 601.26,
+    "end": 602.79,
+    "text": "Right the base case."
+  },
+  {
+    "start": 602.79,
+    "end": 607.53,
+    "text": "We definitely know the base case will be  at index equal to 0."
+  },
+  {
+    "start": 607.53,
+    "end": 612.2,
+    "text": "But we need to think on this base case as single element now."
+  },
+  {
+    "start": 612.2,
+    "end": 614.72,
+    "text": "So what is the  initial starting?"
+  },
+  {
+    "start": 614.72,
+    "end": 618.55,
+    "text": "The initial starting that I started was N minus 1."
+  },
+  {
+    "start": 618.55,
+    "end": 620.08,
+    "text": "So you will go on 0."
+  },
+  {
+    "start": 620.08,
+    "end": 621.84,
+    "text": "So 0 is the  base case."
+  },
+  {
+    "start": 621.84,
+    "end": 624.9,
+    "text": "Let's just think it as a single element."
+  },
+  {
+    "start": 624.9,
+    "end": 626.74,
+    "text": "So we are the 0th index."
+  },
+  {
+    "start": 626.74,
+    "end": 628.4,
+    "text": "We know the rod length"
+  },
+  {
+    "start": 628.4,
+    "end": 631.84,
+    "text": "for 0th index is 1 and it will have a price."
+  },
+  {
+    "start": 631.84,
+    "end": 633.95,
+    "text": "As you may as a price of 6."
+  },
+  {
+    "start": 633.95,
+    "end": 636.85,
+    "text": "And I'm coming up with  a rod length."
+  },
+  {
+    "start": 636.85,
+    "end": 639.83,
+    "text": "If I'm coming up with a rod length 12."
+  },
+  {
+    "start": 639.83,
+    "end": 644.45,
+    "text": "This is the remaining rod length that I'm looking  to make."
+  },
+  {
+    "start": 644.45,
+    "end": 650.71,
+    "text": "Initially, whatever it is, this is the remaining rod length I'm looking to make."
+  },
+  {
+    "start": 650.71,
+    "end": 656.66,
+    "text": "Looking to make this because that is what the recurrence was stating, right?"
+  },
+  {
+    "start": 656.66,
+    "end": 660.5,
+    "text": "Because that is what the  recurrence was stating."
+  },
+  {
+    "start": 660.5,
+    "end": 666.37,
+    "text": "Till index 4, what is the maximum price you can obtain in order to make  N?"
+  },
+  {
+    "start": 666.37,
+    "end": 666.84,
+    "text": "Right?"
+  },
+  {
+    "start": 666.84,
+    "end": 674.04,
+    "text": "So whatever N comes, if at the last index N is 12, how can you make this 12 is the question?"
+  },
+  {
+    "start": 674.04,
+    "end": 678.42,
+    "text": "So the question is, how can you make this rod length 12?"
+  },
+  {
+    "start": 678.42,
+    "end": 681.47,
+    "text": "Because over here, it's a rod length 1."
+  },
+  {
+    "start": 681.47,
+    "end": 687.19,
+    "text": "So if you can take 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 12 times."
+  },
+  {
+    "start": 687.19,
+    "end": 691.1,
+    "text": "Can I say that will make this remaining length 12?"
+  },
+  {
+    "start": 691.1,
+    "end": 693.76,
+    "text": "Belag, yes, yes, it will, it will."
+  },
+  {
+    "start": 693.76,
+    "end": 700.57,
+    "text": "So whatever N is left at the end of the day, at index 0, can I say the pricing will be?"
+  },
+  {
+    "start": 700.57,
+    "end": 705.03,
+    "text": "Because the  rod length is 1, I can meet that rod length."
+  },
+  {
+    "start": 705.03,
+    "end": 709.2,
+    "text": "Because if the remaining length is N, it will require"
+  },
+  {
+    "start": 709.2,
+    "end": 714.5,
+    "text": "N rods, N rods of length 1, N rods of length 1 is what it will require."
+  },
+  {
+    "start": 714.5,
+    "end": 719.58,
+    "text": "And if it requires N rod  N rod of length 1, what will be the price?"
+  },
+  {
+    "start": 719.58,
+    "end": 722.27,
+    "text": "N into price of 0, perfect, perfect."
+  },
+  {
+    "start": 722.27,
+    "end": 724.51,
+    "text": "So that's what you'll  return."
+  },
+  {
+    "start": 724.51,
+    "end": 730.26,
+    "text": "You will say N into price of 0 is what I'll return because the last guy is of"
+  },
+  {
+    "start": 730.26,
+    "end": 735.79,
+    "text": "length 1 and if it is of length 1, I know I'll require N rods of length 1."
+  },
+  {
+    "start": 735.79,
+    "end": 738.85,
+    "text": "And the pricing  will be in 2 price of 0."
+  },
+  {
+    "start": 738.85,
+    "end": 741.39,
+    "text": "That's the base case super simple."
+  },
+  {
+    "start": 741.39,
+    "end": 745.72,
+    "text": "So once I've written the base case,  what's the next step?"
+  },
+  {
+    "start": 745.72,
+    "end": 747.81,
+    "text": "It's a recursion code right?"
+  },
+  {
+    "start": 747.81,
+    "end": 752.14,
+    "text": "So you have to convert the recursion into  memo I a, shin."
+  },
+  {
+    "start": 752.14,
+    "end": 755.2,
+    "text": "So overlapping subproblems will be there."
+  },
+  {
+    "start": 755.2,
+    "end": 758.19,
+    "text": "What's the time complexity of recursion?"
+  },
+  {
+    "start": 758.19,
+    "end": 760.73,
+    "text": "Obviously, not not to the power n."
+  },
+  {
+    "start": 760.73,
+    "end": 762.07,
+    "text": "It is exponential."
+  },
+  {
+    "start": 762.07,
+    "end": 764.54,
+    "text": "It's greater than to the power n."
+  },
+  {
+    "start": 764.54,
+    "end": 766.86,
+    "text": "We have already  discussed why?"
+  },
+  {
+    "start": 766.86,
+    "end": 772.16,
+    "text": "Because of staying at the same index, you're staying at the same index."
+  },
+  {
+    "start": 772.16,
+    "end": 774.55,
+    "text": "We have already  discussed this."
+  },
+  {
+    "start": 774.55,
+    "end": 776.72,
+    "text": "What is the space complexity?"
+  },
+  {
+    "start": 776.72,
+    "end": 780.38,
+    "text": "The auxiliary stack space is the recursion depth."
+  },
+  {
+    "start": 780.38,
+    "end": 783.37,
+    "text": "And  it can go on till we go off target."
+  },
+  {
+    "start": 783.37,
+    "end": 787.28,
+    "text": "Whatever target is because you're taking the target,"
+  },
+  {
+    "start": 787.28,
+    "end": 790.62,
+    "text": "you're taking the target again and again."
+  },
+  {
+    "start": 790.62,
+    "end": 798.52,
+    "text": "So we go off target it can go as if you do memoize  index and then couple of changing parameters."
+  },
+  {
+    "start": 798.52,
+    "end": 800.47,
+    "text": "Index is N, N is also N."
+  },
+  {
+    "start": 800.47,
+    "end": 806.09,
+    "text": "So N into N plus 1 will do  at the time complexity will be be go off."
+  },
+  {
+    "start": 806.09,
+    "end": 810.81,
+    "text": "N into N, the space complexity will be be go off N into N."
+  },
+  {
+    "start": 810.81,
+    "end": 815.37,
+    "text": "Plus, we go off the target as the auxiliary stack space."
+  },
+  {
+    "start": 815.37,
+    "end": 820.17,
+    "text": "And as usual,  I'm not a big fan of auxiliary stack spaces."
+  },
+  {
+    "start": 820.17,
+    "end": 825.54,
+    "text": "And if I'm not a big fan of auxiliary stack spaces,  what do I do?"
+  },
+  {
+    "start": 825.54,
+    "end": 828.63,
+    "text": "I convert this into a tabulation code."
+  },
+  {
+    "start": 828.63,
+    "end": 830.18,
+    "text": "What are the rules?"
+  },
+  {
+    "start": 830.18,
+    "end": 831.24,
+    "text": "Rules, rules?"
+  },
+  {
+    "start": 831.24,
+    "end": 832.87,
+    "text": "Right the base case."
+  },
+  {
+    "start": 832.87,
+    "end": 837.27,
+    "text": "Right the two changing parameters copy the recurrence."
+  },
+  {
+    "start": 837.27,
+    "end": 838.74,
+    "text": "As simple as that."
+  },
+  {
+    "start": 838.74,
+    "end": 840.69,
+    "text": "As simple as it can get."
+  },
+  {
+    "start": 840.69,
+    "end": 843.54,
+    "text": "Let's write the base case at first."
+  },
+  {
+    "start": 843.54,
+    "end": 846.15,
+    "text": "Let's go back to the recurrence."
+  },
+  {
+    "start": 846.15,
+    "end": 852.91,
+    "text": "By the way, in order to convert it into a memoation, just make sure you write dp of"
+  },
+  {
+    "start": 852.91,
+    "end": 858.2,
+    "text": "index N equal to N over here dp of index N, not equal to minus 1."
+  },
+  {
+    "start": 858.2,
+    "end": 859.99,
+    "text": "And you try to return."
+  },
+  {
+    "start": 859.99,
+    "end": 861.21,
+    "text": "Simple as that."
+  },
+  {
+    "start": 861.21,
+    "end": 863.73,
+    "text": "So let's look at the base case."
+  },
+  {
+    "start": 863.73,
+    "end": 865.92,
+    "text": "It states index equal to 0."
+  },
+  {
+    "start": 865.92,
+    "end": 868.23,
+    "text": "Does it have a boundary on N?"
+  },
+  {
+    "start": 868.23,
+    "end": 870.54,
+    "text": "Does it have a boundary on N?"
+  },
+  {
+    "start": 870.54,
+    "end": 871.66,
+    "text": "And that's it."
+  },
+  {
+    "start": 871.66,
+    "end": 875.09,
+    "text": "That is,  it does not have a boundary on N."
+  },
+  {
+    "start": 875.09,
+    "end": 876.76,
+    "text": "So N can be anything."
+  },
+  {
+    "start": 876.76,
+    "end": 877.72,
+    "text": "It can be 1."
+  },
+  {
+    "start": 877.72,
+    "end": 878.68,
+    "text": "It can be 2."
+  },
+  {
+    "start": 878.68,
+    "end": 879.64,
+    "text": "It can be 3."
+  },
+  {
+    "start": 879.64,
+    "end": 880.68,
+    "text": "It can  be 4."
+  },
+  {
+    "start": 880.68,
+    "end": 882.75,
+    "text": "Never it can be 0 as well."
+  },
+  {
+    "start": 882.75,
+    "end": 883.71,
+    "text": "It can be 5."
+  },
+  {
+    "start": 883.71,
+    "end": 884.67,
+    "text": "It can be 6."
+  },
+  {
+    "start": 884.67,
+    "end": 887.54,
+    "text": "It can be anything in the largest N."
+  },
+  {
+    "start": 887.54,
+    "end": 890.49,
+    "text": "So thereby, I know index is set as 0."
+  },
+  {
+    "start": 890.49,
+    "end": 894.72,
+    "text": "So I will be declaring dp of N and N plus 1 for sure."
+  },
+  {
+    "start": 894.72,
+    "end": 900.3,
+    "text": "So can I say the value of N can be from 0 to whatever the original Ns."
+  },
+  {
+    "start": 900.3,
+    "end": 906.68,
+    "text": "thereby, I can write dp of 0 N is nothing but whatever I wrote in the base case."
+  },
+  {
+    "start": 906.68,
+    "end": 908.2,
+    "text": "N into  price of 0."
+  },
+  {
+    "start": 908.2,
+    "end": 908.84,
+    "text": "Perfect."
+  },
+  {
+    "start": 908.84,
+    "end": 910.59,
+    "text": "This is the base case."
+  },
+  {
+    "start": 910.59,
+    "end": 913.54,
+    "text": "I exactly copy pasted the same thing."
+  },
+  {
+    "start": 913.54,
+    "end": 915.61,
+    "text": "But I did it for  every N."
+  },
+  {
+    "start": 915.61,
+    "end": 919.36,
+    "text": "I did it for every N because N can be anything."
+  },
+  {
+    "start": 919.36,
+    "end": 920.0,
+    "text": "Perfect."
+  },
+  {
+    "start": 920.0,
+    "end": 920.56,
+    "text": "Superb."
+  },
+  {
+    "start": 920.56,
+    "end": 921.84,
+    "text": "What about this?"
+  },
+  {
+    "start": 921.84,
+    "end": 924.47,
+    "text": "What did you do in the recursion?"
+  },
+  {
+    "start": 924.47,
+    "end": 928.3,
+    "text": "In the recursion, it went from N minus 1 till 0."
+  },
+  {
+    "start": 928.3,
+    "end": 930.53,
+    "text": "Where 0 being the base case?"
+  },
+  {
+    "start": 930.53,
+    "end": 932.05,
+    "text": "What is tabulation?"
+  },
+  {
+    "start": 932.05,
+    "end": 932.85,
+    "text": "Bottom up."
+  },
+  {
+    "start": 932.85,
+    "end": 934.37,
+    "text": "What is tabulation?"
+  },
+  {
+    "start": 934.37,
+    "end": 935.17,
+    "text": "Bottom up."
+  },
+  {
+    "start": 935.17,
+    "end": 938.76,
+    "text": "So from  base case, you go till the ultimate."
+  },
+  {
+    "start": 938.76,
+    "end": 940.43,
+    "text": "So base case is done."
+  },
+  {
+    "start": 940.43,
+    "end": 943.04,
+    "text": "So you start from 1 in N minus 1."
+  },
+  {
+    "start": 943.04,
+    "end": 944.04,
+    "text": "What about N?"
+  },
+  {
+    "start": 944.04,
+    "end": 946.04,
+    "text": "You do it in the opposite."
+  },
+  {
+    "start": 946.04,
+    "end": 946.42,
+    "text": "Done."
+  },
+  {
+    "start": 946.42,
+    "end": 949.64,
+    "text": "And now you just need to copy the records."
+  },
+  {
+    "start": 949.64,
+    "end": 955.09,
+    "text": "So without actually wasting any time, let's super quickly code this up."
+  },
+  {
+    "start": 955.09,
+    "end": 958.31,
+    "text": "So given the price  and given the N right."
+  },
+  {
+    "start": 958.31,
+    "end": 963.99,
+    "text": "So what I can do is I can write the function with index and the capital N."
+  },
+  {
+    "start": 963.99,
+    "end": 967.44,
+    "text": "And we can take the vector int and the price."
+  },
+  {
+    "start": 967.44,
+    "end": 968.05,
+    "text": "Correct."
+  },
+  {
+    "start": 968.05,
+    "end": 970.51,
+    "text": "So that's what I will be taking."
+  },
+  {
+    "start": 970.51,
+    "end": 976.11,
+    "text": "Can I say if index is equal to 0, I need to return the N into price of 0."
+  },
+  {
+    "start": 976.11,
+    "end": 979.87,
+    "text": "And there'll be other cases of not take and take."
+  },
+  {
+    "start": 979.87,
+    "end": 980.33,
+    "text": "Right."
+  },
+  {
+    "start": 980.33,
+    "end": 984.7,
+    "text": "So not take case will be 0 value plus f of index minus 1."
+  },
+  {
+    "start": 984.7,
+    "end": 987.46,
+    "text": "You move back to N and take a price."
+  },
+  {
+    "start": 987.46,
+    "end": 990.3,
+    "text": "But the take case will be having int."
+  },
+  {
+    "start": 990.3,
+    "end": 992.37,
+    "text": "You're looking for maximum."
+  },
+  {
+    "start": 992.37,
+    "end": 993.37,
+    "text": "So intervene."
+  },
+  {
+    "start": 993.37,
+    "end": 995.44,
+    "text": "And what is the rod length?"
+  },
+  {
+    "start": 995.44,
+    "end": 1000.96,
+    "text": "The rod length is nothing but as of now at the index, it's index plus 1."
+  },
+  {
+    "start": 1000.96,
+    "end": 1005.95,
+    "text": "So I need to check if the rod length is less than the required N."
+  },
+  {
+    "start": 1005.95,
+    "end": 1009.63,
+    "text": "With that's the case,  I can definitely take it."
+  },
+  {
+    "start": 1009.63,
+    "end": 1014.16,
+    "text": "And if I take it, it'll be price of index plus function of."
+  },
+  {
+    "start": 1014.16,
+    "end": 1021.92,
+    "text": "You stay at the same index and the rod length that you are looking for will reduce by the rod length."
+  },
+  {
+    "start": 1021.92,
+    "end": 1022.53,
+    "text": "Perfect."
+  },
+  {
+    "start": 1022.53,
+    "end": 1024.89,
+    "text": "And you just pass on the price."
+  },
+  {
+    "start": 1024.89,
+    "end": 1029.31,
+    "text": "And over here you can return the max of take and not take."
+  },
+  {
+    "start": 1029.31,
+    "end": 1036.02,
+    "text": "And right here you can say return f of you start from the last index which is N minus 1."
+  },
+  {
+    "start": 1036.02,
+    "end": 1040.29,
+    "text": "You look for the N rod length and you pass on the price."
+  },
+  {
+    "start": 1040.29,
+    "end": 1043.19,
+    "text": "So that's what you will have to write."
+  },
+  {
+    "start": 1043.19,
+    "end": 1046.16,
+    "text": "So you see it is giving correct answer."
+  },
+  {
+    "start": 1046.16,
+    "end": 1047.46,
+    "text": "Wasn't next step."
+  },
+  {
+    "start": 1047.46,
+    "end": 1050.28,
+    "text": "You know it will be giving it really."
+  },
+  {
+    "start": 1050.28,
+    "end": 1053.18,
+    "text": "So please make sure you memorize this."
+  },
+  {
+    "start": 1053.18,
+    "end": 1060.5,
+    "text": "So create a dp array and try to memorize this into N into vector of  N and plus 1 comma minus 1."
+  },
+  {
+    "start": 1060.5,
+    "end": 1063.7,
+    "text": "Once you memorize this this will go as dp."
+  },
+  {
+    "start": 1063.7,
+    "end": 1067.21,
+    "text": "Obviously this will go as vector vector  N dp."
+  },
+  {
+    "start": 1067.21,
+    "end": 1072.4,
+    "text": "This will be dp of index N is you can say if dp of index N not equal"
+  },
+  {
+    "start": 1072.4,
+    "end": 1078.43,
+    "text": "to minus 1 you can say return dp of index N perfect and just make sure you pass"
+  },
+  {
+    "start": 1078.43,
+    "end": 1081.4,
+    "text": "a dp here make sure you pass a dp here."
+  },
+  {
+    "start": 1081.4,
+    "end": 1085.06,
+    "text": "Once you've done this super really run this off."
+  },
+  {
+    "start": 1085.06,
+    "end": 1090.55,
+    "text": "It is running let's quickly submit this and see if this is running fine."
+  },
+  {
+    "start": 1090.55,
+    "end": 1093.14,
+    "text": "It does it does give me 100 marks."
+  },
+  {
+    "start": 1093.14,
+    "end": 1094.44,
+    "text": "Wasn't next step."
+  },
+  {
+    "start": 1094.44,
+    "end": 1097.28,
+    "text": "The next step is to convert this into"
+  },
+  {
+    "start": 1097.28,
+    "end": 1100.44,
+    "text": "a tabulation step 1 make it 0 step 2."
+  },
+  {
+    "start": 1100.44,
+    "end": 1106.93,
+    "text": "Oh sorry step 1 right the base cases it goes from 0 goes until N N plus plus"
+  },
+  {
+    "start": 1106.93,
+    "end": 1111.62,
+    "text": "and you write dp of 0 and the N equal to the base case."
+  },
+  {
+    "start": 1111.62,
+    "end": 1113.58,
+    "text": "What was the base case?"
+  },
+  {
+    "start": 1113.58,
+    "end": 1116.31,
+    "text": "Just make  sure copy paste done."
+  },
+  {
+    "start": 1116.31,
+    "end": 1117.76,
+    "text": "Wasn't next step."
+  },
+  {
+    "start": 1117.76,
+    "end": 1124.25,
+    "text": "4 INT index equal to 1 index less than N index plus plus and you can just go"
+  },
+  {
+    "start": 1124.25,
+    "end": 1130.14,
+    "text": "on from 4 INT w equal to sorry rather N equal to 0 N goes less than N"
+  },
+  {
+    "start": 1130.14,
+    "end": 1137.48,
+    "text": "and you can do capital N plus plus just make sure copy paste this into a stuff perfect"
+  },
+  {
+    "start": 1137.48,
+    "end": 1142.0,
+    "text": "copy paste this into a stuff do some tabbing spacing."
+  },
+  {
+    "start": 1142.0,
+    "end": 1143.11,
+    "text": "I equal done."
+  },
+  {
+    "start": 1143.11,
+    "end": 1150.11,
+    "text": "Wasn't next step over here instead of f you write dp of index minus 1 you say this"
+  },
+  {
+    "start": 1150.11,
+    "end": 1156.77,
+    "text": "make sure you do this and over here what will be this dp of index about this N"
+  },
+  {
+    "start": 1156.77,
+    "end": 1164.79,
+    "text": "minus rod length perfect and over here you can just remove the return and over here instead of"
+  },
+  {
+    "start": 1164.79,
+    "end": 1171.7,
+    "text": "this you can just write the return instead of this you can write the dp N minus 1"
+  },
+  {
+    "start": 1171.7,
+    "end": 1172.48,
+    "text": "and the N"
+  },
+  {
+    "start": 1172.48,
+    "end": 1175.29,
+    "text": "perfect and you can just erase this off."
+  },
+  {
+    "start": 1175.29,
+    "end": 1182.8,
+    "text": "So this is let me quickly check if this is perfect  or this looks perfect to me let's quickly run this off."
+  },
+  {
+    "start": 1182.8,
+    "end": 1188.35,
+    "text": "So that's how you write the tabulation  and I'll let's quickly sum it this off."
+  },
+  {
+    "start": 1188.35,
+    "end": 1189.54,
+    "text": "Alright does run."
+  },
+  {
+    "start": 1189.54,
+    "end": 1190.73,
+    "text": "Wasn't next step."
+  },
+  {
+    "start": 1190.73,
+    "end": 1198.52,
+    "text": "Space Optimize should again index minus 1 index previous previous current now now space optimization is so easy"
+  },
+  {
+    "start": 1198.52,
+    "end": 1204.07,
+    "text": "right and you started you will like oh my sorry it is so tough and now it looks"
+  },
+  {
+    "start": 1204.07,
+    "end": 1205.05,
+    "text": "easy isn't it?"
+  },
+  {
+    "start": 1205.05,
+    "end": 1211.23,
+    "text": "So vector of  int previous N comma and the N plus 1 because a row is what you're taking."
+  },
+  {
+    "start": 1211.23,
+    "end": 1212.77,
+    "text": "Curr N plus 1 comma 0."
+  },
+  {
+    "start": 1212.77,
+    "end": 1218.88,
+    "text": "So instead of this you can get like let's write previous instead of dp of index minus 1"
+  },
+  {
+    "start": 1218.88,
+    "end": 1224.85,
+    "text": "why don't I write previous instead of dp of index why don't I write Curr N instead of"
+  },
+  {
+    "start": 1224.85,
+    "end": 1230.47,
+    "text": "dp of index why don't I write Curr over here why don't I do it previous equal to"
+  },
+  {
+    "start": 1230.47,
+    "end": 1235.66,
+    "text": "Curr over here why don't you do it previous and I'll quickly run this off."
+  },
+  {
+    "start": 1235.66,
+    "end": 1240.22,
+    "text": "And daily that's  one it's going to be sum it this as well 100 A."
+  },
+  {
+    "start": 1240.22,
+    "end": 1243.1,
+    "text": "So this was two array space optimization."
+  },
+  {
+    "start": 1243.1,
+    "end": 1249.28,
+    "text": "Can we space optimize this into one d array and answer that as yes we can previous video"
+  },
+  {
+    "start": 1249.28,
+    "end": 1250.64,
+    "text": "unbounded nap sack."
+  },
+  {
+    "start": 1250.64,
+    "end": 1256.77,
+    "text": "So over there you saw we were using a state right above because N is the column number"
+  },
+  {
+    "start": 1256.77,
+    "end": 1263.05,
+    "text": "previous N is the right above and N minus is like if you're trying to compute this we're"
+  },
+  {
+    "start": 1263.05,
+    "end": 1270.04,
+    "text": "trying to use the previous computed values and this guy this guy and the previous computed values."
+  },
+  {
+    "start": 1270.04,
+    "end": 1276.53,
+    "text": "So these guys have no no significance in the previous column this guy has like the cross it"
+  },
+  {
+    "start": 1276.53,
+    "end": 1284.31,
+    "text": "guy have no significance there's no need to store it whenever you're computing this current this rewrite over"
+  },
+  {
+    "start": 1284.31,
+    "end": 1292.73,
+    "text": "here whenever you're committing this current, rei to why here whenever you're competing this current rewrite over here"
+  },
+  {
+    "start": 1292.73,
+    "end": 1300.36,
+    "text": "whenever you're competing this current rewrite over here use this compute this and try to rewrite over here"
+  },
+  {
+    "start": 1300.36,
+    "end": 1306.07,
+    "text": "that's it so you can easily use the single one yes so just use the single one no"
+  },
+  {
+    "start": 1306.07,
+    "end": 1312.85,
+    "text": "need to do previous equal to current no need of the current one because just rewrite it because"
+  },
+  {
+    "start": 1312.85,
+    "end": 1319.27,
+    "text": "you're using the previous guys and they're right above guy so done let's get run this off."
+  },
+  {
+    "start": 1319.27,
+    "end": 1324.32,
+    "text": "So one d array here single array and we're able to space optimize this."
+  },
+  {
+    "start": 1324.32,
+    "end": 1329.82,
+    "text": "So guys dp on sub sequences is done we have done all the patterns on dp on sub sequences."
+  },
+  {
+    "start": 1329.82,
+    "end": 1335.51,
+    "text": "Now you tell me in the comment section can you solve any problem on dp on sub sequences now?"
+  },
+  {
+    "start": 1335.51,
+    "end": 1340.64,
+    "text": "If you can please please tell me in the comment section how did you like this dp on"
+  },
+  {
+    "start": 1340.64,
+    "end": 1347.19,
+    "text": "sub sequences pattern where we solved all bunch of problems please please do that because that will highly"
+  },
+  {
+    "start": 1347.19,
+    "end": 1347.93,
+    "text": "motivate me."
+  },
+  {
+    "start": 1347.93,
+    "end": 1355.47,
+    "text": "And yes if you're watching this video tell now we have learned recursion, imagination, tabulation, two space optimization,"
+  },
+  {
+    "start": 1355.47,
+    "end": 1361.22,
+    "text": "one space optimization and you want to do everything so just in case you did please make sure"
+  },
+  {
+    "start": 1361.22,
+    "end": 1367.09,
+    "text": "you like this video and if you need to this channel please please do consider subscribing to us"
+  },
+  {
+    "start": 1367.09,
+    "end": 1372.16,
+    "text": "and here with this next top of this video it's video in the next one till then bye"
+  },
+  {
+    "start": 1372.16,
+    "end": 1373.04,
+    "text": "bye take care."
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "start": 0.0,
+    "end": 56.39,
+    "text": "[Video: DP 2: Climbing Stairs] Hey, if you are welcome back to the channel, I hope you guys are doing extremely well. So, welcome back to the second lecture of the dynamic programming playlist. All right, I'm going to solve a problem which is found ways to reach the nth stares. Yes, solve is the problem actually state. It states that you'll be given a number of stairs. So, it'll be given n which is the number of stairs. Initially, you are at the zero-th step. That means you are at the zero-th step. Okay. And you need to reach the nth step. Like you have to reach the nth step. Now, each time you can either climb one step or you can either climb a couple of steps. Now, you are supposed to return the number of distinct ways in which you can climb from the zero-th step  to the nth step. Now, for an example, if I'm giving you n is equal to three, then I can say if from the zero-th step, I take one step, then I take one more step, then I take one"
+  },
+  {
+    "start": 46.52,
+    "end": 109.48,
+    "text": "[Video: DP 2: Climbing Stairs] Now, for an example, if I'm giving you n is equal to three, then I can say if from the zero-th step, I take one step, then I take one more step, then I take one more step, I'm going to reach the third or from zero-thetic two step and then I take one step, I'm going to reach the third or from zero-thetic one step, then I take two steps, I'm going to reach the third. So, I can say these three are three distinct ways in which you can reach the third step. So, the problem is very simple. You have to tell me the distinct ways in which you can reach the the third step. So, the problem is very simple and straightforward. You have to tell me the distinct ways in which you can reach the  nth step if you start from the zero-th step. So, remember one thing, and all the one-d problems,  like generally in dp, in all the one-d problems, I'll be telling you away. So, first let's understand how do you  understand that this is a dp problem, like that's the first step before applying dp."
+  },
+  {
+    "start": 101.08,
+    "end": 158.32,
+    "text": "[Video: DP 2: Climbing Stairs] So, first let's understand how do you  understand that this is a dp problem, like that's the first step before applying dp. You have to  understand that this is indeed a dp problem. Now, whenever they say whenever the questions are like this, generally, whenever the questions are like this, count to be the total number of ways. So, that's the first point. Count the total number of ways. The next can be a gravity there might be multiple ways of doing something, and they're asking you to figure out which gives you the minimum output or the max output. So, the question might be like there are multiple ways to do this, but you've got to tell me which is giving you the minimum output or maximum output. Generally, in these kind of questions, you tend to  apply recursion. Why? Because if I'm saying you, count distinct ways, that means I'm saying"
+  },
+  {
+    "start": 144.58,
+    "end": 204.3,
+    "text": "[Video: DP 2: Climbing Stairs] me which is giving you the minimum output or maximum output. Generally, in these kind of questions, you tend to  apply recursion. Why? Because if I'm saying you, count distinct ways, that means I'm saying you that, okay. Figure out how many ways are there. So, if to try all possible ways,  remember this whenever the concept of try all possible way comes in. Try all possible ways come  in. Whenever it can be anyway, if the concept of try all possible ways comes in, and if there is like count or if there is like figure out the best way, if all the possible ways you have to figure out count like how many ways are there or the best way, that's when you try to apply recursion. What did I see? That's when you try to apply something as recursion, where you try all possible ways. And if you remember, in the lecture 7 of the recursion playlist, in the lecture 7 of the"
+  },
+  {
+    "start": 191.12,
+    "end": 248.52,
+    "text": "[Video: DP 2: Climbing Stairs] What did I see? That's when you try to apply something as recursion, where you try all possible ways. And if you remember, in the lecture 7 of the recursion playlist, in the lecture 7 of the recursion playlist, I told you, if you have to count all ways, then you have to perform all the ways and then sum it up. If you have to figure out the best way, then you have to perform all the ways and tell which is the best among them. So, you'll understand these things in depth, but as of now, just understand that whenever the problems start else you to figure out or like try out all possible ways, then you tend to think of recursion. Where recursion says I'm going to try all possible ways, whether I can count or probably I can found the best. That's when you think  of recursion. And once you think of recursion, then you can think of dynamic programming."
+  },
+  {
+    "start": 234.1,
+    "end": 290.15,
+    "text": "[Video: DP 2: Climbing Stairs] recursion. Where recursion says I'm going to try all possible ways, whether I can count or probably I can found the best. That's when you think  of recursion. And once you think of recursion, then you can think of dynamic programming. But the first step  is try to figure this out that this is a recursive problem. That's the first step behind every problem. Like over here, like over here, it was n equal to 3. So, like okay from 0 you'll take one step to one from 1 you'll take one step to 1 from 2 you'll take one step to 1 and you'll reach 3. Off from 0 you'll take 2 steps to 2 and you'll take one step to 3 you'll reach. Off from 0 you'll take one step to 1 and you'll take 2 steps to 3. So, these were the three  possible ways in which you can reach. So, what is this giving you an idea? Try all possible ways. Yes. So, a lot of people say that if you can master recursion, you can master dp. So, I'm going to teach  your trick."
+  },
+  {
+    "start": 275.87,
+    "end": 332.92,
+    "text": "[Video: DP 2: Climbing Stairs] So, these were the three  possible ways in which you can reach. So, what is this giving you an idea? Try all possible ways. Yes. So, a lot of people say that if you can master recursion, you can master dp. So, I'm going to teach  your trick. I'm going to teach you a shortcut trick which will be helpful in all the problems in dp. And you will be able to write every recurrence relation. So, the step one of that trick is  try to represent the problem in terms of index. Like if it's an array problem, there will always  be an index. But if it's not an array problem, then also try to represent the problem in terms of index. Remember this. You will always do this. Try to represent the problem in terms of index. Next, do all possible stuffs on that index. Do all possible stuffs on that index. According to the problem statement, according to the problem statement."
+  },
+  {
+    "start": 320.32,
+    "end": 378.28,
+    "text": "[Video: DP 2: Climbing Stairs] Next, do all possible stuffs on that index. Do all possible stuffs on that index. According to the problem statement, according to the problem statement. Step 3. If the question says count all the ways, sum up all stuffs. sum up all stuffs. If the question says count all ways. If the question says find minimum, take minimum of all stuffs. Okay? If the question says find minimum. Similarly, the question says find maximum. You'll take the maximum. Remember this three points. If you remember these three points, you can solve any recurrence. And if you are able to write the recurrence, then you can memorize it to convert it into dp. And then you can capitalize it. And after that, you can space optimize it."
+  },
+  {
+    "start": 364.52,
+    "end": 420.76,
+    "text": "[Video: DP 2: Climbing Stairs] And if you are able to write the recurrence, then you can memorize it to convert it into dp. And then you can capitalize it. And after that, you can space optimize it. Okay? So, over your  what was the problem? The problem was you are at zero and you have to reach n. The person has to reach n. So, assume this is not an array. This is like zero to n. The stairs. Assume these stairs to be indexes. I call zero to be an index. I call 1 to be an index, 2 to be an index, 3 to be an index, 4 to be an index, 5 to be an index and everything. Assume I'm calling them as index. Read them as an index. Okay? So, step one I've understood how will I represent this problem in terms of  index. That is something which I've understood. Now, next step is to realize what will your recursion  give?"
+  },
+  {
+    "start": 406.71,
+    "end": 463.57,
+    "text": "[Video: DP 2: Climbing Stairs] Read them as an index. Okay? So, step one I've understood how will I represent this problem in terms of  index. That is something which I've understood. Now, next step is to realize what will your recursion  give? So, I can say if I write a recursion, that recursion should tell me the number of ways in which I can reach from zero to n. If I'm calling a recursion as f of n, he should tell me what are the number of ways in which I can reach from zero to n. That should be  the recursion's job. I am like, yeah, that's true. So, what if I write it as f of index? So, can I  say the base case is very simple? If I'm standing at the zero to stare, there is no other way, like there's only one way in which I can, like if I'm standing at zero, there's only one way. Like again, I'll jump. There's only one way. Next, we have converted the problem in terms of index."
+  },
+  {
+    "start": 452.55,
+    "end": 511.86,
+    "text": "[Video: DP 2: Climbing Stairs] in which I can, like if I'm standing at zero, there's only one way. Like again, I'll jump. There's only one way. Next, we have converted the problem in terms of index. What's the step number two? Do all possible stuffs on that index? Yes. Do all possible stuffs on that index? What is the question stating? Either it can jump one,  either it can jump two. So, from a stare, you can jump one or you can jump two. So, what can you do on that index? Jump one or jump two? Do it now? What are you waiting for? So, I can say one of the things that I can do is jump one. So, if you're starting, like if you're  going from top to down, if you jump one, you will go back one index. If you jump two, you will go  two index. Simple. Correct? Now, now work. Now, can I see? Okay, that's that's pretty  perfect. Now, can I say one thing? If I can jump one index and if I can jump two index, there  are a couple of ways in which I can jump."
+  },
+  {
+    "start": 498.42,
+    "end": 560.9,
+    "text": "[Video: DP 2: Climbing Stairs] Simple. Correct? Now, now work. Now, can I see? Okay, that's that's pretty  perfect. Now, can I say one thing? If I can jump one index and if I can jump two index, there  are a couple of ways in which I can jump. So, there are a couple of stuffs that I can do. Now, if someone is saying me, to count all distinct ways, I know recursion will do a stop because you'll go in depth and count all the ways. Lecture seven. He's going to watch  on lecture seven. I've taught to you about how does it count all the ways. If you return one at the base case, please go and watch on lecture seven if you haven't, because over there, I've taught you how do you count all ways by returning a one on the base case. I've taught you that. So, please watch over lecture seven in the recursion. Also, if you haven't watched it. So,  how to count all ways? If this is the left recursion and this is the right recursion,  in order to count all the ways, I told you, right?"
+  },
+  {
+    "start": 548.29,
+    "end": 606.0,
+    "text": "[Video: DP 2: Climbing Stairs] Also, if you haven't watched it. So,  how to count all ways? If this is the left recursion and this is the right recursion,  in order to count all the ways, I told you, right? You have to return left plus right. That's what  you need to do. So, if you write this recursion, it is going to work. But, still there is an edge case. Yeah, there is an edge case. So, can I say can I say that? If you're doing index minus two,  now think about these edge cases, I did not tell you. What if you're standing at one? What if I'm just  calling f of one? Then one minus two will become minus one. So, there might be a problem. So,  you can introduce one more edge case, something like this again. If index is equal to equal to one. So, can I say if you're standing at one, there's only one way in which you can go zero."
+  },
+  {
+    "start": 592.15,
+    "end": 647.29,
+    "text": "[Video: DP 2: Climbing Stairs] So,  you can introduce one more edge case, something like this again. If index is equal to equal to one. So, can I say if you're standing at one, there's only one way in which you can go zero. Second return is zero. Done. What is this looking like? What do you think? Which question is this like? Okay, yeah, this is Feevanachi. Yeah, absolutely. If saw this problem in the previous one. So, you saw this, how I took a different problem? How I analyzed it and converted it into Feevanachi. So, what I can say is this problem is nothing but similar to Feevanachi number. If you  carefully write the recurrence and the possible ways to write a recurrence is,  try to represent the problem in terms of index. Do all possible stuffs on that index? If it is saying if the question is saying count always, you'll sum up all the stuffs."
+  },
+  {
+    "start": 639.54,
+    "end": 697.92,
+    "text": "[Video: DP 2: Climbing Stairs] Do all possible stuffs on that index? If it is saying if the question is saying count always, you'll sum up all the stuffs. If the question is  saying find minimum, you will stake minimum of all the stuffs. That is how you should solve  any given question. So, you can easily memorize it after that you can convert into the tabular form and then after you can space optimize it and we have already done this in the lecture one. So, I'll not be doing that again. The main reason why I picked up this problem was to tell you,  even if I did not know this was a Feevanachi. I told you how to write the recurrence and after that  you figured out it's a Feevanachi. But even if you don't know Feevanachi, you can definitely solve this problem. Now, in in code studio, if I take it to the code studio, the value of n is given as 10 to the power 18. So, either in the tabular form, even if you run a fall loop, you cannot run a fall loop"
+  },
+  {
+    "start": 685.9,
+    "end": 746.5,
+    "text": "[Video: DP 2: Climbing Stairs] Now, in in code studio, if I take it to the code studio, the value of n is given as 10 to the power 18. So, either in the tabular form, even if you run a fall loop, you cannot run a fall loop till 10 to the power 18. Even if you do the space optimization, you cannot run a fall loop till 10 to the  power 18. So, we go off n approach will not work. So, in order to find Feevanachi, you have to actually  use matrix exponentian, which helps you to find this in logarithmic of n. But, like I discussed this in some other lecture, but the main focus of today's lecture was to tell you how to convert any unknown problem to a recurrence and then you can easily write the tabular and the space optimise. I'm not writing the tabular and space optimise in the lecture,  because I've already done that in the lecture one. If I would have not done that in the lecture one, I would have done it over here, and I'm just skipping it because I've already done it. So, please remember these three points are important, which I wanted to convey you in this particular  lecture."
+  },
+  {
+    "start": 732.6,
+    "end": 793.8,
+    "text": "[Video: DP 2: Climbing Stairs] If I would have not done that in the lecture one, I would have done it over here, and I'm just skipping it because I've already done it. So, please remember these three points are important, which I wanted to convey you in this particular  lecture. So, the main intention of this lecture was to teach you the shortcuts, the three points, which helps you to build the recurrence, because after that it's memorization, then tabularization and then space optimisation. So, I hope you have got the skip these three points in your brain, because in the next lecture we'll be solving a problem, which will be much much more interesting, and you can use these three points to solve that particular problem as well. So, with this, let's wrap up this video, and yes, as a trend, please please write understood, if you have understood this particular lecture and the three points, and make sure you like this video, and if you need to do this channel, please please do consider subscribing to us, and I have with this let's wrap up"
+  },
+  {
+    "start": 780.36,
+    "end": 796.0,
+    "text": "[Video: DP 2: Climbing Stairs] particular lecture and the three points, and make sure you like this video, and if you need to do this channel, please please do consider subscribing to us, and I have with this let's wrap up this video, and bye, take care."
+  }
+]

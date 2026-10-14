@@ -1,0 +1,52 @@
+[
+  {
+    "start": 0.0,
+    "end": 57.33,
+    "text": "[Video: DP 30: Minimum Insertions/Deletions to Convert String 1 to String 2] Hey, we are welcome back to take you forward. Today we will be solving the problem minimum number of operations to convert a string 1 to string 2. So what does the problem state? Now in operations, you basically allowed couple of operations. One is you can delete any character in string 1. Delete anything in string 1. And insert anywhere, yes, insert anywhere in string 1. And by doing that, you have to convert a given string 1 to another string 2. And the number of operations can be many. You have to tell me, what is the minimum possible number of operations that you might end up taking? Question is an answer or is an answer possible? Always. Can you convert a string 1 to string 2 always?"
+  },
+  {
+    "start": 48.96,
+    "end": 105.06,
+    "text": "[Video: DP 30: Minimum Insertions/Deletions to Convert String 1 to String 2] Question is an answer or is an answer possible? Always. Can you convert a string 1 to string 2 always? The answer to that is yes. How? I can say let's delete everything. That's four operations. It's an empty string. That insert a and c. So that's three other operations. So you got the string s2. Delete everything and insert does every like every character of string 2. So seven operations is what you're taking. So I can be like, okay, the max operations that I will be taking is. I will have to delete. So end deletions in the first string. And M insertions which is exactly insert this stuff. So these are the maximum number of operations. So I have proved that this is possible."
+  },
+  {
+    "start": 90.24,
+    "end": 145.94,
+    "text": "[Video: DP 30: Minimum Insertions/Deletions to Convert String 1 to String 2] So end deletions in the first string. And M insertions which is exactly insert this stuff. So these are the maximum number of operations. So I have proved that this is possible. Now I need to figure out in what minimum possible way can I do this. All right. So again, whenever something like removal insertion console, my brain starts thinking,  what can I not touch? What can I not touch? Because ideally if I touch the minimum things, then the operations will be minimal. So like the first thing though, intuition comes up is what can I not touch? What can I not touch? Because if I touch the minimal items, the number of operations will automatically be minimal."
+  },
+  {
+    "start": 136.23,
+    "end": 194.18,
+    "text": "[Video: DP 30: Minimum Insertions/Deletions to Convert String 1 to String 2] What can I not touch? Because if I touch the minimal items, the number of operations will automatically be minimal. But before that, let's see how can we actually convert an A, B, C, D to an A and C in the minimum number of operations. I can be like, okay, let's delete A, not not A. Let's delete B and D. So I delete B and D. We will have something like AC and now insert A and insert N. So I can be like, I can have two deletions. I can have one insertion. So if I have two deletions, one insertion, I think I will be taking total of three operations. And I can convert this given string to this particular given string. Okay. So how do you minimize the number of operations?"
+  },
+  {
+    "start": 183.49,
+    "end": 240.43,
+    "text": "[Video: DP 30: Minimum Insertions/Deletions to Convert String 1 to String 2] And I can convert this given string to this particular given string. Okay. So how do you minimize the number of operations? So what is the intuition that is striking your head? It's like, what can I not touch? Because if I touch the minimal portions like over here if you see, we touch to B and D and then we insert it N. But it not touch something like AC. Why did we do that? Let's understand. So what are the operations? It's like you can delete any one, right? So anyone you can delete. And there is something like you can insert anywhere. You can insert again anywhere. So delete any, anyone and insert anywhere actually gives you an idea that, okay."
+  },
+  {
+    "start": 225.75,
+    "end": 286.57,
+    "text": "[Video: DP 30: Minimum Insertions/Deletions to Convert String 1 to String 2] And there is something like you can insert anywhere. You can insert again anywhere. So delete any, anyone and insert anywhere actually gives you an idea that, okay. If I have ABCD, ABCD and ANC, what is the common portion among them? And my brain says, the common portion among them is somewhere around, I think AC. If you carefully see AC, AC is the longest common portion. So if I can keep this intact, I'll keep this intact. I'll try to do everything in between them. I'll keep ANC intact and I'll try to do everything in between them. So in order to make ABCD into AC, what do I need to do? I will have to go across making two directions, which is deleting B and D."
+  },
+  {
+    "start": 274.59,
+    "end": 332.01,
+    "text": "[Video: DP 30: Minimum Insertions/Deletions to Convert String 1 to String 2] So in order to make ABCD into AC, what do I need to do? I will have to go across making two directions, which is deleting B and D. And then again, again if I want to make this, can I say the number of guys left? Left is one. So you have to make one insertion so that you get that guy, okay. Okay, make sense. So what is this? This is nothing but the longest matching among them. And I know this is something which is known as longest common sub sequence. I can have already taught this in the previous lectures. If you have not seen this, pause this video out. Go back to my previous lectures. Watch out long-distance common sub sequence and you will get an idea about how to find this."
+  },
+  {
+    "start": 319.93,
+    "end": 376.38,
+    "text": "[Video: DP 30: Minimum Insertions/Deletions to Convert String 1 to String 2] If you have not seen this, pause this video out. Go back to my previous lectures. Watch out long-distance common sub sequence and you will get an idea about how to find this. So can I say the number of deletions is very simple. I can write the number of deletions to be. Whatever is the length of this string, N minus the length of the LCS makes sense. N minus the length of the LCS. And the number of insertion will be. I do this as AC, I need to convert this into something as STR2. So can I say M minus the length of the LCS is what I need to insert. Those will be the insert operations. And can I say if I require the total number of operations, that's going to be N plus M minus 2 into length of LCS. Absolutely yes. And this is what my answer is. You already know how to find LCS. Just need to copy piece the code."
+  },
+  {
+    "start": 366.54,
+    "end": 421.77,
+    "text": "[Video: DP 30: Minimum Insertions/Deletions to Convert String 1 to String 2] M minus 2 into length of LCS. Absolutely yes. And this is what my answer is. You already know how to find LCS. Just need to copy piece the code. And if your copy piece the code and becomes very, very, very simple. So without wasting any time, let's code this up. So you can say in the code, we have the LCS code. So will this copy piece this and go across to our problem. It given top full of strings that we need to convert. It's copy is the LCS string. And I know the answer is very simple. It's going to be STR2 size plus the other string PDF dot size minus 2 into the length of the LCS of STR and PDF. Yeah, if it's just right this is, if I just write this, I just taken the code from the LCS, the Feroat. It does run. I just make sure you take the space optimized code. This is not the space optimized one."
+  },
+  {
+    "start": 407.82,
+    "end": 442.0,
+    "text": "[Video: DP 30: Minimum Insertions/Deletions to Convert String 1 to String 2] Yeah, if it's just right this is, if I just write this, I just taken the code from the LCS, the Feroat. It does run. I just make sure you take the space optimized code. This is not the space optimized one. But yeah, the main concept is you understand how to use LCS in order to solve this problem. So guys, just in case you're dead, understand please, please make sure you like this video. Please do consider subscribing. And now with this, I'll be back with this video. It's me in the next one. Bye bye."
+  }
+]

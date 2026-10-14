@@ -1,0 +1,1072 @@
+[
+  {
+    "start": 0.0,
+    "end": 2.17,
+    "text": "AVM welcome back to the channel."
+  },
+  {
+    "start": 2.17,
+    "end": 7.66,
+    "text": "I hope you guys are doing extremely well So this is going to be a very very short"
+  },
+  {
+    "start": 7.66,
+    "end": 14.43,
+    "text": "video Why because in this video I'll be talking about the lecture 3 follow up questions solution now"
+  },
+  {
+    "start": 14.43,
+    "end": 20.12,
+    "text": "in lecture 3 I did give you a follow up question Where I asked you Like the question"
+  },
+  {
+    "start": 20.12,
+    "end": 25.27,
+    "text": "that we solved was if the frog Could jump from the Ith in next to I plus one"
+  },
+  {
+    "start": 25.27,
+    "end": 30.28,
+    "text": "and the frog could jump from I plus I to I plus 2 in this scenario What is"
+  },
+  {
+    "start": 30.28,
+    "end": 36.11,
+    "text": "the minimum energy that the frog will take in order to jump from zero index to n minus"
+  },
+  {
+    "start": 36.11,
+    "end": 41.66,
+    "text": "1th index That was the question in lecture 3, but I did give you a follow up where"
+  },
+  {
+    "start": 41.66,
+    "end": 46.06,
+    "text": "I said you that What if I give you k yes what if I give you k and"
+  },
+  {
+    "start": 46.06,
+    "end": 50.6,
+    "text": "I ask you that you allow to jump from I plus one to I plus 2 plus I"
+  },
+  {
+    "start": 50.6,
+    "end": 55.68,
+    "text": "Plus 3 dot dot dot dot I'll I plus kth index you allow to jump to all these"
+  },
+  {
+    "start": 55.68,
+    "end": 61.91,
+    "text": "indexes So if instead of allowing couple of indexes, I allow you to jump around k indexes So"
+  },
+  {
+    "start": 61.91,
+    "end": 68.35,
+    "text": "what is going to be the minimum energy required so most of you Remember the recurrence and just"
+  },
+  {
+    "start": 68.35,
+    "end": 74.72,
+    "text": "make sure the lecture 3 like you would have watched like lecture 3 in order to understand this"
+  },
+  {
+    "start": 74.72,
+    "end": 80.68,
+    "text": "So if you remember the recurrence it was something like f of index and if index is equal"
+  },
+  {
+    "start": 80.68,
+    "end": 81.76,
+    "text": "to equal to zero"
+  },
+  {
+    "start": 81.76,
+    "end": 88.82,
+    "text": "Then you return to zero  Remember this  Every problem has to be expressed in terms of indexes, right?"
+  },
+  {
+    "start": 88.82,
+    "end": 93.99,
+    "text": "So what I can say is if I'm doing a first step like first jump then I will"
+  },
+  {
+    "start": 93.99,
+    "end": 100.14,
+    "text": "be reaching index minus 1 and then the energy taken will be Absolute of a of index minus"
+  },
+  {
+    "start": 100.14,
+    "end": 106.5,
+    "text": "absolute of index minus 1 and if I'm taking the second jump Which is again only possible if"
+  },
+  {
+    "start": 106.5,
+    "end": 112.16,
+    "text": "index is greater than 1 that I can take the second step or second jump Which is f"
+  },
+  {
+    "start": 112.16,
+    "end": 117.82,
+    "text": "of index minus 2 plus absolute of a of index minus absolute of a of index minus 2"
+  },
+  {
+    "start": 117.82,
+    "end": 123.97,
+    "text": "now What did you return you return the minimal of the first step or the second step that"
+  },
+  {
+    "start": 123.97,
+    "end": 130.54,
+    "text": "is how the recurrence was So I'll just tell you about the recurrence and probably you can then"
+  },
+  {
+    "start": 130.54,
+    "end": 136.55,
+    "text": "modify every other thing Now tell me what if I would have told you like let's think it"
+  },
+  {
+    "start": 136.55,
+    "end": 142.7,
+    "text": "in a slightly bigger version What if I would have told you that I'm allowing you to jump"
+  },
+  {
+    "start": 142.7,
+    "end": 147.66,
+    "text": "from i plus 1 to i plus 2 to i plus 3 I'm allowing you three jumps then"
+  },
+  {
+    "start": 147.66,
+    "end": 154.72,
+    "text": "you would have worked in probably something like third jump Like third step would have been there and"
+  },
+  {
+    "start": 154.72,
+    "end": 159.52,
+    "text": "I would have been like f of index minus 3 plus absolute of a of index"
+  },
+  {
+    "start": 159.52,
+    "end": 164.99,
+    "text": "Minus a of index minus 3 and then this would have been if index is greater than 2"
+  },
+  {
+    "start": 164.99,
+    "end": 171.14,
+    "text": "and instead of Minimum of 2 there will be three minimums That's that is what you would have"
+  },
+  {
+    "start": 171.14,
+    "end": 171.48,
+    "text": "done."
+  },
+  {
+    "start": 171.48,
+    "end": 177.09,
+    "text": "Whatever change the question to i plus so then there will be a food guy if I change"
+  },
+  {
+    "start": 177.09,
+    "end": 181.55,
+    "text": "it to i plus 5 There will be fifth guy now if I give you k where k"
+  },
+  {
+    "start": 181.55,
+    "end": 186.89,
+    "text": "can vary yes if I give you k where k Can vary from question to question will it"
+  },
+  {
+    "start": 186.89,
+    "end": 193.99,
+    "text": "not make sense because what are you doing ultimately you're taking the minimal of Whatever jumps you make"
+  },
+  {
+    "start": 193.99,
+    "end": 199.33,
+    "text": "So if I'm giving you k possible jumps So you can ask the end is because what is"
+  },
+  {
+    "start": 199.33,
+    "end": 205.28,
+    "text": "the rule the rule is perform the recurrence on the index Do all stuffs on the index when"
+  },
+  {
+    "start": 205.28,
+    "end": 210.55,
+    "text": "I say there are k jumps So all stuffs will means you will do k jumps right and"
+  },
+  {
+    "start": 210.55,
+    "end": 216.57,
+    "text": "there is a third step You have to return the minimal so you can easily return the minimal"
+  },
+  {
+    "start": 216.57,
+    "end": 221.5,
+    "text": "of All of these guys so can I write this as like if I'm doing k jumps can"
+  },
+  {
+    "start": 221.5,
+    "end": 227.25,
+    "text": "I convert this into k Fall loop and do the jumps instead of writing one jump two jump"
+  },
+  {
+    "start": 227.25,
+    "end": 230.49,
+    "text": "three jump can I just write them in a fall loop?"
+  },
+  {
+    "start": 230.49,
+    "end": 235.76,
+    "text": "I can because if I  categorize like if I observe it it is like index minus one"
+  },
+  {
+    "start": 235.76,
+    "end": 242.21,
+    "text": "Index minus two index minus three so what is changing minus one minus two minus three so it"
+  },
+  {
+    "start": 242.21,
+    "end": 247.38,
+    "text": "will go until minus k Yeah, so you can just run a loop till then so can I"
+  },
+  {
+    "start": 247.38,
+    "end": 253.55,
+    "text": "say can I say like the recurrence will now be updated to something like this F of index"
+  },
+  {
+    "start": 253.55,
+    "end": 259.86,
+    "text": "where you can definitely write index equal to equal to zero There I have no issue you can"
+  },
+  {
+    "start": 259.86,
+    "end": 267.44,
+    "text": "return zero right now you need the minimum energy Inflake whatever whichever step that take the minimum you"
+  },
+  {
+    "start": 267.44,
+    "end": 273.68,
+    "text": "want that So can I say the minimum steps let's assume initial minimum steps to be in Max"
+  },
+  {
+    "start": 273.68,
+    "end": 279.56,
+    "text": "I can definitely write that now I know there will be k jumps So I can probably give"
+  },
+  {
+    "start": 279.56,
+    "end": 284.52,
+    "text": "it like j where j is the jump J equal to one till j less than equal to"
+  },
+  {
+    "start": 284.52,
+    "end": 290.05,
+    "text": "k j plus plus I can definitely write that right now Can I see what is the jump"
+  },
+  {
+    "start": 290.05,
+    "end": 290.55,
+    "text": "energy?"
+  },
+  {
+    "start": 290.55,
+    "end": 296.29,
+    "text": "Christ is a jump energy will be I am Going to work now this step instead of index"
+  },
+  {
+    "start": 296.29,
+    "end": 302.39,
+    "text": "minus one First time what's the value of j one so index minus one next time what's the"
+  },
+  {
+    "start": 302.39,
+    "end": 307.07,
+    "text": "value of j two so index minus two next time what's the value of j?"
+  },
+  {
+    "start": 307.07,
+    "end": 311.68,
+    "text": "So index minus three so can I simply write them as index minus j?"
+  },
+  {
+    "start": 311.68,
+    "end": 318.07,
+    "text": "I can definitely write it correct now what if what will be the absolute I can definitely see"
+  },
+  {
+    "start": 318.07,
+    "end": 323.97,
+    "text": "that the absolute will be A of current index minus a of index minus j because that is"
+  },
+  {
+    "start": 323.97,
+    "end": 329.32,
+    "text": "what the jump will be and if this is the jump energy Yes, if this is the jump"
+  },
+  {
+    "start": 329.32,
+    "end": 330.85,
+    "text": "energy can I see this?"
+  },
+  {
+    "start": 330.85,
+    "end": 336.41,
+    "text": "That I can store the minimal of all the jumps I can store the minimal of all the"
+  },
+  {
+    "start": 336.41,
+    "end": 342.24,
+    "text": "jumps which is minimum steps and whatever the jump energy is at the end of the day I"
+  },
+  {
+    "start": 342.24,
+    "end": 349.32,
+    "text": "can return whatever minimum steps or minimum energy that it took So instead of writing index minus one"
+  },
+  {
+    "start": 349.32,
+    "end": 354.95,
+    "text": "index minus two I Change it into a fall loop even if it's two It'll be like index"
+  },
+  {
+    "start": 354.95,
+    "end": 360.99,
+    "text": "minus one then it'll be like index minus two so both of these minimums will be taken So"
+  },
+  {
+    "start": 360.99,
+    "end": 364.12,
+    "text": "can I change the code to something like this?"
+  },
+  {
+    "start": 364.12,
+    "end": 370.79,
+    "text": "I definitely can Right, but now still there is a problem if I'm writing something as index minus"
+  },
+  {
+    "start": 370.79,
+    "end": 376.14,
+    "text": "j I need to take care of it right So if you remember over here we were taking"
+  },
+  {
+    "start": 376.14,
+    "end": 382.04,
+    "text": "care if index is greater than one We were taking care if index is greater than two so"
+  },
+  {
+    "start": 382.04,
+    "end": 388.22,
+    "text": "we need to make sure that whatever this value is yes whatever this value is index minus j"
+  },
+  {
+    "start": 388.22,
+    "end": 389.6,
+    "text": "like the After after"
+  },
+  {
+    "start": 389.6,
+    "end": 395.79,
+    "text": "Subracking it should be greater than equal to zero like it should not go to a negative index"
+  },
+  {
+    "start": 395.79,
+    "end": 401.51,
+    "text": "And if that's the case I can make sure that these Couple of steps are performed if it"
+  },
+  {
+    "start": 401.51,
+    "end": 407.5,
+    "text": "says the case otherwise there'll be no jumps and you can break out or you can do whatever"
+  },
+  {
+    "start": 407.5,
+    "end": 412.95,
+    "text": "you wish to Like you can break out because if This is this is going to a negative"
+  },
+  {
+    "start": 412.95,
+    "end": 414.56,
+    "text": "index you can break out."
+  },
+  {
+    "start": 414.56,
+    "end": 421.22,
+    "text": "There will be no further jumps possible That is how the recurrence relationship will be now just to"
+  },
+  {
+    "start": 421.22,
+    "end": 426.33,
+    "text": "understand one thing if I if I apply Memo I a shouldn't do it yes if I apply"
+  },
+  {
+    "start": 426.33,
+    "end": 428.01,
+    "text": "Memo I a shouldn't do it."
+  },
+  {
+    "start": 428.01,
+    "end": 429.15,
+    "text": "What will happen?"
+  },
+  {
+    "start": 429.15,
+    "end": 431.77,
+    "text": "If I'm applying Memo I shouldn't do it."
+  },
+  {
+    "start": 431.77,
+    "end": 438.97,
+    "text": "Obviously I will be applying a dp of n  Into this where I'll be saying dp of  Index equal to and over here."
+  },
+  {
+    "start": 438.97,
+    "end": 443.41,
+    "text": "I'll be writing if a dp of something right  Those couple of lines."
+  },
+  {
+    "start": 443.41,
+    "end": 449.4,
+    "text": "I will have to write But what will be the time complexity now in the previous question we"
+  },
+  {
+    "start": 449.4,
+    "end": 455.25,
+    "text": "have seen that the number of states where big of end But before here we have to observe"
+  },
+  {
+    "start": 455.25,
+    "end": 461.37,
+    "text": "one thing first state yes per index what is the Loop that you're running per index the loop"
+  },
+  {
+    "start": 461.37,
+    "end": 466.68,
+    "text": "that you're running is around k times So if there are n states like f of five f"
+  },
+  {
+    "start": 466.68,
+    "end": 470.12,
+    "text": "of four f of three every time you're taking k steps"
+  },
+  {
+    "start": 470.12,
+    "end": 471.97,
+    "text": "It is no more like two steps."
+  },
+  {
+    "start": 471.97,
+    "end": 474.2,
+    "text": "It is like one two three four five."
+  },
+  {
+    "start": 474.2,
+    "end": 478.59,
+    "text": "They'll k steps  For every junction for every junction their k steps."
+  },
+  {
+    "start": 478.59,
+    "end": 482.98,
+    "text": "So you can say that for if there are n states  And there are k jumps."
+  },
+  {
+    "start": 482.98,
+    "end": 488.07,
+    "text": "I can say the time complexity to be this and the space complexity to we be go of"
+  },
+  {
+    "start": 488.07,
+    "end": 491.44,
+    "text": "n of recursion stack space plus a big of n of memory."
+  },
+  {
+    "start": 491.44,
+    "end": 497.74,
+    "text": "I shouldn't this is what the time Complex it in the space complexity of the recursive solution will"
+  },
+  {
+    "start": 497.74,
+    "end": 503.4,
+    "text": "be now if you remember Abulation how did I write the tabulation it was again very simple."
+  },
+  {
+    "start": 503.4,
+    "end": 507.92,
+    "text": "I declared a dp array of size n I said dp of a zero yes, which means in"
+  },
+  {
+    "start": 507.92,
+    "end": 513.46,
+    "text": "order to reach the index zero from zero will be Zero that is what I definitely said and"
+  },
+  {
+    "start": 513.46,
+    "end": 518.11,
+    "text": "right after that what I did was I started from one and I went on till n I"
+  },
+  {
+    "start": 518.11,
+    "end": 523.65,
+    "text": "plus plus and what I wrote was basically I wrote first step second step and then I said"
+  },
+  {
+    "start": 523.65,
+    "end": 529.25,
+    "text": "dp of i is equal to minimum of First step and second step remember the previous class so"
+  },
+  {
+    "start": 529.25,
+    "end": 534.28,
+    "text": "instead of first step second step I can say I can run a fall loop over here and"
+  },
+  {
+    "start": 534.28,
+    "end": 540.26,
+    "text": "whatever will be the minimal I'll store it in the dp Right makes sense because in the previous"
+  },
+  {
+    "start": 540.26,
+    "end": 545.41,
+    "text": "lecture we did take the minimum First step and second step now there are k steps."
+  },
+  {
+    "start": 545.41,
+    "end": 550.37,
+    "text": "So if you take all the k steps that's very simple what you will do is you will"
+  },
+  {
+    "start": 550.37,
+    "end": 553.16,
+    "text": "again say minimum steps is equal to into max"
+  },
+  {
+    "start": 553.16,
+    "end": 558.42,
+    "text": "Similar stuff you'll write and what you can write is for j equal to 1 j ls of"
+  },
+  {
+    "start": 558.42,
+    "end": 564.51,
+    "text": "the equal to k j plus plus That is something which you can definitely write and over here"
+  },
+  {
+    "start": 564.51,
+    "end": 569.84,
+    "text": "what you can write is if i minus j is greater than equal to zero that means If"
+  },
+  {
+    "start": 569.84,
+    "end": 575.86,
+    "text": "this chunk can be possible like it should not be a negative index right then you can say"
+  },
+  {
+    "start": 575.86,
+    "end": 581.81,
+    "text": "the jump energy required is nothing but dp of i minus j you'll take it why this because"
+  },
+  {
+    "start": 581.81,
+    "end": 587.62,
+    "text": "in the recurrence There is what you have written over here right dp of i minus j that"
+  },
+  {
+    "start": 587.62,
+    "end": 592.95,
+    "text": "is what I have written over here So you have written dp of i minus j plus what"
+  },
+  {
+    "start": 592.95,
+    "end": 598.83,
+    "text": "is the absolute energy that you have taken a of index Minus a of index minus j correct"
+  },
+  {
+    "start": 598.83,
+    "end": 605.87,
+    "text": "that's what you'll write and you can easily write minimum steps equal to minimum of Either the previous"
+  },
+  {
+    "start": 605.87,
+    "end": 611.75,
+    "text": "minimum steps or the current jump that you took So this will be the fall loop and once"
+  },
+  {
+    "start": 611.75,
+    "end": 617.36,
+    "text": "you have done this you can say dp of i to be Minimum steps correct that's what you"
+  },
+  {
+    "start": 617.36,
+    "end": 622.83,
+    "text": "can easily do and now what I can say is once you have done this You can directly"
+  },
+  {
+    "start": 622.83,
+    "end": 628.5,
+    "text": "print your answer to be dp of n minus 1 right you can directly print your answer to"
+  },
+  {
+    "start": 628.5,
+    "end": 631.24,
+    "text": "be this and this is going to be a answer"
+  },
+  {
+    "start": 631.24,
+    "end": 633.69,
+    "text": "What will be the time complexity guys?"
+  },
+  {
+    "start": 633.69,
+    "end": 639.95,
+    "text": "We go off n into k because that is what you're doing  A recursion stack space will be eliminated."
+  },
+  {
+    "start": 639.95,
+    "end": 644.72,
+    "text": "There will just be a b go off n dp R s space that they're using That's how"
+  },
+  {
+    "start": 644.72,
+    "end": 650.98,
+    "text": "you convert it into probably multi dimension dp like it's it's basically nested look dp So I hope"
+  },
+  {
+    "start": 650.98,
+    "end": 657.5,
+    "text": "you have understood the follow up question now the question arises can we space optimize this Yes, we"
+  },
+  {
+    "start": 657.5,
+    "end": 664.28,
+    "text": "can But any space optimally generally in the previous questions we have seen we have space optimised this"
+  },
+  {
+    "start": 664.28,
+    "end": 668.09,
+    "text": "from a b go off n to a b go off One now can we do this over"
+  },
+  {
+    "start": 668.09,
+    "end": 668.41,
+    "text": "here?"
+  },
+  {
+    "start": 668.41,
+    "end": 673.31,
+    "text": "The answer to that we know we can just optimize the space from b go off n to"
+  },
+  {
+    "start": 673.31,
+    "end": 677.44,
+    "text": "a b go off k So do you remember how did we optimize a b go off n"
+  },
+  {
+    "start": 677.44,
+    "end": 679.57,
+    "text": "into b go fund solution remember?"
+  },
+  {
+    "start": 679.57,
+    "end": 684.6,
+    "text": "So we just quickly give you a recap in order to find dp of i what you required"
+  },
+  {
+    "start": 684.6,
+    "end": 689.31,
+    "text": "was dp of i minus 1 and dp of i minus 2 So they're when only two previous"
+  },
+  {
+    "start": 689.31,
+    "end": 695.25,
+    "text": "states which were required for computing any particular i at state like the value of dp of i"
+  },
+  {
+    "start": 695.25,
+    "end": 700.28,
+    "text": "be required couple of states that was dp of i minus 1 and the other one was dp"
+  },
+  {
+    "start": 700.28,
+    "end": 704.6,
+    "text": "of i minus 2 So there were only couple of steps that were required."
+  },
+  {
+    "start": 704.6,
+    "end": 707.96,
+    "text": "So what you can do is instead of carrying these guys"
+  },
+  {
+    "start": 707.96,
+    "end": 714.49,
+    "text": "You can carry the previous couple of steps states in couple of variables which was previous two And"
+  },
+  {
+    "start": 714.49,
+    "end": 719.57,
+    "text": "the previous and you can call this as car i so there'll be no dp of i carried"
+  },
+  {
+    "start": 719.57,
+    "end": 725.04,
+    "text": "so whenever like assume this is the current i So the next step and i will move here"
+  },
+  {
+    "start": 725.04,
+    "end": 728.67,
+    "text": "What will happen in the next step and i will move here?"
+  },
+  {
+    "start": 728.67,
+    "end": 734.14,
+    "text": "this guy ends to become the dp of i minus 1 because if you're standing here this is"
+  },
+  {
+    "start": 734.14,
+    "end": 739.28,
+    "text": "i the previous guy becomes dp of i minus 1 They're why you can say in the next"
+  },
+  {
+    "start": 739.28,
+    "end": 745.61,
+    "text": "step this guy will become previous thereby the next previous will be for the next i the previous"
+  },
+  {
+    "start": 745.61,
+    "end": 750.69,
+    "text": "will be car of i and this guy tends to become the previous two So in the next"
+  },
+  {
+    "start": 750.69,
+    "end": 757.02,
+    "text": "step the previous two will become previous Correct and then you can easily do whatever the car i"
+  },
+  {
+    "start": 757.02,
+    "end": 762.56,
+    "text": "is using this previous and this previous two instead of using dp of i minus 1 and dp"
+  },
+  {
+    "start": 762.56,
+    "end": 768.03,
+    "text": "of i minus 2 Now over here what do we require let's quickly look at away We require"
+  },
+  {
+    "start": 768.03,
+    "end": 773.31,
+    "text": "i minus j correct we require something as i minus j what is that Is that i minus"
+  },
+  {
+    "start": 773.31,
+    "end": 777.14,
+    "text": "j can i say it can go like i minus 1 i minus 2 i minus 3 i"
+  },
+  {
+    "start": 777.14,
+    "end": 781.56,
+    "text": "minus 4 i minus 5 So on to i minus k can i say this obviously i can"
+  },
+  {
+    "start": 781.56,
+    "end": 785.32,
+    "text": "see this because if if i'm giving a k s 2 and for dp of i"
+  },
+  {
+    "start": 785.32,
+    "end": 790.14,
+    "text": "i required dp of i minus 1 and i required dp of i minus 2 if i give"
+  },
+  {
+    "start": 790.14,
+    "end": 794.38,
+    "text": "k s 3 i required dp of i minus 1 i minus 2 and i minus 3 so"
+  },
+  {
+    "start": 794.38,
+    "end": 800.06,
+    "text": "like if i just give you an extension can i say this if these are the points yes"
+  },
+  {
+    "start": 800.06,
+    "end": 806.24,
+    "text": "if these are the points And just for a safe assume you are standing over here and this"
+  },
+  {
+    "start": 806.24,
+    "end": 811.13,
+    "text": "is the i and k is full And if k is full so can i see whenever you're"
+  },
+  {
+    "start": 811.13,
+    "end": 818.25,
+    "text": "standing over here and you're computing you're trying to compute this dp of i What you will require"
+  },
+  {
+    "start": 818.25,
+    "end": 824.15,
+    "text": "as states are very very simple what is that and it's as simple as that You can say"
+  },
+  {
+    "start": 824.15,
+    "end": 830.12,
+    "text": "this is i minus 1 is what you'll require this i minus 2 is what you'll require this"
+  },
+  {
+    "start": 830.12,
+    "end": 836.02,
+    "text": "i minus 3 is what you'll require this i minus 4 is what you require so you'll just"
+  },
+  {
+    "start": 836.02,
+    "end": 842.49,
+    "text": "required the four last values Or can i say you'll just require the k last Values does that"
+  },
+  {
+    "start": 842.49,
+    "end": 848.96,
+    "text": "make sense because it is required those k last values because you'll be like dp of i minus"
+  },
+  {
+    "start": 848.96,
+    "end": 852.77,
+    "text": "1 dp of i minus 2 dpe of i minus 3 dp of last values."
+  },
+  {
+    "start": 852.77,
+    "end": 858.31,
+    "text": "Now if I just change to the next dot and I say in the next iteration, yes, in"
+  },
+  {
+    "start": 858.31,
+    "end": 864.28,
+    "text": "the next iteration, let's assume you have stored these four elements in some array."
+  },
+  {
+    "start": 864.28,
+    "end": 868.63,
+    "text": "Okay, let's assume you have stored these four elements in some array."
+  },
+  {
+    "start": 868.63,
+    "end": 873.36,
+    "text": "So can I say, if you are going to the next eye, if you're going to the next"
+  },
+  {
+    "start": 873.36,
+    "end": 878.09,
+    "text": "eye, who are the new last four this is the eye, can I say the new last four"
+  },
+  {
+    "start": 878.09,
+    "end": 880.04,
+    "text": "elements are this white circle?"
+  },
+  {
+    "start": 880.04,
+    "end": 883.82,
+    "text": "Can I say the new last four elements are these white circle?"
+  },
+  {
+    "start": 883.82,
+    "end": 888.3,
+    "text": "And if I try to write the lines, this will be R minus 1, this will be R"
+  },
+  {
+    "start": 888.3,
+    "end": 890.38,
+    "text": "minus 2, R minus 3 and R minus 4."
+  },
+  {
+    "start": 890.38,
+    "end": 891.7,
+    "text": "Does that make sense?"
+  },
+  {
+    "start": 891.7,
+    "end": 893.47,
+    "text": "That absolutely makes sense."
+  },
+  {
+    "start": 893.47,
+    "end": 898.45,
+    "text": "So what you can do is probably you can carry a list and like you can carry like"
+  },
+  {
+    "start": 898.45,
+    "end": 903.24,
+    "text": "in in C++, you can carry a list even in an icing Java, you can carry a list."
+  },
+  {
+    "start": 903.24,
+    "end": 907.97,
+    "text": "So what you can, you just need to do is just need to make sure you omit the"
+  },
+  {
+    "start": 907.97,
+    "end": 913.33,
+    "text": "first element, yes, like you can just erase it and you insert this eye into the list."
+  },
+  {
+    "start": 913.33,
+    "end": 915.1,
+    "text": "That is how you can do like."
+  },
+  {
+    "start": 915.1,
+    "end": 920.96,
+    "text": "In the previous question, we were strapping like this right over your what you will do is you"
+  },
+  {
+    "start": 920.96,
+    "end": 927.01,
+    "text": "will erase the first element and you'll insert the new eye because in the next step that becomes"
+  },
+  {
+    "start": 927.01,
+    "end": 928.02,
+    "text": "the eye minus 1."
+  },
+  {
+    "start": 928.02,
+    "end": 933.0,
+    "text": "So in this way, you just need to maintain, you just need to take care of, we go"
+  },
+  {
+    "start": 933.0,
+    "end": 937.85,
+    "text": "off K elements, you just need to take care of B go off K elements, but is the"
+  },
+  {
+    "start": 937.85,
+    "end": 940.12,
+    "text": "code necessary and answer to that is"
+  },
+  {
+    "start": 940.12,
+    "end": 944.42,
+    "text": "no why because if I give you K equal to yes, if I give you K equal to"
+  },
+  {
+    "start": 944.42,
+    "end": 948.97,
+    "text": "N, if I give you K equal to N, then the worst case again becomes B go off"
+  },
+  {
+    "start": 948.97,
+    "end": 949.59,
+    "text": "N element."
+  },
+  {
+    "start": 949.59,
+    "end": 955.02,
+    "text": "So there is absolutely no need of a space optimizing it like I just give you a concept,"
+  },
+  {
+    "start": 955.02,
+    "end": 960.51,
+    "text": "how can you think, but I will not go into the code because it's not required because the"
+  },
+  {
+    "start": 960.51,
+    "end": 965.69,
+    "text": "worst case, if I give you N jumps, you have to carry an elements, there is no other"
+  },
+  {
+    "start": 965.69,
+    "end": 966.13,
+    "text": "option."
+  },
+  {
+    "start": 966.13,
+    "end": 973.3,
+    "text": "So indirectly you are not optimizing space, if I give you the  worst case scenario, I hope you have got that right."
+  },
+  {
+    "start": 973.3,
+    "end": 978.66,
+    "text": "So since you have got this, that was the answer to the follow up question and since so"
+  },
+  {
+    "start": 978.66,
+    "end": 983.84,
+    "text": "since it took me so much of time to explain the follow-up only that is the reason I"
+  },
+  {
+    "start": 983.84,
+    "end": 989.2,
+    "text": "did not edit in the lecture 3 and yesterday I could not upload the video because I was"
+  },
+  {
+    "start": 989.2,
+    "end": 994.56,
+    "text": "suffering from very, very high fever and I have a lot of pain over here like what's on"
+  },
+  {
+    "start": 994.56,
+    "end": 995.37,
+    "text": "the jalanuri."
+  },
+  {
+    "start": 995.37,
+    "end": 1002.61,
+    "text": "I'm still recording this and I will be uploading this and right after  this video there will be lecture 4 coming up."
+  },
+  {
+    "start": 1002.61,
+    "end": 1004.04,
+    "text": "Don't worry about that."
+  },
+  {
+    "start": 1004.04,
+    "end": 1006.35,
+    "text": "This video is for the yesterday  one."
+  },
+  {
+    "start": 1006.35,
+    "end": 1012.21,
+    "text": "So yeah in case you have understood the lecture 3 follow up just a quick request, please write"
+  },
+  {
+    "start": 1012.21,
+    "end": 1017.72,
+    "text": "understood in the previous video there was around 8,000 views and highly 100 people load"
+  },
+  {
+    "start": 1017.72,
+    "end": 1018.54,
+    "text": "understood."
+  },
+  {
+    "start": 1018.54,
+    "end": 1025.96,
+    "text": "So please write understood which goes by US and please please like this video if you have understood"
+  },
+  {
+    "start": 1025.96,
+    "end": 1029.08,
+    "text": "it and also do consider subscribing to us."
+  },
+  {
+    "start": 1029.08,
+    "end": 1035.46,
+    "text": "If you are new to this channel and if you haven't yet checked out our SD sheet, please"
+  },
+  {
+    "start": 1035.46,
+    "end": 1042.73,
+    "text": "please make sure you check it out and that's in the description like almost every college in India"
+  },
+  {
+    "start": 1042.73,
+    "end": 1047.03,
+    "text": "is following this particular sheet for please be prepared."
+  },
+  {
+    "start": 1047.03,
+    "end": 1053.63,
+    "text": "So make sure check it out and that's all in this video and let's be in the next  lecture."
+  },
+  {
+    "start": 1053.63,
+    "end": 1054.44,
+    "text": "Bye people."
+  }
+]

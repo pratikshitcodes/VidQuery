@@ -1,0 +1,2922 @@
+[
+  {
+    "start": 0.0,
+    "end": 2.73,
+    "text": "Hey everyone welcome back to the channel."
+  },
+  {
+    "start": 2.73,
+    "end": 5.46,
+    "text": "I hope you guys are doing extremely well."
+  },
+  {
+    "start": 5.46,
+    "end": 12.98,
+    "text": "Today is the 7th lecture of the dynamic programming playlist and this problem is quite interesting because you're"
+  },
+  {
+    "start": 12.98,
+    "end": 14.98,
+    "text": "going to learn a lot of stuff."
+  },
+  {
+    "start": 14.98,
+    "end": 15.25,
+    "text": "Yes."
+  },
+  {
+    "start": 15.25,
+    "end": 18.58,
+    "text": "Trust me when this video ends  your bill like wow."
+  },
+  {
+    "start": 18.58,
+    "end": 21.31,
+    "text": "Dynamic programming is so, so super cool."
+  },
+  {
+    "start": 21.31,
+    "end": 24.5,
+    "text": "So, question goes by the name Ananya  streaming."
+  },
+  {
+    "start": 24.5,
+    "end": 28.36,
+    "text": "So, Ninja is planning this end-day long training schedule."
+  },
+  {
+    "start": 28.36,
+    "end": 32.29,
+    "text": "Each day he can perform  any one of these three activities."
+  },
+  {
+    "start": 32.29,
+    "end": 41.27,
+    "text": "So, there are three activities that the Ninja can perform  running fighting practice or learning new moves, a forget about these stuff."
+  },
+  {
+    "start": 41.27,
+    "end": 44.53,
+    "text": "Each activity has  some merit points on each day."
+  },
+  {
+    "start": 44.53,
+    "end": 46.59,
+    "text": "So, there are three activities."
+  },
+  {
+    "start": 46.59,
+    "end": 50.85,
+    "text": "If you perform any activity on a  given day you get some points."
+  },
+  {
+    "start": 50.85,
+    "end": 57.5,
+    "text": "Now, as Ninja has to improve all his skills, he can't do the same  activity in two consecutive days."
+  },
+  {
+    "start": 57.5,
+    "end": 63.55,
+    "text": "That means, if on the first day he has done running on the second  day he again cannot run."
+  },
+  {
+    "start": 63.55,
+    "end": 67.14,
+    "text": "So, two activities cannot be done on consecutive days."
+  },
+  {
+    "start": 67.14,
+    "end": 73.99,
+    "text": "Something similar to  the lecture five where it was stated that you cannot pick up consecutive numbers."
+  },
+  {
+    "start": 73.99,
+    "end": 75.12,
+    "text": "But over here you"
+  },
+  {
+    "start": 75.12,
+    "end": 79.32,
+    "text": "have to perform something like you cannot skip the next day."
+  },
+  {
+    "start": 79.32,
+    "end": 81.42,
+    "text": "You have to perform something."
+  },
+  {
+    "start": 81.42,
+    "end": 84.92,
+    "text": "This is  where the question is slightly different."
+  },
+  {
+    "start": 84.92,
+    "end": 86.53,
+    "text": "So, can you help Ninja?"
+  },
+  {
+    "start": 86.53,
+    "end": 91.99,
+    "text": "Find out the maximum merit points  that the Ninja can earn if he has end days."
+  },
+  {
+    "start": 91.99,
+    "end": 95.28,
+    "text": "Now, you're given a 2D array of size n cross 3."
+  },
+  {
+    "start": 95.28,
+    "end": 97.45,
+    "text": "It's  a slightly different one."
+  },
+  {
+    "start": 97.45,
+    "end": 98.15,
+    "text": "n cross 3."
+  },
+  {
+    "start": 98.15,
+    "end": 105.78,
+    "text": "So, basically there will be three columns and n rows  with the points corresponding to each day and activity."
+  },
+  {
+    "start": 105.78,
+    "end": 111.45,
+    "text": "The task is to calculate the maximum  number of merit points that Ninja can earn."
+  },
+  {
+    "start": 111.45,
+    "end": 114.81,
+    "text": "So, let me just explain you what does this mean."
+  },
+  {
+    "start": 114.81,
+    "end": 118.45,
+    "text": "So,  basically it means these are the three columns."
+  },
+  {
+    "start": 118.45,
+    "end": 119.85,
+    "text": "So, this is running."
+  },
+  {
+    "start": 119.85,
+    "end": 121.95,
+    "text": "This is some activity  second."
+  },
+  {
+    "start": 121.95,
+    "end": 126.01,
+    "text": "I can say first activity, second activity, third activity."
+  },
+  {
+    "start": 126.01,
+    "end": 128.11,
+    "text": "This is what I can easily say."
+  },
+  {
+    "start": 128.11,
+    "end": 131.4,
+    "text": "And this is day one and this is day two points."
+  },
+  {
+    "start": 131.4,
+    "end": 135.39,
+    "text": "If there was someone else, it would have been day  three."
+  },
+  {
+    "start": 135.39,
+    "end": 137.56,
+    "text": "It has as simple as it can get."
+  },
+  {
+    "start": 137.56,
+    "end": 139.03,
+    "text": "This is how it looks."
+  },
+  {
+    "start": 139.03,
+    "end": 144.42,
+    "text": "So, I can say this is definitely  a day one or zero whatever you can call it."
+  },
+  {
+    "start": 144.42,
+    "end": 145.68,
+    "text": "This is a day one."
+  },
+  {
+    "start": 145.68,
+    "end": 148.97,
+    "text": "So, you you have to perform on two  given days."
+  },
+  {
+    "start": 148.97,
+    "end": 150.16,
+    "text": "So, greedy again."
+  },
+  {
+    "start": 150.16,
+    "end": 154.08,
+    "text": "The first step that always comes to our brain is greedy."
+  },
+  {
+    "start": 154.08,
+    "end": 155.28,
+    "text": "So, first of all,"
+  },
+  {
+    "start": 155.28,
+    "end": 160.51,
+    "text": "if I perform on the zero or three day, my greedy nature will say on the zero three,"
+  },
+  {
+    "start": 160.51,
+    "end": 162.91,
+    "text": "I have three tasks that I can perform."
+  },
+  {
+    "start": 162.91,
+    "end": 164.86,
+    "text": "Which one gives me the maximum?"
+  },
+  {
+    "start": 164.86,
+    "end": 167.07,
+    "text": "And the answer that comes up is 50."
+  },
+  {
+    "start": 167.07,
+    "end": 168.65,
+    "text": "50 gives me  the maximum."
+  },
+  {
+    "start": 168.65,
+    "end": 171.93,
+    "text": "So, what I will do is I will take 50 and perform it."
+  },
+  {
+    "start": 171.93,
+    "end": 172.31,
+    "text": "Right?"
+  },
+  {
+    "start": 172.31,
+    "end": 173.51,
+    "text": "So, that is greedy."
+  },
+  {
+    "start": 173.51,
+    "end": 178.55,
+    "text": "Next,  on the first day, I know since I have performed 50, I cannot perform 100."
+  },
+  {
+    "start": 178.55,
+    "end": 180.44,
+    "text": "That is what the question  is."
+  },
+  {
+    "start": 180.44,
+    "end": 186.81,
+    "text": "If you have performed a certain task like this was the task whatever is fighting practice  something."
+  },
+  {
+    "start": 186.81,
+    "end": 191.41,
+    "text": "If this task has been performed on the next day, you cannot perform that."
+  },
+  {
+    "start": 191.41,
+    "end": 196.26,
+    "text": "Yeah, on the  next day, you can do, but on the exact next day, you cannot do."
+  },
+  {
+    "start": 196.26,
+    "end": 199.47,
+    "text": "On consecutive days, you cannot perform  two tasks."
+  },
+  {
+    "start": 199.47,
+    "end": 201.3,
+    "text": "So, this cannot be performed."
+  },
+  {
+    "start": 201.3,
+    "end": 203.51,
+    "text": "So, either of five or either of 11."
+  },
+  {
+    "start": 203.51,
+    "end": 206.09,
+    "text": "So, the maximum is 11  that you can take."
+  },
+  {
+    "start": 206.09,
+    "end": 206.53,
+    "text": "So, 11."
+  },
+  {
+    "start": 206.53,
+    "end": 208.67,
+    "text": "If I sum this up, you will get 61."
+  },
+  {
+    "start": 208.67,
+    "end": 211.32,
+    "text": "At max, you can collect 61  minute points."
+  },
+  {
+    "start": 211.32,
+    "end": 212.14,
+    "text": "What is this?"
+  },
+  {
+    "start": 212.14,
+    "end": 212.9,
+    "text": "The maximum?"
+  },
+  {
+    "start": 212.9,
+    "end": 216.37,
+    "text": "Now, the answer to that is no, this is not the maximum."
+  },
+  {
+    "start": 216.37,
+    "end": 218.45,
+    "text": "You did greedy but you will fail."
+  },
+  {
+    "start": 218.45,
+    "end": 218.7,
+    "text": "Why?"
+  },
+  {
+    "start": 218.7,
+    "end": 225.7,
+    "text": "Because since you did greedy, you took 50, you missed out on  something which was much bigger in the next step."
+  },
+  {
+    "start": 225.7,
+    "end": 232.32,
+    "text": "So, ideally better would have been if you  would have taken 10 correct and then you would have taken 100."
+  },
+  {
+    "start": 232.32,
+    "end": 234.64,
+    "text": "So, if you would have taken 10 on the"
+  },
+  {
+    "start": 234.64,
+    "end": 239.5,
+    "text": "again perform this task, then you would have performed this task."
+  },
+  {
+    "start": 239.5,
+    "end": 246.9,
+    "text": "There by the total would have been  110 which is indeed the maximum merit points that you can earn."
+  },
+  {
+    "start": 246.9,
+    "end": 249.37,
+    "text": "That is what the question states."
+  },
+  {
+    "start": 249.37,
+    "end": 256.47,
+    "text": "So, we observed that greedy fails and whenever greedy fails, you know what what you need to do."
+  },
+  {
+    "start": 256.47,
+    "end": 259.53,
+    "text": "First thing comes, try all possible ways."
+  },
+  {
+    "start": 259.53,
+    "end": 262.82,
+    "text": "Yes, you are going to try all possible ways."
+  },
+  {
+    "start": 262.82,
+    "end": 267.98,
+    "text": "That's  the, that's definitely the first thing that comes to my mind."
+  },
+  {
+    "start": 267.98,
+    "end": 274.56,
+    "text": "And whenever I say try all possible ways, the first thing that comes to my mind is let's"
+  },
+  {
+    "start": 274.56,
+    "end": 279.42,
+    "text": "apply recursion and try to do every possible stuff that I can do."
+  },
+  {
+    "start": 279.42,
+    "end": 279.87,
+    "text": "Right."
+  },
+  {
+    "start": 279.87,
+    "end": 287.42,
+    "text": "Now, if you remember, in order to write recurrence, I have to  three steps, what are the three steps?"
+  },
+  {
+    "start": 287.42,
+    "end": 292.43,
+    "text": "Step number one, express every possible  problem in terms of index."
+  },
+  {
+    "start": 292.43,
+    "end": 294.75,
+    "text": "Second, do stuff on that index."
+  },
+  {
+    "start": 294.75,
+    "end": 298.19,
+    "text": "Very, very important, do stuff  on that index."
+  },
+  {
+    "start": 298.19,
+    "end": 305.74,
+    "text": "Third, according to the question like over here, the question states, find the maximum  merit points."
+  },
+  {
+    "start": 305.74,
+    "end": 308.95,
+    "text": "So, if to find the max, if to find the max."
+  },
+  {
+    "start": 308.95,
+    "end": 311.6,
+    "text": "So, if you follow these three steps,"
+  },
+  {
+    "start": 311.6,
+    "end": 315.53,
+    "text": "you can definitely write any of the recurrence relationships."
+  },
+  {
+    "start": 315.53,
+    "end": 316.04,
+    "text": "Correct."
+  },
+  {
+    "start": 316.04,
+    "end": 321.06,
+    "text": "Now, if I ask you, in this particular question, can I see, can I say, I can, I"
+  },
+  {
+    "start": 321.06,
+    "end": 326.6,
+    "text": "can definitely do an index because we have day zero, we can treat that as an index, we"
+  },
+  {
+    "start": 326.6,
+    "end": 329.43,
+    "text": "have day one, we can treat that as an index."
+  },
+  {
+    "start": 329.43,
+    "end": 335.93,
+    "text": "So, the day can be treated as an index because I have to decide on a given day what I'm trying to do."
+  },
+  {
+    "start": 335.93,
+    "end": 340.24,
+    "text": "So, I have, I have definitely decided what is going to be an index."
+  },
+  {
+    "start": 340.24,
+    "end": 343.46,
+    "text": "So, I can say, okay,  fine, here listen, struggle."
+  },
+  {
+    "start": 343.46,
+    "end": 346.87,
+    "text": "We have decided that the day is going to be my index."
+  },
+  {
+    "start": 346.87,
+    "end": 354.4,
+    "text": "So, that's  the first thing index is day, like I'm naming the variable as day, but yeah, that's that's what  overall."
+  },
+  {
+    "start": 354.4,
+    "end": 359.23,
+    "text": "So, we have decided, whatever we are going to do is going to be on the day."
+  },
+  {
+    "start": 359.23,
+    "end": 362.19,
+    "text": "On the zero  day, we're going to do something."
+  },
+  {
+    "start": 362.19,
+    "end": 365.15,
+    "text": "On the first day, we're going to do something."
+  },
+  {
+    "start": 365.15,
+    "end": 368.24,
+    "text": "On the second  day, we're going to do something."
+  },
+  {
+    "start": 368.24,
+    "end": 370.69,
+    "text": "Whatever we do, we'll be on the index."
+  },
+  {
+    "start": 370.69,
+    "end": 373.97,
+    "text": "So, first step is that,  we have decided the index."
+  },
+  {
+    "start": 373.97,
+    "end": 374.29,
+    "text": "Okay."
+  },
+  {
+    "start": 374.29,
+    "end": 380.28,
+    "text": "Now, before thinking of any other logic, because I don't,  I don't want you to plan the code."
+  },
+  {
+    "start": 380.28,
+    "end": 383.63,
+    "text": "Before deciding anything, let's understand do stops."
+  },
+  {
+    "start": 383.63,
+    "end": 385.69,
+    "text": "Okay, let's understand do stops."
+  },
+  {
+    "start": 385.69,
+    "end": 389.68,
+    "text": "So, generally, we will be doing recursion, which is definitely"
+  },
+  {
+    "start": 389.68,
+    "end": 394.76,
+    "text": "top down and I generally tend to write it from nth minus 1 at nx to the 0"
+  },
+  {
+    "start": 394.76,
+    "end": 399.77,
+    "text": "at nx that is how I do it, you can do it the opposite way where you take"
+  },
+  {
+    "start": 399.77,
+    "end": 404.36,
+    "text": "it from 0 at nx to the n at n, n minus 1 at nx, that is absolutely"
+  },
+  {
+    "start": 404.36,
+    "end": 404.71,
+    "text": "okay."
+  },
+  {
+    "start": 404.71,
+    "end": 412.02,
+    "text": "So, can I say can I say let's assume that the multiple days, let's assume  there are multiple days, okay."
+  },
+  {
+    "start": 412.02,
+    "end": 418.14,
+    "text": "And your recursion is somewhere over here and there are three activities  on these days."
+  },
+  {
+    "start": 418.14,
+    "end": 420.58,
+    "text": "Activity 1, activity 2, activity 3."
+  },
+  {
+    "start": 420.58,
+    "end": 426.63,
+    "text": "Now, when your recursion is over here and you have  already performed this, this, this."
+  },
+  {
+    "start": 426.63,
+    "end": 435.12,
+    "text": "In order to select a task over here, in order to select a task  on this particular day, ask yourself, what do you require?"
+  },
+  {
+    "start": 435.12,
+    "end": 437.49,
+    "text": "Ask yourself, what do you require?"
+  },
+  {
+    "start": 437.49,
+    "end": 443.89,
+    "text": "You will like Striva, in order to perform any of the tasks, click either I can perform this,"
+  },
+  {
+    "start": 443.89,
+    "end": 446.6,
+    "text": "the task 1 or the task 2 or the task 3."
+  },
+  {
+    "start": 446.6,
+    "end": 450.91,
+    "text": "There is something that I require and what is that  something?"
+  },
+  {
+    "start": 450.91,
+    "end": 454.25,
+    "text": "I need to know what was the last task performed."
+  },
+  {
+    "start": 454.25,
+    "end": 460.65,
+    "text": "Like if you are going in this direction,  someone has to tell you what did you perform here?"
+  },
+  {
+    "start": 460.65,
+    "end": 469.84,
+    "text": "Because if someone doesn't tell you what  did you perform here, how can you maintain the question, how can you solve the question of"
+  },
+  {
+    "start": 469.84,
+    "end": 474.07,
+    "text": "not performing two similar tasks on two consecutive days?"
+  },
+  {
+    "start": 474.07,
+    "end": 481.41,
+    "text": "Because the question clearly states,  you cannot perform two similar tasks on two consecutive days."
+  },
+  {
+    "start": 481.41,
+    "end": 490.08,
+    "text": "So, thereby, always remember, according to the condition, I repeat, according to the condition, along with the index,"
+  },
+  {
+    "start": 490.08,
+    "end": 493.19,
+    "text": "you can add a parameter in the recurrence."
+  },
+  {
+    "start": 493.19,
+    "end": 499.27,
+    "text": "Because over here, in order to decide, what stuff I will do on an index, I need to"
+  },
+  {
+    "start": 499.27,
+    "end": 504.98,
+    "text": "know what I did on the previous index, I repeat, I need to know what I did on"
+  },
+  {
+    "start": 504.98,
+    "end": 512.47,
+    "text": "the previous index, because if someone comes and tells me that hey Striva, previously, I did the task"
+  },
+  {
+    "start": 512.47,
+    "end": 512.62,
+    "text": "3."
+  },
+  {
+    "start": 512.62,
+    "end": 516.55,
+    "text": "Then over here, in this, I cannot perform the task 3."
+  },
+  {
+    "start": 516.55,
+    "end": 521.07,
+    "text": "So,  someone has to tell me on the last day, what did you do?"
+  },
+  {
+    "start": 521.07,
+    "end": 522.63,
+    "text": "Yes, what did you do?"
+  },
+  {
+    "start": 522.63,
+    "end": 527.15,
+    "text": "Because if you  don't tell me what did you do, how will I do?"
+  },
+  {
+    "start": 527.15,
+    "end": 527.67,
+    "text": "Got it?"
+  },
+  {
+    "start": 527.67,
+    "end": 532.71,
+    "text": "So, what I will do is, I will have the  experiment of which is last."
+  },
+  {
+    "start": 532.71,
+    "end": 538.64,
+    "text": "This is how you solve, go step by step, you solved index, did you decide to do a"
+  },
+  {
+    "start": 538.64,
+    "end": 544.5,
+    "text": "stuff, but then you realized, oh, in order to do a stuff on an index, I need to"
+  },
+  {
+    "start": 544.5,
+    "end": 547.47,
+    "text": "know what task was done on the last day."
+  },
+  {
+    "start": 547.47,
+    "end": 550.64,
+    "text": "There, by you, introduced another variable,"
+  },
+  {
+    "start": 550.64,
+    "end": 556.06,
+    "text": "as last, where you will say last, that means this task was done on the last day."
+  },
+  {
+    "start": 556.06,
+    "end": 556.53,
+    "text": "Got it?"
+  },
+  {
+    "start": 556.53,
+    "end": 557.95,
+    "text": "That's how you think."
+  },
+  {
+    "start": 557.95,
+    "end": 560.32,
+    "text": "That's how you think of recurrence."
+  },
+  {
+    "start": 560.32,
+    "end": 566.15,
+    "text": "So, we have a sign like we have done this first step, first step is done of recurrence"
+  },
+  {
+    "start": 566.15,
+    "end": 571.57,
+    "text": "relationships, which is identifying along with index if you need something else."
+  },
+  {
+    "start": 571.57,
+    "end": 578.75,
+    "text": "So, we identified along with index, we need, sorry, rather, the last  day, the last task whatever you did."
+  },
+  {
+    "start": 578.75,
+    "end": 585.05,
+    "text": "So, let's, let's keep it quite simple, because we will be  having zero based indexing arrays."
+  },
+  {
+    "start": 585.05,
+    "end": 590.74,
+    "text": "So, let's keep it something like task, let's keep the numbers  very straightforward."
+  },
+  {
+    "start": 590.74,
+    "end": 596.84,
+    "text": "I can we keep something like assume, if I'm passing, last as zero means task, one was done"
+  },
+  {
+    "start": 596.84,
+    "end": 599.75,
+    "text": "or task zero, like the first task was done."
+  },
+  {
+    "start": 599.75,
+    "end": 602.59,
+    "text": "If I'm passing one, the task one was done."
+  },
+  {
+    "start": 602.59,
+    "end": 606.04,
+    "text": "If I'm passing two, that means a task two was done."
+  },
+  {
+    "start": 606.04,
+    "end": 611.05,
+    "text": "Remember all zero based indexing I'm not  just to be familiar with arrays."
+  },
+  {
+    "start": 611.05,
+    "end": 614.71,
+    "text": "And if I'm passing three, that means no task was done."
+  },
+  {
+    "start": 614.71,
+    "end": 615.86,
+    "text": "No task was done."
+  },
+  {
+    "start": 615.86,
+    "end": 618.7,
+    "text": "Again, when will the case of three arrays?"
+  },
+  {
+    "start": 618.7,
+    "end": 619.92,
+    "text": "You're very smart."
+  },
+  {
+    "start": 619.92,
+    "end": 621.75,
+    "text": "Your very smart,  isn't it?"
+  },
+  {
+    "start": 621.75,
+    "end": 624.12,
+    "text": "When will the case of three arrays?"
+  },
+  {
+    "start": 624.12,
+    "end": 627.52,
+    "text": "Obviously, obviously, when you start from the last"
+  },
+  {
+    "start": 627.52,
+    "end": 635.18,
+    "text": "day, which is n minus one a day, because when you start on the last day, what options do you have?"
+  },
+  {
+    "start": 635.18,
+    "end": 640.57,
+    "text": "You have an option of performing this task or this task or this task."
+  },
+  {
+    "start": 640.57,
+    "end": 642.52,
+    "text": "Any task you can perform."
+  },
+  {
+    "start": 642.52,
+    "end": 647.05,
+    "text": "And thereby you go across all the possible paths, correct?"
+  },
+  {
+    "start": 647.05,
+    "end": 649.08,
+    "text": "So, that's how you decide."
+  },
+  {
+    "start": 649.08,
+    "end": 654.86,
+    "text": "So, I can say, I can say initially, the call will be made for f of n minus"
+  },
+  {
+    "start": 654.86,
+    "end": 659.78,
+    "text": "one comma three, which states, what does this recurrence means?"
+  },
+  {
+    "start": 659.78,
+    "end": 662.28,
+    "text": "Give me the maximum merit point."
+  },
+  {
+    "start": 662.28,
+    "end": 671.03,
+    "text": "Yes, give me the  maximum merit points that you can earn on the array that starts from zero,  n set n minus one."
+  },
+  {
+    "start": 671.03,
+    "end": 676.58,
+    "text": "And before n minus one, you perform three means no task were performed."
+  },
+  {
+    "start": 676.58,
+    "end": 676.97,
+    "text": "Good."
+  },
+  {
+    "start": 676.97,
+    "end": 683.61,
+    "text": "So, if someone writes f of two comma one, it means give me the max merit points, give"
+  },
+  {
+    "start": 683.61,
+    "end": 690.25,
+    "text": "me the max merit points that you can get if you perform the task like, if you perform"
+  },
+  {
+    "start": 690.25,
+    "end": 697.29,
+    "text": "the task from zero to the second index, zero to the second index, what maximum you can get"
+  },
+  {
+    "start": 697.29,
+    "end": 705.11,
+    "text": "in this particular section of the array, given that you performed task one right at the third index."
+  },
+  {
+    "start": 705.11,
+    "end": 706.08,
+    "text": "This is what"
+  },
+  {
+    "start": 706.08,
+    "end": 707.61,
+    "text": "f will be signifying."
+  },
+  {
+    "start": 707.61,
+    "end": 709.36,
+    "text": "I hope that makes sense."
+  },
+  {
+    "start": 709.36,
+    "end": 709.73,
+    "text": "Okay."
+  },
+  {
+    "start": 709.73,
+    "end": 712.58,
+    "text": "Now, let's go on and write the records."
+  },
+  {
+    "start": 712.58,
+    "end": 716.31,
+    "text": "So,  can I say the recurrence will be quite simple?"
+  },
+  {
+    "start": 716.31,
+    "end": 722.3,
+    "text": "As usual, if I'm starting from n minus one, where will it go n minus one and minus"
+  },
+  {
+    "start": 722.3,
+    "end": 725.22,
+    "text": "two, n minus three, it'll go until zero."
+  },
+  {
+    "start": 725.22,
+    "end": 728.51,
+    "text": "And zero will be the  stopping point for you."
+  },
+  {
+    "start": 728.51,
+    "end": 731.14,
+    "text": "The base case, very straightforward."
+  },
+  {
+    "start": 731.14,
+    "end": 736.69,
+    "text": "Whenever you're solving problems on  index, zero is bound to be a base case."
+  },
+  {
+    "start": 736.69,
+    "end": 743.63,
+    "text": "So, I can be like, okay,  straightaway, we have realized that zero is going to be my base case."
+  },
+  {
+    "start": 743.63,
+    "end": 746.85,
+    "text": "And fine, zero is going to be my  base case."
+  },
+  {
+    "start": 746.85,
+    "end": 755.91,
+    "text": "Now, can I say if I've reached the zeroth index or probably this push this gap,  there will be three tasks over here, right?"
+  },
+  {
+    "start": 755.91,
+    "end": 758.18,
+    "text": "Then there will be three tasks."
+  },
+  {
+    "start": 758.18,
+    "end": 765.12,
+    "text": "And are these three tasks, you will have to perform the largest one, which is not equivalent to"
+  },
+  {
+    "start": 765.12,
+    "end": 772.57,
+    "text": "whatever you're performed here, which is not equivalent to whatever you're performed here, make sense?"
+  },
+  {
+    "start": 772.57,
+    "end": 777.17,
+    "text": "So, what I can say is,  okay, straightaway, let's do one thing."
+  },
+  {
+    "start": 777.17,
+    "end": 779.36,
+    "text": "We know there are three tasks."
+  },
+  {
+    "start": 779.36,
+    "end": 782.79,
+    "text": "And you know that this is the  last gap, right?"
+  },
+  {
+    "start": 782.79,
+    "end": 784.98,
+    "text": "So, straightaway do one thing."
+  },
+  {
+    "start": 784.98,
+    "end": 788.88,
+    "text": "Just run a follow from i equal to zero to past number"
+  },
+  {
+    "start": 788.88,
+    "end": 789.19,
+    "text": "two."
+  },
+  {
+    "start": 789.19,
+    "end": 796.01,
+    "text": "And if this i is not equal to the last task, probably you can keep a max equal to zero."
+  },
+  {
+    "start": 796.01,
+    "end": 801.89,
+    "text": "Can you just give me the max of max of max of maxi or probably you can keep"
+  },
+  {
+    "start": 801.89,
+    "end": 808.95,
+    "text": "this is maxi, maxi comma whatever task, like, as you mode, but task you are having task of"
+  },
+  {
+    "start": 808.95,
+    "end": 815.07,
+    "text": "i on the zero the next or at the whole, let's write it properly task of on the"
+  },
+  {
+    "start": 815.07,
+    "end": 816.48,
+    "text": "zeroth day task i."
+  },
+  {
+    "start": 816.48,
+    "end": 821.42,
+    "text": "Whatever maximum you're getting, can I show all your turn this?"
+  },
+  {
+    "start": 821.42,
+    "end": 823.85,
+    "text": "Can I say this is my base case?"
+  },
+  {
+    "start": 823.85,
+    "end": 825.03,
+    "text": "Think properly."
+  },
+  {
+    "start": 825.03,
+    "end": 830.05,
+    "text": "Makes sense because you were having tasks zero one two, correct?"
+  },
+  {
+    "start": 830.05,
+    "end": 833.97,
+    "text": "You said something  was performed in the last day."
+  },
+  {
+    "start": 833.97,
+    "end": 841.34,
+    "text": "So, during that apart from that consider all the tasks and take the maximum of them and return"
+  },
+  {
+    "start": 841.34,
+    "end": 848.95,
+    "text": "makes sense because the last last portion you just if this was performed, you don't take this and"
+  },
+  {
+    "start": 848.95,
+    "end": 854.67,
+    "text": "you take this in this and the maximum of that kind of makes sense, right?"
+  },
+  {
+    "start": 854.67,
+    "end": 857.65,
+    "text": "So, we have figured out the base case."
+  },
+  {
+    "start": 857.65,
+    "end": 866.67,
+    "text": "Now, if you figured out the base case, I think you have  also figured out what will you be doing on that given day."
+  },
+  {
+    "start": 866.67,
+    "end": 867.76,
+    "text": "You will like,"
+  },
+  {
+    "start": 867.76,
+    "end": 874.53,
+    "text": "strive the best thing that I can do is, I can try out performing the task, performing every"
+  },
+  {
+    "start": 874.53,
+    "end": 879.37,
+    "text": "task, apart from the last task that I perform, again makes sense."
+  },
+  {
+    "start": 879.37,
+    "end": 881.08,
+    "text": "So, what else is, okay?"
+  },
+  {
+    "start": 881.08,
+    "end": 887.92,
+    "text": "If you perform something on the last, I'll not perform it, but apart from that, I'll try out"
+  },
+  {
+    "start": 887.92,
+    "end": 891.56,
+    "text": "all the possible base, okay, kind of makes sense."
+  },
+  {
+    "start": 891.56,
+    "end": 898.03,
+    "text": "So, what I'll do is, I'll say it's the same thing again, I'll keep maximum as zero, and"
+  },
+  {
+    "start": 898.03,
+    "end": 903.76,
+    "text": "I'll similarly run loop from i equal to zero, L2, and I will say, if i is not"
+  },
+  {
+    "start": 903.76,
+    "end": 910.16,
+    "text": "equal to last, that means if you have not performed the task on the last day, then you"
+  },
+  {
+    "start": 910.16,
+    "end": 911.8,
+    "text": "can perform this task."
+  },
+  {
+    "start": 911.8,
+    "end": 917.83,
+    "text": "Now, others erase this because you have  understood this quite clearly, you know?"
+  },
+  {
+    "start": 917.83,
+    "end": 923.86,
+    "text": "Now, if you are performing a task,  you know to me how much points will you earn?"
+  },
+  {
+    "start": 923.86,
+    "end": 930.55,
+    "text": "If you are performing a task, that's very simple, on that given day, on that given day, we"
+  },
+  {
+    "start": 930.55,
+    "end": 935.76,
+    "text": "perform the task, this is the number of points you will earn, correct?"
+  },
+  {
+    "start": 935.76,
+    "end": 943.42,
+    "text": "And if you're performing this task, you're earning this much points, for this portion of the array, you"
+  },
+  {
+    "start": 943.42,
+    "end": 947.28,
+    "text": "have to find the answer, but that is something which"
+  },
+  {
+    "start": 947.28,
+    "end": 949.56,
+    "text": "recursion will do for you, right?"
+  },
+  {
+    "start": 949.56,
+    "end": 955.72,
+    "text": "So, you'll like, okay, let's go to the previous day,  that's a very, very important step."
+  },
+  {
+    "start": 955.72,
+    "end": 962.92,
+    "text": "Whenever you go to the previous day, whenever you're going to the previous day, and asking, the function"
+  },
+  {
+    "start": 962.92,
+    "end": 969.01,
+    "text": "to find the answer, the function to find the answer, you have to tell that guy, but hey,"
+  },
+  {
+    "start": 969.01,
+    "end": 974.2,
+    "text": "I performed the task on the last day, I performed the task on the last day."
+  },
+  {
+    "start": 974.2,
+    "end": 978.56,
+    "text": "So, please tell him that I have performed this particular task."
+  },
+  {
+    "start": 978.56,
+    "end": 983.41,
+    "text": "If you perform the second task,  tell him you perform the second task."
+  },
+  {
+    "start": 983.41,
+    "end": 989.85,
+    "text": "If you perform the first task, tell him you perform the first task, so that whenever this guy"
+  },
+  {
+    "start": 989.85,
+    "end": 995.25,
+    "text": "is, whenever this guy is encountered, he doesn't again perform the first task."
+  },
+  {
+    "start": 995.25,
+    "end": 1000.51,
+    "text": "So, you will be like, go to the previous day and tell him that on the, on on"
+  },
+  {
+    "start": 1000.51,
+    "end": 1006.81,
+    "text": "this particular day, like right before this, you perform the I-TAS, so do not perform that."
+  },
+  {
+    "start": 1006.81,
+    "end": 1013.52,
+    "text": "So, can I say the current,  plus the reduced array is what the total merit points will be, right?"
+  },
+  {
+    "start": 1013.52,
+    "end": 1018.92,
+    "text": "thereby, if I'm doing it on all the task, if I'm doing it on all the task, can"
+  },
+  {
+    "start": 1018.92,
+    "end": 1024.32,
+    "text": "I say the maximum of all the task, the maximum of all the task will be indeed,"
+  },
+  {
+    "start": 1024.32,
+    "end": 1026.32,
+    "text": "my answer, that makes sense."
+  },
+  {
+    "start": 1026.32,
+    "end": 1033.88,
+    "text": "So, I will say let's return maximum, because that is the maximum  merit points that I can definitely make."
+  },
+  {
+    "start": 1033.88,
+    "end": 1041.44,
+    "text": "So, if I just keep the recurrence together, this is how it looks quite straightforward, quite simple, just"
+  },
+  {
+    "start": 1041.44,
+    "end": 1047.86,
+    "text": "make sure you perform every task, apart from the task that has performed in the other day."
+  },
+  {
+    "start": 1047.86,
+    "end": 1055.64,
+    "text": "So, if whenever you start off with F of N-1, whenever you start  with F of N-1, you can pass on three, right?"
+  },
+  {
+    "start": 1055.64,
+    "end": 1061.7,
+    "text": "So, whenever you are at the last index, which is N-1, you try out this task, then you"
+  },
+  {
+    "start": 1061.7,
+    "end": 1067.84,
+    "text": "try out this task, then you try out this task, because this will be three and the task"
+  },
+  {
+    "start": 1067.84,
+    "end": 1072.19,
+    "text": "numbers are from 0 to 2 and the task numbers are from 0 to 2."
+  },
+  {
+    "start": 1072.19,
+    "end": 1076.54,
+    "text": "So, you can try  all the task when you start off with, right?"
+  },
+  {
+    "start": 1076.54,
+    "end": 1081.96,
+    "text": "So, this is what the recurrence or the recurrence will  look something like."
+  },
+  {
+    "start": 1081.96,
+    "end": 1089.31,
+    "text": "So, in order to understand, if there are overlapping subproblems or not or how does the recurrence work"
+  },
+  {
+    "start": 1089.31,
+    "end": 1096.87,
+    "text": "just in case you are not comfortable with the recurrence, let's quickly draw the recurrence tree by taking"
+  },
+  {
+    "start": 1096.87,
+    "end": 1099.44,
+    "text": "any equal to 4, where this is day 0,"
+  },
+  {
+    "start": 1099.44,
+    "end": 1102.9,
+    "text": "this is day 1, this is day 2 and this is day 3, okay?"
+  },
+  {
+    "start": 1102.9,
+    "end": 1106.75,
+    "text": "And the task 0 is like this, the task 0 task 1  and task 2."
+  },
+  {
+    "start": 1106.75,
+    "end": 1111.64,
+    "text": "That is what the points you will get if you perform them on days 0s and 1s."
+  },
+  {
+    "start": 1111.64,
+    "end": 1117.57,
+    "text": "So, ideally, what you did was you started from the bottom, like the blast row, which is the"
+  },
+  {
+    "start": 1117.57,
+    "end": 1124.15,
+    "text": "third row and you said three, what does three signify if you remember well, three signified that none"
+  },
+  {
+    "start": 1124.15,
+    "end": 1130.02,
+    "text": "of the task have been performed in the previous day, because this is the last day when you"
+  },
+  {
+    "start": 1130.02,
+    "end": 1131.13,
+    "text": "are starting off."
+  },
+  {
+    "start": 1131.13,
+    "end": 1136.15,
+    "text": "So, before this, there was no days, so none of the tasks have been performed."
+  },
+  {
+    "start": 1136.15,
+    "end": 1140.13,
+    "text": "So, what are the  options that you have if you are over here?"
+  },
+  {
+    "start": 1140.13,
+    "end": 1147.11,
+    "text": "Logically, you can perform either task 0 or task 1 or  that's on you, you can perform any one there, right?"
+  },
+  {
+    "start": 1147.11,
+    "end": 1152.78,
+    "text": "So, what you will do is you will be like, okay, let's perform the task 0, let's perform"
+  },
+  {
+    "start": 1152.78,
+    "end": 1157.8,
+    "text": "the task 1, let's perform the task 2, you try to perform every possible task."
+  },
+  {
+    "start": 1157.8,
+    "end": 1162.89,
+    "text": "So, you'll be like, okay, let's go to f of 2 and since you perform the task 0,"
+  },
+  {
+    "start": 1162.89,
+    "end": 1167.98,
+    "text": "tell them that you are perform the task 0, go to f of 2, tell them you perform"
+  },
+  {
+    "start": 1167.98,
+    "end": 1172.48,
+    "text": "the task 1, go to f of 2 and tell them you perform the task 2, why do"
+  },
+  {
+    "start": 1172.48,
+    "end": 1173.26,
+    "text": "you do this?"
+  },
+  {
+    "start": 1173.26,
+    "end": 1178.0,
+    "text": "If you are over here and if you are saying you are performing the task 0,"
+  },
+  {
+    "start": 1178.0,
+    "end": 1183.95,
+    "text": "so whenever you go to the next day, like the next day, you don't want to perform 10,"
+  },
+  {
+    "start": 1183.95,
+    "end": 1189.97,
+    "text": "thereby you told him, hey, eggs 0, do not perform 0, say you will go and perform only"
+  },
+  {
+    "start": 1189.97,
+    "end": 1195.21,
+    "text": "T1 and T2, which is task 1 and task 2, got it, so that's how it will work."
+  },
+  {
+    "start": 1195.21,
+    "end": 1200.81,
+    "text": "Now, if I carefully observe, we are at f of 2 0 and you know whenever there are"
+  },
+  {
+    "start": 1200.81,
+    "end": 1208.18,
+    "text": "three recursion calls, which one then should happen first, this one, then this one, then this one, let's"
+  },
+  {
+    "start": 1208.18,
+    "end": 1210.02,
+    "text": "perform f of 2 0 at first."
+  },
+  {
+    "start": 1210.02,
+    "end": 1215.4,
+    "text": "So, if you are at f of 2 0, that means over here, 0 means you cannot perform"
+  },
+  {
+    "start": 1215.4,
+    "end": 1221.56,
+    "text": "this, thereby you have two either this or either this, so you can be like I can perform"
+  },
+  {
+    "start": 1221.56,
+    "end": 1227.58,
+    "text": "task 1 or I can perform task 2, you don't have any other options, are you don't have,"
+  },
+  {
+    "start": 1227.58,
+    "end": 1232.89,
+    "text": "so you will like okay, if I'm performing task 1 and day 2, I'll go to day 1"
+  },
+  {
+    "start": 1232.89,
+    "end": 1238.27,
+    "text": "and I will be like taking task 1 because I'll have to tell day 1 that I have"
+  },
+  {
+    "start": 1238.27,
+    "end": 1244.08,
+    "text": "performed task 1 in the previous day, similarly I have to go to 1 and I'll trip to"
+  },
+  {
+    "start": 1244.08,
+    "end": 1250.81,
+    "text": "tell him that task 2, please carry task 2, task 2 has been performed quickly, okay, make sense,"
+  },
+  {
+    "start": 1250.81,
+    "end": 1256.76,
+    "text": "okay, this recursion will happen first and then this, let's do f of 1 1, so when you"
+  },
+  {
+    "start": 1256.76,
+    "end": 1257.76,
+    "text": "are at f of 1,"
+  },
+  {
+    "start": 1257.76,
+    "end": 1265.05,
+    "text": "which means you are at here and they're saying 1 has been performed, thereby you cannot perform task"
+  },
+  {
+    "start": 1265.05,
+    "end": 1270.74,
+    "text": "1, so you can perform task 0 and task 2, perform it, so you can perform task 0"
+  },
+  {
+    "start": 1270.74,
+    "end": 1275.7,
+    "text": "and task 2, so if I perform task 0, I'll be like I will go to 0 with"
+  },
+  {
+    "start": 1275.7,
+    "end": 1280.95,
+    "text": "task 0, I'll go to 0 with task 2, this is only what I can do, okay, make"
+  },
+  {
+    "start": 1280.95,
+    "end": 1287.88,
+    "text": "sense again, now, a very very interesting question to you, so where where you, you're like f of"
+  },
+  {
+    "start": 1287.88,
+    "end": 1294.01,
+    "text": "1 1 and you called something like you perform the task 0, so if you perform the task"
+  },
+  {
+    "start": 1294.01,
+    "end": 1299.99,
+    "text": "0, what will be the points that you'll add on f of 1 1, you're performing the task"
+  },
+  {
+    "start": 1299.99,
+    "end": 1305.02,
+    "text": "0, so on f of task 0, 3, 3 is what you'll add, if you perform task 0,"
+  },
+  {
+    "start": 1305.02,
+    "end": 1310.86,
+    "text": "so 3 plus you're calling this f of 0, 0, 0, remember this, so whenever this f of"
+  },
+  {
+    "start": 1310.86,
+    "end": 1317.13,
+    "text": "0, 0 goes it's a base case, if you remember the recurrence, it's a base case, let's go"
+  },
+  {
+    "start": 1317.13,
+    "end": 1323.4,
+    "text": "back to the recurrence, it's a base case whenever the day comes to 0 it's a base case,"
+  },
+  {
+    "start": 1323.4,
+    "end": 1329.24,
+    "text": "so in the base case, what did you do, let's come back, you know this, that 0 has"
+  },
+  {
+    "start": 1329.24,
+    "end": 1335.52,
+    "text": "been performed previously, so either of this or either of this, and you don't have any"
+  },
+  {
+    "start": 1335.52,
+    "end": 1343.04,
+    "text": "anywhere else to go, so if this is the only day remaining, then you don't have to think"
+  },
+  {
+    "start": 1343.04,
+    "end": 1350.22,
+    "text": "of the future, so the maximum of that is 3, thereby this guide and stored down a 3,"
+  },
+  {
+    "start": 1350.22,
+    "end": 1357.74,
+    "text": "so this element comes out to be got it, similarly there will be this call which will be"
+  },
+  {
+    "start": 1357.74,
+    "end": 1364.4,
+    "text": "task 2, so if you perform task 2 which is 6, so if you perform this task, you"
+  },
+  {
+    "start": 1364.4,
+    "end": 1371.66,
+    "text": "can either take 2 or you can either take 1 on this guide, thereby this returns 2, so"
+  },
+  {
+    "start": 1371.66,
+    "end": 1377.28,
+    "text": "you will return 2, so this will be 2, now 3 plus 3 is 6, 6 plus 2"
+  },
+  {
+    "start": 1377.28,
+    "end": 1384.37,
+    "text": "is 8, which one will you take, you will like, let's take 8, let's take 8, it makes"
+  },
+  {
+    "start": 1384.37,
+    "end": 1391.03,
+    "text": "a pretty much sense, so I'll take 8, so I'll just take 8, perfect, F of 11 is"
+  },
+  {
+    "start": 1391.03,
+    "end": 1397.51,
+    "text": "8, now we have F of 12, so definitely F of 11 is returning 8, so let's come"
+  },
+  {
+    "start": 1397.51,
+    "end": 1404.34,
+    "text": "back to the next solution, which is you're at F of 12, so whenever you add F of"
+  },
+  {
+    "start": 1404.34,
+    "end": 1411.95,
+    "text": "12, what will happen, you will like, let's call F of 0, let's perform task 0, let's call"
+  },
+  {
+    "start": 1411.95,
+    "end": 1412.56,
+    "text": "F of 0,"
+  },
+  {
+    "start": 1412.56,
+    "end": 1420.32,
+    "text": "let's perform task 1, that's what you'll do, so again, same thing will happen, if you perform task"
+  },
+  {
+    "start": 1420.32,
+    "end": 1425.86,
+    "text": "0, you will get 3 plus and F of 0, 0 will return 3, and if you perform"
+  },
+  {
+    "start": 1425.86,
+    "end": 1430.77,
+    "text": "F of 0 1 that's task 1, you will get task 1 for 4, so 4 plus F"
+  },
+  {
+    "start": 1430.77,
+    "end": 1437.18,
+    "text": "of 0 1 will be what, if you perform 0 1, that means you're coming here and you're"
+  },
+  {
+    "start": 1437.18,
+    "end": 1443.91,
+    "text": "saying you cannot perform this, so either of 3 or 2, 3 you'll get, right, so either 7"
+  },
+  {
+    "start": 1443.91,
+    "end": 1450.4,
+    "text": "or 6, they have I this gives you 6, perfect, so you're getting 6, let's not try to"
+  },
+  {
+    "start": 1450.4,
+    "end": 1456.97,
+    "text": "write it again, now you're at here, so whenever you add F of 20, it states, okay, I"
+  },
+  {
+    "start": 1456.97,
+    "end": 1464.49,
+    "text": "cannot perform task 0, whenever you add this guy, remember this, it is saying that you are over"
+  },
+  {
+    "start": 1464.49,
+    "end": 1471.3,
+    "text": "here, you cannot perform task 0, so either you can do this, which is task 1, gives you"
+  },
+  {
+    "start": 1471.3,
+    "end": 1477.47,
+    "text": "1 point, so one plus you called F of 11, because you perform the task 1 or you"
+  },
+  {
+    "start": 1477.47,
+    "end": 1483.09,
+    "text": "can be like, let's perform 6, so it's like 6 plus F of 1, come on 2, so"
+  },
+  {
+    "start": 1483.09,
+    "end": 1489.66,
+    "text": "either you perform the task 1 or task 2, because task 0 was there, right, so 1 plus"
+  },
+  {
+    "start": 1489.66,
+    "end": 1494.17,
+    "text": "F of 11, what is F of 11, 8, what is F of 12, 6, so 9 and"
+  },
+  {
+    "start": 1494.17,
+    "end": 1495.44,
+    "text": "12, which one is"
+  },
+  {
+    "start": 1495.44,
+    "end": 1502.46,
+    "text": "maximum 12, so you return 12, got it, now you'll start seeing overlapping sub problems, I hope we've"
+  },
+  {
+    "start": 1502.46,
+    "end": 1509.13,
+    "text": "got the basic hazard recursion working, so the first, I'll just show you one more, so over here"
+  },
+  {
+    "start": 1509.13,
+    "end": 1514.04,
+    "text": "if you are doing the task 1, you'll be like task 0 and task 2, so F of"
+  },
+  {
+    "start": 1514.04,
+    "end": 1519.8,
+    "text": "1, 0 and F of 1, 2, so if you carefully see, to be still seeing overlapping, yeah,"
+  },
+  {
+    "start": 1519.8,
+    "end": 1527.17,
+    "text": "there's the first overlapping sub problems that you'll see, so you saw an overlapping sub problems, so if"
+  },
+  {
+    "start": 1527.17,
+    "end": 1533.56,
+    "text": "if the value of NL larger you'll tend to see a lot more overlapping sub problems, like over"
+  },
+  {
+    "start": 1533.56,
+    "end": 1537.77,
+    "text": "here if you go T 0 and T 1, it will like F of 1, 0, so again"
+  },
+  {
+    "start": 1537.77,
+    "end": 1544.58,
+    "text": "overlapping sub problems, over here, kind of, yeah, so you will, the the more you enlarge it, you"
+  },
+  {
+    "start": 1544.58,
+    "end": 1551.32,
+    "text": "will see overlapping sub problems, and this is how they will solve each other and after that you"
+  },
+  {
+    "start": 1551.32,
+    "end": 1558.34,
+    "text": "can easily get the answer, so we have again concluded that there are overlapping sub problems and if"
+  },
+  {
+    "start": 1558.34,
+    "end": 1564.59,
+    "text": "there are overlapping sub problems what do you need to do, you need to do one thing, what"
+  },
+  {
+    "start": 1564.59,
+    "end": 1570.56,
+    "text": "does that, my eyes should, yeah, and what is the easy step, you go back and say okay,"
+  },
+  {
+    "start": 1570.56,
+    "end": 1578.26,
+    "text": "hit function, what are your changing parameters, or what are your states, I see there are two states,"
+  },
+  {
+    "start": 1578.26,
+    "end": 1583.98,
+    "text": "one is index the other is D, oh sorry, last one is index or D and the other"
+  },
+  {
+    "start": 1583.98,
+    "end": 1590.62,
+    "text": "is last, it is two parameters, for which you have to give an answer, like we have being"
+  },
+  {
+    "start": 1590.62,
+    "end": 1597.41,
+    "text": "said F of N minus 1 3, stating give me the entire arrays maximum earning point given that"
+  },
+  {
+    "start": 1597.41,
+    "end": 1603.59,
+    "text": "the task 3 has been done, so two guys dependent, so there was the first guy D and"
+  },
+  {
+    "start": 1603.59,
+    "end": 1609.23,
+    "text": "there was the next guy last, how much is the value D, it can be like 0, it"
+  },
+  {
+    "start": 1609.23,
+    "end": 1614.95,
+    "text": "can be like 1, it can be like 2, N minus 1, so there are n different values"
+  },
+  {
+    "start": 1614.95,
+    "end": 1620.59,
+    "text": "that D can have, what is the possible value of last if I ask you on a very"
+  },
+  {
+    "start": 1620.59,
+    "end": 1627.61,
+    "text": "simple term, like Straywell last can be 0, 1, 2, 3 nothing more than that, so four different"
+  },
+  {
+    "start": 1627.61,
+    "end": 1633.25,
+    "text": "values which are 0, 1, 2 tasks 0 task 1 task 2 and 3 which states that all"
+  },
+  {
+    "start": 1633.25,
+    "end": 1640.42,
+    "text": "of these tasks have been performed, none of these tasks have been performed, so there are n 4,"
+  },
+  {
+    "start": 1640.42,
+    "end": 1647.52,
+    "text": "for every N state there can be four different possible, thereby you will require an n cross 4"
+  },
+  {
+    "start": 1647.52,
+    "end": 1654.49,
+    "text": "D, P size array, therefore, there by you will require an n 4 initialized with minus 1, n"
+  },
+  {
+    "start": 1654.49,
+    "end": 1661.61,
+    "text": "4 initialized with minus 1 and also first step definitely over here you tend to write D, P"
+  },
+  {
+    "start": 1661.61,
+    "end": 1667.78,
+    "text": "of index last equal to maxing and over here just one line if D p of index last"
+  },
+  {
+    "start": 1667.78,
+    "end": 1672.85,
+    "text": "not equal to minus 1 return D p of index last 2 D d p done, if I"
+  },
+  {
+    "start": 1672.85,
+    "end": 1681.0,
+    "text": "reiterate always the first parameter will be index, next depending on what stuff you are doing in order"
+  },
+  {
+    "start": 1681.0,
+    "end": 1689.47,
+    "text": "to preserve the condition you might require more and that's when the second parameter is introduced, if you"
+  },
+  {
+    "start": 1689.47,
+    "end": 1697.46,
+    "text": "regard some more, remember these three tricks you can write any recurrence in the world, so let's try"
+  },
+  {
+    "start": 1697.46,
+    "end": 1703.24,
+    "text": "to code this up, what we are given is the n in the points, so I'll try to"
+  },
+  {
+    "start": 1703.24,
+    "end": 1709.97,
+    "text": "write the recurrence at first, so the first thing was D and then the end and then the"
+  },
+  {
+    "start": 1709.97,
+    "end": 1716.3,
+    "text": "vector again and end and points, now I know one thing for sure if the day is the"
+  },
+  {
+    "start": 1716.3,
+    "end": 1723.42,
+    "text": "0th day, then I need to figure out the maximum among them apart from the whatever was done"
+  },
+  {
+    "start": 1723.42,
+    "end": 1729.12,
+    "text": "on the last day, so I'll keep it as maximum 0 and I can say go across to"
+  },
+  {
+    "start": 1729.12,
+    "end": 1729.68,
+    "text": "all the"
+  },
+  {
+    "start": 1729.68,
+    "end": 1736.48,
+    "text": "task or rather limit a task or task equal to 0, I can go across to task another"
+  },
+  {
+    "start": 1736.48,
+    "end": 1743.71,
+    "text": "little bit three task, so task plus plus plus and we can say maxi okay, we need just"
+  },
+  {
+    "start": 1743.71,
+    "end": 1750.68,
+    "text": "need to make sure this task is not equal to the task done on the last rather than"
+  },
+  {
+    "start": 1750.68,
+    "end": 1758.42,
+    "text": "the last rather, so thereby this will be maximum equal to max of what maxi comma points on"
+  },
+  {
+    "start": 1758.42,
+    "end": 1765.22,
+    "text": "the day 0 and definitely on the task, so on the day 0 whatever task it will be,"
+  },
+  {
+    "start": 1765.22,
+    "end": 1770.29,
+    "text": "so just make sure you take it off and you're done the maxi."
+  },
+  {
+    "start": 1770.29,
+    "end": 1777.26,
+    "text": "And if that's not the case, I will be like okay maximum 0, if it's any other day,"
+  },
+  {
+    "start": 1777.26,
+    "end": 1785.86,
+    "text": "I will perform again the similar thing, probably I'll be performing all the tasks again, I mean task"
+  },
+  {
+    "start": 1785.86,
+    "end": 1792.66,
+    "text": "got there tasks will be this, okay by the way three, if I can be like task plus"
+  },
+  {
+    "start": 1792.66,
+    "end": 1798.94,
+    "text": "plus, now what I can do is if the task was not done on the last day let's"
+  },
+  {
+    "start": 1798.94,
+    "end": 1805.91,
+    "text": "do the task but if I do the task, how many points will I generate the points that"
+  },
+  {
+    "start": 1805.91,
+    "end": 1813.05,
+    "text": "I'll generate will be points on the day this task if I perform plus I'll have to go"
+  },
+  {
+    "start": 1813.05,
+    "end": 1813.2,
+    "text": "to"
+  },
+  {
+    "start": 1813.2,
+    "end": 1819.31,
+    "text": "the minus one day to solve the smallest problem and I'll have to tell him that hey listen"
+  },
+  {
+    "start": 1819.31,
+    "end": 1824.46,
+    "text": "this is the task that I did on the current day I have to pass on the points"
+  },
+  {
+    "start": 1824.46,
+    "end": 1830.3,
+    "text": "so that he gives me the answer once he gives me the answer whatever he gives or these"
+  },
+  {
+    "start": 1830.3,
+    "end": 1836.0,
+    "text": "are the code of the maximum, so I'll take the maximum and once I have the maximum I"
+  },
+  {
+    "start": 1836.0,
+    "end": 1841.77,
+    "text": "can definitely add this one, I just make sense, I think this is like a quite good so"
+  },
+  {
+    "start": 1841.77,
+    "end": 1848.16,
+    "text": "now I can return the function n minus one initially start up with three and we can definitely"
+  },
+  {
+    "start": 1848.16,
+    "end": 1852.62,
+    "text": "pass on the points, I should be fine, so I'll just give it a run."
+  },
+  {
+    "start": 1852.62,
+    "end": 1858.8,
+    "text": "So as you can see there is time limit exceeded, so let's memorize it, so that's that's the"
+  },
+  {
+    "start": 1858.8,
+    "end": 1864.64,
+    "text": "way you can create BpVDables, Bp and then you can give the first size which is n then"
+  },
+  {
+    "start": 1864.64,
+    "end": 1870.61,
+    "text": "you can declare the second one which is vector of int, four size and a minus one that's"
+  },
+  {
+    "start": 1870.61,
+    "end": 1875.76,
+    "text": "how you declare it two these are a 2d dp array of n cross it for in vector,"
+  },
+  {
+    "start": 1875.76,
+    "end": 1882.97,
+    "text": "why vector because I generally write prefer vectors it's very easier to pass in reference that's the only"
+  },
+  {
+    "start": 1882.97,
+    "end": 1888.26,
+    "text": "reason job people can try to be do arrays not a big stuff, by the way for job"
+  },
+  {
+    "start": 1888.26,
+    "end": 1894.23,
+    "text": "of people find the code links in the description okay, so dp is done and yeah calling f"
+  },
+  {
+    "start": 1894.23,
+    "end": 1895.04,
+    "text": "over here so"
+  },
+  {
+    "start": 1895.04,
+    "end": 1900.91,
+    "text": "you can just pass on the dp by r right over here you can say dp of probability"
+  },
+  {
+    "start": 1900.91,
+    "end": 1908.59,
+    "text": "and then there's something that's lost, you can just give it like this and right before returning just"
+  },
+  {
+    "start": 1908.59,
+    "end": 1915.51,
+    "text": "make sure you check it across if dp of delus this problem has been previously solved if this"
+  },
+  {
+    "start": 1915.51,
+    "end": 1921.76,
+    "text": "problem has been previously solved what you can do is dp of d and you can say last,"
+  },
+  {
+    "start": 1921.76,
+    "end": 1928.16,
+    "text": "nip is written that and now let's code this up it gives me a correct answer now let's"
+  },
+  {
+    "start": 1928.16,
+    "end": 1934.71,
+    "text": "quickly submit this as you see I was solving this before this class and yeah it runs so"
+  },
+  {
+    "start": 1934.71,
+    "end": 1941.78,
+    "text": "we used a recursion last time I had an action in order to solve this particular problem that's"
+  },
+  {
+    "start": 1941.78,
+    "end": 1948.93,
+    "text": "time to check out the next possible stuff which is tabulation just in order to reduce the stack"
+  },
+  {
+    "start": 1948.93,
+    "end": 1955.85,
+    "text": "space so what's the next the next step is tabulation because the recursion as we saw we were"
+  },
+  {
+    "start": 1955.85,
+    "end": 1964.28,
+    "text": "using something like the time complexity of memory and we'll be n-processed because there are n-cross full steps"
+  },
+  {
+    "start": 1964.28,
+    "end": 1971.28,
+    "text": "understand how many different states we can have that's n-cross 4 right like not in all cases"
+  },
+  {
+    "start": 1971.28,
+    "end": 1978.76,
+    "text": "we'll have full states but yeah let's let's assume for the worst case it's n-cross full states that"
+  },
+  {
+    "start": 1978.76,
+    "end": 1985.26,
+    "text": "we if it gives me observe for every state we were actually running a fall loop of size"
+  },
+  {
+    "start": 1985.26,
+    "end": 1991.68,
+    "text": "2 like for every state or size 3 rather so for every state you're running a fall loop"
+  },
+  {
+    "start": 1991.68,
+    "end": 1997.35,
+    "text": "of size 3 so I can say it's n-crossed 12 is the time complexity of b go off"
+  },
+  {
+    "start": 1997.35,
+    "end": 2003.77,
+    "text": "the recursion stack space will be n because at max you'll go for n days but the space"
+  },
+  {
+    "start": 2003.77,
+    "end": 2011.1,
+    "text": "complexity will be n-crossed 4 so this will be the recursion plus mmo ish and time complexity and"
+  },
+  {
+    "start": 2011.1,
+    "end": 2017.0,
+    "text": "this is an extra is this is an extra that you have to omit and this you cannot"
+  },
+  {
+    "start": 2017.0,
+    "end": 2023.88,
+    "text": "reduce so how can we first omit this recursion stack space so we will be doing something as"
+  },
+  {
+    "start": 2023.88,
+    "end": 2031.74,
+    "text": "definite which is tabulation what did I tell you what's the first rule of tabulation declare the similar"
+  },
+  {
+    "start": 2031.74,
+    "end": 2038.77,
+    "text": "size yes declare the similar size dp array it's a first thing that you'll do can really clear"
+  },
+  {
+    "start": 2038.77,
+    "end": 2045.72,
+    "text": "the similar size dp array next whatever base case you have written on index 0 right you have"
+  },
+  {
+    "start": 2045.72,
+    "end": 2050.72,
+    "text": "written on index 0 now whenever you're doing 2ds because these are"
+  },
+  {
+    "start": 2050.72,
+    "end": 2059.88,
+    "text": "2ds right whenever you're doing something as 2ddp what should you keep generally in your brain what can"
+  },
+  {
+    "start": 2059.88,
+    "end": 2067.71,
+    "text": "be d whenever you come across you try to think in this perspective of base cases okay so"
+  },
+  {
+    "start": 2067.71,
+    "end": 2075.09,
+    "text": "that's a trick you'll be like striver over here index if it is 0 either last can be"
+  },
+  {
+    "start": 2075.09,
+    "end": 2080.34,
+    "text": "0 or it can be 1 or it can be 2 so I can say there are base"
+  },
+  {
+    "start": 2080.34,
+    "end": 2087.01,
+    "text": "cases like 0 comma 0 0 comma 1 0 comma 2 in all of these recursion calls do"
+  },
+  {
+    "start": 2087.01,
+    "end": 2094.75,
+    "text": "you agree in all of these recursion calls or 0 comma 3 rather in all of these recursion"
+  },
+  {
+    "start": 2094.75,
+    "end": 2103.47,
+    "text": "calls do you agree that this base cases this particular base case will be executed you agree right"
+  },
+  {
+    "start": 2103.47,
+    "end": 2110.85,
+    "text": "because if index is 0 no matter what is the value of last they will be executed now"
+  },
+  {
+    "start": 2110.85,
+    "end": 2117.52,
+    "text": "let's analyze what if it is 0 if it is 0 then you end up taking the maximum"
+  },
+  {
+    "start": 2117.52,
+    "end": 2122.86,
+    "text": "of task 1 and task 2 if it is 0 if it is 1 you end up taking"
+  },
+  {
+    "start": 2122.86,
+    "end": 2126.32,
+    "text": "maximum of task 0 and task 2 if it is 2"
+  },
+  {
+    "start": 2126.32,
+    "end": 2135.01,
+    "text": "you end up taking the maximum of task 0 and task 1 if it is 3 which might"
+  },
+  {
+    "start": 2135.01,
+    "end": 2144.29,
+    "text": "be the case if there is a signal day then you might directly call 0 3 you will"
+  },
+  {
+    "start": 2144.29,
+    "end": 2154.05,
+    "text": "end up taking task 0 task all these guys so can I say the first form of tabulation"
+  },
+  {
+    "start": 2154.05,
+    "end": 2162.5,
+    "text": "will be nothing but I can simply write that as dp of 0 0 will be max of"
+  },
+  {
+    "start": 2162.5,
+    "end": 2170.59,
+    "text": "so max of array of the 0 on the 0 d task 1 or task 2 right similarly"
+  },
+  {
+    "start": 2170.59,
+    "end": 2178.09,
+    "text": "the dp of 0 1 will be max of array of task 0 and array of day 0"
+  },
+  {
+    "start": 2178.09,
+    "end": 2185.83,
+    "text": "task 2 similarly dp of 0 2 will be max of array of 0 0 array of 0"
+  },
+  {
+    "start": 2185.83,
+    "end": 2195.47,
+    "text": "task 1 similarly dp of 0 3 like I'm just writing it like this you could have used"
+  },
+  {
+    "start": 2195.47,
+    "end": 2204.4,
+    "text": "the similar fall look to write it like anyways while writing the code we'll"
+  },
+  {
+    "start": 2204.4,
+    "end": 2212.53,
+    "text": "do that this was done in order to explain you so these are the base cases, base cases"
+  },
+  {
+    "start": 2212.53,
+    "end": 2216.45,
+    "text": "are done right now what's the next thing?"
+  },
+  {
+    "start": 2216.45,
+    "end": 2224.68,
+    "text": "Next thing is this you have to convert this into a dp solution now this portion of the"
+  },
+  {
+    "start": 2224.68,
+    "end": 2234.05,
+    "text": "code this portion of the code is executed when when the value of this particular day becomes equal"
+  },
+  {
+    "start": 2234.05,
+    "end": 2240.65,
+    "text": "to 0 so equal to 1 2 3 4 and so until n minus 1 whenever this becomes"
+  },
+  {
+    "start": 2240.65,
+    "end": 2249.26,
+    "text": "equal to this you execute that correct and what can be the possible values of last I again"
+  },
+  {
+    "start": 2249.26,
+    "end": 2256.91,
+    "text": "ask you the same question and to that you will be like a striver it will be like"
+  },
+  {
+    "start": 2256.91,
+    "end": 2263.32,
+    "text": "similar to 1 comma it can be 0 it can be this it can be this it can"
+  },
+  {
+    "start": 2263.32,
+    "end": 2269.25,
+    "text": "be this it makes sense for 2 it can be 0 it can be 1 it can be"
+  },
+  {
+    "start": 2269.25,
+    "end": 2274.8,
+    "text": "2 it can be 3 for 3 day 3 it can be last can be 0 last can"
+  },
+  {
+    "start": 2274.8,
+    "end": 2279.68,
+    "text": "be 1 last can be 2 last can be 3 right so we we can"
+  },
+  {
+    "start": 2279.68,
+    "end": 2287.72,
+    "text": "definitely follow this so thereby we know for everyday so let's first write the code for day so"
+  },
+  {
+    "start": 2287.72,
+    "end": 2296.77,
+    "text": "if I know that I'm gonna start because what is tabulation previous class case what is tabulation tabulation"
+  },
+  {
+    "start": 2296.77,
+    "end": 2303.29,
+    "text": "is nothing but bottom up so from 0 to the up like if I show you the recursion"
+  },
+  {
+    "start": 2303.29,
+    "end": 2312.51,
+    "text": "tree you'll start from here then you'll compute this then you'll compute this then you'll compute this bottom"
+  },
+  {
+    "start": 2312.51,
+    "end": 2319.79,
+    "text": "up bottom up recursion top down this is what you require as the answer but you go down"
+  },
+  {
+    "start": 2319.79,
+    "end": 2326.47,
+    "text": "you go down you go down then you figure the answer top down okay so what I know"
+  },
+  {
+    "start": 2326.47,
+    "end": 2332.22,
+    "text": "is let's come back what I know is I have I equal to or I can say day"
+  },
+  {
+    "start": 2332.22,
+    "end": 2337.97,
+    "text": "equal to 1 and I'll go on till the day n minus 1 now over here can I"
+  },
+  {
+    "start": 2337.97,
+    "end": 2344.65,
+    "text": "say for everyday for everyday there are 4 different task values 0 1 to 3 4 so I"
+  },
+  {
+    "start": 2344.65,
+    "end": 2352.18,
+    "text": "can say for everyday there are 4 different task values from 0 to 3 again makes sense done"
+  },
+  {
+    "start": 2352.18,
+    "end": 2358.88,
+    "text": "I once you have written the fall loop it's just copy pasting the recursion part"
+  },
+  {
+    "start": 2358.88,
+    "end": 2366.45,
+    "text": "once you have written the fall loop it's just copy pasting the recursion part so whatever was written"
+  },
+  {
+    "start": 2366.45,
+    "end": 2373.42,
+    "text": "over here yes whatever you have written over here this copy pasted I just copy pasted that so"
+  },
+  {
+    "start": 2373.42,
+    "end": 2378.96,
+    "text": "I can say now you have to perform past correct so if if this is or you can"
+  },
+  {
+    "start": 2378.96,
+    "end": 2385.18,
+    "text": "say this is last rather instead of task because this is last so can I say over here"
+  },
+  {
+    "start": 2385.18,
+    "end": 2391.32,
+    "text": "you'll just copy pasted what did you write you wrote I equal to or task equal to 0"
+  },
+  {
+    "start": 2391.32,
+    "end": 2398.14,
+    "text": "to 2 and if like you just compute it similar just write the similar stuff like it's getting"
+  },
+  {
+    "start": 2398.14,
+    "end": 2404.36,
+    "text": "a bit messy over here but you can write the similar stuff like instead of f it will"
+  },
+  {
+    "start": 2404.36,
+    "end": 2409.9,
+    "text": "be dp of day minus 1 and i is basically this guy that's what it will be so"
+  },
+  {
+    "start": 2409.9,
+    "end": 2416.87,
+    "text": "what I'll do is I'll write this in code and then I'll come back again because it's absolutely"
+  },
+  {
+    "start": 2416.87,
+    "end": 2423.91,
+    "text": "getting messy over here so in order to write the tabulation what you will do is you'll declare"
+  },
+  {
+    "start": 2423.91,
+    "end": 2429.68,
+    "text": "dp area of n crossbow and so quickly write something like 0 on 0 we max of or"
+  },
+  {
+    "start": 2429.68,
+    "end": 2436.12,
+    "text": "definitely points of 0 of 1 comma points of 0 comma 2 that's very obvious and so below"
+  },
+  {
+    "start": 2436.12,
+    "end": 2441.68,
+    "text": "I can just copy pasted this thing for the other task which is task 1 so if"
+  },
+  {
+    "start": 2441.68,
+    "end": 2447.52,
+    "text": "you're doing task 1 this will be 0 and 2 and if you're doing task 2 this will"
+  },
+  {
+    "start": 2447.52,
+    "end": 2453.74,
+    "text": "be definitely 0 and 1 correct and for the last guy it's very simple it'll be 0 and"
+  },
+  {
+    "start": 2453.74,
+    "end": 2459.73,
+    "text": "3 which means all the task you'll stay all the task so that so max of points of"
+  },
+  {
+    "start": 2459.73,
+    "end": 2465.88,
+    "text": "0 comma 1 that's what you can definitely do so yeah if taken all the tree guys so"
+  },
+  {
+    "start": 2465.88,
+    "end": 2472.56,
+    "text": "that's the beastly's now what did I say where does the day start from the day start from"
+  },
+  {
+    "start": 2472.56,
+    "end": 2478.02,
+    "text": "1 till n so this go until n have any last can you have for day number of"
+  },
+  {
+    "start": 2478.02,
+    "end": 2483.94,
+    "text": "class that you can have is definitely from 0 till 3 so you can just go on last"
+  },
+  {
+    "start": 2483.94,
+    "end": 2491.15,
+    "text": "plus plus now what did I say just copy pasted what device written over here whatever is written"
+  },
+  {
+    "start": 2491.15,
+    "end": 2497.98,
+    "text": "over here just try to copy pasted this stuff okay so let's copy pasted this stuff in terms"
+  },
+  {
+    "start": 2497.98,
+    "end": 2503.97,
+    "text": "of task you see me copy so I need the maximum now remember what am I looking to"
+  },
+  {
+    "start": 2503.97,
+    "end": 2510.12,
+    "text": "compute I'm looking to compute dp of last correct so now we can keep this as 0 so"
+  },
+  {
+    "start": 2510.12,
+    "end": 2517.4,
+    "text": "we're trying to compute it okay and assume assume sorry assume I'm taking a max see variable and"
+  },
+  {
+    "start": 2517.4,
+    "end": 2521.04,
+    "text": "at the end of the day whenever I'll compute this"
+  },
+  {
+    "start": 2521.04,
+    "end": 2528.79,
+    "text": "and then the day whenever I'll compute this I'll store the max see how do you convert the"
+  },
+  {
+    "start": 2528.79,
+    "end": 2536.28,
+    "text": "I'm going to copy this exact same thing for i and it task I'm not copy pasting because"
+  },
+  {
+    "start": 2536.28,
+    "end": 2544.12,
+    "text": "the indentation will go wrong task there are three tasks so I'll just go like this what is"
+  },
+  {
+    "start": 2544.12,
+    "end": 2551.35,
+    "text": "written over here if the task is not equal to last right I write the same thing see"
+  },
+  {
+    "start": 2551.35,
+    "end": 2559.28,
+    "text": "I'm writing the same thing task not equal to last how many point does it gather point equal"
+  },
+  {
+    "start": 2559.28,
+    "end": 2566.94,
+    "text": "to points of data same thing see same thing plus instead of f now you're doing bottom of"
+  },
+  {
+    "start": 2566.94,
+    "end": 2573.82,
+    "text": "this f would have been computed and stored in your dp so dp of day minus 1 very"
+  },
+  {
+    "start": 2573.82,
+    "end": 2581.57,
+    "text": "good comma task setting this off okay done next you'll update max see equal to max of max"
+  },
+  {
+    "start": 2581.57,
+    "end": 2588.97,
+    "text": "c comma point so out of all points whatever you got this it'll just take it across so"
+  },
+  {
+    "start": 2588.97,
+    "end": 2596.63,
+    "text": "instead of storing maximum what you can do is you can directly store it in the dp that's"
+  },
+  {
+    "start": 2596.63,
+    "end": 2601.6,
+    "text": "the better version so he's to so he's stored it in the dp"
+  },
+  {
+    "start": 2601.6,
+    "end": 2607.62,
+    "text": "add yeah this keep it dp of day last there's just using a max see variable what I"
+  },
+  {
+    "start": 2607.62,
+    "end": 2614.16,
+    "text": "did was I just used this particular stuff so I'll just omit this and where is the answer"
+  },
+  {
+    "start": 2614.16,
+    "end": 2621.52,
+    "text": "was the initial call that you made your recursion the initial call that you made your recursion was"
+  },
+  {
+    "start": 2621.52,
+    "end": 2626.2,
+    "text": "f of n minus 1 dp fn minus 1 and 3 so this made it just make it"
+  },
+  {
+    "start": 2626.2,
+    "end": 2632.37,
+    "text": "and how are you going to do is you can definitely run this and you see this running"
+  },
+  {
+    "start": 2632.37,
+    "end": 2638.99,
+    "text": "fine yeah and it is somiton was tabulation task oh was it if you ever written recursion I"
+  },
+  {
+    "start": 2638.99,
+    "end": 2644.71,
+    "text": "was not I told you not in the starting of the dp playlist once I dg dp you'll"
+  },
+  {
+    "start": 2644.71,
+    "end": 2651.55,
+    "text": "never forget it so that's that's how I wrote the wonderful recursion and I just told you how"
+  },
+  {
+    "start": 2651.55,
+    "end": 2657.94,
+    "text": "to make sure the first couple of all loops are at once for loop serity whatever is the"
+  },
+  {
+    "start": 2657.94,
+    "end": 2665.3,
+    "text": "recurrence how do you just write them once you write them you get your particular answer that's how"
+  },
+  {
+    "start": 2665.3,
+    "end": 2671.17,
+    "text": "simple it is there takes a time complexity of b go of n cross 4 cross 3 because"
+  },
+  {
+    "start": 2671.17,
+    "end": 2678.45,
+    "text": "there are three loops and the space complexity is still n cross 4 we have eliminated the recursion"
+  },
+  {
+    "start": 2678.45,
+    "end": 2679.28,
+    "text": "stack space"
+  },
+  {
+    "start": 2679.28,
+    "end": 2686.49,
+    "text": "but how do you eliminate this that's where something as space of t myjson comes in yes so"
+  },
+  {
+    "start": 2686.49,
+    "end": 2692.89,
+    "text": "let's learn now if I show you the code how do you determine that there can be a"
+  },
+  {
+    "start": 2692.89,
+    "end": 2700.83,
+    "text": "space of imagination whenever you see that dp of d last is actually using something like point and"
+  },
+  {
+    "start": 2700.83,
+    "end": 2707.32,
+    "text": "if I just cover this off like I can just write it over here which is nothing but"
+  },
+  {
+    "start": 2707.32,
+    "end": 2713.4,
+    "text": "this like I just write it in one line which is this dp of d last is nothing"
+  },
+  {
+    "start": 2713.4,
+    "end": 2720.61,
+    "text": "but max of some dp of d last come up something plus something right now this something is"
+  },
+  {
+    "start": 2720.61,
+    "end": 2727.66,
+    "text": "a previous state of dp of d minus 1 remember whenever you're computing dp of d last and"
+  },
+  {
+    "start": 2727.66,
+    "end": 2735.77,
+    "text": "you're taking d minus 1 so that's when you can space optimize whenever there is something like minus"
+  },
+  {
+    "start": 2735.77,
+    "end": 2743.23,
+    "text": "1 minus 2 then we can think of space optimization let's see how so specifically how did this"
+  },
+  {
+    "start": 2743.23,
+    "end": 2750.36,
+    "text": "problem how was this problem solved like if there are multiple days we created a dp at a"
+  },
+  {
+    "start": 2750.36,
+    "end": 2757.01,
+    "text": "right of like assume assume over here n is 5 and there were dp at a something like"
+  },
+  {
+    "start": 2757.01,
+    "end": 2758.48,
+    "text": "this task one task"
+  },
+  {
+    "start": 2758.48,
+    "end": 2762.92,
+    "text": "0 task 2 task 3 and the days were like 0 1 2 3 4 5 so initially"
+  },
+  {
+    "start": 2762.92,
+    "end": 2769.2,
+    "text": "what you did was initially you filled these guys why share in the code or that's what you"
+  },
+  {
+    "start": 2769.2,
+    "end": 2775.9,
+    "text": "have done over here this is what you have done you've initially filled that right then you went"
+  },
+  {
+    "start": 2775.9,
+    "end": 2781.68,
+    "text": "on to fill this fill this fill this fill this but when you are trying to fill this"
+  },
+  {
+    "start": 2781.68,
+    "end": 2787.04,
+    "text": "what was the line that you wrote so let me just write it over here so that I"
+  },
+  {
+    "start": 2787.04,
+    "end": 2793.11,
+    "text": "just I don't have to again switch on switch last equal to something plus dp of d minus"
+  },
+  {
+    "start": 2793.11,
+    "end": 2799.67,
+    "text": "1 comma task right that's what you wrote so basically if I carefully observe what can be task"
+  },
+  {
+    "start": 2799.67,
+    "end": 2805.59,
+    "text": "task can be anything like this so in order to compute this row this row what did you"
+  },
+  {
+    "start": 2805.59,
+    "end": 2812.78,
+    "text": "require you required this particular rows values because d minus 1 this is either this value that this"
+  },
+  {
+    "start": 2812.78,
+    "end": 2819.55,
+    "text": "value that is value that is value this is what you're required so assume you computed these guys"
+  },
+  {
+    "start": 2819.55,
+    "end": 2825.76,
+    "text": "and then you move to the next what did you require when you're trying to compute the row"
+  },
+  {
+    "start": 2825.76,
+    "end": 2832.67,
+    "text": "2 you just require these values there is no more requirement of these guys it's not required using"
+  },
+  {
+    "start": 2832.67,
+    "end": 2835.28,
+    "text": "these values you can actually compute"
+  },
+  {
+    "start": 2835.28,
+    "end": 2842.8,
+    "text": "and then again in the next using these values you can again compute these guys and again when"
+  },
+  {
+    "start": 2842.8,
+    "end": 2849.67,
+    "text": "you go back this guys you answer correct so do we need to store an entire array can't"
+  },
+  {
+    "start": 2849.67,
+    "end": 2856.22,
+    "text": "we do something at this let's start off with a very small array and what we do is"
+  },
+  {
+    "start": 2856.22,
+    "end": 2862.77,
+    "text": "we store this guy this guy this guy this guy over m and then created dummy size 4"
+  },
+  {
+    "start": 2862.77,
+    "end": 2870.04,
+    "text": "array and tried to compute them and then again store it and then use this compute the next"
+  },
+  {
+    "start": 2870.04,
+    "end": 2877.07,
+    "text": "and then again store it then again use this to compute the next then again store it and"
+  },
+  {
+    "start": 2877.07,
+    "end": 2883.54,
+    "text": "at the end compute the last and then this will be the answer can I do this right"
+  },
+  {
+    "start": 2883.54,
+    "end": 2889.6,
+    "text": "just store a size 4 array if I just store a size 4 array I don't require an"
+  },
+  {
+    "start": 2889.6,
+    "end": 2897.68,
+    "text": "n cross 4 array because there's no need to store previous information because what I require is just"
+  },
+  {
+    "start": 2897.68,
+    "end": 2904.79,
+    "text": "the previous guy thereby I'll do a space optimization now so I will be like I don't need"
+  },
+  {
+    "start": 2904.79,
+    "end": 2910.77,
+    "text": "the entire thing so what I'll do is hey why can't I just do this I think I"
+  },
+  {
+    "start": 2910.77,
+    "end": 2914.16,
+    "text": "can definitely do this I will be like I'll"
+  },
+  {
+    "start": 2914.16,
+    "end": 2921.17,
+    "text": "declare a size 4 array and I will I'll make the see I just made first 4 is"
+  },
+  {
+    "start": 2921.17,
+    "end": 2929.41,
+    "text": "declared so what I can say is this is declared declared first 4 is declared next I'm at"
+  },
+  {
+    "start": 2929.41,
+    "end": 2937.65,
+    "text": "dp so instead now what I'm doing is I'm trying to compute the current D which means I'm"
+  },
+  {
+    "start": 2937.65,
+    "end": 2947.12,
+    "text": "trying to create this which means I'm trying to create this I will simply I'll simply keep something"
+  },
+  {
+    "start": 2947.12,
+    "end": 2954.98,
+    "text": "at this vector of n temporary of size 4 is what I'm looking to create and what I'll"
+  },
+  {
+    "start": 2954.98,
+    "end": 2963.03,
+    "text": "do is instead of dp I'll just create temporary okay so this is for the current one so"
+  },
+  {
+    "start": 2963.03,
+    "end": 2970.89,
+    "text": "the current day will be stored in temporary and this dp of day minus one now I know"
+  },
+  {
+    "start": 2970.89,
+    "end": 2978.94,
+    "text": "the previous is this current dp like the previous guy so what I can do is or probably"
+  },
+  {
+    "start": 2978.94,
+    "end": 2986.99,
+    "text": "in order to name it better so that you understand we can just make it previous so the"
+  },
+  {
+    "start": 2986.99,
+    "end": 2989.36,
+    "text": "previous row is over here"
+  },
+  {
+    "start": 2989.36,
+    "end": 2995.73,
+    "text": "so what I can do is previous instead of day minus one I can directly take it because"
+  },
+  {
+    "start": 2995.73,
+    "end": 3002.33,
+    "text": "I just I'm concerned with 4 values so I can directly take it once the stamp is computed"
+  },
+  {
+    "start": 3002.33,
+    "end": 3008.7,
+    "text": "after this entire iteration what I can do is I can say okay it has been computed now"
+  },
+  {
+    "start": 3008.7,
+    "end": 3014.85,
+    "text": "let's make the dps stamp so that again on the next day again on the next day when"
+  },
+  {
+    "start": 3014.85,
+    "end": 3021.45,
+    "text": "this guy has been computed this can serve as for this guy and we can again compute this"
+  },
+  {
+    "start": 3021.45,
+    "end": 3026.84,
+    "text": "so we keep on doing and at the end of the day instead of this I can say"
+  },
+  {
+    "start": 3026.84,
+    "end": 3034.13,
+    "text": "the previous has my answer sorry this will be previous the previous has my answer right and once"
+  },
+  {
+    "start": 3034.13,
+    "end": 3040.5,
+    "text": "the previous has yarn so you can definitely run it let's see if it runs yeah it runs"
+  },
+  {
+    "start": 3040.5,
+    "end": 3046.04,
+    "text": "and now let's try to submit it it runs look at the time 4 26 came in some"
+  },
+  {
+    "start": 3046.04,
+    "end": 3052.87,
+    "text": "morning and I hope I was able to make you understand at the time complexity now boils down"
+  },
+  {
+    "start": 3052.87,
+    "end": 3058.87,
+    "text": "to n cross 4 cross 3 but whatever the space you're just using a 4 size which is"
+  },
+  {
+    "start": 3058.87,
+    "end": 3065.17,
+    "text": "as good as constant which is as good as constant I converted a 2d matrix in this to"
+  },
+  {
+    "start": 3065.17,
+    "end": 3067.68,
+    "text": "as good as constant like 1d again"
+  },
+  {
+    "start": 3067.68,
+    "end": 3073.43,
+    "text": "cross 4 into 4 which is very very good so that's about this piece optimization I think I'm"
+  },
+  {
+    "start": 3073.43,
+    "end": 3078.67,
+    "text": "gone with voice because it's it's a very very long video so guys I hope I was able"
+  },
+  {
+    "start": 3078.67,
+    "end": 3084.93,
+    "text": "to explain you the entire problem all the three approaches just in case I was please please please"
+  },
+  {
+    "start": 3084.93,
+    "end": 3090.3,
+    "text": "give me a like because it takes a hell lot of effort to make this content and please"
+  },
+  {
+    "start": 3090.3,
+    "end": 3097.2,
+    "text": "do consider commenting US because that else me that okay the people who watching the video are understanding"
+  },
+  {
+    "start": 3097.2,
+    "end": 3102.5,
+    "text": "it this is please please am an artist do it on every video if you're watching it US"
+  },
+  {
+    "start": 3102.5,
+    "end": 3108.38,
+    "text": "or understood is what you need to comment and also guys if you're new to this channel please"
+  },
+  {
+    "start": 3108.38,
+    "end": 3114.64,
+    "text": "do consider subscribing us because that's numbers do motivate me to work more and more and I'll be"
+  },
+  {
+    "start": 3114.64,
+    "end": 3120.07,
+    "text": "wrapping up this video but yes if you haven't checked out our SD sheet the link is in"
+  },
+  {
+    "start": 3120.07,
+    "end": 3125.69,
+    "text": "the description make sure you check it out with this all let's sum let's rub up this and"
+  },
+  {
+    "start": 3125.69,
+    "end": 3128.24,
+    "text": "meet in the next video till then bye bye"
+  }
+]

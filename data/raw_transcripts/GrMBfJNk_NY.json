@@ -1,0 +1,2112 @@
+[
+  {
+    "start": 0.0,
+    "end": 2.38,
+    "text": "Hey, we are welcome back to the channel."
+  },
+  {
+    "start": 2.38,
+    "end": 4.82,
+    "text": "I hope you guys are doing extremely well."
+  },
+  {
+    "start": 4.82,
+    "end": 8.69,
+    "text": "So welcome to the fourth lecture of dynamic programming playlist."
+  },
+  {
+    "start": 8.69,
+    "end": 9.88,
+    "text": "What is the problem?"
+  },
+  {
+    "start": 9.88,
+    "end": 13.81,
+    "text": "This problem is going to be maximum sum of non-adjustant elements."
+  },
+  {
+    "start": 13.81,
+    "end": 16.96,
+    "text": "Again, a one kind of one DDP that we will be solving."
+  },
+  {
+    "start": 16.96,
+    "end": 19.04,
+    "text": "I'll be following the same pattern."
+  },
+  {
+    "start": 19.04,
+    "end": 26.47,
+    "text": "You might have solved this problem previously, but the way I'll be teaching you will be something very, very, very different."
+  },
+  {
+    "start": 26.47,
+    "end": 30.93,
+    "text": "So please, please do watch the video till then to understand all the logic."
+  },
+  {
+    "start": 30.93,
+    "end": 34.44,
+    "text": "Don't think that if you understand memorization, it's done."
+  },
+  {
+    "start": 34.44,
+    "end": 40.45,
+    "text": "You have to understand tabulation, you have to understand space optimization in order to be the best."
+  },
+  {
+    "start": 40.45,
+    "end": 43.13,
+    "text": "Okay, so let's let's understand the question."
+  },
+  {
+    "start": 43.13,
+    "end": 46.76,
+    "text": "Basically, it states you will be given an array of n-indiges."
+  },
+  {
+    "start": 46.76,
+    "end": 50.39,
+    "text": "That means you're given an array which consists of n-indiges."
+  },
+  {
+    "start": 50.39,
+    "end": 54.61,
+    "text": "Okay, so you're supposed to return the maximum sum of the sub-sequence."
+  },
+  {
+    "start": 54.61,
+    "end": 60.68,
+    "text": "Remember, you have to pick up a sub-sequence which gives you a maximum sum, but there is a constraint."
+  },
+  {
+    "start": 60.68,
+    "end": 65.02,
+    "text": "In the sub-sequence, none of the elements can be adjacent from the array."
+  },
+  {
+    "start": 65.02,
+    "end": 69.42,
+    "text": "Okay, so for an example, if I look on this test case, which is 1 to 4, you"
+  },
+  {
+    "start": 69.42,
+    "end": 75.0,
+    "text": "can't pick something like 1, 2 or you can't pick something like 2, 4 because they're adjacent."
+  },
+  {
+    "start": 75.0,
+    "end": 82.28,
+    "text": "But it, so probably you can pick something like 1 and 4, but it gives you the maximum sum, 5."
+  },
+  {
+    "start": 82.28,
+    "end": 85.1,
+    "text": "That's what the maximum sum will be."
+  },
+  {
+    "start": 85.1,
+    "end": 90.03,
+    "text": "Like over here, you can't pick something like 4 and 9 together."
+  },
+  {
+    "start": 90.03,
+    "end": 92.3,
+    "text": "You have to pick one of them."
+  },
+  {
+    "start": 92.3,
+    "end": 98.09,
+    "text": "So probably I'll pick 9 and then I'll pick 2 to get the maximum sum as 11."
+  },
+  {
+    "start": 98.09,
+    "end": 100.28,
+    "text": "So you'll be given an array."
+  },
+  {
+    "start": 100.28,
+    "end": 103.1,
+    "text": "I'll be given the size of the array."
+  },
+  {
+    "start": 103.1,
+    "end": 112.34,
+    "text": "You have to tell me what is the maximum sum that you can pick by picking up no adjacent elements in that sub-sequence."
+  },
+  {
+    "start": 112.34,
+    "end": 118.92,
+    "text": "So what's the first thing that comes to your brain when you hear about this problem?"
+  },
+  {
+    "start": 118.92,
+    "end": 122.13,
+    "text": "It comes to its stride all sub-sequences."
+  },
+  {
+    "start": 122.13,
+    "end": 130.43,
+    "text": "So that is something which comes to my brain as let's try out all sub-sequences with the given constraint."
+  },
+  {
+    "start": 130.43,
+    "end": 138.89,
+    "text": "Something which comes to my brain and out of all these sub-sequences, let's pick the 1 with the maximum sum."
+  },
+  {
+    "start": 138.89,
+    "end": 139.52,
+    "text": "Correct?"
+  },
+  {
+    "start": 139.52,
+    "end": 146.33,
+    "text": "I'm going to proud all sub-sequences and whichever sub-sequences gives you maximum sum."
+  },
+  {
+    "start": 146.33,
+    "end": 150.0,
+    "text": "We're going to pick that one as simple as that."
+  },
+  {
+    "start": 150.0,
+    "end": 156.29,
+    "text": "Now the question arises whenever we say trying out all stuff, what comes to your brain?"
+  },
+  {
+    "start": 156.29,
+    "end": 160.84,
+    "text": "Obviously one thing comes to your brain which is the recursion."
+  },
+  {
+    "start": 160.84,
+    "end": 164.17,
+    "text": "So you're going to try out recursion, correct?"
+  },
+  {
+    "start": 164.17,
+    "end": 171.91,
+    "text": "And after that we are going to see if there are overlapping sub-problems and that's for the remaining part."
+  },
+  {
+    "start": 171.91,
+    "end": 180.22,
+    "text": "But we have understood a two-wire recursion because if they're asking you to try out all sub-sequences, we have to."
+  },
+  {
+    "start": 180.22,
+    "end": 182.9,
+    "text": "And that is only doable by recursion."
+  },
+  {
+    "start": 182.9,
+    "end": 185.65,
+    "text": "So how do you print all sub-sequences?"
+  },
+  {
+    "start": 185.65,
+    "end": 189.34,
+    "text": "That's a big question before solving this question."
+  },
+  {
+    "start": 189.34,
+    "end": 191.87,
+    "text": "How do you print all sub-sequences?"
+  },
+  {
+    "start": 191.87,
+    "end": 196.28,
+    "text": "So there's a technique which is known as pick and non-picked."
+  },
+  {
+    "start": 196.28,
+    "end": 203.73,
+    "text": "So I have taught this entire technique in lecture six of recursions in East and lecture seven in depth."
+  },
+  {
+    "start": 203.73,
+    "end": 208.36,
+    "text": "So if you haven't seen both of the lectures, pause it right now."
+  },
+  {
+    "start": 208.36,
+    "end": 211.32,
+    "text": "Yes, I repeat pause this video right now."
+  },
+  {
+    "start": 211.32,
+    "end": 214.28,
+    "text": "Go back to lecture six and lecture seven."
+  },
+  {
+    "start": 214.28,
+    "end": 216.81,
+    "text": "Understand the pick and non-picked."
+  },
+  {
+    "start": 216.81,
+    "end": 219.41,
+    "text": "Come back and then watch this video."
+  },
+  {
+    "start": 219.41,
+    "end": 228.16,
+    "text": "If you don't watch lecture six and lecture seven, do not say me key,  and then you can write whatever did not teach well."
+  },
+  {
+    "start": 228.16,
+    "end": 231.99,
+    "text": "So we have to know this logic of pick and non-picked."
+  },
+  {
+    "start": 231.99,
+    "end": 234.23,
+    "text": "So I know how to write returns."
+  },
+  {
+    "start": 234.23,
+    "end": 235.82,
+    "text": "What did it teach you?"
+  },
+  {
+    "start": 235.82,
+    "end": 239.0,
+    "text": "Express every recursion in terms of indexes."
+  },
+  {
+    "start": 239.0,
+    "end": 241.7,
+    "text": "So you have to stop on that index."
+  },
+  {
+    "start": 241.7,
+    "end": 244.0,
+    "text": "Okay, do stops on that index."
+  },
+  {
+    "start": 244.0,
+    "end": 247.02,
+    "text": "Then return the best that you can get."
+  },
+  {
+    "start": 247.02,
+    "end": 249.64,
+    "text": "Return the best that you can get."
+  },
+  {
+    "start": 249.64,
+    "end": 252.1,
+    "text": "That is something which I know."
+  },
+  {
+    "start": 252.1,
+    "end": 254.88,
+    "text": "Now over here, what is the problem?"
+  },
+  {
+    "start": 254.88,
+    "end": 257.74,
+    "text": "Pick sub-sequences with no argument."
+  },
+  {
+    "start": 257.74,
+    "end": 260.91,
+    "text": "Remember this with no adjacent elements."
+  },
+  {
+    "start": 260.91,
+    "end": 262.58,
+    "text": "So where do you pick?"
+  },
+  {
+    "start": 262.58,
+    "end": 265.52,
+    "text": "Where do you pick sub-sequences from?"
+  },
+  {
+    "start": 265.52,
+    "end": 268.46,
+    "text": "You pick sub-sequences from an array."
+  },
+  {
+    "start": 268.46,
+    "end": 271.95,
+    "text": "Right, you pick sub-sequences from an array."
+  },
+  {
+    "start": 271.95,
+    "end": 276.47,
+    "text": "And whenever there is an array, there has to be an index."
+  },
+  {
+    "start": 276.47,
+    "end": 283.77,
+    "text": "So the first property has been satisfied that I will have the recurrence based on the index."
+  },
+  {
+    "start": 283.77,
+    "end": 289.33,
+    "text": "Okay, now there is a question as a constraint rather with no adjacent."
+  },
+  {
+    "start": 289.33,
+    "end": 291.08,
+    "text": "How do I deal with it?"
+  },
+  {
+    "start": 291.08,
+    "end": 295.05,
+    "text": "Because I know how to print all the sub-sequences."
+  },
+  {
+    "start": 295.05,
+    "end": 300.45,
+    "text": "But now there is a constraint with states with no adjacent elements."
+  },
+  {
+    "start": 300.45,
+    "end": 300.93,
+    "text": "Right?"
+  },
+  {
+    "start": 300.93,
+    "end": 303.15,
+    "text": "So you want the maximum sub."
+  },
+  {
+    "start": 303.15,
+    "end": 303.78,
+    "text": "Correct?"
+  },
+  {
+    "start": 303.78,
+    "end": 308.22,
+    "text": "So can I say our equation to define something like this?"
+  },
+  {
+    "start": 308.22,
+    "end": 314.0,
+    "text": "F of index states the maximum sum, like the maximum sum that you can get."
+  },
+  {
+    "start": 314.0,
+    "end": 320.26,
+    "text": "If you pick a sub-sequence from the index zero, till the index, maximum sum that you can get"
+  },
+  {
+    "start": 320.26,
+    "end": 325.3,
+    "text": "by picking up a sub-sequence with no adjacent elements from zero to index."
+  },
+  {
+    "start": 325.3,
+    "end": 326.05,
+    "text": "Make sense?"
+  },
+  {
+    "start": 326.05,
+    "end": 327.96,
+    "text": "So can I say can I say this?"
+  },
+  {
+    "start": 327.96,
+    "end": 332.79,
+    "text": "That if I end up at index zero, if I end up at index zero, what will be"
+  },
+  {
+    "start": 332.79,
+    "end": 334.76,
+    "text": "the best thing that I can do?"
+  },
+  {
+    "start": 334.76,
+    "end": 337.07,
+    "text": "Like there can be a lot of things."
+  },
+  {
+    "start": 337.07,
+    "end": 339.59,
+    "text": "But as of now, let's keep this aside."
+  },
+  {
+    "start": 339.59,
+    "end": 345.31,
+    "text": "Let's think of the other cases because we know we are going to start from n minus 1."
+  },
+  {
+    "start": 345.31,
+    "end": 351.44,
+    "text": "Now in recursion, we know in order to print sub-sequence, you have a pick with states key."
+  },
+  {
+    "start": 351.44,
+    "end": 354.23,
+    "text": "Take this element into your sub-sequence."
+  },
+  {
+    "start": 354.23,
+    "end": 357.77,
+    "text": "Pick says, take this element into your sub-sequence."
+  },
+  {
+    "start": 357.77,
+    "end": 365.74,
+    "text": "So if you take this element into your sub-sequence, the sum has two increase and the sum will increase by a of index."
+  },
+  {
+    "start": 365.74,
+    "end": 366.69,
+    "text": "What it means?"
+  },
+  {
+    "start": 366.69,
+    "end": 368.19,
+    "text": "Now tell me one thing."
+  },
+  {
+    "start": 368.19,
+    "end": 369.42,
+    "text": "Think on yourself."
+  },
+  {
+    "start": 369.42,
+    "end": 370.78,
+    "text": "I'm saying do stops."
+  },
+  {
+    "start": 370.78,
+    "end": 374.39,
+    "text": "You're saying okay, what are the stops that I can do?"
+  },
+  {
+    "start": 374.39,
+    "end": 379.43,
+    "text": "I can say this particular index element will be a part of my sub-sequence."
+  },
+  {
+    "start": 379.43,
+    "end": 382.63,
+    "text": "Or I can say let's not take this and I will go."
+  },
+  {
+    "start": 382.63,
+    "end": 387.06,
+    "text": "So if I decide that I will not pick, then it will be a zero plus."
+  },
+  {
+    "start": 387.06,
+    "end": 389.44,
+    "text": "I decide that I will not take this."
+  },
+  {
+    "start": 389.44,
+    "end": 391.0,
+    "text": "It will be a zero plus."
+  },
+  {
+    "start": 391.0,
+    "end": 394.85,
+    "text": "So on stops, I can say these are the stops that I can do."
+  },
+  {
+    "start": 394.85,
+    "end": 403.7,
+    "text": "I can either take that element, take that element index into my sub-sequence, or I can say I'll not take this into my sub-sequence."
+  },
+  {
+    "start": 403.7,
+    "end": 407.08,
+    "text": "These are the couple of things that I can only do."
+  },
+  {
+    "start": 407.08,
+    "end": 408.57,
+    "text": "Now tell me one thing."
+  },
+  {
+    "start": 408.57,
+    "end": 414.72,
+    "text": "If you're picking up an index, if you're picking up an index, what is the question stating?"
+  },
+  {
+    "start": 414.72,
+    "end": 417.36,
+    "text": "You cannot pick up an adjacent element."
+  },
+  {
+    "start": 417.36,
+    "end": 422.29,
+    "text": "So will you go to the previous index, which you generally did in one day?"
+  },
+  {
+    "start": 422.29,
+    "end": 422.9,
+    "text": "Will you?"
+  },
+  {
+    "start": 422.9,
+    "end": 427.43,
+    "text": "Because if you go to the previous element, there will be no option."
+  },
+  {
+    "start": 427.43,
+    "end": 432.63,
+    "text": "There will be no option of picking that because you have picked up the index."
+  },
+  {
+    "start": 432.63,
+    "end": 435.81,
+    "text": "So can I say you will not pick index minus one?"
+  },
+  {
+    "start": 435.81,
+    "end": 438.51,
+    "text": "So can I directly go to index minus two?"
+  },
+  {
+    "start": 438.51,
+    "end": 439.46,
+    "text": "Think of this."
+  },
+  {
+    "start": 439.46,
+    "end": 447.16,
+    "text": "Makes sense because if I am picking index, I cannot pick index minus one because the condition states no adjacent."
+  },
+  {
+    "start": 447.16,
+    "end": 455.2,
+    "text": "So the transition instead of going to index minus one and deciding what will we do for index minus one instead of that."
+  },
+  {
+    "start": 455.2,
+    "end": 462.43,
+    "text": "What we do is we say go to index minus two is go back to index minus two because index minus one cannot be."
+  },
+  {
+    "start": 462.43,
+    "end": 464.25,
+    "text": "But this is how you can do."
+  },
+  {
+    "start": 464.25,
+    "end": 471.14,
+    "text": "Now if I decide that I'm not going to pick if I'm not picking an index, can I pick an index minus one?"
+  },
+  {
+    "start": 471.14,
+    "end": 471.95,
+    "text": "Makes sense."
+  },
+  {
+    "start": 471.95,
+    "end": 475.0,
+    "text": "So I will say okay, I will pick up the index."
+  },
+  {
+    "start": 475.0,
+    "end": 483.28,
+    "text": "Now can I say this is for the current and the sum from index minus two to zero will be given by this recruits."
+  },
+  {
+    "start": 483.28,
+    "end": 488.78,
+    "text": "So this plus this will be the sum that you will get from zero till index."
+  },
+  {
+    "start": 488.78,
+    "end": 490.89,
+    "text": "The maximum sub sequence of."
+  },
+  {
+    "start": 490.89,
+    "end": 491.79,
+    "text": "Makes sense."
+  },
+  {
+    "start": 491.79,
+    "end": 497.44,
+    "text": "So can I say the last step is return best because you want the maximum sum."
+  },
+  {
+    "start": 497.44,
+    "end": 498.72,
+    "text": "So return max of."
+  },
+  {
+    "start": 498.72,
+    "end": 500.08,
+    "text": "Pick and not pick."
+  },
+  {
+    "start": 500.08,
+    "end": 501.74,
+    "text": "That's what you do it."
+  },
+  {
+    "start": 501.74,
+    "end": 504.22,
+    "text": "But now still there's a question."
+  },
+  {
+    "start": 504.22,
+    "end": 508.29,
+    "text": "What if we reach somewhere around index equal to zero."
+  },
+  {
+    "start": 508.29,
+    "end": 512.73,
+    "text": "So if you're reaching at index equal to zero at any moment."
+  },
+  {
+    "start": 512.73,
+    "end": 517.77,
+    "text": "That means you have not picked up index equal to one thing on this."
+  },
+  {
+    "start": 517.77,
+    "end": 520.71,
+    "text": "If you're reaching index equal to zero."
+  },
+  {
+    "start": 520.71,
+    "end": 524.62,
+    "text": "That means you haven't picked up index equal to one."
+  },
+  {
+    "start": 524.62,
+    "end": 532.67,
+    "text": "They are by you are reaching index equal to zero right because if you would have picked index equal to one."
+  },
+  {
+    "start": 532.67,
+    "end": 538.09,
+    "text": "Then index minus two would have happened and you would have not reached."
+  },
+  {
+    "start": 538.09,
+    "end": 542.98,
+    "text": "So thereby I can say that you have not picked index equal to one."
+  },
+  {
+    "start": 542.98,
+    "end": 550.36,
+    "text": "So can I say the best that I can do is pick this element because if I haven't picked up index one."
+  },
+  {
+    "start": 550.36,
+    "end": 556.0,
+    "text": "I need to pick it because then only I can maximize my sum because remember."
+  },
+  {
+    "start": 556.0,
+    "end": 562.45,
+    "text": "The array does not have any negative elements thereby I can say I will return whatever there is right."
+  },
+  {
+    "start": 562.45,
+    "end": 568.52,
+    "text": "But what if what if index was one and you did one minus two and you went on to a negative index."
+  },
+  {
+    "start": 568.52,
+    "end": 570.54,
+    "text": "So you're running out of bounds."
+  },
+  {
+    "start": 570.54,
+    "end": 575.03,
+    "text": "So there will be another edge case that you have to think in recursion."
+  },
+  {
+    "start": 575.03,
+    "end": 582.11,
+    "text": "So I can say if I'm going index lesser than zero I will be like it done zero because there will be nothing else."
+  },
+  {
+    "start": 582.11,
+    "end": 584.51,
+    "text": "So over here realize what I put I did."
+  },
+  {
+    "start": 584.51,
+    "end": 589.89,
+    "text": "In the sub sequence problem the only change that I did was I represented it as index."
+  },
+  {
+    "start": 589.89,
+    "end": 591.41,
+    "text": "I picked up the element."
+  },
+  {
+    "start": 591.41,
+    "end": 595.65,
+    "text": "But instead of going to index minus one I just did index minus two."
+  },
+  {
+    "start": 595.65,
+    "end": 603.43,
+    "text": "That's a shuttle change that I did in the sub sequence problem because there was a condition with seated no adjacent right."
+  },
+  {
+    "start": 603.43,
+    "end": 608.81,
+    "text": "And there was one base case where I stated if I reach this piece because I'll pick up"
+  },
+  {
+    "start": 608.81,
+    "end": 612.79,
+    "text": "and if I cross this base case there is nothing else to pick up."
+  },
+  {
+    "start": 612.79,
+    "end": 619.12,
+    "text": "So there'll be a couple of base cases we have to think on this and there's no not picked and picked."
+  },
+  {
+    "start": 619.12,
+    "end": 625.0,
+    "text": "So in this way I have modulated the subsequent score that I've taught you in the lecture six."
+  },
+  {
+    "start": 625.0,
+    "end": 630.25,
+    "text": "In order to write a same similar problem with an additional no adjacent constraint."
+  },
+  {
+    "start": 630.25,
+    "end": 634.74,
+    "text": "So I hope you've understood the recurrence it's pretty straightforward."
+  },
+  {
+    "start": 634.74,
+    "end": 640.0,
+    "text": "So if you talk about this recurrence you're going to try out all the possible ways."
+  },
+  {
+    "start": 640.0,
+    "end": 646.76,
+    "text": "The time complexity is definitely exponential which is to the power and because you'll try to evolve."
+  },
+  {
+    "start": 646.76,
+    "end": 651.18,
+    "text": "It's not exactly to the power and it's going to be less than that."
+  },
+  {
+    "start": 651.18,
+    "end": 652.99,
+    "text": "So you have to memorize it."
+  },
+  {
+    "start": 652.99,
+    "end": 659.55,
+    "text": "Now, Now question arises how do you optimize recursion you have to figure out if the recursion has"
+  },
+  {
+    "start": 659.55,
+    "end": 667.38,
+    "text": "overlapping sub problems like if the recursion has overlapping sub problems then we can definitely memorize it right."
+  },
+  {
+    "start": 667.38,
+    "end": 670.12,
+    "text": "So it will have overlapping sub problems."
+  },
+  {
+    "start": 670.12,
+    "end": 675.48,
+    "text": "So what we will do is we'll take a very simple example to one four nine and I'll"
+  },
+  {
+    "start": 675.48,
+    "end": 678.56,
+    "text": "write the index numbers as zero one two three."
+  },
+  {
+    "start": 678.56,
+    "end": 684.45,
+    "text": "Let's start from f of three where f of three basically states is what is the maximum sum"
+  },
+  {
+    "start": 684.45,
+    "end": 689.94,
+    "text": "you can get you if you pick up a sub sequence with no adjacent from the index zero"
+  },
+  {
+    "start": 689.94,
+    "end": 696.37,
+    "text": "to index three which essentially means the entire array what is the maximum sum if you pick from"
+  },
+  {
+    "start": 696.37,
+    "end": 696.7,
+    "text": "this."
+  },
+  {
+    "start": 696.7,
+    "end": 702.86,
+    "text": "So f of three is basically stating hey listen I can definitely pick up okay I can definitely"
+  },
+  {
+    "start": 702.86,
+    "end": 707.14,
+    "text": "pick up so if I pick up I will go to the f of one why because if"
+  },
+  {
+    "start": 707.14,
+    "end": 712.3,
+    "text": "I decide to pick up this particular guy I cannot pick up this so I'll go to f"
+  },
+  {
+    "start": 712.3,
+    "end": 717.59,
+    "text": "of one directly that's perfect and if I decide not to pick up I will go to just"
+  },
+  {
+    "start": 717.59,
+    "end": 719.0,
+    "text": "f of two makes sense."
+  },
+  {
+    "start": 719.0,
+    "end": 724.38,
+    "text": "Now if you're at f of one again there are couple of conditions you say I'm going to"
+  },
+  {
+    "start": 724.38,
+    "end": 728.86,
+    "text": "pick up so if you pick up you're going to go to f of minus one and if"
+  },
+  {
+    "start": 728.86,
+    "end": 733.79,
+    "text": "you decide you're not going to pick up you're going to go to f of zero okay."
+  },
+  {
+    "start": 733.79,
+    "end": 738.66,
+    "text": "So right over here at f of one you have encountered an f of minus one so if"
+  },
+  {
+    "start": 738.66,
+    "end": 743.78,
+    "text": "I try to write this f of one in the code generally f of one will look something"
+  },
+  {
+    "start": 743.78,
+    "end": 746.25,
+    "text": "like this and this will be calling up."
+  },
+  {
+    "start": 746.25,
+    "end": 751.31,
+    "text": "Okay right which will be I'll be saying let's pick this f of one which is a of"
+  },
+  {
+    "start": 751.31,
+    "end": 756.5,
+    "text": "one I wrote the value of a of one let's see that's nothing but one so let's pick"
+  },
+  {
+    "start": 756.5,
+    "end": 761.24,
+    "text": "up one so we like let's pick up one plus f of minus one I if you remember"
+  },
+  {
+    "start": 761.24,
+    "end": 766.69,
+    "text": "what does f of minus one signify it signifies zero you know what is so this guy will"
+  },
+  {
+    "start": 766.69,
+    "end": 768.57,
+    "text": "be zero so what I can say is."
+  },
+  {
+    "start": 768.57,
+    "end": 772.92,
+    "text": "For f of one if you pick up it will be one right and if I decide to"
+  },
+  {
+    "start": 772.92,
+    "end": 777.91,
+    "text": "not pick up it will be zero plus f of zero correct what is f of zero whenever"
+  },
+  {
+    "start": 777.91,
+    "end": 780.25,
+    "text": "you reach f of zero you're going to."
+  },
+  {
+    "start": 780.25,
+    "end": 785.96,
+    "text": "In that element up correct because if you remember at f of zero what you read you return"
+  },
+  {
+    "start": 785.96,
+    "end": 788.88,
+    "text": "you return the RF index so kindly yes kindly."
+  },
+  {
+    "start": 788.88,
+    "end": 796.0,
+    "text": "Right to return that RF index whatever it is so the first element was to so you can return it this will be to."
+  },
+  {
+    "start": 796.0,
+    "end": 803.11,
+    "text": "Now the pick gives you one the not pick gives you to which is the maximum that's to so f of one will be."
+  },
+  {
+    "start": 803.11,
+    "end": 809.95,
+    "text": "Now a very simple question arises yes a very very simple question arises what does this signify what"
+  },
+  {
+    "start": 809.95,
+    "end": 812.21,
+    "text": "does f of one signify I told you."
+  },
+  {
+    "start": 812.21,
+    "end": 818.16,
+    "text": "f of one signifies the maximum sum that you can gather if you pick up a subsequent with"
+  },
+  {
+    "start": 818.16,
+    "end": 824.11,
+    "text": "no address elements from zero to index one so if I just take this portion of the array."
+  },
+  {
+    "start": 824.11,
+    "end": 829.79,
+    "text": "I can either pick two as a subsequent or I can either pick one because there are no"
+  },
+  {
+    "start": 829.79,
+    "end": 836.56,
+    "text": "other options because in this particular if I forget this in this particular and either take two as"
+  },
+  {
+    "start": 836.56,
+    "end": 839.02,
+    "text": "a subsequent or one as a subsequent."
+  },
+  {
+    "start": 839.02,
+    "end": 844.97,
+    "text": "So thereby it is very obvious that I got to because taking two would be a better choice"
+  },
+  {
+    "start": 844.97,
+    "end": 849.48,
+    "text": "I hope that makes sense so I can say f of one give you to so I can"
+  },
+  {
+    "start": 849.48,
+    "end": 850.44,
+    "text": "just erase it."
+  },
+  {
+    "start": 850.44,
+    "end": 854.75,
+    "text": "So it is it f of one is given us to now what will be f of three"
+  },
+  {
+    "start": 854.75,
+    "end": 859.67,
+    "text": "f of three will say okay I am going to pick what will I pick I'll pick a"
+  },
+  {
+    "start": 859.67,
+    "end": 864.8,
+    "text": "of three what's a of three that's nine so I'm going to pick nine plus f of."
+  },
+  {
+    "start": 864.8,
+    "end": 866.51,
+    "text": "So I'm going to pick one."
+  },
+  {
+    "start": 866.51,
+    "end": 871.64,
+    "text": "And I'm going to pick not pick so zero plus f of two correct zero plus f of"
+  },
+  {
+    "start": 871.64,
+    "end": 876.0,
+    "text": "two I'll have to do this so there'll be a call for f of two now."
+  },
+  {
+    "start": 876.0,
+    "end": 880.93,
+    "text": "I'm going to say I'll be a call for f of two so call for f of two will now go."
+  },
+  {
+    "start": 880.93,
+    "end": 885.79,
+    "text": "There were this first f of one went and came back with a value two so it came"
+  },
+  {
+    "start": 885.79,
+    "end": 890.02,
+    "text": "back with a value two then f of two will go so now f of two will go"
+  },
+  {
+    "start": 890.02,
+    "end": 894.38,
+    "text": "what this let's quickly do the f of two and then we can wrap this up."
+  },
+  {
+    "start": 894.38,
+    "end": 898.61,
+    "text": "So if I have yes if I have f of two what can I say I'll either pick"
+  },
+  {
+    "start": 898.61,
+    "end": 902.53,
+    "text": "it up so if I pick it up I'll go to f of zero f of decided I'm"
+  },
+  {
+    "start": 902.53,
+    "end": 906.57,
+    "text": "not going to pick it up so I'll go to f of one now do you see an"
+  },
+  {
+    "start": 906.57,
+    "end": 908.84,
+    "text": "overlapping supply you do see right."
+  },
+  {
+    "start": 908.84,
+    "end": 913.64,
+    "text": "So this f of one is an overlapping problem there is no need to again go to f"
+  },
+  {
+    "start": 913.64,
+    "end": 918.69,
+    "text": "of minus one f of zero there's no need there is no need so you can directly take"
+  },
+  {
+    "start": 918.69,
+    "end": 923.3,
+    "text": "f of one right from here because that's the value which has already been."
+  },
+  {
+    "start": 923.3,
+    "end": 927.47,
+    "text": "So what I can say is in f of two if I write the pick the pick will"
+  },
+  {
+    "start": 927.47,
+    "end": 931.83,
+    "text": "be I'll pick the a of two which is four plus f of zero what will be f"
+  },
+  {
+    "start": 931.83,
+    "end": 937.26,
+    "text": "of zero that's this particular element to so four plus two will be six so again makes."
+  },
+  {
+    "start": 937.26,
+    "end": 938.4,
+    "text": "Pretty much sense."
+  },
+  {
+    "start": 938.4,
+    "end": 942.82,
+    "text": "If I decide to not pick there will be zero plus f of one so value f of"
+  },
+  {
+    "start": 942.82,
+    "end": 946.74,
+    "text": "one two so which one will you prefer the pick or the not pick."
+  },
+  {
+    "start": 946.74,
+    "end": 952.17,
+    "text": "I'll be like I will prefer the pick portion which is six so thereby this value gets as"
+  },
+  {
+    "start": 952.17,
+    "end": 957.1,
+    "text": "six and you can easily get this f of one from here which is two thereby we did"
+  },
+  {
+    "start": 957.1,
+    "end": 960.0,
+    "text": "not do any further recursions overlapping sub."
+  },
+  {
+    "start": 960.0,
+    "end": 965.08,
+    "text": "So what is f of two signify it's let's think on this what is f of two signify"
+  },
+  {
+    "start": 965.08,
+    "end": 970.3,
+    "text": "the sum between zero to index two sum between zero to index two so if I decide."
+  },
+  {
+    "start": 970.3,
+    "end": 976.18,
+    "text": "If I take this it makes sense and we preferable to take these two elements that's why you"
+  },
+  {
+    "start": 976.18,
+    "end": 982.45,
+    "text": "got six as the value because it'll be preferable to take these two guys instead of taking these"
+  },
+  {
+    "start": 982.45,
+    "end": 987.14,
+    "text": "two are like instead of taking this one or instead of just taking this."
+  },
+  {
+    "start": 987.14,
+    "end": 992.69,
+    "text": "More preferable to take these two guys right that's why you got a value as six so at"
+  },
+  {
+    "start": 992.69,
+    "end": 995.79,
+    "text": "the last moment whenever you are at f of three."
+  },
+  {
+    "start": 995.79,
+    "end": 996.25,
+    "text": "Let me."
+  },
+  {
+    "start": 996.25,
+    "end": 1002.13,
+    "text": "So let me quickly write you this whenever you are at f of three what will happen there'll"
+  },
+  {
+    "start": 1002.13,
+    "end": 1007.21,
+    "text": "be a case of pick which will sell pick f of three which will give you a value"
+  },
+  {
+    "start": 1007.21,
+    "end": 1011.44,
+    "text": "of nine and you'll say if I pick I'll go to f of one and if I do"
+  },
+  {
+    "start": 1011.44,
+    "end": 1015.53,
+    "text": "not pick I'll go to f of two so f of two give you six f of one"
+  },
+  {
+    "start": 1015.53,
+    "end": 1018.11,
+    "text": "give you two so nine plus two give you."
+  },
+  {
+    "start": 1018.11,
+    "end": 1023.46,
+    "text": "11 zero plus six give you six so which one will you do you will directly say this"
+  },
+  {
+    "start": 1023.46,
+    "end": 1029.6,
+    "text": "value will be in love it again makes sense because you're going to pick this and you're going"
+  },
+  {
+    "start": 1029.6,
+    "end": 1034.88,
+    "text": "to pick this so thereby the answer is 11 and you saw that they were overlapping."
+  },
+  {
+    "start": 1034.88,
+    "end": 1036.0,
+    "text": "So that's why we."
+  },
+  {
+    "start": 1036.0,
+    "end": 1037.28,
+    "text": "So that's why we."
+  },
+  {
+    "start": 1037.28,
+    "end": 1037.73,
+    "text": "So we."
+  },
+  {
+    "start": 1037.73,
+    "end": 1043.84,
+    "text": "So now we can easily apply memo I should do it and we can reduce the time complex"
+  },
+  {
+    "start": 1043.84,
+    "end": 1047.76,
+    "text": "city because what will be the memo I shouldn't take."
+  },
+  {
+    "start": 1047.76,
+    "end": 1053.26,
+    "text": "Obviously how many states are there f of three f of one f of two so can I"
+  },
+  {
+    "start": 1053.26,
+    "end": 1059.82,
+    "text": "say there are n states like states like zero one two three because they'll be f of zero"
+  },
+  {
+    "start": 1059.82,
+    "end": 1064.95,
+    "text": "f of one f of two f of three so there are n states so you can create"
+  },
+  {
+    "start": 1064.95,
+    "end": 1066.23,
+    "text": "an array of size."
+  },
+  {
+    "start": 1066.23,
+    "end": 1072.86,
+    "text": "B p of n and again initially initialize that with minus one and then you know the couple"
+  },
+  {
+    "start": 1072.86,
+    "end": 1078.59,
+    "text": "of steps with a couple of steps over here you say d p of index and you write"
+  },
+  {
+    "start": 1078.59,
+    "end": 1084.32,
+    "text": "one more step over here if d p of index is not equal to minus one you return"
+  },
+  {
+    "start": 1084.32,
+    "end": 1085.3,
+    "text": "d p of index."
+  },
+  {
+    "start": 1085.3,
+    "end": 1090.05,
+    "text": "So if you just write these couple of steps what will happen is."
+  },
+  {
+    "start": 1090.05,
+    "end": 1096.46,
+    "text": "But we'll change it to a time complexity of b go off n instead of the exponential one"
+  },
+  {
+    "start": 1096.46,
+    "end": 1102.42,
+    "text": "and the space complexity will change to be go off n stack space and a be go off"
+  },
+  {
+    "start": 1102.42,
+    "end": 1102.57,
+    "text": "n."
+  },
+  {
+    "start": 1102.57,
+    "end": 1109.28,
+    "text": "So that is what the memo I should time complexity is still but there is still a recursion"
+  },
+  {
+    "start": 1109.28,
+    "end": 1115.84,
+    "text": "stack space which we have to omit but before that let's code this up and submit this so"
+  },
+  {
+    "start": 1115.84,
+    "end": 1122.02,
+    "text": "can I say n will be nothing but numbers dot size i definitely can so let's keep it"
+  },
+  {
+    "start": 1122.02,
+    "end": 1128.43,
+    "text": "as that way and can I say i will return a function which will have initially start on"
+  },
+  {
+    "start": 1128.43,
+    "end": 1135.06,
+    "text": "the last index which is this and we can definitely carry the numbers with that so we can"
+  },
+  {
+    "start": 1135.06,
+    "end": 1138.0,
+    "text": "surely write this and over here we can."
+  },
+  {
+    "start": 1138.0,
+    "end": 1142.87,
+    "text": "So the function which is i and p f and can I write i and index vector of"
+  },
+  {
+    "start": 1142.87,
+    "end": 1148.01,
+    "text": "n and this will be noms and what I can definitely do is if index is equal to"
+  },
+  {
+    "start": 1148.01,
+    "end": 1153.9,
+    "text": "zero we can return zero if index goes less than zero we can return something as zero so"
+  },
+  {
+    "start": 1153.9,
+    "end": 1159.99,
+    "text": "by the way if it exists zero please return noms index because we're going to pick that up."
+  },
+  {
+    "start": 1159.99,
+    "end": 1165.07,
+    "text": "So please do that and this will be zero and can I say if I pick the element"
+  },
+  {
+    "start": 1165.07,
+    "end": 1171.91,
+    "text": "remember it's very simple you either pick in almost all subsequent problems it will be always pick or"
+  },
+  {
+    "start": 1171.91,
+    "end": 1177.6,
+    "text": "you don't pick that's that's a pleasure and if a pick you'll go to the next and this"
+  },
+  {
+    "start": 1177.6,
+    "end": 1181.93,
+    "text": "will be the this one and if you're not pick it will be secretly."
+  },
+  {
+    "start": 1181.93,
+    "end": 1188.16,
+    "text": "You're basically like zero plus if you don't pick you will simply go to index minus one with"
+  },
+  {
+    "start": 1188.16,
+    "end": 1193.37,
+    "text": "the noms correct and at the end of the day you can say return max of pick and"
+  },
+  {
+    "start": 1193.37,
+    "end": 1193.98,
+    "text": "not pick."
+  },
+  {
+    "start": 1193.98,
+    "end": 1195.6,
+    "text": "So if I try to run this."
+  },
+  {
+    "start": 1195.6,
+    "end": 1200.74,
+    "text": "So you see all the test cases running but if I submit this you'll get a t li"
+  },
+  {
+    "start": 1200.74,
+    "end": 1205.07,
+    "text": "so let's quickly quickly have a db array so it's a db vector of."
+  },
+  {
+    "start": 1205.07,
+    "end": 1210.96,
+    "text": "So we can easily take some arilist or something like that at minus one and you can just"
+  },
+  {
+    "start": 1210.96,
+    "end": 1216.44,
+    "text": "pass on the db over here and over here what you'll do is you'll say vector of end"
+  },
+  {
+    "start": 1216.44,
+    "end": 1221.92,
+    "text": "and you can say i and dp just make sure you always pass it by reference over here"
+  },
+  {
+    "start": 1221.92,
+    "end": 1227.13,
+    "text": "dp over here dp and what you do over here is step one is done that is passing"
+  },
+  {
+    "start": 1227.13,
+    "end": 1233.22,
+    "text": "the dp as minus one next step is initializing whatever the value of f of index is computed"
+  },
+  {
+    "start": 1233.22,
+    "end": 1236.0,
+    "text": "next step is if that status again called."
+  },
+  {
+    "start": 1236.0,
+    "end": 1242.46,
+    "text": "Any further recursion calls instead of that please use the police told value because we're not going to"
+  },
+  {
+    "start": 1242.46,
+    "end": 1248.3,
+    "text": "any further do recursion calls and increase our time complexity so if I now run this you will"
+  },
+  {
+    "start": 1248.3,
+    "end": 1249.99,
+    "text": "see this running perfectly."
+  },
+  {
+    "start": 1249.99,
+    "end": 1251.31,
+    "text": "And if I submit this."
+  },
+  {
+    "start": 1251.31,
+    "end": 1257.21,
+    "text": "Let's say it is working absolutely fine so we have learned about the memory I should what what"
+  },
+  {
+    "start": 1257.21,
+    "end": 1259.72,
+    "text": "is the next step that I generally teach."
+  },
+  {
+    "start": 1259.72,
+    "end": 1266.43,
+    "text": "You guessed it correctly when I learned the tabulation yes we're going to convert the memory memory machine"
+  },
+  {
+    "start": 1266.43,
+    "end": 1270.76,
+    "text": "your tabulation step one the glad that the dp array of the same size."
+  },
+  {
+    "start": 1270.76,
+    "end": 1276.78,
+    "text": "And you can fill that with zero so whatever you wish to so the dp array has been filled up with."
+  },
+  {
+    "start": 1276.78,
+    "end": 1284.81,
+    "text": "Let's take the base case that's that's how you generally convert our memory I should write so let's assume what's the base case."
+  },
+  {
+    "start": 1284.81,
+    "end": 1289.2,
+    "text": "And index zero it says a of index so dp of index dp of zero will be of"
+  },
+  {
+    "start": 1289.2,
+    "end": 1294.09,
+    "text": "index right so please please write it so can I say the base case will be dp of"
+  },
+  {
+    "start": 1294.09,
+    "end": 1298.92,
+    "text": "zero will be a of zero because that is what the base cases go I have one more"
+  },
+  {
+    "start": 1298.92,
+    "end": 1300.49,
+    "text": "base case I do let's see."
+  },
+  {
+    "start": 1300.49,
+    "end": 1305.76,
+    "text": "What is the base case the base case seats if indexes less than zero then you have to"
+  },
+  {
+    "start": 1305.76,
+    "end": 1311.53,
+    "text": "return zero so negative indexes you have to return zero so can I say probably I cannot store"
+  },
+  {
+    "start": 1311.53,
+    "end": 1317.12,
+    "text": "this because it's a negative index so can I store this in a variable where I say negative"
+  },
+  {
+    "start": 1317.12,
+    "end": 1323.52,
+    "text": "is equal to zero like negative is zero basically whenever there is a negative index and countered I'll"
+  },
+  {
+    "start": 1323.52,
+    "end": 1329.0,
+    "text": "add zero just just for understanding purpose so both the base cases have been assigned."
+  },
+  {
+    "start": 1329.0,
+    "end": 1335.26,
+    "text": "Now let's look at the next push what's the next push it where does like if index is"
+  },
+  {
+    "start": 1335.26,
+    "end": 1341.22,
+    "text": "passed on zero it stops over here if index is passed on one it goes if index is"
+  },
+  {
+    "start": 1341.22,
+    "end": 1345.14,
+    "text": "passed on do it goes so you know you know this that."
+  },
+  {
+    "start": 1345.14,
+    "end": 1352.39,
+    "text": "What is tabulation tabulation my reputation I've been saying it is for come up so from bottom to"
+  },
+  {
+    "start": 1352.39,
+    "end": 1359.03,
+    "text": "up what is the base case is zero so from zero you'll start building so zero you'll start"
+  },
+  {
+    "start": 1359.03,
+    "end": 1361.67,
+    "text": "from one so quickly start from one."
+  },
+  {
+    "start": 1361.67,
+    "end": 1367.48,
+    "text": "And you can go on till end I plus plus direct now what is the take case let's"
+  },
+  {
+    "start": 1367.48,
+    "end": 1374.12,
+    "text": "write the take case what is the take case take cases saying I'll take the array of index"
+  },
+  {
+    "start": 1374.12,
+    "end": 1380.91,
+    "text": "that is what they have written the recursion and they were saying f of index minus two and"
+  },
+  {
+    "start": 1380.91,
+    "end": 1386.8,
+    "text": "I've told you instead of f you write BP of i minus two let's come to this edge"
+  },
+  {
+    "start": 1386.8,
+    "end": 1390.72,
+    "text": "case I'll come across afterwards we will write this."
+  },
+  {
+    "start": 1390.72,
+    "end": 1396.68,
+    "text": "What about the non take case the non take case will be zero plus BP of just the"
+  },
+  {
+    "start": 1396.68,
+    "end": 1399.7,
+    "text": "previous one and BP of i will be max of."
+  },
+  {
+    "start": 1399.7,
+    "end": 1407.55,
+    "text": "And non take be your degree between you have there's absolutely no adoption right so everyone has agreed"
+  },
+  {
+    "start": 1407.55,
+    "end": 1413.0,
+    "text": "with us now I see an edge case what is that case the edge case stage if."
+  },
+  {
+    "start": 1413.0,
+    "end": 1418.74,
+    "text": "BP like i minus two for an example whenever i is one so one minus two this will"
+  },
+  {
+    "start": 1418.74,
+    "end": 1424.33,
+    "text": "go to a negative index and a case of f of minus one remember there was a case"
+  },
+  {
+    "start": 1424.33,
+    "end": 1429.92,
+    "text": "of f of minus one in the recursion tree if I take you slowly there was a case"
+  },
+  {
+    "start": 1429.92,
+    "end": 1432.39,
+    "text": "of f of minus one over here right."
+  },
+  {
+    "start": 1432.39,
+    "end": 1438.78,
+    "text": "That case will be encountered so can I say can I say probably I can write something like"
+  },
+  {
+    "start": 1438.78,
+    "end": 1445.31,
+    "text": "what is the negative the negative is zero so if it goes to negative then only this portion"
+  },
+  {
+    "start": 1445.31,
+    "end": 1449.96,
+    "text": "will be there because this will be plus zero if it's a negative."
+  },
+  {
+    "start": 1449.96,
+    "end": 1456.71,
+    "text": "And if it's a and if it is not then I add up this so can I see can I say something like this."
+  },
+  {
+    "start": 1456.71,
+    "end": 1462.23,
+    "text": "Right right can I say if i is greater than one then take plus equal to BP of"
+  },
+  {
+    "start": 1462.23,
+    "end": 1467.97,
+    "text": "i minus two if it is if it is like your you're allowed to add this because that"
+  },
+  {
+    "start": 1467.97,
+    "end": 1469.49,
+    "text": "will always be there."
+  },
+  {
+    "start": 1469.49,
+    "end": 1474.94,
+    "text": "But if it is like if it is i equal to one then there'll be addition of zero"
+  },
+  {
+    "start": 1474.94,
+    "end": 1479.88,
+    "text": "so it stays as it is and if i exceeds like i is too then you have to"
+  },
+  {
+    "start": 1479.88,
+    "end": 1486.12,
+    "text": "add this with this so it automatically performs so can I just add this line up so just"
+  },
+  {
+    "start": 1486.12,
+    "end": 1491.42,
+    "text": "add it only if it exceeds so if you know do this this will be the tab you"
+  },
+  {
+    "start": 1491.42,
+    "end": 1492.0,
+    "text": "related."
+  },
+  {
+    "start": 1492.0,
+    "end": 1497.51,
+    "text": "From yes this will be the tab related form and if I ask you the time complexity now"
+  },
+  {
+    "start": 1497.51,
+    "end": 1503.22,
+    "text": "we go off n space complexity just to be go off and no auxiliary stack space that's the"
+  },
+  {
+    "start": 1503.22,
+    "end": 1507.27,
+    "text": "time complexity and the space complexity for this particular."
+  },
+  {
+    "start": 1507.27,
+    "end": 1512.98,
+    "text": "tabulation code and I hope it was as simple as it could have been what's the next step"
+  },
+  {
+    "start": 1512.98,
+    "end": 1518.49,
+    "text": "that i generally do come on guys this is something which none of the creators does."
+  },
+  {
+    "start": 1518.49,
+    "end": 1526.52,
+    "text": "But just space optimization if anyone teaches you space optimization anyone you can comment tell me everyone teaches you."
+  },
+  {
+    "start": 1526.52,
+    "end": 1534.02,
+    "text": "Some teachers you mentioned some some will teach you mentioned some will teach you imagination plus evolution and"
+  },
+  {
+    "start": 1534.02,
+    "end": 1541.19,
+    "text": "some will teach you some patterns but over here you get everything including space optimization which is the"
+  },
+  {
+    "start": 1541.19,
+    "end": 1542.85,
+    "text": "ultimate form of dp like."
+  },
+  {
+    "start": 1542.85,
+    "end": 1549.75,
+    "text": "If you don't space optimization you don't know deep as simple as that like do for thumsef have patterns."
+  },
+  {
+    "start": 1549.75,
+    "end": 1556.99,
+    "text": "If you're if you're understanding how to do space optimization you actually understanding dp in that last two"
+  },
+  {
+    "start": 1556.99,
+    "end": 1561.24,
+    "text": "states like are and so on so on okay so let's analyze over here."
+  },
+  {
+    "start": 1561.24,
+    "end": 1566.35,
+    "text": "In order to compute dp of i what am I requiring i'm requiring a dp of i minus"
+  },
+  {
+    "start": 1566.35,
+    "end": 1571.0,
+    "text": "one and i'm requiring a dp of i minus two point to note point to note."
+  },
+  {
+    "start": 1571.0,
+    "end": 1577.24,
+    "text": "If i put dots again of amos dots if i'm computing any i let's let's form an example"
+  },
+  {
+    "start": 1577.24,
+    "end": 1583.7,
+    "text": "to any i what am I requiring i'm requiring i minus one's value and i minus two's value"
+  },
+  {
+    "start": 1583.7,
+    "end": 1586.1,
+    "text": "as of now where are they stored."
+  },
+  {
+    "start": 1586.1,
+    "end": 1591.28,
+    "text": "at dp i minus two and dp i minus one as of now they are stored at any"
+  },
+  {
+    "start": 1591.28,
+    "end": 1597.44,
+    "text": "particular array do i require i minus three are in no Baba no do i require i minus"
+  },
+  {
+    "start": 1597.44,
+    "end": 1602.55,
+    "text": "one no Baba no do require i minus five are a q to hear a Baba last a"
+  },
+  {
+    "start": 1602.55,
+    "end": 1606.23,
+    "text": "though give me the last two and i will do my job."
+  },
+  {
+    "start": 1606.23,
+    "end": 1612.62,
+    "text": "So I say hey you just require last two say require just two space you don't require a"
+  },
+  {
+    "start": 1612.62,
+    "end": 1619.61,
+    "text": "huge array because in order to compute this you just require these guys and the moment i plus"
+  },
+  {
+    "start": 1619.61,
+    "end": 1623.44,
+    "text": "plus happens and fall loop moves ahead to this guy."
+  },
+  {
+    "start": 1623.44,
+    "end": 1630.28,
+    "text": "Then you'll be requiring these two guys and after this when i move say then you'll be ready"
+  },
+  {
+    "start": 1630.28,
+    "end": 1634.71,
+    "text": "these two guys so if i can somehow carry the last two guys."
+  },
+  {
+    "start": 1634.71,
+    "end": 1639.29,
+    "text": "So i will be done and that's the trick of space optimization."
+  },
+  {
+    "start": 1639.29,
+    "end": 1645.15,
+    "text": "So what i will say is okay instead of storing them in some dp can i store them"
+  },
+  {
+    "start": 1645.15,
+    "end": 1649.0,
+    "text": "in a couple of variables previous and previous two."
+  },
+  {
+    "start": 1649.0,
+    "end": 1654.87,
+    "text": "I'd like yeah you can so let's store them now who is we first stopping you so i"
+  },
+  {
+    "start": 1654.87,
+    "end": 1661.41,
+    "text": "will store them into previous and previous two and i can see this as correct i what will"
+  },
+  {
+    "start": 1661.41,
+    "end": 1664.46,
+    "text": "happen in the next step i will move here."
+  },
+  {
+    "start": 1664.46,
+    "end": 1671.44,
+    "text": "So this guy i correct the previous i that was used will become someone's previous now for this"
+  },
+  {
+    "start": 1671.44,
+    "end": 1673.82,
+    "text": "i this guy will be the previous."
+  },
+  {
+    "start": 1673.82,
+    "end": 1677.61,
+    "text": "Yeah and the previous will become previous to yeah."
+  },
+  {
+    "start": 1677.61,
+    "end": 1685.04,
+    "text": "So can i again formulate the same logic that we have used in lecture two lecture three lecture four."
+  },
+  {
+    "start": 1685.04,
+    "end": 1692.39,
+    "text": "So previous two will be previous previous will be correct with complete proof i have done the space"
+  },
+  {
+    "start": 1692.39,
+    "end": 1697.74,
+    "text": "of my json so can i do this law can i say instead of this probably i can"
+  },
+  {
+    "start": 1697.74,
+    "end": 1703.83,
+    "text": "keep previous now instead of negative i can keep previous two because that's what."
+  },
+  {
+    "start": 1703.83,
+    "end": 1709.48,
+    "text": "Zero and z minus one will be so can i over here right previous two now i can"
+  },
+  {
+    "start": 1709.48,
+    "end": 1715.5,
+    "text": "can i over here right something as previous i can can i over here right as take a"
+  },
+  {
+    "start": 1715.5,
+    "end": 1717.21,
+    "text": "non take will be there."
+  },
+  {
+    "start": 1717.21,
+    "end": 1722.86,
+    "text": "Okay sorry taken non take will be there can i over here right as per i i can"
+  },
+  {
+    "start": 1722.86,
+    "end": 1727.0,
+    "text": "instead of ending over here instead of ending over here."
+  },
+  {
+    "start": 1727.0,
+    "end": 1733.56,
+    "text": "I will write previous two becomes previous and previous becomes correct that's it."
+  },
+  {
+    "start": 1733.56,
+    "end": 1740.36,
+    "text": "And then where will be your answer again quickly the answer is that dp of n minus one"
+  },
+  {
+    "start": 1740.36,
+    "end": 1745.96,
+    "text": "so can i say this for loop ends at whenever i is n so whenever i is at"
+  },
+  {
+    "start": 1745.96,
+    "end": 1752.04,
+    "text": "n whenever i is at n the last n minus one where will be the value where will"
+  },
+  {
+    "start": 1752.04,
+    "end": 1759.24,
+    "text": "be the value this is i minus one where will be the value previous previous yeah yeah yeah."
+  },
+  {
+    "start": 1759.24,
+    "end": 1767.4,
+    "text": "At previous so you understood how to do a space optimization now i've talked about the time complexity"
+  },
+  {
+    "start": 1767.4,
+    "end": 1771.24,
+    "text": "we solved this particular problem in a big of n."
+  },
+  {
+    "start": 1771.24,
+    "end": 1778.2,
+    "text": "And as space complexity of we go of one amazing right so what are you waiting for let's"
+  },
+  {
+    "start": 1778.2,
+    "end": 1784.68,
+    "text": "quickly go to this up so what do i require i require previous for sure which is a"
+  },
+  {
+    "start": 1784.68,
+    "end": 1791.48,
+    "text": "of zero or numbers of zero over here i require previous two for sure which is zero in"
+  },
+  {
+    "start": 1791.48,
+    "end": 1794.04,
+    "text": "this case and i start from zero."
+  },
+  {
+    "start": 1794.04,
+    "end": 1802.0,
+    "text": "I gone till this and i say the take will be definitely by the way just make sure you start from one."
+  },
+  {
+    "start": 1802.0,
+    "end": 1807.64,
+    "text": "So you say it will start from numbers of i take and you will only take."
+  },
+  {
+    "start": 1807.64,
+    "end": 1809.62,
+    "text": "The previous guy if it's."
+  },
+  {
+    "start": 1809.62,
+    "end": 1815.02,
+    "text": "But dp of i minus two if it's greater than one what do we not think."
+  },
+  {
+    "start": 1815.02,
+    "end": 1820.02,
+    "text": "Non take will be zero plus dp of i minus one which is previous."
+  },
+  {
+    "start": 1820.02,
+    "end": 1824.39,
+    "text": "Can i say the car i will be max of take not take i can."
+  },
+  {
+    "start": 1824.39,
+    "end": 1831.61,
+    "text": "Can i say previous two will become previous i can i definitely can there's no doubt in that"
+  },
+  {
+    "start": 1831.61,
+    "end": 1835.5,
+    "text": "and can i say the previous will not become car i."
+  },
+  {
+    "start": 1835.5,
+    "end": 1841.85,
+    "text": "And at the day can i say i have to return just the previous and that remains so."
+  },
+  {
+    "start": 1841.85,
+    "end": 1848.91,
+    "text": "Meat in so if i just erase the soft now i try to run this you will see this running fine."
+  },
+  {
+    "start": 1848.91,
+    "end": 1850.97,
+    "text": "It goes for the summation."
+  },
+  {
+    "start": 1850.97,
+    "end": 1852.64,
+    "text": "Let me go works fine."
+  },
+  {
+    "start": 1852.64,
+    "end": 1853.59,
+    "text": "Oh my right."
+  },
+  {
+    "start": 1853.59,
+    "end": 1856.53,
+    "text": "So if i give a summary of the entire."
+  },
+  {
+    "start": 1856.53,
+    "end": 1861.29,
+    "text": "A craze lecture it was we learned something as sub sequence."
+  },
+  {
+    "start": 1861.29,
+    "end": 1865.66,
+    "text": "Pick or take or not take or pick or not pick technique."
+  },
+  {
+    "start": 1865.66,
+    "end": 1872.65,
+    "text": "And then we applied a constraint on that because we did know about the pick and not pick"
+  },
+  {
+    "start": 1872.65,
+    "end": 1879.0,
+    "text": "technique but we applied a additional constraint and understood how to solve it."
+  },
+  {
+    "start": 1879.0,
+    "end": 1884.06,
+    "text": "After that we created the tabulation and we noticed that there was i minus one and i minus"
+  },
+  {
+    "start": 1884.06,
+    "end": 1887.99,
+    "text": "two only being used thereby we converted it into a space optimization."
+  },
+  {
+    "start": 1887.99,
+    "end": 1893.66,
+    "text": "So if you have understood the entire stuff please please please write us in the previous videos there"
+  },
+  {
+    "start": 1893.66,
+    "end": 1897.7,
+    "text": "was around 7000 to 8000 views that's hardly 80 people writing us please."
+  },
+  {
+    "start": 1897.7,
+    "end": 1902.19,
+    "text": "Yeah, I request you to write you as because it does take a lot of effort it does"
+  },
+  {
+    "start": 1902.19,
+    "end": 1906.91,
+    "text": "takes a lot of effort to make these kind of videos and if you don't support how will"
+  },
+  {
+    "start": 1906.91,
+    "end": 1911.52,
+    "text": "i maintain consistency right so please please do write even if you're watching it."
+  },
+  {
+    "start": 1911.52,
+    "end": 1916.58,
+    "text": "After the dp series has been completed still make a point that you write us whatever i see"
+  },
+  {
+    "start": 1916.58,
+    "end": 1922.48,
+    "text": "people writing us that motivates me that okay i'm teaching and people are understanding and yeah just may"
+  },
+  {
+    "start": 1922.48,
+    "end": 1924.61,
+    "text": "do not forget to like like this video."
+  },
+  {
+    "start": 1924.61,
+    "end": 1930.12,
+    "text": "Please please do subscribe to us because i don't put very very genuine content on this channel and"
+  },
+  {
+    "start": 1930.12,
+    "end": 1934.0,
+    "text": "with this let's wrap up this video and we'll see you in the next one."
+  }
+]

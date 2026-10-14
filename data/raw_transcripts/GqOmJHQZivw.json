@@ -1,0 +1,2177 @@
+[
+  {
+    "start": 0.0,
+    "end": 2.99,
+    "text": "Here we are welcome back to Take You Forward."
+  },
+  {
+    "start": 2.99,
+    "end": 7.97,
+    "text": "So we will be discussing DP 19 today and the problem is going to be 0 1 nap"
+  },
+  {
+    "start": 7.97,
+    "end": 14.42,
+    "text": "sack and This problem is a very very very very very very important problem for any interview that"
+  },
+  {
+    "start": 14.42,
+    "end": 19.47,
+    "text": "you might have now or in the future This is going to be one of the most most"
+  },
+  {
+    "start": 19.47,
+    "end": 26.38,
+    "text": "common ass problems if you are given a problem in dynamic programming Really some variation can be asked"
+  },
+  {
+    "start": 26.38,
+    "end": 31.7,
+    "text": "and which will be doing in the upcoming videos So 0 1 nap sack now you might see"
+  },
+  {
+    "start": 31.7,
+    "end": 37.68,
+    "text": "a lot of videos, but in none of the videos They will be doing the space Optimized approach"
+  },
+  {
+    "start": 37.68,
+    "end": 39.87,
+    "text": "of we go off W not even two rows."
+  },
+  {
+    "start": 39.87,
+    "end": 45.45,
+    "text": "You're going to optimize this into a single array Yes, as of now until DP 18 we have"
+  },
+  {
+    "start": 45.45,
+    "end": 52.1,
+    "text": "been learning how to optimize how to space optimise using two Rho's generally, but over here we will"
+  },
+  {
+    "start": 52.1,
+    "end": 57.81,
+    "text": "be seeing how to optimize this using just a single row And that's what we are going to"
+  },
+  {
+    "start": 57.81,
+    "end": 60.34,
+    "text": "learn so 0 1 nap sack without waiting."
+  },
+  {
+    "start": 60.34,
+    "end": 65.92,
+    "text": "Let's get started  What is the problem stating the problem stating there is a thief?"
+  },
+  {
+    "start": 65.92,
+    "end": 71.5,
+    "text": "Okay, there is a thief who goes to some house to steal items and in that house There"
+  },
+  {
+    "start": 71.5,
+    "end": 76.62,
+    "text": "are three items like there are n items and let's assume there are three items"
+  },
+  {
+    "start": 76.62,
+    "end": 83.7,
+    "text": "Each of the item has a particular weight and a particular value So let's assume there are items"
+  },
+  {
+    "start": 83.7,
+    "end": 90.18,
+    "text": "or with weight three four five and the weight three item will cost you the level Have a"
+  },
+  {
+    "start": 90.18,
+    "end": 95.69,
+    "text": "value 30 this will have a value 50 and this will have a value 60 so He has"
+  },
+  {
+    "start": 95.69,
+    "end": 102.92,
+    "text": "gone obviously he's going to steal out things say cannot steal like he cannot just take things in"
+  },
+  {
+    "start": 102.92,
+    "end": 107.99,
+    "text": "his hand and go So what he has he has a bag Okay, and this bag now a"
+  },
+  {
+    "start": 107.99,
+    "end": 114.77,
+    "text": "bag cannot carry everything in the home It can only carry items till it does not exceed the"
+  },
+  {
+    "start": 114.77,
+    "end": 121.1,
+    "text": "given weight and over here the given weight is eight the back and carry As long as it"
+  },
+  {
+    "start": 121.1,
+    "end": 127.28,
+    "text": "does not exceed the weight 80 now if you're going to steal at a home like if you're"
+  },
+  {
+    "start": 127.28,
+    "end": 133.46,
+    "text": "the thief and you're going to steal at a home What's what is that what is the first"
+  },
+  {
+    "start": 133.46,
+    "end": 140.17,
+    "text": "thing that you'll think I'm gonna steal in such a way that the valuable The value of those"
+  },
+  {
+    "start": 140.17,
+    "end": 143.08,
+    "text": "items should be maximized so over here."
+  },
+  {
+    "start": 143.08,
+    "end": 149.41,
+    "text": "I'll be like okay find the thief will decide I'm gonna steal this and if I steal this"
+  },
+  {
+    "start": 149.41,
+    "end": 155.52,
+    "text": "I have a value of 60 But my weight will reduce to three because this guy is having"
+  },
+  {
+    "start": 155.52,
+    "end": 156.72,
+    "text": "a weight of five"
+  },
+  {
+    "start": 156.72,
+    "end": 162.72,
+    "text": "So in my bag five weight will be there so I'll just be left out with the three"
+  },
+  {
+    "start": 162.72,
+    "end": 169.1,
+    "text": "weight next He will be like let's steal this so we will steal this and we will have"
+  },
+  {
+    "start": 169.1,
+    "end": 176.02,
+    "text": "another value of 30 this time The value will reduce to zero now the thief cannot steal any"
+  },
+  {
+    "start": 176.02,
+    "end": 182.79,
+    "text": "further things because he has stolen this item and this item And his bag has got full so"
+  },
+  {
+    "start": 182.79,
+    "end": 189.56,
+    "text": "he cannot steal this item and in stealing both of these items It manages to have a total"
+  },
+  {
+    "start": 189.56,
+    "end": 195.94,
+    "text": "value of of 90 so the question states you will be given in You'll be given a weight"
+  },
+  {
+    "start": 195.94,
+    "end": 201.48,
+    "text": "a ray He'll be given a value at a right and you'll be given a bag with a"
+  },
+  {
+    "start": 201.48,
+    "end": 207.94,
+    "text": "weight you have to steal things From the home in such a way that this total value is"
+  },
+  {
+    "start": 207.94,
+    "end": 214.78,
+    "text": "as maximal as possible now you could have also You could have also gone with this guy and"
+  },
+  {
+    "start": 214.78,
+    "end": 221.32,
+    "text": "this guy so if you'd have stolen the blue items Then the bag weight would have been 7"
+  },
+  {
+    "start": 221.32,
+    "end": 228.09,
+    "text": "but the total value that you would have generated could have been 50 plus 30 which is 80"
+  },
+  {
+    "start": 228.09,
+    "end": 235.01,
+    "text": "So thereby this is not a preferable way because if you steal the blue items then the total"
+  },
+  {
+    "start": 235.01,
+    "end": 235.92,
+    "text": "value is not"
+  },
+  {
+    "start": 235.92,
+    "end": 242.45,
+    "text": "Maximum the maximum that you can generate is 90 why can't you steal this and this because the"
+  },
+  {
+    "start": 242.45,
+    "end": 248.21,
+    "text": "weight is 5 over here The weight is 4 over here so you cannot steal both the items"
+  },
+  {
+    "start": 248.21,
+    "end": 253.69,
+    "text": "because 5 plus 4 will be 9 and the bag permits you just 8 weight They buy this"
+  },
+  {
+    "start": 253.69,
+    "end": 260.58,
+    "text": "and this cannot be stolen together makes sense So you might be thinking then striver we will apply"
+  },
+  {
+    "start": 260.58,
+    "end": 267.68,
+    "text": "greedy approach We'll like striver the best thing is let's steal the valuable items at first and then"
+  },
+  {
+    "start": 267.68,
+    "end": 273.79,
+    "text": "we will be stealing according to the weight Left in our bag again He's a thief right so"
+  },
+  {
+    "start": 273.79,
+    "end": 279.97,
+    "text": "he doesn't know a lot of maths So that's the first approach that you'll think I'll go to"
+  },
+  {
+    "start": 279.97,
+    "end": 285.1,
+    "text": "the house and I'll see okay this Let's let's assume this this is a knife."
+  },
+  {
+    "start": 285.1,
+    "end": 291.28,
+    "text": "Oh, this is the costiest thing So let's put this into my bag Similarly I can assume that"
+  },
+  {
+    "start": 291.28,
+    "end": 297.39,
+    "text": "okay I'll take this mouse and put this into the bag because it is another costy I think"
+  },
+  {
+    "start": 297.39,
+    "end": 303.36,
+    "text": "Thief will be going in the direction of picking up the most costly I think but if you"
+  },
+  {
+    "start": 303.36,
+    "end": 304.77,
+    "text": "go will you do that?"
+  },
+  {
+    "start": 304.77,
+    "end": 313.28,
+    "text": "Let's analyze will the greedy approach work dance to that is no let's take an example  n is equal to three and let's take"
+  },
+  {
+    "start": 313.28,
+    "end": 319.26,
+    "text": "The bag that the thief is carrying is having a weight of Assume to be six okay, and"
+  },
+  {
+    "start": 319.26,
+    "end": 325.6,
+    "text": "I'm giving you weights and I'm giving you values So assume there is a bag of weight like"
+  },
+  {
+    "start": 325.6,
+    "end": 332.01,
+    "text": "there is a there's an item of weight five there's an item of weight three there's an item"
+  },
+  {
+    "start": 332.01,
+    "end": 338.21,
+    "text": "of weight Okay, and This gives you 30 value this gives you 40 value and this gives you"
+  },
+  {
+    "start": 338.21,
+    "end": 343.83,
+    "text": "60 value Now since the weight of the bag is six since the weight of the bag is"
+  },
+  {
+    "start": 343.83,
+    "end": 350.31,
+    "text": "six If you go into the home Your first criteria will be I'll steal the costliest thing and"
+  },
+  {
+    "start": 350.31,
+    "end": 357.37,
+    "text": "the costliest thing comes out to business Like I'll steal this one because it's the costliest So I"
+  },
+  {
+    "start": 357.37,
+    "end": 363.35,
+    "text": "will have a value of 60 and the bag will just have a space of one remaining because"
+  },
+  {
+    "start": 363.35,
+    "end": 366.09,
+    "text": "of stolen wife Can you steal this now?"
+  },
+  {
+    "start": 366.09,
+    "end": 371.13,
+    "text": "No because this requires two and you just have one can you steal this?"
+  },
+  {
+    "start": 371.13,
+    "end": 377.54,
+    "text": "No because it has one left So the thief will steal this because the thief is Not educated"
+  },
+  {
+    "start": 377.54,
+    "end": 383.09,
+    "text": "so you'll just have a value of 60 but if I go I'm educated so if I'm educated"
+  },
+  {
+    "start": 383.09,
+    "end": 389.07,
+    "text": "what I'll do is I'll still this guy Which will Initially if it is six it will still"
+  },
+  {
+    "start": 389.07,
+    "end": 392.24,
+    "text": "be left with four and I'll get a value of 40"
+  },
+  {
+    "start": 392.24,
+    "end": 397.93,
+    "text": "Then I'll steal this and I'll get a value of 30 and the weight will still be Like"
+  },
+  {
+    "start": 397.93,
+    "end": 404.6,
+    "text": "the remaining weight will still be one you can still You can still steal elements of weight one"
+  },
+  {
+    "start": 404.6,
+    "end": 410.92,
+    "text": "and I meet a weight of 70 because I was educated And I applied dynamic programming Why did"
+  },
+  {
+    "start": 410.92,
+    "end": 418.99,
+    "text": "really feel Love uniformity that I have explained uniformity was not there uniformity was not there because because"
+  },
+  {
+    "start": 418.99,
+    "end": 424.68,
+    "text": "over here at 60 then it is 40 then it is 30 there's nothing uniform Over here for"
+  },
+  {
+    "start": 424.68,
+    "end": 430.65,
+    "text": "less weight the value is more over here for more weight the value is less so there is"
+  },
+  {
+    "start": 430.65,
+    "end": 437.46,
+    "text": "no uniformity You're not sure that if you pick the valuable items the other elements Might as you"
+  },
+  {
+    "start": 437.46,
+    "end": 443.36,
+    "text": "see over here if I pick these two they ended up summing up more So uniformity is not"
+  },
+  {
+    "start": 443.36,
+    "end": 449.33,
+    "text": "there you don't know in the future you might get someone who adds up to get better So"
+  },
+  {
+    "start": 449.33,
+    "end": 456.56,
+    "text": "so as long as uniformity is not there you definitely cannot apply grading So you're educated that's why"
+  },
+  {
+    "start": 456.56,
+    "end": 463.02,
+    "text": "you'll take off Trying out yes you will think of trying out all combinations Yes, you are as"
+  },
+  {
+    "start": 463.02,
+    "end": 469.12,
+    "text": "you get to say you'll think of trying out all combinations and among those combinations"
+  },
+  {
+    "start": 469.12,
+    "end": 478.12,
+    "text": "You will take the best  Value best total value giving combination  Makes sense and how do you try out all combinations?"
+  },
+  {
+    "start": 478.12,
+    "end": 485.69,
+    "text": "There's only one way and that's Recursion yes you try out Recursion to have all the combinations and"
+  },
+  {
+    "start": 485.69,
+    "end": 493.86,
+    "text": "whichever combination gives you the maximum remember this gives you the maximal Value will be your answer So"
+  },
+  {
+    "start": 493.86,
+    "end": 497.49,
+    "text": "in order to write recurrence what are the rules?"
+  },
+  {
+    "start": 497.49,
+    "end": 507.78,
+    "text": "Follow the standard rules  Express everything in terms of index  The first element will be index how does that make sense because again?"
+  },
+  {
+    "start": 507.78,
+    "end": 513.91,
+    "text": "We are given a assume these are three items So you can say zero of the item first"
+  },
+  {
+    "start": 513.91,
+    "end": 520.49,
+    "text": "item second item Express this as an array so you can think in terms of indexes this can"
+  },
+  {
+    "start": 520.49,
+    "end": 527.07,
+    "text": "be an index this can be an index This can be an index first rule satisfied expressed in"
+  },
+  {
+    "start": 527.07,
+    "end": 534.41,
+    "text": "terms of index Because in the entire dpc that I've been saying you express everything in terms of"
+  },
+  {
+    "start": 534.41,
+    "end": 540.92,
+    "text": "index So that's what we do What is the next thing that you'll do the next parameter as"
+  },
+  {
+    "start": 540.92,
+    "end": 542.96,
+    "text": "what is the next parameter?"
+  },
+  {
+    "start": 542.96,
+    "end": 545.84,
+    "text": "The thief has gone to steal with a bag"
+  },
+  {
+    "start": 545.84,
+    "end": 551.65,
+    "text": "So he needs to be careful if the bag is full or not So I can say backweight"
+  },
+  {
+    "start": 551.65,
+    "end": 558.46,
+    "text": "I can say backweight is the next criteria Where we see that if the weight is still there"
+  },
+  {
+    "start": 558.46,
+    "end": 564.58,
+    "text": "or not so I can say at the backweight You can say a capital W so you'll express"
+  },
+  {
+    "start": 564.58,
+    "end": 571.24,
+    "text": "everything in terms of index as well as W okay, so that's what you will be doing fine."
+  },
+  {
+    "start": 571.24,
+    "end": 572.48,
+    "text": "What's the next?"
+  },
+  {
+    "start": 572.48,
+    "end": 580.61,
+    "text": "Explore all possibilities now what possibilities can he have if he is at  What possibilities he can have?"
+  },
+  {
+    "start": 580.61,
+    "end": 588.12,
+    "text": "Deep beyond sub sequences is what we are learning pick and non pick yes The possibilities will be"
+  },
+  {
+    "start": 588.12,
+    "end": 594.16,
+    "text": "pick and non pick already explained this in dp 14 dp 14 is the first one of dp"
+  },
+  {
+    "start": 594.16,
+    "end": 601.05,
+    "text": "on sub sequences so go and watch it pick and non pick next You're looking for the maximal"
+  },
+  {
+    "start": 601.05,
+    "end": 607.94,
+    "text": "yes you're looking for maximal so Max off all possibilities is what you did so if you can"
+  },
+  {
+    "start": 607.94,
+    "end": 615.37,
+    "text": "do this you can easily solve the napsack using their recursion So what are you waiting for let's"
+  },
+  {
+    "start": 615.37,
+    "end": 621.1,
+    "text": "get started So f of Index and W so assume the initial call to be made to f"
+  },
+  {
+    "start": 621.1,
+    "end": 622.48,
+    "text": "of n minus 1 and W"
+  },
+  {
+    "start": 622.48,
+    "end": 630.05,
+    "text": "Where you say that here listen for an example let's say this example of three or two full"
+  },
+  {
+    "start": 630.05,
+    "end": 636.68,
+    "text": "where we had 30 40 and 60 So if this is the array you're basically saying if I"
+  },
+  {
+    "start": 636.68,
+    "end": 643.91,
+    "text": "write down the index it's 012 Basically saying f of two with the bag weight of six so"
+  },
+  {
+    "start": 643.91,
+    "end": 645.61,
+    "text": "what does this mean?"
+  },
+  {
+    "start": 645.61,
+    "end": 652.5,
+    "text": "Till then takes two till then next two what is the maximum that you can generate?"
+  },
+  {
+    "start": 652.5,
+    "end": 658.45,
+    "text": "Ill let me write this till index two  What maximal value you will get?"
+  },
+  {
+    "start": 658.45,
+    "end": 665.34,
+    "text": "With weight of bag of six that is the meaning is index two till index two What is"
+  },
+  {
+    "start": 665.34,
+    "end": 672.31,
+    "text": "the max value you can get with the weight of bag to be six that's the meaning fine"
+  },
+  {
+    "start": 672.31,
+    "end": 680.14,
+    "text": "So we've written this and we can think of these cases afterwards That's the steep so we have"
+  },
+  {
+    "start": 680.14,
+    "end": 686.86,
+    "text": "a more of More or less express them in terms of index and w Next is explore all"
+  },
+  {
+    "start": 686.86,
+    "end": 695.28,
+    "text": "possibilities not tell me one thing if you're standing at a particular guy What options does the tf"
+  },
+  {
+    "start": 695.28,
+    "end": 699.2,
+    "text": "what options does it have Again very very easy"
+  },
+  {
+    "start": 699.2,
+    "end": 704.79,
+    "text": "Really the steel it or you're not steel it so you will have two options either you will"
+  },
+  {
+    "start": 704.79,
+    "end": 710.19,
+    "text": "decide to not Take it I'll decide to take it like I don't think of any other options"
+  },
+  {
+    "start": 710.19,
+    "end": 716.23,
+    "text": "can you do something apart from this obviously not Either you can pick up that element and put"
+  },
+  {
+    "start": 716.23,
+    "end": 721.44,
+    "text": "it into your bag or you'll say I'll not put that into my bag Again makes sense so"
+  },
+  {
+    "start": 721.44,
+    "end": 725.36,
+    "text": "I'm saying not take if I'm saying not take then what happens?"
+  },
+  {
+    "start": 725.36,
+    "end": 731.02,
+    "text": "You'll move to the next item you'll move to the next item makes sense and the value that"
+  },
+  {
+    "start": 731.02,
+    "end": 736.29,
+    "text": "you will add to your self Because what does f mean if means max value so the value"
+  },
+  {
+    "start": 736.29,
+    "end": 742.27,
+    "text": "that you will add will be zero because You haven't added anything and you'll move to the next"
+  },
+  {
+    "start": 742.27,
+    "end": 748.12,
+    "text": "index which is index minus one because If you're standing at this guy you did not pick this"
+  },
+  {
+    "start": 748.12,
+    "end": 753.52,
+    "text": "so you'll go to the next and you'll start seeing from here And will the weight to be"
+  },
+  {
+    "start": 753.52,
+    "end": 760.21,
+    "text": "same obviously if you're not stealing anything will the weight of the bag Demonish obviously not it will"
+  },
+  {
+    "start": 760.21,
+    "end": 766.32,
+    "text": "not diminish right so move back perfect now can you take is the question So since you're trying"
+  },
+  {
+    "start": 766.32,
+    "end": 772.75,
+    "text": "out maximal minimal maximal Probably initially you can keep it as interme in assuming or you did not"
+  },
+  {
+    "start": 772.75,
+    "end": 779.89,
+    "text": "take it so thereby the costing will be Intimine why intervene question might arise whenever you compute maximal"
+  },
+  {
+    "start": 779.89,
+    "end": 781.76,
+    "text": "try to initially assume it as"
+  },
+  {
+    "start": 781.76,
+    "end": 788.34,
+    "text": "Intimine so that the take case is not considered Why because assume your bag Assume your bag has"
+  },
+  {
+    "start": 788.34,
+    "end": 793.68,
+    "text": "a weight of six and there is an item with weight of seven and let's a value of"
+  },
+  {
+    "start": 793.68,
+    "end": 799.98,
+    "text": "10,000 of huge value Any steal this no why because the weight of the item because the weight"
+  },
+  {
+    "start": 799.98,
+    "end": 805.94,
+    "text": "of the item is greater than the weight of the box It's very important that when you are"
+  },
+  {
+    "start": 805.94,
+    "end": 812.38,
+    "text": "checking out for the take case when you're checking out for the Take case you always check yes"
+  },
+  {
+    "start": 812.38,
+    "end": 817.72,
+    "text": "you always check Am I allowed to steal it can I bag even think this so I'll be"
+  },
+  {
+    "start": 817.72,
+    "end": 822.93,
+    "text": "like okay weight of this guy Has to be less of an equal to the weight of the"
+  },
+  {
+    "start": 822.93,
+    "end": 828.55,
+    "text": "bag that I still have like if I'm having a bag with weight It should be still less"
+  },
+  {
+    "start": 828.55,
+    "end": 833.48,
+    "text": "than this and over there you can say okay if it is then I can steal if I"
+  },
+  {
+    "start": 833.48,
+    "end": 839.44,
+    "text": "steal The value that I will add will be value of index and if I'm stealing the scurrent"
+  },
+  {
+    "start": 839.44,
+    "end": 842.25,
+    "text": "guy I will move to the next previous guy."
+  },
+  {
+    "start": 842.25,
+    "end": 848.62,
+    "text": "I'll move to the previous guy makes sense and what will happen to the bank Do you're stealing"
+  },
+  {
+    "start": 848.62,
+    "end": 855.13,
+    "text": "something You're putting that into the bag the bag will reduce now So what what are you waiting"
+  },
+  {
+    "start": 855.13,
+    "end": 857.12,
+    "text": "for let's reduce the bag with"
+  },
+  {
+    "start": 857.12,
+    "end": 862.56,
+    "text": "W minus w t index  That is the value it will reduce and what did the question see?"
+  },
+  {
+    "start": 862.56,
+    "end": 868.79,
+    "text": "Give me the maximal value so there are two choices either not pick or either take so whichever"
+  },
+  {
+    "start": 868.79,
+    "end": 874.76,
+    "text": "choice Give you the maximal you will directly return it so That's a very simple one and we"
+  },
+  {
+    "start": 874.76,
+    "end": 880.13,
+    "text": "have been doing this not take and take in all the dp on sub sequences This is the"
+  },
+  {
+    "start": 880.13,
+    "end": 886.36,
+    "text": "slide change of pattern you have to find the max So whenever you're looking for values add add"
+  },
+  {
+    "start": 886.36,
+    "end": 892.79,
+    "text": "them add them add them generate the values keep by adding add in adding generate the values Okay,"
+  },
+  {
+    "start": 892.79,
+    "end": 896.11,
+    "text": "so no the question arises what are the base cases?"
+  },
+  {
+    "start": 896.11,
+    "end": 902.15,
+    "text": "So we have completed all the three steps of the recursion which is express them in terms of"
+  },
+  {
+    "start": 902.15,
+    "end": 908.52,
+    "text": "index and w Explore all possibilities and take the max of all possibilities right so what is the"
+  },
+  {
+    "start": 908.52,
+    "end": 909.18,
+    "text": "next step?"
+  },
+  {
+    "start": 909.18,
+    "end": 915.08,
+    "text": "Obviously writing the base case and we we have started the written from n minus one So we"
+  },
+  {
+    "start": 915.08,
+    "end": 920.98,
+    "text": "will write the base case at zero remember this Always if starting it from n minus one try"
+  },
+  {
+    "start": 920.98,
+    "end": 926.62,
+    "text": "to write it as zero you're starting from zero Right right of n minus one so what I'll"
+  },
+  {
+    "start": 926.62,
+    "end": 931.93,
+    "text": "do is I'll write the first thing if index equal equal to zero is my base case of"
+  },
+  {
+    "start": 931.93,
+    "end": 932.8,
+    "text": "the recursion"
+  },
+  {
+    "start": 932.8,
+    "end": 935.82,
+    "text": "Now we can think of it afterwards."
+  },
+  {
+    "start": 935.82,
+    "end": 936.71,
+    "text": "Let's try."
+  },
+  {
+    "start": 936.71,
+    "end": 946.49,
+    "text": "Let's write let's write the thing  So what does this mean f of zero  W what does this mean the thief has come?"
+  },
+  {
+    "start": 946.49,
+    "end": 956.18,
+    "text": "Like the thief just has a single element and with a back weight of w  What is the max value  That he can get?"
+  },
+  {
+    "start": 956.18,
+    "end": 962.67,
+    "text": "What is the max value that he can get if the thief is just at here and he"
+  },
+  {
+    "start": 962.67,
+    "end": 969.6,
+    "text": "has a w weight assume the weight is six of this guy and it's giving me a value"
+  },
+  {
+    "start": 969.6,
+    "end": 976.27,
+    "text": "of 10,000 The thief is coming with f of zero and the w as eight And this is"
+  },
+  {
+    "start": 976.27,
+    "end": 981.87,
+    "text": "the last element what will the thief do what will the thief do?"
+  },
+  {
+    "start": 981.87,
+    "end": 987.03,
+    "text": "And do they it's the last element at the home in the home?"
+  },
+  {
+    "start": 987.03,
+    "end": 991.39,
+    "text": "Well, he's stealing and why will he not steal it?"
+  },
+  {
+    "start": 991.39,
+    "end": 998.24,
+    "text": "He still has a back weight of eight left and it will just take six As long as"
+  },
+  {
+    "start": 998.24,
+    "end": 1004.55,
+    "text": "he can fit this in he will steal and go so do that He will like okay if"
+  },
+  {
+    "start": 1004.55,
+    "end": 1011.12,
+    "text": "if the last element Can fit in my back I will take this and if I take this"
+  },
+  {
+    "start": 1011.12,
+    "end": 1016.49,
+    "text": "What is function giving the max value max value so it's a single element?"
+  },
+  {
+    "start": 1016.49,
+    "end": 1023.04,
+    "text": "There's only one value that you'll get which is value of zero Makes sense but but but but"
+  },
+  {
+    "start": 1023.04,
+    "end": 1029.37,
+    "text": "but but If the thief comes off with something like a back weight of four any steal can"
+  },
+  {
+    "start": 1029.37,
+    "end": 1030.03,
+    "text": "he steal?"
+  },
+  {
+    "start": 1030.03,
+    "end": 1036.14,
+    "text": "No he cannot why cannot Yes come to the last item but the weight that he carries is"
+  },
+  {
+    "start": 1036.14,
+    "end": 1042.47,
+    "text": "four and despite this guy giving yes giving him a lot of value 10,000 it will Take the"
+  },
+  {
+    "start": 1042.47,
+    "end": 1048.14,
+    "text": "place of six and he just has four say cannot so if he cannot Can you get some"
+  },
+  {
+    "start": 1048.14,
+    "end": 1053.44,
+    "text": "value no so what you can say is if it is less I'll steal it or else I'll"
+  },
+  {
+    "start": 1053.44,
+    "end": 1059.62,
+    "text": "return a zero saying I don't I cannot steal it There is absolutely no way that I can"
+  },
+  {
+    "start": 1059.62,
+    "end": 1065.73,
+    "text": "steal it that's how you can easily think of a single element Try to think it try to"
+  },
+  {
+    "start": 1065.73,
+    "end": 1072.65,
+    "text": "think the base case in terms of a single element always That's how the entire recursion can be"
+  },
+  {
+    "start": 1072.65,
+    "end": 1079.42,
+    "text": "easily written so if I talk about the time complexity of recursion what will be it again You"
+  },
+  {
+    "start": 1079.42,
+    "end": 1085.38,
+    "text": "are trying out a couple of ways So the time complexity will be two to the power n"
+  },
+  {
+    "start": 1085.38,
+    "end": 1088.64,
+    "text": "and the space complexity will be be go off n"
+  },
+  {
+    "start": 1088.64,
+    "end": 1095.52,
+    "text": "There's a lot of recursion stacks space that are using So we saw that the recursion time complexity"
+  },
+  {
+    "start": 1095.52,
+    "end": 1101.15,
+    "text": "is two to the power n and the space required as be go off and we're definitely To"
+  },
+  {
+    "start": 1101.15,
+    "end": 1103.58,
+    "text": "optimize this and it's very simple."
+  },
+  {
+    "start": 1103.58,
+    "end": 1110.6,
+    "text": "Mimash in before that let's understand how this entire Code working by taking the example that we did"
+  },
+  {
+    "start": 1110.6,
+    "end": 1116.3,
+    "text": "take to see where the 3D was failing Let's take the weight as a three two and five"
+  },
+  {
+    "start": 1116.3,
+    "end": 1121.93,
+    "text": "and let's take the values as 30 40 and 60 Let's take the back weight as capital W"
+  },
+  {
+    "start": 1121.93,
+    "end": 1126.93,
+    "text": "that is as six So initially we start at f of this is the index 012 so we"
+  },
+  {
+    "start": 1126.93,
+    "end": 1132.63,
+    "text": "started index 2 and we have a back weight of Six what options do you have you have"
+  },
+  {
+    "start": 1132.63,
+    "end": 1138.33,
+    "text": "a two options whether to not take it whether to take it right So if we decide that"
+  },
+  {
+    "start": 1138.33,
+    "end": 1143.68,
+    "text": "we're not going to take it can I say I will still be We'll go to the previous"
+  },
+  {
+    "start": 1143.68,
+    "end": 1149.73,
+    "text": "index, but we'll still be having the same weight it makes sense But if I decide to take"
+  },
+  {
+    "start": 1149.73,
+    "end": 1155.22,
+    "text": "it This element will be a part of my back So thereby this will give me a weight"
+  },
+  {
+    "start": 1155.22,
+    "end": 1160.71,
+    "text": "like the value of 60 But it says it is taking a weight of five from the baggage"
+  },
+  {
+    "start": 1160.71,
+    "end": 1163.76,
+    "text": "out So can I say I'll move to the back index"
+  },
+  {
+    "start": 1163.76,
+    "end": 1170.58,
+    "text": "With six As the initial weight but since you have taken a five if remaining out with one"
+  },
+  {
+    "start": 1170.58,
+    "end": 1177.4,
+    "text": "makes sense Absolutely now you're at f of one six what options do you have of not taking"
+  },
+  {
+    "start": 1177.4,
+    "end": 1183.84,
+    "text": "of taking so imagine At index one you decide you will not take it so where will you"
+  },
+  {
+    "start": 1183.84,
+    "end": 1190.28,
+    "text": "move you'll move to the zero Thinnex and the back weight still stays a six and if I"
+  },
+  {
+    "start": 1190.28,
+    "end": 1197.34,
+    "text": "decide to take it rather What will happen you'll move to the previous index and if you take"
+  },
+  {
+    "start": 1197.34,
+    "end": 1203.0,
+    "text": "it there will be a plus 40 There will be a plus 40 and then there will be"
+  },
+  {
+    "start": 1203.0,
+    "end": 1209.2,
+    "text": "a weightage loss of two then there will be a weightage loss of two So there is a"
+  },
+  {
+    "start": 1209.2,
+    "end": 1215.48,
+    "text": "six So six minus two will be Four correct so we have two options not pick Pick So"
+  },
+  {
+    "start": 1215.48,
+    "end": 1220.37,
+    "text": "at f of one six how will f of one six look f of one six will be"
+  },
+  {
+    "start": 1220.37,
+    "end": 1227.19,
+    "text": "something like this There will be something like not a which will be zero plus f of zero"
+  },
+  {
+    "start": 1227.19,
+    "end": 1232.85,
+    "text": "six and take will be 40 plus f of zero comma four so tell me one thing if"
+  },
+  {
+    "start": 1232.85,
+    "end": 1238.2,
+    "text": "you're at f of zero six yes if you're at f of zero six And you have a"
+  },
+  {
+    "start": 1238.2,
+    "end": 1244.96,
+    "text": "weight still six of the back will you try to steal it obviously so thereby this returns"
+  },
+  {
+    "start": 1244.96,
+    "end": 1250.98,
+    "text": "Value 30 and if you're at here and the back weight is full you can again steal this"
+  },
+  {
+    "start": 1250.98,
+    "end": 1256.92,
+    "text": "because this is a three weight So I'll decide to steal this and there will be a 30"
+  },
+  {
+    "start": 1256.92,
+    "end": 1263.66,
+    "text": "so Zero six returns 30 zero four also returns 30 thereby not take becomes 30 and take becomes"
+  },
+  {
+    "start": 1263.66,
+    "end": 1266.49,
+    "text": "40 plus 3070 Which one will you prefer?"
+  },
+  {
+    "start": 1266.49,
+    "end": 1272.29,
+    "text": "a so thereby this guy gets 70 so that's what f of one six will return 70 perfect"
+  },
+  {
+    "start": 1272.29,
+    "end": 1277.58,
+    "text": "So I'll just it is the bottom three So f of one six got 70 now let's come"
+  },
+  {
+    "start": 1277.58,
+    "end": 1282.94,
+    "text": "back to this f of one one If I decide I'll not take it what will happen if"
+  },
+  {
+    "start": 1282.94,
+    "end": 1289.03,
+    "text": "I'm not taking it I'll move to the previous index And I will still have the same way"
+  },
+  {
+    "start": 1289.03,
+    "end": 1295.05,
+    "text": "agreed what will happen at f of one one again I'll decide to not pick it and you'll"
+  },
+  {
+    "start": 1295.05,
+    "end": 1300.78,
+    "text": "decide to pick it but can you pick it is my question You are at the first index"
+  },
+  {
+    "start": 1300.78,
+    "end": 1307.74,
+    "text": "and it requires a weightage of two but you're having a weightage of one so you definitely cannot"
+  },
+  {
+    "start": 1307.74,
+    "end": 1314.26,
+    "text": "pick it So thereby if you remember the recurrence It will stay as into mean Right, so this"
+  },
+  {
+    "start": 1314.26,
+    "end": 1320.2,
+    "text": "will be into mean Because you take is not possible And if it decide to not take it"
+  },
+  {
+    "start": 1320.2,
+    "end": 1321.2,
+    "text": "you'll move to"
+  },
+  {
+    "start": 1321.2,
+    "end": 1327.41,
+    "text": "Zero index with a back weight of one Now tell me one thing this is demanding a weight"
+  },
+  {
+    "start": 1327.41,
+    "end": 1333.18,
+    "text": "of three but a back weight is one can you you cannot So this will return a zero"
+  },
+  {
+    "start": 1333.18,
+    "end": 1338.87,
+    "text": "So let's analyze of one comma one So at one comma one not takes is Zero plus f"
+  },
+  {
+    "start": 1338.87,
+    "end": 1345.29,
+    "text": "of zero one this gives you zero and the take is into mean because that's not possible to"
+  },
+  {
+    "start": 1345.29,
+    "end": 1351.42,
+    "text": "take So zero is maximum or inter mean is maximum definitely zero so f of one of zero"
+  },
+  {
+    "start": 1351.42,
+    "end": 1358.43,
+    "text": "will return zero This guy will return zero so let's quickly erase this Let's write the next step"
+  },
+  {
+    "start": 1358.43,
+    "end": 1363.83,
+    "text": "What's the next step f of two six see you at f of two six Correct what are"
+  },
+  {
+    "start": 1363.83,
+    "end": 1369.67,
+    "text": "the options you decide to not take so if it decide to not take You get zero plus"
+  },
+  {
+    "start": 1369.67,
+    "end": 1374.78,
+    "text": "f of one six which is 70 and if you decide to take That's 60 plus f of"
+  },
+  {
+    "start": 1374.78,
+    "end": 1380.18,
+    "text": "one one and this is zero so 70 is more or 60 is more definitely 70 So this"
+  },
+  {
+    "start": 1380.18,
+    "end": 1386.82,
+    "text": "returns 70 and that's very obvious because if you pick up these couple of guys and it gives"
+  },
+  {
+    "start": 1386.82,
+    "end": 1393.39,
+    "text": "you 70 So actually we're trying our doll weighs and we eventually got 70 Right, so what is"
+  },
+  {
+    "start": 1393.39,
+    "end": 1396.32,
+    "text": "the next step Obviously the next step is"
+  },
+  {
+    "start": 1396.32,
+    "end": 1403.96,
+    "text": "memo IH Right and what are the indexes like what are the changing parameters index and w According"
+  },
+  {
+    "start": 1403.96,
+    "end": 1410.27,
+    "text": "to the rule very simple was the maximum n what is the maximum w So we create this"
+  },
+  {
+    "start": 1410.27,
+    "end": 1416.82,
+    "text": "plus this size array because index will be from zero to n minus one Wait can be from"
+  },
+  {
+    "start": 1416.82,
+    "end": 1422.35,
+    "text": "zero to w so thereby we create n and w plus one array So this is the dp"
+  },
+  {
+    "start": 1422.35,
+    "end": 1427.88,
+    "text": "array that we will 3 8 right so over here we can write dp of index of w"
+  },
+  {
+    "start": 1427.88,
+    "end": 1433.65,
+    "text": "equal to this and over here we can just insert a line of dp of index and w"
+  },
+  {
+    "start": 1433.65,
+    "end": 1440.12,
+    "text": "not equal to minus one Then it turns the value so the memo action has been done and"
+  },
+  {
+    "start": 1440.12,
+    "end": 1446.36,
+    "text": "what will be the time complexity guys We go off n cross it w What will the space"
+  },
+  {
+    "start": 1446.36,
+    "end": 1447.22,
+    "text": "complexity?"
+  },
+  {
+    "start": 1447.22,
+    "end": 1452.83,
+    "text": "Bego of n cross it w for there'll be a stack space of bico of one due to"
+  },
+  {
+    "start": 1452.83,
+    "end": 1460.31,
+    "text": "the recursion That goes deep so there'll be a auxiliary stack space but do I like that obviously"
+  },
+  {
+    "start": 1460.31,
+    "end": 1464.21,
+    "text": "not so need to remove it and how do you remove it?"
+  },
+  {
+    "start": 1464.21,
+    "end": 1469.98,
+    "text": "We convert this into a tabulation code and what is the rule of tabulation?"
+  },
+  {
+    "start": 1469.98,
+    "end": 1472.64,
+    "text": "Base case is what if I write  then"
+  },
+  {
+    "start": 1472.64,
+    "end": 1480.84,
+    "text": "Write the changing parameters index and w Write both the changing parameters in nested loop if there are"
+  },
+  {
+    "start": 1480.84,
+    "end": 1490.38,
+    "text": "three it'll be three nested There are four changing parameters four nested five changing parameters five nested depending"
+  },
+  {
+    "start": 1490.38,
+    "end": 1498.58,
+    "text": "on the number of changing parameters you write them Russell last thing copy the recurrence that you have"
+  },
+  {
+    "start": 1498.58,
+    "end": 1499.76,
+    "text": "been doing why?"
+  },
+  {
+    "start": 1499.76,
+    "end": 1502.6,
+    "text": "Because because what is memo action?"
+  },
+  {
+    "start": 1502.6,
+    "end": 1505.91,
+    "text": "What is rather recursion plus memo action?"
+  },
+  {
+    "start": 1505.91,
+    "end": 1512.38,
+    "text": "It's top  Down and then accumulate and get the answer top down  What's tabulation?"
+  },
+  {
+    "start": 1512.38,
+    "end": 1519.95,
+    "text": "bottom up  bottom up  bottom up to get you answer bottom up  So I can see what is the base case?"
+  },
+  {
+    "start": 1519.95,
+    "end": 1526.73,
+    "text": "Firstly, I entity dp of n w to be declared right was the base case let's quickly check"
+  },
+  {
+    "start": 1526.73,
+    "end": 1532.72,
+    "text": "out the base case So time to think about the base case Now we know this is n"
+  },
+  {
+    "start": 1532.72,
+    "end": 1538.16,
+    "text": "this is w and this is the weight that the t has on his back Can I say"
+  },
+  {
+    "start": 1538.16,
+    "end": 1539.19,
+    "text": "if I analyze?"
+  },
+  {
+    "start": 1539.19,
+    "end": 1542.03,
+    "text": "For what states will the value be 0?"
+  },
+  {
+    "start": 1542.03,
+    "end": 1547.94,
+    "text": "Whenever index is 0 so I can say for anything like 0 But the state w has to"
+  },
+  {
+    "start": 1547.94,
+    "end": 1549.84,
+    "text": "be greater than w to a 0"
+  },
+  {
+    "start": 1549.84,
+    "end": 1555.26,
+    "text": "Assume w t 0 to be 5 assume assume the weight to be 5 Then if I bring"
+  },
+  {
+    "start": 1555.26,
+    "end": 1560.68,
+    "text": "in 4 like this this one is 4 then it will return you are 0 if I bring"
+  },
+  {
+    "start": 1560.68,
+    "end": 1566.18,
+    "text": "in two it will return you as 0 if I bring in one It will return you as"
+  },
+  {
+    "start": 1566.18,
+    "end": 1571.76,
+    "text": "0 but if I bring in the weight to be 6 That's possible if I bring in to"
+  },
+  {
+    "start": 1571.76,
+    "end": 1578.84,
+    "text": "be 5 then this graph will be executed So can I say for everything for every weight greater"
+  },
+  {
+    "start": 1578.84,
+    "end": 1584.89,
+    "text": "than 5 I can steal it Make sense So I'll be like okay For every weight from 0"
+  },
+  {
+    "start": 1584.89,
+    "end": 1590.24,
+    "text": "will w I can steal it and if I steal it the value that I'll get is 0"
+  },
+  {
+    "start": 1590.24,
+    "end": 1596.69,
+    "text": "And apart from this everyone will have 0 so I probably I can keep it as 0 Everyone"
+  },
+  {
+    "start": 1596.69,
+    "end": 1603.61,
+    "text": "will have 0 only for the weights that are greater than this guy Or beyond this can steal"
+  },
+  {
+    "start": 1603.61,
+    "end": 1609.9,
+    "text": "it so they were value 0 Done first job done What's the next step look out at the"
+  },
+  {
+    "start": 1609.9,
+    "end": 1617.37,
+    "text": "changing parameters of your recursion index w t how are you moving them How are you moving them"
+  },
+  {
+    "start": 1617.37,
+    "end": 1624.13,
+    "text": "just have a clear cut vision of it so you're like okay Strable we are moving the index"
+  },
+  {
+    "start": 1624.13,
+    "end": 1626.96,
+    "text": "from n minus 1 to 0 in the recursion"
+  },
+  {
+    "start": 1626.96,
+    "end": 1633.93,
+    "text": "But this is bottom up say move it opposite the 0th case is done over here so you'll"
+  },
+  {
+    "start": 1633.93,
+    "end": 1641.07,
+    "text": "move it from 1 to n minus 1 what about the weight Again you're moving the weight from"
+  },
+  {
+    "start": 1641.07,
+    "end": 1646.7,
+    "text": "w till 0 so don't opposite it'll be 0 to w it'll be 0 to w okay and"
+  },
+  {
+    "start": 1646.7,
+    "end": 1654.51,
+    "text": "then copy the records so that's the Fundal that you have to apply just write two nested loops"
+  },
+  {
+    "start": 1654.51,
+    "end": 1662.66,
+    "text": "and copy their records You will be pretty much done with the tabulation and after that I'll teach"
+  },
+  {
+    "start": 1662.66,
+    "end": 1670.47,
+    "text": "you space optimization But yes don't skip the video now because at the end I'll teach you how"
+  },
+  {
+    "start": 1670.47,
+    "end": 1678.36,
+    "text": "do you convert it to row like we have learned Two row space optimization right we have learned"
+  },
+  {
+    "start": 1678.36,
+    "end": 1685.92,
+    "text": "Two row space optimization but over here we will learn one row space of E my addition Okay"
+  },
+  {
+    "start": 1685.92,
+    "end": 1693.9,
+    "text": "so without yeah without wasting any time Let's quickly coat this up So I've been given a weight"
+  },
+  {
+    "start": 1693.9,
+    "end": 1700.2,
+    "text": "a value n a max weight Okay, so can I write a function I defung and index i"
+  },
+  {
+    "start": 1700.2,
+    "end": 1704.72,
+    "text": "and d bigger w a vector of n to a point Weight a value"
+  },
+  {
+    "start": 1704.72,
+    "end": 1711.16,
+    "text": "thing i and d There will be no requirement of and yeah I think that makes sense I"
+  },
+  {
+    "start": 1711.16,
+    "end": 1716.96,
+    "text": "know if index is 0 and if the weight of 0 is less than W I can definitely"
+  },
+  {
+    "start": 1716.96,
+    "end": 1723.4,
+    "text": "steal it so well of Value rather value totally let's call it as w t let's call it"
+  },
+  {
+    "start": 1723.4,
+    "end": 1728.96,
+    "text": "as valve so that we don't have to write a lot Val of 0 else it will be"
+  },
+  {
+    "start": 1728.96,
+    "end": 1735.48,
+    "text": "returning a 0 perfect now can I say there'll be two cases i and t not take Perfect"
+  },
+  {
+    "start": 1735.48,
+    "end": 1741.04,
+    "text": "and if I don't take it will be 0 plus f of I'll move to the next index"
+  },
+  {
+    "start": 1741.04,
+    "end": 1747.48,
+    "text": "I'll have the same weight and I get this carry the weight and valve And if I take"
+  },
+  {
+    "start": 1747.48,
+    "end": 1753.28,
+    "text": "it probably I can say initially it will be in Mean And can I say if if if"
+  },
+  {
+    "start": 1753.28,
+    "end": 1759.24,
+    "text": "the w t of index is Indeed less than the w I can definitely steal it and if"
+  },
+  {
+    "start": 1759.24,
+    "end": 1765.36,
+    "text": "I steal it it will be value of index plus f of index minus one W minus weight"
+  },
+  {
+    "start": 1765.36,
+    "end": 1771.16,
+    "text": "of index comma w t comma ball at the end of the day I will return the max"
+  },
+  {
+    "start": 1771.16,
+    "end": 1776.88,
+    "text": "of Take not a great and over here I can say return f of 0 sorry rather n"
+  },
+  {
+    "start": 1776.88,
+    "end": 1784.11,
+    "text": "minus one max weight the weight array and the value array and I think that should be pretty"
+  },
+  {
+    "start": 1784.11,
+    "end": 1786.0,
+    "text": "much it for the knapsack"
+  },
+  {
+    "start": 1786.0,
+    "end": 1790.38,
+    "text": "And I think if I run this should be giving me color pants."
+  },
+  {
+    "start": 1790.38,
+    "end": 1797.48,
+    "text": "Let's see it is giving time limit exceeded again very Obviously what I'll do is I'll just take"
+  },
+  {
+    "start": 1797.48,
+    "end": 1803.0,
+    "text": "vector of vector and Probably I can take a dp and I can have it as n when"
+  },
+  {
+    "start": 1803.0,
+    "end": 1809.2,
+    "text": "I can take a vector of int Remoters this guy will be max weight plus one and comma"
+  },
+  {
+    "start": 1809.2,
+    "end": 1815.17,
+    "text": "minus one and just make sure you pass on the dp as well over here and yeah This"
+  },
+  {
+    "start": 1815.17,
+    "end": 1822.2,
+    "text": "carry to via as well Vector of vector of end again reference very important always take it by"
+  },
+  {
+    "start": 1822.2,
+    "end": 1829.08,
+    "text": "reference dp over here dp over here and right before returning dp of index and this will be"
+  },
+  {
+    "start": 1829.08,
+    "end": 1835.28,
+    "text": "w Equal to and right over here there'll be a case where you check if the state has"
+  },
+  {
+    "start": 1835.28,
+    "end": 1841.4,
+    "text": "been previously visited or not So dp of index and w is what you return so we just"
+  },
+  {
+    "start": 1841.4,
+    "end": 1846.61,
+    "text": "run this should be super fine See that the recursion is working fine."
+  },
+  {
+    "start": 1846.61,
+    "end": 1853.56,
+    "text": "It's time to convert this into tabulation first thing is this And you know for every w which"
+  },
+  {
+    "start": 1853.56,
+    "end": 1859.68,
+    "text": "is greater than this so the base case is very simple for every w Which is you can"
+  },
+  {
+    "start": 1859.68,
+    "end": 1864.89,
+    "text": "say greater than w t 0 Let's make it w t and fall Just from here to I"
+  },
+  {
+    "start": 1864.89,
+    "end": 1868.88,
+    "text": "can say dp of 0 and w will be value of 0 get me sense"
+  },
+  {
+    "start": 1868.88,
+    "end": 1875.78,
+    "text": "And right after this I can say there'll be couple of loops one is the index Stats from"
+  },
+  {
+    "start": 1875.78,
+    "end": 1881.8,
+    "text": "one goes until one and index plus plus for i and t w equal to one or rather"
+  },
+  {
+    "start": 1881.8,
+    "end": 1888.06,
+    "text": "0 W less than max weight which is the max weight And w plus plus and what your"
+  },
+  {
+    "start": 1888.06,
+    "end": 1895.52,
+    "text": "right is these just copy base their records As simple so see how easy the tabulation has like"
+  },
+  {
+    "start": 1895.52,
+    "end": 1902.02,
+    "text": "I don't think it's that of now to you guys if you're following the dp series So I"
+  },
+  {
+    "start": 1902.02,
+    "end": 1908.84,
+    "text": "will just it is this and you'll see that okay, let's quickly write this as well dp of"
+  },
+  {
+    "start": 1908.84,
+    "end": 1914.78,
+    "text": "W t index W minus w t right and over here I can just quickly raise this as"
+  },
+  {
+    "start": 1914.78,
+    "end": 1921.36,
+    "text": "well and this will be dp of index w Does that make sense yeah and over here return"
+  },
+  {
+    "start": 1921.36,
+    "end": 1926.74,
+    "text": "of dp of n minus 1 Max of weight so that will be it over here and I"
+  },
+  {
+    "start": 1926.74,
+    "end": 1934.12,
+    "text": "can and you see everything is passing Let's quickly submit this so we have very much done it"
+  },
+  {
+    "start": 1934.12,
+    "end": 1941.58,
+    "text": "and now you know how to space optimizes into Because whenever there is an index minus one you"
+  },
+  {
+    "start": 1941.58,
+    "end": 1947.36,
+    "text": "know what to do instead of this you end up declaring just couple of rows"
+  },
+  {
+    "start": 1947.36,
+    "end": 1953.57,
+    "text": "So let's declare couple of rows again I have been doing this Throughout that if there is index"
+  },
+  {
+    "start": 1953.57,
+    "end": 1960.44,
+    "text": "minus one use space optimise if you're not following the dp series then it's your problem You're missing"
+  },
+  {
+    "start": 1960.44,
+    "end": 1965.59,
+    "text": "out on a lot of things please make sure follow the dp series So I can say I'll"
+  },
+  {
+    "start": 1965.59,
+    "end": 1971.4,
+    "text": "take a previous of max weight plus one because what we are using is we're just using the"
+  },
+  {
+    "start": 1971.4,
+    "end": 1977.34,
+    "text": "previous Rows right because the dp is computed like this guy this guy like if I just write"
+  },
+  {
+    "start": 1977.34,
+    "end": 1983.15,
+    "text": "it How's the dp computed first you filled up are these guys right With help of this then"
+  },
+  {
+    "start": 1983.15,
+    "end": 1988.96,
+    "text": "these loops will fill this this this this then this then this then this then this and so"
+  },
+  {
+    "start": 1988.96,
+    "end": 1995.56,
+    "text": "on So whenever you're feeling a particular row what are you using using the previous index minus one"
+  },
+  {
+    "start": 1995.56,
+    "end": 2001.9,
+    "text": "means this row So you're just using the previous we don't need this any further whenever you are"
+  },
+  {
+    "start": 2001.9,
+    "end": 2007.78,
+    "text": "feeling this guy We just require this guy There is no requirement of this so just keep on"
+  },
+  {
+    "start": 2007.78,
+    "end": 2013.06,
+    "text": "keep on using this concept and we can easily do it So do you do it previous this"
+  },
+  {
+    "start": 2013.06,
+    "end": 2018.87,
+    "text": "comma zero and Curve of Max of weight plus one comma zero right and again this is simply"
+  },
+  {
+    "start": 2018.87,
+    "end": 2022.72,
+    "text": "omit this and once I've omitted this what's the next thing"
+  },
+  {
+    "start": 2022.72,
+    "end": 2029.58,
+    "text": "Instead of dp of zero can you please write previous we can and over here instead of this"
+  },
+  {
+    "start": 2029.58,
+    "end": 2037.69,
+    "text": "we'll write current Instead of index minus one we'll write previous amazing instead of dp of index minus"
+  },
+  {
+    "start": 2037.69,
+    "end": 2044.94,
+    "text": "one we will again write previous mix-ins and over here what I can say is I'll return previous"
+  },
+  {
+    "start": 2044.94,
+    "end": 2052.04,
+    "text": "of max weight and away a curve will become so Rather previous will become curve and this is"
+  },
+  {
+    "start": 2052.04,
+    "end": 2059.14,
+    "text": "how you can space optimise this into only couple of rows like I've just done couple of rows"
+  },
+  {
+    "start": 2059.14,
+    "end": 2067.25,
+    "text": "and you'll see it's definitely running Fine, but can we optimise this because over here also we're using"
+  },
+  {
+    "start": 2067.25,
+    "end": 2073.96,
+    "text": "couple of rows Can we optimise this yes we still can optimise this if we apply some of"
+  },
+  {
+    "start": 2073.96,
+    "end": 2081.92,
+    "text": "the brains we definitely can optimise this Let's let's actually look at the records What are you using"
+  },
+  {
+    "start": 2081.92,
+    "end": 2088.0,
+    "text": "actually you're saying okay w minus w t mix-ins w minus w t is what I am using"
+  },
+  {
+    "start": 2088.0,
+    "end": 2093.77,
+    "text": "right so can I see can I see let's let's try to write this on iPad and try"
+  },
+  {
+    "start": 2093.77,
+    "end": 2101.26,
+    "text": "to understand So whenever you are trying to compute this index assume this is the index w starts"
+  },
+  {
+    "start": 2101.26,
+    "end": 2103.84,
+    "text": "from zero goes on till max weight"
+  },
+  {
+    "start": 2103.84,
+    "end": 2110.65,
+    "text": "First you try to compute this in this case what are you using you're saying the previous row"
+  },
+  {
+    "start": 2110.65,
+    "end": 2117.83,
+    "text": "index minus one which is the previous rows whatever w minus whatever some value so imagine your w"
+  },
+  {
+    "start": 2117.83,
+    "end": 2124.05,
+    "text": "is standing here yes imagine your w is standing here then w minus w t of index where"
+  },
+  {
+    "start": 2124.05,
+    "end": 2129.98,
+    "text": "will this guy be it cannot be in this half can it be in this half Definitely not"
+  },
+  {
+    "start": 2129.98,
+    "end": 2136.87,
+    "text": "it will be somewhere here somewhere over here onto the left Okay, mix-ins because w minus w t"
+  },
+  {
+    "start": 2136.87,
+    "end": 2144.05,
+    "text": "index will be somewhere here Correct now you'll be like birthstribe or tell us one thing how does"
+  },
+  {
+    "start": 2144.05,
+    "end": 2150.49,
+    "text": "this help because We are we are first filling this guy then this guy then this guy then"
+  },
+  {
+    "start": 2150.49,
+    "end": 2155.9,
+    "text": "this guy then this guy Who has said you to do this who has said you to do"
+  },
+  {
+    "start": 2155.9,
+    "end": 2156.27,
+    "text": "this?"
+  },
+  {
+    "start": 2156.27,
+    "end": 2161.38,
+    "text": "Can't you do it opposite like if I ask you if we do it in this way is"
+  },
+  {
+    "start": 2161.38,
+    "end": 2167.16,
+    "text": "it wrong if I start w from here and then I go filling this this this this this"
+  },
+  {
+    "start": 2167.16,
+    "end": 2169.97,
+    "text": "this this this Can I actually do this?"
+  },
+  {
+    "start": 2169.97,
+    "end": 2177.01,
+    "text": "Is it possible yeah, it will still give the correct answer why because when we are filling this"
+  },
+  {
+    "start": 2177.01,
+    "end": 2182.8,
+    "text": "It is never dependent on these values it is actually dependent on the previous"
+  },
+  {
+    "start": 2182.8,
+    "end": 2189.35,
+    "text": "The row It is actually dependent on the previous row previous row So in the code even if"
+  },
+  {
+    "start": 2189.35,
+    "end": 2194.86,
+    "text": "I write the opposite where I say I will just Like this w t and Wait can be"
+  },
+  {
+    "start": 2194.86,
+    "end": 2200.81,
+    "text": "greater than equal to zero and w minus minus and if I try to run this You'll see"
+  },
+  {
+    "start": 2200.81,
+    "end": 2207.66,
+    "text": "this is also fine because we are not dependent on the previous guys we are dependent on just"
+  },
+  {
+    "start": 2207.66,
+    "end": 2214.95,
+    "text": "the Apple upper row we're just dependent so you see it is running fine because we're not dependent"
+  },
+  {
+    "start": 2214.95,
+    "end": 2220.98,
+    "text": "on these guys This guy is computed with the help of the previous row So what if I"
+  },
+  {
+    "start": 2220.98,
+    "end": 2226.93,
+    "text": "just change it so that's the first change I do not tell me one thing tell me one"
+  },
+  {
+    "start": 2226.93,
+    "end": 2234.08,
+    "text": "thing if This is the previous And this is the current right and initially this current is having"
+  },
+  {
+    "start": 2234.08,
+    "end": 2239.59,
+    "text": "nothing So I'll come away and I'll try to fill it so when I try to fill it"
+  },
+  {
+    "start": 2239.59,
+    "end": 2245.99,
+    "text": "when I try to fill it I will definitely use some value from here probably from here or"
+  },
+  {
+    "start": 2245.99,
+    "end": 2252.76,
+    "text": "probably from here or probably from here due to this concept So in still of filling it here"
+  },
+  {
+    "start": 2252.76,
+    "end": 2258.8,
+    "text": "Instead of using the current Instead of using the current Can I not fill it here?"
+  },
+  {
+    "start": 2258.8,
+    "end": 2261.97,
+    "text": "For this guy can I not fill it here?"
+  },
+  {
+    "start": 2261.97,
+    "end": 2267.87,
+    "text": "I can I can For this guy can I not like for this guy can I not fill"
+  },
+  {
+    "start": 2267.87,
+    "end": 2275.01,
+    "text": "on the previous itself I can For this guy can I not fill on the previous itself I"
+  },
+  {
+    "start": 2275.01,
+    "end": 2281.27,
+    "text": "can for this guy can I not On the previous I can for this guy can I not"
+  },
+  {
+    "start": 2281.27,
+    "end": 2282.06,
+    "text": "fill you?"
+  },
+  {
+    "start": 2282.06,
+    "end": 2289.81,
+    "text": "Yes, why does this work because This guy means there is no need of the right elements If"
+  },
+  {
+    "start": 2289.81,
+    "end": 2297.56,
+    "text": "I'm starting to fill you if I fill till here We will never require these elements of the"
+  },
+  {
+    "start": 2297.56,
+    "end": 2306.55,
+    "text": "previous row any further Whenever we are here This portion will never be required this portion will be"
+  },
+  {
+    "start": 2306.55,
+    "end": 2314.74,
+    "text": "filled with the left guy So you'll use the same previous row you'll use the same previous row"
+  },
+  {
+    "start": 2314.74,
+    "end": 2322.4,
+    "text": "to fill it up Makes sense thereby what I said was I'll use the same previous instead of"
+  },
+  {
+    "start": 2322.4,
+    "end": 2325.75,
+    "text": "Using the current through any further."
+  },
+  {
+    "start": 2325.75,
+    "end": 2329.54,
+    "text": "I'll use the same previous again and again."
+  },
+  {
+    "start": 2329.54,
+    "end": 2329.89,
+    "text": "Why?"
+  },
+  {
+    "start": 2329.89,
+    "end": 2332.89,
+    "text": "Let's repeat this  what did i see?"
+  },
+  {
+    "start": 2332.89,
+    "end": 2340.56,
+    "text": "if I'm trying to fill this  then  I'm just requiring the left guys left guys  practiced"
+  },
+  {
+    "start": 2340.56,
+    "end": 2345.2,
+    "text": "So, apparently, eventually there was a previous with some values."
+  },
+  {
+    "start": 2345.2,
+    "end": 2352.62,
+    "text": "When the next row calculation came, you stored it to a here, then here, then here, then here, then here."
+  },
+  {
+    "start": 2352.62,
+    "end": 2361.54,
+    "text": "So, automatically the previous is acting as the current to every time, every time, because you're filling from right to left."
+  },
+  {
+    "start": 2361.54,
+    "end": 2364.25,
+    "text": "Why can't you fill from left to right?"
+  },
+  {
+    "start": 2364.25,
+    "end": 2371.53,
+    "text": "Very obvious reason, because, because if it is storing some values, like if it is storing some values,"
+  },
+  {
+    "start": 2371.53,
+    "end": 2378.45,
+    "text": "you will start filling here, then if you start filling here, then if you start filling here, this"
+  },
+  {
+    "start": 2378.45,
+    "end": 2384.09,
+    "text": "guy will require the previous guys, but you have overwritten the previous guys."
+  },
+  {
+    "start": 2384.09,
+    "end": 2392.58,
+    "text": "If overwritten the previous guys, so when you try to compute this, you'll use the current values which are not correct."
+  },
+  {
+    "start": 2392.58,
+    "end": 2398.86,
+    "text": "So, thereby left to right cannot work only right to left, well, work only right to left."
+  },
+  {
+    "start": 2398.86,
+    "end": 2402.21,
+    "text": "There, by I can say, let's go back to the hold."
+  },
+  {
+    "start": 2402.21,
+    "end": 2403.99,
+    "text": "I don't need the current."
+  },
+  {
+    "start": 2403.99,
+    "end": 2406.13,
+    "text": "Yes, I don't need the current."
+  },
+  {
+    "start": 2406.13,
+    "end": 2411.77,
+    "text": "Instead of that, I just require the previous and over here, I can say previous."
+  },
+  {
+    "start": 2411.77,
+    "end": 2413.84,
+    "text": "And there is no need of this."
+  },
+  {
+    "start": 2413.84,
+    "end": 2420.36,
+    "text": "So, assuming I have omitted everything, now let's run this and see if this is running fine."
+  },
+  {
+    "start": 2420.36,
+    "end": 2425.6,
+    "text": "We see some error which is saying W is not declared in the scope."
+  },
+  {
+    "start": 2425.6,
+    "end": 2428.5,
+    "text": "Why is it not declared in the scope?"
+  },
+  {
+    "start": 2428.5,
+    "end": 2429.47,
+    "text": "Okay, sorry."
+  },
+  {
+    "start": 2429.47,
+    "end": 2430.2,
+    "text": "Oh, yeah."
+  },
+  {
+    "start": 2430.2,
+    "end": 2432.78,
+    "text": "Fine, let's try to run this off."
+  },
+  {
+    "start": 2432.78,
+    "end": 2433.42,
+    "text": "Amazing."
+  },
+  {
+    "start": 2433.42,
+    "end": 2442.21,
+    "text": "One row and it does submit this single RASP's optimization, not even two rows, and I back, you did love this."
+  },
+  {
+    "start": 2442.21,
+    "end": 2446.89,
+    "text": "So, just in case you're dead, please hit that like button."
+  },
+  {
+    "start": 2446.89,
+    "end": 2450.84,
+    "text": "In the comment section, let me know how was this?"
+  },
+  {
+    "start": 2450.84,
+    "end": 2455.35,
+    "text": "Like, did you love the one array optimization technique?"
+  },
+  {
+    "start": 2455.35,
+    "end": 2457.61,
+    "text": "If you did, please do right."
+  },
+  {
+    "start": 2457.61,
+    "end": 2459.46,
+    "text": "Please please do right."
+  },
+  {
+    "start": 2459.46,
+    "end": 2462.36,
+    "text": "Like, I will really appreciate that."
+  },
+  {
+    "start": 2462.36,
+    "end": 2468.25,
+    "text": "Also, if you're new to the channel, please do consider subscribing to us."
+  },
+  {
+    "start": 2468.25,
+    "end": 2474.7,
+    "text": "And there with this, let's wrap up this video and we'll see you in the next one."
+  },
+  {
+    "start": 2474.7,
+    "end": 2476.23,
+    "text": "Till then, bye bye."
+  },
+  {
+    "start": 2476.23,
+    "end": 2477.04,
+    "text": "Take care."
+  },
+  {
+    "start": 2477.04,
+    "end": 2477.36,
+    "text": "Bye."
+  }
+]

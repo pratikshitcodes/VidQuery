@@ -1,0 +1,222 @@
+[
+  {
+    "start": 0.0,
+    "end": 56.89,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] Hey everyone welcome back to the channel. I hope you guys are doing extremely well  So finally, it's here. Yes, the ultimate dynamic programming playlist now you might be thinking Yeah, it's the not your hype banara guys DPC-Escar or what is the hype all about? Let me tell you this is going to be the best. Yes when I say best, I mean it I've already delivered one of the best graph playlist one of the best three playlist one of the best Recussion playlist none of the topics were easy But I have made videos which will make sure that you build your logics right from the bottom And you go off till the most advanced level of questions that might be asked in an interview And I promise today. I'm starting the dynamic programming series and very end the series You will be like yes, this is indeed the best I know there are a lot of series that exist in the market which are"
+  },
+  {
+    "start": 44.0,
+    "end": 100.52,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] I promise today. I'm starting the dynamic programming series and very end the series You will be like yes, this is indeed the best I know there are a lot of series that exist in the market which are very very very good But trust me this is going to be on some different level point number one why? The reason is because This series will contain the maximum number of videos which none of the other channels have given This series will be containing around 60 to 70 videos. Yes, I repeat 60 to 70 videos So when you solve 60 to 70 videos on a given pattern you tend to master a topic. Yes, you do The second reason is most of the people either teach the Tabulation format where they just form tables They give you some formulas and they fill up the table I'm not going to do that way now. I'm going to do the recursion way then the population way I might be thinking okay this has"
+  },
+  {
+    "start": 87.96,
+    "end": 144.32,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] just form tables They give you some formulas and they fill up the table I'm not going to do that way now. I'm going to do the recursion way then the population way I might be thinking okay this has also been done on the market someone has also done the recursion way and then the tabulation way So what's different in yours the difference is I'm going to do recursion I'm going to tabulation and after that I'm going to do space optimization which none of the creators in the market have done for every Problem I'll be telling you the most optimal solution which I guarantee no one has ever taught in even the paid courses Yeah, I might not be able to give you teaching assistance that is something which I'll not promise But the content is going to be so crisp and so clear that you will learn completely Adieu will have no doubts. So without waiting let's get started  What does D.P?"
+  },
+  {
+    "start": 131.63,
+    "end": 187.35,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] is something which I'll not promise But the content is going to be so crisp and so clear that you will learn completely Adieu will have no doubts. So without waiting let's get started  What does D.P? Those who cannot remember the past are condemned to repeat it. This is one of the famous codes for D.P. Which is dynamic programming. Yes Now when I talk about a dynamic programming there are a couple of ways in which people tend to solve it One is the tabulation way while the other one is the memo I Shinhui a lot of people call to tend to call this memo Ryjaya Shinhemaya Shinh Doesn't matter as long as you understand. It's okay another thing the series is going to be Entirely English so doesn't matter where you're where you're located you're going to understand each and every word of the series So when I say tabulation"
+  },
+  {
+    "start": 172.93,
+    "end": 232.32,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] It's okay another thing the series is going to be Entirely English so doesn't matter where you're where you're located you're going to understand each and every word of the series So when I say tabulation it means a bottom of dynamic programming. Yes Now when I say bottom up it doesn't necessarily means that you're gonna start From zero till end it can be vice versa Also, but yeah as the name suggests it's a bottom up dynamic programming I say Memorization it's a top down dynamic programming again when I say top down it doesn't means that it is going to be from end to Zero it can be the vice versa Also depends on your implementation skills So going forward in every lecture what I'm going to do is I'm going to teach you the memo. I should topic  Then I'm going to discuss the time complexity and the space complexity once I've done that"
+  },
+  {
+    "start": 222.8,
+    "end": 281.08,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] going to teach you the memo. I should topic  Then I'm going to discuss the time complexity and the space complexity once I've done that I will move to the tabulation Yes, I'll move to the tabulation and I'll teach you again the time complexity and the space complexity that the tabulation takes What after tabulation after that there is a specific step which most of the creators miss that is space optimization What I'm going to do is I'm going to optimize space yes in every problem and that will be our final solution Generally in an interview if you see this it will work But if you're gonna deliver this and along with this this I can bet no one is going to ever ever reject you in an interview That's my bed so without without actually wasting any time Let's get started with the first lecture that is again to understand dynamic programming and to understand the entire flow that I'll be teaching now There'll be"
+  },
+  {
+    "start": 267.82,
+    "end": 324.49,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] my bed so without without actually wasting any time Let's get started with the first lecture that is again to understand dynamic programming and to understand the entire flow that I'll be teaching now There'll be a lot of topics which you'll feel like we know the stopping But I'll still recommend you to watch it till the end because there will be certain techniques in every lecture And I'll be telling you so it might happen like in this lecture I'll be talking you about Feveron Achie Using dynamic programming I might be like oh, I know Feveron Achie. I'm not gonna watch it  But trust me you should watch it till then even if you know you can watch this on duet The reason is because there will be certain techniques that I'll be discussing during Feveron Achie specifically this flow which is Very very important how to optimize the space complexity how to look So that's why"
+  },
+  {
+    "start": 317.67,
+    "end": 377.4,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] flow which is Very very important how to optimize the space complexity how to look So that's why I'll recommend you to watch it is the absolute end so yeah Let's get started with a Feveron Achie number now the prerequisite for the dynamic programming playlist is you should have done my entire Recursion playlist I repeat you should have done my entire recursion playlist. It has 19 videos even if you don't do 19 videos I will still recommend you to do the first 10 videos where the lecture number 6 on the lecture number 7 are of highest importance please please do the lecture number 6 and the lecture number 7 for sure So the first problem Feveron Achie number What's a Feveron Achie number the first Feveron Achie number is zero followed by one followed by one followed by two followed by three followed by five followed by eight followed by 13"
+  },
+  {
+    "start": 362.91,
+    "end": 424.09,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] Feveron Achie number What's a Feveron Achie number the first Feveron Achie number is zero followed by one followed by one followed by two followed by three followed by five followed by eight followed by 13 followed by 21 and so on now if you carefully observe These are the first two Feveron Achie numbers and when you add them up yes when you add them up You get the next Feveron Achie number Similarly if you take the next two Feveron Achie numbers and you add them up you get the next Feveron Achie number Correct, so what I can say is The recurrence relation again I have already explained this so I'll not be explaining the recursion relations in depth in any of the lectures I'm assuming you are very very good at recursion so the recursion relation comes up to be F of N minus one plus F of N minus two without any doubt Because whenever I say five it says that okay for this recursion this Feveron Achie number you"
+  },
+  {
+    "start": 412.87,
+    "end": 472.44,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] relation comes up to be F of N minus one plus F of N minus two without any doubt Because whenever I say five it says that okay for this recursion this Feveron Achie number you need to know the previous one and the Previous to that one that's N F of N minus one plus F of N minus two is what you need to know correct So F of N equal to F of N minus one F of N minus two now if I ask you a very very simple question Give me the Feveron Achie number four so assuming I'm doing a zero indexing Feveron Achie number this is the zero One two three four so this will be the fourth Feveron Achie number which is three so I I ask you to give me the fourth Feveron Achie number So the moment I ask you to give the fourth Feveron Achie number you will be like okay why can't I draw a writer recursion which you have already done in the recursion lecture So if you try to write a recursion the recursion will look something like F of N and"
+  },
+  {
+    "start": 460.9,
+    "end": 516.6,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] why can't I draw a writer recursion which you have already done in the recursion lecture So if you try to write a recursion the recursion will look something like F of N and then you'll be like if N is less than equal to one you can return N Or else you can return something as F of N minus one plus F of N minus two This is the recursion code that you Don't in the recursion classes remember where every guy had couple of options Tending of the time complexity to be exponential of this particular recursion if you don't understand this recursion Please please go and watch my recursion playlist now if I try to draw the recursion tree So the next step let's try to or draw the recursion tree for N equal to five where I've been asked to find the fifth Feveron Achie number So F of five states I will require F"
+  },
+  {
+    "start": 504.7,
+    "end": 563.78,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] the next step let's try to or draw the recursion tree for N equal to five where I've been asked to find the fifth Feveron Achie number So F of five states I will require F of four I will require F of three correct that is what it states F of four states I'll require F of three and I'll require F of two Now remember in the recursion classes I did tell you if there is a function call there is first function call F of four Then there is a function call of F of three first F of four will go complete itself and come back Then F of three will go complete itself and come back you remember right so similarly over here Whenever F of five calls F of four and F of three first it goes complete F of four Next it completes F of three so first it has to complete F of four so the call for F of four will go at first in the recursion Right in the recursion call for"
+  },
+  {
+    "start": 552.65,
+    "end": 608.91,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] four Next it completes F of three so first it has to complete F of four so the call for F of four will go at first in the recursion Right in the recursion call for this will go come back then the call for this will go and come back remember this So first F of four will go similarly when you go to F of four F of three will be called and F of two can wait Now F of three will be like okay, let's do an F of two let's do an F of one Similarly F of two will be like let's do an F of one let's do an F of zero now remember one thing remember one thing In the recursion This is a base case whenever you reach F of one that's a base case they're gonna return So what will you return you will definitely return One because that is what the recursion stated and it'll definitely return Zero so the F of one is One plus zero because the"
+  },
+  {
+    "start": 595.58,
+    "end": 656.22,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] they're gonna return So what will you return you will definitely return One because that is what the recursion stated and it'll definitely return Zero so the F of one is One plus zero because the previous two sorry F of two will be one plus zero because the previous two Recurson did give you one plus zero so this is going to be F of two is going to be one plus zero Which is one so this is going to return you one correct now Whenever you go to F of one again base case, so this returns you one Correct, so when this returns you one you get F of three which is indeed one plus one gives you two so this is two this returns you two Not so very very interesting point is over here we are at F of four F of four called F of three which gave you two F of four also called F of two now Ideally recursion what recursion would have done is it would have"
+  },
+  {
+    "start": 643.85,
+    "end": 701.78,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] are at F of four F of four called F of three which gave you two F of four also called F of two now Ideally recursion what recursion would have done is it would have gone and created F of one Then it would have called F of zero this would have returned one this would have returned zero Summit up and then it would have returned so it's a lot of time Waste because Is there a need to recompute F of two the answer to that is No, why because we have seen F of two has been previously computed now when I say F of What does that signify F of two signifies second Fevonachin number so if the second Fevonachin number is one over here It's not going to change over here The second F of two is going to be same at any instance in the entire program F of two is going to be same"
+  },
+  {
+    "start": 689.86,
+    "end": 751.4,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] is one over here It's not going to change over here The second F of two is going to be same at any instance in the entire program F of two is going to be same and that is what we call as Overlapping sub problems we solved a problem F of two Over here and we again in total that same problem over here So that's what we call as over lapping sub problems remember this term Whenever we end up solving same sub problems again again again That's when we call it overlapping sub problems makes sense So it's a sub problem which has been solved so will you again go and solve it? There's absolutely no use there's absolutely no use to solve it."
+  },
+  {
+    "start": 744.26,
+    "end": 802.52,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] it? There's absolutely no use there's absolutely no use to solve it. This is where something as Memoization jumps in this is where something as Memo I Asian jumps in what is Memoization we tend to store the value of sub problems we tend to store the value of sub problems in some map Slash table In some map slash table like over here We are having F of two how many parameters are there how many parameters are there one So there is one parameter we can create in one DRA we can create in one DRA So I'll come across to that afterwards how will how we will create in one DRA and all will come up to that afterwards But as of now we we don't need to recompute F of two because"
+  },
+  {
+    "start": 790.98,
+    "end": 850.82,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] come across to that afterwards how will how we will create in one DRA and all will come up to that afterwards But as of now we we don't need to recompute F of two because we know the value is one so you'll return one So F of four is 2 plus one Three so we can return F of four as three now over here. We come to F of three  Will you compute F of three are a no Baba no why? Because F of three has been pre-computed this F of three is a sub problem where we are being asked to find the third Fever nache number and we see that the third Fever nache number has already been figured out So is there a point of going to F of two going to F of one going to F of one going to F of zero is there a Necessity oh there is no necessity because this has already been computer this sub problem has already been sold So what we do is We go across and see what's the value stored 2 so let's return it"
+  },
+  {
+    "start": 838.45,
+    "end": 898.76,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] there is no necessity because this has already been computer this sub problem has already been sold So what we do is We go across and see what's the value stored 2 so let's return it So we'll return that value so over here we get three over here we get two so the last and second last will get added up to get 5 so that's how yes that's how you're going to solve a normal Requestion if you're going to use a F of memorization now the question arises what is memorization Because I've been talking about memorization till now what is Memo ideation that is where the question comes and stands so Where you did find out F of two so if you carefully see Where are the sub problems what are the sub problems there is a sub problem as F of five There is a problem as F of"
+  },
+  {
+    "start": 885.13,
+    "end": 945.28,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] find out F of two so if you carefully see Where are the sub problems what are the sub problems there is a sub problem as F of five There is a problem as F of four F of three F of two F of one F of zero So can I say at max the sub problems are from zero to five Okay, makes sense zero to five so can I say if I can create a array of six size If I can create an array of six size And I can call that as some dp array Sounds cool right you can call it as f of ar as well dp dynamic program So what I did was what I did was F of two was computed over here F of two was computed over here what's the value one side said dp of two And you please keep like initially what I did was see initially you'll keep everyone as minus one"
+  },
+  {
+    "start": 937.73,
+    "end": 996.33,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] said dp of two And you please keep like initially what I did was see initially you'll keep everyone as minus one take Initially you can keep everyone as minus one So whenever you go to f of five it's minus one you go f of four minus one you go f of three minus one you go f of two So whenever f of two is computed you take this one and you store it over here so please store it Okay, now you computer f of three that's two so please store it Let the moment the moment you come to f of two next time Is that minus one no thereby meaning It has some values it has some values and from if it is not minus one from where will that value come? That value would have come from recursion itself that means you would have sold that sub problem prior to this thereby you can easily pick up this value and you can return it so that's how it works again There's a call for f of three so whenever f of five N's to call"
+  },
+  {
+    "start": 985.71,
+    "end": 1044.7,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] to this thereby you can easily pick up this value and you can return it so that's how it works again There's a call for f of three so whenever f of five N's to call for f of three f of three will say I do have a value two So why will I go and call f of two why will I go and call f of two so what we do is we return this value to directly So that's how we do it and f of four was three so you can also store that f of five is five you can store that So what I did was every time a problem was sold I tend to store that in an array and whenever the problem is called I check If that problem has been Pralies sold or not if it has been I return that value otherwise I do not return that value That's how I generally do this so this is the recursion right in order to convert this Into our dynamic programming solution Generally what we do is we tend to write something like this we tend to take a"
+  },
+  {
+    "start": 1031.79,
+    "end": 1090.95,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] generally do this so this is the recursion right in order to convert this Into our dynamic programming solution Generally what we do is we tend to write something like this we tend to take a dp array Now this is the function parameter right we'll be carrying an n we We think what is the maximum value of n because that is the highest Sub problem that will be solving over here to five so I can say I need spaces for n plus one because there'll be a zero guy as well So I replace spaces for n plus one so I declare our dp array so remember this declare at dp array that's your first Indencher you should always declare in dp array once you've done this what you will do over here You remember this is what you're returning as the value of f of n This is what you're returning as the value of f of n so can I say the value of f of n or the value of this particular sub problem"
+  },
+  {
+    "start": 1080.84,
+    "end": 1142.36,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] the value of f of n This is what you're returning as the value of f of n so can I say the value of f of n or the value of this particular sub problem Is this thereby what you can do is you can just take this and store it where In this array thereby step one remodels this is step one Storyt over here dp of n is equal to just Plungit at dp of n equal to that means whatever is computed Whatever is the answer to this sub problem. I'll store it in dp of one that's just step one  In convert a recursion to my my I should what's a step two? The step two is there is a call made to f of one f of n There is a call made to f of n you can check base cases after the base cases You are calling Again sub problems you're calling sub problems over here calling sub problems to go and solve them"
+  },
+  {
+    "start": 1127.52,
+    "end": 1186.85,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] a call made to f of n you can check base cases after the base cases You are calling Again sub problems you're calling sub problems over here calling sub problems to go and solve them But over here you'll not call sub problems You will first check is this a problem being solved previously So There is a check if dp of n's value is not equal to minus one. I'm saying is it not equal to minus one is it having some value stored If it is having some value stored I'll be like why don't you return that value stored? This is step two so in order to convert a recursion To a dynamic programming I implemented kind of three steps But I can say the step a zero is declaring an array Considering the size of the sub problems like over here there were n sub"
+  },
+  {
+    "start": 1173.28,
+    "end": 1231.0,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] To a dynamic programming I implemented kind of three steps But I can say the step a zero is declaring an array Considering the size of the sub problems like over here there were n sub problems thereby I declared an array of size n step one storing the answer which is being computed for every sub problem step two checking if the sub problem has been Previously solved if it is previously solved then the value will not be minus one thereby I can easily return it So if for of these three steps you can convert any recursion to a dynamic programming solution So that just of the dynamic programming lies in be in mastering recursion if you're master recursion you can easily do dynamic programming there is absolutely no problem If you have master recursion trust me dp is going to"
+  },
+  {
+    "start": 1223.32,
+    "end": 1282.4,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] dynamic programming there is absolutely no problem If you have master recursion trust me dp is going to be What I've done is I've converted this I've converted this so generally in an interview what you'll be asked is to not use global vehicles What you can do is you can definitely declare an i and the n you can take n and then you can be like dp of you know n plus one is required You can memset is to a dp of minus one size of dp and over your what you can write is i and d probably i and df And you can keep the i and the n and you know if n is less than equal to one you can return the n over your step one will step two will be concluded which is dp of n is not equal to minus one That means previously computed no need to compute and over here whatever answer you are getting like you are usually saying f of n minus one plus f of n minus two so what"
+  },
+  {
+    "start": 1270.64,
+    "end": 1327.4,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] minus one That means previously computed no need to compute and over here whatever answer you are getting like you are usually saying f of n minus one plus f of n minus two so what you'll do is you'll just go over here and say dp of n equal to so just include two steps But this dp is over here so generally I'll recommend you to use vectors that's how I do it You can use arrays as well dp n of minus one and what you can do is you can say c out of f of n and you can pass on this dp parameter and Over here you can always take the vector by reference Okay, by by reference you can take it so that this is have like this will be changed on every step So you can just do it like this and over here if I give y fields c five coming out like I just run it Sorry n plus one I'll do it n plus one so over here if I just run it you'll see the v1 h number will come out to be five"
+  },
+  {
+    "start": 1313.66,
+    "end": 1373.82,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] just do it like this and over here if I give y fields c five coming out like I just run it Sorry n plus one I'll do it n plus one so over here if I just run it you'll see the v1 h number will come out to be five so step one step two step Decloration three steps so in this way you can avoid using global variables and you can easily write your Fibonacci or dp or any of the dp's so that's how you do the first step which is recursion So I've taught you the first step which is Memo I should after teaching the time complexity and the space complexity Let's analyze that as well So over here F of five called f of four f of four called f of three f of three called f of two and then one Five steps or n steps are these calls going into deep are these calls going into deep? No, these are big of one calls like constant calls So can I say the deeper calls where"
+  },
+  {
+    "start": 1359.31,
+    "end": 1418.27,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] called f of two and then one Five steps or n steps are these calls going into deep are these calls going into deep? No, these are big of one calls like constant calls So can I say the deeper calls where five or n like f of five went on to call f of three f of four like f of four to So I can say f of five called fourth for two three three two and two one But they're these calls are constant So can I say there is a linear pattern there's a linear pattern yes thereby I can say the time complexity to be be go off n which is a linear pattern What are those face complexity I can say I'm using our recursion stack space which is we go off n So I'm using a recursion stack space because if you if you've seen my recursion lectures You'll understand what a stack space and I'm using a big go off n for array That's what I'm using"
+  },
+  {
+    "start": 1403.27,
+    "end": 1463.75,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] space which is we go off n So I'm using a recursion stack space because if you if you've seen my recursion lectures You'll understand what a stack space and I'm using a big go off n for array That's what I'm using so we have covered up memory I should where time complexity as well as space complexity The question arises how do you convert a recursion solution into a tabulation format? Okay, that's very very important. How do you convert a recursion into a tabulation? So remember as a tabulation what did the name suggest? Bottom up okay, so try to go from the base case  You're the required answer. This is the meaning of the Bottom up stuff try to go from the base case like the base case can be a need and recursion means Talked out that means Try to go from the be like price starting whichever answer you require and Then go to the base case and then come"
+  },
+  {
+    "start": 1451.14,
+    "end": 1506.24,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] base case can be a need and recursion means Talked out that means Try to go from the be like price starting whichever answer you require and Then go to the base case and then come back. This is why it talked up over here  You start from the base case and you go to the required answer. They're my apartment. It's very simple in recursion Whatever dt array you are used Initialize the same thing that's the first time So we used a dp of n plus one in fiverrachi we initialize that for the base cases. Let's go on to observe the base cases Can I say there are a couple of base cases if I carefully see with states and lesser than equal to one given that we require zero Then one at fiverrachi can I say dp of like the zero fiverrachi is zero and can I see dp of one is one because that is"
+  },
+  {
+    "start": 1494.64,
+    "end": 1554.01,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] than equal to one given that we require zero Then one at fiverrachi can I say dp of like the zero fiverrachi is zero and can I see dp of one is one because that is what the base case exactly states So you're going to write the exact same thing dp of zero equal to zero and dp of one equal to one because that is what the base cases So in order to convert this into tabulation you write this dp of zero equal to zero dp of one equal to one written goes the next step the next step is going to be very very simple You again go back and look out the look at the recursion relationship So the recursion relationship is this f of n minus one plus f of n minus two Now can I say this line will be executed when n is lesser than equal to one and these lines will be executed when n is two n is three n is four and so on but nothing before two So"
+  },
+  {
+    "start": 1542.63,
+    "end": 1603.33,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] line will be executed when n is lesser than equal to one and these lines will be executed when n is two n is three n is four and so on but nothing before two So I know these lines will be executed from two correct so change this to dp change this to dp and write it So I know this will be executed from two Because the recurrence will never be executed before two so from two to n is what you write okay And I going to write dp of i because that is what you wrote over there in recursion equal to instead of f of n minus one it will write dp of i minus one plus dp of i minus two Similar stuff you write Just you change it to i and similar stuff and this is how you can make a tabulation Interesting isn't it just look at the recurrence and try to convert that into a tabulation and it becomes easy What's the time complexity over here?"
+  },
+  {
+    "start": 1588.81,
+    "end": 1644.59,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] stuff and this is how you can make a tabulation Interesting isn't it just look at the recurrence and try to convert that into a tabulation and it becomes easy What's the time complexity over here? It's be go off n again For this space complexity this game is just a big often no recursion stack space So it's a vector solution that we are then the recursion of the memory I should run because we are reducing or we are eliminating the recursion Stackspace that we wear using now How do we eliminate this particular space? I want this to be done in a much better way so that's where that's when some brain comes in like it's a very very standard observation That will help you out. So can I see? In order to find dp of i what do I require?"
+  },
+  {
+    "start": 1633.33,
+    "end": 1697.11,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] comes in like it's a very very standard observation That will help you out. So can I see? In order to find dp of i what do I require? I require i minus one I require i minus two correct So I require i minus one and I require i minus two which means the previous and the second previous is what I want So if I just try to write or like I just give you dots And I say I is here The imagine imagine you know this is i minus one and this is i minus two core shell for this guy You require this guy and this guy So this think of in terms of variables Can I say this as previous as of now and can I say this as previous like"
+  },
+  {
+    "start": 1688.12,
+    "end": 1743.78,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] variables Can I say this as previous as of now and can I say this as previous like second previous? I can  In the next step where will I go? I will go over here and This will become i minus one and this will become i minus two can i see the next step in the next step I This becomes previous, this becomes previous too. Makes absolute sense. Do you see an pattern? Yes, you see. I becoming previous and the previous becoming previous too. And that's what you all need. You don't need an array. Do you? You don't. Okay, so you have seen the pattern, right? So initially previous two was the first element and previous two was the second element."
+  },
+  {
+    "start": 1729.17,
+    "end": 1787.35,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] And that's what you all need. You don't need an array. Do you? You don't. Okay, so you have seen the pattern, right? So initially previous two was the first element and previous two was the second element. So let's do the same thing. What I'll do is I'll say, okay, this guy is the previous, now previous two rather. This guy is the previous for sure. Now can I say this is the Iat element which means the car of I. Can I say instead of I minus one I can write previous. Instead of this I can write previous two. I can. Similarly can I say if I have got of I equal to previous plus previous two. In the next I because after this, you'll go here I will increase and I will go to three. In the next step, this car I will become someone's previous. So you can be like, okay, but before that, let's say previous two."
+  },
+  {
+    "start": 1778.14,
+    "end": 1834.53,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] In the next step, this car I will become someone's previous. So you can be like, okay, but before that, let's say previous two. For that someone previous two will be previous, now. Isn't it? If you see, previous two will become previous. So just initialize that and previous will become car I. Do you agree? Indeed, you have to agree. So in this way, you can keep on going and write at the end. Write at the end. Can I say if you print previous, your answer will be there because when you will end up, this will go up and plus one because I will the fall loop will end at n plus one. So you will have the previous stored as the feebo nachy number. So in this way, you can optimize the space as well."
+  },
+  {
+    "start": 1824.26,
+    "end": 1879.53,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] one. So you will have the previous stored as the feebo nachy number. So in this way, you can optimize the space as well. I have eliminated the space used. I've used just a couple of variables. So if I just use my sublime text now. What I can do is I can say, okay, previous two is zero. previous one is one. I can go on saying I equal to two, I less than equal to n. I plus plus. At over here, what I can definitely write is. I can say I and the car of I is equal to previous plus previous two. Correct? And I can say previous two will become previous. And I can say previous will become car of I. And at the end of the day, over here, I can definitely do a C out of previous. previous."
+  },
+  {
+    "start": 1866.3,
+    "end": 1922.51,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] Correct? And I can say previous two will become previous. And I can say previous will become car of I. And at the end of the day, over here, I can definitely do a C out of previous. previous. So if I try to run this, you'll see. So if I try to run this, you'll see this is working absolutely fine. So as simple as it can get, what I've done,  I've eliminated the extra time, extra space that I was using. Now this boils down into a time complexity of big off n and the space complexity of big off on. So going forward in every problem, we will be observing this pattern, where we will be actually using the previous guys in the second previous guys. Or something similar to that. So we don't need to always create an array. That's what I wanted to teach you, where this fee won't actually number. Is this is an intuitive solution to this. So that was it for the first lecture."
+  },
+  {
+    "start": 1908.36,
+    "end": 1965.26,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] Or something similar to that. So we don't need to always create an array. That's what I wanted to teach you, where this fee won't actually number. Is this is an intuitive solution to this. So that was it for the first lecture. If you need the notes as well as the running codes for C plus plus as well as Java. If you need both of them, you will find them in the article below. Yes, there is a link of the article. You'll find the C plus plus as well as the running Java codes for this particular. Problem. And yes, if you are new to this channel, please, please, please, please do consider subscribing. That is the only request that I will do. And if you did understand this video, please make sure you like this video. And for this DPCDs particularly, I'm starting a trend after you watch this video. Whatever, if you have any doubts, you can put that into the comment section. I will be trying to reply that if it's a unique doubt."
+  },
+  {
+    "start": 1952.91,
+    "end": 2010.18,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] And for this DPCDs particularly, I'm starting a trend after you watch this video. Whatever, if you have any doubts, you can put that into the comment section. I will be trying to reply that if it's a unique doubt. And if you have understood, please, please write this as a trend like from everyone. From now on, what's a every video, at least try to write this small word understood. That is what I will be expecting from you. If you keep on doing this, I will be bringing videos every day till 60 like for two months. I'll bring video every day on the Sunday. I'll or I'm traveling. I'll make sure I'll bring the videos every day. But this is what I require from you. Like and an understood comment on the video that is what I'll expect from you. And please do share this DPCD playlist among all your friends because this is going to be the biggest ever playlist. So just before wrapping up this video, just to make reminder, if you haven't yet checked out SD sheet, what are you doing man?"
+  },
+  {
+    "start": 1996.01,
+    "end": 2028.18,
+    "text": "[Video: DP 1: Introduction to Dynamic Programming (Fibonacci Memoization & Tabulation)] And please do share this DPCD playlist among all your friends because this is going to be the biggest ever playlist. So just before wrapping up this video, just to make reminder, if you haven't yet checked out SD sheet, what are you doing man? The link in the description, go and check it out because it's the ultimate resource for end of your preparation. So yeah with this, let's wrap up this video guys. Let's meet in the next one. Bye bye. You're hiding in spoken. Don't ever forget your golden."
+  }
+]

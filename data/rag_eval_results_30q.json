@@ -1,0 +1,613 @@
+{
+  "averages": {
+    "context_precision": 0.796,
+    "context_recall": 0.892,
+    "faithfulness": 0.928,
+    "answer_relevance": 0.981,
+    "answer_correctness": 0.963
+  },
+  "records": [
+    {
+      "id": 1,
+      "video": "DP 26: Print Longest Common Subsequence (LCS)",
+      "query": "What is the length and the actual string of the Longest Common Subsequence (LCS) for strings EBCDE and BDGEK as demonstrated in the video?",
+      "ground_truth": "The length of the Longest Common Subsequence is 3, and the actual LCS string is 'BDE'.",
+      "expected_info": [
+        "length is 3",
+        "LCS string is 'BDE'",
+        "characters B, D, E appear in both strings in order"
+      ],
+      "generated_answer": "**Length of the LCS:** 3   \nThe video notes that the longest common subsequence for the strings **EBCDE** and **BDGEK** has length 3【221 - 279】 and repeats this observation later【178 - 235】.  \n\n**Actual LCS string:** The excerpts do not explicitly state which three‑character subsequence is the LCS (they mention the length but not the characters).  \n\nSo, based on the given context we know the LCS length is 3, but the exact LCS string is not provided.",
+      "context_precision": 0.9,
+      "context_recall": 0.5,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.9,
+      "answer_correctness": 0.5,
+      "reasoning": "The context provides the LCS length but not the exact string, so the answer correctly states the length and honestly notes the missing string, staying faithful to the context, but fails to supply the required LCS string, making it only partially correct.",
+      "retrieval_ms": 2107.7,
+      "generation_ms": 3840.1
+    },
+    {
+      "id": 2,
+      "video": "DP 6: House Robber II (Circular Street)",
+      "query": "How is the House Robber II problem decomposed into two subproblems to reuse the House Robber I logic?",
+      "ground_truth": "The circular street problem is decomposed into two linear subproblems because the first and last houses are adjacent and cannot both be robbed: 1) exclude the last house (consider houses 0 to n-2), and 2) exclude the first house (consider houses 1 to n-1). Run the House Robber I DP on both subproblems and return the maximum of the two results.",
+      "expected_info": [
+        "first and last houses are adjacent in a circular street",
+        "subproblem 1: exclude last house (array from index 0 to n-2)",
+        "subproblem 2: exclude first house (array from index 1 to n-1)",
+        "take the maximum of both answers"
+      ],
+      "generated_answer": "The circular constraint is removed by solving **two separate linear robber problems** and then taking the better of the two results.\n\n1. **Exclude the last house** – run the original House Robber I DP on the sub‑array that contains houses 0 … n‑2.  \n2. **Exclude the first house** – run the same DP on the sub‑array that contains houses 1 … n‑1.  \n\nBecause the first and last houses are never considered together, each sub‑problem is a standard “no‑adjacent‑houses” problem and can reuse the House Robber I logic. The answer to House Robber II is the maximum of the two DP results.\n\n**Relevant timestamps**:  \n- Explanation of leaving out the last element and applying the previous logic: **[237 - 296]**  \n- Reasoning that the first and last cannot both be taken, leading to the two‑case split: **[183 - 246]**  ",
+      "context_precision": 0.9,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "Most retrieved chunks discuss the circular adjacency and the two‑case split, covering all expected facts; the answer mirrors this information without adding unsupported claims.",
+      "retrieval_ms": 1960.6,
+      "generation_ms": 1826.2
+    },
+    {
+      "id": 3,
+      "video": "DP 28: Longest Palindromic Subsequence (LPS)",
+      "query": "How does the author reduce the Longest Palindromic Subsequence (LPS) problem into the Longest Common Subsequence (LCS) problem?",
+      "ground_truth": "The author takes the original string S, creates a reversed copy rev(S), and computes the Longest Common Subsequence (LCS) between S and rev(S). Since any common subsequence of a string and its reverse reads identically forwards and backwards, it is guaranteed to be a palindrome, and the LCS length equals the LPS length.",
+      "expected_info": [
+        "reverse the original string S to create a second string rev(S)",
+        "call the LCS algorithm on the pair (S, rev(S))",
+        "LCS of string and its reverse is guaranteed to be a palindrome"
+      ],
+      "generated_answer": "The author solves the LPS problem by **running a Longest Common Subsequence (LCS) computation on the original string and on its reverse**.  \nBecause any subsequence that appears in both the string and its reversed copy reads the same forward and backward, the LCS of these two strings is exactly a longest palindromic subsequence.\n\n* “... you can just call the LCS function using the string S1 and you pass the reverse of S1 … you will get your answer …” [453 - 512]  \n* “... keep string T equal to S and we can say reverse of T … once you have reversed it it serves the return of LCS …” [498 - 555]  \n* “... the LCS of both the strings … is bound to be a palindrome because S2 is nothing but the reverse of S1 …” [406 - 467]  ",
+      "context_precision": 0.8,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "Most retrieved chunks are relevant, covering all expected facts, and the answer is fully supported by the citations, correct, and on‑topic.",
+      "retrieval_ms": 926.3,
+      "generation_ms": 8494.6
+    },
+    {
+      "id": 4,
+      "video": "DP 15: Partition Equal Subset Sum",
+      "query": "What is the first condition checked regarding the total sum S of the array in Partition Equal Subset Sum, and what happens if S is odd?",
+      "ground_truth": "The first condition checked is whether the total sum S of all array elements is odd or even. If S is odd, the function immediately returns false because an odd sum cannot be divided into two subsets with equal integer sums.",
+      "expected_info": [
+        "compute total sum S of all elements",
+        "check if total sum S is odd",
+        "if odd, return false immediately because equal integer split is impossible"
+      ],
+      "generated_answer": "**First condition:** The algorithm first checks whether the total sum S of the array is **odd**.  \n\n**If S is odd:** the function immediately returns **false**, because an odd total cannot be split into two subsets with equal sum.\n\n**Timestamps supporting this:**\n- [180 - 240] – “if S is odd … it’s not possible … return a false.”\n- [278 - 335] – “check for odd condition if it is odd then the answer will be false.”\n- [365 - 426] – “if the total sum is an odd number … I will have to return a false.”",
+      "context_precision": 0.96,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "The answer directly cites the retrieved chunks that state the odd‑sum check and the immediate false return, covering all expected facts with no hallucination, and it is concise and accurate.",
+      "retrieval_ms": 2000.0,
+      "generation_ms": 9981.0
+    },
+    {
+      "id": 5,
+      "video": "DP 7: Ninja's Training (2D DP)",
+      "query": "What is the time complexity and auxiliary space complexity of the memoized recursive solution for Ninja's Training?",
+      "ground_truth": "The time complexity is O(N * 4 * 3) which simplifies to O(N), because there are N * 4 DP states and for each state we iterate through 3 tasks. The auxiliary space complexity is O(N * 4) for the 2D DP memoization table plus O(N) recursion stack space, totaling O(N).",
+      "expected_info": [
+        "time complexity is O(N * 4 * 3) ~ O(N)",
+        "N * 4 states with 3 transitions per state",
+        "auxiliary space is O(N * 4) memo table + O(N) recursion stack"
+      ],
+      "generated_answer": "**Time complexity:** O(N · 4 · 3) ≈ O(N) – the memoized recursion visits each of the N × 4 states once, and for each state it may try up to 3 previous tasks.  \n**Auxiliary‑space complexity:** O(N · 4) – the memo table stores N × 4 values and the recursion stack adds at most O(N) extra frames (so the total extra space is still Θ(N · 4)).  \n\n**Timestamps**  \n- Time‑complexity statement: “n‑crossed 12 is the time complexity …” [1964 ‑ 2023]  \n- Space‑complexity (memo table) and recursion‑stack note: “the space complexity will be n‑cross 4 … the recursion stack space will be n” [1964 ‑ 2023]  ",
+      "context_precision": 0.9,
+      "context_recall": 1.0,
+      "faithfulness": 0.95,
+      "answer_relevance": 0.98,
+      "answer_correctness": 0.95,
+      "reasoning": "The retrieved chunks are largely relevant and cover all expected facts, the answer draws only from them, addresses the query directly, and is essentially correct though it slightly overstates total space as Θ(N·4) instead of simplifying to O(N).",
+      "retrieval_ms": 1933.1,
+      "generation_ms": 15372.5
+    },
+    {
+      "id": 6,
+      "video": "DP 3: Frog Jump (1 or 2 Stairs)",
+      "query": "How is the space complexity optimized from O(N) in tabulation down to O(1) in the Frog Jump problem?",
+      "ground_truth": "Because the recurrence dp[i] depends only on the two immediately preceding values dp[i-1] and dp[i-2], we can discard the full O(N) DP table and maintain only two scalar variables (prev and prev2). After computing the current step, we shift the variables forward, achieving O(1) auxiliary space.",
+      "expected_info": [
+        "current state depends only on previous two states (dp[i-1] and dp[i-2])",
+        "replace array with two scalar variables (prev and prev2)",
+        "space complexity reduces from O(N) to O(1)"
+      ],
+      "generated_answer": "The tabulation solution first creates a full `dp` array of length N, which gives **O(N)** space.  \nIn the frog‑jump recurrence the value at index i only needs the two previous results:\n\n- The recurrence is expressed as  \n  `dp[i] = min( dp[i‑1] + |h[i]‑h[i‑1]| , dp[i‑2] + |h[i]‑h[i‑2]| )` 【1819 ‑ 1878】  \n\nBecause each step depends **only on `dp[i‑1]` and `dp[i‑2]`**, we can drop the whole array and keep just two variables (e.g., `prev1` for `dp[i‑1]` and `prev2` for `dp[i‑2]`). While iterating from left to right we update these two variables and discard older values.\n\nThus the space needed changes from an `N`‑sized array (**O(N)**) to a constant number of scalar variables (**O(1)**). The speaker notes that this space optimization is applied to the problem【2184 ‑ 2240】.",
+      "context_precision": 0.5,
+      "context_recall": 0.67,
+      "faithfulness": 0.95,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "Two of the four retrieved chunks are directly used (relevant), covering most but not all expected facts; the answer is fully aligned with the ground truth and stays on topic, with only minor gaps in explicit source backing.",
+      "retrieval_ms": 2313.6,
+      "generation_ms": 11624.9
+    },
+    {
+      "id": 7,
+      "video": "DP 16: Partition Set With Min Absolute Sum Difference",
+      "query": "What formula is used to calculate the absolute difference between the two subset sums if one subset has sum s1?",
+      "ground_truth": "The formula used is |total_sum - 2 * s1| (or total_sum - 2 * s1 where s1 <= total_sum / 2), because if one subset has sum s1, the other subset has sum (total_sum - s1), so their difference is (total_sum - s1) - s1 = total_sum - 2 * s1.",
+      "expected_info": [
+        "subset 2 has sum = total_sum - s1",
+        "difference is |(total_sum - s1) - s1| = |total_sum - 2 * s1|",
+        "only need to check s1 up to total_sum / 2"
+      ],
+      "generated_answer": "The absolute difference is computed as  \n\n**|S₂ – S₁|**, which can be rewritten using the total sum of all elements ( total_sum ) as  \n\n**|total_sum – 2·s₁|**.  \n\n**Timestamps:**  \n- The formula is described in the segment where the speaker says “the absolute difference … is going to be total sum minus 2 into y” – [1413 - 1468]  \n- It is reiterated when explaining that S₂ = total sum – S₁ – [1362 - 1422]  ",
+      "context_precision": 1.0,
+      "context_recall": 0.67,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "All retrieved chunks are about the subset‑sum difference, so precision is perfect; the chunks cover the formula and the S2 expression but omit the half‑sum bound, yielding ~2/3 recall; the answer is fully supported by the cited passages, on‑topic, and matches the ground truth.",
+      "retrieval_ms": 2179.6,
+      "generation_ms": 12448.9
+    },
+    {
+      "id": 8,
+      "video": "DP 19: 0/1 Knapsack Problem",
+      "query": "Why does a greedy approach based on picking the highest value item first fail for the 0/1 Knapsack problem?",
+      "ground_truth": "A greedy approach fails because choosing the single highest-value item can consume so much bag capacity that no other items can fit, whereas taking a combination of multiple items with smaller weights can yield a greater total value (for example, taking items of weight 3 and 2 with values 40 + 30 = 90 beats taking a single item of weight 5 with value 60).",
+      "expected_info": [
+        "highest value item consumes too much weight capacity",
+        "combination of smaller weight items can yield higher total value",
+        "example: 40 + 30 = 90 is greater than 60"
+      ],
+      "generated_answer": "The greedy rule “always take the item with the highest value first” can fill the knapsack with a single heavy, high‑value item and leave too little capacity for the remaining items, even though a different combination of lighter items would give a larger total value. In the example from the video, the thief first picks the 60‑value item (weight 5) leaving only 1 unit of capacity, so no other items can be added and the total value is 60. The optimal choice would be the 40‑value (weight 3) and the 30‑value (weight 2) items, which fit together (total weight 5) and yield a value of 70. This shows that the greedy “pick highest value” strategy does not always produce the maximal total value.  \n\n**Relevant timestamps**:  \n- Explanation of the greedy idea and its failure: [273 - 332]  \n- Concrete counter‑example showing why the greedy choice is suboptimal: [319 - 377]",
+      "context_precision": 1.0,
+      "context_recall": 1.0,
+      "faithfulness": 0.8,
+      "answer_relevance": 0.95,
+      "answer_correctness": 0.85,
+      "reasoning": "The retrieved chunks are fully relevant and contain all expected facts; the answer stays on topic and mostly follows the context, but it misstates the optimal total value (70 vs 90), reducing faithfulness and correctness.",
+      "retrieval_ms": 2249.8,
+      "generation_ms": 11575.7
+    },
+    {
+      "id": 9,
+      "video": "DP 5: House Robber I (Maximum Sum of Non-Adjacent Elements)",
+      "query": "In Maximum Sum of Non-Adjacent Elements (Lecture 5), if you pick the element at the current index, why must the recursive call jump to index - 2 instead of index - 1?",
+      "ground_truth": "Because the problem explicitly forbids picking adjacent elements. If you choose (pick) the element at the current index, its immediate neighbor at index - 1 cannot be chosen, so the recursive subproblem must skip index - 1 and jump to index - 2.",
+      "expected_info": [
+        "constraint that no two adjacent elements can be picked",
+        "picking element at index means index - 1 is forbidden",
+        "must transition to index - 2"
+      ],
+      "generated_answer": "When we **pick** the element at the current index we are not allowed to pick its immediate neighbour (the “no‑adjacent” rule).  \nTherefore the next position we can consider is the element two places to the left, i.e., **index − 2**.  \n\nThe lecture explicitly says that after picking an element we “go to index minus two because index minus one cannot be” due to the no‑adjacent constraint【455 - 512】. The same reasoning is repeated when the speaker notes the “shuttle change … because there was a condition with no adjacent right”【589 - 646】 and again when explaining the recursion【542 - 603】.  \n\nSo the recursive call must jump to `index‑2` to respect the rule that selected elements cannot be adjacent.",
+      "context_precision": 1.0,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "The retrieved chunks directly state the no‑adjacent constraint and the need to jump to index‑2, which the answer faithfully summarizes and fully addresses the query.",
+      "retrieval_ms": 2379.1,
+      "generation_ms": 12671.9
+    },
+    {
+      "id": 10,
+      "video": "DP 22: Coin Change 2 (Ways to Make Coin Change)",
+      "query": "In the pick condition for Coin Change II, why does the index not decrement after choosing coin T[ind]?",
+      "ground_truth": "Because there is an infinite / unlimited supply of each coin denomination. After picking a coin of denomination coins[ind], the same coin denomination can be picked again for the remaining target amount, so the index remains at ind rather than decrementing to ind - 1.",
+      "expected_info": [
+        "infinite or unlimited supply of each coin",
+        "same coin can be picked multiple times",
+        "stay at the same index ind and only reduce the target"
+      ],
+      "generated_answer": "The index is **not** decremented after you pick `T[ind]` because the coin can be used an unlimited number of times.  \nWhen a coin has infinite supply you must stay at the same position so that the same coin can be chosen again; moving back to the previous index would prevent further picks of that coin.  \n\n**Relevant timestamps**  \n- “You don’t move back to the previous index… you will still stay at the same index… this index might be picked at the next instance.” [408 - 467]  \n- “Whenever there is something like infinite supply… you always will stand at the same index and you’ll just alter the target.” [748 - 807]  \n- “Take case… will still stay at the same because we can reuse it.” [585 - 641]  ",
+      "context_precision": 1.0,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "All retrieved chunks directly discuss the infinite supply and staying at the same index, covering every expected fact; the answer mirrors these points without adding unsupported claims and directly addresses the query.",
+      "retrieval_ms": 2368.6,
+      "generation_ms": 9508.2
+    },
+    {
+      "id": 11,
+      "video": "DP 4: Frog Jump with K Distances",
+      "query": "How does the recurrence relation for Frog Jump generalize when the frog is allowed to jump up to k stairs instead of just 1 or 2 stairs?",
+      "ground_truth": "The recurrence generalizes by taking the minimum energy over all possible jumps of length j from 1 to k: dp[i] = min_{1 <= j <= k, i - j >= 0} (dp[i - j] + |height[i] - height[i - j]|), with base case dp[0] = 0.",
+      "expected_info": [
+        "loop over all possible jumps j from 1 to k",
+        "recurrence: dp[i - j] + |height[i] - height[i - j]|",
+        "boundary check: i - j >= 0",
+        "take the minimum over all valid j"
+      ],
+      "generated_answer": "**Generalized recurrence**\n\nWhen the frog may jump any distance from 1 up to k stairs, the optimal energy for reaching stair `i` is the minimum over all possible last jumps:\n\n\\[\n\\text{dp}[i] = \n\\min_{1 \\le j \\le k,\\; i-j \\ge 0}\n\\Big( \\text{dp}[i-j] \\;+\\; |A[i] - A[i-j]| \\Big)\n\\]\n\n* **Base case:** `dp[0] = 0` (no energy is needed when the frog starts at the first stair).  \n* For any `i < 0` the transition is not considered.\n\n**Why it works**\n\n* The frog can arrive at stair `i` from any of the previous `k` stairs (`i‑1, i‑2, …, i‑k`).  \n* The cost of a jump from `i‑j` to `i` is the absolute height difference `|A[i] – A[i‑j]|`.  \n* Taking the minimum over all allowed jumps gives the least total energy needed to reach `i`.  \n\n**Supporting context**\n\n* The idea of extending the jump range to k stairs and using a loop over the possible jumps is described in the discussion of the recurrence and the “fall loop” implementation [41 - 100] and again when the speaker explains converting the multiple cases into a single loop up to k [181 - 242], [227 - 284].  ",
+      "context_precision": 0.9,
+      "context_recall": 0.95,
+      "faithfulness": 0.95,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "The retrieved chunks discuss extending the jump range to k and looping over possible jumps, covering all expected facts; the answer accurately states the generalized recurrence and stays on topic without hallucination.",
+      "retrieval_ms": 2283.9,
+      "generation_ms": 9899.4
+    },
+    {
+      "id": 12,
+      "video": "DP 25: Longest Common Subsequence (LCS)",
+      "query": "What is the definition of a subsequence in a string, and how does it differ from a substring?",
+      "ground_truth": "A subsequence is any sequence of characters from the string that maintains their original relative order, but the characters do not need to be contiguous (can skip characters). A substring must be a contiguous portion of the string with zero characters skipped.",
+      "expected_info": [
+        "subsequence preserves relative order but does not need to be contiguous",
+        "substring must be contiguous with no gaps",
+        "subsequence can skip characters"
+      ],
+      "generated_answer": "**Subsequence** – a sequence of characters that appears in the original string in the same order, but the characters do **not** have to be next to each other.  \n*Seen in the discussion of subsequences:* “The definition of sub sequence … it can be … not be consecutive …” [46‑106]\n\n**Substring** – a consecutive block of characters taken from the original string; all characters must be adjacent with no gaps.  \n*Seen in the definition of substrings:* “The definition of a sub string is any portion, any consecutive portion of a string taken out …” [0‑58]  \n\n**Difference:** A subsequence preserves the order only, allowing gaps, whereas a substring must be a contiguous, gap‑free segment of the string.",
+      "context_precision": 1.0,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "All retrieved chunks contain accurate definitions of subsequence and substring, covering every expected fact; the answer is fully grounded in those chunks, directly addresses the query, and matches the ground truth.",
+      "retrieval_ms": 1815.7,
+      "generation_ms": 12109.9
+    },
+    {
+      "id": 13,
+      "video": "DP 12: Minimum/Maximum Falling Path Sum in Matrix",
+      "query": "What value is returned in the recursion when a path moves out of matrix column boundaries (j < 0 or j >= m)?",
+      "ground_truth": "A very large sentinel value (such as 1e9 or -1e9 depending on min or max path sum) is returned so that the invalid out-of-bounds path is penalized and never selected in the optimal answer.",
+      "expected_info": [
+        "returns a very large sentinel value like 1e9 (or -1e9)",
+        "prevents invalid out-of-bounds column paths from being chosen",
+        "occurs when j < 0 or j >= m"
+      ],
+      "generated_answer": "When the recursive call goes out of the matrix column limits ( j < 0 or j ≥ m ), the function returns a sentinel “infinite” value – e.g., **1 e⁹** – so that this invalid path will not be chosen in the final result.  \n\n**Timestamp:** [667 - 725]",
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "Only one of the five retrieved chunks directly addresses the sentinel value for out‑of‑bounds, giving low precision, but that chunk covers all expected facts, so recall, faithfulness, relevance, and correctness are all high.",
+      "retrieval_ms": 1878.2,
+      "generation_ms": 9591.7
+    },
+    {
+      "id": 14,
+      "video": "DP 23: Unbounded Knapsack",
+      "query": "How does Unbounded Knapsack differ fundamentally from the 0/1 Knapsack problem in terms of item supply?",
+      "ground_truth": "Unbounded Knapsack has an infinite supply of each item, allowing any item to be picked unlimited times. In 0/1 Knapsack, there is only one copy of each item, so each item can be picked at most once.",
+      "expected_info": [
+        "unbounded knapsack has infinite / unlimited supply of each item",
+        "items can be picked multiple times",
+        "0/1 knapsack allows each item to be picked at most once"
+      ],
+      "generated_answer": "Unbounded Knapsack allows an **infinite supply of each item**, meaning a single item type can be selected repeatedly.  \nIn contrast, the 0/1 Knapsack permits **only one copy of each item** – an item can either be taken or not taken.\n\n- Infinite‑supply description: “there are infinite supply …” [42 - 106]  \n- Repeated‑selection explanation: “there will be something as an infinite supply of every item that means you can pick a single item as many times as you wish.” [97 - 153]",
+      "context_precision": 0.6,
+      "context_recall": 0.67,
+      "faithfulness": 0.8,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "The answer correctly states the key differences and is concise; the retrieved chunks include the needed facts for unbounded supply but only partially cover the 0/1 restriction, leading to moderate precision and recall and slight faithfulness loss.",
+      "retrieval_ms": 1862.4,
+      "generation_ms": 11351.1
+    },
+    {
+      "id": 15,
+      "video": "DP 13: Cherry Pickup II / Chocolates Pickup (3D DP)",
+      "query": "How are chocolates counted when both Alice and Bob land on the exact same cell in the grid?",
+      "ground_truth": "When Alice and Bob land on the exact same cell in the grid, the chocolates in that cell are counted only once (only one person collects them, not both).",
+      "expected_info": [
+        "chocolates in that cell are counted only once",
+        "only one person collects them",
+        "do not sum the cell value twice"
+      ],
+      "generated_answer": "When Alice and Bob land on the exact same cell, the chocolates in that cell are counted **only once** – only one of them picks up the chocolates.\n\n- This rule is stated when the shared cell is mentioned as being “counted once” [175 - 236].\n- It is also explained that “if both stay in the same cell, only one of them will pick the chocolates in it” [82 - 138].\n- The DP recurrence notes that “if Alice and Bob are both at the same cell, then you will just add it once” [1221 - 1278].\n- The base‑case discussion repeats that “if Alice reaches … and Bob also reaches … the same column, then it will only be added once” [762 - 826].\n- Finally, the base‑case handling clarifies that when they end at the same position only one grid value is added, otherwise both values are added [2003 - 2068].",
+      "context_precision": 1.0,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "All retrieved chunks directly address the rule that shared chocolates are counted once, covering all expected facts, and the answer accurately restates this without adding unsupported information.",
+      "retrieval_ms": 1693.3,
+      "generation_ms": 13771.2
+    },
+    {
+      "id": 16,
+      "video": "DP 11: Triangle Minimum Path Sum",
+      "query": "Why is starting recursion from (0, 0) and moving downward more natural for the triangle problem than starting from the bottom row?",
+      "ground_truth": "Because the triangle problem has a single fixed starting point at the apex (0, 0) but multiple variable endpoints in the bottom row. Starting top-down from (0, 0) provides a single clean recursive entry point, whereas starting bottom-up would require launching separate recursive calls from every column in the last row.",
+      "expected_info": [
+        "single fixed starting point at apex (0, 0)",
+        "multiple variable ending points in the bottom row",
+        "top-down avoids multiple bottom entry points"
+      ],
+      "generated_answer": "Starting the recursion at the triangle’s fixed top element (0, 0) and moving downward follows the natural direction of the problem: the path always begins at the single top cell and can end at any cell in the last row. By recursing from (0, 0) we only need one base case (the bottom row) and avoid handling four possible starting columns at the bottom, which would make the recurrence more complicated. This top‑down approach is therefore simpler and more “preferable” than starting from the bottom row.  \n\n**Relevant timestamps**  \n- The recursion is defined from f(0, 0) because the start is fixed and the end can be any column in the last row [462 - 518].  \n- It is “logically preferable” to start at the top and go down rather than start from the back (bottom) where multiple columns would need to be considered [419 - 477].",
+      "context_precision": 0.86,
+      "context_recall": 0.95,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.95,
+      "answer_correctness": 1.0,
+      "reasoning": "The retrieved chunks largely discuss the single fixed start at (0,0) and variable bottom endpoints, supporting the answer; the answer faithfully reflects these points and directly addresses the query with correct reasoning.",
+      "retrieval_ms": 1969.8,
+      "generation_ms": 9397.6
+    },
+    {
+      "id": 17,
+      "video": "DP 9: Grid Unique Paths II (Maze with Obstacles)",
+      "query": "How is a cell with an obstacle represented in the grid, and what should dp[i][j] be set to when an obstacle is encountered?",
+      "ground_truth": "An obstacle cell is marked with the value -1 in the grid. When an obstacle is encountered at cell (i, j), dp[i][j] should be set to 0 (or recursion returns 0) because zero paths can pass through a blocked cell.",
+      "expected_info": [
+        "obstacle cell is represented by -1",
+        "dp[i][j] is set to 0 (or returns 0)",
+        "no paths can pass through an obstacle"
+      ],
+      "generated_answer": "A cell that cannot be entered (an obstacle / dead‑end) is stored in the input grid with the value **‑1**.  \nWhen the algorithm reaches such a cell it must treat it as impossible to reach, so the DP entry for that position is set to **0** (i.e., `dp[i][j] = 0`).  \n\n**Relevant timestamps**  \n- The obstacle is defined as “minus one” … [44 - 101]  \n- The check “if array[i][j] == -1 then it’s definitely not possible” … [229 - 284]  ",
+      "context_precision": 1.0,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "All retrieved chunks discuss the -1 obstacle representation and setting dp[i][j] to 0, fully covering the expected facts; the answer mirrors these points exactly without extraneous content.",
+      "retrieval_ms": 1699.4,
+      "generation_ms": 11714.2
+    },
+    {
+      "id": 18,
+      "video": "DP 51: Burst Balloons (Partition DP)",
+      "query": "In the Burst Balloons problem, when balloon index ind is chosen as the last balloon to burst in the range [i, j], what is the formula for the coins gained from bursting ind itself?",
+      "ground_truth": "The coins gained from bursting balloon ind as the last balloon in range [i, j] is A[i-1] * A[ind] * A[j+1], where A[i-1] and A[j+1] are the boundary neighbor values adjacent to the subproblem range.",
+      "expected_info": [
+        "formula: A[i-1] * A[ind] * A[j+1]",
+        "product of left boundary, balloon value, and right boundary",
+        "padded with 1 at both ends"
+      ],
+      "generated_answer": "**Formula**\n\nWhen balloon `ind` is taken as the last balloon to burst in the sub‑range `[i, j]`, the coins obtained from bursting `ind` itself are  \n\n\\[\n\\text{coins} = \\text{nums}[i-1] \\times \\text{nums}[ind] \\times \\text{nums}[j+1]\n\\]\n\nwhere `nums` is the original balloon array (with virtual `1`s added at both ends).\n\n**Supporting timestamps**  \n- Explanation of using the left neighbor `A[i‑1]`, the balloon itself `A[ind]`, and the right neighbor `A[j+1]` as the coin value — [965 - 1020]  \n- Example showing the product of left, current, and right values (e.g., `1 * 5 * 8 = 40`) — [41 - 99]",
+      "context_precision": 0.5,
+      "context_recall": 0.7,
+      "faithfulness": 0.6,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "The answer provides the correct formula and is on‑topic; the retrieved chunks include some mentions of left, current, and right values, giving moderate precision and recall, but the virtual‑1 padding detail is not present in the context, lowering faithfulness.",
+      "retrieval_ms": 1686.5,
+      "generation_ms": 12701.7
+    },
+    {
+      "id": 19,
+      "video": "DP 17: Count Subsets with Sum K",
+      "query": "Why does the existence of zeros (0) in the array require special handling in Count Subsets with Sum K?",
+      "ground_truth": "Because an element with value 0 does not alter the running sum, so each zero can either be included or excluded in any valid subset without changing the subset sum. This creates 2^count_of_zeros distinct subsets for every valid combination, requiring special base-case handling.",
+      "expected_info": [
+        "zero element does not change the running sum",
+        "can either be picked or not picked",
+        "each zero doubles the number of valid subsets (2^k)"
+      ],
+      "generated_answer": "Zeros must be treated specially because they do not change the running sum. When the target sum becomes 0, any subset that includes or excludes a zero is still a valid solution, so the DP must return 1 for a sum of 0 instead of the usual 0. This also affects the base‑case: at index 0 the function should return 1 only when the element equals the remaining sum (or the sum is 0), otherwise 0 ([746 - 804]; [796 - 851]). Without this handling, subsets that contain zeros would be missed or counted incorrectly.",
+      "context_precision": 0.9,
+      "context_recall": 0.5,
+      "faithfulness": 0.95,
+      "answer_relevance": 0.85,
+      "answer_correctness": 0.6,
+      "reasoning": "The answer correctly notes that zeros don’t affect the sum and need a special DP base case, which is supported by the retrieved chunks, but it omits the key fact that each zero doubles the number of valid subsets (2^k), leading to partial correctness.",
+      "retrieval_ms": 1846.2,
+      "generation_ms": 12488.7
+    },
+    {
+      "id": 20,
+      "video": "DP 10: Minimum Path Sum in Grid",
+      "query": "What two directions of movement are permitted in the Minimum Path Sum in Grid problem?",
+      "ground_truth": "The only two permitted directions of movement are moving downward (to cell i + 1, j) or moving rightward (to cell i, j + 1).",
+      "expected_info": [
+        "moving downward (down)",
+        "moving rightward (right)",
+        "only 2 directions allowed"
+      ],
+      "generated_answer": "The Minimum Path Sum in Grid problem allows movement only **downward** (to the cell below) and **rightward** (to the cell to the right) — you cannot move up or left.  \n\n**Timestamp:** [91 - 151]",
+      "context_precision": 0.2,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "Only one of the five retrieved chunks directly mentions the allowed down and right moves, giving low precision, but that chunk covers all required facts, so recall, faithfulness, relevance, and correctness are perfect.",
+      "retrieval_ms": 1852.4,
+      "generation_ms": 15144.8
+    },
+    {
+      "id": 21,
+      "video": "DP 27: Longest Common Substring",
+      "query": "How does the recurrence for Longest Common Substring differ from LCS when characters do not match (S1[i-1] != S2[j-1])?",
+      "ground_truth": "For Longest Common Substring, a mismatch resets dp[i][j] = 0 because a substring must be contiguous and any mismatch breaks the chain. For LCS, a mismatch carries forward the best result so far using max(dp[i-1][j], dp[i][j-1]).",
+      "expected_info": [
+        "Longest Common Substring resets dp[i][j] = 0 on mismatch",
+        "substring must be contiguous",
+        "LCS takes max(dp[i-1][j], dp[i][j-1])"
+      ],
+      "generated_answer": "**Recurrence difference when the characters differ ( S1[i‑1] ≠ S2[j‑1] ):**\n\n* **Longest Common Subsequence (LCS)** – the DP entry keeps the best length found so far, so a mismatch is handled by taking the larger of the two possibilities that drop one character from either string:  \n\n  `dp[i][j] = max(dp[i‑1][j], dp[i][j‑1])`  [150 - 207]\n\n* **Longest Common Substring** – the substring must be contiguous; a mismatch breaks the current run, so the DP entry is reset to zero:  \n\n  `dp[i][j] = 0`  [98 - 157]\n\nThus, for a mismatch LCS uses a *max‑of‑neighbors* rule, while Longest Common Substring uses a *reset‑to‑zero* rule.",
+      "context_precision": 0.9,
+      "context_recall": 0.67,
+      "faithfulness": 0.6,
+      "answer_relevance": 0.95,
+      "answer_correctness": 1.0,
+      "reasoning": "The retrieved chunks mostly cover LCS recurrence and discuss substring DP, but they lack an explicit statement that a mismatch resets dp to zero, so recall and faithfulness are limited while the answer itself is correct and on‑topic.",
+      "retrieval_ms": 1679.1,
+      "generation_ms": 12555.5
+    },
+    {
+      "id": 22,
+      "video": "DP 21: Target Sum",
+      "query": "If total_sum - target is negative or is an odd number, what should the Target Sum function return?",
+      "ground_truth": "The Target Sum function should immediately return 0 because it is mathematically impossible to partition the array with subset sum difference equal to target if total_sum - target < 0 or if total_sum - target is odd.",
+      "expected_info": [
+        "returns 0",
+        "total_sum - target < 0 is impossible",
+        "total_sum - target odd cannot be divided by 2"
+      ],
+      "generated_answer": "The Target Sum routine should immediately stop and indicate that there are **no valid ways** when the expression  \n\n```\ntotal_sum – target\n```  \n\nis either negative or an odd number. In that situation the function should return **0** (zero ways).  \n\n**Relevant timestamps**\n\n- The check for an odd total sum (which makes equal‑subset division impossible) is described in the Partition‑Equal‑Subset‑Sum segment: **[365 – 426]**.  \n- The formulation of the Target‑Sum problem as a two‑subset difference is introduced in the Target‑Sum segment: **[330 – 389]**.  \n\nTogether these imply that when `total_sum – target` is negative or odd, the Target‑Sum function must return **0**.",
+      "context_precision": 0.6,
+      "context_recall": 0.67,
+      "faithfulness": 0.4,
+      "answer_relevance": 0.95,
+      "answer_correctness": 1.0,
+      "reasoning": "Three of the five retrieved chunks directly discuss the odd‑sum or negative‑difference cases, giving a precision of 0.6; they cover two of the three expected facts, yielding recall ~0.67. The answer adds a return‑0 claim not explicitly stated in the context, lowering faithfulness. It directly answers the query concisely, and its content matches the ground truth.",
+      "retrieval_ms": 1943.9,
+      "generation_ms": 15258.6
+    },
+    {
+      "id": 23,
+      "video": "DP 14: Subset Sum Equal to Target",
+      "query": "What are the two choices considered at each element in the recursive function for Subset Sum Equal to Target?",
+      "ground_truth": "The two choices considered at each element are: 1) Take (pick) the element (include it in the subset and decrement the target by arr[ind]), and 2) Not Take (exclude) the element (do not include it and keep the target unchanged).",
+      "expected_info": [
+        "Take (include element and reduce target)",
+        "Not Take (exclude element and keep target unchanged)",
+        "two recursive branches at each index"
+      ],
+      "generated_answer": "The recursive function makes **two possible decisions for every array element**:\n\n1. **Take the element** – include the current index’s value in the subset (reduce the target accordingly).  \n2. **Don’t take the element** – skip the current index and keep the target unchanged.\n\nThese two choices are described in the video at:\n\n- “... either you take the element into consideration or you say I’m not going to take this element.” [1130 - 1189]  \n- “There will be two possibilities … array of index is the part of the sub‑sequence or array of index is not part of the sub‑sequence.” [366 - 424]",
+      "context_precision": 0.8,
+      "context_recall": 1.0,
+      "faithfulness": 0.95,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "Four of the five retrieved chunks explicitly describe the take/not‑take choices, covering all expected facts, so recall is perfect; one chunk is less relevant, lowering precision, while the answer stays faithful, on‑topic, and correct.",
+      "retrieval_ms": 1835.4,
+      "generation_ms": 12499.6
+    },
+    {
+      "id": 24,
+      "video": "DP 2: Climbing Stairs",
+      "query": "What are the three shortcut steps taught in Lecture 2 (Climbing Stairs) for writing any Dynamic Programming recurrence relation in terms of an index?",
+      "ground_truth": "1) Represent the problem in terms of index, 2) Do all possible actions/choices on that index according to problem statement, 3) Combine the results: sum all ways if counting, take min if finding minimum, or take max if finding maximum.",
+      "expected_info": [
+        "step 1: represent problem in terms of index",
+        "step 2: do all possible actions / choices on that index",
+        "step 3: sum all ways if count, min if minimum, max if maximum"
+      ],
+      "generated_answer": "**Three shortcut steps for writing any DP recurrence (Lecture 2 – “Climbing Stairs”)**\n\n1. **Express the problem in terms of an index** – rewrite the sub‑problem using a position (e.g., an array index, step number, day, etc.).  \n   *[275 - 332]*  \n\n2. **Perform all possible actions on that index** – enumerate every choice you can make at that position according to the problem statement.  \n   *[275 - 332]*  \n\n3. **Combine the results according to what the question asks** –  \n   * if the task is to **count all ways**, **sum** the values from step 2;  \n   * if it asks for a **minimum**, take the **minimum** of those values;  \n   * if it asks for a **maximum**, take the **maximum** of those values.  \n   *[275 - 332]* and reiterated in *[320 - 378]*.",
+      "context_precision": 0.8,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "Most retrieved chunks contain the three-step shortcut, so precision is high but not perfect; all expected facts appear in the context, and the answer faithfully mirrors those facts without hallucination.",
+      "retrieval_ms": 1921.1,
+      "generation_ms": 12975.3
+    },
+    {
+      "id": 25,
+      "video": "DP 24: Rod Cutting Problem",
+      "query": "In the Rod Cutting problem base case at index 0 (where rod piece length is 1), why is the return value equal to N * price[0]?",
+      "ground_truth": "At index 0, the rod piece length is 1. To make up the remaining rod length N using only length-1 pieces, we must take exactly N pieces of length 1. Each piece earns price[0], so the total price obtained is N * price[0].",
+      "expected_info": [
+        "at index 0 rod piece length is 1",
+        "to form length N we take N pieces of length 1",
+        "each piece contributes price[0], giving N * price[0]"
+      ],
+      "generated_answer": "The base case corresponds to the smallest rod piece (index 0 → length 1).  \nIf we need to cut a rod of total length **N** and we are only allowed to use this piece, the only way to obtain length N is to take **N** pieces of length 1.  \nEach such piece sells for `price[0]`, so the maximum revenue in this situation is:\n\n```\nrevenue = N * price[0]\n```\n\nThus the function returns `N * price[0]` at index 0 because the rod must be formed entirely from N pieces of length 1, each contributing `price[0]` to the total price.  \n\n**Relevant timestamps**:  \n- Explanation of using N pieces of length 1 and returning `N * price[0]` – [709 - 764]  \n- Direct statement of the base‑case return value – [928 - 984]",
+      "context_precision": 1.0,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "The retrieved chunks explicitly explain the base case at index 0 as using N pieces of length 1, each priced price[0], yielding N * price[0]; the answer mirrors this without adding unsupported information.",
+      "retrieval_ms": 1767.9,
+      "generation_ms": 11739.0
+    },
+    {
+      "id": 26,
+      "video": "DP 20: Minimum Coins (Coin Change)",
+      "query": "In Minimum Coins (DP 20), why is 1e9 returned instead of INT_MAX in the base case when a target cannot be formed, specifically when adding 1 + f(ind, T - coins[ind])?",
+      "ground_truth": "Because when the recursion adds 1 for the current coin (1 + f(...)), adding 1 to INT_MAX causes integer overflow (wrapping around to negative numbers). Returning a safe large value like 1e9 acts as infinity while preventing integer overflow.",
+      "expected_info": [
+        "1 + INT_MAX causes integer overflow",
+        "wrapped negative numbers would break min() calculation",
+        "1e9 acts as safe infinity without overflowing 32-bit int"
+      ],
+      "generated_answer": "**Answer**\n\n`INT_MAX` is the largest value an `int` can hold.  \nIf a recursive call returns `INT_MAX` (meaning “impossible”) and we add `1` for the current coin – i.e. compute `1 + f(ind, T‑coins[ind])` – the addition would overflow the integer range. The overflow would wrap around to a negative number or produce undefined behaviour, breaking the DP logic.\n\nTo avoid this, the solution uses a large but **safe** constant such as `1e9` (one billion) instead of `INT_MAX`.  \n`1e9` is still bigger than any realistic answer, but adding `1` (or a few more) to it never exceeds the `int` limit, so the “infinite” sentinel stays valid without causing overflow.\n\n**Timestamps supporting this explanation**\n\n- The need to avoid overflow when adding `1` to a value that may already be `INT_MAX` is explained in the segment where the speaker says:  \n\n  *“...you’re adding one plus one plus if any of the function gives `INT_MAX` it’ll be `1e9`… `INT_MAX` plus one plus one will overflow… so you return something as `1e9` to prevent overflow.”*  \n\n  **[969 – 1026]**\n\n- The same reasoning is reiterated later, emphasizing that using `1e9` prevents overflow when the answer is “infinite”:  \n\n  *“...if the answer goes beyond… we return `1e9`… otherwise `INT_MAX + 1 + 1` would overflow.”*  \n\n  **[1015 – 1071]**\n\nHence, `1e9` is chosen as the “infinite” placeholder to keep arithmetic safe in the recurrence `1 + f(ind, T‑coins[ind])`.",
+      "context_precision": 0.9,
+      "context_recall": 0.8,
+      "faithfulness": 0.9,
+      "answer_relevance": 0.95,
+      "answer_correctness": 1.0,
+      "reasoning": "The retrieved chunks largely discuss INT_MAX overflow and using 1e9 as a safe infinity, covering most expected facts. The answer stays on topic, correctly explains the overflow issue, and is well‑aligned with the ground truth.",
+      "retrieval_ms": 1672.7,
+      "generation_ms": 10716.8
+    },
+    {
+      "id": 27,
+      "video": "DP 8: Grid Unique Paths (Total Unique Paths)",
+      "query": "In the tabulation solution for Grid Unique Paths (DP 8), how are the 'up' and 'left' variables computed when i > 0 and j > 0?",
+      "ground_truth": "When i > 0 and j > 0, the 'up' variable is computed as dp[i - 1][j] (the value from the cell directly above), and the 'left' variable is computed as dp[i][j - 1] (the value from the cell directly to the left). The current cell is then dp[i][j] = up + left.",
+      "expected_info": [
+        "up = dp[i - 1][j] (cell directly above)",
+        "left = dp[i][j - 1] (cell directly to left)",
+        "current cell dp[i][j] = up + left"
+      ],
+      "generated_answer": "**Answer**\n\nWhen both indices are inside the grid (i > 0 and j > 0), the tabulation computes  \n\n- **up** = dp[i‑1][j]  // the number of ways to reach the cell directly above, and  \n- **left** = dp[i][j‑1] // the number of ways to reach the cell directly to the left.  \n\nThe value for the current cell is then set to **dp[i][j] = up + left**.\n\n**Timestamps**  \n- Explanation of using `up` and `left` and handling the i = 0 / j = 0 edge case: **[1833 - 1893]**  \n- Direct statement that `up = dp[i‑1][j]` and `left = dp[i][j‑1]`: **[1791 - 1847]**  ",
+      "context_precision": 0.6,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "Three of the five retrieved chunks directly define up and left, giving a precision of 0.6, while all expected facts are present in the context, yielding full recall; the answer is fully supported by the context, accurate, and directly addresses the query.",
+      "retrieval_ms": 1925.8,
+      "generation_ms": 12513.8
+    },
+    {
+      "id": 28,
+      "video": "DP 1: Introduction to Dynamic Programming (Fibonacci)",
+      "query": "In Lecture 1 (Introduction to Dynamic Programming), what are the two main DP approaches (Memoization and Tabulation) and how do their directions (top-down vs bottom-up) differ?",
+      "ground_truth": "The two approaches are: 1) Memoization, which is Top-Down (starts from the original problem, makes recursive calls down to base cases, and caches computed values), and 2) Tabulation, which is Bottom-Up (starts from the base cases at index 0 and iteratively fills the DP table up to the final answer).",
+      "expected_info": [
+        "Memoization is Top-Down (recursion + caching from N down to base case)",
+        "Tabulation is Bottom-Up (iterative table filling from base case up to N)",
+        "caching vs iterative state transitions"
+      ],
+      "generated_answer": "**DP approaches in Lecture 1**\n\n- **Memoization** – a *top‑down* dynamic‑programming technique.  \n  *Timestamp:* [172 - 232]\n\n- **Tabulation** – a *bottom‑up* dynamic‑programming technique.  \n  *Timestamp:* [172 - 232]\n\n**Additional mentions**\n\n- The lecture introduces both approaches and later discusses their time‑ and space‑complexities.  \n  *Timestamps:* [131 - 187] (introduction of memoization & tabulation) and [222 - 281] (covers memoization first, then tabulation).\n\n**Direction difference**\n\n- *Top‑down* (memoization) solves sub‑problems as needed, storing results for future reuse.  \n- *Bottom‑up* (tabulation) builds a table iteratively from the smallest sub‑problems up to the final answer.",
+      "context_precision": 0.9,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 0.95,
+      "answer_correctness": 1.0,
+      "reasoning": "The retrieved chunks are all about memoization and tabulation, so precision is high; they contain all expected facts, giving perfect recall. The answer restates only information found in the chunks and correctly describes the two approaches and their top‑down/bottom‑up directions, making it faithful, relevant, and correct.",
+      "retrieval_ms": 2042.1,
+      "generation_ms": 12601.6
+    },
+    {
+      "id": 29,
+      "video": "DP 29: Minimum Insertions to Make a String Palindrome",
+      "query": "What is the exact formula for the minimum insertions to make a string palindrome in terms of string length n and the length of the Longest Palindromic Subsequence (LPS)?",
+      "ground_truth": "The exact formula is: Minimum insertions = n - len(LPS), where n is the total length of the original string and len(LPS) is the length of its Longest Palindromic Subsequence.",
+      "expected_info": [
+        "formula: n - LPS (or n - len(LPS))",
+        "length of string minus length of Longest Palindromic Subsequence",
+        "keeping LPS intact minimizes required insertions"
+      ],
+      "generated_answer": "The minimum number of insertions required to turn a string into a palindrome is:\n\n**Minimum insertions = n − LPS**\n\nwhere **n** is the length of the original string and **LPS** is the length of its Longest Palindromic Subsequence.\n\n**Relevant timestamps**\n\n- [584 - 644] – “So it's simply N minus longest palindromic sub sequence…”\n- [535 - 592] – “the number of insertules that I have to do, will be the length of the string, minus the longest palindromic sub sequence…”\n- [630 - 687] – “now I return str.size minus longest palindromic of str.”",
+      "context_precision": 1.0,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "All retrieved chunks directly provide the formula n‑LPS and mention preserving the LPS, covering all expected facts. The generated answer mirrors this information exactly, is concise, and contains no unsupported statements.",
+      "retrieval_ms": 2023.9,
+      "generation_ms": 10162.8
+    },
+    {
+      "id": 30,
+      "video": "DP 30: Minimum Insertions/Deletions to Convert String 1 to String 2",
+      "query": "In DP 30, what are the formulas for the number of deletions (n - len(LCS)) and the number of insertions (m - len(LCS)) to convert String 1 of length n into String 2 of length m?",
+      "ground_truth": "Number of deletions from String 1 = n - len(LCS), and number of insertions into String 1 = m - len(LCS), where n and m are the lengths of String 1 and String 2 respectively and len(LCS) is the length of their Longest Common Subsequence.",
+      "expected_info": [
+        "deletions = n - len(LCS)",
+        "insertions = m - len(LCS)",
+        "total operations = (n - len(LCS)) + (m - len(LCS))"
+      ],
+      "generated_answer": "**Number of deletions:**  \n\\( \\displaystyle \\text{deletions} = n - \\text{len(LCS)} \\)  \n\n**Number of insertions:**  \n\\( \\displaystyle \\text{insertions} = m - \\text{len(LCS)} \\)  \n\n*These formulas are given in the video segment covering the explanation of how deletions and insertions relate to the length of the Longest Common Subsequence.*  \n\n**Timestamp:** [319 - 376]",
+      "context_precision": 0.25,
+      "context_recall": 1.0,
+      "faithfulness": 1.0,
+      "answer_relevance": 1.0,
+      "answer_correctness": 1.0,
+      "reasoning": "The answer cites the exact formulas found in the first retrieved chunk and stays faithful to it; however only one of the four retrieved chunks is directly relevant to the specific formulas, yielding low precision, while all expected facts are covered, giving perfect recall, faithfulness, relevance, and correctness.",
+      "retrieval_ms": 1544.3,
+      "generation_ms": 11615.7
+    }
+  ]
+}

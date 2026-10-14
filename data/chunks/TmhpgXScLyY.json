@@ -1,0 +1,87 @@
+[
+  {
+    "start": 0.0,
+    "end": 59.18,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] Hey everyone, welcome back to another lecture of the DPCDs. I hope you guys are doing extremely well. Yes. So we were doing Dp on grits and the previous question we did during the parts. I will be doing another question which is quite similar to that. I can be wondering if that question this question will be a cake work and I will not be taking that long to explain this question. The question states maze obstacles. It says a given an n cross m maze with obstacles. You have to  count and return the number of parts to reach the right bottom self from the top left. Similar  question to the previous one. But oh yeah there's a slight change. A cell in the given maze has a value  minus one. If it is a blockage or dead end like if the cell is blockage or dead end. L is 0. If it is minus one it is a dead cell. If it is 0 you can visit that. So from a given cell we allowed to move to cells i plus 1 j like similar bottom"
+  },
+  {
+    "start": 44.44,
+    "end": 101.27,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] If it is a blockage or dead end like if the cell is blockage or dead end. L is 0. If it is minus one it is a dead cell. If it is 0 you can visit that. So from a given cell we allowed to move to cells i plus 1 j like similar bottom or you can move to the right. So from a given cell you can move bottom or right similar. So in the answer can be  large you have to print it like in how many ways you can reach. Same question slightly change. Like I'll just take this example and it explains you. So it states a assume this is the grid which is having something like this. And they are asking you in how many ways can you reach from this cell  to the cell. Had this been previous question you could have said this is a one way this is another way this is another way this is one way this is one way this is one way but over here there is a slight different condition they state."
+  },
+  {
+    "start": 86.5,
+    "end": 146.55,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] Had this been previous question you could have said this is a one way this is another way this is another way this is one way this is one way this is one way but over here there is a slight different condition they state. If there is a like this is a dead cell remember this this is a dead  you cannot go via a dead cell. So if you cannot go via a dead cell then I guess this is one of the ways in which you can go to the end that's one of the ways. The other way that I can see is you can  directly go from here. So I see there are couple of ways in which you can go from the specific 0  comma 0 to 2 comma 2. So there is only couple of ways in which you can go. So in previous question it was moreover how many ways without having dead cells as a slide inclusion over here I assign dead cells to you. So we will just super quickly write the recurrence that we wrote in the previous question and then"
+  },
+  {
+    "start": 137.44,
+    "end": 196.56,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] over here I assign dead cells to you. So we will just super quickly write the recurrence that we wrote in the previous question and then try to see if there is a modification that we can do in order to get the same stuff. So rule number one was very simple express it in terms of i and j. So I will not go into so I'll just write i equal to 0 and and j is equal to 0. Same thing see return one. Same same. If i is less than 0 or j is less than 0 you definitely cannot see again either you can go to up which is f of i minus 1 j or either you can go to left which is f of i comma j minus 1 and at the end of the day you can say return up plus left as simple as it gets. This was the unique parts. This  was the answer that we did in unique parts. Over your what is the slide addition that has been done."
+  },
+  {
+    "start": 181.84,
+    "end": 240.0,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] you can say return up plus left as simple as it gets. This was the unique parts. This  was the answer that we did in unique parts. Over your what is the slide addition that has been done. The slide addition that has been done is a dead cell. What is a dead cell? If any of the matrix ij is having a value minus 1 then we call it as a dead cell and we cannot go via that. So can I say if accidentally I reach a dead cell there is no way. If accidentally I reach a  dead cell in recursion there is no way. Okay make sense. So can I say there is an addition of one more case to the answer addition of one more base case to the previous question. Makes sense yeah that does makes sense. So can I say if at any moment or like if it's a valid cell"
+  },
+  {
+    "start": 229.04,
+    "end": 284.55,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] more base case to the previous question. Makes sense yeah that does makes sense. So can I say if at any moment or like if it's a valid cell like it's a valid cell something like i like what I can do is let's it's be a smart enough. Really bring this line right above it and write if i is something like greater than equal to 0 and and j is greater than equal to 0 and and array of ij is equal to minus 1 then it's definitely not possible and yes that case will still stay which is this case still stays. So can I say there is an inclusion of one more edge case which states if it's a valid cell and that cell is a dead cell. You cannot go any via further."
+  },
+  {
+    "start": 270.43,
+    "end": 328.43,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] still stays. So can I say there is an inclusion of one more edge case which states if it's a valid cell and that cell is a dead cell. You cannot go any via further. Then I directly return a 0. Needless so I add a simple one extra is I simply add one extra case where I say it's not possible if it's a dead cell. So yeah simple one line of addition to the previous question and it does solve it. Next step  I should quite simple. Audiva Mies again I've been tired of saying how do you memorize dp of ij equal to over here and over here if dp of ij not equal to minus 1 then you return dp of ij correct. So you wrote the tabulation as well. So let's quickly write the tabulation."
+  },
+  {
+    "start": 314.8,
+    "end": 371.83,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] here and over here if dp of ij not equal to minus 1 then you return dp of ij correct. So you wrote the tabulation as well. So let's quickly write the tabulation. What is the tabulation? Tabulation was i equal to 0 till m minus 1 and the tabulation was j equal to 0 till n minus 1 and Audio note was if i is equal to 0 and and j is equal to 0 you made dp of ij equal to 1. Right because there's only one way and where there's there'll be one more case that will be added. What is that case for any i of j this at this case? For any i of j yes for any i of j which is greater than 0 it is definitely. So there is no  need to externally check if it is something like a greater than 0."
+  },
+  {
+    "start": 358.52,
+    "end": 416.64,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] For any i of j yes for any i of j which is greater than 0 it is definitely. So there is no  need to externally check if it is something like a greater than 0. I can say if any of the array of ij is marked as minus 1 I can say dp of ij will be 0 there'll be no ways else if this and the else will still stay as same up will be dp of i minus 1 j same same same same. Exactly same so make sure you watch the previous lecture you can make sure you watch the previous lecture otherwise there is an issue like don't say without watching the previous lecture don't say strive we did not understand this lecture up plus left and you can return it by the way just make sure if i is greater than 0 and if j is greater than 0 and after this space"
+  },
+  {
+    "start": 405.02,
+    "end": 464.01,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] did not understand this lecture up plus left and you can return it by the way just make sure if i is greater than 0 and if j is greater than 0 and after this space optimization can be done. Similar just in the tabulation add up this line just in the tabulation add up this line otherwise every line of the code stay same to the previous lecture create unique parts that we did. So please watch that lecture because it's just a single line addition that we did apart from that and not going to explain anything else so one thing you've written on the answer in terms of modulo so probably we can define the modulo globally as integer and then we can define it into 1 e9 plus 7 so just make sure you declare the modulo global e every time okay so obviously ij i and dj and you have a vector this time so vector vector 88 modulo matrix"
+  },
+  {
+    "start": 452.04,
+    "end": 513.76,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] 1 e9 plus 7 so just make sure you declare the modulo global e every time okay so obviously ij i and dj and you have a vector this time so vector vector 88 modulo matrix that's for sure and there's one different case this time which is this case and the matrix of ij if that's a dead cell editor on a 0 apart from this the entire code stays the same so this quickly copy paste. So we see this this runs and also an accept please do a dp either way over your m cross n so n cross m rather the really you can write vector of n cross minus 1 and once you've done this you can definitely pass on the dp at a base step at every step just make sure you pass on the dp at every step and away you can just follow same dp done and before returning just make sure you tune it dp of ij and away"
+  },
+  {
+    "start": 499.8,
+    "end": 557.96,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] every step just make sure you pass on the dp at every step and away you can just follow same dp done and before returning just make sure you tune it dp of ij and away here dp of ij if that's not equal to minus 1 return dp of ij correct and yeah that's you should be fine so just make sure you do a mod every time that's make sure you do a mod every time whenever you're storing it just do a mod every time that's it should be fine so if i submit this we see it is exceeding time limit so let's let's quickly try out the tabulation format let's see if over there also we can attain limit exceeded a word vector nod so let's quickly write that off so the first thing that you do if this is just"
+  },
+  {
+    "start": 549.78,
+    "end": 611.11,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] word vector nod so let's quickly write that off so the first thing that you do if this is just copy paste these conditions i think that should be the easiest if matrix of ij is equal to minus 1 this makes sure dp of ij is equal to 0 else if it's i equal to 0 and and j equal to 0 you can keep dp of ij equal to 1 else you know it's very simple the apple b 0 the left will be 0 and if i is greater than 0 you can say apple b dp of i minus 1 and j and similarly if j is greater than 0 you can say left will be dp of i and j minus 1 and at the end of the day you can just rid of plus left okay that's that's simple as this so instead of returning where it will storage dp of ij correct and over here you can"
+  },
+  {
+    "start": 596.19,
+    "end": 654.06,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] at the end of the day you can just rid of plus left okay that's that's simple as this so instead of returning where it will storage dp of ij correct and over here you can directly return dp of n minus 1 and m minus 1 as the answer let's make sure whenever you store something over here you do a modulo so that we don't have any issues let's quickly run this up so it's okay ij is modulo let's give me this and run it who runs let's submit it and say for the ij dp box yeah the ij dp box so you saw a prime example i wrote a recursive m ij dp it gave you a tl because of the stack space that you tend to use and ij to give dp box right it can still space optimize it i don't know how to space optimize it very simple what we do is"
+  },
+  {
+    "start": 642.86,
+    "end": 701.13,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] of the stack space that you tend to use and ij to give dp box right it can still space optimize it i don't know how to space optimize it very simple what we do is instead of declaring or dp of size n plus m we just require the row so the row has m columns so make sure you declare a row which has m columns the best way to do is a vector because we can easily declare a vector of m 0 right over here make sure you declare one more vector of n which is the current row so current will be again this so this is what you are competing for current right so current is this again this is current this is the previous so probably you can do a previous we are storing it as previous so you can store it as previous and again this is current so just write it as current again this is current so write it as current basically dp of i means a current row so"
+  },
+  {
+    "start": 689.31,
+    "end": 750.06,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] so you can store it as previous and again this is current so just write it as current again this is current so write it as current basically dp of i means a current row so you just change it and once you've done this you can say the current will become the previous so I can just say the previous will be now current so this is again the previous and minus one means previous previous of m minus one so if you run this I think this also will work if I'm not done the mistakes yes works let's submit this bingo works so space optimization done so a big off n cross m solution with a big off number of columns as the space complexity so this is how we can easily solve this problem a simple minus change from the previous problem and we are easily able to do one more problem on this so guys I hope I'm able to explain your dp on grips just in case I am please please make sure you like this video and yes let's continue our tradition of writing undisturbed"
+  },
+  {
+    "start": 738.96,
+    "end": 770.72,
+    "text": "[Video: DP 9: Grid Unique Paths II (Maze with Obstacles)] on this so guys I hope I'm able to explain your dp on grips just in case I am please please make sure you like this video and yes let's continue our tradition of writing undisturbed in the comment section if you have you can write an u s as well but please do consider writing it because that is something which keeps me motivation to make more and more videos and also be able to our channel please do consider subscribing to us please please do consider and ever this let's wrap up this video and meet in the next one."
+  }
+]

@@ -1,0 +1,572 @@
+[
+  {
+    "start": 0.0,
+    "end": 3.77,
+    "text": "Hey, we are welcome back to take you forward."
+  },
+  {
+    "start": 3.77,
+    "end": 12.14,
+    "text": "Today we will be solving the problem minimum number of operations to convert a string 1 to string 2."
+  },
+  {
+    "start": 12.14,
+    "end": 14.73,
+    "text": "So what does the problem state?"
+  },
+  {
+    "start": 14.73,
+    "end": 19.92,
+    "text": "Now in operations, you basically allowed couple of operations."
+  },
+  {
+    "start": 19.92,
+    "end": 23.94,
+    "text": "One is you can delete any character in string 1."
+  },
+  {
+    "start": 23.94,
+    "end": 26.28,
+    "text": "Delete anything in string 1."
+  },
+  {
+    "start": 26.28,
+    "end": 30.8,
+    "text": "And insert anywhere, yes, insert anywhere in string 1."
+  },
+  {
+    "start": 30.8,
+    "end": 37.16,
+    "text": "And by doing that, you have to convert a given string 1 to another string 2."
+  },
+  {
+    "start": 37.16,
+    "end": 40.59,
+    "text": "And the number of operations can be many."
+  },
+  {
+    "start": 40.59,
+    "end": 48.96,
+    "text": "You have to tell me, what is the minimum possible number of operations that you might end up taking?"
+  },
+  {
+    "start": 48.96,
+    "end": 52.89,
+    "text": "Question is an answer or is an answer possible?"
+  },
+  {
+    "start": 52.89,
+    "end": 53.48,
+    "text": "Always."
+  },
+  {
+    "start": 53.48,
+    "end": 57.33,
+    "text": "Can you convert a string 1 to string 2 always?"
+  },
+  {
+    "start": 57.33,
+    "end": 59.51,
+    "text": "The answer to that is yes."
+  },
+  {
+    "start": 59.51,
+    "end": 59.84,
+    "text": "How?"
+  },
+  {
+    "start": 59.84,
+    "end": 62.69,
+    "text": "I can say let's delete everything."
+  },
+  {
+    "start": 62.69,
+    "end": 64.61,
+    "text": "That's four operations."
+  },
+  {
+    "start": 64.61,
+    "end": 66.37,
+    "text": "It's an empty string."
+  },
+  {
+    "start": 66.37,
+    "end": 68.04,
+    "text": "That insert a and c."
+  },
+  {
+    "start": 68.04,
+    "end": 70.8,
+    "text": "So that's three other operations."
+  },
+  {
+    "start": 70.8,
+    "end": 72.89,
+    "text": "So you got the string s2."
+  },
+  {
+    "start": 72.89,
+    "end": 79.0,
+    "text": "Delete everything and insert does every like every character of string 2."
+  },
+  {
+    "start": 79.0,
+    "end": 82.58,
+    "text": "So seven operations is what you're taking."
+  },
+  {
+    "start": 82.58,
+    "end": 88.37,
+    "text": "So I can be like, okay, the max operations that I will be taking is."
+  },
+  {
+    "start": 88.37,
+    "end": 90.24,
+    "text": "I will have to delete."
+  },
+  {
+    "start": 90.24,
+    "end": 93.39,
+    "text": "So end deletions in the first string."
+  },
+  {
+    "start": 93.39,
+    "end": 97.82,
+    "text": "And M insertions which is exactly insert this stuff."
+  },
+  {
+    "start": 97.82,
+    "end": 101.74,
+    "text": "So these are the maximum number of operations."
+  },
+  {
+    "start": 101.74,
+    "end": 105.06,
+    "text": "So I have proved that this is possible."
+  },
+  {
+    "start": 105.06,
+    "end": 110.85,
+    "text": "Now I need to figure out in what minimum possible way can I do this."
+  },
+  {
+    "start": 110.85,
+    "end": 111.7,
+    "text": "All right."
+  },
+  {
+    "start": 111.7,
+    "end": 120.98,
+    "text": "So again, whenever something like removal insertion console, my brain starts thinking,  what can I not touch?"
+  },
+  {
+    "start": 120.98,
+    "end": 122.77,
+    "text": "What can I not touch?"
+  },
+  {
+    "start": 122.77,
+    "end": 129.84,
+    "text": "Because ideally if I touch the minimum things, then the operations will be minimal."
+  },
+  {
+    "start": 129.84,
+    "end": 136.23,
+    "text": "So like the first thing though, intuition comes up is what can I not touch?"
+  },
+  {
+    "start": 136.23,
+    "end": 138.02,
+    "text": "What can I not touch?"
+  },
+  {
+    "start": 138.02,
+    "end": 145.94,
+    "text": "Because if I touch the minimal items, the number of operations will automatically be minimal."
+  },
+  {
+    "start": 145.94,
+    "end": 152.41,
+    "text": "But before that, let's see how can we actually convert an A, B, C, D to an A"
+  },
+  {
+    "start": 152.41,
+    "end": 156.0,
+    "text": "and C in the minimum number of operations."
+  },
+  {
+    "start": 156.0,
+    "end": 160.15,
+    "text": "I can be like, okay, let's delete A, not not A."
+  },
+  {
+    "start": 160.15,
+    "end": 162.01,
+    "text": "Let's delete B and D."
+  },
+  {
+    "start": 162.01,
+    "end": 163.78,
+    "text": "So I delete B and D."
+  },
+  {
+    "start": 163.78,
+    "end": 169.17,
+    "text": "We will have something like AC and now insert A and insert N."
+  },
+  {
+    "start": 169.17,
+    "end": 172.97,
+    "text": "So I can be like, I can have two deletions."
+  },
+  {
+    "start": 172.97,
+    "end": 175.18,
+    "text": "I can have one insertion."
+  },
+  {
+    "start": 175.18,
+    "end": 183.49,
+    "text": "So if I have two deletions, one insertion, I think I will be taking total of three operations."
+  },
+  {
+    "start": 183.49,
+    "end": 189.5,
+    "text": "And I can convert this given string to this particular given string."
+  },
+  {
+    "start": 189.5,
+    "end": 189.94,
+    "text": "Okay."
+  },
+  {
+    "start": 189.94,
+    "end": 194.18,
+    "text": "So how do you minimize the number of operations?"
+  },
+  {
+    "start": 194.18,
+    "end": 198.78,
+    "text": "So what is the intuition that is striking your head?"
+  },
+  {
+    "start": 198.78,
+    "end": 201.61,
+    "text": "It's like, what can I not touch?"
+  },
+  {
+    "start": 201.61,
+    "end": 209.04,
+    "text": "Because if I touch the minimal portions like over here if you see, we touch to B and"
+  },
+  {
+    "start": 209.04,
+    "end": 211.34,
+    "text": "D and then we insert it N."
+  },
+  {
+    "start": 211.34,
+    "end": 214.43,
+    "text": "But it not touch something like AC."
+  },
+  {
+    "start": 214.43,
+    "end": 216.11,
+    "text": "Why did we do that?"
+  },
+  {
+    "start": 216.11,
+    "end": 217.61,
+    "text": "Let's understand."
+  },
+  {
+    "start": 217.61,
+    "end": 220.0,
+    "text": "So what are the operations?"
+  },
+  {
+    "start": 220.0,
+    "end": 223.54,
+    "text": "It's like you can delete any one, right?"
+  },
+  {
+    "start": 223.54,
+    "end": 225.75,
+    "text": "So anyone you can delete."
+  },
+  {
+    "start": 225.75,
+    "end": 230.35,
+    "text": "And there is something like you can insert anywhere."
+  },
+  {
+    "start": 230.35,
+    "end": 233.0,
+    "text": "You can insert again anywhere."
+  },
+  {
+    "start": 233.0,
+    "end": 240.43,
+    "text": "So delete any, anyone and insert anywhere actually gives you an idea that, okay."
+  },
+  {
+    "start": 240.43,
+    "end": 246.74,
+    "text": "If I have ABCD, ABCD and ANC, what is the common portion among them?"
+  },
+  {
+    "start": 246.74,
+    "end": 254.26,
+    "text": "And my brain says, the common portion among them is somewhere around, I think AC."
+  },
+  {
+    "start": 254.26,
+    "end": 259.64,
+    "text": "If you carefully see AC, AC is the longest common portion."
+  },
+  {
+    "start": 259.64,
+    "end": 264.47,
+    "text": "So if I can keep this intact, I'll keep this intact."
+  },
+  {
+    "start": 264.47,
+    "end": 268.37,
+    "text": "I'll try to do everything in between them."
+  },
+  {
+    "start": 268.37,
+    "end": 274.59,
+    "text": "I'll keep ANC intact and I'll try to do everything in between them."
+  },
+  {
+    "start": 274.59,
+    "end": 279.7,
+    "text": "So in order to make ABCD into AC, what do I need to do?"
+  },
+  {
+    "start": 279.7,
+    "end": 286.57,
+    "text": "I will have to go across making two directions, which is deleting B and D."
+  },
+  {
+    "start": 286.57,
+    "end": 294.0,
+    "text": "And then again, again if I want to make this, can I say the number of guys left?"
+  },
+  {
+    "start": 294.0,
+    "end": 295.11,
+    "text": "Left is one."
+  },
+  {
+    "start": 295.11,
+    "end": 301.14,
+    "text": "So you have to make one insertion so that you get that guy, okay."
+  },
+  {
+    "start": 301.14,
+    "end": 302.72,
+    "text": "Okay, make sense."
+  },
+  {
+    "start": 302.72,
+    "end": 304.21,
+    "text": "So what is this?"
+  },
+  {
+    "start": 304.21,
+    "end": 309.04,
+    "text": "This is nothing but the longest matching among them."
+  },
+  {
+    "start": 309.04,
+    "end": 316.0,
+    "text": "And I know this is something which is known as longest common sub sequence."
+  },
+  {
+    "start": 316.0,
+    "end": 319.93,
+    "text": "I can have already taught this in the previous lectures."
+  },
+  {
+    "start": 319.93,
+    "end": 323.3,
+    "text": "If you have not seen this, pause this video out."
+  },
+  {
+    "start": 323.3,
+    "end": 325.55,
+    "text": "Go back to my previous lectures."
+  },
+  {
+    "start": 325.55,
+    "end": 332.01,
+    "text": "Watch out long-distance common sub sequence and you will get an idea about how to find this."
+  },
+  {
+    "start": 332.01,
+    "end": 335.66,
+    "text": "So can I say the number of deletions is very simple."
+  },
+  {
+    "start": 335.66,
+    "end": 338.61,
+    "text": "I can write the number of deletions to be."
+  },
+  {
+    "start": 338.61,
+    "end": 344.29,
+    "text": "Whatever is the length of this string, N minus the length of the LCS makes sense."
+  },
+  {
+    "start": 344.29,
+    "end": 346.4,
+    "text": "N minus the length of the LCS."
+  },
+  {
+    "start": 346.4,
+    "end": 348.93,
+    "text": "And the number of insertion will be."
+  },
+  {
+    "start": 348.93,
+    "end": 353.35,
+    "text": "I do this as AC, I need to convert this into something as STR2."
+  },
+  {
+    "start": 353.35,
+    "end": 358.12,
+    "text": "So can I say M minus the length of the LCS is what I need to insert."
+  },
+  {
+    "start": 358.12,
+    "end": 360.65,
+    "text": "Those will be the insert operations."
+  },
+  {
+    "start": 360.65,
+    "end": 366.54,
+    "text": "And can I say if I require the total number of operations, that's going to be N plus"
+  },
+  {
+    "start": 366.54,
+    "end": 368.58,
+    "text": "M minus 2 into length of LCS."
+  },
+  {
+    "start": 368.58,
+    "end": 369.63,
+    "text": "Absolutely yes."
+  },
+  {
+    "start": 369.63,
+    "end": 371.74,
+    "text": "And this is what my answer is."
+  },
+  {
+    "start": 371.74,
+    "end": 374.06,
+    "text": "You already know how to find LCS."
+  },
+  {
+    "start": 374.06,
+    "end": 376.38,
+    "text": "Just need to copy piece the code."
+  },
+  {
+    "start": 376.38,
+    "end": 381.15,
+    "text": "And if your copy piece the code and becomes very, very, very simple."
+  },
+  {
+    "start": 381.15,
+    "end": 384.52,
+    "text": "So without wasting any time, let's code this up."
+  },
+  {
+    "start": 384.52,
+    "end": 387.96,
+    "text": "So you can say in the code, we have the LCS code."
+  },
+  {
+    "start": 387.96,
+    "end": 392.0,
+    "text": "So will this copy piece this and go across to our problem."
+  },
+  {
+    "start": 392.0,
+    "end": 395.66,
+    "text": "It given top full of strings that we need to convert."
+  },
+  {
+    "start": 395.66,
+    "end": 397.59,
+    "text": "It's copy is the LCS string."
+  },
+  {
+    "start": 397.59,
+    "end": 400.15,
+    "text": "And I know the answer is very simple."
+  },
+  {
+    "start": 400.15,
+    "end": 406.02,
+    "text": "It's going to be STR2 size plus the other string PDF dot size minus 2 into the length"
+  },
+  {
+    "start": 406.02,
+    "end": 407.82,
+    "text": "of the LCS of STR and PDF."
+  },
+  {
+    "start": 407.82,
+    "end": 414.93,
+    "text": "Yeah, if it's just right this is, if I just write this, I just taken the code from the LCS, the Feroat."
+  },
+  {
+    "start": 414.93,
+    "end": 415.76,
+    "text": "It does run."
+  },
+  {
+    "start": 415.76,
+    "end": 419.28,
+    "text": "I just make sure you take the space optimized code."
+  },
+  {
+    "start": 419.28,
+    "end": 421.77,
+    "text": "This is not the space optimized one."
+  },
+  {
+    "start": 421.77,
+    "end": 428.05,
+    "text": "But yeah, the main concept is you understand how to use LCS in order to solve this problem."
+  },
+  {
+    "start": 428.05,
+    "end": 434.33,
+    "text": "So guys, just in case you're dead, understand please, please make sure you like this video."
+  },
+  {
+    "start": 434.33,
+    "end": 436.47,
+    "text": "Please do consider subscribing."
+  },
+  {
+    "start": 436.47,
+    "end": 439.78,
+    "text": "And now with this, I'll be back with this video."
+  },
+  {
+    "start": 439.78,
+    "end": 441.44,
+    "text": "It's me in the next one."
+  },
+  {
+    "start": 441.44,
+    "end": 442.0,
+    "text": "Bye bye."
+  }
+]

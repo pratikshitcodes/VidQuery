@@ -1,0 +1,1137 @@
+[
+  {
+    "start": 0.0,
+    "end": 5.34,
+    "text": "Hey, if you are welcome back to the channel, I hope you guys are doing extremely well."
+  },
+  {
+    "start": 5.34,
+    "end": 9.99,
+    "text": "So, welcome back to the second lecture of the dynamic programming playlist."
+  },
+  {
+    "start": 9.99,
+    "end": 15.2,
+    "text": "All right, I'm going to solve a problem which is found ways to reach the nth stares."
+  },
+  {
+    "start": 15.2,
+    "end": 17.74,
+    "text": "Yes, solve is the problem actually state."
+  },
+  {
+    "start": 17.74,
+    "end": 20.84,
+    "text": "It states that you'll be given a number of stairs."
+  },
+  {
+    "start": 20.84,
+    "end": 24.0,
+    "text": "So, it'll be given n which is the number of stairs."
+  },
+  {
+    "start": 24.0,
+    "end": 26.42,
+    "text": "Initially, you are at the zero-th step."
+  },
+  {
+    "start": 26.42,
+    "end": 28.84,
+    "text": "That means you are at the zero-th step."
+  },
+  {
+    "start": 28.84,
+    "end": 29.15,
+    "text": "Okay."
+  },
+  {
+    "start": 29.15,
+    "end": 31.32,
+    "text": "And you need to reach the nth step."
+  },
+  {
+    "start": 31.32,
+    "end": 33.55,
+    "text": "Like you have to reach the nth step."
+  },
+  {
+    "start": 33.55,
+    "end": 38.95,
+    "text": "Now, each time you can either climb one step or you can either climb a couple of steps."
+  },
+  {
+    "start": 38.95,
+    "end": 46.52,
+    "text": "Now, you are supposed to return the number of distinct ways in which you can climb from the zero-th step  to the nth step."
+  },
+  {
+    "start": 46.52,
+    "end": 51.3,
+    "text": "Now, for an example, if I'm giving you n is equal to three, then I can say if"
+  },
+  {
+    "start": 51.3,
+    "end": 56.39,
+    "text": "from the zero-th step, I take one step, then I take one more step, then I take one"
+  },
+  {
+    "start": 56.39,
+    "end": 61.85,
+    "text": "more step, I'm going to reach the third or from zero-thetic two step and then I take one"
+  },
+  {
+    "start": 61.85,
+    "end": 67.5,
+    "text": "step, I'm going to reach the third or from zero-thetic one step, then I take two steps, I'm"
+  },
+  {
+    "start": 67.5,
+    "end": 69.05,
+    "text": "going to reach the third."
+  },
+  {
+    "start": 69.05,
+    "end": 74.51,
+    "text": "So, I can say these three are three distinct ways in which you can reach the third step."
+  },
+  {
+    "start": 74.51,
+    "end": 76.43,
+    "text": "So, the problem is very simple."
+  },
+  {
+    "start": 76.43,
+    "end": 80.4,
+    "text": "You have to tell me the distinct ways in which you can reach the"
+  },
+  {
+    "start": 80.4,
+    "end": 81.42,
+    "text": "the third step."
+  },
+  {
+    "start": 81.42,
+    "end": 84.9,
+    "text": "So, the problem is very simple and straightforward."
+  },
+  {
+    "start": 84.9,
+    "end": 92.41,
+    "text": "You have to tell me the distinct ways in which you can reach the  nth step if you start from the zero-th step."
+  },
+  {
+    "start": 92.41,
+    "end": 101.08,
+    "text": "So, remember one thing, and all the one-d problems,  like generally in dp, in all the one-d problems, I'll be telling you away."
+  },
+  {
+    "start": 101.08,
+    "end": 109.48,
+    "text": "So, first let's understand how do you  understand that this is a dp problem, like that's the first step before applying dp."
+  },
+  {
+    "start": 109.48,
+    "end": 113.37,
+    "text": "You have to  understand that this is indeed a dp problem."
+  },
+  {
+    "start": 113.37,
+    "end": 121.22,
+    "text": "Now, whenever they say whenever the questions are like this, generally, whenever the questions are like this, count"
+  },
+  {
+    "start": 121.22,
+    "end": 123.34,
+    "text": "to be the total number of ways."
+  },
+  {
+    "start": 123.34,
+    "end": 125.18,
+    "text": "So, that's the first point."
+  },
+  {
+    "start": 125.18,
+    "end": 127.3,
+    "text": "Count the total number of ways."
+  },
+  {
+    "start": 127.3,
+    "end": 133.92,
+    "text": "The next can be a gravity there might be multiple ways of doing something, and they're asking you"
+  },
+  {
+    "start": 133.92,
+    "end": 138.5,
+    "text": "to figure out which gives you the minimum output or the max output."
+  },
+  {
+    "start": 138.5,
+    "end": 144.58,
+    "text": "So, the question might be like there are multiple ways to do this, but you've got to tell"
+  },
+  {
+    "start": 144.58,
+    "end": 148.68,
+    "text": "me which is giving you the minimum output or maximum output."
+  },
+  {
+    "start": 148.68,
+    "end": 153.32,
+    "text": "Generally, in these kind of questions, you tend to  apply recursion."
+  },
+  {
+    "start": 153.32,
+    "end": 153.59,
+    "text": "Why?"
+  },
+  {
+    "start": 153.59,
+    "end": 158.32,
+    "text": "Because if I'm saying you, count distinct ways, that means I'm saying"
+  },
+  {
+    "start": 158.32,
+    "end": 159.37,
+    "text": "you that, okay."
+  },
+  {
+    "start": 159.37,
+    "end": 161.82,
+    "text": "Figure out how many ways are there."
+  },
+  {
+    "start": 161.82,
+    "end": 168.97,
+    "text": "So, if to try all possible ways,  remember this whenever the concept of try all possible way comes in."
+  },
+  {
+    "start": 168.97,
+    "end": 171.14,
+    "text": "Try all possible ways come  in."
+  },
+  {
+    "start": 171.14,
+    "end": 177.38,
+    "text": "Whenever it can be anyway, if the concept of try all possible ways comes in, and if there"
+  },
+  {
+    "start": 177.38,
+    "end": 183.2,
+    "text": "is like count or if there is like figure out the best way, if all the possible ways"
+  },
+  {
+    "start": 183.2,
+    "end": 189.23,
+    "text": "you have to figure out count like how many ways are there or the best way, that's when"
+  },
+  {
+    "start": 189.23,
+    "end": 191.12,
+    "text": "you try to apply recursion."
+  },
+  {
+    "start": 191.12,
+    "end": 192.17,
+    "text": "What did I see?"
+  },
+  {
+    "start": 192.17,
+    "end": 198.13,
+    "text": "That's when you try to apply something as recursion, where you try all possible ways."
+  },
+  {
+    "start": 198.13,
+    "end": 204.3,
+    "text": "And if you remember, in the lecture 7 of the recursion playlist, in the lecture 7 of the"
+  },
+  {
+    "start": 204.3,
+    "end": 210.68,
+    "text": "recursion playlist, I told you, if you have to count all ways, then you have to perform all"
+  },
+  {
+    "start": 210.68,
+    "end": 212.64,
+    "text": "the ways and then sum it up."
+  },
+  {
+    "start": 212.64,
+    "end": 218.32,
+    "text": "If you have to figure out the best way, then you have to perform all the ways and"
+  },
+  {
+    "start": 218.32,
+    "end": 220.7,
+    "text": "tell which is the best among them."
+  },
+  {
+    "start": 220.7,
+    "end": 228.28,
+    "text": "So, you'll understand these things in depth, but as of now, just understand that whenever the problems start"
+  },
+  {
+    "start": 228.28,
+    "end": 234.1,
+    "text": "else you to figure out or like try out all possible ways, then you tend to think of"
+  },
+  {
+    "start": 234.1,
+    "end": 234.8,
+    "text": "recursion."
+  },
+  {
+    "start": 234.8,
+    "end": 237.44,
+    "text": "Where recursion says I'm going to try"
+  },
+  {
+    "start": 237.44,
+    "end": 241.8,
+    "text": "all possible ways, whether I can count or probably I can found the best."
+  },
+  {
+    "start": 241.8,
+    "end": 243.98,
+    "text": "That's when you think  of recursion."
+  },
+  {
+    "start": 243.98,
+    "end": 248.52,
+    "text": "And once you think of recursion, then you can think of dynamic programming."
+  },
+  {
+    "start": 248.52,
+    "end": 253.3,
+    "text": "But the first step  is try to figure this out that this is a recursive problem."
+  },
+  {
+    "start": 253.3,
+    "end": 255.9,
+    "text": "That's the first step behind every problem."
+  },
+  {
+    "start": 255.9,
+    "end": 259.05,
+    "text": "Like over here, like over here, it was n equal to 3."
+  },
+  {
+    "start": 259.05,
+    "end": 263.83,
+    "text": "So, like okay from 0 you'll take one step to one from 1 you'll take one step to"
+  },
+  {
+    "start": 263.83,
+    "end": 267.1,
+    "text": "1 from 2 you'll take one step to 1 and you'll reach 3."
+  },
+  {
+    "start": 267.1,
+    "end": 271.88,
+    "text": "Off from 0 you'll take 2 steps to 2 and you'll take one step to 3 you'll reach."
+  },
+  {
+    "start": 271.88,
+    "end": 275.87,
+    "text": "Off from 0 you'll take one step to 1 and you'll take 2 steps to 3."
+  },
+  {
+    "start": 275.87,
+    "end": 279.68,
+    "text": "So, these were the three  possible ways in which you can reach."
+  },
+  {
+    "start": 279.68,
+    "end": 281.86,
+    "text": "So, what is this giving you an idea?"
+  },
+  {
+    "start": 281.86,
+    "end": 283.19,
+    "text": "Try all possible ways."
+  },
+  {
+    "start": 283.19,
+    "end": 283.43,
+    "text": "Yes."
+  },
+  {
+    "start": 283.43,
+    "end": 288.03,
+    "text": "So, a lot of people say that if you can master recursion, you can master dp."
+  },
+  {
+    "start": 288.03,
+    "end": 290.15,
+    "text": "So, I'm going to teach  your trick."
+  },
+  {
+    "start": 290.15,
+    "end": 295.48,
+    "text": "I'm going to teach you a shortcut trick which will be helpful in all the problems in dp."
+  },
+  {
+    "start": 295.48,
+    "end": 298.87,
+    "text": "And you will be able to write every recurrence relation."
+  },
+  {
+    "start": 298.87,
+    "end": 303.83,
+    "text": "So, the step one of that trick is  try to represent the problem in terms of index."
+  },
+  {
+    "start": 303.83,
+    "end": 307.58,
+    "text": "Like if it's an array problem, there will always  be an index."
+  },
+  {
+    "start": 307.58,
+    "end": 312.48,
+    "text": "But if it's not an array problem, then also try to represent the problem in terms"
+  },
+  {
+    "start": 312.48,
+    "end": 313.23,
+    "text": "of index."
+  },
+  {
+    "start": 313.23,
+    "end": 314.4,
+    "text": "Remember this."
+  },
+  {
+    "start": 314.4,
+    "end": 316.4,
+    "text": "You will always do this."
+  },
+  {
+    "start": 316.4,
+    "end": 320.32,
+    "text": "Try to represent the problem in terms of index."
+  },
+  {
+    "start": 320.32,
+    "end": 323.91,
+    "text": "Next, do all possible stuffs on that index."
+  },
+  {
+    "start": 323.91,
+    "end": 327.0,
+    "text": "Do all possible stuffs on that index."
+  },
+  {
+    "start": 327.0,
+    "end": 332.92,
+    "text": "According to the problem statement, according to the problem statement."
+  },
+  {
+    "start": 332.92,
+    "end": 333.5,
+    "text": "Step 3."
+  },
+  {
+    "start": 333.5,
+    "end": 338.42,
+    "text": "If the question says count all the ways, sum up all stuffs."
+  },
+  {
+    "start": 338.42,
+    "end": 339.92,
+    "text": "sum up all stuffs."
+  },
+  {
+    "start": 339.92,
+    "end": 342.92,
+    "text": "If the question says count all ways."
+  },
+  {
+    "start": 342.92,
+    "end": 348.09,
+    "text": "If the question says find minimum, take minimum of all stuffs."
+  },
+  {
+    "start": 348.09,
+    "end": 348.51,
+    "text": "Okay?"
+  },
+  {
+    "start": 348.51,
+    "end": 351.35,
+    "text": "If the question says find minimum."
+  },
+  {
+    "start": 351.35,
+    "end": 354.85,
+    "text": "Similarly, the question says find maximum."
+  },
+  {
+    "start": 354.85,
+    "end": 356.85,
+    "text": "You'll take the maximum."
+  },
+  {
+    "start": 356.85,
+    "end": 359.1,
+    "text": "Remember this three points."
+  },
+  {
+    "start": 359.1,
+    "end": 364.52,
+    "text": "If you remember these three points, you can solve any recurrence."
+  },
+  {
+    "start": 364.52,
+    "end": 372.19,
+    "text": "And if you are able to write the recurrence, then you can memorize it to convert it into dp."
+  },
+  {
+    "start": 372.19,
+    "end": 374.78,
+    "text": "And then you can capitalize it."
+  },
+  {
+    "start": 374.78,
+    "end": 378.28,
+    "text": "And after that, you can space optimize it."
+  },
+  {
+    "start": 378.28,
+    "end": 378.7,
+    "text": "Okay?"
+  },
+  {
+    "start": 378.7,
+    "end": 381.7,
+    "text": "So, over your  what was the problem?"
+  },
+  {
+    "start": 381.7,
+    "end": 386.37,
+    "text": "The problem was you are at zero and you have to reach n."
+  },
+  {
+    "start": 386.37,
+    "end": 388.56,
+    "text": "The person has to reach n."
+  },
+  {
+    "start": 388.56,
+    "end": 390.71,
+    "text": "So, assume this is not an array."
+  },
+  {
+    "start": 390.71,
+    "end": 392.26,
+    "text": "This is like zero to n."
+  },
+  {
+    "start": 392.26,
+    "end": 393.0,
+    "text": "The stairs."
+  },
+  {
+    "start": 393.0,
+    "end": 395.28,
+    "text": "Assume these stairs to be indexes."
+  },
+  {
+    "start": 395.28,
+    "end": 397.09,
+    "text": "I call zero to be an index."
+  },
+  {
+    "start": 397.09,
+    "end": 401.26,
+    "text": "I call 1 to be an index, 2 to be an index, 3 to be an index, 4"
+  },
+  {
+    "start": 401.26,
+    "end": 404.49,
+    "text": "to be an index, 5 to be an index and everything."
+  },
+  {
+    "start": 404.49,
+    "end": 406.71,
+    "text": "Assume I'm calling them as index."
+  },
+  {
+    "start": 406.71,
+    "end": 408.19,
+    "text": "Read them as an index."
+  },
+  {
+    "start": 408.19,
+    "end": 408.53,
+    "text": "Okay?"
+  },
+  {
+    "start": 408.53,
+    "end": 414.04,
+    "text": "So, step one I've understood how will I represent this problem in terms of  index."
+  },
+  {
+    "start": 414.04,
+    "end": 416.73,
+    "text": "That is something which I've understood."
+  },
+  {
+    "start": 416.73,
+    "end": 420.76,
+    "text": "Now, next step is to realize what will your recursion  give?"
+  },
+  {
+    "start": 420.76,
+    "end": 426.54,
+    "text": "So, I can say if I write a recursion, that recursion should tell me the number of ways"
+  },
+  {
+    "start": 426.54,
+    "end": 428.96,
+    "text": "in which I can reach from zero to n."
+  },
+  {
+    "start": 428.96,
+    "end": 434.2,
+    "text": "If I'm calling a recursion as f of n, he should tell me what are the number of"
+  },
+  {
+    "start": 434.2,
+    "end": 436.95,
+    "text": "ways in which I can reach from zero to n."
+  },
+  {
+    "start": 436.95,
+    "end": 439.37,
+    "text": "That should be  the recursion's job."
+  },
+  {
+    "start": 439.37,
+    "end": 441.32,
+    "text": "I am like, yeah, that's true."
+  },
+  {
+    "start": 441.32,
+    "end": 443.81,
+    "text": "So, what if I write it as f of index?"
+  },
+  {
+    "start": 443.81,
+    "end": 446.77,
+    "text": "So, can I  say the base case is very simple?"
+  },
+  {
+    "start": 446.77,
+    "end": 452.55,
+    "text": "If I'm standing at the zero to stare, there is no other way, like there's only one way"
+  },
+  {
+    "start": 452.55,
+    "end": 457.05,
+    "text": "in which I can, like if I'm standing at zero, there's only one way."
+  },
+  {
+    "start": 457.05,
+    "end": 458.53,
+    "text": "Like again, I'll jump."
+  },
+  {
+    "start": 458.53,
+    "end": 459.94,
+    "text": "There's only one way."
+  },
+  {
+    "start": 459.94,
+    "end": 463.57,
+    "text": "Next, we have converted the problem in terms of index."
+  },
+  {
+    "start": 463.57,
+    "end": 465.38,
+    "text": "What's the step number two?"
+  },
+  {
+    "start": 465.38,
+    "end": 467.87,
+    "text": "Do all possible stuffs on that index?"
+  },
+  {
+    "start": 467.87,
+    "end": 468.14,
+    "text": "Yes."
+  },
+  {
+    "start": 468.14,
+    "end": 469.12,
+    "text": "Do all possible"
+  },
+  {
+    "start": 469.12,
+    "end": 470.49,
+    "text": "stuffs on that index?"
+  },
+  {
+    "start": 470.49,
+    "end": 472.38,
+    "text": "What is the question stating?"
+  },
+  {
+    "start": 472.38,
+    "end": 475.51,
+    "text": "Either it can jump one,  either it can jump two."
+  },
+  {
+    "start": 475.51,
+    "end": 479.1,
+    "text": "So, from a stare, you can jump one or you can jump two."
+  },
+  {
+    "start": 479.1,
+    "end": 481.32,
+    "text": "So, what can you do on that index?"
+  },
+  {
+    "start": 481.32,
+    "end": 482.69,
+    "text": "Jump one or jump two?"
+  },
+  {
+    "start": 482.69,
+    "end": 483.34,
+    "text": "Do it now?"
+  },
+  {
+    "start": 483.34,
+    "end": 484.97,
+    "text": "What are you waiting for?"
+  },
+  {
+    "start": 484.97,
+    "end": 488.76,
+    "text": "So, I can say one of the things that I can do is jump one."
+  },
+  {
+    "start": 488.76,
+    "end": 495.81,
+    "text": "So, if you're starting, like if you're  going from top to down, if you jump one, you will go back one index."
+  },
+  {
+    "start": 495.81,
+    "end": 498.42,
+    "text": "If you jump two, you will go  two index."
+  },
+  {
+    "start": 498.42,
+    "end": 498.88,
+    "text": "Simple."
+  },
+  {
+    "start": 498.88,
+    "end": 499.4,
+    "text": "Correct?"
+  },
+  {
+    "start": 499.4,
+    "end": 500.31,
+    "text": "Now, now work."
+  },
+  {
+    "start": 500.31,
+    "end": 501.29,
+    "text": "Now, can I see?"
+  },
+  {
+    "start": 501.29,
+    "end": 503.64,
+    "text": "Okay, that's that's pretty  perfect."
+  },
+  {
+    "start": 503.64,
+    "end": 505.27,
+    "text": "Now, can I say one thing?"
+  },
+  {
+    "start": 505.27,
+    "end": 511.86,
+    "text": "If I can jump one index and if I can jump two index, there  are a couple of ways in which I can jump."
+  },
+  {
+    "start": 511.86,
+    "end": 514.93,
+    "text": "So, there are a couple of stuffs that I can do."
+  },
+  {
+    "start": 514.93,
+    "end": 520.74,
+    "text": "Now, if someone is saying me, to count all distinct ways, I know recursion will do a stop"
+  },
+  {
+    "start": 520.74,
+    "end": 524.0,
+    "text": "because you'll go in depth and count all the ways."
+  },
+  {
+    "start": 524.0,
+    "end": 524.91,
+    "text": "Lecture seven."
+  },
+  {
+    "start": 524.91,
+    "end": 527.39,
+    "text": "He's going to watch  on lecture seven."
+  },
+  {
+    "start": 527.39,
+    "end": 531.05,
+    "text": "I've taught to you about how does it count all the ways."
+  },
+  {
+    "start": 531.05,
+    "end": 536.8,
+    "text": "If you return one at the base case, please go and watch on lecture seven if you haven't,"
+  },
+  {
+    "start": 536.8,
+    "end": 542.48,
+    "text": "because over there, I've taught you how do you count all ways by returning a one on the"
+  },
+  {
+    "start": 542.48,
+    "end": 543.13,
+    "text": "base case."
+  },
+  {
+    "start": 543.13,
+    "end": 544.5,
+    "text": "I've taught you that."
+  },
+  {
+    "start": 544.5,
+    "end": 544.72,
+    "text": "So,"
+  },
+  {
+    "start": 544.72,
+    "end": 548.29,
+    "text": "please watch over lecture seven in the recursion."
+  },
+  {
+    "start": 548.29,
+    "end": 550.62,
+    "text": "Also, if you haven't watched it."
+  },
+  {
+    "start": 550.62,
+    "end": 552.59,
+    "text": "So,  how to count all ways?"
+  },
+  {
+    "start": 552.59,
+    "end": 560.9,
+    "text": "If this is the left recursion and this is the right recursion,  in order to count all the ways, I told you, right?"
+  },
+  {
+    "start": 560.9,
+    "end": 563.45,
+    "text": "You have to return left plus right."
+  },
+  {
+    "start": 563.45,
+    "end": 565.49,
+    "text": "That's what  you need to do."
+  },
+  {
+    "start": 565.49,
+    "end": 569.35,
+    "text": "So, if you write this recursion, it is going to work."
+  },
+  {
+    "start": 569.35,
+    "end": 571.75,
+    "text": "But, still there is an edge case."
+  },
+  {
+    "start": 571.75,
+    "end": 573.79,
+    "text": "Yeah, there is an edge case."
+  },
+  {
+    "start": 573.79,
+    "end": 575.9,
+    "text": "So, can I say can I say that?"
+  },
+  {
+    "start": 575.9,
+    "end": 582.24,
+    "text": "If you're doing index minus two,  now think about these edge cases, I did not tell you."
+  },
+  {
+    "start": 582.24,
+    "end": 584.5,
+    "text": "What if you're standing at one?"
+  },
+  {
+    "start": 584.5,
+    "end": 587.05,
+    "text": "What if I'm just  calling f of one?"
+  },
+  {
+    "start": 587.05,
+    "end": 590.04,
+    "text": "Then one minus two will become minus one."
+  },
+  {
+    "start": 590.04,
+    "end": 592.15,
+    "text": "So, there might be a problem."
+  },
+  {
+    "start": 592.15,
+    "end": 597.18,
+    "text": "So,  you can introduce one more edge case, something like this again."
+  },
+  {
+    "start": 597.18,
+    "end": 599.66,
+    "text": "If index is equal to equal to one."
+  },
+  {
+    "start": 599.66,
+    "end": 606.0,
+    "text": "So, can I say if you're standing at one, there's only one way in which you can go zero."
+  },
+  {
+    "start": 606.0,
+    "end": 607.6,
+    "text": "Second return is zero."
+  },
+  {
+    "start": 607.6,
+    "end": 607.96,
+    "text": "Done."
+  },
+  {
+    "start": 607.96,
+    "end": 609.85,
+    "text": "What is this looking like?"
+  },
+  {
+    "start": 609.85,
+    "end": 611.16,
+    "text": "What do you think?"
+  },
+  {
+    "start": 611.16,
+    "end": 613.2,
+    "text": "Which question is this like?"
+  },
+  {
+    "start": 613.2,
+    "end": 615.46,
+    "text": "Okay, yeah, this is Feevanachi."
+  },
+  {
+    "start": 615.46,
+    "end": 616.7,
+    "text": "Yeah, absolutely."
+  },
+  {
+    "start": 616.7,
+    "end": 619.61,
+    "text": "If saw this problem in the previous one."
+  },
+  {
+    "start": 619.61,
+    "end": 619.84,
+    "text": "So,"
+  },
+  {
+    "start": 619.84,
+    "end": 622.7,
+    "text": "you saw this, how I took a different problem?"
+  },
+  {
+    "start": 622.7,
+    "end": 625.94,
+    "text": "How I analyzed it and converted it into Feevanachi."
+  },
+  {
+    "start": 625.94,
+    "end": 630.96,
+    "text": "So, what I can say is this problem is nothing but similar to Feevanachi number."
+  },
+  {
+    "start": 630.96,
+    "end": 639.54,
+    "text": "If you  carefully write the recurrence and the possible ways to write a recurrence is,  try to represent the problem in terms of index."
+  },
+  {
+    "start": 639.54,
+    "end": 641.89,
+    "text": "Do all possible stuffs on that index?"
+  },
+  {
+    "start": 641.89,
+    "end": 647.29,
+    "text": "If it is saying if the question is saying count always, you'll sum up all the stuffs."
+  },
+  {
+    "start": 647.29,
+    "end": 652.5,
+    "text": "If the question is  saying find minimum, you will stake minimum of all the stuffs."
+  },
+  {
+    "start": 652.5,
+    "end": 655.62,
+    "text": "That is how you should solve  any given question."
+  },
+  {
+    "start": 655.62,
+    "end": 661.6,
+    "text": "So, you can easily memorize it after that you can convert into the tabular form and then after"
+  },
+  {
+    "start": 661.6,
+    "end": 666.37,
+    "text": "you can space optimize it and we have already done this in the lecture one."
+  },
+  {
+    "start": 666.37,
+    "end": 668.47,
+    "text": "So, I'll not be doing that again."
+  },
+  {
+    "start": 668.47,
+    "end": 675.34,
+    "text": "The main reason why I picked up this problem was to tell you,  even if I did not know this was a Feevanachi."
+  },
+  {
+    "start": 675.34,
+    "end": 681.0,
+    "text": "I told you how to write the recurrence and after that  you figured out it's a Feevanachi."
+  },
+  {
+    "start": 681.0,
+    "end": 685.9,
+    "text": "But even if you don't know Feevanachi, you can definitely solve this problem."
+  },
+  {
+    "start": 685.9,
+    "end": 690.61,
+    "text": "Now, in in code studio, if I take it to the code studio, the value of n is"
+  },
+  {
+    "start": 690.61,
+    "end": 692.39,
+    "text": "given as 10 to the power 18."
+  },
+  {
+    "start": 692.39,
+    "end": 697.92,
+    "text": "So, either in the tabular form, even if you run a fall loop, you cannot run a fall loop"
+  },
+  {
+    "start": 697.92,
+    "end": 699.28,
+    "text": "till 10 to the power 18."
+  },
+  {
+    "start": 699.28,
+    "end": 704.42,
+    "text": "Even if you do the space optimization, you cannot run a fall loop till 10 to the  power 18."
+  },
+  {
+    "start": 704.42,
+    "end": 706.62,
+    "text": "So, we go off n approach will not work."
+  },
+  {
+    "start": 706.62,
+    "end": 713.85,
+    "text": "So, in order to find Feevanachi, you have to actually  use matrix exponentian, which helps you to find this in logarithmic of n."
+  },
+  {
+    "start": 713.85,
+    "end": 719.16,
+    "text": "But, like I discussed this in some other lecture, but the main focus of today's lecture was to"
+  },
+  {
+    "start": 719.16,
+    "end": 724.41,
+    "text": "tell you how to convert any unknown problem to a recurrence and then you can easily write the"
+  },
+  {
+    "start": 724.41,
+    "end": 726.16,
+    "text": "tabular and the space optimise."
+  },
+  {
+    "start": 726.16,
+    "end": 732.6,
+    "text": "I'm not writing the tabular and space optimise in the lecture,  because I've already done that in the lecture one."
+  },
+  {
+    "start": 732.6,
+    "end": 737.18,
+    "text": "If I would have not done that in the lecture one, I would have done it over here,"
+  },
+  {
+    "start": 737.18,
+    "end": 740.23,
+    "text": "and I'm just skipping it because I've already done it."
+  },
+  {
+    "start": 740.23,
+    "end": 746.5,
+    "text": "So, please remember these three points are important, which I wanted to convey you in this particular  lecture."
+  },
+  {
+    "start": 746.5,
+    "end": 752.15,
+    "text": "So, the main intention of this lecture was to teach you the shortcuts, the three points, which helps"
+  },
+  {
+    "start": 752.15,
+    "end": 758.65,
+    "text": "you to build the recurrence, because after that it's memorization, then tabularization and then space optimisation."
+  },
+  {
+    "start": 758.65,
+    "end": 763.51,
+    "text": "So, I hope you have got the skip these three points in your brain, because in the next"
+  },
+  {
+    "start": 763.51,
+    "end": 769.1,
+    "text": "lecture we'll be solving a problem, which will be much much more interesting, and you can use these"
+  },
+  {
+    "start": 769.1,
+    "end": 772.15,
+    "text": "three points to solve that particular problem as well."
+  },
+  {
+    "start": 772.15,
+    "end": 773.28,
+    "text": "So, with this, let's"
+  },
+  {
+    "start": 773.28,
+    "end": 780.36,
+    "text": "wrap up this video, and yes, as a trend, please please write understood, if you have understood this"
+  },
+  {
+    "start": 780.36,
+    "end": 787.01,
+    "text": "particular lecture and the three points, and make sure you like this video, and if you need to"
+  },
+  {
+    "start": 787.01,
+    "end": 793.8,
+    "text": "do this channel, please please do consider subscribing to us, and I have with this let's wrap up"
+  },
+  {
+    "start": 793.8,
+    "end": 796.0,
+    "text": "this video, and bye, take care."
+  }
+]

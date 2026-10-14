@@ -1,0 +1,2707 @@
+[
+  {
+    "start": 0.0,
+    "end": 3.17,
+    "text": "Hey, we are welcome back to the channel."
+  },
+  {
+    "start": 3.17,
+    "end": 6.42,
+    "text": "I hope you guys are doing extremely well."
+  },
+  {
+    "start": 6.42,
+    "end": 9.35,
+    "text": "So we finished  1ddp and dp on grits."
+  },
+  {
+    "start": 9.35,
+    "end": 15.05,
+    "text": "Now the next pattern of dynamic programming will be dp on sub sequences."
+  },
+  {
+    "start": 15.05,
+    "end": 15.37,
+    "text": "Yes."
+  },
+  {
+    "start": 15.37,
+    "end": 18.3,
+    "text": "We will be doing dp on sub sequences."
+  },
+  {
+    "start": 18.3,
+    "end": 25.75,
+    "text": "A lot of times instead of sub sequences, you might be hearing the name So either sub sequences"
+  },
+  {
+    "start": 25.75,
+    "end": 29.08,
+    "text": "or sub sets is what we are going to solve."
+  },
+  {
+    "start": 29.08,
+    "end": 31.06,
+    "text": "So what is sub sequences?"
+  },
+  {
+    "start": 31.06,
+    "end": 37.79,
+    "text": "Let's first understand the definition of that and then we can definitely move across."
+  },
+  {
+    "start": 37.79,
+    "end": 42.31,
+    "text": "Now any contagious or non-conteges that's very important."
+  },
+  {
+    "start": 42.31,
+    "end": 48.17,
+    "text": "Any contagious or non-conteges part of the array is known as sub sequence."
+  },
+  {
+    "start": 48.17,
+    "end": 54.11,
+    "text": "Like for example, if I give you an array like 1,3,2 then I can say 1,2 is a"
+  },
+  {
+    "start": 54.11,
+    "end": 61.0,
+    "text": "sub sequence because you see 1,2 is known Conteges and it's following the order of 1,2."
+  },
+  {
+    "start": 61.0,
+    "end": 64.09,
+    "text": "2,1 cannot be a subset or sub sequence."
+  },
+  {
+    "start": 64.09,
+    "end": 70.59,
+    "text": "We will to understand this whenever I say sub sequence it has to follow the order."
+  },
+  {
+    "start": 70.59,
+    "end": 74.95,
+    "text": "Subset might not follow but sub sequence has to follow."
+  },
+  {
+    "start": 74.95,
+    "end": 77.0,
+    "text": "So this is a sub sequence."
+  },
+  {
+    "start": 77.0,
+    "end": 79.15,
+    "text": "Again, is this a sub sequence?"
+  },
+  {
+    "start": 79.15,
+    "end": 86.75,
+    "text": "Yes, this is also a sub sequence because 3,2 follows the order as well as it can be called as a sub array."
+  },
+  {
+    "start": 86.75,
+    "end": 91.27,
+    "text": "Sub array also you can call and sub sequence also you can call."
+  },
+  {
+    "start": 91.27,
+    "end": 97.22,
+    "text": "So all the problems that we will be doing is based on dp on sub sequence or subsets"
+  },
+  {
+    "start": 97.22,
+    "end": 101.02,
+    "text": "and we will also be having one other stuff as target."
+  },
+  {
+    "start": 101.02,
+    "end": 105.97,
+    "text": "Generally we will be dealing with problems where we will be said key."
+  },
+  {
+    "start": 105.97,
+    "end": 107.76,
+    "text": "Okay, this is the target."
+  },
+  {
+    "start": 107.76,
+    "end": 116.08,
+    "text": "You have to pick elements from the array in order like they will give some conditions in order to reach that target."
+  },
+  {
+    "start": 116.08,
+    "end": 124.83,
+    "text": "So all the problems that relates sub sequence, subsets and target will be the part of the next pattern we will be solving."
+  },
+  {
+    "start": 124.83,
+    "end": 132.79,
+    "text": "We'll be solving a bunch of problems and again I promise the moment we finish the last problem in this pattern."
+  },
+  {
+    "start": 132.79,
+    "end": 136.66,
+    "text": "You can solve any problem in this given pattern right."
+  },
+  {
+    "start": 136.66,
+    "end": 141.61,
+    "text": "So without wasting any time let's get started with the first problem."
+  },
+  {
+    "start": 141.61,
+    "end": 143.9,
+    "text": "It states subset sum equal to k."
+  },
+  {
+    "start": 143.9,
+    "end": 148.7,
+    "text": "So you're given an array list of n positive integers and integer k."
+  },
+  {
+    "start": 148.7,
+    "end": 151.21,
+    "text": "So given an array and an integer k."
+  },
+  {
+    "start": 151.21,
+    "end": 157.0,
+    "text": "Your task is to check if there exists a subset in an array with a sum equal to k."
+  },
+  {
+    "start": 157.0,
+    "end": 162.44,
+    "text": "Basically does any of the elements combine to give you the sum equal to k."
+  },
+  {
+    "start": 162.44,
+    "end": 168.76,
+    "text": "So if there exists you have to return a true otherwise you need to return a false like"
+  },
+  {
+    "start": 168.76,
+    "end": 172.73,
+    "text": "if you see in this example we have 1 2 3 4 and k is 4."
+  },
+  {
+    "start": 172.73,
+    "end": 178.02,
+    "text": "I can say if I pick up probably just the 4 I'll get the summation 4 or I"
+  },
+  {
+    "start": 178.02,
+    "end": 182.94,
+    "text": "can say if I pick up 1 and if I pick up 3 I'll get the summation as"
+  },
+  {
+    "start": 182.94,
+    "end": 183.09,
+    "text": "4."
+  },
+  {
+    "start": 183.09,
+    "end": 188.68,
+    "text": "So there are 2 subsets and the question was if there exists a single subset."
+  },
+  {
+    "start": 188.68,
+    "end": 191.25,
+    "text": "So the answer to this will be true."
+  },
+  {
+    "start": 191.25,
+    "end": 193.68,
+    "text": "So that's what you have to solve."
+  },
+  {
+    "start": 193.68,
+    "end": 197.5,
+    "text": "Okay, so first of all how do you solve this problem?"
+  },
+  {
+    "start": 197.5,
+    "end": 203.6,
+    "text": "Now obviously we can't be writing a 3D solution because that will never make sense."
+  },
+  {
+    "start": 203.6,
+    "end": 210.8,
+    "text": "We have to generate like the first thing that comes to my mind is generate all those subsiequences"
+  },
+  {
+    "start": 210.8,
+    "end": 214.7,
+    "text": "and check if any yes if any of them gives a sum of k."
+  },
+  {
+    "start": 214.7,
+    "end": 218.08,
+    "text": "That's the first thing that comes to my brain."
+  },
+  {
+    "start": 218.08,
+    "end": 221.24,
+    "text": "How can you generate all the subsiequences?"
+  },
+  {
+    "start": 221.24,
+    "end": 222.49,
+    "text": "There are 2 ways."
+  },
+  {
+    "start": 222.49,
+    "end": 224.03,
+    "text": "One is the power set."
+  },
+  {
+    "start": 224.03,
+    "end": 228.73,
+    "text": "I have already made a video on that you can definitely watch it."
+  },
+  {
+    "start": 228.73,
+    "end": 235.49,
+    "text": "One is the power set which uses bit manipulation or the other one is the recursion again the"
+  },
+  {
+    "start": 235.49,
+    "end": 243.0,
+    "text": "lecture 6 where we have discussed or the lecture 8 of recursion playlist the combination some problem."
+  },
+  {
+    "start": 243.0,
+    "end": 247.9,
+    "text": "Where you have already discussed how to generate all the subsea quences."
+  },
+  {
+    "start": 247.9,
+    "end": 250.21,
+    "text": "But the question arises over here."
+  },
+  {
+    "start": 250.21,
+    "end": 251.64,
+    "text": "What is the question?"
+  },
+  {
+    "start": 251.64,
+    "end": 257.01,
+    "text": "Does it ask us to generate all the subsea quences and the answer to that is no."
+  },
+  {
+    "start": 257.01,
+    "end": 258.57,
+    "text": "So what's the question?"
+  },
+  {
+    "start": 258.57,
+    "end": 264.89,
+    "text": "The question states does there exist a single subset if I get a single subset my job is done."
+  },
+  {
+    "start": 264.89,
+    "end": 268.36,
+    "text": "So I don't need to generate all the subsea quences."
+  },
+  {
+    "start": 268.36,
+    "end": 270.4,
+    "text": "That's where we think of okay."
+  },
+  {
+    "start": 270.4,
+    "end": 277.2,
+    "text": "So instead of generating all the subsea quences we just need to keep a check if there is any subset."
+  },
+  {
+    "start": 277.2,
+    "end": 283.8,
+    "text": "So thereby we decide that okay we will follow the recursion method because we don't need to print"
+  },
+  {
+    "start": 283.8,
+    "end": 290.12,
+    "text": "all we will just follow the recursion method and I have particularly when we just get one sub"
+  },
+  {
+    "start": 290.12,
+    "end": 294.81,
+    "text": "sequence with the same subset target we will return and we will stop."
+  },
+  {
+    "start": 294.81,
+    "end": 296.85,
+    "text": "So that's my overall thinking."
+  },
+  {
+    "start": 296.85,
+    "end": 303.17,
+    "text": "So we know recursion can help us to generate all the subsea quences and I've clearly told you"
+  },
+  {
+    "start": 303.17,
+    "end": 310.58,
+    "text": "what's the rule of writing the recurrence any recurrence can always be written in express everything in terms"
+  },
+  {
+    "start": 310.58,
+    "end": 311.19,
+    "text": "of index."
+  },
+  {
+    "start": 311.19,
+    "end": 318.74,
+    "text": "Do we have an index here every array problem in dp will always have an index and that's the array index itself."
+  },
+  {
+    "start": 318.74,
+    "end": 320.85,
+    "text": "So we definitely have an index."
+  },
+  {
+    "start": 320.85,
+    "end": 328.0,
+    "text": "Do we have any other parameter on every index we need to take care of the target that we are looking for."
+  },
+  {
+    "start": 328.0,
+    "end": 332.85,
+    "text": "So we can say we definitely have a target that we are looking for."
+  },
+  {
+    "start": 332.85,
+    "end": 341.16,
+    "text": "So always remember this whatever may be the problem on dp on sub sequences and these subsets and target problems."
+  },
+  {
+    "start": 341.16,
+    "end": 348.29,
+    "text": "We will always try to express everything in terms of index and everything in terms of target like"
+  },
+  {
+    "start": 348.29,
+    "end": 353.73,
+    "text": "in grid it was i and j in sub sequences it is index and it is target thumb"
+  },
+  {
+    "start": 353.73,
+    "end": 354.1,
+    "text": "rule."
+  },
+  {
+    "start": 354.1,
+    "end": 356.67,
+    "text": "Okay, let's go to the second point."
+  },
+  {
+    "start": 356.67,
+    "end": 366.74,
+    "text": "The second point is explore possibilities of that index now what am I talking about let's understand explore possibilities of that index."
+  },
+  {
+    "start": 366.74,
+    "end": 375.12,
+    "text": "So what am I talking about I'm talking about an index and what I'm at what the other thing subset of sub sequence."
+  },
+  {
+    "start": 375.12,
+    "end": 381.96,
+    "text": "So what can be the possibilities if you ask yourself for an index your brain will say striver"
+  },
+  {
+    "start": 381.96,
+    "end": 388.87,
+    "text": "there will be two possibilities whether that array of an index is the part of the sub sequence"
+  },
+  {
+    "start": 388.87,
+    "end": 389.75,
+    "text": "makes sense."
+  },
+  {
+    "start": 389.75,
+    "end": 393.21,
+    "text": "So I can say it's the part of the sub sequence."
+  },
+  {
+    "start": 393.21,
+    "end": 399.16,
+    "text": "Like array of index is the part of the sub sequence or array of index is not part"
+  },
+  {
+    "start": 399.16,
+    "end": 406.0,
+    "text": "of the sub sequence like logically only these parts will be the not part of the sub sequence."
+  },
+  {
+    "start": 406.0,
+    "end": 411.52,
+    "text": "So I have two choices one is it's the part of the sub sequence while the other one"
+  },
+  {
+    "start": 411.52,
+    "end": 414.28,
+    "text": "is it's not the part of the sub sequence."
+  },
+  {
+    "start": 414.28,
+    "end": 417.58,
+    "text": "So we have we have written all the possibilities."
+  },
+  {
+    "start": 417.58,
+    "end": 424.45,
+    "text": "I don't see any other possibilities for a given index right we can think of the recurrence afterwards."
+  },
+  {
+    "start": 424.45,
+    "end": 429.84,
+    "text": "Now what am I looking for I'm looking for if any of them give a true I'll return"
+  },
+  {
+    "start": 429.84,
+    "end": 434.22,
+    "text": "a true because the question was return true if you get salveleck."
+  },
+  {
+    "start": 434.22,
+    "end": 438.19,
+    "text": "Okay, if return true or false if both of the possibilities."
+  },
+  {
+    "start": 438.19,
+    "end": 440.28,
+    "text": "We will understand this indeed."
+  },
+  {
+    "start": 440.28,
+    "end": 441.76,
+    "text": "So let's do one thing."
+  },
+  {
+    "start": 441.76,
+    "end": 446.07,
+    "text": "Let's take the so we have understood all the three points right."
+  },
+  {
+    "start": 446.07,
+    "end": 447.42,
+    "text": "Let's write express."
+  },
+  {
+    "start": 447.42,
+    "end": 453.61,
+    "text": "The question arises how do I start with index how do I start with target now always remember"
+  },
+  {
+    "start": 453.61,
+    "end": 459.2,
+    "text": "what I what am I looking for I'm looking for the entire array and if there exists a"
+  },
+  {
+    "start": 459.2,
+    "end": 462.84,
+    "text": "sub sequence with the target whatever is given to you."
+  },
+  {
+    "start": 462.84,
+    "end": 467.75,
+    "text": "So I'll try to express it in terms of f of n minus 1 saying in the entire"
+  },
+  {
+    "start": 467.75,
+    "end": 473.61,
+    "text": "array till index n minus 1 here you have your properly in the entire array till index n"
+  },
+  {
+    "start": 473.61,
+    "end": 479.13,
+    "text": "minus 1 I repeat again in the entire array till index n minus 1 does there exist a"
+  },
+  {
+    "start": 479.13,
+    "end": 485.12,
+    "text": "target that is what the recurrence will tell you in the entire array till index n minus 1"
+  },
+  {
+    "start": 485.12,
+    "end": 488.0,
+    "text": "does there exist any target for an example."
+  },
+  {
+    "start": 488.0,
+    "end": 493.68,
+    "text": "If I'm giving you one two three four as the array and I'm saying you the target as"
+  },
+  {
+    "start": 493.68,
+    "end": 499.77,
+    "text": "four if I'm writing f of three comma four that means I'm doing the indexing zero one two"
+  },
+  {
+    "start": 499.77,
+    "end": 506.55,
+    "text": "three and I'm asking on this portion on this entire array does there exist someone with the target"
+  },
+  {
+    "start": 506.55,
+    "end": 512.5,
+    "text": "for that's what I'm looking for that's the meaning of f of n minus one target and this"
+  },
+  {
+    "start": 512.5,
+    "end": 517.21,
+    "text": "is going to be valid throughout all the tp on sub sequences pattern."
+  },
+  {
+    "start": 517.21,
+    "end": 522.82,
+    "text": "Okay, so we have understood this so there by we write okay f of index and we have"
+  },
+  {
+    "start": 522.82,
+    "end": 530.43,
+    "text": "a target so that's the first thing expressing their recurrence so whenever we are expressing their recurrence."
+  },
+  {
+    "start": 530.43,
+    "end": 538.94,
+    "text": "What are the base cases I think about these base cases what are the base cases actually so my brain tells me okay struggle."
+  },
+  {
+    "start": 538.94,
+    "end": 545.03,
+    "text": "What can be the base cases the base cases is it might happen we have achieved the target"
+  },
+  {
+    "start": 545.03,
+    "end": 551.33,
+    "text": "because you might be at a state where the target is no more like initially assume over here"
+  },
+  {
+    "start": 551.33,
+    "end": 557.28,
+    "text": "the target was four and just imagine you took this for and you came out to this index."
+  },
+  {
+    "start": 557.28,
+    "end": 563.3,
+    "text": "There is no further target to be achieved do you understand so what I'm saying is okay."
+  },
+  {
+    "start": 563.3,
+    "end": 571.0,
+    "text": "I know one base case is for sure for the index target so I'll be like if at any moment the target becomes zero."
+  },
+  {
+    "start": 571.0,
+    "end": 580.05,
+    "text": "I'll return a true why because we will looking for a sub sequence which gives me the target as zero so written that."
+  },
+  {
+    "start": 580.05,
+    "end": 586.91,
+    "text": "So we've written the base case for target what about the other one index so where is the"
+  },
+  {
+    "start": 586.91,
+    "end": 593.46,
+    "text": "call starting from n minus one and we know we will go till the zero index because in"
+  },
+  {
+    "start": 593.46,
+    "end": 598.22,
+    "text": "an array it's for man minus one at index till the zero index."
+  },
+  {
+    "start": 598.22,
+    "end": 605.24,
+    "text": "So if you're standing at an index zero and you have a certain target value assume four can"
+  },
+  {
+    "start": 605.24,
+    "end": 612.18,
+    "text": "the target be achieved at this index zero how can you determine you can be striver if the"
+  },
+  {
+    "start": 612.18,
+    "end": 618.81,
+    "text": "array of zero contains the value four then this target can be achieved otherwise not."
+  },
+  {
+    "start": 618.81,
+    "end": 626.06,
+    "text": "Makes sense because what does f of what does f of zero comma target signify it signifies till"
+  },
+  {
+    "start": 626.06,
+    "end": 633.24,
+    "text": "zero index can we achieve this target and if it's zero index it's only single element so how"
+  },
+  {
+    "start": 633.24,
+    "end": 637.3,
+    "text": "can I achieve that target if it's the target itself."
+  },
+  {
+    "start": 637.3,
+    "end": 642.84,
+    "text": "So thereby if index is equal to zero which is ultimately the base case."
+  },
+  {
+    "start": 642.84,
+    "end": 649.0,
+    "text": "I will return true if the array of zero is equal to equal to the target itself."
+  },
+  {
+    "start": 649.0,
+    "end": 659.23,
+    "text": "Perfect so first step express and write the base cases is completed always if you're writing a base case first think about the target."
+  },
+  {
+    "start": 659.23,
+    "end": 667.17,
+    "text": "Nothing about the index think about the states what can be the ultimate of states what's the next thing."
+  },
+  {
+    "start": 667.17,
+    "end": 669.54,
+    "text": "Okay, so what's the next thing."
+  },
+  {
+    "start": 669.54,
+    "end": 676.8,
+    "text": "Explore possibilities of that index because as of now you're standing at an index so you are at"
+  },
+  {
+    "start": 676.8,
+    "end": 683.52,
+    "text": "an index and they're asking can I form a sub sequence from zero to that index that gives"
+  },
+  {
+    "start": 683.52,
+    "end": 689.63,
+    "text": "me the target can I form can I form a sub sequence from zero to index that gives"
+  },
+  {
+    "start": 689.63,
+    "end": 690.55,
+    "text": "me a target."
+  },
+  {
+    "start": 690.55,
+    "end": 696.74,
+    "text": "I'll be like okay there are two ways one of the ways is I say I will not take it."
+  },
+  {
+    "start": 696.74,
+    "end": 701.63,
+    "text": "So can I say if I don't take it yes can I say if I don't take it"
+  },
+  {
+    "start": 701.63,
+    "end": 707.97,
+    "text": "then the function will be okay I'm not taking that so that guy is not taken so I'll"
+  },
+  {
+    "start": 707.97,
+    "end": 713.09,
+    "text": "move to one less index always move back and you'll say same target."
+  },
+  {
+    "start": 713.09,
+    "end": 719.81,
+    "text": "So what is the signify you were currently at this index and from zero to index they were"
+  },
+  {
+    "start": 719.81,
+    "end": 724.0,
+    "text": "asking can you form the target can you form the target."
+  },
+  {
+    "start": 724.0,
+    "end": 730.72,
+    "text": "You said hey listen I'm not gonna pick this element thereby I reduce it to this index minus"
+  },
+  {
+    "start": 730.72,
+    "end": 736.63,
+    "text": "one and I say from zero to index minus one can I form the target because I'm not"
+  },
+  {
+    "start": 736.63,
+    "end": 738.55,
+    "text": "interested in taking this."
+  },
+  {
+    "start": 738.55,
+    "end": 744.16,
+    "text": "I reduce it and I say okay can I form this target now if I reduce portion of"
+  },
+  {
+    "start": 744.16,
+    "end": 750.66,
+    "text": "the array I do a search on the reduced portion of the array that's what this means makes"
+  },
+  {
+    "start": 750.66,
+    "end": 751.1,
+    "text": "sense."
+  },
+  {
+    "start": 751.1,
+    "end": 753.69,
+    "text": "It does okay what's the other case."
+  },
+  {
+    "start": 753.69,
+    "end": 754.43,
+    "text": "Bullion D."
+  },
+  {
+    "start": 754.43,
+    "end": 758.86,
+    "text": "Let's keep the take as true so initially falls already when."
+  },
+  {
+    "start": 758.86,
+    "end": 766.62,
+    "text": "When can you take an element into that now if you're looking for a target if you're looking for a target."
+  },
+  {
+    "start": 766.62,
+    "end": 773.34,
+    "text": "The target has to be greater than equal to that current index otherwise how can you take it"
+  },
+  {
+    "start": 773.34,
+    "end": 779.84,
+    "text": "into the sub sequence like for an example if your array is something like one three six."
+  },
+  {
+    "start": 779.84,
+    "end": 786.05,
+    "text": "And your target is something like two you can't take six or three can you in the sub"
+  },
+  {
+    "start": 786.05,
+    "end": 789.97,
+    "text": "sequence because you're looking for something as two."
+  },
+  {
+    "start": 789.97,
+    "end": 796.25,
+    "text": "So I'm saying the target is greater than their index then only take it otherwise not."
+  },
+  {
+    "start": 796.25,
+    "end": 801.57,
+    "text": "So if I take it if I take it I will move to the previous index now let's"
+  },
+  {
+    "start": 801.57,
+    "end": 806.0,
+    "text": "let's understand what will happen to this particular target."
+  },
+  {
+    "start": 806.0,
+    "end": 807.61,
+    "text": "Let's think about that."
+  },
+  {
+    "start": 807.61,
+    "end": 810.13,
+    "text": "So what am I saying I'm saying okay."
+  },
+  {
+    "start": 810.13,
+    "end": 818.53,
+    "text": "Initially I had this add this recursion call in this guy can I achieve a sub sequence that gives me a particular target."
+  },
+  {
+    "start": 818.53,
+    "end": 823.01,
+    "text": "Now what am I saying in this is there a sub sequence I say okay."
+  },
+  {
+    "start": 823.01,
+    "end": 828.19,
+    "text": "Let's see this guy is that part of the sub sequence which I'm looking for."
+  },
+  {
+    "start": 828.19,
+    "end": 833.09,
+    "text": "Let's say this guy is a part of the sub sequence that I'm looking for."
+  },
+  {
+    "start": 833.09,
+    "end": 837.99,
+    "text": "So I take this array of index and I say you're part of a sub sequence."
+  },
+  {
+    "start": 837.99,
+    "end": 843.52,
+    "text": "So if this guy is a part of sub sequence the target that I was looking for will"
+  },
+  {
+    "start": 843.52,
+    "end": 849.68,
+    "text": "not shrink will not shrink because if initially the target was this big will go smaller."
+  },
+  {
+    "start": 849.68,
+    "end": 851.85,
+    "text": "Why because I've taken someone."
+  },
+  {
+    "start": 851.85,
+    "end": 857.59,
+    "text": "And now I look for zero to one lesser index in the shorter section of the array in"
+  },
+  {
+    "start": 857.59,
+    "end": 863.96,
+    "text": "the shorter section of the array and the target will go down by array of index because I've"
+  },
+  {
+    "start": 863.96,
+    "end": 866.06,
+    "text": "taken that into consideration."
+  },
+  {
+    "start": 866.06,
+    "end": 872.15,
+    "text": "Now either not take or either take I just keep on trying and the moment it reaches zero"
+  },
+  {
+    "start": 872.15,
+    "end": 877.47,
+    "text": "if I can have this as the target it will return me true or it will return me"
+  },
+  {
+    "start": 877.47,
+    "end": 881.32,
+    "text": "a false or if any of the moment the target is achieved."
+  },
+  {
+    "start": 881.32,
+    "end": 882.93,
+    "text": "It will return me true."
+  },
+  {
+    "start": 882.93,
+    "end": 889.0,
+    "text": "So there were two choices one was the take the other one was the not take so I can say."
+  },
+  {
+    "start": 889.0,
+    "end": 894.9,
+    "text": "I'm trying to possible ways and I'm looking is there a possibility is there a possibility."
+  },
+  {
+    "start": 894.9,
+    "end": 900.6,
+    "text": "So if I'm looking for is there a possibility can I say it will be over of both of them."
+  },
+  {
+    "start": 900.6,
+    "end": 906.83,
+    "text": "Because I'll try both the possibilities if any one of them returns true I return a true because"
+  },
+  {
+    "start": 906.83,
+    "end": 910.57,
+    "text": "doesn't matter if any of the possibilities give me a sum."
+  },
+  {
+    "start": 910.57,
+    "end": 914.18,
+    "text": "I'm okay to go because I'm looking for one subset only."
+  },
+  {
+    "start": 914.18,
+    "end": 919.95,
+    "text": "So if any of them give me the possibility I'm ready to go and that's how your occurrence"
+  },
+  {
+    "start": 919.95,
+    "end": 925.59,
+    "text": "will look like in all the sub sequence problem not take and take not take and take all"
+  },
+  {
+    "start": 925.59,
+    "end": 928.8,
+    "text": "the sub sequence problem you will be seeing that."
+  },
+  {
+    "start": 928.8,
+    "end": 935.23,
+    "text": "So in order to understand this recursion better let's do the recursion tree in the records that we"
+  },
+  {
+    "start": 935.23,
+    "end": 941.33,
+    "text": "have written so that you also try to see the overlapping sub problems if they are already and"
+  },
+  {
+    "start": 941.33,
+    "end": 946.58,
+    "text": "probably we can figure out if this recursion can be optimized or something else."
+  },
+  {
+    "start": 946.58,
+    "end": 953.92,
+    "text": "But before that we need to understand the recursion in depth because there's the first problem on sub sequences."
+  },
+  {
+    "start": 953.92,
+    "end": 960.28,
+    "text": "So initially where am I I'm at this position which is index three and I'm looking for target for."
+  },
+  {
+    "start": 960.28,
+    "end": 965.39,
+    "text": "So I say on this entire array can I have a target for sub like okay let's take"
+  },
+  {
+    "start": 965.39,
+    "end": 970.18,
+    "text": "this guy so if I take this guy I'll go to index two with a reduced sum of"
+  },
+  {
+    "start": 970.18,
+    "end": 975.1,
+    "text": "three and if I say I'll not take this guy I'll go to two and I'll be having"
+  },
+  {
+    "start": 975.1,
+    "end": 977.0,
+    "text": "four with basically means is."
+  },
+  {
+    "start": 977.0,
+    "end": 980.06,
+    "text": "I was saying does this have a target for now."
+  },
+  {
+    "start": 980.06,
+    "end": 987.2,
+    "text": "What I said let's take this into account so this took this into account and now in this particular array."
+  },
+  {
+    "start": 987.2,
+    "end": 991.96,
+    "text": "I'm looking for can I have a sum of three can I have a sum of three in"
+  },
+  {
+    "start": 991.96,
+    "end": 995.22,
+    "text": "this shorter array and I say I'll not take this."
+  },
+  {
+    "start": 995.22,
+    "end": 1000.11,
+    "text": "Then in this array can I have a sum of four that's what I'm looking for."
+  },
+  {
+    "start": 1000.11,
+    "end": 1002.96,
+    "text": "So this is how I'm shrinking both of them."
+  },
+  {
+    "start": 1002.96,
+    "end": 1003.5,
+    "text": "Perfect."
+  },
+  {
+    "start": 1003.5,
+    "end": 1006.49,
+    "text": "Let's stop this and let's try to solve this."
+  },
+  {
+    "start": 1006.49,
+    "end": 1011.93,
+    "text": "F of two three so again you're having two and three you can take this one or you"
+  },
+  {
+    "start": 1011.93,
+    "end": 1017.23,
+    "text": "cannot take this one assuming you take this and assuming you do not take this."
+  },
+  {
+    "start": 1017.23,
+    "end": 1022.8,
+    "text": "Okay, so if you take this you shrink it to one and if you're taking the one you're"
+  },
+  {
+    "start": 1022.8,
+    "end": 1028.24,
+    "text": "left up with one rubber tool and if you do not take it you are shrinking this to"
+  },
+  {
+    "start": 1028.24,
+    "end": 1030.21,
+    "text": "one and you still have three."
+  },
+  {
+    "start": 1030.21,
+    "end": 1036.05,
+    "text": "So if you take this one what happens is now you shrinking it to this and you're saying"
+  },
+  {
+    "start": 1036.05,
+    "end": 1040.26,
+    "text": "in this in this array do we have a sum to do we have a sum to."
+  },
+  {
+    "start": 1040.26,
+    "end": 1047.6,
+    "text": "Makes sense let's go across we have something as three now one two means in this can I have a target of two."
+  },
+  {
+    "start": 1047.6,
+    "end": 1054.0,
+    "text": "Now comes the take voila if else can I pick this three logical say no why because this is two."
+  },
+  {
+    "start": 1054.0,
+    "end": 1059.31,
+    "text": "And I'm looking for a target of two how can I pick someone as three so the take"
+  },
+  {
+    "start": 1059.31,
+    "end": 1065.9,
+    "text": "condition will never be there it will always be false the take condition will always be false I'll"
+  },
+  {
+    "start": 1065.9,
+    "end": 1066.77,
+    "text": "say not take."
+  },
+  {
+    "start": 1066.77,
+    "end": 1074.1,
+    "text": "If I don't take I'll reach the zero th index yes I'll reach the zero th index and I'll be like just a minute."
+  },
+  {
+    "start": 1074.1,
+    "end": 1078.67,
+    "text": "And I will be like on the zero th index can I have to so on the zero"
+  },
+  {
+    "start": 1078.67,
+    "end": 1083.58,
+    "text": "th index can I have to can I have to and when you reach the zero th index"
+  },
+  {
+    "start": 1083.58,
+    "end": 1088.89,
+    "text": "you're having a target to is it to yes so the zero th index itself can give you"
+  },
+  {
+    "start": 1088.89,
+    "end": 1093.73,
+    "text": "the target to that you're looking for thereby this guy returns are true."
+  },
+  {
+    "start": 1093.73,
+    "end": 1099.58,
+    "text": "So f of one two was calling take which giving false and was calling non take which gave"
+  },
+  {
+    "start": 1099.58,
+    "end": 1104.62,
+    "text": "him true so you said okay not take give me a true so I will return true now"
+  },
+  {
+    "start": 1104.62,
+    "end": 1109.86,
+    "text": "this f of two three yes this f of two three sees that this is giving him true."
+  },
+  {
+    "start": 1109.86,
+    "end": 1115.24,
+    "text": "And you can solve this f of one three but the moment it gets one true it returns"
+  },
+  {
+    "start": 1115.24,
+    "end": 1121.29,
+    "text": "again you can solve this but there is no requirement of solving this since you got it true"
+  },
+  {
+    "start": 1121.29,
+    "end": 1123.71,
+    "text": "by your this can also return a true."
+  },
+  {
+    "start": 1123.71,
+    "end": 1130.1,
+    "text": "Now you might ask, describe where are the overlapping sub problems so if I have gone deep you'd"
+  },
+  {
+    "start": 1130.1,
+    "end": 1135.34,
+    "text": "have seen like in this case if I'd have gone by taking it would have been f of"
+  },
+  {
+    "start": 1135.34,
+    "end": 1140.0,
+    "text": "one and second index was this so this would have been f of one three."
+  },
+  {
+    "start": 1140.0,
+    "end": 1144.76,
+    "text": "And if I would have not taken it it would have been f of one four so you"
+  },
+  {
+    "start": 1144.76,
+    "end": 1150.84,
+    "text": "see f of one three overlapping with f of one three so there will be overlapping sub problems"
+  },
+  {
+    "start": 1150.84,
+    "end": 1151.43,
+    "text": "for sure."
+  },
+  {
+    "start": 1151.43,
+    "end": 1156.92,
+    "text": "So he saw how the recursion did work by taking and non taking so for talk about the"
+  },
+  {
+    "start": 1156.92,
+    "end": 1161.41,
+    "text": "recursion or time complexity what are the recursion time complexity."
+  },
+  {
+    "start": 1161.41,
+    "end": 1166.9,
+    "text": "It will be we go off to the power n because for every array element you have couple"
+  },
+  {
+    "start": 1166.9,
+    "end": 1173.18,
+    "text": "of options either you take the element into consideration or you say I'm not going to take this"
+  },
+  {
+    "start": 1173.18,
+    "end": 1173.71,
+    "text": "element."
+  },
+  {
+    "start": 1173.71,
+    "end": 1176.49,
+    "text": "So you just have couple of considerations."
+  },
+  {
+    "start": 1176.49,
+    "end": 1181.31,
+    "text": "So to the power n space complexity is auxiliary stack space of big often."
+  },
+  {
+    "start": 1181.31,
+    "end": 1189.77,
+    "text": "Now we saw that there were overlapping sub problems yes we saw that there were overlapping sub problems and how did we saw that."
+  },
+  {
+    "start": 1189.77,
+    "end": 1195.78,
+    "text": "If you remember we started with a very big problem we started with the entire array then we"
+  },
+  {
+    "start": 1195.78,
+    "end": 1201.53,
+    "text": "reduced it to small then we reduced it to small so the problem was broken down into sub"
+  },
+  {
+    "start": 1201.53,
+    "end": 1206.55,
+    "text": "problems sub problem sub problem and eventually solved with a single B skis."
+  },
+  {
+    "start": 1206.55,
+    "end": 1212.96,
+    "text": "So thereby the sub problems if you are breaking down the problem into sub problems they are bound"
+  },
+  {
+    "start": 1212.96,
+    "end": 1216.0,
+    "text": "to repeat and thereby what can I apply memo i."
+  },
+  {
+    "start": 1216.0,
+    "end": 1216.16,
+    "text": "A."
+  },
+  {
+    "start": 1216.16,
+    "end": 1218.96,
+    "text": "Shin yes thereby I can apply memo i."
+  },
+  {
+    "start": 1218.96,
+    "end": 1221.37,
+    "text": "Shin let's think about the map."
+  },
+  {
+    "start": 1221.37,
+    "end": 1224.55,
+    "text": "What did I say how will you apply memo i."
+  },
+  {
+    "start": 1224.55,
+    "end": 1228.43,
+    "text": "The first trick is figure out the changing states."
+  },
+  {
+    "start": 1228.43,
+    "end": 1233.17,
+    "text": "So there is an index and there is a target that might change."
+  },
+  {
+    "start": 1233.17,
+    "end": 1237.67,
+    "text": "There is an index and there is a target that might change."
+  },
+  {
+    "start": 1237.67,
+    "end": 1245.51,
+    "text": "So assuming the constraint says target will be lesser than 10 to the power 3 assuming the constraints"
+  },
+  {
+    "start": 1245.51,
+    "end": 1250.95,
+    "text": "is this and assuming this is also something like this the constraints."
+  },
+  {
+    "start": 1250.95,
+    "end": 1254.68,
+    "text": "Index you will take as 10 to the power 3 plus 1."
+  },
+  {
+    "start": 1254.68,
+    "end": 1260.97,
+    "text": "One more because there is something as 10 to the power 3 so in order to have this"
+  },
+  {
+    "start": 1260.97,
+    "end": 1267.1,
+    "text": "as an index you need plus 1 multiplied with target of 10 to the power 3 plus 1."
+  },
+  {
+    "start": 1267.1,
+    "end": 1271.14,
+    "text": "So this is the d p array that you will be requiring."
+  },
+  {
+    "start": 1271.14,
+    "end": 1275.8,
+    "text": "And you know how to memorize i have already taught you that."
+  },
+  {
+    "start": 1275.8,
+    "end": 1284.19,
+    "text": "By the way this will be a bullion d p array this can be a bullion d p array because the function is bullion."
+  },
+  {
+    "start": 1284.19,
+    "end": 1287.53,
+    "text": "So you just need to return it to our falls."
+  },
+  {
+    "start": 1287.53,
+    "end": 1291.1,
+    "text": "So what I can say is okay d p of index target."
+  },
+  {
+    "start": 1291.1,
+    "end": 1298.86,
+    "text": "And if d p of index target is not equal to by the way bullion you can't take after take 2 and falls."
+  },
+  {
+    "start": 1298.86,
+    "end": 1302.12,
+    "text": "So minus 1 and return d p of index target."
+  },
+  {
+    "start": 1302.12,
+    "end": 1307.0,
+    "text": "So you can't take or you can't take true and falls in the memo."
+  },
+  {
+    "start": 1307.0,
+    "end": 1311.3,
+    "text": "So you can't take bullion you have to take an integer for the memo."
+  },
+  {
+    "start": 1311.3,
+    "end": 1313.1,
+    "text": "So you can take 2 and falls."
+  },
+  {
+    "start": 1313.1,
+    "end": 1317.14,
+    "text": "Why because you know minus 1 is marked for any unvisited state."
+  },
+  {
+    "start": 1317.14,
+    "end": 1321.88,
+    "text": "So how will you determine if you mark 2 and falls for the unvisited state."
+  },
+  {
+    "start": 1321.88,
+    "end": 1324.51,
+    "text": "So it's very important minus 1 is marked."
+  },
+  {
+    "start": 1324.51,
+    "end": 1327.33,
+    "text": "This is all the memo and solution will grow."
+  },
+  {
+    "start": 1327.33,
+    "end": 1329.96,
+    "text": "And the memo and solution is very simple."
+  },
+  {
+    "start": 1329.96,
+    "end": 1332.85,
+    "text": "The time complexity will be n crosser target."
+  },
+  {
+    "start": 1332.85,
+    "end": 1336.44,
+    "text": "And the space complexity will be n crosser target array."
+  },
+  {
+    "start": 1336.44,
+    "end": 1342.85,
+    "text": "And an auxiliary space of b go off n which is an auxiliary space complexity which we have to reduce."
+  },
+  {
+    "start": 1342.85,
+    "end": 1345.41,
+    "text": "And that can only be done by tabulation."
+  },
+  {
+    "start": 1345.41,
+    "end": 1347.4,
+    "text": "So the next step is tabulation."
+  },
+  {
+    "start": 1347.4,
+    "end": 1349.26,
+    "text": "Let's quickly check that out."
+  },
+  {
+    "start": 1349.26,
+    "end": 1351.5,
+    "text": "So how do you write the tabulation?"
+  },
+  {
+    "start": 1351.5,
+    "end": 1353.68,
+    "text": "I've already taught you the steps."
+  },
+  {
+    "start": 1353.68,
+    "end": 1356.05,
+    "text": "How do you write the tabulation guys?"
+  },
+  {
+    "start": 1356.05,
+    "end": 1360.41,
+    "text": "First step is declare the d p array of the same size and and target."
+  },
+  {
+    "start": 1360.41,
+    "end": 1363.55,
+    "text": "So please declare the d p array of the same size."
+  },
+  {
+    "start": 1363.55,
+    "end": 1368.42,
+    "text": "Once you have declared the d p array of the same size, what's the next step?"
+  },
+  {
+    "start": 1368.42,
+    "end": 1372.01,
+    "text": "Next step was to figure out the base cases and write it."
+  },
+  {
+    "start": 1372.01,
+    "end": 1378.23,
+    "text": "So just without without thinking anything good to the recurrence and see what are the base cases."
+  },
+  {
+    "start": 1378.23,
+    "end": 1381.24,
+    "text": "The recurrence says any moment the target is 0."
+  },
+  {
+    "start": 1381.24,
+    "end": 1384.0,
+    "text": "Any moment the target is 0 you return true."
+  },
+  {
+    "start": 1384.0,
+    "end": 1388.78,
+    "text": "So if target is 0, what can be the possible value of index?"
+  },
+  {
+    "start": 1388.78,
+    "end": 1394.7,
+    "text": "Ask your brain, ask your brain, what can be the possible values of index?"
+  },
+  {
+    "start": 1394.7,
+    "end": 1396.4,
+    "text": "0 1 2 till n minus 1."
+  },
+  {
+    "start": 1396.4,
+    "end": 1400.29,
+    "text": "So for everyone on 0 th index you return a true."
+  },
+  {
+    "start": 1400.29,
+    "end": 1401.67,
+    "text": "So just write it."
+  },
+  {
+    "start": 1401.67,
+    "end": 1404.26,
+    "text": "Don't don't think anything else."
+  },
+  {
+    "start": 1404.26,
+    "end": 1405.72,
+    "text": "Just go and write."
+  },
+  {
+    "start": 1405.72,
+    "end": 1408.72,
+    "text": "Tabulation you should not complicate."
+  },
+  {
+    "start": 1408.72,
+    "end": 1410.83,
+    "text": "You should keep it simple."
+  },
+  {
+    "start": 1410.83,
+    "end": 1416.1,
+    "text": "For i equal to 0 till n minus 1, you write d p off i target is 0."
+  },
+  {
+    "start": 1416.1,
+    "end": 1418.29,
+    "text": "You call it a 0 equal to 2."
+  },
+  {
+    "start": 1418.29,
+    "end": 1426.07,
+    "text": "That's what you would write in the base case because for every index if target is 0 you write 2."
+  },
+  {
+    "start": 1426.07,
+    "end": 1427.77,
+    "text": "So just write it now."
+  },
+  {
+    "start": 1427.77,
+    "end": 1429.8,
+    "text": "What are you waiting for?"
+  },
+  {
+    "start": 1429.8,
+    "end": 1432.47,
+    "text": "Let's look at the next base case."
+  },
+  {
+    "start": 1432.47,
+    "end": 1435.55,
+    "text": "The next base case says if index is 0."
+  },
+  {
+    "start": 1435.55,
+    "end": 1437.41,
+    "text": "So index is 0 for sure."
+  },
+  {
+    "start": 1437.41,
+    "end": 1440.73,
+    "text": "Return true if it's equivalent to target."
+  },
+  {
+    "start": 1440.73,
+    "end": 1444.05,
+    "text": "So index is 0 and target can be anything."
+  },
+  {
+    "start": 1444.05,
+    "end": 1446.08,
+    "text": "But when will it be true?"
+  },
+  {
+    "start": 1446.08,
+    "end": 1447.78,
+    "text": "When will it be true?"
+  },
+  {
+    "start": 1447.78,
+    "end": 1453.29,
+    "text": "For every target what can be the possible values of target at index?"
+  },
+  {
+    "start": 1453.29,
+    "end": 1453.45,
+    "text": "0."
+  },
+  {
+    "start": 1453.45,
+    "end": 1456.53,
+    "text": "Think, think, ask your brain to think."
+  },
+  {
+    "start": 1456.53,
+    "end": 1458.07,
+    "text": "It can be anything."
+  },
+  {
+    "start": 1458.07,
+    "end": 1460.74,
+    "text": "Target can be 0, target can be 1."
+  },
+  {
+    "start": 1460.74,
+    "end": 1463.01,
+    "text": "It can be 0 but it can be 1."
+  },
+  {
+    "start": 1463.01,
+    "end": 1464.0,
+    "text": "It can be 2."
+  },
+  {
+    "start": 1464.0,
+    "end": 1467.09,
+    "text": "It can be till any value of target."
+  },
+  {
+    "start": 1467.09,
+    "end": 1468.59,
+    "text": "The given target."
+  },
+  {
+    "start": 1468.59,
+    "end": 1472.82,
+    "text": "So you will like but but which guy will be true?"
+  },
+  {
+    "start": 1472.82,
+    "end": 1475.03,
+    "text": "Only a of 0 will be true."
+  },
+  {
+    "start": 1475.03,
+    "end": 1478.29,
+    "text": "In d p of 0 a of 0 will only be true."
+  },
+  {
+    "start": 1478.29,
+    "end": 1484.2,
+    "text": "Realize no matter what the target is, no matter what the target is."
+  },
+  {
+    "start": 1484.2,
+    "end": 1488.61,
+    "text": "If it's equal to a of 0 then only it will be true."
+  },
+  {
+    "start": 1488.61,
+    "end": 1491.08,
+    "text": "Everyone else will be false."
+  },
+  {
+    "start": 1491.08,
+    "end": 1495.49,
+    "text": "So initially you can mark the entire d p as false."
+  },
+  {
+    "start": 1495.49,
+    "end": 1499.99,
+    "text": "So can I say only d p of 0 and a of 0 will be true."
+  },
+  {
+    "start": 1499.99,
+    "end": 1500.52,
+    "text": "I can."
+  },
+  {
+    "start": 1500.52,
+    "end": 1508.11,
+    "text": "So basically I can be like, okay, the next base cases if d p of 0, array of 0 is true."
+  },
+  {
+    "start": 1508.11,
+    "end": 1508.46,
+    "text": "Why?"
+  },
+  {
+    "start": 1508.46,
+    "end": 1509.61,
+    "text": "Very obvious."
+  },
+  {
+    "start": 1509.61,
+    "end": 1516.05,
+    "text": "I'm saying at index 0 can I form this target a of 0 and the answer is yes"
+  },
+  {
+    "start": 1516.05,
+    "end": 1521.78,
+    "text": "because at only on the a of 0 array you can form a target a of 0."
+  },
+  {
+    "start": 1521.78,
+    "end": 1524.51,
+    "text": "You can't form apart from that."
+  },
+  {
+    "start": 1524.51,
+    "end": 1527.42,
+    "text": "So this these are the base cases."
+  },
+  {
+    "start": 1527.42,
+    "end": 1529.71,
+    "text": "First step done next step."
+  },
+  {
+    "start": 1529.71,
+    "end": 1531.65,
+    "text": "Form the nested loops."
+  },
+  {
+    "start": 1531.65,
+    "end": 1533.94,
+    "text": "How many states are there?"
+  },
+  {
+    "start": 1533.94,
+    "end": 1536.32,
+    "text": "Two states index will be 1."
+  },
+  {
+    "start": 1536.32,
+    "end": 1538.88,
+    "text": "The other one will be target."
+  },
+  {
+    "start": 1538.88,
+    "end": 1541.35,
+    "text": "Where does index start from?"
+  },
+  {
+    "start": 1541.35,
+    "end": 1544.0,
+    "text": "Go and look at the recurrence."
+  },
+  {
+    "start": 1544.0,
+    "end": 1552.42,
+    "text": "In the recurrence index was n minus 1 and minus 2 n minus 3 and so until 0 top down top down."
+  },
+  {
+    "start": 1552.42,
+    "end": 1553.96,
+    "text": "What's bottom up?"
+  },
+  {
+    "start": 1553.96,
+    "end": 1555.5,
+    "text": "What's bottom up?"
+  },
+  {
+    "start": 1555.5,
+    "end": 1556.41,
+    "text": "What's up?"
+  },
+  {
+    "start": 1556.41,
+    "end": 1557.32,
+    "text": "What's up?"
+  },
+  {
+    "start": 1557.32,
+    "end": 1557.5,
+    "text": "0."
+  },
+  {
+    "start": 1557.5,
+    "end": 1557.68,
+    "text": "0."
+  },
+  {
+    "start": 1557.68,
+    "end": 1559.13,
+    "text": "0 the whole two."
+  },
+  {
+    "start": 1559.13,
+    "end": 1561.39,
+    "text": "1 tail n minus 1 correct."
+  },
+  {
+    "start": 1561.39,
+    "end": 1562.93,
+    "text": "1 tail n minus 1."
+  },
+  {
+    "start": 1562.93,
+    "end": 1563.65,
+    "text": "Perfect."
+  },
+  {
+    "start": 1563.65,
+    "end": 1565.28,
+    "text": "What about target?"
+  },
+  {
+    "start": 1565.28,
+    "end": 1567.72,
+    "text": "Target went on from target."
+  },
+  {
+    "start": 1567.72,
+    "end": 1570.89,
+    "text": "You started with the eventual goal."
+  },
+  {
+    "start": 1570.89,
+    "end": 1573.51,
+    "text": "You moved moved moved till 0."
+  },
+  {
+    "start": 1573.51,
+    "end": 1575.5,
+    "text": "Over what will happen?"
+  },
+  {
+    "start": 1575.5,
+    "end": 1576.95,
+    "text": "You go opposite."
+  },
+  {
+    "start": 1576.95,
+    "end": 1578.4,
+    "text": "You go opposite."
+  },
+  {
+    "start": 1578.4,
+    "end": 1578.76,
+    "text": "Yes."
+  },
+  {
+    "start": 1578.76,
+    "end": 1580.48,
+    "text": "So you go opposite."
+  },
+  {
+    "start": 1580.48,
+    "end": 1581.75,
+    "text": "One to target."
+  },
+  {
+    "start": 1581.75,
+    "end": 1585.64,
+    "text": "Because because zero has been already done."
+  },
+  {
+    "start": 1585.64,
+    "end": 1588.08,
+    "text": "Zero has already been done."
+  },
+  {
+    "start": 1588.08,
+    "end": 1591.52,
+    "text": "So this is what you do as nested loop."
+  },
+  {
+    "start": 1591.52,
+    "end": 1595.86,
+    "text": "So without thinking just write the nested loops."
+  },
+  {
+    "start": 1595.86,
+    "end": 1597.76,
+    "text": "See how simple it is."
+  },
+  {
+    "start": 1597.76,
+    "end": 1599.48,
+    "text": "Try the tabulation."
+  },
+  {
+    "start": 1599.48,
+    "end": 1602.01,
+    "text": "I equal to 1 till n minus 1."
+  },
+  {
+    "start": 1602.01,
+    "end": 1608.98,
+    "text": "Target will be you can call it as the j loop or to in order to maintain easy."
+  },
+  {
+    "start": 1608.98,
+    "end": 1612.06,
+    "text": "Let's write the target as 1 minus."
+  },
+  {
+    "start": 1612.06,
+    "end": 1613.42,
+    "text": "So you want to."
+  },
+  {
+    "start": 1613.42,
+    "end": 1617.67,
+    "text": "What if let's assume the target is k so 1 to k."
+  },
+  {
+    "start": 1617.67,
+    "end": 1618.39,
+    "text": "Perfect."
+  },
+  {
+    "start": 1618.39,
+    "end": 1621.11,
+    "text": "Now copy based the recurrence."
+  },
+  {
+    "start": 1621.11,
+    "end": 1623.19,
+    "text": "No need to do anything."
+  },
+  {
+    "start": 1623.19,
+    "end": 1626.0,
+    "text": "Just copy based the recurrence."
+  },
+  {
+    "start": 1626.0,
+    "end": 1627.96,
+    "text": "So I'll show that when I code."
+  },
+  {
+    "start": 1627.96,
+    "end": 1633.45,
+    "text": "So now it's time to code and then we will talk about the space optimization as well."
+  },
+  {
+    "start": 1633.45,
+    "end": 1640.77,
+    "text": "But we just need to copy based the recurrence and we will show that in the code because it becomes a lot easier."
+  },
+  {
+    "start": 1640.77,
+    "end": 1643.38,
+    "text": "But only two steps you have to remember."
+  },
+  {
+    "start": 1643.38,
+    "end": 1644.82,
+    "text": "Write the base pieces."
+  },
+  {
+    "start": 1644.82,
+    "end": 1646.78,
+    "text": "Just think of the base pieces."
+  },
+  {
+    "start": 1646.78,
+    "end": 1649.2,
+    "text": "Then just think of the nested states."
+  },
+  {
+    "start": 1649.2,
+    "end": 1649.79,
+    "text": "Remember."
+  },
+  {
+    "start": 1649.79,
+    "end": 1653.71,
+    "text": "The number of states is equal to the number of nested loops."
+  },
+  {
+    "start": 1653.71,
+    "end": 1655.41,
+    "text": "It goes as simple as that."
+  },
+  {
+    "start": 1655.41,
+    "end": 1658.68,
+    "text": "The number of states is equal to the nested loops."
+  },
+  {
+    "start": 1658.68,
+    "end": 1665.67,
+    "text": "And the nested loops in the opposite fashion from base case to the bottom up bottom up base case to the up."
+  },
+  {
+    "start": 1665.67,
+    "end": 1668.22,
+    "text": "So if you remember the recurrence tree."
+  },
+  {
+    "start": 1668.22,
+    "end": 1670.05,
+    "text": "The base case was 0, 0 to 3."
+  },
+  {
+    "start": 1670.05,
+    "end": 1672.4,
+    "text": "The base case was target was 2 to 4."
+  },
+  {
+    "start": 1672.4,
+    "end": 1673.05,
+    "text": "Bottom up."
+  },
+  {
+    "start": 1673.05,
+    "end": 1675.4,
+    "text": "So make sure you write it bottom up."
+  },
+  {
+    "start": 1675.4,
+    "end": 1676.05,
+    "text": "Base case."
+  },
+  {
+    "start": 1676.05,
+    "end": 1678.01,
+    "text": "Bottom up doesn't mean 0 to 0."
+  },
+  {
+    "start": 1678.01,
+    "end": 1680.69,
+    "text": "Whatever means whatever is the base case."
+  },
+  {
+    "start": 1680.69,
+    "end": 1684.02,
+    "text": "Write there from whatever was the recurrence score."
+  },
+  {
+    "start": 1684.02,
+    "end": 1689.05,
+    "text": "So written the tabulation concept and which is right to write the recurrence."
+  },
+  {
+    "start": 1689.05,
+    "end": 1693.62,
+    "text": "So if you write it or the time complexity will be n into target again."
+  },
+  {
+    "start": 1693.62,
+    "end": 1699.96,
+    "text": "And the space complexity will be b go off n into target and but there will be no auxiliary space."
+  },
+  {
+    "start": 1699.96,
+    "end": 1702.12,
+    "text": "So I'll show you that by writing."
+  },
+  {
+    "start": 1702.12,
+    "end": 1704.73,
+    "text": "So I've given the array the n and the k."
+  },
+  {
+    "start": 1704.73,
+    "end": 1706.89,
+    "text": "So we know it right the function."
+  },
+  {
+    "start": 1706.89,
+    "end": 1709.0,
+    "text": "So we write return the function."
+  },
+  {
+    "start": 1709.0,
+    "end": 1715.26,
+    "text": "The target initially is the index n minus 1 and the target is k and there is an array."
+  },
+  {
+    "start": 1715.26,
+    "end": 1717.15,
+    "text": "So we just write this off."
+  },
+  {
+    "start": 1717.15,
+    "end": 1718.97,
+    "text": "Let's write the function."
+  },
+  {
+    "start": 1718.97,
+    "end": 1721.15,
+    "text": "Let's keep it the function as."
+  },
+  {
+    "start": 1721.15,
+    "end": 1722.39,
+    "text": "Pull in function."
+  },
+  {
+    "start": 1722.39,
+    "end": 1723.41,
+    "text": "I empty index."
+  },
+  {
+    "start": 1723.41,
+    "end": 1724.5,
+    "text": "I empty target."
+  },
+  {
+    "start": 1724.5,
+    "end": 1727.49,
+    "text": "We know the vector and and I write right."
+  },
+  {
+    "start": 1727.49,
+    "end": 1730.48,
+    "text": "So what are the cases if the target is 0."
+  },
+  {
+    "start": 1730.48,
+    "end": 1733.03,
+    "text": "Where it earn a true simple enough."
+  },
+  {
+    "start": 1733.03,
+    "end": 1734.34,
+    "text": "If the index is 0."
+  },
+  {
+    "start": 1734.34,
+    "end": 1737.54,
+    "text": "Where it earn array of zero equal to target."
+  },
+  {
+    "start": 1737.54,
+    "end": 1739.72,
+    "text": "And there can be a notic case."
+  },
+  {
+    "start": 1739.72,
+    "end": 1742.12,
+    "text": "So you can write a Boolean notic."
+  },
+  {
+    "start": 1742.12,
+    "end": 1747.58,
+    "text": "Saying a notic which means I'll go back with the same target and the array."
+  },
+  {
+    "start": 1747.58,
+    "end": 1753.92,
+    "text": "There can be take case which is initially false and I can only take the array of index."
+  },
+  {
+    "start": 1753.92,
+    "end": 1757.63,
+    "text": "If that's less than target then only I can take it."
+  },
+  {
+    "start": 1757.63,
+    "end": 1765.42,
+    "text": "So let's assume I take it then in that case f of index minus 1 comma target will be used by array of index."
+  },
+  {
+    "start": 1765.42,
+    "end": 1767.39,
+    "text": "And I'll go till the array."
+  },
+  {
+    "start": 1767.39,
+    "end": 1771.03,
+    "text": "At the end of the day I can return the take notic."
+  },
+  {
+    "start": 1771.03,
+    "end": 1772.71,
+    "text": "And that's what you do."
+  },
+  {
+    "start": 1772.71,
+    "end": 1774.89,
+    "text": "So let's quickly run this off."
+  },
+  {
+    "start": 1774.89,
+    "end": 1776.35,
+    "text": "So it does run fine."
+  },
+  {
+    "start": 1776.35,
+    "end": 1778.1,
+    "text": "But we need to apply dp."
+  },
+  {
+    "start": 1778.1,
+    "end": 1779.99,
+    "text": "So please please apply dp."
+  },
+  {
+    "start": 1779.99,
+    "end": 1787.0,
+    "text": "The right vector vector int and a dp and we can definitely take it as n plus 1 as I said vector."
+  },
+  {
+    "start": 1787.0,
+    "end": 1793.36,
+    "text": "So the other thing will be vector int and you can take the target as k plus 1 and minus 1."
+  },
+  {
+    "start": 1793.36,
+    "end": 1795.9,
+    "text": "By the way n plus 1 is not required."
+  },
+  {
+    "start": 1795.9,
+    "end": 1800.07,
+    "text": "You can take n also because you're starting from n minus 1."
+  },
+  {
+    "start": 1800.07,
+    "end": 1802.47,
+    "text": "But the target has to be k plus 1."
+  },
+  {
+    "start": 1802.47,
+    "end": 1809.04,
+    "text": "So if taken this then you can just pass on the dp and over here let's copy base this portion."
+  },
+  {
+    "start": 1809.04,
+    "end": 1812.5,
+    "text": "So it'll go over here and it'll be the reference."
+  },
+  {
+    "start": 1812.5,
+    "end": 1815.11,
+    "text": "Just make sure you pass it over here."
+  },
+  {
+    "start": 1815.11,
+    "end": 1820.62,
+    "text": "As well and make sure before returning you write dp of index and target to it."
+  },
+  {
+    "start": 1820.62,
+    "end": 1822.95,
+    "text": "Remember Boolean will be 0 and 1."
+  },
+  {
+    "start": 1822.95,
+    "end": 1826.77,
+    "text": "So it will automatically convert that into an integer."
+  },
+  {
+    "start": 1826.77,
+    "end": 1832.21,
+    "text": "So add over here if dp of index target is not equal to minus 1 you can return"
+  },
+  {
+    "start": 1832.21,
+    "end": 1834.26,
+    "text": "it to dp of index and target."
+  },
+  {
+    "start": 1834.26,
+    "end": 1838.22,
+    "text": "That's all you can do it and let's quickly run this off."
+  },
+  {
+    "start": 1838.22,
+    "end": 1839.21,
+    "text": "Does run fine."
+  },
+  {
+    "start": 1839.21,
+    "end": 1840.48,
+    "text": "Let's submit this."
+  },
+  {
+    "start": 1840.48,
+    "end": 1847.48,
+    "text": "So you can see that it is running absolutely fine and we get 100 mx but we don't need to stop here."
+  },
+  {
+    "start": 1847.48,
+    "end": 1850.45,
+    "text": "We need to make sure we write the records."
+  },
+  {
+    "start": 1850.45,
+    "end": 1856.53,
+    "text": "So the records were saying let's write the first base case which is target equal to 0."
+  },
+  {
+    "start": 1856.53,
+    "end": 1862.11,
+    "text": "So you can say i and t by the way now you can convert this into Boolean because"
+  },
+  {
+    "start": 1862.11,
+    "end": 1867.0,
+    "text": "we don't need any minus 1 now because minus 1 for memorization check."
+  },
+  {
+    "start": 1867.0,
+    "end": 1868.98,
+    "text": "But we don't need that way."
+  },
+  {
+    "start": 1868.98,
+    "end": 1873.45,
+    "text": "So i can go as 0 and i can be like we can go on to light plus"
+  },
+  {
+    "start": 1873.45,
+    "end": 1878.14,
+    "text": "plus and i can say dp of i of all the target zeros will be true."
+  },
+  {
+    "start": 1878.14,
+    "end": 1883.49,
+    "text": "So this is the next thing will be dp of 0 which is the next base case and"
+  },
+  {
+    "start": 1883.49,
+    "end": 1888.55,
+    "text": "on only array of 0 yes and only on array of 0 we will be having true."
+  },
+  {
+    "start": 1888.55,
+    "end": 1891.12,
+    "text": "So why don't you write that simple."
+  },
+  {
+    "start": 1891.12,
+    "end": 1894.86,
+    "text": "Now what are the couple of things index and target."
+  },
+  {
+    "start": 1894.86,
+    "end": 1900.36,
+    "text": "So please make sure i did i index equal to 1 index goes on till n and index"
+  },
+  {
+    "start": 1900.36,
+    "end": 1905.93,
+    "text": "plus plus but the target starts from i and t target will go on from 1 and it"
+  },
+  {
+    "start": 1905.93,
+    "end": 1907.47,
+    "text": "will go until target."
+  },
+  {
+    "start": 1907.47,
+    "end": 1913.48,
+    "text": "And i plus plus not target it should be key and i plus plus perfect just copy base"
+  },
+  {
+    "start": 1913.48,
+    "end": 1918.47,
+    "text": "the records don't even think of anything just copy base the records."
+  },
+  {
+    "start": 1918.47,
+    "end": 1924.78,
+    "text": "Obviously the records instead of f make it dp of index minus 1 perfect target amazing."
+  },
+  {
+    "start": 1924.78,
+    "end": 1930.87,
+    "text": "So that's it and over here you can just omit this portion take us false and it will"
+  },
+  {
+    "start": 1930.87,
+    "end": 1936.3,
+    "text": "automatically make sure it only takes if it's greater and again make a dp."
+  },
+  {
+    "start": 1936.3,
+    "end": 1938.06,
+    "text": "Just change the records."
+  },
+  {
+    "start": 1938.06,
+    "end": 1939.82,
+    "text": "Just change the records."
+  },
+  {
+    "start": 1939.82,
+    "end": 1947.0,
+    "text": "No need to do anything else don't over complicate as i always say don't over complicate okay done."
+  },
+  {
+    "start": 1947.0,
+    "end": 1948.92,
+    "text": "Just remove the written."
+  },
+  {
+    "start": 1948.92,
+    "end": 1955.47,
+    "text": "So if you remember what did you call the function as you call the function as f of"
+  },
+  {
+    "start": 1955.47,
+    "end": 1960.02,
+    "text": "n minus 1 so dp of n minus 1 and the target which is key."
+  },
+  {
+    "start": 1960.02,
+    "end": 1965.37,
+    "text": "So just now i'll just run this off and see if this is running fine."
+  },
+  {
+    "start": 1965.37,
+    "end": 1968.88,
+    "text": "Okay we did miss something what did we miss."
+  },
+  {
+    "start": 1968.88,
+    "end": 1972.0,
+    "text": "Okay so we vector of boolim by the way."
+  },
+  {
+    "start": 1972.0,
+    "end": 1979.43,
+    "text": "Okay another mistake we will be having target over here we will also be having it target over"
+  },
+  {
+    "start": 1979.43,
+    "end": 1982.39,
+    "text": "here so let's quickly check this off."
+  },
+  {
+    "start": 1982.39,
+    "end": 1986.62,
+    "text": "That's fine right works fine let's do the submission."
+  },
+  {
+    "start": 1986.62,
+    "end": 1987.98,
+    "text": "Wow run swine so."
+  },
+  {
+    "start": 1987.98,
+    "end": 1997.33,
+    "text": "Also next step space optimization and i told you space optimization is possible whenever you see something like that."
+  },
+  {
+    "start": 1997.33,
+    "end": 2003.72,
+    "text": "What did you see index minus 1 the moment you see index minus 1 here is like man"
+  },
+  {
+    "start": 2003.72,
+    "end": 2006.76,
+    "text": "this is possible yes this is possible."
+  },
+  {
+    "start": 2006.76,
+    "end": 2014.51,
+    "text": "So we can definitely space optimist us but something we need to take care is remember this always"
+  },
+  {
+    "start": 2014.51,
+    "end": 2021.06,
+    "text": "something we need to take care if we space optimist us is i'll take the i found an"
+  },
+  {
+    "start": 2021.06,
+    "end": 2022.0,
+    "text": "explain you."
+  },
+  {
+    "start": 2022.0,
+    "end": 2028.81,
+    "text": "So if it's space optimising because i told you that when can we space optimise we can space"
+  },
+  {
+    "start": 2028.81,
+    "end": 2035.32,
+    "text": "optimise if we have a state as i minus 1 because because first time we always write the"
+  },
+  {
+    "start": 2035.32,
+    "end": 2036.14,
+    "text": "index zero."
+  },
+  {
+    "start": 2036.14,
+    "end": 2041.75,
+    "text": "If we always take the index zero and in this index zero some a of i will be"
+  },
+  {
+    "start": 2041.75,
+    "end": 2047.51,
+    "text": "marked as 2 then we go to index one then we compute this but over here if you"
+  },
+  {
+    "start": 2047.51,
+    "end": 2054.69,
+    "text": "carefully observe in the base case yes if you carefully observe in the base case for every index"
+  },
+  {
+    "start": 2054.69,
+    "end": 2057.98,
+    "text": "for every row the zero index is marked as 2."
+  },
+  {
+    "start": 2057.98,
+    "end": 2064.49,
+    "text": "So please make sure whenever you take a row whenever you take a row whenever the row is"
+  },
+  {
+    "start": 2064.49,
+    "end": 2071.07,
+    "text": "car this will be previous right whenever the row is car the zero index is marked as true"
+  },
+  {
+    "start": 2071.07,
+    "end": 2077.88,
+    "text": "always always every time you declare a row the zero index should be marked as true that's a"
+  },
+  {
+    "start": 2077.88,
+    "end": 2083.34,
+    "text": "thumb rule because in the base case if you see all the indexes is marked."
+  },
+  {
+    "start": 2083.34,
+    "end": 2089.92,
+    "text": "So you compute the this this this this this this this this this this this this this this"
+  },
+  {
+    "start": 2089.92,
+    "end": 2094.63,
+    "text": "once you have competed this next you will move to the next one."
+  },
+  {
+    "start": 2094.63,
+    "end": 2100.84,
+    "text": "And this guy will become previous now this guy will be car and it just uses i minus"
+  },
+  {
+    "start": 2100.84,
+    "end": 2107.0,
+    "text": "1 the previous state so whenever there is a case of previous state the concept of."
+  },
+  {
+    "start": 2107.0,
+    "end": 2113.79,
+    "text": "And car comes in again I'm not going into depth because I've been teaching that from the last"
+  },
+  {
+    "start": 2113.79,
+    "end": 2120.5,
+    "text": "12 lectures so if you have not seen the previous lectures it's your fault not mind so please"
+  },
+  {
+    "start": 2120.5,
+    "end": 2127.36,
+    "text": "make sure go back and watch those lectures in order to understand space optimization in depth."
+  },
+  {
+    "start": 2127.36,
+    "end": 2133.12,
+    "text": "So what did I say I require couple of steps I require two rows to be stored one"
+  },
+  {
+    "start": 2133.12,
+    "end": 2138.88,
+    "text": "is the previous which will be of size target that is k plus 1 0 because we just"
+  },
+  {
+    "start": 2138.88,
+    "end": 2140.49,
+    "text": "need to store the row."
+  },
+  {
+    "start": 2140.49,
+    "end": 2146.33,
+    "text": "So the row will be having k columns so that's what I need to store that's what I"
+  },
+  {
+    "start": 2146.33,
+    "end": 2152.61,
+    "text": "have it stored and I also require a current for the current cap so that's again k plus"
+  },
+  {
+    "start": 2152.61,
+    "end": 2153.19,
+    "text": "1 and 0."
+  },
+  {
+    "start": 2153.19,
+    "end": 2158.23,
+    "text": "What is this dp of i of 0 so I don't need this any further but I know"
+  },
+  {
+    "start": 2158.23,
+    "end": 2161.95,
+    "text": "one thing previous of 0 the first guy will be true."
+  },
+  {
+    "start": 2161.95,
+    "end": 2167.2,
+    "text": "And the car of 0 will be true because for any one the target 0 has to be"
+  },
+  {
+    "start": 2167.2,
+    "end": 2172.6,
+    "text": "true so everyone the 0 will be true and over your dp of 0 so instead of dp"
+  },
+  {
+    "start": 2172.6,
+    "end": 2178.8,
+    "text": "of 0 it's the previous one because it's the previous one we come to index of one what"
+  },
+  {
+    "start": 2178.8,
+    "end": 2184.13,
+    "text": "did I tell you index of i minus 1 means previous and x of i minus 1 means"
+  },
+  {
+    "start": 2184.13,
+    "end": 2188.0,
+    "text": "previous dp of index means dp of index means current."
+  },
+  {
+    "start": 2188.0,
+    "end": 2194.7,
+    "text": "Whenever this is completed the previous is now current and at the end and minus 1 is the"
+  },
+  {
+    "start": 2194.7,
+    "end": 2200.03,
+    "text": "previous of current run this off let's quickly run this off once fine."
+  },
+  {
+    "start": 2200.03,
+    "end": 2206.65,
+    "text": "What is the time complexity now it still stays the same and into target but what is the"
+  },
+  {
+    "start": 2206.65,
+    "end": 2214.49,
+    "text": "space complexity space complexity has now boiled into just beco of target and we're not using any index"
+  },
+  {
+    "start": 2214.49,
+    "end": 2219.59,
+    "text": "of just beco of target is helping us to solve this problem in just."
+  },
+  {
+    "start": 2219.59,
+    "end": 2227.28,
+    "text": "Beco of case space that's amazing we're not requiring a 2D array so remember this concept of previous"
+  },
+  {
+    "start": 2227.28,
+    "end": 2233.6,
+    "text": "and came whenever you see i minus 1 is just you need to store the previous row just"
+  },
+  {
+    "start": 2233.6,
+    "end": 2237.18,
+    "text": "see what are you computing the previous row so."
+  },
+  {
+    "start": 2237.18,
+    "end": 2244.26,
+    "text": "If you are facing a problem in computing the previous row what I'll recommend is just go back"
+  },
+  {
+    "start": 2244.26,
+    "end": 2250.35,
+    "text": "go back and do a dryer of these fall loop and fill the table fill the table step"
+  },
+  {
+    "start": 2250.35,
+    "end": 2256.44,
+    "text": "by step step by step step by step and you will you will slowly slowly see in the"
+  },
+  {
+    "start": 2256.44,
+    "end": 2256.9,
+    "text": "table."
+  },
+  {
+    "start": 2256.9,
+    "end": 2262.91,
+    "text": "This row helps you to get this row then this row helps you to get this row then"
+  },
+  {
+    "start": 2262.91,
+    "end": 2269.38,
+    "text": "this row helps you to get this row then this row helps you to get this row ultimately"
+  },
+  {
+    "start": 2269.38,
+    "end": 2276.0,
+    "text": "the answer is studio fill the table run the fall loop to it yourself okay i can't just."
+  },
+  {
+    "start": 2276.0,
+    "end": 2282.47,
+    "text": "I just can't spoon feed everything do it yourself and you will slowly and slowly realize space optimization"
+  },
+  {
+    "start": 2282.47,
+    "end": 2286.16,
+    "text": "is is the easiest thing in the world is just using couple of."
+  },
+  {
+    "start": 2286.16,
+    "end": 2291.42,
+    "text": "I hope you have understood the first problem on dp on sub sequences so just in case you"
+  },
+  {
+    "start": 2291.42,
+    "end": 2295.83,
+    "text": "did please please make sure you like this video and continue on rotation."
+  },
+  {
+    "start": 2295.83,
+    "end": 2301.63,
+    "text": "In the comment section please make sure you write and understood so that i do get motivated that"
+  },
+  {
+    "start": 2301.63,
+    "end": 2304.83,
+    "text": "you're understanding the explanation of the problems."
+  },
+  {
+    "start": 2304.83,
+    "end": 2310.33,
+    "text": "And if you are new to the channel please please do consider subscribing to us because we do"
+  },
+  {
+    "start": 2310.33,
+    "end": 2315.17,
+    "text": "put a lot of days i'll go content you can check that out on our channel and with"
+  },
+  {
+    "start": 2315.17,
+    "end": 2320.0,
+    "text": "this we'll be wrapping up this video let's be in the next one till then bye bye."
+  }
+]

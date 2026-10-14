@@ -1,0 +1,497 @@
+[
+  {
+    "start": 0.0,
+    "end": 3.02,
+    "text": "Avian welcome back to take you forward today."
+  },
+  {
+    "start": 3.02,
+    "end": 10.46,
+    "text": "We will be solving the problem longest palindromic sub sequence So let's understand what does the problem state"
+  },
+  {
+    "start": 10.46,
+    "end": 16.22,
+    "text": "the problem states assume you are given a string okay So let's see the string Bv eb So"
+  },
+  {
+    "start": 16.22,
+    "end": 22.18,
+    "text": "in the string if I ask you what a sub sequences You know the definition of sub sequences."
+  },
+  {
+    "start": 22.18,
+    "end": 28.28,
+    "text": "I have already taught taught you that in The lecture LCS so remember the previous is it for"
+  },
+  {
+    "start": 28.28,
+    "end": 35.18,
+    "text": "this one is this lecture Please watch all the LCS lecture before coming across and solving this problem"
+  },
+  {
+    "start": 35.18,
+    "end": 41.14,
+    "text": "because if you don't know It's all well CS this You cannot because this is nothing but an"
+  },
+  {
+    "start": 41.14,
+    "end": 44.62,
+    "text": "extension of that problem So what are sub sequences?"
+  },
+  {
+    "start": 44.62,
+    "end": 50.05,
+    "text": "So if I write something as a b that's a sub sequence barite something as bb it is"
+  },
+  {
+    "start": 50.05,
+    "end": 55.95,
+    "text": "sub sequence and if I write something as b Bb that's a sub sequence if I write something"
+  },
+  {
+    "start": 55.95,
+    "end": 60.77,
+    "text": "as bb So that's a sub sequence if I write something as a Bb which is b a"
+  },
+  {
+    "start": 60.77,
+    "end": 66.2,
+    "text": "b that's a sub sequence So there can be a lot of sub sequences right and you know"
+  },
+  {
+    "start": 66.2,
+    "end": 68.01,
+    "text": "it is It can be contagious."
+  },
+  {
+    "start": 68.01,
+    "end": 74.51,
+    "text": "It cannot be contagious But they've gotten part about this is it should maintain the order like b"
+  },
+  {
+    "start": 74.51,
+    "end": 77.06,
+    "text": "a b B a b it should maintain the order"
+  },
+  {
+    "start": 77.06,
+    "end": 81.94,
+    "text": "Now among all of these sub sequences if you if you try to write on all of these"
+  },
+  {
+    "start": 81.94,
+    "end": 88.05,
+    "text": "sub sequences You have to tell me which which are palindroms So ask you which are palindroms you'll"
+  },
+  {
+    "start": 88.05,
+    "end": 94.35,
+    "text": "say this is palindrom this is palindrom this is palindrom This is palindrom you know what is palindrom"
+  },
+  {
+    "start": 94.35,
+    "end": 99.72,
+    "text": "right a palindrom is nothing but if you write a string in the reverse Like if you write"
+  },
+  {
+    "start": 99.72,
+    "end": 103.98,
+    "text": "b a b in the reverse order It'll still be b a b so that's that is the"
+  },
+  {
+    "start": 103.98,
+    "end": 110.28,
+    "text": "definition of palindrom So I can see these strings are palindrom now the next thing comes as long-gist"
+  },
+  {
+    "start": 110.28,
+    "end": 114.6,
+    "text": "Which one is the longest among these I see this being the longest one?"
+  },
+  {
+    "start": 114.6,
+    "end": 118.31,
+    "text": "So for us this is the answer and what is the length of this?"
+  },
+  {
+    "start": 118.31,
+    "end": 124.24,
+    "text": "So this is the question give me the length of the longest palindromic sub sequence It's all tell"
+  },
+  {
+    "start": 124.24,
+    "end": 129.37,
+    "text": "you how to print it but as of now give me the length of the longest palindromic sub"
+  },
+  {
+    "start": 129.37,
+    "end": 134.12,
+    "text": "sequence is the question Now you start off with you might think okay, Striva."
+  },
+  {
+    "start": 134.12,
+    "end": 135.73,
+    "text": "How are we going to solve?"
+  },
+  {
+    "start": 135.73,
+    "end": 143.51,
+    "text": "The first method that comes to my mind is definitely the generic way  That's you will say generate all the sub sequence again."
+  },
+  {
+    "start": 143.51,
+    "end": 146.17,
+    "text": "How can you generate all the sub sequences?"
+  },
+  {
+    "start": 146.17,
+    "end": 151.85,
+    "text": "By using two methods one is the recursive method While the other one is the power set method"
+  },
+  {
+    "start": 151.85,
+    "end": 154.56,
+    "text": "that I've already discussed in another video"
+  },
+  {
+    "start": 154.56,
+    "end": 163.62,
+    "text": "Generate all the sub sequences check for palindrom and pick up the longest one that's And pick the"
+  },
+  {
+    "start": 163.62,
+    "end": 172.4,
+    "text": "longest and pick the long-guessed I think this is what Like generic brute forces and if you try"
+  },
+  {
+    "start": 172.4,
+    "end": 181.73,
+    "text": "to optimize this brute force then you're right A recursive solution if you think of something but can"
+  },
+  {
+    "start": 181.73,
+    "end": 186.07,
+    "text": "I solve this using something that I've learned?"
+  },
+  {
+    "start": 186.07,
+    "end": 195.68,
+    "text": "There is LCS because I will try to try to take this problem into that arena  So how will I try to black?"
+  },
+  {
+    "start": 195.68,
+    "end": 202.7,
+    "text": "I know that this can be sold using LCS But if you don't know how will you so"
+  },
+  {
+    "start": 202.7,
+    "end": 207.04,
+    "text": "try to see what does the problem actually mean?"
+  },
+  {
+    "start": 207.04,
+    "end": 213.6,
+    "text": "So for that example, let's take a bigger string B B E B B C Okay, so if"
+  },
+  {
+    "start": 213.6,
+    "end": 221.46,
+    "text": "I ask you which is the longest palindromic among this you'll find B I think Not not B"
+  },
+  {
+    "start": 221.46,
+    "end": 226.45,
+    "text": "you'll find the B a B C B a B yeah Israeli B A B C B A"
+  },
+  {
+    "start": 226.45,
+    "end": 231.18,
+    "text": "B So this is a palindromic Now something to observe"
+  },
+  {
+    "start": 231.18,
+    "end": 239.46,
+    "text": "This B is equivalent to this B This A is equivalent to this same This B is equivalent"
+  },
+  {
+    "start": 239.46,
+    "end": 247.54,
+    "text": "to this B and there is someone in between So it matches from the front and from the"
+  },
+  {
+    "start": 247.54,
+    "end": 254.94,
+    "text": "back It matches from the front and from the back So can I see this can I see"
+  },
+  {
+    "start": 254.94,
+    "end": 258.35,
+    "text": "this if I try to write this string?"
+  },
+  {
+    "start": 258.35,
+    "end": 266.82,
+    "text": "Yes, if I try to write this string in the reverse order Let's assume this is string one"
+  },
+  {
+    "start": 266.82,
+    "end": 275.0,
+    "text": "and I'm saying I'm gonna write this string in the reverse order and reverse is B A C"
+  },
+  {
+    "start": 275.0,
+    "end": 281.23,
+    "text": "B C B a B B I wrote this string in the reverse order So if I try"
+  },
+  {
+    "start": 281.23,
+    "end": 288.05,
+    "text": "to write Down the string in the reverse order Can I say this B a B C B"
+  },
+  {
+    "start": 288.05,
+    "end": 292.92,
+    "text": "a B B a Sorry B a B C B a B Or it can be the other"
+  },
+  {
+    "start": 292.92,
+    "end": 299.54,
+    "text": "one as well this is somewhere similar to B A B C B a B Right, so Can"
+  },
+  {
+    "start": 299.54,
+    "end": 308.42,
+    "text": "I see this if you have got this string in the straight fashion and in the opposite fashion?"
+  },
+  {
+    "start": 308.42,
+    "end": 313.32,
+    "text": "Then You know one thing for sure If I just try to market B a B C B"
+  },
+  {
+    "start": 313.32,
+    "end": 318.37,
+    "text": "a B So this is what it looks like and over here it's like okay B a B"
+  },
+  {
+    "start": 318.37,
+    "end": 322.97,
+    "text": "C B a B Right, so Can I see Can you try to connect this to L C"
+  },
+  {
+    "start": 322.97,
+    "end": 328.54,
+    "text": "S Can you you can you will like try by putting the string one and if I take"
+  },
+  {
+    "start": 328.54,
+    "end": 333.59,
+    "text": "the string two and if I try to find The L C is of both the strings C"
+  },
+  {
+    "start": 333.59,
+    "end": 339.16,
+    "text": "S if I try to find the L C S of both the strings Because since I've written"
+  },
+  {
+    "start": 339.16,
+    "end": 345.84,
+    "text": "the string in the reverse order you will find these exact same string Over here as well if"
+  },
+  {
+    "start": 345.84,
+    "end": 353.19,
+    "text": "I'm the exact same string over here as well because you've written that in the reverse order That's"
+  },
+  {
+    "start": 353.19,
+    "end": 359.43,
+    "text": "what pandromes so what I can say is instead of thinking of any other way to solve it"
+  },
+  {
+    "start": 359.43,
+    "end": 361.58,
+    "text": "Are we very plain and simple?"
+  },
+  {
+    "start": 361.58,
+    "end": 368.93,
+    "text": "I'm like okay, let's let's take the string one and since I can  Induively see that what is pandrom?"
+  },
+  {
+    "start": 368.93,
+    "end": 375.39,
+    "text": "It's the reverse the reverse is same So why don't I write reverse and if the reverse is"
+  },
+  {
+    "start": 375.39,
+    "end": 381.92,
+    "text": "same so some portion which is same And when you write them reverse should also be same I"
+  },
+  {
+    "start": 381.92,
+    "end": 384.22,
+    "text": "hope you're getting this right."
+  },
+  {
+    "start": 384.22,
+    "end": 387.78,
+    "text": "I hope you're getting this it's exactly the same"
+  },
+  {
+    "start": 387.78,
+    "end": 394.01,
+    "text": "And if there is a portion of string which is present in S1 as well and is present"
+  },
+  {
+    "start": 394.01,
+    "end": 400.08,
+    "text": "in S2 as well What do we call that we call that as Common sub sequence if there"
+  },
+  {
+    "start": 400.08,
+    "end": 406.69,
+    "text": "is a portion of string which is present in both the strings We call that as the common"
+  },
+  {
+    "start": 406.69,
+    "end": 413.84,
+    "text": "sub sequence Right and what do we require we require the longest common sub sequence So can I"
+  },
+  {
+    "start": 413.84,
+    "end": 420.6,
+    "text": "say I know one thing for sure If I just attached a long-distance to these couple of guys"
+  },
+  {
+    "start": 420.6,
+    "end": 427.98,
+    "text": "in a longest is bound to be the longest Pandromic sub sequence because this string is written in"
+  },
+  {
+    "start": 427.98,
+    "end": 431.44,
+    "text": "the reverse order It's not in the same order."
+  },
+  {
+    "start": 431.44,
+    "end": 439.28,
+    "text": "It's in the reverse order So whichever string will match Since it's the reverse Everybody you can call"
+  },
+  {
+    "start": 439.28,
+    "end": 446.51,
+    "text": "them as palindromes because A string which is in a normal way a string which isn't the reverse"
+  },
+  {
+    "start": 446.51,
+    "end": 453.43,
+    "text": "way if they are matching you know what is that called us Palindrom so basically if you get"
+  },
+  {
+    "start": 453.43,
+    "end": 459.89,
+    "text": "the LCS of both the strings which is longest common sub sequence It is bound to be a"
+  },
+  {
+    "start": 459.89,
+    "end": 467.19,
+    "text": "palindrom because S2 is nothing But the reverse of S1 so the common string that you'll get will"
+  },
+  {
+    "start": 467.19,
+    "end": 468.26,
+    "text": "be the reverse"
+  },
+  {
+    "start": 468.26,
+    "end": 474.22,
+    "text": "Goodbye you can say it's a palindrom so you don't need to do anything You know how to"
+  },
+  {
+    "start": 474.22,
+    "end": 480.32,
+    "text": "find LCS you just call the LCS function Using the string S1 and you pass the reverse of"
+  },
+  {
+    "start": 480.32,
+    "end": 486.21,
+    "text": "S1 so if you just call the LCS function using this You will get your answer and have"
+  },
+  {
+    "start": 486.21,
+    "end": 492.24,
+    "text": "already taught you how to print LCS So you can again use the print function to get the"
+  },
+  {
+    "start": 492.24,
+    "end": 498.83,
+    "text": "longest palindromic sub sequence as well So here's the question what we will do is we'll go to"
+  },
+  {
+    "start": 498.83,
+    "end": 505.63,
+    "text": "longest common sub sequence Let's copy based the code which was used in LCS Let's copy based them"
+  },
+  {
+    "start": 505.63,
+    "end": 512.01,
+    "text": "and probably printed over here I printed it let's do one thing let's keep string T equal to"
+  },
+  {
+    "start": 512.01,
+    "end": 516.92,
+    "text": "S and we can say reverse of T dot begin and T dot N yeah, so just make"
+  },
+  {
+    "start": 516.92,
+    "end": 523.02,
+    "text": "sure you reverse it and once you have reversed it it serves the return of LCS as Cometi"
+  },
+  {
+    "start": 523.02,
+    "end": 529.26,
+    "text": "and in the shoe we find okay, we got some wrong answers because we are printing over here"
+  },
+  {
+    "start": 529.26,
+    "end": 535.22,
+    "text": "So let's erase this only to print the DPRA It comes the correct answer if I just give"
+  },
+  {
+    "start": 535.22,
+    "end": 541.11,
+    "text": "it a submit you will see that this is running absolutely fine Yeah, it is so we have"
+  },
+  {
+    "start": 541.11,
+    "end": 546.42,
+    "text": "Done this problem very easy is going to concept that we have learned so guys"
+  },
+  {
+    "start": 546.42,
+    "end": 550.9,
+    "text": "I hope just make sure you can space optimize this as well I've already taught that N LCS"
+  },
+  {
+    "start": 550.9,
+    "end": 555.02,
+    "text": "so you can just go across and space optimize this as well So guys I hope you have"
+  },
+  {
+    "start": 555.02,
+    "end": 559.75,
+    "text": "understood Or this problem just an extension of the LCS is just in case you did Please please"
+  },
+  {
+    "start": 559.75,
+    "end": 564.58,
+    "text": "please make sure you like this video and if I did to the channel please do consider subscribing"
+  },
+  {
+    "start": 564.58,
+    "end": 568.1,
+    "text": "to us Never with this let's travel this video and we didn't expect it"
+  }
+]

@@ -1,0 +1,257 @@
+[
+  {
+    "start": 0.0,
+    "end": 61.0,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] Hey, we are welcome back to the channel. I hope you guys are doing extremely well. So we finished  1ddp and dp on grits. Now the next pattern of dynamic programming will be dp on sub sequences. Yes. We will be doing dp on sub sequences. A lot of times instead of sub sequences, you might be hearing the name So either sub sequences or sub sets is what we are going to solve. So what is sub sequences? Let's first understand the definition of that and then we can definitely move across. Now any contagious or non-conteges that's very important. Any contagious or non-conteges part of the array is known as sub sequence. Like for example, if I give you an array like 1,3,2 then I can say 1,2 is a sub sequence because you see 1,2 is known Conteges and it's following the order of 1,2."
+  },
+  {
+    "start": 48.17,
+    "end": 105.97,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] Like for example, if I give you an array like 1,3,2 then I can say 1,2 is a sub sequence because you see 1,2 is known Conteges and it's following the order of 1,2. 2,1 cannot be a subset or sub sequence. We will to understand this whenever I say sub sequence it has to follow the order. Subset might not follow but sub sequence has to follow. So this is a sub sequence. Again, is this a sub sequence? Yes, this is also a sub sequence because 3,2 follows the order as well as it can be called as a sub array. Sub array also you can call and sub sequence also you can call. So all the problems that we will be doing is based on dp on sub sequence or subsets and we will also be having one other stuff as target. Generally we will be dealing with problems where we will be said key."
+  },
+  {
+    "start": 91.27,
+    "end": 148.7,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] So all the problems that we will be doing is based on dp on sub sequence or subsets and we will also be having one other stuff as target. Generally we will be dealing with problems where we will be said key. Okay, this is the target. You have to pick elements from the array in order like they will give some conditions in order to reach that target. So all the problems that relates sub sequence, subsets and target will be the part of the next pattern we will be solving. We'll be solving a bunch of problems and again I promise the moment we finish the last problem in this pattern. You can solve any problem in this given pattern right. So without wasting any time let's get started with the first problem. It states subset sum equal to k. So you're given an array list of n positive integers and integer k."
+  },
+  {
+    "start": 136.66,
+    "end": 193.68,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] So without wasting any time let's get started with the first problem. It states subset sum equal to k. So you're given an array list of n positive integers and integer k. So given an array and an integer k. Your task is to check if there exists a subset in an array with a sum equal to k. Basically does any of the elements combine to give you the sum equal to k. So if there exists you have to return a true otherwise you need to return a false like if you see in this example we have 1 2 3 4 and k is 4. I can say if I pick up probably just the 4 I'll get the summation 4 or I can say if I pick up 1 and if I pick up 3 I'll get the summation as 4. So there are 2 subsets and the question was if there exists a single subset. So the answer to this will be true. So that's what you have to solve."
+  },
+  {
+    "start": 182.94,
+    "end": 243.0,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] 4. So there are 2 subsets and the question was if there exists a single subset. So the answer to this will be true. So that's what you have to solve. Okay, so first of all how do you solve this problem? Now obviously we can't be writing a 3D solution because that will never make sense. We have to generate like the first thing that comes to my mind is generate all those subsiequences and check if any yes if any of them gives a sum of k. That's the first thing that comes to my brain. How can you generate all the subsiequences? There are 2 ways. One is the power set. I have already made a video on that you can definitely watch it. One is the power set which uses bit manipulation or the other one is the recursion again the lecture 6 where we have discussed or the lecture 8 of recursion playlist the combination some problem."
+  },
+  {
+    "start": 228.73,
+    "end": 283.8,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] One is the power set which uses bit manipulation or the other one is the recursion again the lecture 6 where we have discussed or the lecture 8 of recursion playlist the combination some problem. Where you have already discussed how to generate all the subsea quences. But the question arises over here. What is the question? Does it ask us to generate all the subsea quences and the answer to that is no. So what's the question? The question states does there exist a single subset if I get a single subset my job is done. So I don't need to generate all the subsea quences. That's where we think of okay. So instead of generating all the subsea quences we just need to keep a check if there is any subset. So thereby we decide that okay we will follow the recursion method because we don't need to print"
+  },
+  {
+    "start": 270.4,
+    "end": 328.0,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] So instead of generating all the subsea quences we just need to keep a check if there is any subset. So thereby we decide that okay we will follow the recursion method because we don't need to print all we will just follow the recursion method and I have particularly when we just get one sub sequence with the same subset target we will return and we will stop. So that's my overall thinking. So we know recursion can help us to generate all the subsea quences and I've clearly told you what's the rule of writing the recurrence any recurrence can always be written in express everything in terms of index. Do we have an index here every array problem in dp will always have an index and that's the array index itself. So we definitely have an index. Do we have any other parameter on every index we need to take care of the target that we are looking for."
+  },
+  {
+    "start": 318.74,
+    "end": 375.12,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] So we definitely have an index. Do we have any other parameter on every index we need to take care of the target that we are looking for. So we can say we definitely have a target that we are looking for. So always remember this whatever may be the problem on dp on sub sequences and these subsets and target problems. We will always try to express everything in terms of index and everything in terms of target like in grid it was i and j in sub sequences it is index and it is target thumb rule. Okay, let's go to the second point. The second point is explore possibilities of that index now what am I talking about let's understand explore possibilities of that index. So what am I talking about I'm talking about an index and what I'm at what the other thing subset of sub sequence."
+  },
+  {
+    "start": 366.74,
+    "end": 424.45,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] So what am I talking about I'm talking about an index and what I'm at what the other thing subset of sub sequence. So what can be the possibilities if you ask yourself for an index your brain will say striver there will be two possibilities whether that array of an index is the part of the sub sequence makes sense. So I can say it's the part of the sub sequence. Like array of index is the part of the sub sequence or array of index is not part of the sub sequence like logically only these parts will be the not part of the sub sequence. So I have two choices one is it's the part of the sub sequence while the other one is it's not the part of the sub sequence. So we have we have written all the possibilities. I don't see any other possibilities for a given index right we can think of the recurrence afterwards."
+  },
+  {
+    "start": 411.52,
+    "end": 467.75,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] is it's not the part of the sub sequence. So we have we have written all the possibilities. I don't see any other possibilities for a given index right we can think of the recurrence afterwards. Now what am I looking for I'm looking for if any of them give a true I'll return a true because the question was return true if you get salveleck. Okay, if return true or false if both of the possibilities. We will understand this indeed. So let's do one thing. Let's take the so we have understood all the three points right. Let's write express. The question arises how do I start with index how do I start with target now always remember what I what am I looking for I'm looking for the entire array and if there exists a sub sequence with the target whatever is given to you. So I'll try to express it in terms of f of n minus 1 saying in the entire"
+  },
+  {
+    "start": 453.61,
+    "end": 512.5,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] what I what am I looking for I'm looking for the entire array and if there exists a sub sequence with the target whatever is given to you. So I'll try to express it in terms of f of n minus 1 saying in the entire array till index n minus 1 here you have your properly in the entire array till index n minus 1 I repeat again in the entire array till index n minus 1 does there exist a target that is what the recurrence will tell you in the entire array till index n minus 1 does there exist any target for an example. If I'm giving you one two three four as the array and I'm saying you the target as four if I'm writing f of three comma four that means I'm doing the indexing zero one two three and I'm asking on this portion on this entire array does there exist someone with the target for that's what I'm looking for that's the meaning of f of n minus one target and this"
+  },
+  {
+    "start": 499.77,
+    "end": 557.28,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] three and I'm asking on this portion on this entire array does there exist someone with the target for that's what I'm looking for that's the meaning of f of n minus one target and this is going to be valid throughout all the tp on sub sequences pattern. Okay, so we have understood this so there by we write okay f of index and we have a target so that's the first thing expressing their recurrence so whenever we are expressing their recurrence. What are the base cases I think about these base cases what are the base cases actually so my brain tells me okay struggle. What can be the base cases the base cases is it might happen we have achieved the target because you might be at a state where the target is no more like initially assume over here the target was four and just imagine you took this for and you came out to this index."
+  },
+  {
+    "start": 545.03,
+    "end": 605.24,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] because you might be at a state where the target is no more like initially assume over here the target was four and just imagine you took this for and you came out to this index. There is no further target to be achieved do you understand so what I'm saying is okay. I know one base case is for sure for the index target so I'll be like if at any moment the target becomes zero. I'll return a true why because we will looking for a sub sequence which gives me the target as zero so written that. So we've written the base case for target what about the other one index so where is the call starting from n minus one and we know we will go till the zero index because in an array it's for man minus one at index till the zero index. So if you're standing at an index zero and you have a certain target value assume four can"
+  },
+  {
+    "start": 593.46,
+    "end": 649.0,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] an array it's for man minus one at index till the zero index. So if you're standing at an index zero and you have a certain target value assume four can the target be achieved at this index zero how can you determine you can be striver if the array of zero contains the value four then this target can be achieved otherwise not. Makes sense because what does f of what does f of zero comma target signify it signifies till zero index can we achieve this target and if it's zero index it's only single element so how can I achieve that target if it's the target itself. So thereby if index is equal to zero which is ultimately the base case. I will return true if the array of zero is equal to equal to the target itself."
+  },
+  {
+    "start": 637.3,
+    "end": 696.74,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] So thereby if index is equal to zero which is ultimately the base case. I will return true if the array of zero is equal to equal to the target itself. Perfect so first step express and write the base cases is completed always if you're writing a base case first think about the target. Nothing about the index think about the states what can be the ultimate of states what's the next thing. Okay, so what's the next thing. Explore possibilities of that index because as of now you're standing at an index so you are at an index and they're asking can I form a sub sequence from zero to that index that gives me the target can I form can I form a sub sequence from zero to index that gives me a target. I'll be like okay there are two ways one of the ways is I say I will not take it."
+  },
+  {
+    "start": 683.52,
+    "end": 738.55,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] me the target can I form can I form a sub sequence from zero to index that gives me a target. I'll be like okay there are two ways one of the ways is I say I will not take it. So can I say if I don't take it yes can I say if I don't take it then the function will be okay I'm not taking that so that guy is not taken so I'll move to one less index always move back and you'll say same target. So what is the signify you were currently at this index and from zero to index they were asking can you form the target can you form the target. You said hey listen I'm not gonna pick this element thereby I reduce it to this index minus one and I say from zero to index minus one can I form the target because I'm not interested in taking this."
+  },
+  {
+    "start": 724.0,
+    "end": 779.84,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] You said hey listen I'm not gonna pick this element thereby I reduce it to this index minus one and I say from zero to index minus one can I form the target because I'm not interested in taking this. I reduce it and I say okay can I form this target now if I reduce portion of the array I do a search on the reduced portion of the array that's what this means makes sense. It does okay what's the other case. Bullion D. Let's keep the take as true so initially falls already when. When can you take an element into that now if you're looking for a target if you're looking for a target. The target has to be greater than equal to that current index otherwise how can you take it into the sub sequence like for an example if your array is something like one three six."
+  },
+  {
+    "start": 766.62,
+    "end": 823.01,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] The target has to be greater than equal to that current index otherwise how can you take it into the sub sequence like for an example if your array is something like one three six. And your target is something like two you can't take six or three can you in the sub sequence because you're looking for something as two. So I'm saying the target is greater than their index then only take it otherwise not. So if I take it if I take it I will move to the previous index now let's let's understand what will happen to this particular target. Let's think about that. So what am I saying I'm saying okay. Initially I had this add this recursion call in this guy can I achieve a sub sequence that gives me a particular target. Now what am I saying in this is there a sub sequence I say okay."
+  },
+  {
+    "start": 810.13,
+    "end": 866.06,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] Initially I had this add this recursion call in this guy can I achieve a sub sequence that gives me a particular target. Now what am I saying in this is there a sub sequence I say okay. Let's see this guy is that part of the sub sequence which I'm looking for. Let's say this guy is a part of the sub sequence that I'm looking for. So I take this array of index and I say you're part of a sub sequence. So if this guy is a part of sub sequence the target that I was looking for will not shrink will not shrink because if initially the target was this big will go smaller. Why because I've taken someone. And now I look for zero to one lesser index in the shorter section of the array in the shorter section of the array and the target will go down by array of index because I've taken that into consideration."
+  },
+  {
+    "start": 851.85,
+    "end": 910.57,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] And now I look for zero to one lesser index in the shorter section of the array in the shorter section of the array and the target will go down by array of index because I've taken that into consideration. Now either not take or either take I just keep on trying and the moment it reaches zero if I can have this as the target it will return me true or it will return me a false or if any of the moment the target is achieved. It will return me true. So there were two choices one was the take the other one was the not take so I can say. I'm trying to possible ways and I'm looking is there a possibility is there a possibility. So if I'm looking for is there a possibility can I say it will be over of both of them. Because I'll try both the possibilities if any one of them returns true I return a true because doesn't matter if any of the possibilities give me a sum."
+  },
+  {
+    "start": 900.6,
+    "end": 960.28,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] Because I'll try both the possibilities if any one of them returns true I return a true because doesn't matter if any of the possibilities give me a sum. I'm okay to go because I'm looking for one subset only. So if any of them give me the possibility I'm ready to go and that's how your occurrence will look like in all the sub sequence problem not take and take not take and take all the sub sequence problem you will be seeing that. So in order to understand this recursion better let's do the recursion tree in the records that we have written so that you also try to see the overlapping sub problems if they are already and probably we can figure out if this recursion can be optimized or something else. But before that we need to understand the recursion in depth because there's the first problem on sub sequences. So initially where am I I'm at this position which is index three and I'm looking for target for."
+  },
+  {
+    "start": 946.58,
+    "end": 1002.96,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] But before that we need to understand the recursion in depth because there's the first problem on sub sequences. So initially where am I I'm at this position which is index three and I'm looking for target for. So I say on this entire array can I have a target for sub like okay let's take this guy so if I take this guy I'll go to index two with a reduced sum of three and if I say I'll not take this guy I'll go to two and I'll be having four with basically means is. I was saying does this have a target for now. What I said let's take this into account so this took this into account and now in this particular array. I'm looking for can I have a sum of three can I have a sum of three in this shorter array and I say I'll not take this. Then in this array can I have a sum of four that's what I'm looking for. So this is how I'm shrinking both of them."
+  },
+  {
+    "start": 991.96,
+    "end": 1047.6,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] this shorter array and I say I'll not take this. Then in this array can I have a sum of four that's what I'm looking for. So this is how I'm shrinking both of them. Perfect. Let's stop this and let's try to solve this. F of two three so again you're having two and three you can take this one or you cannot take this one assuming you take this and assuming you do not take this. Okay, so if you take this you shrink it to one and if you're taking the one you're left up with one rubber tool and if you do not take it you are shrinking this to one and you still have three. So if you take this one what happens is now you shrinking it to this and you're saying in this in this array do we have a sum to do we have a sum to. Makes sense let's go across we have something as three now one two means in this can I have a target of two."
+  },
+  {
+    "start": 1036.05,
+    "end": 1093.73,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] in this in this array do we have a sum to do we have a sum to. Makes sense let's go across we have something as three now one two means in this can I have a target of two. Now comes the take voila if else can I pick this three logical say no why because this is two. And I'm looking for a target of two how can I pick someone as three so the take condition will never be there it will always be false the take condition will always be false I'll say not take. If I don't take I'll reach the zero th index yes I'll reach the zero th index and I'll be like just a minute. And I will be like on the zero th index can I have to so on the zero th index can I have to can I have to and when you reach the zero th index you're having a target to is it to yes so the zero th index itself can give you the target to that you're looking for thereby this guy returns are true."
+  },
+  {
+    "start": 1083.58,
+    "end": 1140.0,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] you're having a target to is it to yes so the zero th index itself can give you the target to that you're looking for thereby this guy returns are true. So f of one two was calling take which giving false and was calling non take which gave him true so you said okay not take give me a true so I will return true now this f of two three yes this f of two three sees that this is giving him true. And you can solve this f of one three but the moment it gets one true it returns again you can solve this but there is no requirement of solving this since you got it true by your this can also return a true. Now you might ask, describe where are the overlapping sub problems so if I have gone deep you'd have seen like in this case if I'd have gone by taking it would have been f of one and second index was this so this would have been f of one three."
+  },
+  {
+    "start": 1130.1,
+    "end": 1189.77,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] have seen like in this case if I'd have gone by taking it would have been f of one and second index was this so this would have been f of one three. And if I would have not taken it it would have been f of one four so you see f of one three overlapping with f of one three so there will be overlapping sub problems for sure. So he saw how the recursion did work by taking and non taking so for talk about the recursion or time complexity what are the recursion time complexity. It will be we go off to the power n because for every array element you have couple of options either you take the element into consideration or you say I'm not going to take this element. So you just have couple of considerations. So to the power n space complexity is auxiliary stack space of big often. Now we saw that there were overlapping sub problems yes we saw that there were overlapping sub problems and how did we saw that."
+  },
+  {
+    "start": 1176.49,
+    "end": 1233.17,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] So to the power n space complexity is auxiliary stack space of big often. Now we saw that there were overlapping sub problems yes we saw that there were overlapping sub problems and how did we saw that. If you remember we started with a very big problem we started with the entire array then we reduced it to small then we reduced it to small so the problem was broken down into sub problems sub problem sub problem and eventually solved with a single B skis. So thereby the sub problems if you are breaking down the problem into sub problems they are bound to repeat and thereby what can I apply memo i. A. Shin yes thereby I can apply memo i. Shin let's think about the map. What did I say how will you apply memo i. The first trick is figure out the changing states. So there is an index and there is a target that might change."
+  },
+  {
+    "start": 1218.96,
+    "end": 1275.8,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] Shin let's think about the map. What did I say how will you apply memo i. The first trick is figure out the changing states. So there is an index and there is a target that might change. There is an index and there is a target that might change. So assuming the constraint says target will be lesser than 10 to the power 3 assuming the constraints is this and assuming this is also something like this the constraints. Index you will take as 10 to the power 3 plus 1. One more because there is something as 10 to the power 3 so in order to have this as an index you need plus 1 multiplied with target of 10 to the power 3 plus 1. So this is the d p array that you will be requiring. And you know how to memorize i have already taught you that."
+  },
+  {
+    "start": 1260.97,
+    "end": 1317.14,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] as an index you need plus 1 multiplied with target of 10 to the power 3 plus 1. So this is the d p array that you will be requiring. And you know how to memorize i have already taught you that. By the way this will be a bullion d p array this can be a bullion d p array because the function is bullion. So you just need to return it to our falls. So what I can say is okay d p of index target. And if d p of index target is not equal to by the way bullion you can't take after take 2 and falls. So minus 1 and return d p of index target. So you can't take or you can't take true and falls in the memo. So you can't take bullion you have to take an integer for the memo. So you can take 2 and falls. Why because you know minus 1 is marked for any unvisited state."
+  },
+  {
+    "start": 1307.0,
+    "end": 1363.55,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] So you can't take bullion you have to take an integer for the memo. So you can take 2 and falls. Why because you know minus 1 is marked for any unvisited state. So how will you determine if you mark 2 and falls for the unvisited state. So it's very important minus 1 is marked. This is all the memo and solution will grow. And the memo and solution is very simple. The time complexity will be n crosser target. And the space complexity will be n crosser target array. And an auxiliary space of b go off n which is an auxiliary space complexity which we have to reduce. And that can only be done by tabulation. So the next step is tabulation. Let's quickly check that out. So how do you write the tabulation? I've already taught you the steps. How do you write the tabulation guys? First step is declare the d p array of the same size and and target. So please declare the d p array of the same size."
+  },
+  {
+    "start": 1349.26,
+    "end": 1404.26,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] So how do you write the tabulation? I've already taught you the steps. How do you write the tabulation guys? First step is declare the d p array of the same size and and target. So please declare the d p array of the same size. Once you have declared the d p array of the same size, what's the next step? Next step was to figure out the base cases and write it. So just without without thinking anything good to the recurrence and see what are the base cases. The recurrence says any moment the target is 0. Any moment the target is 0 you return true. So if target is 0, what can be the possible value of index? Ask your brain, ask your brain, what can be the possible values of index? 0 1 2 till n minus 1. So for everyone on 0 th index you return a true. So just write it. Don't don't think anything else."
+  },
+  {
+    "start": 1394.7,
+    "end": 1453.29,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] 0 1 2 till n minus 1. So for everyone on 0 th index you return a true. So just write it. Don't don't think anything else. Just go and write. Tabulation you should not complicate. You should keep it simple. For i equal to 0 till n minus 1, you write d p off i target is 0. You call it a 0 equal to 2. That's what you would write in the base case because for every index if target is 0 you write 2. So just write it now. What are you waiting for? Let's look at the next base case. The next base case says if index is 0. So index is 0 for sure. Return true if it's equivalent to target. So index is 0 and target can be anything. But when will it be true? When will it be true? For every target what can be the possible values of target at index?"
+  },
+  {
+    "start": 1440.73,
+    "end": 1499.99,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] So index is 0 and target can be anything. But when will it be true? When will it be true? For every target what can be the possible values of target at index? 0. Think, think, ask your brain to think. It can be anything. Target can be 0, target can be 1. It can be 0 but it can be 1. It can be 2. It can be till any value of target. The given target. So you will like but but which guy will be true? Only a of 0 will be true. In d p of 0 a of 0 will only be true. Realize no matter what the target is, no matter what the target is. If it's equal to a of 0 then only it will be true. Everyone else will be false. So initially you can mark the entire d p as false. So can I say only d p of 0 and a of 0 will be true."
+  },
+  {
+    "start": 1488.61,
+    "end": 1544.0,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] Everyone else will be false. So initially you can mark the entire d p as false. So can I say only d p of 0 and a of 0 will be true. I can. So basically I can be like, okay, the next base cases if d p of 0, array of 0 is true. Why? Very obvious. I'm saying at index 0 can I form this target a of 0 and the answer is yes because at only on the a of 0 array you can form a target a of 0. You can't form apart from that. So this these are the base cases. First step done next step. Form the nested loops. How many states are there? Two states index will be 1. The other one will be target. Where does index start from? Go and look at the recurrence."
+  },
+  {
+    "start": 1529.71,
+    "end": 1585.64,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] Form the nested loops. How many states are there? Two states index will be 1. The other one will be target. Where does index start from? Go and look at the recurrence. In the recurrence index was n minus 1 and minus 2 n minus 3 and so until 0 top down top down. What's bottom up? What's bottom up? What's up? What's up? 0. 0. 0 the whole two. 1 tail n minus 1 correct. 1 tail n minus 1. Perfect. What about target? Target went on from target. You started with the eventual goal. You moved moved moved till 0. Over what will happen? You go opposite. You go opposite. Yes. So you go opposite. One to target. Because because zero has been already done."
+  },
+  {
+    "start": 1570.89,
+    "end": 1626.0,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] You moved moved moved till 0. Over what will happen? You go opposite. You go opposite. Yes. So you go opposite. One to target. Because because zero has been already done. Zero has already been done. So this is what you do as nested loop. So without thinking just write the nested loops. See how simple it is. Try the tabulation. I equal to 1 till n minus 1. Target will be you can call it as the j loop or to in order to maintain easy. Let's write the target as 1 minus. So you want to. What if let's assume the target is k so 1 to k. Perfect. Now copy based the recurrence. No need to do anything. Just copy based the recurrence."
+  },
+  {
+    "start": 1612.06,
+    "end": 1668.22,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] So you want to. What if let's assume the target is k so 1 to k. Perfect. Now copy based the recurrence. No need to do anything. Just copy based the recurrence. So I'll show that when I code. So now it's time to code and then we will talk about the space optimization as well. But we just need to copy based the recurrence and we will show that in the code because it becomes a lot easier. But only two steps you have to remember. Write the base pieces. Just think of the base pieces. Then just think of the nested states. Remember. The number of states is equal to the number of nested loops. It goes as simple as that. The number of states is equal to the nested loops. And the nested loops in the opposite fashion from base case to the bottom up bottom up base case to the up. So if you remember the recurrence tree."
+  },
+  {
+    "start": 1653.71,
+    "end": 1709.0,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] It goes as simple as that. The number of states is equal to the nested loops. And the nested loops in the opposite fashion from base case to the bottom up bottom up base case to the up. So if you remember the recurrence tree. The base case was 0, 0 to 3. The base case was target was 2 to 4. Bottom up. So make sure you write it bottom up. Base case. Bottom up doesn't mean 0 to 0. Whatever means whatever is the base case. Write there from whatever was the recurrence score. So written the tabulation concept and which is right to write the recurrence. So if you write it or the time complexity will be n into target again. And the space complexity will be b go off n into target and but there will be no auxiliary space. So I'll show you that by writing. So I've given the array the n and the k. So we know it right the function. So we write return the function."
+  },
+  {
+    "start": 1699.96,
+    "end": 1757.63,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] So I'll show you that by writing. So I've given the array the n and the k. So we know it right the function. So we write return the function. The target initially is the index n minus 1 and the target is k and there is an array. So we just write this off. Let's write the function. Let's keep it the function as. Pull in function. I empty index. I empty target. We know the vector and and I write right. So what are the cases if the target is 0. Where it earn a true simple enough. If the index is 0. Where it earn array of zero equal to target. And there can be a notic case. So you can write a Boolean notic. Saying a notic which means I'll go back with the same target and the array. There can be take case which is initially false and I can only take the array of index. If that's less than target then only I can take it."
+  },
+  {
+    "start": 1747.58,
+    "end": 1809.04,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] There can be take case which is initially false and I can only take the array of index. If that's less than target then only I can take it. So let's assume I take it then in that case f of index minus 1 comma target will be used by array of index. And I'll go till the array. At the end of the day I can return the take notic. And that's what you do. So let's quickly run this off. So it does run fine. But we need to apply dp. So please please apply dp. The right vector vector int and a dp and we can definitely take it as n plus 1 as I said vector. So the other thing will be vector int and you can take the target as k plus 1 and minus 1. By the way n plus 1 is not required. You can take n also because you're starting from n minus 1. But the target has to be k plus 1. So if taken this then you can just pass on the dp and over here let's copy base this portion."
+  },
+  {
+    "start": 1795.9,
+    "end": 1856.53,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] You can take n also because you're starting from n minus 1. But the target has to be k plus 1. So if taken this then you can just pass on the dp and over here let's copy base this portion. So it'll go over here and it'll be the reference. Just make sure you pass it over here. As well and make sure before returning you write dp of index and target to it. Remember Boolean will be 0 and 1. So it will automatically convert that into an integer. So add over here if dp of index target is not equal to minus 1 you can return it to dp of index and target. That's all you can do it and let's quickly run this off. Does run fine. Let's submit this. So you can see that it is running absolutely fine and we get 100 mx but we don't need to stop here. We need to make sure we write the records. So the records were saying let's write the first base case which is target equal to 0."
+  },
+  {
+    "start": 1847.48,
+    "end": 1905.93,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] We need to make sure we write the records. So the records were saying let's write the first base case which is target equal to 0. So you can say i and t by the way now you can convert this into Boolean because we don't need any minus 1 now because minus 1 for memorization check. But we don't need that way. So i can go as 0 and i can be like we can go on to light plus plus and i can say dp of i of all the target zeros will be true. So this is the next thing will be dp of 0 which is the next base case and on only array of 0 yes and only on array of 0 we will be having true. So why don't you write that simple. Now what are the couple of things index and target. So please make sure i did i index equal to 1 index goes on till n and index plus plus but the target starts from i and t target will go on from 1 and it"
+  },
+  {
+    "start": 1891.12,
+    "end": 1947.0,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] Now what are the couple of things index and target. So please make sure i did i index equal to 1 index goes on till n and index plus plus but the target starts from i and t target will go on from 1 and it will go until target. And i plus plus not target it should be key and i plus plus perfect just copy base the records don't even think of anything just copy base the records. Obviously the records instead of f make it dp of index minus 1 perfect target amazing. So that's it and over here you can just omit this portion take us false and it will automatically make sure it only takes if it's greater and again make a dp. Just change the records. Just change the records. No need to do anything else don't over complicate as i always say don't over complicate okay done."
+  },
+  {
+    "start": 1936.3,
+    "end": 1997.33,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] Just change the records. Just change the records. No need to do anything else don't over complicate as i always say don't over complicate okay done. Just remove the written. So if you remember what did you call the function as you call the function as f of n minus 1 so dp of n minus 1 and the target which is key. So just now i'll just run this off and see if this is running fine. Okay we did miss something what did we miss. Okay so we vector of boolim by the way. Okay another mistake we will be having target over here we will also be having it target over here so let's quickly check this off. That's fine right works fine let's do the submission. Wow run swine so. Also next step space optimization and i told you space optimization is possible whenever you see something like that."
+  },
+  {
+    "start": 1982.39,
+    "end": 2041.75,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] That's fine right works fine let's do the submission. Wow run swine so. Also next step space optimization and i told you space optimization is possible whenever you see something like that. What did you see index minus 1 the moment you see index minus 1 here is like man this is possible yes this is possible. So we can definitely space optimist us but something we need to take care is remember this always something we need to take care if we space optimist us is i'll take the i found an explain you. So if it's space optimising because i told you that when can we space optimise we can space optimise if we have a state as i minus 1 because because first time we always write the index zero. If we always take the index zero and in this index zero some a of i will be"
+  },
+  {
+    "start": 2028.81,
+    "end": 2089.92,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] optimise if we have a state as i minus 1 because because first time we always write the index zero. If we always take the index zero and in this index zero some a of i will be marked as 2 then we go to index one then we compute this but over here if you carefully observe in the base case yes if you carefully observe in the base case for every index for every row the zero index is marked as 2. So please make sure whenever you take a row whenever you take a row whenever the row is car this will be previous right whenever the row is car the zero index is marked as true always always every time you declare a row the zero index should be marked as true that's a thumb rule because in the base case if you see all the indexes is marked. So you compute the this this this this this this this this this this this this this this"
+  },
+  {
+    "start": 2077.88,
+    "end": 2133.12,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] thumb rule because in the base case if you see all the indexes is marked. So you compute the this this this this this this this this this this this this this this once you have competed this next you will move to the next one. And this guy will become previous now this guy will be car and it just uses i minus 1 the previous state so whenever there is a case of previous state the concept of. And car comes in again I'm not going into depth because I've been teaching that from the last 12 lectures so if you have not seen the previous lectures it's your fault not mind so please make sure go back and watch those lectures in order to understand space optimization in depth. So what did I say I require couple of steps I require two rows to be stored one"
+  },
+  {
+    "start": 2120.5,
+    "end": 2178.8,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] make sure go back and watch those lectures in order to understand space optimization in depth. So what did I say I require couple of steps I require two rows to be stored one is the previous which will be of size target that is k plus 1 0 because we just need to store the row. So the row will be having k columns so that's what I need to store that's what I have it stored and I also require a current for the current cap so that's again k plus 1 and 0. What is this dp of i of 0 so I don't need this any further but I know one thing previous of 0 the first guy will be true. And the car of 0 will be true because for any one the target 0 has to be true so everyone the 0 will be true and over your dp of 0 so instead of dp of 0 it's the previous one because it's the previous one we come to index of one what"
+  },
+  {
+    "start": 2167.2,
+    "end": 2227.28,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] true so everyone the 0 will be true and over your dp of 0 so instead of dp of 0 it's the previous one because it's the previous one we come to index of one what did I tell you index of i minus 1 means previous and x of i minus 1 means previous dp of index means dp of index means current. Whenever this is completed the previous is now current and at the end and minus 1 is the previous of current run this off let's quickly run this off once fine. What is the time complexity now it still stays the same and into target but what is the space complexity space complexity has now boiled into just beco of target and we're not using any index of just beco of target is helping us to solve this problem in just. Beco of case space that's amazing we're not requiring a 2D array so remember this concept of previous"
+  },
+  {
+    "start": 2214.49,
+    "end": 2276.0,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] of just beco of target is helping us to solve this problem in just. Beco of case space that's amazing we're not requiring a 2D array so remember this concept of previous and came whenever you see i minus 1 is just you need to store the previous row just see what are you computing the previous row so. If you are facing a problem in computing the previous row what I'll recommend is just go back go back and do a dryer of these fall loop and fill the table fill the table step by step step by step step by step and you will you will slowly slowly see in the table. This row helps you to get this row then this row helps you to get this row then this row helps you to get this row then this row helps you to get this row ultimately the answer is studio fill the table run the fall loop to it yourself okay i can't just."
+  },
+  {
+    "start": 2262.91,
+    "end": 2320.0,
+    "text": "[Video: DP 14: Subset Sum Equal to Target] this row helps you to get this row then this row helps you to get this row ultimately the answer is studio fill the table run the fall loop to it yourself okay i can't just. I just can't spoon feed everything do it yourself and you will slowly and slowly realize space optimization is is the easiest thing in the world is just using couple of. I hope you have understood the first problem on dp on sub sequences so just in case you did please please make sure you like this video and continue on rotation. In the comment section please make sure you write and understood so that i do get motivated that you're understanding the explanation of the problems. And if you are new to the channel please please do consider subscribing to us because we do put a lot of days i'll go content you can check that out on our channel and with this we'll be wrapping up this video let's be in the next one till then bye bye."
+  }
+]

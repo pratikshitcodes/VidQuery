@@ -1,0 +1,52 @@
+[
+  {
+    "start": 0.0,
+    "end": 76.0,
+    "text": " If you are welcome back to take you forward.  So today we will be solving the problem.  Minimum insertions required in order to make a string  Palentrom.  The predictors will be the LCS lecture.  And the lecture prior to this, which is  Longest Palentromic sub sequence.  So the longest common sub sequence,  and the longest Palentromic sub sequence.  So what is the question signifies?  Now insertions can be done anywhere.  Remember this.  You can insert any character anywhere.  You can insert any character anywhere.  That's the point.  Like if you see, you have EBC W.  Right? This is a string.  But is this Palentrom?  E-A-A are matching.  It's not a Palentrom.  It's a Palentrom.  It should be the same string.  It's not a Palentromic string.  So how can I make it Palentrom?  How many insertions do I need to do?  I can get a best way that comes to my brain as  A best way.  Not the minimum.  In case of insertions, if someone is asking me, what will I do?"
+  },
+  {
+    "start": 76.0,
+    "end": 154.0,
+    "text": " I will extract all its right.  E-A-B-C-W-A.  And then just reverse it and right.  Just right.  Same thing in the reverse way, which is double A, C, B, E.  What I did was I wrote this stuff for you.  Reverse it and wrote it here.  Can I say this is Palentrom?  That's definitely Palentrom.  If you carefully see, it's is Palentrom.  So if I just add the reverse portion, it is bound to be Palentrom.  So I know the number of operations required over here is the length of the string.  So something I figured out is,  I can definitely make any given string a Palentrom.  I can definitely make any given string a Palentrom.  That's for sure.  How?  I will just attach the reverse version of it and it will become Palentrom.  So I know the maximum operations that I will take.  This can be called as the maximum operations is length of the string.  Because I just reverse it and attach it.  But the question is very different.  It will ask you to find the minimum number of operations.  So how do you apply minimum number of operations in this portion?  I will like, okay, probably I'll convert this into double A, B, C, B, W."
+  },
+  {
+    "start": 154.0,
+    "end": 232.0,
+    "text": " What I did was I kept the E here.  I kept the B here.  I kept the C here.  Can I add a double A here?  What I added was a single E and a B right in between E and B.  And probably you can see you have added this A and this B.  That is also sensible.  Like you have ABC and W.  That's also sensible.  Or you can say about it this A and this B.  Insursions can be done anyway.  So I will be like, okay, if I, yes, if I add this A and this B to this particular string,  now is this Appalentrom.  A, A matches.  E, E matches.  B, B matches and C is the middle one.  It is Appalentrom.  How many insertions did you require?  It was two insertions.  So we can't do better than this.  So the question clearly states,  given any string is given any string.  You know it can be converted into a palentrom by applying the maximum operations.  That's by string plus reverse of string.  But I'm not concerned about the operation numbers.  What I'm concerned about is the minimum operation that you'll be requiring.  I want you to like take the minimum operations that tell me what are the minimum operations."
+  },
+  {
+    "start": 232.0,
+    "end": 308.0,
+    "text": " So how do you approach this problem?  That's the first thing.  How do you approach this problem?  I'll be like, Striva, when you want thing,  if there is a portion in the string which is palentrom,  let's keep it in depth.  Keep the palentrom portion intact.  That's the first thing that comes to my mind.  Keep the palentrom portion intact.  So what does this mean?  When I say keep the palentrom portion intact,  let's take this example, ABC double A.  A, B, C, double A.  And I'll ask you which is the palentrom portion.  You can be like, double A is a palentrom portion.  You can be like, A is a palentrom portion.  You can be like, A is a palentrom, double A is a palentrom.  A, double A is a palentrom.  You can be like, A, B, A is a palentrom.  You can be like, A, B is a palentrom.  There can be a lot of palentroms.  Now if I'm looking to minimize the operations,  I will try to keep the longest palentrom portion intact.  I will try to keep the longest palentrom portion intact.  So for me, let's assume, I'm taking,"
+  },
+  {
+    "start": 308.0,
+    "end": 384.0,
+    "text": " this is the longest palentrom portion,  which is somewhere around triple A.  Let's assume, I say, I will keep triple A intact.  Okay. And now I have a BC.  Now I have a BC, right?  I know one thing, this matches with,  this and this is middle.  If I'm taking this palentrom, I know this matches with this,  and this is middle.  Another two guys, which do not have a matching,  can I make the match?  I can. If I say, hey, listen.  Hey, listen. Why can't you take this BC  and put it over here again?  I will like, okay, that does make sense.  Because if in this given string, I keep this BC like,  I'll keep A, A, A intact because that's the longest palentromic substrate.  And whichever is not a portion of it,  I will just copy paste it in the right half or wherever it is required.  And now can I say, this is a palentrom string.  Let's see, A, A, B.  So I'll be like, okay, this is not matching.  So ironically, just reverse it and put, perfect."
+  },
+  {
+    "start": 384.0,
+    "end": 460.0,
+    "text": " So I'll be like, fine, let's reverse it and put,  let's see now it is matching on it.  A, A, B, B, C, C, E.  So what I realized was, E, A was a palentrom.  So kept it intact.  The guys were not a part of palentrom,  but to just put the reverse of it.  Okay, does this work out with some other example?  Okay, so we consider tripple, right?  Let's erase this and let's take another palentrom for an example.  A, C, it's a, C, and A.  Like this A, this C, this A.  Okay, so we're taking A, C, A, and what is intact?  There is a B, there is a A.  There is a B over here, there's a A over here, right?  So you know, this A matches with this A.  These guys are palentroms.  Like these are part of my palentromic substrate.  I'll keep them intact.  These guys are looking for someone.  So this A matches with this A.  This B does not have a match.  So I'll just put a B over here.  Now this B also has a match, correct?  This C is not matching with this A.  So I'll just have to put an A over here."
+  },
+  {
+    "start": 460.0,
+    "end": 535.0,
+    "text": " Now this A matches with this A at stays over here.  So what I did was, I kept the palentrom constant,  which is A, C, A, for this B, I put a B over here.  Now for this A, I put a A over here.  That's it.  Okay, getting an idea.  We just have to make sure that we keep the longest portion intact.  Okay, so in order to understand this in more depth,  let's see one more example, coding ninjas as the example.  So over here, which is the longest palentromic sub sequence,  which I will keep intact.  I'll like, Strava, I, N, G, N, I,  if I keep them intact, okay, let's see.  I, N, G, N, I.  Let's keep them intact.  They will be doing nothing.  For this code, I'll write them, and what I'll do is,  okay, written them, that's fine.  Now what I need to do is, there is something as  N, j, a, also, N, j, a, solts, I'll written them as well.  I'll be like, okay, for this code, for this code,  c, o, d, i, why don't you write them in the opposite fashion?"
+  },
+  {
+    "start": 535.0,
+    "end": 612.0,
+    "text": " c, o, d, i, so that this code,  matches with this.  And for this N, j, a, s, why don't I write them over here,  which is somewhere around, s, a, j, n.  So the next time, s, s, a, a, j, j, n,  n matches.  And this is bound to match because it is already  piled up.  So what I observed was, I will be keeping intact, yes,  I will be keeping intact, the palindromic guys,  and apart from that, someone like Cody and N, j, s,  will get copied.  So can I say, the number of insertules that I have to do,  will be the length of the string,  minus the longest palindromic sub sequence,  and this is going to be my answer.  If I can just figure out the length of the string,  I'm the longest palindromic sequence.  I know, apart, because I'm going to keep them intact,  apart from that, after taking these guys in copy paste,"
+  },
+  {
+    "start": 612.0,
+    "end": 687.0,
+    "text": " and apart from that, I'll also have to take these guys in copy paste.  It's not asking us to give us the string.  So it's not complicated.  It just requires us to give us the number of operations.  So it's simply N minus longest palindromic sub sequence,  is what you need to return.  You don't need to think anything else.  So we have already discussed the longest palindromic sub sequence  in the previous video.  So take the code from there, and then we will just supply the formula  and try to submit it and see if this is giving us a correct answer.  So here's the problem, so I'll give in the string.  So I'll go to the previous problem.  And yeah, this is not the space optimist one.  You can use the space optimist one.  This copy is the same stuff, and right here.  So this is the longest palindromic sub sequence.  What I'll do is, I'll give, let's give, let me just,  now I return str.size minus longest palindromic of str.  And I think this should be fine.  It is.  And I'll try to submit this, it will be running.  It is.  So as you saw, just by knowing LCS,  it's all long, this palindromic sub sequence.  Just by knowing long, this palindromic sub sequence,"
+  },
+  {
+    "start": 687.0,
+    "end": 711.0,
+    "text": " we solved this particular problem, which is minimum number of insertions.  So if you know the core concept of LCS,  eventually solves a lot of problems.  So guys, I hope you have understood this problem.  Make sure you use space optimist by yourself.  And just in case you did, please, please, please, please,  make sure you like this video.  And if you need to do our channel, please do consider subscribing to us.  And yeah, with this, I'll be happy with this video.  Let's video next one.  And then we'll be by thinking."
+  }
+]

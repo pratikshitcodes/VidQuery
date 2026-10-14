@@ -1,0 +1,3412 @@
+[
+  {
+    "start": 0.0,
+    "end": 5.72,
+    "text": "If you are welcome back to the channel, I hope you guys are doing extremely well."
+  },
+  {
+    "start": 5.72,
+    "end": 10.53,
+    "text": "So welcome to the third lecture of the dynamic programming playlist."
+  },
+  {
+    "start": 10.53,
+    "end": 12.37,
+    "text": "It's a wonderful question."
+  },
+  {
+    "start": 12.37,
+    "end": 13.08,
+    "text": "Frog jump."
+  },
+  {
+    "start": 13.08,
+    "end": 20.36,
+    "text": "So just to make sure you have watched the previous couple of lectures before attending this one because"
+  },
+  {
+    "start": 20.36,
+    "end": 23.47,
+    "text": "I have a perfect flow which I will continue."
+  },
+  {
+    "start": 23.47,
+    "end": 30.18,
+    "text": "So if you're like if you're just watching this lecture three suddenly you might feel alienated."
+  },
+  {
+    "start": 30.18,
+    "end": 33.85,
+    "text": "So please watch out the previous couple of lectures."
+  },
+  {
+    "start": 33.85,
+    "end": 36.18,
+    "text": "So what is the problem statement?"
+  },
+  {
+    "start": 36.18,
+    "end": 39.71,
+    "text": "So there's a frog on the first step of a n-sterex."
+  },
+  {
+    "start": 39.71,
+    "end": 42.54,
+    "text": "So the frog wants to reach the n-sterex."
+  },
+  {
+    "start": 42.54,
+    "end": 45.79,
+    "text": "height i is the height of the i plus 1-sterex."
+  },
+  {
+    "start": 45.79,
+    "end": 49.32,
+    "text": "So there is given in terms of zero-based indexing."
+  },
+  {
+    "start": 49.32,
+    "end": 55.04,
+    "text": "So the energy lost in the jump is given by height i minus 1 and height j minus 1."
+  },
+  {
+    "start": 55.04,
+    "end": 59.63,
+    "text": "So basically the frog can jump from the i-sterex to the j-sterex."
+  },
+  {
+    "start": 59.63,
+    "end": 64.15,
+    "text": "And the energy will be height of i minus 1 minus i of j minus 1."
+  },
+  {
+    "start": 64.15,
+    "end": 69.03,
+    "text": "In the frog, if the frog is in the i-sterex, he can jump from either."
+  },
+  {
+    "start": 69.03,
+    "end": 73.27,
+    "text": "He can jump either to i plus 1-sterex or to i plus 2-sterex."
+  },
+  {
+    "start": 73.27,
+    "end": 78.72,
+    "text": "Basically he can take a jump to the 1 in plus 1 index or to the plus 2 index."
+  },
+  {
+    "start": 78.72,
+    "end": 86.05,
+    "text": "Your task is to find the minimum total energy used by the frog  to reach the first step to the n-sterex."
+  },
+  {
+    "start": 86.05,
+    "end": 88.59,
+    "text": "So that is what the question states."
+  },
+  {
+    "start": 88.59,
+    "end": 93.24,
+    "text": "So for an example as a stick, the first example 10, 20, 30 and 10."
+  },
+  {
+    "start": 93.24,
+    "end": 95.56,
+    "text": "And I'll try to explain you this."
+  },
+  {
+    "start": 95.56,
+    "end": 99.65,
+    "text": "Let's think the first example, which is 10, 20, 30 and 10."
+  },
+  {
+    "start": 99.65,
+    "end": 101.62,
+    "text": "So basically there's a frog."
+  },
+  {
+    "start": 101.62,
+    "end": 106.34,
+    "text": "Now if I consider this a 0123, the frog wants to reach from 0 to 3."
+  },
+  {
+    "start": 106.34,
+    "end": 109.93,
+    "text": "I have converted the problem into 0-based indexing."
+  },
+  {
+    "start": 109.93,
+    "end": 117.4,
+    "text": "So even if n is 4, it's ideally the question was from 1 to 4, but I've converted it into 0-based indexing."
+  },
+  {
+    "start": 117.4,
+    "end": 125.71,
+    "text": "So if the frog starts from here and he can only jump one or two places, what is the minimum energy that he'll require?"
+  },
+  {
+    "start": 125.71,
+    "end": 131.28,
+    "text": "So for example, if the frog is here, the frog is here and the frog says that, I"
+  },
+  {
+    "start": 131.28,
+    "end": 136.35,
+    "text": "will jump from here to here, then the energy that he will require is 10."
+  },
+  {
+    "start": 136.35,
+    "end": 140.01,
+    "text": "And then he decides the deal jump from here to here."
+  },
+  {
+    "start": 140.01,
+    "end": 142.9,
+    "text": "Then the energy again required will be n."
+  },
+  {
+    "start": 142.9,
+    "end": 144.73,
+    "text": "It's a difference of them."
+  },
+  {
+    "start": 144.73,
+    "end": 146.7,
+    "text": "Absolute difference of them."
+  },
+  {
+    "start": 146.7,
+    "end": 147.19,
+    "text": "He can."
+  },
+  {
+    "start": 147.19,
+    "end": 151.35,
+    "text": "So after that he decides that he'll jump from here to here."
+  },
+  {
+    "start": 151.35,
+    "end": 154.8,
+    "text": "That's again the absolute difference which is 20."
+  },
+  {
+    "start": 154.8,
+    "end": 156.77,
+    "text": "So this path will give him 40."
+  },
+  {
+    "start": 156.77,
+    "end": 159.4,
+    "text": "The energy that he will take will be 40."
+  },
+  {
+    "start": 159.4,
+    "end": 161.5,
+    "text": "Let's try out some of the paths."
+  },
+  {
+    "start": 161.5,
+    "end": 166.1,
+    "text": "What if I decide I will jump from here to here, which will take me 10?"
+  },
+  {
+    "start": 166.1,
+    "end": 169.06,
+    "text": "What if I decide I'll jump from here to here?"
+  },
+  {
+    "start": 169.06,
+    "end": 171.69,
+    "text": "So that again takes me a plus n correct."
+  },
+  {
+    "start": 171.69,
+    "end": 176.55,
+    "text": "So this path gives me 20 which is definitely better than the previous one."
+  },
+  {
+    "start": 176.55,
+    "end": 182.86,
+    "text": "What if I decide I'll take this a couple jump because I cannot jump more than a couple of steps."
+  },
+  {
+    "start": 182.86,
+    "end": 184.11,
+    "text": "So this will be 20."
+  },
+  {
+    "start": 184.11,
+    "end": 186.87,
+    "text": "And then I'll decide I'll jump a one step."
+  },
+  {
+    "start": 186.87,
+    "end": 188.97,
+    "text": "So that will be a plus 20 again."
+  },
+  {
+    "start": 188.97,
+    "end": 190.09,
+    "text": "This is again 40."
+  },
+  {
+    "start": 190.09,
+    "end": 195.61,
+    "text": "So if you see I've tried out one possible way, two possible way, three possible way."
+  },
+  {
+    "start": 195.61,
+    "end": 198.17,
+    "text": "And the minimum that I in powder is 20."
+  },
+  {
+    "start": 198.17,
+    "end": 203.95,
+    "text": "And after telling me which is the minimum, what is the minimum energy that you can take?"
+  },
+  {
+    "start": 203.95,
+    "end": 207.57,
+    "text": "And there is also the question is, now, can I say this?"
+  },
+  {
+    "start": 207.57,
+    "end": 208.56,
+    "text": "Can I say this?"
+  },
+  {
+    "start": 208.56,
+    "end": 213.16,
+    "text": "That the question again gives me an idea that you are trying all ways."
+  },
+  {
+    "start": 213.16,
+    "end": 220.46,
+    "text": "So if you remember the previous lecture I told you,  if you're trying all possible ways, then it's a recursion."
+  },
+  {
+    "start": 220.46,
+    "end": 220.85,
+    "text": "Right?"
+  },
+  {
+    "start": 220.85,
+    "end": 225.32,
+    "text": "And then you can either count the all ways or you can find the best."
+  },
+  {
+    "start": 225.32,
+    "end": 229.0,
+    "text": "So can I say over here, you're trying all possible ways."
+  },
+  {
+    "start": 229.0,
+    "end": 232.24,
+    "text": "Way number one, way number two, way number three."
+  },
+  {
+    "start": 232.24,
+    "end": 235.19,
+    "text": "And you're taking the best possible and that's 20."
+  },
+  {
+    "start": 235.19,
+    "end": 237.67,
+    "text": "Why will a 3D solution not work over here?"
+  },
+  {
+    "start": 237.67,
+    "end": 240.56,
+    "text": "That might be a question that comes to your head."
+  },
+  {
+    "start": 240.56,
+    "end": 243.81,
+    "text": "So that's the first thing that I will be talking about."
+  },
+  {
+    "start": 243.81,
+    "end": 245.64,
+    "text": "Why a 3D solution doesn't work?"
+  },
+  {
+    "start": 245.64,
+    "end": 246.94,
+    "text": "Let's understand that."
+  },
+  {
+    "start": 246.94,
+    "end": 252.84,
+    "text": "Then after that we'll think why we need to try all possible ways  and need to take the best way out."
+  },
+  {
+    "start": 252.84,
+    "end": 255.97,
+    "text": "So when I say 3D that means you are standing from 10."
+  },
+  {
+    "start": 255.97,
+    "end": 258.86,
+    "text": "So you know from 10 you can go to 20 or go to 30."
+  },
+  {
+    "start": 258.86,
+    "end": 262.17,
+    "text": "So you saw that if you jump till 20, that's the minimum."
+  },
+  {
+    "start": 262.17,
+    "end": 263.0,
+    "text": "So you jumped."
+  },
+  {
+    "start": 263.0,
+    "end": 266.36,
+    "text": "And from 20, you could have either jumped to 30 or to 10."
+  },
+  {
+    "start": 266.36,
+    "end": 268.66,
+    "text": "Both are taking 10, both are taking 10."
+  },
+  {
+    "start": 268.66,
+    "end": 271.14,
+    "text": "So you can jump anywhere so you jump this."
+  },
+  {
+    "start": 271.14,
+    "end": 277.87,
+    "text": "This is 3D basically when you're moving, you're trying to jump the minimal possible jump possible, whichever takes"
+  },
+  {
+    "start": 277.87,
+    "end": 280.41,
+    "text": "minimal energy, you're trying to jump that."
+  },
+  {
+    "start": 280.41,
+    "end": 282.48,
+    "text": "But why a 3D solution doesn't work?"
+  },
+  {
+    "start": 282.48,
+    "end": 283.72,
+    "text": "Let's check that out."
+  },
+  {
+    "start": 283.72,
+    "end": 288.03,
+    "text": "Now when I say a 3D solution doesn't work so let's check the stress case."
+  },
+  {
+    "start": 288.03,
+    "end": 292.46,
+    "text": "So if the frog was here, if the frog was here, 3D Lee, a from here, he will"
+  },
+  {
+    "start": 292.46,
+    "end": 297.42,
+    "text": "try to move here because in moving here, they'll take him 30, and he'll take him 20."
+  },
+  {
+    "start": 297.42,
+    "end": 299.55,
+    "text": "The 3D option will be to move to 10."
+  },
+  {
+    "start": 299.55,
+    "end": 302.62,
+    "text": "So let's 3D remove to 10, which will cost him at 20."
+  },
+  {
+    "start": 302.62,
+    "end": 302.92,
+    "text": "Okay."
+  },
+  {
+    "start": 302.92,
+    "end": 307.92,
+    "text": "Now again from here, he can move here, which is 50,  or he can move here, which is 0."
+  },
+  {
+    "start": 307.92,
+    "end": 309.37,
+    "text": "So 3D will move to 0."
+  },
+  {
+    "start": 309.37,
+    "end": 310.68,
+    "text": "So let's move to 0."
+  },
+  {
+    "start": 310.68,
+    "end": 312.55,
+    "text": "So it'll take him 0 energy."
+  },
+  {
+    "start": 312.55,
+    "end": 318.63,
+    "text": "Again from here, 3D he can move here, which will cost him 40,  or this will cost him 50."
+  },
+  {
+    "start": 318.63,
+    "end": 321.26,
+    "text": "So 3D will take the 40, while a staff."
+  },
+  {
+    "start": 321.26,
+    "end": 325.27,
+    "text": "So he will move from here to here, which will be again 40."
+  },
+  {
+    "start": 325.27,
+    "end": 327.76,
+    "text": "So in total, the costing will be 60."
+  },
+  {
+    "start": 327.76,
+    "end": 330.25,
+    "text": "As in total, the costing will be 60."
+  },
+  {
+    "start": 330.25,
+    "end": 334.05,
+    "text": "Now whatever tries some other way,  let's try that out."
+  },
+  {
+    "start": 334.05,
+    "end": 338.27,
+    "text": "If the frog is here, and it decides he will be going till 60."
+  },
+  {
+    "start": 338.27,
+    "end": 340.62,
+    "text": "That will cost him 30 buck, right?"
+  },
+  {
+    "start": 340.62,
+    "end": 346.29,
+    "text": "And if it decides after that he'll go to 60 again, that will cost him 0, and after"
+  },
+  {
+    "start": 346.29,
+    "end": 349.81,
+    "text": "that he decides he'll go 50, that will cost him 10."
+  },
+  {
+    "start": 349.81,
+    "end": 354.92,
+    "text": "So at total of 40 will be the costing,  a total of 40 will be the costing."
+  },
+  {
+    "start": 354.92,
+    "end": 362.52,
+    "text": "So we did realize the 3D way, it not give you the correct path,  because you started really, but you lost out."
+  },
+  {
+    "start": 362.52,
+    "end": 364.32,
+    "text": "Probably somewhere, right?"
+  },
+  {
+    "start": 364.32,
+    "end": 366.05,
+    "text": "So that's why that's why."
+  },
+  {
+    "start": 366.05,
+    "end": 373.1,
+    "text": "It's better if you try all possible ways, because sometimes it will happen that initially you took the"
+  },
+  {
+    "start": 373.1,
+    "end": 379.46,
+    "text": "better way, but you lost out on something significant, like this 60 to 60 would have been 0."
+  },
+  {
+    "start": 379.46,
+    "end": 381.05,
+    "text": "You lost out in future."
+  },
+  {
+    "start": 381.05,
+    "end": 385.52,
+    "text": "So in such cases, 3D doesn't work, and you have to try recursion."
+  },
+  {
+    "start": 385.52,
+    "end": 389.96,
+    "text": "Now when I say recursion,  buzz onto the second lecture."
+  },
+  {
+    "start": 389.96,
+    "end": 391.39,
+    "text": "What is over here?"
+  },
+  {
+    "start": 391.39,
+    "end": 394.16,
+    "text": "recursion is try all possible ways."
+  },
+  {
+    "start": 394.16,
+    "end": 397.57,
+    "text": "So you have to try all possible ways, okay?"
+  },
+  {
+    "start": 397.57,
+    "end": 402.8,
+    "text": "So in order to try all possible ways, you have to write recursion."
+  },
+  {
+    "start": 402.8,
+    "end": 403.43,
+    "text": "Correct?"
+  },
+  {
+    "start": 403.43,
+    "end": 408.82,
+    "text": "Over here they're asking you which path did take the minimum energy."
+  },
+  {
+    "start": 408.82,
+    "end": 413.02,
+    "text": "So you have to find the path with the minimum energy."
+  },
+  {
+    "start": 413.02,
+    "end": 413.65,
+    "text": "Correct?"
+  },
+  {
+    "start": 413.65,
+    "end": 416.9,
+    "text": "And do you remember the previous lecture?"
+  },
+  {
+    "start": 416.9,
+    "end": 419.36,
+    "text": "What does this step number one?"
+  },
+  {
+    "start": 419.36,
+    "end": 422.37,
+    "text": "Express the problem in terms of index?"
+  },
+  {
+    "start": 422.37,
+    "end": 424.51,
+    "text": "Do all steps on that index?"
+  },
+  {
+    "start": 424.51,
+    "end": 425.62,
+    "text": "Remember this."
+  },
+  {
+    "start": 425.62,
+    "end": 429.34,
+    "text": "To write recursion, do all steps on that index."
+  },
+  {
+    "start": 429.34,
+    "end": 434.73,
+    "text": "Step three, over here they're asking you to find the minimum energy."
+  },
+  {
+    "start": 434.73,
+    "end": 437.03,
+    "text": "Minimum energy that you took."
+  },
+  {
+    "start": 437.03,
+    "end": 439.65,
+    "text": "So take the minimal of all steps."
+  },
+  {
+    "start": 439.65,
+    "end": 442.03,
+    "text": "Take the minimal of all steps."
+  },
+  {
+    "start": 442.03,
+    "end": 445.04,
+    "text": "This is how you write recursion, okay?"
+  },
+  {
+    "start": 445.04,
+    "end": 449.48,
+    "text": "So can I say I'm wanting to reach the index n minus one?"
+  },
+  {
+    "start": 449.48,
+    "end": 452.1,
+    "text": "I'm assuming zero based indexing."
+  },
+  {
+    "start": 452.1,
+    "end": 455.75,
+    "text": "So I'm wanting to reach the index n minus one."
+  },
+  {
+    "start": 455.75,
+    "end": 457.18,
+    "text": "So what do I want?"
+  },
+  {
+    "start": 457.18,
+    "end": 459.95,
+    "text": "What does f of n minus one signify?"
+  },
+  {
+    "start": 459.95,
+    "end": 461.84,
+    "text": "Minimum energy required?"
+  },
+  {
+    "start": 461.84,
+    "end": 466.32,
+    "text": "Minimum energy required to reach n minus one from zero index."
+  },
+  {
+    "start": 466.32,
+    "end": 469.25,
+    "text": "That is what the recursion will signify."
+  },
+  {
+    "start": 469.25,
+    "end": 472.62,
+    "text": "Can I express the recursion in terms of index?"
+  },
+  {
+    "start": 472.62,
+    "end": 474.16,
+    "text": "That's my first step."
+  },
+  {
+    "start": 474.16,
+    "end": 475.7,
+    "text": "I'd like yes you can."
+  },
+  {
+    "start": 475.7,
+    "end": 475.99,
+    "text": "How?"
+  },
+  {
+    "start": 475.99,
+    "end": 477.75,
+    "text": "There are array indexes."
+  },
+  {
+    "start": 477.75,
+    "end": 480.83,
+    "text": "There are array indexes still n minus one."
+  },
+  {
+    "start": 480.83,
+    "end": 484.28,
+    "text": "So I'll consider every array index as an index."
+  },
+  {
+    "start": 484.28,
+    "end": 485.82,
+    "text": "So okay, that's fine."
+  },
+  {
+    "start": 485.82,
+    "end": 489.19,
+    "text": "So I can be like okay, that's absolutely fine."
+  },
+  {
+    "start": 489.19,
+    "end": 490.29,
+    "text": "So let's do it."
+  },
+  {
+    "start": 490.29,
+    "end": 492.93,
+    "text": "So can I say what will be f of zero?"
+  },
+  {
+    "start": 492.93,
+    "end": 494.25,
+    "text": "Like common sense."
+  },
+  {
+    "start": 494.25,
+    "end": 498.73,
+    "text": "What will be the costing in order to reach from zero to zero?"
+  },
+  {
+    "start": 498.73,
+    "end": 500.49,
+    "text": "That's going to be zero."
+  },
+  {
+    "start": 500.49,
+    "end": 505.92,
+    "text": "Because f of n minus one was stating the costing from n minus one to zero."
+  },
+  {
+    "start": 505.92,
+    "end": 510.32,
+    "text": "So in order to reach zero to zero, the costing will be zero."
+  },
+  {
+    "start": 510.32,
+    "end": 515.6,
+    "text": "So I know one thing for sure that the costing for this guy will be zero."
+  },
+  {
+    "start": 515.6,
+    "end": 517.21,
+    "text": "No matter what you do."
+  },
+  {
+    "start": 517.21,
+    "end": 518.82,
+    "text": "No matter what you do."
+  },
+  {
+    "start": 518.82,
+    "end": 522.49,
+    "text": "Now let's so we are figured out what is the index."
+  },
+  {
+    "start": 522.49,
+    "end": 524.62,
+    "text": "That will be the array index."
+  },
+  {
+    "start": 524.62,
+    "end": 527.7,
+    "text": "Next thing is do all stuffs on that index."
+  },
+  {
+    "start": 527.7,
+    "end": 530.05,
+    "text": "Yes do all stuffs on that index."
+  },
+  {
+    "start": 530.05,
+    "end": 533.57,
+    "text": "Now what is what what is the frog allowed to do?"
+  },
+  {
+    "start": 533.57,
+    "end": 538.8,
+    "text": "The frog is allowed to either jump plus one or to either jump plus two."
+  },
+  {
+    "start": 538.8,
+    "end": 540.52,
+    "text": "So why don't you do that?"
+  },
+  {
+    "start": 540.52,
+    "end": 542.45,
+    "text": "Do all stuffs on that index?"
+  },
+  {
+    "start": 542.45,
+    "end": 543.34,
+    "text": "Please do it."
+  },
+  {
+    "start": 543.34,
+    "end": 548.5,
+    "text": "So what you will do is you'll say okay, I will do all stuffs on that index."
+  },
+  {
+    "start": 548.5,
+    "end": 552.97,
+    "text": "So if I do a single jump like I can say it as the left recursion."
+  },
+  {
+    "start": 552.97,
+    "end": 556.34,
+    "text": "So the single jump will say f of index minus one."
+  },
+  {
+    "start": 556.34,
+    "end": 557.37,
+    "text": "I'm doing this."
+  },
+  {
+    "start": 557.37,
+    "end": 560.4,
+    "text": "But if I'm jumping, yes the question arises."
+  },
+  {
+    "start": 560.4,
+    "end": 566.93,
+    "text": "If I'm jumping from an index to an index minus one,  what is the energy that is being consumed?"
+  },
+  {
+    "start": 566.93,
+    "end": 572.84,
+    "text": "I know in order to jump from index to index minus one, the energy consumed is array of"
+  },
+  {
+    "start": 572.84,
+    "end": 575.38,
+    "text": "index minus array of index minus one."
+  },
+  {
+    "start": 575.38,
+    "end": 577.86,
+    "text": "That is what the energy is consumed."
+  },
+  {
+    "start": 577.86,
+    "end": 583.98,
+    "text": "Can I say this is what the energy will be consumed to jump from index to index minus one."
+  },
+  {
+    "start": 583.98,
+    "end": 586.25,
+    "text": "And then again ask the recursion."
+  },
+  {
+    "start": 586.25,
+    "end": 587.28,
+    "text": "Here recursion."
+  },
+  {
+    "start": 587.28,
+    "end": 589.41,
+    "text": "I have reached index minus one."
+  },
+  {
+    "start": 589.41,
+    "end": 595.19,
+    "text": "Now it's your job to tell me from index minus one to zero how much it will cost you."
+  },
+  {
+    "start": 595.19,
+    "end": 597.12,
+    "text": "Because you will do the job."
+  },
+  {
+    "start": 597.12,
+    "end": 603.45,
+    "text": "I'll ask the recursion to tell what will be the costing from index minus one to zero because"
+  },
+  {
+    "start": 603.45,
+    "end": 606.82,
+    "text": "I know the costing from index to index minus one."
+  },
+  {
+    "start": 606.82,
+    "end": 607.92,
+    "text": "I've taken that."
+  },
+  {
+    "start": 607.92,
+    "end": 609.5,
+    "text": "So that's what I'll do."
+  },
+  {
+    "start": 609.5,
+    "end": 610.46,
+    "text": "First up done."
+  },
+  {
+    "start": 610.46,
+    "end": 614.17,
+    "text": "Now can I say the right recursion will be very simple."
+  },
+  {
+    "start": 614.17,
+    "end": 616.72,
+    "text": "It will be if I take couple of jumps."
+  },
+  {
+    "start": 616.72,
+    "end": 621.32,
+    "text": "The costing this time will be a of index minus a of index minus two."
+  },
+  {
+    "start": 621.32,
+    "end": 622.88,
+    "text": "Absolutely makes sense."
+  },
+  {
+    "start": 622.88,
+    "end": 624.71,
+    "text": "So I've done all the stuff."
+  },
+  {
+    "start": 624.71,
+    "end": 627.21,
+    "text": "But then it will be slightly careful."
+  },
+  {
+    "start": 627.21,
+    "end": 629.58,
+    "text": "Can I do an index minus two always?"
+  },
+  {
+    "start": 629.58,
+    "end": 632.29,
+    "text": "The answer to that is yes you can do it."
+  },
+  {
+    "start": 632.29,
+    "end": 638.17,
+    "text": "If it is not the first index because if you are standing at the first index, you cannot"
+  },
+  {
+    "start": 638.17,
+    "end": 641.42,
+    "text": "jump to because that will take you to minus one."
+  },
+  {
+    "start": 641.42,
+    "end": 642.7,
+    "text": "You cannot jump to."
+  },
+  {
+    "start": 642.7,
+    "end": 645.27,
+    "text": "So you need to write a case like this."
+  },
+  {
+    "start": 645.27,
+    "end": 651.02,
+    "text": "If index is greater than one, then only I can take the right jump otherwise I cannot."
+  },
+  {
+    "start": 651.02,
+    "end": 657.51,
+    "text": "Like makes sense because if you add the first index,  you'll not be able to take the right jump."
+  },
+  {
+    "start": 657.51,
+    "end": 659.88,
+    "text": "So that is absolutely making sense."
+  },
+  {
+    "start": 659.88,
+    "end": 662.18,
+    "text": "So I'm like okay fine that's fine."
+  },
+  {
+    "start": 662.18,
+    "end": 663.94,
+    "text": "Now what's the next stuff?"
+  },
+  {
+    "start": 663.94,
+    "end": 668.0,
+    "text": "Take the minimal because the question stated minimum energy."
+  },
+  {
+    "start": 668.0,
+    "end": 670.64,
+    "text": "Add the question stated maximum energy."
+  },
+  {
+    "start": 670.64,
+    "end": 673.89,
+    "text": "The question is something else you have done it."
+  },
+  {
+    "start": 673.89,
+    "end": 677.68,
+    "text": "But in this the question stated find the minimum energy."
+  },
+  {
+    "start": 677.68,
+    "end": 682.14,
+    "text": "So there is a way in which you jump from index to index minus one."
+  },
+  {
+    "start": 682.14,
+    "end": 686.33,
+    "text": "There's a way in which you jump from index to index minus two."
+  },
+  {
+    "start": 686.33,
+    "end": 690.05,
+    "text": "And ask the recursion to find out the remaining answer."
+  },
+  {
+    "start": 690.05,
+    "end": 692.8,
+    "text": "So can I say you need the minimal answer."
+  },
+  {
+    "start": 692.8,
+    "end": 696.67,
+    "text": "So you're going to return the minimal of left comma right."
+  },
+  {
+    "start": 696.67,
+    "end": 700.27,
+    "text": "That's how you can write the recurrence as I told you."
+  },
+  {
+    "start": 700.27,
+    "end": 701.87,
+    "text": "Follow three techniques."
+  },
+  {
+    "start": 701.87,
+    "end": 705.41,
+    "text": "You'll be able to write any recurrence relationships."
+  },
+  {
+    "start": 705.41,
+    "end": 705.68,
+    "text": "Yes."
+  },
+  {
+    "start": 705.68,
+    "end": 708.95,
+    "text": "Now you have written the recurrence relationship."
+  },
+  {
+    "start": 708.95,
+    "end": 710.75,
+    "text": "That is absolutely perfect."
+  },
+  {
+    "start": 710.75,
+    "end": 714.09,
+    "text": "So we have understood the recurrence relationship."
+  },
+  {
+    "start": 714.09,
+    "end": 718.03,
+    "text": "Now it's time to see if there are overlapping sub problems."
+  },
+  {
+    "start": 718.03,
+    "end": 720.9,
+    "text": "And how is this recursion actually working?"
+  },
+  {
+    "start": 720.9,
+    "end": 721.3,
+    "text": "Right."
+  },
+  {
+    "start": 721.3,
+    "end": 726.31,
+    "text": "So we know we know we are at F of five because if I write down the indexes,"
+  },
+  {
+    "start": 726.31,
+    "end": 728.91,
+    "text": "it's like zero one two three four five."
+  },
+  {
+    "start": 728.91,
+    "end": 730.98,
+    "text": "So we know we are at F of five."
+  },
+  {
+    "start": 730.98,
+    "end": 733.18,
+    "text": "Now at F of five where can we go?"
+  },
+  {
+    "start": 733.18,
+    "end": 736.65,
+    "text": "We know that either we can take a jump to F of four."
+  },
+  {
+    "start": 736.65,
+    "end": 739.52,
+    "text": "Or either we can take a jump to F of three."
+  },
+  {
+    "start": 739.52,
+    "end": 741.52,
+    "text": "That's definitely known to us."
+  },
+  {
+    "start": 741.52,
+    "end": 742.99,
+    "text": "So I can be like okay."
+  },
+  {
+    "start": 742.99,
+    "end": 746.46,
+    "text": "If I'm at F of five and there's this recursion call."
+  },
+  {
+    "start": 746.46,
+    "end": 749.93,
+    "text": "Then the left recursion will be like okay F of four."
+  },
+  {
+    "start": 749.93,
+    "end": 752.73,
+    "text": "Plus absolute of whatever height there is."
+  },
+  {
+    "start": 752.73,
+    "end": 754.2,
+    "text": "So what is the height?"
+  },
+  {
+    "start": 754.2,
+    "end": 757.34,
+    "text": "60 minus 50 there's this height of absolute 10."
+  },
+  {
+    "start": 757.34,
+    "end": 761.35,
+    "text": "And then there's the recursion of right which is F of three."
+  },
+  {
+    "start": 761.35,
+    "end": 766.76,
+    "text": "Plus again and height difference of these couple of guys which is three and five."
+  },
+  {
+    "start": 766.76,
+    "end": 767.96,
+    "text": "10 minus 50 is 40."
+  },
+  {
+    "start": 767.96,
+    "end": 770.24,
+    "text": "So you can be like absolute of 40."
+  },
+  {
+    "start": 770.24,
+    "end": 772.59,
+    "text": "Now at first this recursion will go."
+  },
+  {
+    "start": 772.59,
+    "end": 775.6,
+    "text": "Come back and then this will go and come back."
+  },
+  {
+    "start": 775.6,
+    "end": 778.02,
+    "text": "Then you return the minimum of these."
+  },
+  {
+    "start": 778.02,
+    "end": 778.41,
+    "text": "Right."
+  },
+  {
+    "start": 778.41,
+    "end": 781.42,
+    "text": "This is how the recursion is actually working."
+  },
+  {
+    "start": 781.42,
+    "end": 784.36,
+    "text": "So that's how I'm drawing the recursion tree."
+  },
+  {
+    "start": 784.36,
+    "end": 787.37,
+    "text": "So F of four will say F of three and F of two."
+  },
+  {
+    "start": 787.37,
+    "end": 790.12,
+    "text": "F of three will say F of two and F of one."
+  },
+  {
+    "start": 790.12,
+    "end": 793.52,
+    "text": "F of two will say F of one and F of zero understood."
+  },
+  {
+    "start": 793.52,
+    "end": 793.91,
+    "text": "Right."
+  },
+  {
+    "start": 793.91,
+    "end": 796.72,
+    "text": "So do you observe overlapping sub problems?"
+  },
+  {
+    "start": 796.72,
+    "end": 798.81,
+    "text": "At least I am I'm able to do it."
+  },
+  {
+    "start": 798.81,
+    "end": 802.01,
+    "text": "By the way F of one will go to F of zero as well."
+  },
+  {
+    "start": 802.01,
+    "end": 803.19,
+    "text": "I'm able to do it."
+  },
+  {
+    "start": 803.19,
+    "end": 806.92,
+    "text": "So if I mark the overlapping sub problems,  there is one."
+  },
+  {
+    "start": 806.92,
+    "end": 807.57,
+    "text": "First one."
+  },
+  {
+    "start": 807.57,
+    "end": 808.35,
+    "text": "Another one."
+  },
+  {
+    "start": 808.35,
+    "end": 810.7,
+    "text": "So I have figured out if F of three."
+  },
+  {
+    "start": 810.7,
+    "end": 813.64,
+    "text": "And so if F of three answer I'm figuring out."
+  },
+  {
+    "start": 813.64,
+    "end": 817.04,
+    "text": "Then if of three answer why will I again figure out."
+  },
+  {
+    "start": 817.04,
+    "end": 819.52,
+    "text": "So there are overlapping sub problems."
+  },
+  {
+    "start": 819.52,
+    "end": 825.93,
+    "text": "So if there are overlapping sub problems,  can I say answer to those sub problems will be similar?"
+  },
+  {
+    "start": 825.93,
+    "end": 827.3,
+    "text": "There by I can apply."
+  },
+  {
+    "start": 827.3,
+    "end": 830.05,
+    "text": "Memorization to this particular recursion."
+  },
+  {
+    "start": 830.05,
+    "end": 830.51,
+    "text": "Got it."
+  },
+  {
+    "start": 830.51,
+    "end": 832.54,
+    "text": "So I'm understanding that okay."
+  },
+  {
+    "start": 832.54,
+    "end": 834.89,
+    "text": "I can definitely apply Memorization."
+  },
+  {
+    "start": 834.89,
+    "end": 837.31,
+    "text": "So you can easily apply Memorization."
+  },
+  {
+    "start": 837.31,
+    "end": 840.58,
+    "text": "But I just in case to complete the recursion tree."
+  },
+  {
+    "start": 840.58,
+    "end": 841.95,
+    "text": "I'll quickly draw it."
+  },
+  {
+    "start": 841.95,
+    "end": 845.15,
+    "text": "So in order to reach zero, I'll take zero amount."
+  },
+  {
+    "start": 845.15,
+    "end": 847.2,
+    "text": "So F of one, what would I have?"
+  },
+  {
+    "start": 847.2,
+    "end": 849.48,
+    "text": "What it would have done ideally?"
+  },
+  {
+    "start": 849.48,
+    "end": 851.69,
+    "text": "In F of one was this recursion."
+  },
+  {
+    "start": 851.69,
+    "end": 856.39,
+    "text": "So F of one went and there was a left recursion call of F of zero."
+  },
+  {
+    "start": 856.39,
+    "end": 858.6,
+    "text": "Plus the jump from one to zero."
+  },
+  {
+    "start": 858.6,
+    "end": 860.38,
+    "text": "So absolute of something."
+  },
+  {
+    "start": 860.38,
+    "end": 862.09,
+    "text": "A jump from one to zero."
+  },
+  {
+    "start": 862.09,
+    "end": 863.87,
+    "text": "So absolute of something."
+  },
+  {
+    "start": 863.87,
+    "end": 864.58,
+    "text": "Let's see."
+  },
+  {
+    "start": 864.58,
+    "end": 866.65,
+    "text": "One to zero will cost you 20."
+  },
+  {
+    "start": 866.65,
+    "end": 868.15,
+    "text": "So you can add it 20."
+  },
+  {
+    "start": 868.15,
+    "end": 870.36,
+    "text": "What about the right recursion?"
+  },
+  {
+    "start": 870.36,
+    "end": 871.07,
+    "text": "Can I see?"
+  },
+  {
+    "start": 871.07,
+    "end": 876.48,
+    "text": "Since we are standing at the first index,  there will be no right recursion."
+  },
+  {
+    "start": 876.48,
+    "end": 879.47,
+    "text": "Because you can have jump couple of index."
+  },
+  {
+    "start": 879.47,
+    "end": 882.96,
+    "text": "So I can say right is probably some bigger value."
+  },
+  {
+    "start": 882.96,
+    "end": 886.09,
+    "text": "Now F of zero will return you zero for sure."
+  },
+  {
+    "start": 886.09,
+    "end": 887.94,
+    "text": "This will return you zero."
+  },
+  {
+    "start": 887.94,
+    "end": 890.93,
+    "text": "So the left took 20 and the right took 20."
+  },
+  {
+    "start": 890.93,
+    "end": 892.64,
+    "text": "So what will you return?"
+  },
+  {
+    "start": 892.64,
+    "end": 896.7,
+    "text": "You return the minimum of both of them which is 20 comma."
+  },
+  {
+    "start": 896.7,
+    "end": 899.62,
+    "text": "Let's assume this to be some intamax max."
+  },
+  {
+    "start": 899.62,
+    "end": 900.4,
+    "text": "So it's 20."
+  },
+  {
+    "start": 900.4,
+    "end": 903.68,
+    "text": "What you return as F of one again makes sense."
+  },
+  {
+    "start": 903.68,
+    "end": 910.45,
+    "text": "Because if you are standing at F of one,  what is the cost that you will take from one to zero?"
+  },
+  {
+    "start": 910.45,
+    "end": 911.52,
+    "text": "That's one way."
+  },
+  {
+    "start": 911.52,
+    "end": 913.87,
+    "text": "There's only one way which is 20."
+  },
+  {
+    "start": 913.87,
+    "end": 916.08,
+    "text": "So that is what we have stored."
+  },
+  {
+    "start": 916.08,
+    "end": 916.44,
+    "text": "Cool."
+  },
+  {
+    "start": 916.44,
+    "end": 919.43,
+    "text": "So I have drawn this particular recursion."
+  },
+  {
+    "start": 919.43,
+    "end": 919.79,
+    "text": "Nice."
+  },
+  {
+    "start": 919.79,
+    "end": 921.43,
+    "text": "Now we are at F of two."
+  },
+  {
+    "start": 921.43,
+    "end": 925.76,
+    "text": "So F of two would have called the left recursion as F of one."
+  },
+  {
+    "start": 925.76,
+    "end": 927.88,
+    "text": "Plus a jump from two to one."
+  },
+  {
+    "start": 927.88,
+    "end": 931.74,
+    "text": "Plus a jump from two to one which will cost him 55."
+  },
+  {
+    "start": 931.74,
+    "end": 933.41,
+    "text": "So that cost it in 50."
+  },
+  {
+    "start": 933.41,
+    "end": 938.33,
+    "text": "And there'll be a right jump which will be directly to F of zero."
+  },
+  {
+    "start": 938.33,
+    "end": 943.25,
+    "text": "Now there will be a jump from two to zero which will cost him 30."
+  },
+  {
+    "start": 943.25,
+    "end": 944.76,
+    "text": "So there'll be a 30."
+  },
+  {
+    "start": 944.76,
+    "end": 946.73,
+    "text": "Now you remember F of one."
+  },
+  {
+    "start": 946.73,
+    "end": 948.47,
+    "text": "This had a value of 20."
+  },
+  {
+    "start": 948.47,
+    "end": 950.44,
+    "text": "So it'll return with a 20."
+  },
+  {
+    "start": 950.44,
+    "end": 952.26,
+    "text": "So this guy gave him 20."
+  },
+  {
+    "start": 952.26,
+    "end": 954.61,
+    "text": "So 20 plus 50 will give him 70."
+  },
+  {
+    "start": 954.61,
+    "end": 956.65,
+    "text": "F of zero will be how much?"
+  },
+  {
+    "start": 956.65,
+    "end": 957.03,
+    "text": "Zero."
+  },
+  {
+    "start": 957.03,
+    "end": 959.23,
+    "text": "So zero plus 30 gives him 30."
+  },
+  {
+    "start": 959.23,
+    "end": 962.33,
+    "text": "Which one will F of two give the minimum?"
+  },
+  {
+    "start": 962.33,
+    "end": 963.77,
+    "text": "So it'll return 30."
+  },
+  {
+    "start": 963.77,
+    "end": 965.21,
+    "text": "So F of two got 30."
+  },
+  {
+    "start": 965.21,
+    "end": 965.82,
+    "text": "Perfect."
+  },
+  {
+    "start": 965.82,
+    "end": 971.65,
+    "text": "So again, makes sense because if I logically explain you,  let me raise this."
+  },
+  {
+    "start": 971.65,
+    "end": 981.04,
+    "text": "If I logically give you an explanation,  well this makes sense is this will make sense because  if I'm standing at F of two."
+  },
+  {
+    "start": 981.04,
+    "end": 985.73,
+    "text": "Yes, if I'm standing at F of two,  there are a couple of ways."
+  },
+  {
+    "start": 985.73,
+    "end": 990.8,
+    "text": "One is this one is the switch will cost him 20 plus 50 which is 70."
+  },
+  {
+    "start": 990.8,
+    "end": 993.22,
+    "text": "Another one is this which is 30."
+  },
+  {
+    "start": 993.22,
+    "end": 995.64,
+    "text": "So 30 is what we have got right."
+  },
+  {
+    "start": 995.64,
+    "end": 997.99,
+    "text": "Now again similarly F of three."
+  },
+  {
+    "start": 997.99,
+    "end": 1003.97,
+    "text": "When you're at F of three, understand there is a left call of F of two plus the"
+  },
+  {
+    "start": 1003.97,
+    "end": 1007.52,
+    "text": "absolute difference which is from three to two."
+  },
+  {
+    "start": 1007.52,
+    "end": 1011.07,
+    "text": "So if I'm doing from three to two, it's 50."
+  },
+  {
+    "start": 1011.07,
+    "end": 1013.63,
+    "text": "So you can just take a plus 50."
+  },
+  {
+    "start": 1013.63,
+    "end": 1015.28,
+    "text": "So what is F of two?"
+  },
+  {
+    "start": 1015.28,
+    "end": 1017.43,
+    "text": "It has returned you as 30."
+  },
+  {
+    "start": 1017.43,
+    "end": 1018.09,
+    "text": "Correct?"
+  },
+  {
+    "start": 1018.09,
+    "end": 1019.91,
+    "text": "What's the right jump?"
+  },
+  {
+    "start": 1019.91,
+    "end": 1023.46,
+    "text": "The right jump is about F of one plus what?"
+  },
+  {
+    "start": 1023.46,
+    "end": 1025.28,
+    "text": "Now will you F of one?"
+  },
+  {
+    "start": 1025.28,
+    "end": 1028.09,
+    "text": "So from one to three will be zero."
+  },
+  {
+    "start": 1028.09,
+    "end": 1030.24,
+    "text": "One to three will be zero."
+  },
+  {
+    "start": 1030.24,
+    "end": 1031.31,
+    "text": "So plus zero."
+  },
+  {
+    "start": 1031.31,
+    "end": 1035.77,
+    "text": "Now will you go and do the recursion call of F of one?"
+  },
+  {
+    "start": 1035.77,
+    "end": 1038.66,
+    "text": "Will you go and do again F of zero?"
+  },
+  {
+    "start": 1038.66,
+    "end": 1041.06,
+    "text": "F of one is already computed."
+  },
+  {
+    "start": 1041.06,
+    "end": 1041.72,
+    "text": "You see?"
+  },
+  {
+    "start": 1041.72,
+    "end": 1044.36,
+    "text": "So it's overlapping sub problem."
+  },
+  {
+    "start": 1044.36,
+    "end": 1048.57,
+    "text": "You can directly take the value from the dpr as 20."
+  },
+  {
+    "start": 1048.57,
+    "end": 1050.06,
+    "text": "This gives you 20."
+  },
+  {
+    "start": 1050.06,
+    "end": 1051.55,
+    "text": "This gives you 80."
+  },
+  {
+    "start": 1051.55,
+    "end": 1053.53,
+    "text": "Which one will you take?"
+  },
+  {
+    "start": 1053.53,
+    "end": 1055.26,
+    "text": "The 20 obviously are."
+  },
+  {
+    "start": 1055.26,
+    "end": 1057.32,
+    "text": "So F of three becomes 20."
+  },
+  {
+    "start": 1057.32,
+    "end": 1057.98,
+    "text": "Perfect."
+  },
+  {
+    "start": 1057.98,
+    "end": 1063.51,
+    "text": "So remember I'm storing the values of F of three F of two F of one."
+  },
+  {
+    "start": 1063.51,
+    "end": 1068.05,
+    "text": "It probably some dpr as we have seen in my lecture one."
+  },
+  {
+    "start": 1068.05,
+    "end": 1070.11,
+    "text": "Next you're at F of four."
+  },
+  {
+    "start": 1070.11,
+    "end": 1072.75,
+    "text": "So F of four what is that doing?"
+  },
+  {
+    "start": 1072.75,
+    "end": 1078.7,
+    "text": "It's again calling F of three plus absolute of three to four will be 50."
+  },
+  {
+    "start": 1078.7,
+    "end": 1079.2,
+    "text": "So 50."
+  },
+  {
+    "start": 1079.2,
+    "end": 1083.84,
+    "text": "And it's calling F of two plus four to two will be zero."
+  },
+  {
+    "start": 1083.84,
+    "end": 1085.2,
+    "text": "So I can do zero."
+  },
+  {
+    "start": 1085.2,
+    "end": 1086.64,
+    "text": "What's F of three?"
+  },
+  {
+    "start": 1086.64,
+    "end": 1088.97,
+    "text": "If I write what's F of three?"
+  },
+  {
+    "start": 1088.97,
+    "end": 1090.49,
+    "text": "20 what's F of two?"
+  },
+  {
+    "start": 1090.49,
+    "end": 1090.73,
+    "text": "30."
+  },
+  {
+    "start": 1090.73,
+    "end": 1092.98,
+    "text": "So 20 plus 50 70 this is 30."
+  },
+  {
+    "start": 1092.98,
+    "end": 1095.23,
+    "text": "But you know today 30 again."
+  },
+  {
+    "start": 1095.23,
+    "end": 1098.04,
+    "text": "An overlapping sub problem ignored."
+  },
+  {
+    "start": 1098.04,
+    "end": 1105.34,
+    "text": "You did not F of two will not go deep into recursion because the  moment you call F of two."
+  },
+  {
+    "start": 1105.34,
+    "end": 1109.19,
+    "text": "It will directly get the value 30 and return 30."
+  },
+  {
+    "start": 1109.19,
+    "end": 1113.44,
+    "text": "So you got the minimum as 30 so F of four becomes 30."
+  },
+  {
+    "start": 1113.44,
+    "end": 1114.08,
+    "text": "Perfect."
+  },
+  {
+    "start": 1114.08,
+    "end": 1117.69,
+    "text": "Next step is this particular step F of three."
+  },
+  {
+    "start": 1117.69,
+    "end": 1121.06,
+    "text": "So when I'm at F of five what's happening?"
+  },
+  {
+    "start": 1121.06,
+    "end": 1129.49,
+    "text": "I'm saying okay I can definitely go to F of four plus absolute of jumping from four to five  which is 10."
+  },
+  {
+    "start": 1129.49,
+    "end": 1130.85,
+    "text": "So let's take 10."
+  },
+  {
+    "start": 1130.85,
+    "end": 1134.46,
+    "text": "Similarly if I am jumping from five to three."
+  },
+  {
+    "start": 1134.46,
+    "end": 1137.19,
+    "text": "If I'm jumping from five to three."
+  },
+  {
+    "start": 1137.19,
+    "end": 1138.63,
+    "text": "Can I say it's 40?"
+  },
+  {
+    "start": 1138.63,
+    "end": 1138.95,
+    "text": "Yes."
+  },
+  {
+    "start": 1138.95,
+    "end": 1140.96,
+    "text": "So plus 40 of F of three."
+  },
+  {
+    "start": 1140.96,
+    "end": 1144.73,
+    "text": "Now carefully observed F of four is already 30."
+  },
+  {
+    "start": 1144.73,
+    "end": 1146.74,
+    "text": "F of three is already 20."
+  },
+  {
+    "start": 1146.74,
+    "end": 1153.24,
+    "text": "30 plus 10 gives you 40 20 plus 40 gives you 60 which one will you take 40 or 60?"
+  },
+  {
+    "start": 1153.24,
+    "end": 1154.36,
+    "text": "Definitely 40."
+  },
+  {
+    "start": 1154.36,
+    "end": 1155.97,
+    "text": "So this value is 40."
+  },
+  {
+    "start": 1155.97,
+    "end": 1159.04,
+    "text": "thereby this recursion is also solved."
+  },
+  {
+    "start": 1159.04,
+    "end": 1161.08,
+    "text": "So did you observe something?"
+  },
+  {
+    "start": 1161.08,
+    "end": 1165.01,
+    "text": "They have multiple sub problems that I ended up solving."
+  },
+  {
+    "start": 1165.01,
+    "end": 1168.24,
+    "text": "Repeatedly overlapping sub problems as I said."
+  },
+  {
+    "start": 1168.24,
+    "end": 1171.82,
+    "text": "So this is how generally a recursion tends to work."
+  },
+  {
+    "start": 1171.82,
+    "end": 1175.75,
+    "text": "It goes on goes on because if a problem has been solved."
+  },
+  {
+    "start": 1175.75,
+    "end": 1179.75,
+    "text": "If you have already like if you already know what's some."
+  },
+  {
+    "start": 1179.75,
+    "end": 1182.07,
+    "text": "What's the summation from 0 to 3?"
+  },
+  {
+    "start": 1182.07,
+    "end": 1184.74,
+    "text": "Why do you want to recompute it again?"
+  },
+  {
+    "start": 1184.74,
+    "end": 1185.79,
+    "text": "This we use it."
+  },
+  {
+    "start": 1185.79,
+    "end": 1191.41,
+    "text": "That's what I've done and I've got the answer as 40 which was indeed the answer."
+  },
+  {
+    "start": 1191.41,
+    "end": 1196.47,
+    "text": "This is how the recursion re-works and how you get the minimal possible."
+  },
+  {
+    "start": 1196.47,
+    "end": 1202.23,
+    "text": "Generally if you draw this recursion tree by yourself you'll understand much more."
+  },
+  {
+    "start": 1202.23,
+    "end": 1206.79,
+    "text": "But in general if you can remember these three stops three lines."
+  },
+  {
+    "start": 1206.79,
+    "end": 1209.46,
+    "text": "Explain the problem in terms of index."
+  },
+  {
+    "start": 1209.46,
+    "end": 1211.43,
+    "text": "Do all stuffs on that index."
+  },
+  {
+    "start": 1211.43,
+    "end": 1214.03,
+    "text": "Take the minimum of all those stuffs."
+  },
+  {
+    "start": 1214.03,
+    "end": 1215.93,
+    "text": "And then write the records."
+  },
+  {
+    "start": 1215.93,
+    "end": 1218.46,
+    "text": "The ones you've written the records."
+  },
+  {
+    "start": 1218.46,
+    "end": 1223.3,
+    "text": "How do you convert a recurrence into or dynamic programming solution?"
+  },
+  {
+    "start": 1223.3,
+    "end": 1225.06,
+    "text": "That's the next question."
+  },
+  {
+    "start": 1225.06,
+    "end": 1228.08,
+    "text": "How do you convert a recurrence into or dp?"
+  },
+  {
+    "start": 1228.08,
+    "end": 1230.4,
+    "text": "So that's when you say memo, i.e."
+  },
+  {
+    "start": 1230.4,
+    "end": 1230.75,
+    "text": "Okay."
+  },
+  {
+    "start": 1230.75,
+    "end": 1232.58,
+    "text": "So take to apply Memories."
+  },
+  {
+    "start": 1232.58,
+    "end": 1234.8,
+    "text": "Look at the parameters changing."
+  },
+  {
+    "start": 1234.8,
+    "end": 1235.11,
+    "text": "Yes."
+  },
+  {
+    "start": 1235.11,
+    "end": 1237.6,
+    "text": "Look at the parameters changing."
+  },
+  {
+    "start": 1237.6,
+    "end": 1240.33,
+    "text": "Like which parameters are changing."
+  },
+  {
+    "start": 1240.33,
+    "end": 1241.73,
+    "text": "Just look at them."
+  },
+  {
+    "start": 1241.73,
+    "end": 1248.58,
+    "text": "You'll be like, Strava, there is only one parameter changing which is the one parameter."
+  },
+  {
+    "start": 1248.58,
+    "end": 1249.83,
+    "text": "Let's come back."
+  },
+  {
+    "start": 1249.83,
+    "end": 1250.69,
+    "text": "It's index."
+  },
+  {
+    "start": 1250.69,
+    "end": 1253.49,
+    "text": "What are the maximum value of index?"
+  },
+  {
+    "start": 1253.49,
+    "end": 1256.06,
+    "text": "Let's look at the recursion tree."
+  },
+  {
+    "start": 1256.06,
+    "end": 1256.45,
+    "text": "Five."
+  },
+  {
+    "start": 1256.45,
+    "end": 1263.07,
+    "text": "So you'll require a six size array because in a six size array they'll be indexed by."
+  },
+  {
+    "start": 1263.07,
+    "end": 1270.08,
+    "text": "So you can definitely create a dp size of six over here which is indagly dp of n plus one."
+  },
+  {
+    "start": 1270.08,
+    "end": 1271.72,
+    "text": "Remember three steps."
+  },
+  {
+    "start": 1271.72,
+    "end": 1274.99,
+    "text": "Step one is this declare an array of size."
+  },
+  {
+    "start": 1274.99,
+    "end": 1275.69,
+    "text": "Step two."
+  },
+  {
+    "start": 1275.69,
+    "end": 1277.79,
+    "text": "Before returning add it up."
+  },
+  {
+    "start": 1277.79,
+    "end": 1278.72,
+    "text": "dp of index."
+  },
+  {
+    "start": 1278.72,
+    "end": 1280.82,
+    "text": "Before returning add it up."
+  },
+  {
+    "start": 1280.82,
+    "end": 1282.38,
+    "text": "Store it and return."
+  },
+  {
+    "start": 1282.38,
+    "end": 1282.77,
+    "text": "Step."
+  },
+  {
+    "start": 1282.77,
+    "end": 1284.33,
+    "text": "So this is step two."
+  },
+  {
+    "start": 1284.33,
+    "end": 1285.58,
+    "text": "What step three?"
+  },
+  {
+    "start": 1285.58,
+    "end": 1287.68,
+    "text": "Whenever you call an index."
+  },
+  {
+    "start": 1287.68,
+    "end": 1287.99,
+    "text": "Yes."
+  },
+  {
+    "start": 1287.99,
+    "end": 1290.79,
+    "text": "Whenever you call a recursion check."
+  },
+  {
+    "start": 1290.79,
+    "end": 1294.06,
+    "text": "If it has been previously computed or not."
+  },
+  {
+    "start": 1294.06,
+    "end": 1297.49,
+    "text": "If dp of index has been previously computed."
+  },
+  {
+    "start": 1297.49,
+    "end": 1299.51,
+    "text": "No need to solve it again."
+  },
+  {
+    "start": 1299.51,
+    "end": 1300.99,
+    "text": "Return dp of index."
+  },
+  {
+    "start": 1300.99,
+    "end": 1301.38,
+    "text": "Done."
+  },
+  {
+    "start": 1301.38,
+    "end": 1302.78,
+    "text": "Line number three."
+  },
+  {
+    "start": 1302.78,
+    "end": 1305.74,
+    "text": "Converts a recursion to a memoization."
+  },
+  {
+    "start": 1305.74,
+    "end": 1308.23,
+    "text": "So I've converted a dp solution."
+  },
+  {
+    "start": 1308.23,
+    "end": 1313.36,
+    "text": "In this converted a recursion solution into a dynamic programming."
+  },
+  {
+    "start": 1313.36,
+    "end": 1315.88,
+    "text": "And if I talk about the time complexity."
+  },
+  {
+    "start": 1315.88,
+    "end": 1316.89,
+    "text": "What will be it?"
+  },
+  {
+    "start": 1316.89,
+    "end": 1320.04,
+    "text": "One step two step three step four step five steps."
+  },
+  {
+    "start": 1320.04,
+    "end": 1324.26,
+    "text": "These steps are constant because these are problems are not solved."
+  },
+  {
+    "start": 1324.26,
+    "end": 1326.72,
+    "text": "So these steps are constant five steps."
+  },
+  {
+    "start": 1326.72,
+    "end": 1327.41,
+    "text": "So n steps."
+  },
+  {
+    "start": 1327.41,
+    "end": 1332.07,
+    "text": "So I can say the time complexity to be ego of n because there are n steps."
+  },
+  {
+    "start": 1332.07,
+    "end": 1335.53,
+    "text": "I can say there is recursion stack space of ego of one."
+  },
+  {
+    "start": 1335.53,
+    "end": 1337.86,
+    "text": "And in an array size of ego of n use."
+  },
+  {
+    "start": 1337.86,
+    "end": 1340.51,
+    "text": "This is how the recursion will look alike."
+  },
+  {
+    "start": 1340.51,
+    "end": 1343.66,
+    "text": "So it's now time to a coded and probably summited."
+  },
+  {
+    "start": 1343.66,
+    "end": 1346.94,
+    "text": "And after that we can optimize this into tabulation."
+  },
+  {
+    "start": 1346.94,
+    "end": 1350.03,
+    "text": "And after that, probably into space optimization."
+  },
+  {
+    "start": 1350.03,
+    "end": 1354.0,
+    "text": "So in the code, you're basically given n and given the heights."
+  },
+  {
+    "start": 1354.0,
+    "end": 1357.4,
+    "text": "So I know I know I have to write a recursion solution."
+  },
+  {
+    "start": 1357.4,
+    "end": 1360.49,
+    "text": "So probably I have to turn the in terms of index."
+  },
+  {
+    "start": 1360.49,
+    "end": 1362.69,
+    "text": "And let's carry the height as well."
+  },
+  {
+    "start": 1362.69,
+    "end": 1369.05,
+    "text": "Now the Java people, you can easily code it because I've explained the pseudo code  while explaining."
+  },
+  {
+    "start": 1369.05,
+    "end": 1372.39,
+    "text": "So should not be a big issue for Java people as well."
+  },
+  {
+    "start": 1372.39,
+    "end": 1374.09,
+    "text": "So I'll take anti function."
+  },
+  {
+    "start": 1374.09,
+    "end": 1376.74,
+    "text": "Now I know the H cases if index reaches 0."
+  },
+  {
+    "start": 1376.74,
+    "end": 1378.5,
+    "text": "I know the answer will be 0."
+  },
+  {
+    "start": 1378.5,
+    "end": 1381.46,
+    "text": "And I know there will be electric caution call."
+  },
+  {
+    "start": 1381.46,
+    "end": 1384.48,
+    "text": "And I know there will be a right recursion call."
+  },
+  {
+    "start": 1384.48,
+    "end": 1388.88,
+    "text": "But we know one thing the right recursion call will always not happen."
+  },
+  {
+    "start": 1388.88,
+    "end": 1396.04,
+    "text": "So probably we can initially store that as intmax because this is not going to happen always."
+  },
+  {
+    "start": 1396.04,
+    "end": 1403.82,
+    "text": "If index is greater than 1, then we can have the right as f of index minus 2 and pass on the heights."
+  },
+  {
+    "start": 1403.82,
+    "end": 1406.82,
+    "text": "And then a plus of absolute of heights."
+  },
+  {
+    "start": 1406.82,
+    "end": 1411.67,
+    "text": "Like you can just hide of index minus heights of index minus 2."
+  },
+  {
+    "start": 1411.67,
+    "end": 1415.21,
+    "text": "There's something which you can definitely do."
+  },
+  {
+    "start": 1415.21,
+    "end": 1418.91,
+    "text": "And over here what you can do is the same stuff."
+  },
+  {
+    "start": 1418.91,
+    "end": 1421.3,
+    "text": "This makes sure you copy paste."
+  },
+  {
+    "start": 1421.3,
+    "end": 1424.84,
+    "text": "And instead of index minus 2 do all the stuff."
+  },
+  {
+    "start": 1424.84,
+    "end": 1426.77,
+    "text": "And that's how you do it."
+  },
+  {
+    "start": 1426.77,
+    "end": 1432.62,
+    "text": "And then if they what you do you return minimum of left comma right correct."
+  },
+  {
+    "start": 1432.62,
+    "end": 1435.08,
+    "text": "Now the question is very simple."
+  },
+  {
+    "start": 1435.08,
+    "end": 1440.93,
+    "text": "So you can probably say return f of n minus 1 because that's the last index."
+  },
+  {
+    "start": 1440.93,
+    "end": 1443.01,
+    "text": "And you can do all heights."
+  },
+  {
+    "start": 1443.01,
+    "end": 1446.71,
+    "text": "So if I run this over this run, let's second up."
+  },
+  {
+    "start": 1446.71,
+    "end": 1448.4,
+    "text": "Okay, so it says okay."
+  },
+  {
+    "start": 1448.4,
+    "end": 1450.56,
+    "text": "So intmax it is not picking."
+  },
+  {
+    "start": 1450.56,
+    "end": 1455.33,
+    "text": "So probably we have to use hash include bits, STD, C++, not H."
+  },
+  {
+    "start": 1455.33,
+    "end": 1459.8,
+    "text": "Generally, generally it is added over there not your wire."
+  },
+  {
+    "start": 1459.8,
+    "end": 1462.88,
+    "text": "They have not added it but not an issue."
+  },
+  {
+    "start": 1462.88,
+    "end": 1464.96,
+    "text": "Let's quickly run this off."
+  },
+  {
+    "start": 1464.96,
+    "end": 1466.24,
+    "text": "It's fair on it."
+  },
+  {
+    "start": 1466.24,
+    "end": 1468.24,
+    "text": "You can see so far on it."
+  },
+  {
+    "start": 1468.24,
+    "end": 1472.73,
+    "text": "You can see the first three test cases are running fine."
+  },
+  {
+    "start": 1472.73,
+    "end": 1479.3,
+    "text": "And then there's a time limit exceeded because it's the simple recursive solution."
+  },
+  {
+    "start": 1479.3,
+    "end": 1487.32,
+    "text": "So how to convert this into a dp convert a 300 dp array of size n plus 1 because that's the maximum."
+  },
+  {
+    "start": 1487.32,
+    "end": 1489.64,
+    "text": "Initialize that with minus 1."
+  },
+  {
+    "start": 1489.64,
+    "end": 1490.76,
+    "text": "Now pass a dp."
+  },
+  {
+    "start": 1490.76,
+    "end": 1498.05,
+    "text": "Oh yeah, just make sure you have a vector of int and you can just create a dp by reference."
+  },
+  {
+    "start": 1498.05,
+    "end": 1500.45,
+    "text": "Make sure always carry the dp."
+  },
+  {
+    "start": 1500.45,
+    "end": 1502.13,
+    "text": "That's the next step."
+  },
+  {
+    "start": 1502.13,
+    "end": 1502.53,
+    "text": "Done."
+  },
+  {
+    "start": 1502.53,
+    "end": 1508.06,
+    "text": "So step one of initialization and carrying on the parameters is done."
+  },
+  {
+    "start": 1508.06,
+    "end": 1509.02,
+    "text": "Was an step."
+  },
+  {
+    "start": 1509.02,
+    "end": 1514.63,
+    "text": "Step two is storing the answer before returning for the sub problem f."
+  },
+  {
+    "start": 1514.63,
+    "end": 1515.03,
+    "text": "Done."
+  },
+  {
+    "start": 1515.03,
+    "end": 1515.99,
+    "text": "Was an step."
+  },
+  {
+    "start": 1515.99,
+    "end": 1521.76,
+    "text": "If the answer has come across, just check this is and it'll dp of index."
+  },
+  {
+    "start": 1521.76,
+    "end": 1525.53,
+    "text": "So if I just do these changes and if I now run."
+  },
+  {
+    "start": 1525.53,
+    "end": 1526.89,
+    "text": "Vingo works fine."
+  },
+  {
+    "start": 1526.89,
+    "end": 1528.41,
+    "text": "All the rest cases."
+  },
+  {
+    "start": 1528.41,
+    "end": 1533.14,
+    "text": "If I submit them,  you'll see it's it's absolutely correct."
+  },
+  {
+    "start": 1533.14,
+    "end": 1538.43,
+    "text": "So this is how you can do the memoization stuff very, very easily."
+  },
+  {
+    "start": 1538.43,
+    "end": 1546.08,
+    "text": "So in our, say in the first lecture told you after memoation, it's very important to understand"
+  },
+  {
+    "start": 1546.08,
+    "end": 1552.01,
+    "text": "how do we, or do the tabulation one and after that we will do the space optimization."
+  },
+  {
+    "start": 1552.01,
+    "end": 1553.27,
+    "text": "What is memoation?"
+  },
+  {
+    "start": 1553.27,
+    "end": 1553.9,
+    "text": "Top down."
+  },
+  {
+    "start": 1553.9,
+    "end": 1554.18,
+    "text": "Why?"
+  },
+  {
+    "start": 1554.18,
+    "end": 1555.37,
+    "text": "Let's understand."
+  },
+  {
+    "start": 1555.37,
+    "end": 1559.07,
+    "text": "So in the recursion, if you observe, what did you do?"
+  },
+  {
+    "start": 1559.07,
+    "end": 1564.65,
+    "text": "You had a top portion, but first the down answers like you went from top to top."
+  },
+  {
+    "start": 1564.65,
+    "end": 1565.21,
+    "text": "Correct?"
+  },
+  {
+    "start": 1565.21,
+    "end": 1566.54,
+    "text": "What is tabulation?"
+  },
+  {
+    "start": 1566.54,
+    "end": 1568.49,
+    "text": "It's the exact top position."
+  },
+  {
+    "start": 1568.49,
+    "end": 1569.47,
+    "text": "Yes, I repeat."
+  },
+  {
+    "start": 1569.47,
+    "end": 1571.42,
+    "text": "It's the exact top position."
+  },
+  {
+    "start": 1571.42,
+    "end": 1572.12,
+    "text": "Bottom up."
+  },
+  {
+    "start": 1572.12,
+    "end": 1572.47,
+    "text": "Okay."
+  },
+  {
+    "start": 1572.47,
+    "end": 1576.45,
+    "text": "That means you'll start from the bottom and you'll go up."
+  },
+  {
+    "start": 1576.45,
+    "end": 1579.1,
+    "text": "So always look at the  recursion tree."
+  },
+  {
+    "start": 1579.1,
+    "end": 1581.47,
+    "text": "Always look at the recursion tree."
+  },
+  {
+    "start": 1581.47,
+    "end": 1582.93,
+    "text": "What's at the bottom?"
+  },
+  {
+    "start": 1582.93,
+    "end": 1583.21,
+    "text": "Yes."
+  },
+  {
+    "start": 1583.21,
+    "end": 1586.0,
+    "text": "So you'll go up and then you'll fill it."
+  },
+  {
+    "start": 1586.0,
+    "end": 1587.19,
+    "text": "You'll take zero."
+  },
+  {
+    "start": 1587.19,
+    "end": 1588.31,
+    "text": "You'll fill one."
+  },
+  {
+    "start": 1588.31,
+    "end": 1589.84,
+    "text": "Then you'll fill  two."
+  },
+  {
+    "start": 1589.84,
+    "end": 1591.44,
+    "text": "Then you'll fill three."
+  },
+  {
+    "start": 1591.44,
+    "end": 1592.97,
+    "text": "Then you'll fill four."
+  },
+  {
+    "start": 1592.97,
+    "end": 1594.16,
+    "text": "You'll fill five."
+  },
+  {
+    "start": 1594.16,
+    "end": 1596.46,
+    "text": "You'll go from the bottom to the."
+  },
+  {
+    "start": 1596.46,
+    "end": 1597.92,
+    "text": "So that's tabulation."
+  },
+  {
+    "start": 1597.92,
+    "end": 1598.69,
+    "text": "Understood?"
+  },
+  {
+    "start": 1598.69,
+    "end": 1600.36,
+    "text": "Now what did I tell you?"
+  },
+  {
+    "start": 1600.36,
+    "end": 1601.27,
+    "text": "Intagulation."
+  },
+  {
+    "start": 1601.27,
+    "end": 1602.8,
+    "text": "What's the first step?"
+  },
+  {
+    "start": 1602.8,
+    "end": 1606.43,
+    "text": "Step one is to see in memoation how much BPRIDD use?"
+  },
+  {
+    "start": 1606.43,
+    "end": 1609.78,
+    "text": "We know we used our BP array of size n plus one."
+  },
+  {
+    "start": 1609.78,
+    "end": 1614.1,
+    "text": "So just without thinking anything of you can  initialize that."
+  },
+  {
+    "start": 1614.1,
+    "end": 1614.45,
+    "text": "Okay."
+  },
+  {
+    "start": 1614.45,
+    "end": 1618.15,
+    "text": "So without thinking anything you can initialize that."
+  },
+  {
+    "start": 1618.15,
+    "end": 1620.03,
+    "text": "In other  way it will be n."
+  },
+  {
+    "start": 1620.03,
+    "end": 1626.0,
+    "text": "Like even if you initialize any it will work because we have used zero based indexing."
+  },
+  {
+    "start": 1626.0,
+    "end": 1634.92,
+    "text": "So make sure everything is initialized with minus one or you can initialize that with zero doesn't  matter over here."
+  },
+  {
+    "start": 1634.92,
+    "end": 1636.67,
+    "text": "So first thing is done."
+  },
+  {
+    "start": 1636.67,
+    "end": 1638.27,
+    "text": "What's the next time?"
+  },
+  {
+    "start": 1638.27,
+    "end": 1642.92,
+    "text": "Look for the base case because  in recursion it'll stop down."
+  },
+  {
+    "start": 1642.92,
+    "end": 1645.13,
+    "text": "It's downpour like bottom up."
+  },
+  {
+    "start": 1645.13,
+    "end": 1646.96,
+    "text": "So what's the base case?"
+  },
+  {
+    "start": 1646.96,
+    "end": 1653.59,
+    "text": "Let's look at  the base case sets index equal to zero returns zero index equal to zero."
+  },
+  {
+    "start": 1653.59,
+    "end": 1655.12,
+    "text": "Index equal to zero."
+  },
+  {
+    "start": 1655.12,
+    "end": 1658.02,
+    "text": "So whatever is that you'll write that."
+  },
+  {
+    "start": 1658.02,
+    "end": 1661.22,
+    "text": "BP of zero is equal to zero just write it."
+  },
+  {
+    "start": 1661.22,
+    "end": 1667.47,
+    "text": "After that  just look at the recursion state these lines when will it be executed?"
+  },
+  {
+    "start": 1667.47,
+    "end": 1672.96,
+    "text": "I can be like it will be executed at one two three four and so on till n"
+  },
+  {
+    "start": 1672.96,
+    "end": 1679.67,
+    "text": "minus one of the index makes sense because the worst call that I'll make will be n minus"
+  },
+  {
+    "start": 1679.67,
+    "end": 1679.98,
+    "text": "one."
+  },
+  {
+    "start": 1679.98,
+    "end": 1682.42,
+    "text": "So it will be executed for sure."
+  },
+  {
+    "start": 1682.42,
+    "end": 1683.64,
+    "text": "I will like yes."
+  },
+  {
+    "start": 1683.64,
+    "end": 1685.09,
+    "text": "So please write it."
+  },
+  {
+    "start": 1685.09,
+    "end": 1688.45,
+    "text": "I equal to one ln minus one run a fall loop."
+  },
+  {
+    "start": 1688.45,
+    "end": 1689.06,
+    "text": "Perfect."
+  },
+  {
+    "start": 1689.06,
+    "end": 1690.66,
+    "text": "What's the next step?"
+  },
+  {
+    "start": 1690.66,
+    "end": 1693.41,
+    "text": "Just go ahead look at the recursion."
+  },
+  {
+    "start": 1693.41,
+    "end": 1694.63,
+    "text": "What am I doing?"
+  },
+  {
+    "start": 1694.63,
+    "end": 1698.06,
+    "text": "What's the what's the stop down on the index?"
+  },
+  {
+    "start": 1698.06,
+    "end": 1698.37,
+    "text": "Yes."
+  },
+  {
+    "start": 1698.37,
+    "end": 1700.96,
+    "text": "Deplace this with dp and write it."
+  },
+  {
+    "start": 1700.96,
+    "end": 1703.48,
+    "text": "So the first step is very simple."
+  },
+  {
+    "start": 1703.48,
+    "end": 1710.72,
+    "text": "I can say if I take first step it will be dp of index minus one plus absolute of array of index"
+  },
+  {
+    "start": 1710.72,
+    "end": 1713.93,
+    "text": "minus array of index minus one."
+  },
+  {
+    "start": 1713.93,
+    "end": 1714.65,
+    "text": "Simple."
+  },
+  {
+    "start": 1714.65,
+    "end": 1725.1,
+    "text": "I can say second step will only implicate if I is greater than one  remember super super super super."
+  },
+  {
+    "start": 1725.1,
+    "end": 1729.96,
+    "text": "Second step will only implement if that's true."
+  },
+  {
+    "start": 1729.96,
+    "end": 1738.13,
+    "text": "So dp of index minus two plus absolute of a of index minus a of index minus two"
+  },
+  {
+    "start": 1738.13,
+    "end": 1742.58,
+    "text": "as simple as it gets and what do you store."
+  },
+  {
+    "start": 1742.58,
+    "end": 1750.85,
+    "text": "Store it dp of index will be minimum of dp of index minus sorry dp of first step"
+  },
+  {
+    "start": 1750.85,
+    "end": 1759.74,
+    "text": "and second step as simple as it can get and if you write this it's definitely going to"
+  },
+  {
+    "start": 1759.74,
+    "end": 1761.08,
+    "text": "work wonders."
+  },
+  {
+    "start": 1761.08,
+    "end": 1768.84,
+    "text": "So I'll try to show you over here like I just erase this and over here if I"
+  },
+  {
+    "start": 1768.84,
+    "end": 1774.22,
+    "text": "just write the same thing like you'll see over here."
+  },
+  {
+    "start": 1774.22,
+    "end": 1781.25,
+    "text": "If I write the same thing like I'll write dp of 0 to be 0 for anti i"
+  },
+  {
+    "start": 1781.25,
+    "end": 1788.39,
+    "text": "equal to one i less than n i plus plus okay and I can write i and the"
+  },
+  {
+    "start": 1788.39,
+    "end": 1793.36,
+    "text": "first step will be very simple dp of i minus one"
+  },
+  {
+    "start": 1793.36,
+    "end": 1801.23,
+    "text": "plus absolute of heights i minus heights of height i minus one right and what about the second"
+  },
+  {
+    "start": 1801.23,
+    "end": 1805.5,
+    "text": "step I can say the second step will be very simple."
+  },
+  {
+    "start": 1805.5,
+    "end": 1812.53,
+    "text": "I can initially keep it as index correct and what I can say is second step will only"
+  },
+  {
+    "start": 1812.53,
+    "end": 1819.9,
+    "text": "be implicated if index is greater than one and the second step will be nothing but dp of"
+  },
+  {
+    "start": 1819.9,
+    "end": 1826.85,
+    "text": "i minus two plus absolute of heights of i minus heights of i minus two as simple as"
+  },
+  {
+    "start": 1826.85,
+    "end": 1833.04,
+    "text": "it gets and the dp of i will be minimum of dp of i minus one sorry minimum"
+  },
+  {
+    "start": 1833.04,
+    "end": 1838.31,
+    "text": "of first step comma second step and what do you need to return?"
+  },
+  {
+    "start": 1838.31,
+    "end": 1845.51,
+    "text": "You need to return the answer will always be stored at the last index and thereby if I"
+  },
+  {
+    "start": 1845.51,
+    "end": 1851.87,
+    "text": "just take this off now and now if I try to run you see it's running and I've"
+  },
+  {
+    "start": 1851.87,
+    "end": 1859.4,
+    "text": "tried to sum it works fine so we can convert this into tabulation so easily by a recursion"
+  },
+  {
+    "start": 1859.4,
+    "end": 1867.77,
+    "text": "can be converted into a tabulation now the question arises can we reduce the space because over here"
+  },
+  {
+    "start": 1867.77,
+    "end": 1872.8,
+    "text": "we are we are definitely reducing the uh stack space that we"
+  },
+  {
+    "start": 1872.8,
+    "end": 1878.67,
+    "text": "used over here this is reduced but there's still a big of n being used because as I"
+  },
+  {
+    "start": 1878.67,
+    "end": 1884.61,
+    "text": "can see we are still using a dp of n array and the time complexity cannot be reduced"
+  },
+  {
+    "start": 1884.61,
+    "end": 1886.02,
+    "text": "but can I omit this?"
+  },
+  {
+    "start": 1886.02,
+    "end": 1887.93,
+    "text": "Let's see can we omit this?"
+  },
+  {
+    "start": 1887.93,
+    "end": 1894.58,
+    "text": "I did tell you one thing anytime there is something like index minus one index minus two there"
+  },
+  {
+    "start": 1894.58,
+    "end": 1900.88,
+    "text": "can always be an space if this as a thumb rule there will always be an space optimization"
+  },
+  {
+    "start": 1900.88,
+    "end": 1907.46,
+    "text": "if there is something like index minus one and index minus two always these states can be now"
+  },
+  {
+    "start": 1907.46,
+    "end": 1913.33,
+    "text": "let me or there is something assume you are at index zero one two three four and so"
+  },
+  {
+    "start": 1913.33,
+    "end": 1919.34,
+    "text": "on till n minus one okay initially initially as you just as you you are over here and"
+  },
+  {
+    "start": 1919.34,
+    "end": 1924.43,
+    "text": "this is nothing but dp of i and you are saying this as dp of i minus one"
+  },
+  {
+    "start": 1924.43,
+    "end": 1929.88,
+    "text": "and you are saying this as dp of i minus two yes saying all right in the next"
+  },
+  {
+    "start": 1929.88,
+    "end": 1935.54,
+    "text": "step whenever i will increase can I say the i will go over here and this will be"
+  },
+  {
+    "start": 1935.54,
+    "end": 1940.14,
+    "text": "dp of i this will be dp of i minus one this will be dp of i minus"
+  },
+  {
+    "start": 1940.14,
+    "end": 1945.73,
+    "text": "two indeed I can there's no doubt I cannot in the next step can I say this will"
+  },
+  {
+    "start": 1945.73,
+    "end": 1950.12,
+    "text": "be dp of i this will be dp of i minus one this will be dp of i"
+  },
+  {
+    "start": 1950.12,
+    "end": 1953.52,
+    "text": "minus two there's no doubt so d of sub a pattern"
+  },
+  {
+    "start": 1953.52,
+    "end": 1959.05,
+    "text": "the guy who was dp of i minus one for this particular i in the next step in"
+  },
+  {
+    "start": 1959.05,
+    "end": 1965.1,
+    "text": "the next step when the i increases to the next index three the guy who was i minus"
+  },
+  {
+    "start": 1965.1,
+    "end": 1972.18,
+    "text": "one that means he was the previous he'll become the second previous of the next he'll become the"
+  },
+  {
+    "start": 1972.18,
+    "end": 1978.15,
+    "text": "second previous of the next makes sense so he'll become this so can I say dp of i"
+  },
+  {
+    "start": 1978.15,
+    "end": 1984.12,
+    "text": "minus two will become this right so do you need to carry or array can't I do this"
+  },
+  {
+    "start": 1984.12,
+    "end": 1991.42,
+    "text": "using couple of variables like think can't you do this using couple of variables can answer to that"
+  },
+  {
+    "start": 1991.42,
+    "end": 1997.83,
+    "text": "will be yeah I think we can because what we require at any particular instance i is the"
+  },
+  {
+    "start": 1997.83,
+    "end": 2004.47,
+    "text": "previous guy and the second previous guy I don't need anything more why the hell do I need"
+  },
+  {
+    "start": 2004.47,
+    "end": 2010.74,
+    "text": "to declare a dp array I don't need anything else thereby I can say okay so that makes"
+  },
+  {
+    "start": 2010.74,
+    "end": 2016.27,
+    "text": "sense let's assume I do it this way this is car i I said this is previous i"
+  },
+  {
+    "start": 2016.27,
+    "end": 2022.32,
+    "text": "and I said this is previous to i instead of storing them into an array in the next"
+  },
+  {
+    "start": 2022.32,
+    "end": 2028.81,
+    "text": "step I know this will become car i another car i will become previous i and the previous"
+  },
+  {
+    "start": 2028.81,
+    "end": 2034.48,
+    "text": "i will become previous to i so can I just use couple of variables where I say"
+  },
+  {
+    "start": 2034.48,
+    "end": 2041.38,
+    "text": "previous to i for the next step whenever you've done all the steps the previous i will become"
+  },
+  {
+    "start": 2041.38,
+    "end": 2049.02,
+    "text": "the previous to i because whoever is previous will become second previous for the next step and whoever"
+  },
+  {
+    "start": 2049.02,
+    "end": 2055.4,
+    "text": "is the current guy like whatever is the value of dp of i that will become the previous"
+  },
+  {
+    "start": 2055.4,
+    "end": 2061.7,
+    "text": "for the next step so if you just keep on doing this you will no more require anything"
+  },
+  {
+    "start": 2061.7,
+    "end": 2066.52,
+    "text": "so can I say this can I say this instead of dp of 0 can I carry a"
+  },
+  {
+    "start": 2066.52,
+    "end": 2072.23,
+    "text": "previous equal to 0 make sense i can and can I carry a previous or 2 equal to"
+  },
+  {
+    "start": 2072.23,
+    "end": 2079.05,
+    "text": "a probability 0 as well because for the first for the first you'll require dp of index minus"
+  },
+  {
+    "start": 2079.05,
+    "end": 2086.1,
+    "text": "1 which I can represent as previous now correct and this I can represent as previous to because"
+  },
+  {
+    "start": 2086.1,
+    "end": 2092.33,
+    "text": "that has what we recommend and after that can I say in the next step the previous to"
+  },
+  {
+    "start": 2092.33,
+    "end": 2098.86,
+    "text": "will be previous and the previous will be nothing but third i and this guy will be third"
+  },
+  {
+    "start": 2098.86,
+    "end": 2105.09,
+    "text": "i make sense make sense and what will be the answer at the end whenever you exceed i"
+  },
+  {
+    "start": 2105.09,
+    "end": 2111.02,
+    "text": "will go beyond n minus 1 and whenever this fall loop ends the value of i will be"
+  },
+  {
+    "start": 2111.02,
+    "end": 2113.76,
+    "text": "n is the value of i will be over here"
+  },
+  {
+    "start": 2113.76,
+    "end": 2120.25,
+    "text": "and for this guy for this guy previous will be at n minus 1 and you always require"
+  },
+  {
+    "start": 2120.25,
+    "end": 2126.74,
+    "text": "the answer of n minus 1 so you can say whatever is the answer for previous will be"
+  },
+  {
+    "start": 2126.74,
+    "end": 2133.47,
+    "text": "your answer so you can easily print the answer as previous so if you do this you will"
+  },
+  {
+    "start": 2133.47,
+    "end": 2140.28,
+    "text": "be able to get your space optimized and you'll know more be requiring a dp array so if"
+  },
+  {
+    "start": 2140.28,
+    "end": 2146.85,
+    "text": "i try to write this in the code probably i'll delete this and i can keep a previous"
+  },
+  {
+    "start": 2146.85,
+    "end": 2151.84,
+    "text": "or equal to 0 i can keep a previous or 2 as well as 0 and i can"
+  },
+  {
+    "start": 2151.84,
+    "end": 2158.02,
+    "text": "just omit this to previous and i can just omit this to previous or 2 and i can"
+  },
+  {
+    "start": 2158.02,
+    "end": 2164.67,
+    "text": "be like this to be correct and i can say the previous 2 will become previous now and"
+  },
+  {
+    "start": 2164.67,
+    "end": 2171.0,
+    "text": "the previous guy will be for the next step will be correct and at the end of the"
+  },
+  {
+    "start": 2171.0,
+    "end": 2176.78,
+    "text": "day instead of dp of n because i will be at n minus 1 so i can definitely"
+  },
+  {
+    "start": 2176.78,
+    "end": 2184.14,
+    "text": "return something as previous so we're on this here it works let's omit and as working fine so"
+  },
+  {
+    "start": 2184.14,
+    "end": 2189.76,
+    "text": "we have done a space optimization yes we have done a space optimization"
+  },
+  {
+    "start": 2189.76,
+    "end": 2195.58,
+    "text": "so this is how this problem can be easily solved so this is how i can space optimized"
+  },
+  {
+    "start": 2195.58,
+    "end": 2202.63,
+    "text": "it i hope you have understood this space optimization now there's a follow up to this wonderful problem"
+  },
+  {
+    "start": 2202.63,
+    "end": 2207.83,
+    "text": "okay now this question stated you can jump to i plus 1 and you can jump to i"
+  },
+  {
+    "start": 2207.83,
+    "end": 2213.78,
+    "text": "plus 2 that's the that you put now this follow up states the follow up states there can"
+  },
+  {
+    "start": 2213.78,
+    "end": 2219.19,
+    "text": "be key jumps yes the follow up states that they can be k jumps and instead of i"
+  },
+  {
+    "start": 2219.19,
+    "end": 2223.36,
+    "text": "plus 1 you can jump to i plus 1 i plus 2 i plus 3 till i plus"
+  },
+  {
+    "start": 2223.36,
+    "end": 2229.31,
+    "text": "k that's what i'm seeing so if i change the question to this can you solve this problem"
+  },
+  {
+    "start": 2229.31,
+    "end": 2235.06,
+    "text": "now i'll give you this as a homework okay so take this question as a homework i want"
+  },
+  {
+    "start": 2235.06,
+    "end": 2240.4,
+    "text": "you to do k if you if you are using k jumps then probably you cannot use space"
+  },
+  {
+    "start": 2240.4,
+    "end": 2247.24,
+    "text": "optimization because then there will not be a couple of stuff there will be k previous elements that"
+  },
+  {
+    "start": 2247.24,
+    "end": 2252.44,
+    "text": "you have to carry you will not be able to use stop the tie told you but yeah"
+  },
+  {
+    "start": 2252.44,
+    "end": 2257.85,
+    "text": "the stuff that i gave you was the follow up is very simple right to do it using"
+  },
+  {
+    "start": 2257.85,
+    "end": 2264.42,
+    "text": "k jumps i will expect the codes in the comment section and i'll be discussing this problem right"
+  },
+  {
+    "start": 2264.42,
+    "end": 2269.76,
+    "text": "before starting the lecture before starting the lecture before i'll definitely"
+  },
+  {
+    "start": 2269.76,
+    "end": 2275.89,
+    "text": "be discussing this problem k jumps where i'll tell you how to change this problem slightly and you'll"
+  },
+  {
+    "start": 2275.89,
+    "end": 2280.69,
+    "text": "be able to do this problem for k jumps so guys if you have both this video till"
+  },
+  {
+    "start": 2280.69,
+    "end": 2285.3,
+    "text": "now and if you want this to do everything you know what to do this is what i"
+  },
+  {
+    "start": 2285.3,
+    "end": 2290.52,
+    "text": "expect even if you are very very very lazy please comment u s u s means understood and"
+  },
+  {
+    "start": 2290.52,
+    "end": 2296.41,
+    "text": "this is something which you should always do you are watching these videos because it takes a lot"
+  },
+  {
+    "start": 2296.41,
+    "end": 2301.45,
+    "text": "of effort to make these kind of videos and yes if you are new to the channel please"
+  },
+  {
+    "start": 2301.45,
+    "end": 2308.31,
+    "text": "please do consider subscribing and please do share this channel among your college mates friends wherever you can"
+  },
+  {
+    "start": 2308.31,
+    "end": 2313.23,
+    "text": "and if you haven't checked out our SD sheet yet oh man what are you doing it's an"
+  },
+  {
+    "start": 2313.23,
+    "end": 2319.12,
+    "text": "SD sheet link in the description go and check it out that's the ultimate resource for please mits"
+  },
+  {
+    "start": 2319.12,
+    "end": 2323.86,
+    "text": "man and yeah with this all let's have a this video and grab a milk in the next"
+  },
+  {
+    "start": 2323.86,
+    "end": 2324.64,
+    "text": "one tomorrow."
+  }
+]

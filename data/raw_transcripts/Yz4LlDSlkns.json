@@ -1,0 +1,2277 @@
+[
+  {
+    "start": 0.0,
+    "end": 3.4,
+    "text": "So before starting the video, I'll let you tell you that."
+  },
+  {
+    "start": 3.4,
+    "end": 9.72,
+    "text": "I'll be taking a session on Keraid guidance, which will be an interactive session on this Saturday at NPM."
+  },
+  {
+    "start": 9.72,
+    "end": 14.55,
+    "text": "So you can check out the link in the description and make sure you enroll for it."
+  },
+  {
+    "start": 14.55,
+    "end": 21.41,
+    "text": "On the session, we, I'll be sharing you a Google meet link where you can join and ask your doubts to me personally."
+  },
+  {
+    "start": 21.41,
+    "end": 23.5,
+    "text": "So guys, let's meet in the session."
+  },
+  {
+    "start": 23.5,
+    "end": 26.24,
+    "text": "Check out the session link in the description."
+  },
+  {
+    "start": 26.24,
+    "end": 27.07,
+    "text": "Hey, everyone."
+  },
+  {
+    "start": 27.07,
+    "end": 28.68,
+    "text": "Welcome back to KK forward."
+  },
+  {
+    "start": 28.68,
+    "end": 32.02,
+    "text": "So today, we will be solving the problem burst balloons."
+  },
+  {
+    "start": 32.02,
+    "end": 33.87,
+    "text": "Now, what is the problem state?"
+  },
+  {
+    "start": 33.87,
+    "end": 36.43,
+    "text": "The problem state, you're given n balloons."
+  },
+  {
+    "start": 36.43,
+    "end": 37.62,
+    "text": "Like over here, ns4."
+  },
+  {
+    "start": 37.62,
+    "end": 39.23,
+    "text": "So you're given 4 balloons."
+  },
+  {
+    "start": 39.23,
+    "end": 41.67,
+    "text": "Every balloon has a number written on it."
+  },
+  {
+    "start": 41.67,
+    "end": 44.83,
+    "text": "Like this first balloon has a number 3 written on it."
+  },
+  {
+    "start": 44.83,
+    "end": 47.69,
+    "text": "The second balloon has a number 1 written on it."
+  },
+  {
+    "start": 47.69,
+    "end": 50.49,
+    "text": "The third balloon has a number 5 written on it."
+  },
+  {
+    "start": 50.49,
+    "end": 53.59,
+    "text": "And the fourth balloon has a number 8 written on it."
+  },
+  {
+    "start": 53.59,
+    "end": 53.89,
+    "text": "Okay."
+  },
+  {
+    "start": 53.89,
+    "end": 55.44,
+    "text": "So you have to burst them."
+  },
+  {
+    "start": 55.44,
+    "end": 60.09,
+    "text": "Imagine if I'm bursting 5, then the number of coins that you will get will be."
+  },
+  {
+    "start": 60.09,
+    "end": 61.28,
+    "text": "The left side of it."
+  },
+  {
+    "start": 61.28,
+    "end": 63.43,
+    "text": "He himself and the right side of it."
+  },
+  {
+    "start": 63.43,
+    "end": 66.77,
+    "text": "So it is 40 coins is what you will get if you burst out."
+  },
+  {
+    "start": 66.77,
+    "end": 69.57,
+    "text": "5 40 coins is what you'll get if you burst out."
+  },
+  {
+    "start": 69.57,
+    "end": 69.69,
+    "text": "5."
+  },
+  {
+    "start": 69.69,
+    "end": 74.22,
+    "text": "So the question states you have to burst the balloons in any order you wish."
+  },
+  {
+    "start": 74.22,
+    "end": 79.12,
+    "text": "You can burst 5, then you can burst 8, then you can burst 1, then you can burst 3."
+  },
+  {
+    "start": 79.12,
+    "end": 82.02,
+    "text": "Or you can go 3, then 5, then 8, then 1."
+  },
+  {
+    "start": 82.02,
+    "end": 83.83,
+    "text": "You can follow any order."
+  },
+  {
+    "start": 83.83,
+    "end": 88.04,
+    "text": "And in following the order you will be getting some coins."
+  },
+  {
+    "start": 88.04,
+    "end": 92.25,
+    "text": "Because every time you burst a balloon you get some coins."
+  },
+  {
+    "start": 92.25,
+    "end": 94.43,
+    "text": "So the summation of the coins."
+  },
+  {
+    "start": 94.43,
+    "end": 99.22,
+    "text": "So the summation of those coins should be maximum is the question."
+  },
+  {
+    "start": 99.22,
+    "end": 105.96,
+    "text": "For an example if I decide that the first coin, sorry the first balloon that I'll burst is 3."
+  },
+  {
+    "start": 105.96,
+    "end": 110.38,
+    "text": "Then what will be the number of coins that it will be adding?"
+  },
+  {
+    "start": 110.38,
+    "end": 111.76,
+    "text": "The left of 3 is 1."
+  },
+  {
+    "start": 111.76,
+    "end": 114.37,
+    "text": "Right of 3 is 1 and he himself is 3."
+  },
+  {
+    "start": 114.37,
+    "end": 117.2,
+    "text": "So the number of coins added will be 3."
+  },
+  {
+    "start": 117.2,
+    "end": 117.56,
+    "text": "Okay."
+  },
+  {
+    "start": 117.56,
+    "end": 121.26,
+    "text": "After bursting this you'll have to with 1, 5 and 8."
+  },
+  {
+    "start": 121.26,
+    "end": 125.18,
+    "text": "Imagine I say, hey listen, can you please burst out 1?"
+  },
+  {
+    "start": 125.18,
+    "end": 126.85,
+    "text": "Can you please burst 1?"
+  },
+  {
+    "start": 126.85,
+    "end": 130.33,
+    "text": "Now remember previously one had a 3 on the left."
+  },
+  {
+    "start": 130.33,
+    "end": 133.52,
+    "text": "But since you have bursted that balloon out."
+  },
+  {
+    "start": 133.52,
+    "end": 136.49,
+    "text": "For this one there is no one on the left."
+  },
+  {
+    "start": 136.49,
+    "end": 138.52,
+    "text": "There is no one on the left."
+  },
+  {
+    "start": 138.52,
+    "end": 140.91,
+    "text": "So since it is no one you take 1."
+  },
+  {
+    "start": 140.91,
+    "end": 144.17,
+    "text": "You take 1 itself and on the right it is a 5."
+  },
+  {
+    "start": 144.17,
+    "end": 145.19,
+    "text": "So you take 5."
+  },
+  {
+    "start": 145.19,
+    "end": 146.86,
+    "text": "So the total will be 5."
+  },
+  {
+    "start": 146.86,
+    "end": 149.62,
+    "text": "Now I decide after this you have 5, 8."
+  },
+  {
+    "start": 149.62,
+    "end": 151.94,
+    "text": "Now I'm deciding that he listen."
+  },
+  {
+    "start": 151.94,
+    "end": 153.25,
+    "text": "Let's burst out 5."
+  },
+  {
+    "start": 153.25,
+    "end": 158.88,
+    "text": "So if bursting out 5 you'll get one on the left, 5 himself and 8 on the right."
+  },
+  {
+    "start": 158.88,
+    "end": 161.86,
+    "text": "One on the left, 5 itself, 8 on the right."
+  },
+  {
+    "start": 161.86,
+    "end": 163.78,
+    "text": "So I guess this will be 40."
+  },
+  {
+    "start": 163.78,
+    "end": 166.83,
+    "text": "Right after this you'll be left out with 8."
+  },
+  {
+    "start": 166.83,
+    "end": 170.38,
+    "text": "So if you're left out with 8 the left has nothing."
+  },
+  {
+    "start": 170.38,
+    "end": 175.85,
+    "text": "Like if you're bursting 8 he himself and the right has nothing which is this."
+  },
+  {
+    "start": 175.85,
+    "end": 179.12,
+    "text": "So if you add this up I think you will get 56."
+  },
+  {
+    "start": 179.12,
+    "end": 185.8,
+    "text": "So the total number of coins that you get if you're bursting out first 3 then 1 then 5 then 8."
+  },
+  {
+    "start": 185.8,
+    "end": 189.21,
+    "text": "The total number of coins that you'll get is 56."
+  },
+  {
+    "start": 189.21,
+    "end": 194.25,
+    "text": "So the order that we took was very simple first 3 then 1 then 5 then 8."
+  },
+  {
+    "start": 194.25,
+    "end": 200.07,
+    "text": "What if I say at first let's try bursting out 1 at first let's try bursting out 1."
+  },
+  {
+    "start": 200.07,
+    "end": 204.83,
+    "text": "So if I try bursting out 1 it will be giving me 3 on the left, 1 in"
+  },
+  {
+    "start": 204.83,
+    "end": 208.45,
+    "text": "self and 5 on the right which is a summation of 15."
+  },
+  {
+    "start": 208.45,
+    "end": 211.15,
+    "text": "Right after this we will have 3, 5, 8."
+  },
+  {
+    "start": 211.15,
+    "end": 211.58,
+    "text": "Right."
+  },
+  {
+    "start": 211.58,
+    "end": 215.41,
+    "text": "So after this what I'll do is I'll try to burst out 5."
+  },
+  {
+    "start": 215.41,
+    "end": 220.59,
+    "text": "So if I burst out 5 himself on the left we have 3 on the right we have 8."
+  },
+  {
+    "start": 220.59,
+    "end": 225.35,
+    "text": "So the summation total will be 120 right after this we have a 3, 8."
+  },
+  {
+    "start": 225.35,
+    "end": 229.18,
+    "text": "Now I decide that hey listen I'm going to burst out 3."
+  },
+  {
+    "start": 229.18,
+    "end": 236.0,
+    "text": "So when bursting out 3 one on the left 3 himself and 8 which gives me 24 right after this I have"
+  },
+  {
+    "start": 236.0,
+    "end": 240.77,
+    "text": "8 which means one on the left 8 himself one on the right which is 8."
+  },
+  {
+    "start": 240.77,
+    "end": 247.22,
+    "text": "So if I summarize this entire stuff you get 120 plus something like I think you'll get  167."
+  },
+  {
+    "start": 247.22,
+    "end": 250.38,
+    "text": "Yeah if you summarize this up you'll get 167."
+  },
+  {
+    "start": 250.38,
+    "end": 257.32,
+    "text": "This is the summation of coins that you're getting and the question stated you have to maximize it."
+  },
+  {
+    "start": 257.32,
+    "end": 260.48,
+    "text": "So 167 is the maximum coins that you can get."
+  },
+  {
+    "start": 260.48,
+    "end": 266.44,
+    "text": "If you follow the order of at first 153 it like if you follow 155 if you're following"
+  },
+  {
+    "start": 266.44,
+    "end": 272.89,
+    "text": "1538 the maximum coins that you'll get is 167 you can follow various other ways but you will"
+  },
+  {
+    "start": 272.89,
+    "end": 276.68,
+    "text": "see that 167 is the maximum that you can obtain right."
+  },
+  {
+    "start": 276.68,
+    "end": 279.06,
+    "text": "So very well that is the question."
+  },
+  {
+    "start": 279.06,
+    "end": 284.04,
+    "text": "So how do you solve this question or how do you approach this question?"
+  },
+  {
+    "start": 284.04,
+    "end": 288.39,
+    "text": "Again write down the example it was very straightforward 3158."
+  },
+  {
+    "start": 288.39,
+    "end": 294.98,
+    "text": "So do you see a pattern to this question because is this somewhere related to the partition of"
+  },
+  {
+    "start": 294.98,
+    "end": 300.45,
+    "text": "the MCM question that we did by the way if you have not seen the MCMDP and the"
+  },
+  {
+    "start": 300.45,
+    "end": 307.74,
+    "text": "previous GP50 I'll recommend you to watch both these because if you're not watching those both couple of"
+  },
+  {
+    "start": 307.74,
+    "end": 313.2,
+    "text": "videos you'll not understand this okay so please go back and watch out the MCM"
+  },
+  {
+    "start": 313.2,
+    "end": 317.78,
+    "text": "video as well as the DP50 and come back and watch this okay."
+  },
+  {
+    "start": 317.78,
+    "end": 323.66,
+    "text": "So you have to follow an order right like you can follow 3 then 1 then 5 then"
+  },
+  {
+    "start": 323.66,
+    "end": 328.54,
+    "text": "8 you can follow an order like 1 then a 3 then a 5 then an 8 you"
+  },
+  {
+    "start": 328.54,
+    "end": 333.88,
+    "text": "can follow an order of 8 then a 1 then a so they so they can always be"
+  },
+  {
+    "start": 333.88,
+    "end": 340.14,
+    "text": "various set of orders but you need to understand which will be the first you pick."
+  },
+  {
+    "start": 340.14,
+    "end": 347.39,
+    "text": "So apparently this is the entire range of elements right like 3158 anyone among them can be the"
+  },
+  {
+    "start": 347.39,
+    "end": 353.42,
+    "text": "first 3158 anyone can be the first like you can burst out 3 you can burst out 1"
+  },
+  {
+    "start": 353.42,
+    "end": 358.99,
+    "text": "you can burst out 5 you can burst out 8 you can burst out any one okay so"
+  },
+  {
+    "start": 358.99,
+    "end": 364.94,
+    "text": "can I say the range is this right if I take this is the starting point this is"
+  },
+  {
+    "start": 364.94,
+    "end": 370.97,
+    "text": "the ending point in between them including 3 and 8 or 1 or 5 anyone can be your"
+  },
+  {
+    "start": 370.97,
+    "end": 377.53,
+    "text": "first element makes sense so I can think it in the direction of MCM because in the MCM"
+  },
+  {
+    "start": 377.53,
+    "end": 384.47,
+    "text": "if you remember there were matrices like ABCD then we decided that we will first take B and"
+  },
+  {
+    "start": 384.47,
+    "end": 389.44,
+    "text": "C multiply then the resultant goes and gets multiplied with these"
+  },
+  {
+    "start": 389.44,
+    "end": 394.94,
+    "text": "couple of guys that is what we did so can I similarly say if I consider this as"
+  },
+  {
+    "start": 394.94,
+    "end": 400.44,
+    "text": "an entire stuff you decide which one is the first element it can be 3 it can be"
+  },
+  {
+    "start": 400.44,
+    "end": 405.66,
+    "text": "1 it can be 5 it can be 8 then we start thinking of the second element then"
+  },
+  {
+    "start": 405.66,
+    "end": 411.44,
+    "text": "we start thinking of the third element so we can follow the order but can we can we"
+  },
+  {
+    "start": 411.44,
+    "end": 417.08,
+    "text": "so let's understand can we or can we not by taking a simple example of B1 B2 like"
+  },
+  {
+    "start": 417.08,
+    "end": 423.76,
+    "text": "I'm just not taking numbers randomly writing a balloon so okay so it's like balloon one has this"
+  },
+  {
+    "start": 423.76,
+    "end": 430.44,
+    "text": "value balloon two has this value balloon three has this value balloon four has this value and so"
+  },
+  {
+    "start": 430.44,
+    "end": 436.22,
+    "text": "on so imagine imagine I say you okay hey listen let's burst this guy out that is B4"
+  },
+  {
+    "start": 436.22,
+    "end": 441.16,
+    "text": "if I'm bursting B4 what is the value that I add up to that so can I say"
+  },
+  {
+    "start": 441.16,
+    "end": 446.45,
+    "text": "B3 into B4 into B5 is the coins that I'll get like B4 himself B3 on the left"
+  },
+  {
+    "start": 446.45,
+    "end": 451.88,
+    "text": "and B5 on the right is this the value that we will get definitely so I will be"
+  },
+  {
+    "start": 451.88,
+    "end": 457.73,
+    "text": "left with this suppose into solve right so I'll be left with a suppose of B2 B3 this"
+  },
+  {
+    "start": 457.73,
+    "end": 462.88,
+    "text": "is a sub problem I can call it as a sub problem this sub problem has to be"
+  },
+  {
+    "start": 462.88,
+    "end": 467.68,
+    "text": "solved and I'll also be left off with another sub problem of B5 B6 so"
+  },
+  {
+    "start": 467.68,
+    "end": 473.36,
+    "text": "apparently can I can I see this can I see this what this this is a value plus"
+  },
+  {
+    "start": 473.36,
+    "end": 479.77,
+    "text": "this sub problem we solved plus this sub problem we solved can I see this the answer to"
+  },
+  {
+    "start": 479.77,
+    "end": 485.67,
+    "text": "this is no I cannot I cannot see this like I cannot just burst B4 and then solve"
+  },
+  {
+    "start": 485.67,
+    "end": 493.26,
+    "text": "this individually and then solve this individually add up this answer add up this answer well that work"
+  },
+  {
+    "start": 493.26,
+    "end": 499.6,
+    "text": "answer to this is no why will that not work let's understand so this erase this I hope"
+  },
+  {
+    "start": 499.6,
+    "end": 506.23,
+    "text": "you got it if I burst B4 at first what will happen why solving them independently will not"
+  },
+  {
+    "start": 506.23,
+    "end": 512.72,
+    "text": "work is is the main concept of this problem so why this problem and this problem can not"
+  },
+  {
+    "start": 512.72,
+    "end": 520.09,
+    "text": "be solved independently is the main concept of this problem if you understand that you are very much"
+  },
+  {
+    "start": 520.09,
+    "end": 526.28,
+    "text": "true so imagine if you're bursting or B4 it is over right and what is the state like"
+  },
+  {
+    "start": 526.28,
+    "end": 532.18,
+    "text": "if you imagine the state what is the state the state after this will be B1 B2 B3"
+  },
+  {
+    "start": 532.18,
+    "end": 539.03,
+    "text": "B5 B6 right so imagine just imagine if you're taking this as an individual subset if you have"
+  },
+  {
+    "start": 539.03,
+    "end": 544.48,
+    "text": "taken this as an individual sub problem and you would have burst it out B3"
+  },
+  {
+    "start": 544.48,
+    "end": 551.83,
+    "text": "apparently right after this right after B4 if you decided to burst out B3 who would have been"
+  },
+  {
+    "start": 551.83,
+    "end": 558.23,
+    "text": "the right guy of B3 B5 so can I say even if I take this sub problem independently"
+  },
+  {
+    "start": 558.23,
+    "end": 564.63,
+    "text": "this B3 depends like B3 will be taking a dependency of B5 might or if I say after"
+  },
+  {
+    "start": 564.63,
+    "end": 570.48,
+    "text": "B4 I decide to burst out B5 then also like if I burst out B5 then right on"
+  },
+  {
+    "start": 570.48,
+    "end": 577.75,
+    "text": "the parallel it has a B3 dependency and it has a B6 dependency so imagine if you're bursting"
+  },
+  {
+    "start": 577.75,
+    "end": 583.91,
+    "text": "or B5 after this you will have B1 B2 B3 B6 so after the severe decide to burst"
+  },
+  {
+    "start": 583.91,
+    "end": 590.86,
+    "text": "out B6 this B6 still has a dependency on B3 so you cannot just randomly decide that this"
+  },
+  {
+    "start": 590.86,
+    "end": 598.13,
+    "text": "is an individual sub problem because for Dp to work this has to be an individual sub problem"
+  },
+  {
+    "start": 598.13,
+    "end": 605.72,
+    "text": "you should not be depending on the values of this understood now you might argue but struggle if"
+  },
+  {
+    "start": 605.72,
+    "end": 611.8,
+    "text": "B6 is getting bursted we just take the B3 as the left guy no that will not to"
+  },
+  {
+    "start": 611.8,
+    "end": 618.99,
+    "text": "imagine after bursting B5 imagine after bursting B5 you had B1 B2 B3 and B6 and you decided"
+  },
+  {
+    "start": 618.99,
+    "end": 622.16,
+    "text": "to burst out B3 so this B3 was dependent"
+  },
+  {
+    "start": 622.16,
+    "end": 628.66,
+    "text": "not on B5 rather on B6 so depending on who is getting bursted B3 might be dependent on"
+  },
+  {
+    "start": 628.66,
+    "end": 635.84,
+    "text": "B5 B3 might be dependent on B6 so you cannot individually solve these couple of problems you to"
+  },
+  {
+    "start": 635.84,
+    "end": 644.0,
+    "text": "understand you cannot individually solve these problems you absolutely cannot so a key point to notice is if"
+  },
+  {
+    "start": 644.0,
+    "end": 650.5,
+    "text": "I start from the front if I start from the front like we basically go across this like"
+  },
+  {
+    "start": 650.5,
+    "end": 656.02,
+    "text": "if I just take you away we first had had one then we had five then we had"
+  },
+  {
+    "start": 656.02,
+    "end": 662.44,
+    "text": "three then we had eight so you cannot go in this direction instead of this I will say"
+  },
+  {
+    "start": 662.44,
+    "end": 670.22,
+    "text": "why can't I go in the opposite direction we'll start thinking in the opposite direction in the opposite"
+  },
+  {
+    "start": 670.22,
+    "end": 676.34,
+    "text": "like I will see if there are four elements who is the last guy and the answer the"
+  },
+  {
+    "start": 676.34,
+    "end": 682.69,
+    "text": "target is eight and the answer the target is eight then I will say who is the second"
+  },
+  {
+    "start": 682.69,
+    "end": 688.58,
+    "text": "last guy and if this is a problem I get this is the second last guy after that"
+  },
+  {
+    "start": 688.58,
+    "end": 694.1,
+    "text": "I will see who is the other guy so it says five after that I will ask who"
+  },
+  {
+    "start": 694.1,
+    "end": 701.28,
+    "text": "is the other guy it will say this let's realize let's take this example only an understand okay"
+  },
+  {
+    "start": 701.28,
+    "end": 706.64,
+    "text": "3158 so 3158 okay I say like eight is the last guy to be busted okay so"
+  },
+  {
+    "start": 706.64,
+    "end": 711.77,
+    "text": "as of now we had this entire range that has to be solved that has to be solved"
+  },
+  {
+    "start": 711.77,
+    "end": 717.23,
+    "text": "now to avoid complications we know on the right of eight there is no one we know on"
+  },
+  {
+    "start": 717.23,
+    "end": 722.62,
+    "text": "the left of three there is no one so what I will do is just to avoid complications"
+  },
+  {
+    "start": 722.62,
+    "end": 727.62,
+    "text": "I'll add a one and I'll remove this and I'll also add one over on the on the"
+  },
+  {
+    "start": 727.62,
+    "end": 733.21,
+    "text": "right and I'll remove this but this is the these are the numbers that I have to solve"
+  },
+  {
+    "start": 733.21,
+    "end": 739.13,
+    "text": "just to avoid complications I added a one added one on the left and right okay now imagine"
+  },
+  {
+    "start": 739.13,
+    "end": 744.98,
+    "text": "this is the last guy to be solved and initially this is the range that you're looking for"
+  },
+  {
+    "start": 744.98,
+    "end": 750.77,
+    "text": "and I'm saying instead of now on this range deciding which is the first guy I decide who"
+  },
+  {
+    "start": 750.77,
+    "end": 755.37,
+    "text": "is the last guy left so if I decide who is the last guy left can I see"
+  },
+  {
+    "start": 755.37,
+    "end": 759.91,
+    "text": "the cost will be 1 into 8 into 1 if 8 is the last guy just imagine if"
+  },
+  {
+    "start": 759.91,
+    "end": 764.25,
+    "text": "8 is the last guy can I say the cost will be 1 into 8 into 1 which"
+  },
+  {
+    "start": 764.25,
+    "end": 769.25,
+    "text": "is if this is the range the left of the range the right of the range and the"
+  },
+  {
+    "start": 769.25,
+    "end": 774.58,
+    "text": "number itself so decided 8 is the last guy so this is the coin that will be added"
+  },
+  {
+    "start": 774.58,
+    "end": 779.84,
+    "text": "I'm just going in the reverse way okay right before this if 8 is the last guy to"
+  },
+  {
+    "start": 779.84,
+    "end": 785.3,
+    "text": "be bursted right before this if you remember there was 3 and 8 or what was it let's"
+  },
+  {
+    "start": 785.3,
+    "end": 789.68,
+    "text": "go back and watch 3 and 8 yeah so 3 and 8 was the guy and I decided"
+  },
+  {
+    "start": 789.68,
+    "end": 794.44,
+    "text": "to burst out 3 so if 3 and 8 realize if 3 and 8 and 8 is remaining"
+  },
+  {
+    "start": 794.44,
+    "end": 800.86,
+    "text": "that means you're bursted out 8 you're bursted out 8 and you just have this much range so"
+  },
+  {
+    "start": 800.86,
+    "end": 806.99,
+    "text": "this area is out you're going from the back so you just have this much range this has"
+  },
+  {
+    "start": 806.99,
+    "end": 812.76,
+    "text": "been bursted last so now I'm saying you have a 3 that has to be bursted you have"
+  },
+  {
+    "start": 812.76,
+    "end": 818.09,
+    "text": "a 3 that has to be bursted so can I say for this 3 I definitely know since"
+  },
+  {
+    "start": 818.09,
+    "end": 824.0,
+    "text": "I've bursted out before 8 8 will be the right guy to wait because I'm going in the"
+  },
+  {
+    "start": 824.0,
+    "end": 829.98,
+    "text": "reverse direction just because 8 was here in the next step I was able to burst 8 so"
+  },
+  {
+    "start": 829.98,
+    "end": 836.4,
+    "text": "I'm very unsure that 3 has the right guy 8 because all the others would have been bursted"
+  },
+  {
+    "start": 836.4,
+    "end": 842.82,
+    "text": "and these steps like one would have been bursted your 5 would have been bursted your so 3"
+  },
+  {
+    "start": 842.82,
+    "end": 848.8,
+    "text": "definitely has the right guy as 8 which is again 3 itself this is the range this is"
+  },
+  {
+    "start": 848.8,
+    "end": 853.63,
+    "text": "the range on the left of range is 8 on the right of range is 8 so 1"
+  },
+  {
+    "start": 853.63,
+    "end": 858.6,
+    "text": "into 8 on the left of is 1 on the right is 8 perfect so I bursted the"
+  },
+  {
+    "start": 858.6,
+    "end": 864.3,
+    "text": "burst out 3 what are you left with can I say this is the range that you're left"
+  },
+  {
+    "start": 864.3,
+    "end": 870.36,
+    "text": "of it and in this previous in this previous if you go across and you see you're just"
+  },
+  {
+    "start": 870.36,
+    "end": 872.08,
+    "text": "having 3 5 8 and in this"
+  },
+  {
+    "start": 872.08,
+    "end": 878.0,
+    "text": "you decide to burst out 5 yes in this you decide to burst out 5 again if you're"
+  },
+  {
+    "start": 878.0,
+    "end": 884.52,
+    "text": "deciding to burst out 5 you're definitely sure this is the range right and 5 slide is 8"
+  },
+  {
+    "start": 884.52,
+    "end": 889.54,
+    "text": "5's this guy is 3 so you say 5 on the right is 8 and on the strange"
+  },
+  {
+    "start": 889.54,
+    "end": 895.76,
+    "text": "on the left is 3 again why does this work because you know this guy will be bursted"
+  },
+  {
+    "start": 895.76,
+    "end": 902.13,
+    "text": "over here right so anyone who is not in the range would have been bursted in the next"
+  },
+  {
+    "start": 902.13,
+    "end": 909.03,
+    "text": "counter will be bursted in the next counter so he exists over here he exists over here since"
+  },
+  {
+    "start": 909.03,
+    "end": 916.45,
+    "text": "he's going in the opposite you definitely know 3 and 8 exists because you're moving in the opposite"
+  },
+  {
+    "start": 916.45,
+    "end": 922.3,
+    "text": "fashion so 3 and 8 perfect now you go back now when you go back you would have"
+  },
+  {
+    "start": 922.3,
+    "end": 928.75,
+    "text": "bursted 5 so the remaining range will be just 1 you the remaining range will be just 1"
+  },
+  {
+    "start": 928.75,
+    "end": 934.37,
+    "text": "in order to burst 1 again you look on the left which is 3 one itself and on"
+  },
+  {
+    "start": 934.37,
+    "end": 939.17,
+    "text": "the right which is 5 and you get a 15 you get a 120 you get a 24"
+  },
+  {
+    "start": 939.17,
+    "end": 946.22,
+    "text": "you get an 8 you just moved in the opposite direction you just moved in the opposite direction"
+  },
+  {
+    "start": 946.22,
+    "end": 953.19,
+    "text": "and if you move in the opposite direction the sub problems will be independent like if I just"
+  },
+  {
+    "start": 953.19,
+    "end": 959.04,
+    "text": "take one more example of v1, v2, v3, v4, v5 and v6 right so if I'm taking this"
+  },
+  {
+    "start": 959.04,
+    "end": 959.6,
+    "text": "example"
+  },
+  {
+    "start": 959.6,
+    "end": 965.52,
+    "text": "if I if I just decide that hey listen I am going to burst out for an example"
+  },
+  {
+    "start": 965.52,
+    "end": 971.44,
+    "text": "v5 if I'm deciding to burst out v5 out of this range then what I'll do is if"
+  },
+  {
+    "start": 971.44,
+    "end": 976.35,
+    "text": "this is i this is j I know the left chi of this is a of i minus"
+  },
+  {
+    "start": 976.35,
+    "end": 982.82,
+    "text": "1 I know the chi itself imagine this is index is a of index imagine the right there"
+  },
+  {
+    "start": 982.82,
+    "end": 988.67,
+    "text": "is j plus 1 this is the coin that you will get if this guy is bursted right"
+  },
+  {
+    "start": 988.67,
+    "end": 994.28,
+    "text": "at the end and this is a sub problem that has to be solved this is a sub"
+  },
+  {
+    "start": 994.28,
+    "end": 1001.06,
+    "text": "problem that has to be solved so you will say can you please solve the sub problem from"
+  },
+  {
+    "start": 1001.06,
+    "end": 1007.45,
+    "text": "here to here which is i comma index minus 1 because if this is index this is index"
+  },
+  {
+    "start": 1007.45,
+    "end": 1012.91,
+    "text": "minus 1 and if this is index this is index plus 1 to j so this are the"
+  },
+  {
+    "start": 1012.91,
+    "end": 1020.78,
+    "text": "two sub problems which you can easily solve now are these sub problems independent is my question are"
+  },
+  {
+    "start": 1020.78,
+    "end": 1029.59,
+    "text": "these sub problems independent is my question obviously they are independent yes they are independent let me give"
+  },
+  {
+    "start": 1029.59,
+    "end": 1035.04,
+    "text": "you a proof are they independent or not but like v1 v2 v3 v4 v5 and v6"
+  },
+  {
+    "start": 1035.04,
+    "end": 1042.88,
+    "text": "okay I've taken this now imagine I'm saying v4 is the last guy to be executed bursted rather"
+  },
+  {
+    "start": 1042.88,
+    "end": 1050.63,
+    "text": "so before you're definitely sure the answer is 1 into v4 into 1 right right before the step"
+  },
+  {
+    "start": 1050.63,
+    "end": 1057.11,
+    "text": "what will be the step this is a sub problem as I said that you have to solve"
+  },
+  {
+    "start": 1057.11,
+    "end": 1063.42,
+    "text": "or this is a sub problem that you have to solve right as I know v4 was the"
+  },
+  {
+    "start": 1063.42,
+    "end": 1071.68,
+    "text": "last guy to be bursted I definitely know I definitely know before we will exist over here because"
+  },
+  {
+    "start": 1071.68,
+    "end": 1079.18,
+    "text": "only before exists then only in the next step it will get bursted I repeat before has to"
+  },
+  {
+    "start": 1079.18,
+    "end": 1087.02,
+    "text": "exist in the second last burst and this is the last burst before has to exist because before"
+  },
+  {
+    "start": 1087.02,
+    "end": 1094.18,
+    "text": "exist in the last burst then only it can get bursted right so this is a problem that"
+  },
+  {
+    "start": 1094.18,
+    "end": 1102.53,
+    "text": "you're solving so can I say since this is lying over here and before exist before we'll definitely"
+  },
+  {
+    "start": 1102.53,
+    "end": 1108.66,
+    "text": "be the guy who's on it yes and can I say probably it can be v1 before in"
+  },
+  {
+    "start": 1108.66,
+    "end": 1113.6,
+    "text": "the last step probability or it can be v2 v4 in the second"
+  },
+  {
+    "start": 1113.6,
+    "end": 1118.67,
+    "text": "last step or it can be v3 before in the second last step or v4 v5 or v4"
+  },
+  {
+    "start": 1118.67,
+    "end": 1124.17,
+    "text": "v6 it can be either this or this or this or this or this anyone no matter who"
+  },
+  {
+    "start": 1124.17,
+    "end": 1129.74,
+    "text": "is no matter who is who it is I am not dependent on these guys instead of that"
+  },
+  {
+    "start": 1129.74,
+    "end": 1134.81,
+    "text": "for v5 or for v6 and just dependent on v4 who is the guy to the left of"
+  },
+  {
+    "start": 1134.81,
+    "end": 1140.73,
+    "text": "it who is the guy to the left of it I'm not dependent on this sub problem carefully"
+  },
+  {
+    "start": 1140.73,
+    "end": 1147.3,
+    "text": "sees that proved that it is not dependent on the left sub problem even if you're solving for"
+  },
+  {
+    "start": 1147.3,
+    "end": 1152.87,
+    "text": "v1 it is dependent on the range right guy not on any one over here that is the"
+  },
+  {
+    "start": 1152.87,
+    "end": 1159.22,
+    "text": "proof so I have easily proved you how this formula comes up again I've given you why just"
+  },
+  {
+    "start": 1159.22,
+    "end": 1165.64,
+    "text": "the trick is there and you have to start from the bottom instead of the front instead from"
+  },
+  {
+    "start": 1165.64,
+    "end": 1171.56,
+    "text": "the front I must be thinking about how will we think that we have to think from the"
+  },
+  {
+    "start": 1171.56,
+    "end": 1178.27,
+    "text": "bottom again this will come with practice when I did this problem at the first instance it did"
+  },
+  {
+    "start": 1178.27,
+    "end": 1184.55,
+    "text": "not strike me I had to go through a lot of blocks forums then I understood they actually"
+  },
+  {
+    "start": 1184.55,
+    "end": 1190.32,
+    "text": "starting from the bottom and then I realized that this is how we need to solve it"
+  },
+  {
+    "start": 1190.32,
+    "end": 1196.28,
+    "text": "so not an issue if you're not getting the solution right at the go and you have to"
+  },
+  {
+    "start": 1196.28,
+    "end": 1201.66,
+    "text": "watch this video okay so v1 v2 v3 v4 v5 now as I said the first thing that"
+  },
+  {
+    "start": 1201.66,
+    "end": 1208.42,
+    "text": "you'll do is one and one so these are five balloons definitely and will be five five balloons"
+  },
+  {
+    "start": 1208.42,
+    "end": 1212.49,
+    "text": "and if I write on the next it will be 0 1 2 3 4 5 so can"
+  },
+  {
+    "start": 1212.49,
+    "end": 1218.89,
+    "text": "I say if NS5 the first range that you're looking to solve the first range that you'll be"
+  },
+  {
+    "start": 1218.89,
+    "end": 1224.71,
+    "text": "looking to solve will be f of 1 comma 5 or this is the range that you're looking"
+  },
+  {
+    "start": 1224.71,
+    "end": 1231.04,
+    "text": "to solve this is the sub problem that you're looking to solve right now in this in this"
+  },
+  {
+    "start": 1231.04,
+    "end": 1236.28,
+    "text": "range like if v1 v2 v3 v4 is a range and I've added one and one and this"
+  },
+  {
+    "start": 1236.28,
+    "end": 1241.52,
+    "text": "is the range can I say this is i this who can be the last kind if you're"
+  },
+  {
+    "start": 1241.52,
+    "end": 1247.34,
+    "text": "thinking of the last tip this guy can be your last guy this guy can be your last"
+  },
+  {
+    "start": 1247.34,
+    "end": 1253.01,
+    "text": "guy this guy can be your last guy or this guy can be your last guy anybody can"
+  },
+  {
+    "start": 1253.01,
+    "end": 1258.54,
+    "text": "be your last guy and if anyone can be your last guy can I say then it's very"
+  },
+  {
+    "start": 1258.54,
+    "end": 1265.23,
+    "text": "simple to write the recursion it's very simple so since anyone can be the last guy what I'll"
+  },
+  {
+    "start": 1265.23,
+    "end": 1266.32,
+    "text": "do is i'll just"
+  },
+  {
+    "start": 1266.32,
+    "end": 1270.62,
+    "text": "write the f and i know this will be i and this will be the j so this"
+  },
+  {
+    "start": 1270.62,
+    "end": 1272.89,
+    "text": "is the sub problem that I'm solving."
+  },
+  {
+    "start": 1272.89,
+    "end": 1275.8,
+    "text": "So I've been given this, I'll try to solve it."
+  },
+  {
+    "start": 1275.8,
+    "end": 1276.12,
+    "text": "Okay."
+  },
+  {
+    "start": 1276.12,
+    "end": 1278.9,
+    "text": "And remember one thing,  when will you stop?"
+  },
+  {
+    "start": 1278.9,
+    "end": 1284.84,
+    "text": "Even if we are having I and J over here and this is a single  sub problem, you still solve it."
+  },
+  {
+    "start": 1284.84,
+    "end": 1286.04,
+    "text": "You still solve it."
+  },
+  {
+    "start": 1286.04,
+    "end": 1289.26,
+    "text": "So if we're taking B2, then J will  be moving here."
+  },
+  {
+    "start": 1289.26,
+    "end": 1294.76,
+    "text": "So the sub problem will reduce if there is, there is a sub problem, you  will solve it."
+  },
+  {
+    "start": 1294.76,
+    "end": 1297.67,
+    "text": "But if there is no sub problem, then you stop."
+  },
+  {
+    "start": 1297.67,
+    "end": 1303.29,
+    "text": "Like if at any moment I cross this J, if at any moment like you're just shrinking, you're"
+  },
+  {
+    "start": 1303.29,
+    "end": 1309.04,
+    "text": "shrinking like this, like this and at any moment you have shring it enough so that there is"
+  },
+  {
+    "start": 1309.04,
+    "end": 1310.3,
+    "text": "no more sub problem."
+  },
+  {
+    "start": 1310.3,
+    "end": 1314.53,
+    "text": "The least sub problem could be I equal to J, very solving a single."
+  },
+  {
+    "start": 1314.53,
+    "end": 1318.32,
+    "text": "But beyond  this, beyond this, there will be no sub problem."
+  },
+  {
+    "start": 1318.32,
+    "end": 1322.68,
+    "text": "And there is no sub problem, the coins  that you'll get will be zero."
+  },
+  {
+    "start": 1322.68,
+    "end": 1327.04,
+    "text": "If there is no sub problems, the coins that you'll get will be  zero."
+  },
+  {
+    "start": 1327.04,
+    "end": 1332.47,
+    "text": "Now can I say this can be the first, can be the last guy,  the last guy, last, anyone."
+  },
+  {
+    "start": 1332.47,
+    "end": 1334.3,
+    "text": "So can I actually run a loop?"
+  },
+  {
+    "start": 1334.3,
+    "end": 1338.47,
+    "text": "Something like index will start  from I and go to J, I can, I can."
+  },
+  {
+    "start": 1338.47,
+    "end": 1341.8,
+    "text": "So if you remember the course that we encountered was"
+  },
+  {
+    "start": 1341.8,
+    "end": 1347.28,
+    "text": "A of the right of range, the number itself, we are assuming to burst, the right guy."
+  },
+  {
+    "start": 1347.28,
+    "end": 1354.2,
+    "text": "So if if we're bursting this guy index, then we're taking I until index minus one and index  plus one, LJ."
+  },
+  {
+    "start": 1354.2,
+    "end": 1354.72,
+    "text": "Correct."
+  },
+  {
+    "start": 1354.72,
+    "end": 1361.05,
+    "text": "So the two sub problems that we have to solve will be I index minus one,  index plus one comma J."
+  },
+  {
+    "start": 1361.05,
+    "end": 1364.38,
+    "text": "So can I say this will be the cost for every index."
+  },
+  {
+    "start": 1364.38,
+    "end": 1367.71,
+    "text": "If it decide to burst  this, this will be the cost."
+  },
+  {
+    "start": 1367.71,
+    "end": 1370.97,
+    "text": "If it decide to burst this, this will be the cost."
+  },
+  {
+    "start": 1370.97,
+    "end": 1374.3,
+    "text": "If it decide to burst this,  this will be the cost."
+  },
+  {
+    "start": 1374.3,
+    "end": 1377.56,
+    "text": "If we decide to burst this, this will be the cost."
+  },
+  {
+    "start": 1377.56,
+    "end": 1383.17,
+    "text": "So for every time the four loop runs, first time I'll get the cost to burst this, next"
+  },
+  {
+    "start": 1383.17,
+    "end": 1388.65,
+    "text": "I'll get the cost to burst this, next I'll get the cost to burst this, next I'll get"
+  },
+  {
+    "start": 1388.65,
+    "end": 1390.15,
+    "text": "the cost to burst this."
+  },
+  {
+    "start": 1390.15,
+    "end": 1391.78,
+    "text": "So what will I be taking?"
+  },
+  {
+    "start": 1391.78,
+    "end": 1396.22,
+    "text": "I'll be taking the maximal because that is what the question states."
+  },
+  {
+    "start": 1396.22,
+    "end": 1400.07,
+    "text": "So probably I can keep a maximum  is equal to an into many."
+  },
+  {
+    "start": 1400.07,
+    "end": 1402.55,
+    "text": "In Jawai, it can be integer.min value."
+  },
+  {
+    "start": 1402.55,
+    "end": 1402.88,
+    "text": "Okay."
+  },
+  {
+    "start": 1402.88,
+    "end": 1409.47,
+    "text": "And what I can do is I can say  mini equal to minimum of mini and comma cost is what I can simply do."
+  },
+  {
+    "start": 1409.47,
+    "end": 1413.84,
+    "text": "Once I've done this,  the four loop ends and can I return the mini?"
+  },
+  {
+    "start": 1413.84,
+    "end": 1415.99,
+    "text": "I can definitely return the mini."
+  },
+  {
+    "start": 1415.99,
+    "end": 1418.21,
+    "text": "I can definitely  return the mini."
+  },
+  {
+    "start": 1418.21,
+    "end": 1421.67,
+    "text": "This is how, yeah, this is how the recursion will be."
+  },
+  {
+    "start": 1421.67,
+    "end": 1423.32,
+    "text": "Now, so what are the time"
+  },
+  {
+    "start": 1423.32,
+    "end": 1424.02,
+    "text": "complexity?"
+  },
+  {
+    "start": 1424.02,
+    "end": 1430.32,
+    "text": "Now, we know that whenever we are applying recursion, it is going to be  exponential in complexity."
+  },
+  {
+    "start": 1430.32,
+    "end": 1432.04,
+    "text": "There is something we know."
+  },
+  {
+    "start": 1432.04,
+    "end": 1439.36,
+    "text": "So what we need to do is, if they're  overlapping sub problems, they will definitely be an overlapping sub problem."
+  },
+  {
+    "start": 1439.36,
+    "end": 1441.27,
+    "text": "We try to draw them to  three."
+  },
+  {
+    "start": 1441.27,
+    "end": 1444.64,
+    "text": "You will see that there are overlapping sub problems."
+  },
+  {
+    "start": 1444.64,
+    "end": 1451.19,
+    "text": "And whenever there is an overlapping sub problem, we can memorize the solution and we can apply memory,"
+  },
+  {
+    "start": 1451.19,
+    "end": 1453.67,
+    "text": "in order to reduce the time complexity."
+  },
+  {
+    "start": 1453.67,
+    "end": 1456.66,
+    "text": "Now, what is the shortcut that I've taught you?"
+  },
+  {
+    "start": 1456.66,
+    "end": 1461.3,
+    "text": "You go back and see, in the recursion,  what are the changing parameters?"
+  },
+  {
+    "start": 1461.3,
+    "end": 1461.87,
+    "text": "One is I."
+  },
+  {
+    "start": 1461.87,
+    "end": 1464.67,
+    "text": "One is J because they will be just changing."
+  },
+  {
+    "start": 1464.67,
+    "end": 1469.82,
+    "text": "So,  what do you do is, you say, okay, let me write down the changing parameters."
+  },
+  {
+    "start": 1469.82,
+    "end": 1471.03,
+    "text": "One is I, one is J."
+  },
+  {
+    "start": 1471.03,
+    "end": 1473.26,
+    "text": "And what is the maximum value of I?"
+  },
+  {
+    "start": 1473.26,
+    "end": 1476.06,
+    "text": "Can I say it starts somewhere from one to n?"
+  },
+  {
+    "start": 1476.06,
+    "end": 1480.51,
+    "text": "So n is the maximum,  so I can probably take it off a size n plus one."
+  },
+  {
+    "start": 1480.51,
+    "end": 1482.48,
+    "text": "What is the maximum value of J?"
+  },
+  {
+    "start": 1482.48,
+    "end": 1484.52,
+    "text": "Again, it can be  from one to n."
+  },
+  {
+    "start": 1484.52,
+    "end": 1486.49,
+    "text": "So again, I'll take n plus one."
+  },
+  {
+    "start": 1486.49,
+    "end": 1489.1,
+    "text": "So this is the dp added that I'll create."
+  },
+  {
+    "start": 1489.1,
+    "end": 1496.29,
+    "text": "Okay, and  for every state Ij, for every state Ij, you will just plunge in over here, dp of Ij is equal to  many."
+  },
+  {
+    "start": 1496.29,
+    "end": 1498.2,
+    "text": "That is what you'll plunge in."
+  },
+  {
+    "start": 1498.2,
+    "end": 1498.52,
+    "text": "Okay."
+  },
+  {
+    "start": 1498.52,
+    "end": 1501.13,
+    "text": "And you'll just write one line over here."
+  },
+  {
+    "start": 1501.13,
+    "end": 1501.96,
+    "text": "If that state"
+  },
+  {
+    "start": 1501.96,
+    "end": 1507.92,
+    "text": "has not been like initially, you can assign that with minus one and plunge that in over here."
+  },
+  {
+    "start": 1507.92,
+    "end": 1513.11,
+    "text": "And it turned dp of Ij, this shuttle change will make your time complexity to be."
+  },
+  {
+    "start": 1513.11,
+    "end": 1515.29,
+    "text": "Now what are the number of states?"
+  },
+  {
+    "start": 1515.29,
+    "end": 1517.92,
+    "text": "Two, n and n, i and j are n and n square."
+  },
+  {
+    "start": 1517.92,
+    "end": 1521.19,
+    "text": "And there is an  internal loop that you're running."
+  },
+  {
+    "start": 1521.19,
+    "end": 1527.54,
+    "text": "If you carefully see the recursion, there is an internal loop  for every state that you're running."
+  },
+  {
+    "start": 1527.54,
+    "end": 1533.63,
+    "text": "So for every state, the total number of states are n every state you're running and not exactly"
+  },
+  {
+    "start": 1533.63,
+    "end": 1535.94,
+    "text": "in, but somewhere near about a loop."
+  },
+  {
+    "start": 1535.94,
+    "end": 1539.47,
+    "text": "So this can be  roughly written as an n cubed solution."
+  },
+  {
+    "start": 1539.47,
+    "end": 1546.72,
+    "text": "Whereas the space complexity will be n square, which you're  using for the dp array and an auxiliary stack space."
+  },
+  {
+    "start": 1546.72,
+    "end": 1552.36,
+    "text": "Yes, and an auxiliary stack space, which will be near about b go off n because if you're"
+  },
+  {
+    "start": 1552.36,
+    "end": 1557.88,
+    "text": "bursting out n balloons, it will take up a depth of n, because every time you select a"
+  },
+  {
+    "start": 1557.88,
+    "end": 1560.38,
+    "text": "balloon, balloon 1 balloon 2 balloon 3."
+  },
+  {
+    "start": 1560.38,
+    "end": 1562.62,
+    "text": "So that depth will be  be go off n."
+  },
+  {
+    "start": 1562.62,
+    "end": 1567.05,
+    "text": "But this is what the time complexity in the space complexity will be."
+  },
+  {
+    "start": 1567.05,
+    "end": 1570.9,
+    "text": "And the next  step I will be coding this recursive solution."
+  },
+  {
+    "start": 1570.9,
+    "end": 1577.18,
+    "text": "And then we will try to tabulate it by using our  generic formula that I have talked you till now."
+  },
+  {
+    "start": 1577.18,
+    "end": 1579.87,
+    "text": "So in the function, we are given a vector."
+  },
+  {
+    "start": 1579.87,
+    "end": 1580.2,
+    "text": "Okay."
+  },
+  {
+    "start": 1580.2,
+    "end": 1585.6,
+    "text": "Now the first thing that I'll do is I'll just do an aeroxize."
+  },
+  {
+    "start": 1585.6,
+    "end": 1591.53,
+    "text": "And now I'll return the function  for the first changes this and a."
+  },
+  {
+    "start": 1591.53,
+    "end": 1591.97,
+    "text": "Okay."
+  },
+  {
+    "start": 1591.97,
+    "end": 1601.98,
+    "text": "Now if you remember well enough what we did to those  we said we will be inserting one at the front and the back."
+  },
+  {
+    "start": 1601.98,
+    "end": 1610.04,
+    "text": "So at the back I've inserted and now  I will be just doing an insert of right at the front."
+  },
+  {
+    "start": 1610.04,
+    "end": 1613.05,
+    "text": "If you use insert function,  done."
+  },
+  {
+    "start": 1613.05,
+    "end": 1617.21,
+    "text": "Next in the RALdoers I'll include hashingclude."
+  },
+  {
+    "start": 1617.21,
+    "end": 1619.78,
+    "text": "It's important because  okay."
+  },
+  {
+    "start": 1619.78,
+    "end": 1625.09,
+    "text": "That's something which are done or it's trying the function."
+  },
+  {
+    "start": 1625.09,
+    "end": 1629.43,
+    "text": "I'm the i and dj and we can take  the vector end."
+  },
+  {
+    "start": 1629.43,
+    "end": 1630.32,
+    "text": "Okay done."
+  },
+  {
+    "start": 1630.32,
+    "end": 1635.63,
+    "text": "Now we know that if it crosses we can yes we can return a 0."
+  },
+  {
+    "start": 1635.63,
+    "end": 1641.48,
+    "text": "We know many will be or rather we need maxi so maxi will be in dv."
+  },
+  {
+    "start": 1641.48,
+    "end": 1648.66,
+    "text": "And we know that for i and di index equal to i goes to j index plus plus perfect."
+  },
+  {
+    "start": 1648.66,
+    "end": 1654.95,
+    "text": "Whether the cost the cost will be a of i minus 1 into a of index into a"
+  },
+  {
+    "start": 1654.95,
+    "end": 1657.0,
+    "text": "of j plus 1 plus f of i"
+  },
+  {
+    "start": 1657.0,
+    "end": 1661.94,
+    "text": "comma index minus 1 comma a plus f of index plus 1 comma j comma a."
+  },
+  {
+    "start": 1661.94,
+    "end": 1668.65,
+    "text": "Right once you've done this you will say maxi equal to minimum or rather maxi equal to maxi"
+  },
+  {
+    "start": 1668.65,
+    "end": 1674.7,
+    "text": "comma cost once you've done this what you just need to do is you need just need to"
+  },
+  {
+    "start": 1674.7,
+    "end": 1678.31,
+    "text": "return maxi or anything you should be good to go."
+  },
+  {
+    "start": 1678.31,
+    "end": 1684.88,
+    "text": "So yeah that's a simple code and if you write this you'll see that you're getting all the"
+  },
+  {
+    "start": 1684.88,
+    "end": 1690.86,
+    "text": "corrected answer or this is a recursive code which will be exponential in nature."
+  },
+  {
+    "start": 1690.86,
+    "end": 1697.72,
+    "text": "Just make sure you have a dynamic programming the dimension attached to it so n plus 1 vector"
+  },
+  {
+    "start": 1697.72,
+    "end": 1703.33,
+    "text": "end again you can just to n plus 1 comma minus 1 and just make sure you pass"
+  },
+  {
+    "start": 1703.33,
+    "end": 1704.58,
+    "text": "the dp over here."
+  },
+  {
+    "start": 1704.58,
+    "end": 1709.23,
+    "text": "Again just copy away the same dp and you pass it over variable."
+  },
+  {
+    "start": 1709.23,
+    "end": 1715.13,
+    "text": "Please make sure you pass a dp over here pass a dp over here and write over here"
+  },
+  {
+    "start": 1715.13,
+    "end": 1720.22,
+    "text": "you can write dp of ij equal to this and away you can say if dp of ij"
+  },
+  {
+    "start": 1720.22,
+    "end": 1725.97,
+    "text": "is not equal to minus 1 return of dp of ij perfect and if you've done this you"
+  },
+  {
+    "start": 1725.97,
+    "end": 1732.46,
+    "text": "can simply go across and on this off you run this you're getting all accepted and if you"
+  },
+  {
+    "start": 1732.46,
+    "end": 1734.82,
+    "text": "submit this it will be accepted."
+  },
+  {
+    "start": 1734.82,
+    "end": 1741.32,
+    "text": "So definitely this is still using an auxiliary stack space now we will be learning about"
+  },
+  {
+    "start": 1741.32,
+    "end": 1744.78,
+    "text": "the tabulation concept which is super divisive."
+  },
+  {
+    "start": 1744.78,
+    "end": 1751.56,
+    "text": "So if you remember the formula that I've taught you  in order to convert what are the steps?"
+  },
+  {
+    "start": 1751.56,
+    "end": 1755.32,
+    "text": "Do you remember the steps that you used to convert?"
+  },
+  {
+    "start": 1755.32,
+    "end": 1758.19,
+    "text": "The first thing is write the base case."
+  },
+  {
+    "start": 1758.19,
+    "end": 1764.67,
+    "text": "Okay the second thing is changing variables write the changing variables as nested loop."
+  },
+  {
+    "start": 1764.67,
+    "end": 1768.65,
+    "text": "The third thing  copy the recurrence in the recursion."
+  },
+  {
+    "start": 1768.65,
+    "end": 1769.9,
+    "text": "Don't think much."
+  },
+  {
+    "start": 1769.9,
+    "end": 1772.99,
+    "text": "This copy the recurrence in the recursion."
+  },
+  {
+    "start": 1772.99,
+    "end": 1775.27,
+    "text": "So what is write the base case?"
+  },
+  {
+    "start": 1775.27,
+    "end": 1776.89,
+    "text": "What is the base case?"
+  },
+  {
+    "start": 1776.89,
+    "end": 1782.93,
+    "text": "If I go back to it can I say the base case was very straightforward or very simple"
+  },
+  {
+    "start": 1782.93,
+    "end": 1785.51,
+    "text": "which is this i is greater than zj."
+  },
+  {
+    "start": 1785.51,
+    "end": 1787.5,
+    "text": "So is it a generic command?"
+  },
+  {
+    "start": 1787.5,
+    "end": 1788.46,
+    "text": "No it is not."
+  },
+  {
+    "start": 1788.46,
+    "end": 1790.01,
+    "text": "i is greater than zj."
+  },
+  {
+    "start": 1790.01,
+    "end": 1799.0,
+    "text": "So probably I can think of this afterwards because they can be multiple values  of i and they can be multiple values of j."
+  },
+  {
+    "start": 1799.0,
+    "end": 1804.23,
+    "text": "So let's let us now if I look at the base case it is i greater  than j."
+  },
+  {
+    "start": 1804.23,
+    "end": 1811.08,
+    "text": "So let us keep this apart because we'll just be needing all the i's which are greater than j."
+  },
+  {
+    "start": 1811.08,
+    "end": 1814.4,
+    "text": "So probably you can think of this afterwards."
+  },
+  {
+    "start": 1814.4,
+    "end": 1817.35,
+    "text": "And one more thing is it's written on 0."
+  },
+  {
+    "start": 1817.35,
+    "end": 1818.68,
+    "text": "So the best way to"
+  },
+  {
+    "start": 1818.68,
+    "end": 1824.76,
+    "text": "encounter this is you just declare a dp of n plus 1 and n plus 1 and initialize it with 0."
+  },
+  {
+    "start": 1824.76,
+    "end": 1827.12,
+    "text": "So apparently everything will be 0."
+  },
+  {
+    "start": 1827.12,
+    "end": 1829.01,
+    "text": "That base case gets covered."
+  },
+  {
+    "start": 1829.01,
+    "end": 1831.85,
+    "text": "Okay now i is the first changing variable."
+  },
+  {
+    "start": 1831.85,
+    "end": 1834.08,
+    "text": "j is the first changing variable."
+  },
+  {
+    "start": 1834.08,
+    "end": 1840.5,
+    "text": "So if you remember the function called it went from 1 comma n  where this was i and this was j."
+  },
+  {
+    "start": 1840.5,
+    "end": 1841.04,
+    "text": "Correct."
+  },
+  {
+    "start": 1841.04,
+    "end": 1842.73,
+    "text": "Now what do I always see?"
+  },
+  {
+    "start": 1842.73,
+    "end": 1849.82,
+    "text": "I always see the recursion is  up down approach and I always see that tabulation is a bottom up approach."
+  },
+  {
+    "start": 1849.82,
+    "end": 1854.89,
+    "text": "It does not mean that  you have to move from bottom or something like that."
+  },
+  {
+    "start": 1854.89,
+    "end": 1857.73,
+    "text": "That means from the base case to the call."
+  },
+  {
+    "start": 1857.73,
+    "end": 1859.28,
+    "text": "So the call was from 1."
+  },
+  {
+    "start": 1859.28,
+    "end": 1863.13,
+    "text": "So it will go till 1, 2, 3, 4, 10 and so do the opposite."
+  },
+  {
+    "start": 1863.13,
+    "end": 1866.91,
+    "text": "You do the opposite for i which is you move from n to 1."
+  },
+  {
+    "start": 1866.91,
+    "end": 1869.61,
+    "text": "Similarly for j the call started from n."
+  },
+  {
+    "start": 1869.61,
+    "end": 1874.81,
+    "text": "So in the recursion it will go from n n minus 1 and minus 2 and so on till 1."
+  },
+  {
+    "start": 1874.81,
+    "end": 1879.07,
+    "text": "So in the  tabulation it will go opposite from 1, 2, 3, till n."
+  },
+  {
+    "start": 1879.07,
+    "end": 1880.62,
+    "text": "So you do the opposite."
+  },
+  {
+    "start": 1880.62,
+    "end": 1886.23,
+    "text": "You just go from 1 to 1 and after that you just copy the recurrence right inside it"
+  },
+  {
+    "start": 1886.23,
+    "end": 1888.86,
+    "text": "and you are pretty much critical to go."
+  },
+  {
+    "start": 1888.86,
+    "end": 1891.83,
+    "text": "Okay so we have without without actually we."
+  },
+  {
+    "start": 1891.83,
+    "end": 1893.86,
+    "text": "So let's get back to the code."
+  },
+  {
+    "start": 1893.86,
+    "end": 1895.08,
+    "text": "So this will be 0."
+  },
+  {
+    "start": 1895.08,
+    "end": 1898.28,
+    "text": "So i will start from n and i will go until 1."
+  },
+  {
+    "start": 1898.28,
+    "end": 1903.04,
+    "text": "Okay and i will start from 1 and j will go until  this j plus plus."
+  },
+  {
+    "start": 1903.04,
+    "end": 1905.81,
+    "text": "So this is what you can directly write."
+  },
+  {
+    "start": 1905.81,
+    "end": 1910.21,
+    "text": "Once you have written this just  have to copy this recurrence."
+  },
+  {
+    "start": 1910.21,
+    "end": 1912.91,
+    "text": "Now if you see this is the recurrence."
+  },
+  {
+    "start": 1912.91,
+    "end": 1916.03,
+    "text": "So you just take it and  you just copy this."
+  },
+  {
+    "start": 1916.03,
+    "end": 1916.74,
+    "text": "Okay done."
+  },
+  {
+    "start": 1916.74,
+    "end": 1920.43,
+    "text": "Once you have pasted it remember one thing for sure."
+  },
+  {
+    "start": 1920.43,
+    "end": 1925.54,
+    "text": "Instead of f we write dp of i of index minus 1 dp of i of index minus 1."
+  },
+  {
+    "start": 1925.54,
+    "end": 1930.16,
+    "text": "Instead of index plus 1 and j you write dp of index plus 1 and j."
+  },
+  {
+    "start": 1930.16,
+    "end": 1935.13,
+    "text": "Now something that you have to  take care of is for this i for this j."
+  },
+  {
+    "start": 1935.13,
+    "end": 1941.17,
+    "text": "You know for any of the state which is this you don't need to do anything because for"
+  },
+  {
+    "start": 1941.17,
+    "end": 1946.78,
+    "text": "any i which is greater than j you will not have a range because if i is greater"
+  },
+  {
+    "start": 1946.78,
+    "end": 1951.47,
+    "text": "than j then there is no range thereby you can easily say continue."
+  },
+  {
+    "start": 1951.47,
+    "end": 1954.52,
+    "text": "This is the same b skis that  is over here."
+  },
+  {
+    "start": 1954.52,
+    "end": 1956.01,
+    "text": "I read in the b skis."
+  },
+  {
+    "start": 1956.01,
+    "end": 1960.06,
+    "text": "Now still still there is a thing that you have to change."
+  },
+  {
+    "start": 1960.06,
+    "end": 1965.95,
+    "text": "This is written as what you have to change and instead of calling 1 comma n you say"
+  },
+  {
+    "start": 1965.95,
+    "end": 1968.65,
+    "text": "what is the value stored at 1 comma n."
+  },
+  {
+    "start": 1968.65,
+    "end": 1971.42,
+    "text": "It will still give you a runtime error."
+  },
+  {
+    "start": 1971.42,
+    "end": 1974.04,
+    "text": "It will still give you runtime error."
+  },
+  {
+    "start": 1974.04,
+    "end": 1976.88,
+    "text": "Imagine if at the state where j is equal to 1."
+  },
+  {
+    "start": 1976.88,
+    "end": 1982.26,
+    "text": "It will search for j plus 1 which will be found because you have made sure by inserting"
+  },
+  {
+    "start": 1982.26,
+    "end": 1984.73,
+    "text": "at the back one that will be taken care."
+  },
+  {
+    "start": 1984.73,
+    "end": 1989.49,
+    "text": "But in dp whenever you do index plus 1 that means n plus 1 index but you have"
+  },
+  {
+    "start": 1989.49,
+    "end": 1991.16,
+    "text": "just take it till n plus 1."
+  },
+  {
+    "start": 1991.16,
+    "end": 1993.26,
+    "text": "This makes sure  this is n plus 2."
+  },
+  {
+    "start": 1993.26,
+    "end": 1995.18,
+    "text": "This makes sure it is n plus 2."
+  },
+  {
+    "start": 1995.18,
+    "end": 2000.0,
+    "text": "So that whenever you try to access index plus 1  it does not get out of bound."
+  },
+  {
+    "start": 2000.0,
+    "end": 2004.7,
+    "text": "Once you have done this you will try running this because you  will be fine."
+  },
+  {
+    "start": 2004.7,
+    "end": 2005.5,
+    "text": "This is fine."
+  },
+  {
+    "start": 2005.5,
+    "end": 2007.11,
+    "text": "I will try to submit this."
+  },
+  {
+    "start": 2007.11,
+    "end": 2009.65,
+    "text": "It will be giving you the correct answer."
+  },
+  {
+    "start": 2009.65,
+    "end": 2012.12,
+    "text": "Again, what will be the time complexity?"
+  },
+  {
+    "start": 2012.12,
+    "end": 2019.54,
+    "text": "Two loops n square n cube and the space complexity is just  the dp array that you are using nothing separated from that."
+  },
+  {
+    "start": 2019.54,
+    "end": 2023.25,
+    "text": "So guys i hope i was able to explain  you the stuff problem."
+  },
+  {
+    "start": 2023.25,
+    "end": 2028.44,
+    "text": "Just in case i was able to explain you please please hit that like button and if you"
+  },
+  {
+    "start": 2028.44,
+    "end": 2034.25,
+    "text": "need to the channel please please please do consider subscribing to us and with this i will be"
+  },
+  {
+    "start": 2034.25,
+    "end": 2035.67,
+    "text": "wrapping up this video."
+  },
+  {
+    "start": 2035.67,
+    "end": 2037.22,
+    "text": "Let's be in the next one."
+  },
+  {
+    "start": 2037.22,
+    "end": 2038.84,
+    "text": "Isn't the white paint can."
+  }
+]

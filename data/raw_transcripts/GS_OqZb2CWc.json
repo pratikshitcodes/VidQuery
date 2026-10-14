@@ -1,0 +1,1757 @@
+[
+  {
+    "start": 0.0,
+    "end": 5.93,
+    "text": "If you are welcome back to the channel, I hope you guys are doing extremely well."
+  },
+  {
+    "start": 5.93,
+    "end": 12.01,
+    "text": "So today we will be solving dp16 and the previous tip to this dp16 is you must have"
+  },
+  {
+    "start": 12.01,
+    "end": 19.26,
+    "text": "seen the dp14 which is the subset sum problem because this problem will entirely be solved with the"
+  },
+  {
+    "start": 19.26,
+    "end": 20.65,
+    "text": "idea of subset sum."
+  },
+  {
+    "start": 20.65,
+    "end": 22.99,
+    "text": "So let's check out the question."
+  },
+  {
+    "start": 22.99,
+    "end": 26.8,
+    "text": "So the question is partition a set into two subsets."
+  },
+  {
+    "start": 26.8,
+    "end": 30.68,
+    "text": "What's that the difference of subset sums is minimum."
+  },
+  {
+    "start": 30.68,
+    "end": 38.73,
+    "text": "So given an array containing n non-negative integers, again very important, it has all  non-negative integers."
+  },
+  {
+    "start": 38.73,
+    "end": 42.68,
+    "text": "Your task is to partition that array into two subsets."
+  },
+  {
+    "start": 42.68,
+    "end": 45.24,
+    "text": "So basically subset 1 and subset 2."
+  },
+  {
+    "start": 45.24,
+    "end": 51.98,
+    "text": "Such that the absolute difference between both of the subset sums is as minimal as possible."
+  },
+  {
+    "start": 51.98,
+    "end": 59.52,
+    "text": "Your task is to find the minimum absolute difference considering any valid division of  array elements."
+  },
+  {
+    "start": 59.52,
+    "end": 62.3,
+    "text": "So let's quickly check out an example."
+  },
+  {
+    "start": 62.3,
+    "end": 66.84,
+    "text": "So if we see this example 1, 2, 3, 4, let's discuss over here."
+  },
+  {
+    "start": 66.84,
+    "end": 74.6,
+    "text": "So if I take this example 1, 2, 3, 4, what are the different kind of subsets that you can  divide it into?"
+  },
+  {
+    "start": 74.6,
+    "end": 77.68,
+    "text": "So you can say one of the subsets is 1, 2."
+  },
+  {
+    "start": 77.68,
+    "end": 79.57,
+    "text": "The other subsets is 3, 4."
+  },
+  {
+    "start": 79.57,
+    "end": 82.47,
+    "text": "And the summation of this guy will be 3."
+  },
+  {
+    "start": 82.47,
+    "end": 85.01,
+    "text": "And the summation of this guy is 7."
+  },
+  {
+    "start": 85.01,
+    "end": 87.99,
+    "text": "And the absolute difference is 7 minus 3."
+  },
+  {
+    "start": 87.99,
+    "end": 88.93,
+    "text": "And that's 4."
+  },
+  {
+    "start": 88.93,
+    "end": 91.62,
+    "text": "So this can be one of the partations."
+  },
+  {
+    "start": 91.62,
+    "end": 94.74,
+    "text": "Or you can say the other partation is 1, 3."
+  },
+  {
+    "start": 94.74,
+    "end": 95.39,
+    "text": "And 2, 4."
+  },
+  {
+    "start": 95.39,
+    "end": 98.0,
+    "text": "But you say 1, 3 belong to a subset."
+  },
+  {
+    "start": 98.0,
+    "end": 100.03,
+    "text": "And 2, 4 belong to a subset."
+  },
+  {
+    "start": 100.03,
+    "end": 102.5,
+    "text": "So the summation is 6, so why are?"
+  },
+  {
+    "start": 102.5,
+    "end": 104.17,
+    "text": "And the summation is 4."
+  },
+  {
+    "start": 104.17,
+    "end": 106.13,
+    "text": "So 6 minus 4 is equal to 2."
+  },
+  {
+    "start": 106.13,
+    "end": 112.96,
+    "text": "Similarly, there can be a lot of different patterns, different partitions rather not patterns."
+  },
+  {
+    "start": 112.96,
+    "end": 118.55,
+    "text": "So I can be like, OK, can I divide this into something where we have 1 and 4?"
+  },
+  {
+    "start": 118.55,
+    "end": 121.16,
+    "text": "And the other place we have 2 and 3."
+  },
+  {
+    "start": 121.16,
+    "end": 122.76,
+    "text": "So again, makes sense."
+  },
+  {
+    "start": 122.76,
+    "end": 126.25,
+    "text": "And this time the summation over here will be 5."
+  },
+  {
+    "start": 126.25,
+    "end": 129.01,
+    "text": "And the summation over here will be 5."
+  },
+  {
+    "start": 129.01,
+    "end": 130.68,
+    "text": "So 5 minus 5 will be 0."
+  },
+  {
+    "start": 130.68,
+    "end": 139.47,
+    "text": "And if you carefully see, this is the minimal difference that you can obtain by dividing  them into couple of partations."
+  },
+  {
+    "start": 139.47,
+    "end": 142.37,
+    "text": "So in short, you will be given an array."
+  },
+  {
+    "start": 142.37,
+    "end": 150.21,
+    "text": "If you take all the limits and you put some elements in a subset 1 and you put some  elements in a subset 2."
+  },
+  {
+    "start": 150.21,
+    "end": 153.12,
+    "text": "And the subset 1 assume it to be some 1."
+  },
+  {
+    "start": 153.12,
+    "end": 156.48,
+    "text": "And the subset 2, some assume to be some 2."
+  },
+  {
+    "start": 156.48,
+    "end": 160.38,
+    "text": "So the absolute of this is as minimal as possible."
+  },
+  {
+    "start": 160.38,
+    "end": 162.96,
+    "text": "This is what the question states."
+  },
+  {
+    "start": 162.96,
+    "end": 165.69,
+    "text": "Now how do you solve this question?"
+  },
+  {
+    "start": 165.69,
+    "end": 170.77,
+    "text": "Because this is something different than what we have been doing."
+  },
+  {
+    "start": 170.77,
+    "end": 172.88,
+    "text": "What have we done till now?"
+  },
+  {
+    "start": 172.88,
+    "end": 174.91,
+    "text": "We have done a lecture 14."
+  },
+  {
+    "start": 174.91,
+    "end": 177.33,
+    "text": "Yes, we have done a lecture 14."
+  },
+  {
+    "start": 177.33,
+    "end": 180.06,
+    "text": "Over there, what have we discussed?"
+  },
+  {
+    "start": 180.06,
+    "end": 184.2,
+    "text": "We have discussed a given an array is given an array."
+  },
+  {
+    "start": 184.2,
+    "end": 186.46,
+    "text": "And I will give you a target."
+  },
+  {
+    "start": 186.46,
+    "end": 192.63,
+    "text": "And your task is to tell me if this target, like if there is a subset, if there"
+  },
+  {
+    "start": 192.63,
+    "end": 196.38,
+    "text": "is a subset, choose some is equal to the target."
+  },
+  {
+    "start": 196.38,
+    "end": 198.41,
+    "text": "So you are given an array."
+  },
+  {
+    "start": 198.41,
+    "end": 207.62,
+    "text": "We have already done a problem where we have to tell is there a subset, which is equivalent  to the given some target."
+  },
+  {
+    "start": 207.62,
+    "end": 214.49,
+    "text": "And if you remember what concept we use, we use the concept of pick and non-pick or take"
+  },
+  {
+    "start": 214.49,
+    "end": 217.38,
+    "text": "or non-take the concept that we used."
+  },
+  {
+    "start": 217.38,
+    "end": 222.22,
+    "text": "So if you remember the recurrence, it was something like this."
+  },
+  {
+    "start": 222.22,
+    "end": 229.25,
+    "text": "We wrote INT index, then we wrote the target, then it was something like, if at any moment"
+  },
+  {
+    "start": 229.25,
+    "end": 232.84,
+    "text": "the target is achieved, we will return a true."
+  },
+  {
+    "start": 232.84,
+    "end": 239.01,
+    "text": "And if the index reaches equal to equal to 0, it means basically we started from f of"
+  },
+  {
+    "start": 239.01,
+    "end": 245.54,
+    "text": "n minus 1 and with the given target, if you remember well, and over here we returned array"
+  },
+  {
+    "start": 245.54,
+    "end": 251.71,
+    "text": "of 0 is equal to equal to the remaining target because if we are standing at the last"
+  },
+  {
+    "start": 251.71,
+    "end": 257.88,
+    "text": "element and some target is yet to be achieved, then the array has to, the array of 0,"
+  },
+  {
+    "start": 257.88,
+    "end": 260.06,
+    "text": "index has to have that target."
+  },
+  {
+    "start": 260.06,
+    "end": 266.67,
+    "text": "So remember these were the couple of base cases, then we wrote a non-take case where it was"
+  },
+  {
+    "start": 266.67,
+    "end": 271.32,
+    "text": "like we will move to the previous index with the similar target."
+  },
+  {
+    "start": 271.32,
+    "end": 275.82,
+    "text": "And similarly we wrote a take case, which was initially false."
+  },
+  {
+    "start": 275.82,
+    "end": 280.32,
+    "text": "And we can only take the array of index into our sub sequence."
+  },
+  {
+    "start": 280.32,
+    "end": 286.27,
+    "text": "If that's lesser than equal to target right and over here we said, a qu will be if"
+  },
+  {
+    "start": 286.27,
+    "end": 290.84,
+    "text": "we take it, it's index minus 1 and target minus array of index."
+  },
+  {
+    "start": 290.84,
+    "end": 297.3,
+    "text": "So I hope you remember this recurrence and at the end of the day we said, a and non-take."
+  },
+  {
+    "start": 297.3,
+    "end": 299.41,
+    "text": "So that was a quick revision."
+  },
+  {
+    "start": 299.41,
+    "end": 307.1,
+    "text": "So we have done this problem and we will be using this problem's concept only to solve  the given problem."
+  },
+  {
+    "start": 307.1,
+    "end": 313.56,
+    "text": "So let's forget about the current problem and let's analyze this recurrence relationship."
+  },
+  {
+    "start": 313.56,
+    "end": 317.23,
+    "text": "So what did we do on this recurrence relationship?"
+  },
+  {
+    "start": 317.23,
+    "end": 322.44,
+    "text": "We did apply something as a memory action and what after memory action?"
+  },
+  {
+    "start": 322.44,
+    "end": 330.36,
+    "text": "After memory action you went on to write the tabulation if you remember and how was the  tabulation written?"
+  },
+  {
+    "start": 330.36,
+    "end": 337.25,
+    "text": "The tabulation clearly stated that hey listen, if the target is equal to equal to 0, then over"
+  },
+  {
+    "start": 337.25,
+    "end": 343.41,
+    "text": "here the index can be n minus 1 and minus 2 anything till 0, basically any index, it"
+  },
+  {
+    "start": 343.41,
+    "end": 344.66,
+    "text": "can be any index."
+  },
+  {
+    "start": 344.66,
+    "end": 350.6,
+    "text": "So we went on to write the tabulation as firstly, though we declared a dp of n of"
+  },
+  {
+    "start": 350.6,
+    "end": 355.81,
+    "text": "target and then we went on to write f of index equal to 0 to n minus 1."
+  },
+  {
+    "start": 355.81,
+    "end": 363.51,
+    "text": "And over here we went on to write dp of i and every index rather dp of index and every  target 0 as true."
+  },
+  {
+    "start": 363.51,
+    "end": 368.2,
+    "text": "So this is what we wrote because it's almost equivalent to this."
+  },
+  {
+    "start": 368.2,
+    "end": 370.18,
+    "text": "If target is 0 return true."
+  },
+  {
+    "start": 370.18,
+    "end": 374.07,
+    "text": "So if target is 0 on any given index you return true."
+  },
+  {
+    "start": 374.07,
+    "end": 380.01,
+    "text": "This is the first base case that you wrote and the next base case was if index is"
+  },
+  {
+    "start": 380.01,
+    "end": 384.12,
+    "text": "0, you are saying this array of 0 to be equal to target."
+  },
+  {
+    "start": 384.12,
+    "end": 390.72,
+    "text": "So only at array of 0 you can just write true because if the target is equivalent to array"
+  },
+  {
+    "start": 390.72,
+    "end": 393.19,
+    "text": "of 0 then only it will be true."
+  },
+  {
+    "start": 393.19,
+    "end": 400.83,
+    "text": "So if you remember the next base case was very straightforward, you basically said dp of 0 which"
+  },
+  {
+    "start": 400.83,
+    "end": 405.6,
+    "text": "is this case and then array of 0 being equivalent to target."
+  },
+  {
+    "start": 405.6,
+    "end": 410.05,
+    "text": "So array of 0 being equivalent to target, which is true."
+  },
+  {
+    "start": 410.05,
+    "end": 416.41,
+    "text": "But it just need to make sure since we are declaring the dp array to be like the"
+  },
+  {
+    "start": 416.41,
+    "end": 424.13,
+    "text": "second dimension of a parameter target we just need to make sure this second dimension yes has to"
+  },
+  {
+    "start": 424.13,
+    "end": 429.06,
+    "text": "be a lesser than target has to be lesser than equal to target."
+  },
+  {
+    "start": 429.06,
+    "end": 437.33,
+    "text": "Just make sure this condition is written and yeah over here it will be of size plus 1 by  the way of it."
+  },
+  {
+    "start": 437.33,
+    "end": 443.93,
+    "text": "So that was the tabulation and what after that you basically wrote couple of loops."
+  },
+  {
+    "start": 443.93,
+    "end": 452.6,
+    "text": "Which was starting from 1 is to n minus 1 and then you wrote something which started from the  target from 0."
+  },
+  {
+    "start": 452.6,
+    "end": 460.0,
+    "text": "L since 0 was already done you can easily start from 1 till the target key right that was it."
+  },
+  {
+    "start": 460.0,
+    "end": 465.33,
+    "text": "And you know the same thing not take equal to dp of f of i minus 1."
+  },
+  {
+    "start": 465.33,
+    "end": 467.72,
+    "text": "So dp of i minus 1 and target."
+  },
+  {
+    "start": 467.72,
+    "end": 475.05,
+    "text": "And the t equals initially true just making sure if the array of index can be taken into"
+  },
+  {
+    "start": 475.05,
+    "end": 482.8,
+    "text": "account which is basically array of i or if that's equivalent if that's a lesser than target."
+  },
+  {
+    "start": 482.8,
+    "end": 488.63,
+    "text": "What it was you said by the way take will be false over here not true."
+  },
+  {
+    "start": 488.63,
+    "end": 494.21,
+    "text": "A equals be false and is then say t will be dp of i minus 1 and you"
+  },
+  {
+    "start": 494.21,
+    "end": 501.79,
+    "text": "wrote target minus array of index right that is something which you wrote at the end of the"
+  },
+  {
+    "start": 501.79,
+    "end": 508.46,
+    "text": "day you said dp of i target is equal to a or not take similar recurrence of copy"
+  },
+  {
+    "start": 508.46,
+    "end": 509.04,
+    "text": "pasted."
+  },
+  {
+    "start": 509.04,
+    "end": 514.96,
+    "text": "So this was the tabulation format right this was the tabulation format."
+  },
+  {
+    "start": 514.96,
+    "end": 518.46,
+    "text": "So what will the tabulation format create?"
+  },
+  {
+    "start": 518.46,
+    "end": 523.79,
+    "text": "What does a dp of i j signify that's what my question is to you."
+  },
+  {
+    "start": 523.79,
+    "end": 530.21,
+    "text": "What does dp of i j signify if we able to figure this out then that will help"
+  },
+  {
+    "start": 530.21,
+    "end": 533.63,
+    "text": "us immensely in solving the next problem."
+  },
+  {
+    "start": 533.63,
+    "end": 538.05,
+    "text": "So basically we would have taken something like this."
+  },
+  {
+    "start": 538.05,
+    "end": 545.48,
+    "text": "Assume assume the number of elements to be 5 and the target that we have been asked is 7."
+  },
+  {
+    "start": 545.48,
+    "end": 548.16,
+    "text": "Like for example let's assume."
+  },
+  {
+    "start": 548.16,
+    "end": 552.8,
+    "text": "So can I say we will declare a dp of size 5 cross 8."
+  },
+  {
+    "start": 552.8,
+    "end": 555.57,
+    "text": "So 5 rows is what I'll declare."
+  },
+  {
+    "start": 555.57,
+    "end": 559.5,
+    "text": "So let's quickly declare the 5 rows 0 1 2 3."
+  },
+  {
+    "start": 559.5,
+    "end": 564.77,
+    "text": "I'll declare the 5 rows and they will like 0 1 2 3 4 5 6 7."
+  },
+  {
+    "start": 564.77,
+    "end": 568.61,
+    "text": "So I'll also declare 7 or rather 8 columns."
+  },
+  {
+    "start": 568.61,
+    "end": 571.82,
+    "text": "So kindly declare all the 8 columns."
+  },
+  {
+    "start": 571.82,
+    "end": 575.39,
+    "text": "So this is how the dp table is declared."
+  },
+  {
+    "start": 575.39,
+    "end": 581.91,
+    "text": "Now can you tell me where did you find your answer at the end of the day?"
+  },
+  {
+    "start": 581.91,
+    "end": 589.95,
+    "text": "You said you call the recurrence if you remember you call the recurrence with f of n minus"
+  },
+  {
+    "start": 589.95,
+    "end": 596.56,
+    "text": "1 and target and you said can an array of n minus 1 like ending at n minus"
+  },
+  {
+    "start": 596.56,
+    "end": 598.26,
+    "text": "1 achieve a target."
+  },
+  {
+    "start": 598.26,
+    "end": 603.71,
+    "text": "Can this entire array achieve this target that was the stuff."
+  },
+  {
+    "start": 603.71,
+    "end": 610.23,
+    "text": "So you also said that the answer will be lying at dp of n minus 1 target."
+  },
+  {
+    "start": 610.23,
+    "end": 612.28,
+    "text": "So what does this mean?"
+  },
+  {
+    "start": 612.28,
+    "end": 618.71,
+    "text": "You are saying for this guy if n is 5 and the target is 7 you are saying"
+  },
+  {
+    "start": 618.71,
+    "end": 620.76,
+    "text": "if dp of 4 yes if dp of"
+  },
+  {
+    "start": 620.76,
+    "end": 622.49,
+    "text": "4 and the target is 8."
+  },
+  {
+    "start": 622.49,
+    "end": 624.06,
+    "text": "So target is 7 away."
+  },
+  {
+    "start": 624.06,
+    "end": 627.91,
+    "text": "Because if you carefully observe the target is 7."
+  },
+  {
+    "start": 627.91,
+    "end": 636.41,
+    "text": "So you are basically saying if this guy is equal to equal to true then we can have a subset  sum of 7 right."
+  },
+  {
+    "start": 636.41,
+    "end": 642.7,
+    "text": "So can I say how is the dp array being filled in tabulation for first we all the"
+  },
+  {
+    "start": 642.7,
+    "end": 650.09,
+    "text": "base cases are filled like all the base cases what are the base cases index equal to something"
+  },
+  {
+    "start": 650.09,
+    "end": 651.35,
+    "text": "and target true."
+  },
+  {
+    "start": 651.35,
+    "end": 658.11,
+    "text": "So firstly you are filling this true true true true true that is what you have filled."
+  },
+  {
+    "start": 658.11,
+    "end": 664.4,
+    "text": "Now you know that if if there is something like let us assume that is so we know"
+  },
+  {
+    "start": 664.4,
+    "end": 667.39,
+    "text": "that the array is of 5 elements right."
+  },
+  {
+    "start": 667.39,
+    "end": 673.68,
+    "text": "So assume the array to be something as 13, probably 2, 5 and 6 and the target to"
+  },
+  {
+    "start": 673.68,
+    "end": 676.28,
+    "text": "be 7 okay and the target to be 7."
+  },
+  {
+    "start": 676.28,
+    "end": 682.1,
+    "text": "Let us assume this is the array that we have taken and this is the target."
+  },
+  {
+    "start": 682.1,
+    "end": 686.58,
+    "text": "So what is the first tabulation that you wrote over here?"
+  },
+  {
+    "start": 686.58,
+    "end": 691.22,
+    "text": "This is done and the next thing you are writing is dp of 0."
+  },
+  {
+    "start": 691.22,
+    "end": 693.42,
+    "text": "Array of 0 is equal to true."
+  },
+  {
+    "start": 693.42,
+    "end": 695.96,
+    "text": "So what is array of 0 over here?"
+  },
+  {
+    "start": 695.96,
+    "end": 696.55,
+    "text": "It is 1."
+  },
+  {
+    "start": 696.55,
+    "end": 703.98,
+    "text": "So you placed a true over here and rest everything will get filled filled filled filled filled filled"
+  },
+  {
+    "start": 703.98,
+    "end": 710.45,
+    "text": "then this will be filled then this will be filled then these guys will be filled and the"
+  },
+  {
+    "start": 710.45,
+    "end": 716.33,
+    "text": "end of the day this will be filled and whatever answer is over here yes if it is"
+  },
+  {
+    "start": 716.33,
+    "end": 722.14,
+    "text": "a true or if it is a false whatever answer is there you say according to this I"
+  },
+  {
+    "start": 722.14,
+    "end": 727.43,
+    "text": "get my answer that's what you told but in finding the target equal to 7."
+  },
+  {
+    "start": 727.43,
+    "end": 733.75,
+    "text": "If you write the tabulation you end up filling this guy because at the index 4 like in"
+  },
+  {
+    "start": 733.75,
+    "end": 740.37,
+    "text": "the entire array the target 0 can be achieved that's very common sense because if I do not"
+  },
+  {
+    "start": 740.37,
+    "end": 745.0,
+    "text": "pick up any element in the subset the target 0 can be achieved."
+  },
+  {
+    "start": 745.0,
+    "end": 752.8,
+    "text": "Similarly whatever value will be here I can say I can achieve the target 1 or I can not achieve  target 2."
+  },
+  {
+    "start": 752.8,
+    "end": 758.9,
+    "text": "Similarly whatever value is here I can say I can achieve the target 1 or I can not."
+  },
+  {
+    "start": 758.9,
+    "end": 765.0,
+    "text": "Similarly whatever value is here I can say I can achieve the target 2 or I can not."
+  },
+  {
+    "start": 765.0,
+    "end": 771.1,
+    "text": "Similarly whatever value is Here I can say I can achieve the target 3 or I can not."
+  },
+  {
+    "start": 771.1,
+    "end": 772.44,
+    "text": "So can I say I can"
+  },
+  {
+    "start": 772.44,
+    "end": 781.12,
+    "text": "I can L  yes or no  For every target value from 1 to 7 can I achieve every target value from 1 to 7?"
+  },
+  {
+    "start": 781.12,
+    "end": 783.81,
+    "text": "I can definitely say yes or no."
+  },
+  {
+    "start": 783.81,
+    "end": 792.84,
+    "text": "If I write the tabulation because the tabulation makes sure that I fill the entire matrix And eventually"
+  },
+  {
+    "start": 792.84,
+    "end": 798.66,
+    "text": "I will get to know if I can achieve 1, if I can achieve 2, if I can"
+  },
+  {
+    "start": 798.66,
+    "end": 805.0,
+    "text": "achieve 3, if I can achieve 4, if I can achieve 5, if I can achieve 6, if"
+  },
+  {
+    "start": 805.0,
+    "end": 806.39,
+    "text": "I can achieve 7."
+  },
+  {
+    "start": 806.39,
+    "end": 814.38,
+    "text": "And just because the question asked 7, we picked up this guy and we said this is our answer."
+  },
+  {
+    "start": 814.38,
+    "end": 817.24,
+    "text": "This is our answer, dp of 4 of 7."
+  },
+  {
+    "start": 817.24,
+    "end": 825.05,
+    "text": "If the target was like if someone comes up and gives you a different target, now you still"
+  },
+  {
+    "start": 825.05,
+    "end": 828.96,
+    "text": "can say without calling the tabulation again."
+  },
+  {
+    "start": 828.96,
+    "end": 835.56,
+    "text": "This dp will strictly help you to tell if you can achieve a target 5 or not."
+  },
+  {
+    "start": 835.56,
+    "end": 839.03,
+    "text": "So this is what I wanted to portray you."
+  },
+  {
+    "start": 839.03,
+    "end": 841.98,
+    "text": "This is what tabulation signifies."
+  },
+  {
+    "start": 841.98,
+    "end": 849.88,
+    "text": "For your 3 means, only the third index, the third index or target 4 can be achieved or not."
+  },
+  {
+    "start": 849.88,
+    "end": 853.46,
+    "text": "This is signified by the third row."
+  },
+  {
+    "start": 853.46,
+    "end": 858.07,
+    "text": "Similarly, every row is signifying something."
+  },
+  {
+    "start": 858.07,
+    "end": 859.3,
+    "text": "Makes sense."
+  },
+  {
+    "start": 859.3,
+    "end": 861.45,
+    "text": "That does make sense."
+  },
+  {
+    "start": 861.45,
+    "end": 864.22,
+    "text": "So we have understood this."
+  },
+  {
+    "start": 864.22,
+    "end": 872.72,
+    "text": "So just keep this in your mind that as of now, what have from subsets, what we have"
+  },
+  {
+    "start": 872.72,
+    "end": 879.28,
+    "text": "derived from subset, some, the tabulation, what have we derived."
+  },
+  {
+    "start": 879.28,
+    "end": 885.84,
+    "text": "We can, like if we check for a target equal to k, we can derive."
+  },
+  {
+    "start": 885.84,
+    "end": 895.88,
+    "text": "If every possible target, I repeat, if every possible target between one and the other, we can get"
+  },
+  {
+    "start": 895.88,
+    "end": 899.46,
+    "text": "a target between one and the other."
+  },
+  {
+    "start": 899.46,
+    "end": 903.25,
+    "text": "And k is possible or is not possible."
+  },
+  {
+    "start": 903.25,
+    "end": 915.54,
+    "text": "If I am just checking for target equal to k, the tabulation automatically will tell me for every value between one to k."
+  },
+  {
+    "start": 915.54,
+    "end": 919.12,
+    "text": "I don't need to do any extra steps."
+  },
+  {
+    "start": 919.12,
+    "end": 920.35,
+    "text": "Makes sense."
+  },
+  {
+    "start": 920.35,
+    "end": 925.88,
+    "text": "So with the help of this, I'll solve the next problem."
+  },
+  {
+    "start": 925.88,
+    "end": 931.37,
+    "text": "Okay, so now let's come back to the dp16 which was the original problem."
+  },
+  {
+    "start": 931.37,
+    "end": 934.04,
+    "text": "What did the original problem stay?"
+  },
+  {
+    "start": 934.04,
+    "end": 944.04,
+    "text": "Divide them into couple of subsets, like if one subset is containing some elements, the other elements will be in the other subset."
+  },
+  {
+    "start": 944.04,
+    "end": 947.93,
+    "text": "This will have a sum one, this will have a sum two."
+  },
+  {
+    "start": 947.93,
+    "end": 954.04,
+    "text": "So both of the sums, like absolute difference, should we as minimal as possible?"
+  },
+  {
+    "start": 954.04,
+    "end": 956.1,
+    "text": "That's the question, right?"
+  },
+  {
+    "start": 956.1,
+    "end": 961.44,
+    "text": "So we will like how can we solve this because we have just now learnt."
+  },
+  {
+    "start": 961.44,
+    "end": 967.7,
+    "text": "So we have just now learnt that we can easily check if any subset of any given sum"
+  },
+  {
+    "start": 967.7,
+    "end": 972.58,
+    "text": "is possible in an area or not with the use of the matrix, right?"
+  },
+  {
+    "start": 972.58,
+    "end": 978.84,
+    "text": "So can I say can I say if I can just figure out S1, S2 I don't have to figure out."
+  },
+  {
+    "start": 978.84,
+    "end": 980.21,
+    "text": "Think of yourself."
+  },
+  {
+    "start": 980.21,
+    "end": 985.09,
+    "text": "I repeat, if I can figure out S1, I don't have to figure out S2."
+  },
+  {
+    "start": 985.09,
+    "end": 985.4,
+    "text": "Why?"
+  },
+  {
+    "start": 985.4,
+    "end": 986.47,
+    "text": "Let's realize."
+  },
+  {
+    "start": 986.47,
+    "end": 989.29,
+    "text": "If I give you an area like 327, okay?"
+  },
+  {
+    "start": 989.29,
+    "end": 993.03,
+    "text": "And if I say one of the partition contains three."
+  },
+  {
+    "start": 993.03,
+    "end": 995.01,
+    "text": "So the summation is three."
+  },
+  {
+    "start": 995.01,
+    "end": 1002.88,
+    "text": "Do I need to find the other partition like two sub-end, do the summation as nine, do I need to do that?"
+  },
+  {
+    "start": 1002.88,
+    "end": 1005.21,
+    "text": "The answer to that is no, why?"
+  },
+  {
+    "start": 1005.21,
+    "end": 1010.73,
+    "text": "Because if I know the total sum, because the total sum over here is 12."
+  },
+  {
+    "start": 1010.73,
+    "end": 1018.66,
+    "text": "If I know the total sum,  So can I say, can I say that the summation is three for the first partition?"
+  },
+  {
+    "start": 1018.66,
+    "end": 1026.21,
+    "text": "The summation for the next partition will be total sum, because total sum means all the elements."
+  },
+  {
+    "start": 1026.21,
+    "end": 1030.8,
+    "text": "Minus the sum of the elements that I in the partition want."
+  },
+  {
+    "start": 1030.8,
+    "end": 1032.82,
+    "text": "So 12 minus three is nine."
+  },
+  {
+    "start": 1032.82,
+    "end": 1040.05,
+    "text": "Again, make sense because if the total summation is 12 which is that all the elements, if you"
+  },
+  {
+    "start": 1040.05,
+    "end": 1045.81,
+    "text": "take out three, the remaining elements will be nothing but 12 minus three."
+  },
+  {
+    "start": 1045.81,
+    "end": 1048.14,
+    "text": "So you get the easy sum of S2."
+  },
+  {
+    "start": 1048.14,
+    "end": 1053.51,
+    "text": "Can I say, can I say, in this way, can I also say if I take just two,"
+  },
+  {
+    "start": 1053.51,
+    "end": 1057.24,
+    "text": "there will be two, which will be S1 will be two."
+  },
+  {
+    "start": 1057.24,
+    "end": 1064.24,
+    "text": "And the next partition will be ten, like the summation will be ten, because if I take two,"
+  },
+  {
+    "start": 1064.24,
+    "end": 1067.43,
+    "text": "these guys will be in the next partition."
+  },
+  {
+    "start": 1067.43,
+    "end": 1068.83,
+    "text": "Again, make sense."
+  },
+  {
+    "start": 1068.83,
+    "end": 1071.55,
+    "text": "So can I say what am I looking for?"
+  },
+  {
+    "start": 1071.55,
+    "end": 1075.98,
+    "text": "I'm looking for S1 minus S2 to be as minimal as possible."
+  },
+  {
+    "start": 1075.98,
+    "end": 1082.75,
+    "text": "So if I'm looking for S1 minus S2 to be as minimal as possible, do we actually require,"
+  },
+  {
+    "start": 1082.75,
+    "end": 1085.88,
+    "text": "do we actually require all the possible?"
+  },
+  {
+    "start": 1085.88,
+    "end": 1090.88,
+    "text": "If I can give you all the possible S1s, then your job is done."
+  },
+  {
+    "start": 1090.88,
+    "end": 1098.38,
+    "text": "If I can give you all the possible S1s, because I can say, I'll try out all partations of S1."
+  },
+  {
+    "start": 1098.38,
+    "end": 1101.93,
+    "text": "If like, but travel, how's it going to work?"
+  },
+  {
+    "start": 1101.93,
+    "end": 1103.94,
+    "text": "Okay, it's going to work."
+  },
+  {
+    "start": 1103.94,
+    "end": 1112.24,
+    "text": "If I ask you what can be all the partations of S1, can I say, the minimal summation of S1 will be zero."
+  },
+  {
+    "start": 1112.24,
+    "end": 1115.54,
+    "text": "Where I say, I don't pick up any element."
+  },
+  {
+    "start": 1115.54,
+    "end": 1118.93,
+    "text": "Where I say, I do not pick up any element."
+  },
+  {
+    "start": 1118.93,
+    "end": 1119.82,
+    "text": "Make sense."
+  },
+  {
+    "start": 1119.82,
+    "end": 1126.51,
+    "text": "And the maximum summation will be when I say, all the elements are in my partition."
+  },
+  {
+    "start": 1126.51,
+    "end": 1127.4,
+    "text": "Okay, 12th."
+  },
+  {
+    "start": 1127.4,
+    "end": 1133.44,
+    "text": "So can I say the minimal value of the partition one summation will be zero?"
+  },
+  {
+    "start": 1133.44,
+    "end": 1137.71,
+    "text": "What I say, none of the elements are in my partition."
+  },
+  {
+    "start": 1137.71,
+    "end": 1144.24,
+    "text": "And the maximum value that I can get, and the maximum value that I can get is 12,"
+  },
+  {
+    "start": 1144.24,
+    "end": 1147.95,
+    "text": "but I say, all the values are in my partition."
+  },
+  {
+    "start": 1147.95,
+    "end": 1153.11,
+    "text": "So I know the minimal value is zero and the maximum value is 12."
+  },
+  {
+    "start": 1153.11,
+    "end": 1158.83,
+    "text": "So zero one two three four five six seven eight nine ten eleven twelve."
+  },
+  {
+    "start": 1158.83,
+    "end": 1166.88,
+    "text": "Now I ask you, I know the S1 will be in this range, but I need to determine which are the valid S1s,"
+  },
+  {
+    "start": 1166.88,
+    "end": 1169.02,
+    "text": "because everyone cannot be S1."
+  },
+  {
+    "start": 1169.02,
+    "end": 1171.58,
+    "text": "All the partations are not possible."
+  },
+  {
+    "start": 1171.58,
+    "end": 1177.2,
+    "text": "So you'll be like, okay, we remember DPP 14, just now I talked about the value."
+  },
+  {
+    "start": 1177.2,
+    "end": 1178.98,
+    "text": "Just now I talked to you."
+  },
+  {
+    "start": 1178.98,
+    "end": 1184.67,
+    "text": "Just now I talked to you, the last row will tell you if zero is possible, if one"
+  },
+  {
+    "start": 1184.67,
+    "end": 1191.5,
+    "text": "is possible, if two is possible, if three is possible, if four is possible, if five is possible,"
+  },
+  {
+    "start": 1191.5,
+    "end": 1194.42,
+    "text": "if six is possible, if seven is possible."
+  },
+  {
+    "start": 1194.42,
+    "end": 1201.25,
+    "text": "So can I say, can I say, I know one thing 12 is possible,  because I will take all the elements."
+  },
+  {
+    "start": 1201.25,
+    "end": 1207.09,
+    "text": "So if I call the tabulation method for this, which is size three and 12, if I call"
+  },
+  {
+    "start": 1207.09,
+    "end": 1213.28,
+    "text": "the tabulation for DPP 14, the DPP 14's last row, yes, the DPP 14's last row, will tell"
+  },
+  {
+    "start": 1213.28,
+    "end": 1218.62,
+    "text": "me if zero is possible, one is possible till till 12 in that case, it will."
+  },
+  {
+    "start": 1218.62,
+    "end": 1223.18,
+    "text": "So now what I can say is, okay, let's check if zero is possible."
+  },
+  {
+    "start": 1223.18,
+    "end": 1226.24,
+    "text": "And it will tell me, yes, zero is possible."
+  },
+  {
+    "start": 1226.24,
+    "end": 1234.21,
+    "text": "Let's check if one is possible, it will tell me, no,  let's check if two is possible, it will tell me, yes, why?"
+  },
+  {
+    "start": 1234.21,
+    "end": 1241.33,
+    "text": "It was two is possible, three is possible, yes, four is possible, no, five is possible, yes, because"
+  },
+  {
+    "start": 1241.33,
+    "end": 1246.88,
+    "text": "three two, six is possible, no, seven is possible, yes, eight is possible, no,"
+  },
+  {
+    "start": 1246.88,
+    "end": 1255.6,
+    "text": "nine is possible because seven two, and it's possible, yes, because seven three, 11 is possible, I don't"
+  },
+  {
+    "start": 1255.6,
+    "end": 1259.46,
+    "text": "see, I don't see anyway, I can make 11, can I?"
+  },
+  {
+    "start": 1259.46,
+    "end": 1265.75,
+    "text": "7, 3 will be 10, no, I can 12 is possible, so I figured out what values are"
+  },
+  {
+    "start": 1265.75,
+    "end": 1273.38,
+    "text": "possible, and this can easily be done with the help of the last row that has been generated"
+  },
+  {
+    "start": 1273.38,
+    "end": 1280.42,
+    "text": "in this DPP, array, if I call the tabulation method of subset sum, so can I see, can"
+  },
+  {
+    "start": 1280.42,
+    "end": 1288.64,
+    "text": "I see that zero is possible, four is possible, six is possible, eight is possible, 11 is possible,"
+  },
+  {
+    "start": 1288.64,
+    "end": 1296.86,
+    "text": "so these are the valid S1s, which are possible, these are the partitions that are possible for S1,"
+  },
+  {
+    "start": 1296.86,
+    "end": 1305.08,
+    "text": "so can I find the corresponding S2, just think inside your brain, can I find the corresponding S2,"
+  },
+  {
+    "start": 1305.08,
+    "end": 1311.96,
+    "text": "and that's to that will be S, this will be 12, right, this will be 10, right, this"
+  },
+  {
+    "start": 1311.96,
+    "end": 1317.66,
+    "text": "will be 9, this will be a 5, 7, this will be 5, this will be 3, this"
+  },
+  {
+    "start": 1317.66,
+    "end": 1323.28,
+    "text": "will be 2, this will be 0, so I see, so I see that I got, for every"
+  },
+  {
+    "start": 1323.28,
+    "end": 1325.88,
+    "text": "S1, I got the corresponding S2,"
+  },
+  {
+    "start": 1325.88,
+    "end": 1334.26,
+    "text": "for every S1, I got the corresponding S2, can I say that difference, the absolute difference over here"
+  },
+  {
+    "start": 1334.26,
+    "end": 1340.59,
+    "text": "is 12, absolute difference over here is 8, 6, 2, 2, 6, 8, 12, what do I need,"
+  },
+  {
+    "start": 1340.59,
+    "end": 1348.31,
+    "text": "the minimal, and what's the minimal that I see, it's 2, so that's my answer, using subset sum,"
+  },
+  {
+    "start": 1348.31,
+    "end": 1355.29,
+    "text": "I did it super, dooper easily, I don't, I don't find any problem in this, and this is"
+  },
+  {
+    "start": 1355.29,
+    "end": 1362.68,
+    "text": "definitely going to be my answer, now we can probably write it, as you may have called the"
+  },
+  {
+    "start": 1362.68,
+    "end": 1370.4,
+    "text": "subset sum problem, the DPP has been generated, so it's basically, you call the DPP for N, and"
+  },
+  {
+    "start": 1370.4,
+    "end": 1378.53,
+    "text": "summation plus 1, and you can say this is the total summation, because that's the maximum value you"
+  },
+  {
+    "start": 1378.53,
+    "end": 1385.84,
+    "text": "can, call the subset sum code, okay, I'll show you in the code, call the subset sum code,"
+  },
+  {
+    "start": 1385.84,
+    "end": 1391.84,
+    "text": "so the DPP of the last row will be right there, so now you can say that I"
+  },
+  {
+    "start": 1391.84,
+    "end": 1398.66,
+    "text": "know from 0, till the total sum it is possible, and assume you can keep the mini as"
+  },
+  {
+    "start": 1398.66,
+    "end": 1404.33,
+    "text": "1, can I see, can I see, if DPP of the last row, and this target I is"
+  },
+  {
+    "start": 1404.33,
+    "end": 1406.88,
+    "text": "possible, then what will be S1,"
+  },
+  {
+    "start": 1406.88,
+    "end": 1413.26,
+    "text": "I know S1, if I just write it, S1 will be I, S2 will be total sum minus"
+  },
+  {
+    "start": 1413.26,
+    "end": 1422.79,
+    "text": "I, correct, so thereby I can say, because I need the, minival absolute difference, mini comma, absolute of"
+  },
+  {
+    "start": 1422.79,
+    "end": 1430.34,
+    "text": "S2 minus S1, so that's, that's how you can easily write this, so if you try to write"
+  },
+  {
+    "start": 1430.34,
+    "end": 1437.44,
+    "text": "this in terms of formula, it's going to be total sum minus 2 into y, so you can"
+  },
+  {
+    "start": 1437.44,
+    "end": 1445.8,
+    "text": "also write that, but yeah, in this way, if it is possible, if this summation is possible, you"
+  },
+  {
+    "start": 1445.8,
+    "end": 1453.89,
+    "text": "directly check on the last row, you take S1, you take S2, and you get the minimal possible"
+  },
+  {
+    "start": 1453.89,
+    "end": 1461.98,
+    "text": "value, now can we optimize this, yes, if you carefully observe, 0, 12, 12, 12, 12, 12, 12,"
+  },
+  {
+    "start": 1461.98,
+    "end": 1468.9,
+    "text": "10, 10, 2, 3, 9, 9, 3, 5, 7, 5, 7, so basically what happens is, the subsets,"
+  },
+  {
+    "start": 1468.9,
+    "end": 1475.64,
+    "text": "so you had 3 to 7, right, so first time it might have taken 3 in the subset"
+  },
+  {
+    "start": 1475.64,
+    "end": 1483.19,
+    "text": "in the partition 1, in the next time the partition 1 might have 2, the next time the"
+  },
+  {
+    "start": 1483.19,
+    "end": 1488.88,
+    "text": "partition 1 might have 7, going across, there will be a moment,"
+  },
+  {
+    "start": 1488.88,
+    "end": 1494.79,
+    "text": "there will be a moment, the partition 2 will be having 3, partition 2 will be having 2,"
+  },
+  {
+    "start": 1494.79,
+    "end": 1500.7,
+    "text": "the partition 3 will be having 7, they get can also have single elements, so do we need"
+  },
+  {
+    "start": 1500.7,
+    "end": 1507.43,
+    "text": "to check, because we're just checking for absolute difference, so thereby I can say, if I check for"
+  },
+  {
+    "start": 1507.43,
+    "end": 1512.53,
+    "text": "half of the sum, if I check for the half of the sum, then also we should be"
+  },
+  {
+    "start": 1512.53,
+    "end": 1519.12,
+    "text": "good enough, because I know, whatever partition 1 looks like, if I make the partition 2 look like"
+  },
+  {
+    "start": 1519.12,
+    "end": 1524.96,
+    "text": "the same, the answer is not going to vary so much, if you carefully observe, we took a"
+  },
+  {
+    "start": 1524.96,
+    "end": 1531.35,
+    "text": "summation 0, and going across we set the partition 2, have summation 0, we took a summation 2,"
+  },
+  {
+    "start": 1531.35,
+    "end": 1537.6,
+    "text": "going across we set the partition 2, 2, have a summation 2, so it doesn't really make sense,"
+  },
+  {
+    "start": 1537.6,
+    "end": 1543.58,
+    "text": "that's why if you still do till the half, you get your possible answer, so that's how we"
+  },
+  {
+    "start": 1543.58,
+    "end": 1549.7,
+    "text": "can easily solve this problem, that's how you should do the code so that it gets much more"
+  },
+  {
+    "start": 1549.7,
+    "end": 1555.34,
+    "text": "clear to you, so by the way, this was the lecture 14 subsets are equal to, and this"
+  },
+  {
+    "start": 1555.34,
+    "end": 1561.25,
+    "text": "was the entire code, so what we will do is let's check out what's given, array and end,"
+  },
+  {
+    "start": 1561.25,
+    "end": 1566.82,
+    "text": "so at first let's keep a total sum, let's just keep a total sum as 0, and probably"
+  },
+  {
+    "start": 1566.82,
+    "end": 1569.88,
+    "text": "we can just sum it up by going till 0 till n,"
+  },
+  {
+    "start": 1569.88,
+    "end": 1575.31,
+    "text": "which is i plus plus, and I can say total sum is equal to array of i, that's"
+  },
+  {
+    "start": 1575.31,
+    "end": 1581.82,
+    "text": "something which we will do right, right after this, what we will do is, is it's called this"
+  },
+  {
+    "start": 1581.82,
+    "end": 1588.75,
+    "text": "guy, nothing, it's just called this, this copy paste, because this is the subset sum, and this is"
+  },
+  {
+    "start": 1588.75,
+    "end": 1594.11,
+    "text": "the n into k plus 1 vector, so instead of k, you know, k will be the target"
+  },
+  {
+    "start": 1594.11,
+    "end": 1601.47,
+    "text": "over here is initially total sum, because that's the maximum that's possible, and there was the hk that"
+  },
+  {
+    "start": 1601.47,
+    "end": 1607.33,
+    "text": "was missing over here, the array of 0 has to be less than equal to the target that"
+  },
+  {
+    "start": 1607.33,
+    "end": 1614.05,
+    "text": "you're looking for, otherwise it will overflow, so just make sure you do this, the array of 0,"
+  },
+  {
+    "start": 1614.05,
+    "end": 1619.98,
+    "text": "so I can say the entire vector is generated, and over here, can I see the array of,"
+  },
+  {
+    "start": 1619.98,
+    "end": 1624.98,
+    "text": "or at the, in the tp of n minus 1, and the entire column from 0 to the"
+  },
+  {
+    "start": 1624.98,
+    "end": 1630.84,
+    "text": "total sum will tell you, then so, I can, so I know, I need the minimal, so minimal"
+  },
+  {
+    "start": 1630.84,
+    "end": 1635.92,
+    "text": "can be 1 and i, and I know I can start the target, like I can start the"
+  },
+  {
+    "start": 1635.92,
+    "end": 1641.21,
+    "text": "s1 rather from 0, and the s1 can go on till total sum by 2, you know, that"
+  },
+  {
+    "start": 1641.21,
+    "end": 1646.71,
+    "text": "we have already proved that, and s1 plus plus, so can I see this, if if dp of"
+  },
+  {
+    "start": 1646.71,
+    "end": 1652.64,
+    "text": "the last row, in the last row, if s1 is true, then only it's possible, then only it"
+  },
+  {
+    "start": 1652.64,
+    "end": 1653.88,
+    "text": "will be possible,"
+  },
+  {
+    "start": 1653.88,
+    "end": 1659.24,
+    "text": "and if it is possible, can I say mini will be min of mini comma, total sum minus"
+  },
+  {
+    "start": 1659.24,
+    "end": 1664.66,
+    "text": "s1 is what your s2 will be minus of s1, and an absolute of the entire stuff, yes,"
+  },
+  {
+    "start": 1664.66,
+    "end": 1669.75,
+    "text": "an absolute of the entire stuff, and at the end of the day, can I say I will"
+  },
+  {
+    "start": 1669.75,
+    "end": 1675.57,
+    "text": "return the mini, so if I just write this, let's run this off, let's say if it's running"
+  },
+  {
+    "start": 1675.57,
+    "end": 1681.86,
+    "text": "fine, it does run, so let's quickly sum it this off, so you see, it's running absolutely fine,"
+  },
+  {
+    "start": 1681.86,
+    "end": 1688.02,
+    "text": "did we do anything extra, just these couple of lines, and just a total summation that I did,"
+  },
+  {
+    "start": 1688.02,
+    "end": 1694.58,
+    "text": "apart from that, the entire concept of subsetsum was used, so if you remember in subsetsum, we did"
+  },
+  {
+    "start": 1694.58,
+    "end": 1700.67,
+    "text": "a space optimization, so you can do a space optimization over here as well, so what I'll do"
+  },
+  {
+    "start": 1700.67,
+    "end": 1707.37,
+    "text": "is I'll just copy paste the pre the space optimization code, this is the space optimization code, so"
+  },
+  {
+    "start": 1707.37,
+    "end": 1714.2,
+    "text": "let's quickly take this off and copy paste, copy paste the space optimization code, so instead of dpfn"
+  },
+  {
+    "start": 1714.2,
+    "end": 1720.69,
+    "text": "minus 1, this will be pre guess, because in space optimization, this is what we usually do, let's"
+  },
+  {
+    "start": 1720.69,
+    "end": 1727.32,
+    "text": "quickly now run this off, you know also write with the space optimization that's your choice, so we"
+  },
+  {
+    "start": 1727.32,
+    "end": 1731.88,
+    "text": "do the space optimization, it will take a bit less space complexity,"
+  },
+  {
+    "start": 1731.88,
+    "end": 1736.73,
+    "text": "but the time complexity still will be equivalent to n into target plus total sum by 2 plus"
+  },
+  {
+    "start": 1736.73,
+    "end": 1740.88,
+    "text": "a big off n linear loop, so a couple of linear loops and the total sum n into"
+  },
+  {
+    "start": 1740.88,
+    "end": 1745.84,
+    "text": "k, and the time space complexity will be a couple of these guys, that's a single linear loop"
+  },
+  {
+    "start": 1745.84,
+    "end": 1750.26,
+    "text": "that you are single linear array that you are using, so guys, I hope I was able to"
+  },
+  {
+    "start": 1750.26,
+    "end": 1755.06,
+    "text": "make this stuff problem easy, and just in case I was able to make it, please, please like"
+  },
+  {
+    "start": 1755.06,
+    "end": 1757.65,
+    "text": "this video because I'm recording this set 5 a.m."
+  },
+  {
+    "start": 1757.65,
+    "end": 1762.18,
+    "text": "in the morning, and yeah, I'll be editing it for the next one hour, as video will go"
+  },
+  {
+    "start": 1762.18,
+    "end": 1767.14,
+    "text": "tomorrow morning, so I just make sure you like this video, and if you're new to the channel,"
+  },
+  {
+    "start": 1767.14,
+    "end": 1773.5,
+    "text": "please do consider subscribing, and in the comment section, please, to write understood if you have understood because"
+  },
+  {
+    "start": 1773.5,
+    "end": 1778.46,
+    "text": "that does motivate me a lot, and with this, I'll be wrapping up this video, let's be running"
+  },
+  {
+    "start": 1778.46,
+    "end": 1780.88,
+    "text": "the next set, until then, bye bye, take care."
+  }
+]

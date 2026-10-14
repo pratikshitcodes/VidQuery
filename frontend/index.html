@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Striver DP Reviser — Find the 90 seconds you need</title>
+  
+  <!-- Fonts: Instrument Serif, Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Marked.js for Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <style>
+    :root {
+      --bg: #FAF8F4;
+      --card: #FFFFFF;
+      --border: #E7E2D9;
+      --ink: #1B1B1F;
+      --muted: #6B6860;
+      --accent: #E8590C;
+      --accent-hover: #D04F0A;
+      --success: #2F7D4F;
+      --font-serif: "Instrument Serif", Georgia, serif;
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-serif-title {
+      font-family: var(--font-serif);
+      font-weight: 400;
+    }
+
+    .font-mono-code {
+      font-family: var(--font-mono);
+    }
+
+    /* Solid Card Styling - Flat, No Gradients */
+    .ink-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+
+    /* Search input focus */
+    .search-container {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: border-color 0.15s ease;
+    }
+    .search-container:focus-within {
+      border-color: var(--accent);
+    }
+
+    /* Timeline row styling */
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 95px 1fr;
+      gap: 16px;
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+      cursor: pointer;
+    }
+    .timeline-row:hover {
+      background: #FFFFFF;
+      border-color: var(--border);
+    }
+    .timeline-row.active {
+      background: #FFFFFF;
+      border-color: var(--accent);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: #D5CFBF; border-radius: 3px; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Minimal Nav -->
+  <nav class="border-b border-[#E7E2D9] bg-[#FAF8F4]/90 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      
+      <!-- Wordmark Logo in Serif with Orange Play Mark -->
+      <a href="/" class="flex items-center gap-2 text-[var(--ink)] hover:opacity-90 transition">
+        <span class="text-[var(--accent)] font-bold text-sm">▸</span>
+        <span class="font-serif-title text-2xl tracking-normal">Striver DP Reviser</span>
+      </a>
+
+      <!-- Status indicator -->
+      <div class="flex items-center gap-4 text-xs font-mono-code">
+        <span id="healthBadge" class="inline-flex items-center gap-1.5 text-[var(--muted)]">
+          <span class="w-2 h-2 rounded-full bg-[var(--success)]"></span>
+          <span>31 lectures ready</span>
+        </span>
+        <a href="/docs" target="_blank" class="text-[var(--muted)] hover:text-[var(--ink)] underline transition">
+          API docs
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="max-w-3xl mx-auto px-4 pt-12 pb-6 text-center">
+    
+    <!-- Plain Small Badge Text -->
+    <div class="text-xs font-mono-code text-[var(--muted)] uppercase tracking-wider mb-3">
+      Searches all 31 of Striver’s DP lectures
+    </div>
+
+    <!-- Editorial Headline Option #3 -->
+    <h1 class="font-serif-title text-4xl sm:text-5xl md:text-6xl text-[var(--ink)] leading-[1.08] mb-3">
+      Don’t rewatch the whole lecture. <br>
+      <em class="italic text-[var(--accent)]">Find the 90 seconds you need.</em>
+    </h1>
+
+    <!-- Subtext -->
+    <p class="text-sm sm:text-base text-[var(--muted)] max-w-xl mx-auto leading-relaxed mb-8">
+      Ask about any problem or idea from the 31 lectures, like why backward thinking works in Burst Balloons. You get a short answer and the video clips where Striver covers it.
+    </p>
+
+    <!-- Search Bar with Inline Gray SVG Magnifier & Solid Orange Ask Button -->
+    <div class="max-w-2xl mx-auto">
+      <form id="searchForm" class="search-container p-1.5 flex items-center gap-2">
+        <div class="pl-2.5 text-[var(--muted)]">
+          <svg class="w-4 h-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 19l-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"></path>
+          </svg>
+        </div>
+        <input 
+          type="text" 
+          id="queryInput" 
+          placeholder="e.g. why do we use INT_MAX in Min Coins?"
+          class="flex-1 bg-transparent border-none outline-none text-sm text-[var(--ink)] placeholder-[var(--muted)] px-2 py-2"
+          required
+        />
+        <button 
+          type="submit" 
+          id="submitBtn"
+          class="bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white font-medium text-xs sm:text-sm px-5 py-2 rounded-lg transition shrink-0 disabled:opacity-50"
+        >
+          <span id="btnLabel">Ask</span>
+          <span id="spinner" class="hidden">...</span>
+        </button>
+      </form>
+
+      <!-- Chips: Square-ish corners (rounded-md), 1px border, no tinted fill -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mt-4 text-xs">
+        <span class="text-[var(--muted)]">Try:</span>
+        <button class="sample-chip px-2.5 py-1 rounded-md bg-white border border-[#E7E2D9] text-[var(--ink)] hover:border-[var(--ink)] transition" data-q="Why is 1e9 returned instead of INT_MAX in Minimum Coins?">
+          Min Coins (1e9 vs INT_MAX)
+        </button>
+        <button class="sample-chip px-2.5 py-1 rounded-md bg-white border border-[#E7E2D9] text-[var(--ink)] hover:border-[var(--ink)] transition" data-q="How is House Robber II decomposed into two subproblems?">
+          House Robber II circular split
+        </button>
+        <button class="sample-chip px-2.5 py-1 rounded-md bg-white border border-[#E7E2D9] text-[var(--ink)] hover:border-[var(--ink)] transition" data-q="How does the Frog Jump recurrence generalize for up to k stairs?">
+          Frog Jump k stairs
+        </button>
+        <button class="sample-chip px-2.5 py-1 rounded-md bg-white border border-[#E7E2D9] text-[var(--ink)] hover:border-[var(--ink)] transition" data-q="How does the author reduce LPS to LCS?">
+          LPS reduction to LCS
+        </button>
+      </div>
+
+      <!-- Single Quiet Line Under the Search Bar -->
+      <div class="font-mono-code text-xs text-[var(--muted)] mt-5 pt-3 border-t border-[#E7E2D9]">
+        31 lectures · 1,098 indexed chunks · 95.7% benchmark accuracy · every answer cites a timestamp
+      </div>
+    </div>
+
+  </header>
+
+  <!-- Main Workspace (Side-by-Side: Explanation + Sticky Video Player) -->
+  <main class="max-w-6xl mx-auto px-4 py-6 flex-1 w-full">
+    
+    <!-- Outer Card: Pure White with 1px border #E7E2D9 -->
+    <div class="ink-card rounded-xl">
+      
+      <!-- Top Chrome Bar -->
+      <div class="bg-[#FAF8F4] px-4 py-2.5 border-b border-[#E7E2D9] flex items-center justify-between rounded-t-xl text-xs font-mono-code">
+        <div class="flex items-center gap-2">
+          <span class="text-[var(--accent)] font-bold text-xs">▸</span>
+          <span id="activeTopicBadge" class="text-[var(--ink)] font-semibold truncate max-w-md">
+            DP 20: Minimum Coins (Coin Change)
+          </span>
+        </div>
+        <div id="latencyPill" class="text-[var(--muted)]">
+          ⚡ 2,887 ms (Search: 782ms · Rerank: 465ms · LLM: 1.6s)
+        </div>
+      </div>
+
+      <!-- Workspace Grid: Left (Answer & Timeline) + Right (Sticky Video Player) -->
+      <div class="p-6 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left Column: Synthesized Answer & Chunks (7 Cols) -->
+        <div class="lg:col-span-7 flex flex-col space-y-6">
+          
+          <!-- Answer Box -->
+          <div class="bg-[#FAF8F4] border border-[#E7E2D9] rounded-lg p-5">
+            <div class="flex items-center justify-between mb-3 border-b border-[#E7E2D9] pb-2 text-xs font-mono-code text-[var(--muted)]">
+              <span>SYNTHESIZED ANSWER</span>
+              <button id="copyBtn" onclick="copyAnswer()" class="text-[var(--muted)] hover:text-[var(--ink)] bg-white px-2 py-0.5 rounded border border-[#E7E2D9] transition">
+                Copy
+              </button>
+            </div>
+            
+            <!-- Live Pre-populated Example Answer as Immediate Proof -->
+            <div id="answerContent" class="text-sm text-[var(--ink)] leading-relaxed space-y-2">
+              <p><b>INT_MAX</b> is the maximum representable integer in C++. In the Minimum Coins recurrence, when a subproblem is impossible and returns <code>INT_MAX</code>, adding <code>1</code> for the current coin (i.e. <code>1 + f(ind, T - coins[ind])</code>) causes an <b>integer overflow</b>, wrapping to a negative value.</p>
+              <p>To avoid this, Striver returns <code>1e9</code> (one billion) as a safe infinity sentinel. It is larger than any possible path sum, yet adding <code>1</code> to it never overflows standard 32-bit integers.</p>
+              <p class="text-xs font-mono-code text-[var(--muted)] pt-1">
+                Supporting timestamps: <b>[16:09 - 17:06]</b> (overflow explanation) and <b>[17:06 - 17:51]</b> (1e9 safe constant).
+              </p>
+            </div>
+          </div>
+
+          <!-- Transcript Speech Timeline -->
+          <div>
+            <div class="flex items-center justify-between mb-2 text-xs font-mono-code text-[var(--muted)] uppercase tracking-wider">
+              <span>EXCERPTS (<span id="sourceCount">2</span>)</span>
+              <span>Click to seek video</span>
+            </div>
+
+            <!-- List of Verbatim Excerpts -->
+            <div id="transcriptList" class="border border-[#E7E2D9] rounded-lg bg-[#FAF8F4]/50 divide-y divide-[#E7E2D9]">
+              
+              <!-- Pre-populated Example Row 1 -->
+              <div class="timeline-row active" onclick="playVideoClip('myPeWb3Y68A', 969, 'DP 20: Minimum Coins (Coin Change)', this)">
+                <div class="font-mono-code text-xs">
+                  <span class="inline-block px-2 py-0.5 bg-white border border-[#E7E2D9] rounded text-[var(--accent)] font-bold">
+                    16:09
+                  </span>
+                  <div class="text-[10px] text-[var(--muted)] mt-1">#1 · 0.94</div>
+                </div>
+                <div class="text-xs text-[var(--ink)] leading-relaxed">
+                  <div class="font-semibold text-xs mb-0.5">DP 20: Minimum Coins</div>
+                  <div class="text-[var(--muted)]">"You're adding one plus one plus if any of the function gives INT_MAX it'll be INT_MAX + 1 which will overflow... so you return something as 1e9 to prevent overflow."</div>
+                </div>
+              </div>
+
+              <!-- Pre-populated Example Row 2 -->
+              <div class="timeline-row" onclick="playVideoClip('myPeWb3Y68A', 1015, 'DP 20: Minimum Coins (Coin Change)', this)">
+                <div class="font-mono-code text-xs">
+                  <span class="inline-block px-2 py-0.5 bg-white border border-[#E7E2D9] rounded text-[var(--accent)] font-bold">
+                    17:06
+                  </span>
+                  <div class="text-[10px] text-[var(--muted)] mt-1">#2 · 0.89</div>
+                </div>
+                <div class="text-xs text-[var(--ink)] leading-relaxed">
+                  <div class="font-semibold text-xs mb-0.5">DP 20: Minimum Coins</div>
+                  <div class="text-[var(--muted)]">"...if the answer goes beyond we return 1e9 otherwise INT_MAX + 1 + 1 would overflow."</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Sticky YouTube Video Player (5 Cols) -->
+        <div class="lg:col-span-5 lg:sticky lg:top-20 z-20">
+          <div class="ink-card rounded-lg p-3.5 shadow-sm flex flex-col space-y-3">
+            
+            <div class="flex items-center justify-between text-xs font-mono-code">
+              <span class="font-semibold text-[var(--ink)]">VIDEO PLAYER</span>
+              <span id="playerTimestamp" class="text-[var(--accent)] bg-[#FAF8F4] px-2 py-0.5 rounded border border-[#E7E2D9] font-bold">
+                16:09
+              </span>
+            </div>
+
+            <!-- YouTube Video Direct Embed -->
+            <div class="relative w-full aspect-video rounded-md overflow-hidden bg-black border border-[#E7E2D9]">
+              <iframe 
+                id="videoIframe" 
+                class="w-full h-full" 
+                src="https://www.youtube.com/embed/myPeWb3Y68A?start=969&autoplay=0" 
+                title="YouTube Video Player"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+              </iframe>
+            </div>
+
+            <!-- Meta & Direct Link -->
+            <div class="pt-1 flex items-center justify-between text-xs">
+              <div class="truncate mr-2 font-medium text-[var(--ink)]" id="playerTitle">
+                DP 20: Minimum Coins
+              </div>
+              <a id="externalLink" href="https://www.youtube.com/watch?v=myPeWb3Y68A&t=969s" target="_blank" class="text-[var(--accent)] hover:underline shrink-0 font-medium">
+                YouTube ↗
+              </a>
+            </div>
+
+            <!-- Discrete Note -->
+            <div class="border-t border-[#E7E2D9] pt-2 text-[11px] text-[var(--muted)] font-mono-code">
+              Clicking any timestamp jumps playback to that exact second.
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Minimal Footer -->
+  <footer class="border-t border-[#E7E2D9] py-8 mt-12 text-center text-xs font-mono-code text-[var(--muted)]">
+    <div class="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+      <div>
+        FastAPI · Qdrant Cloud · Cross-Encoder · Groq LLM
+      </div>
+      <div>
+        <a href="https://takeuforward.org/dynamic-programming/striver-dp-series-dynamic-programming-problems/" target="_blank" class="text-[var(--ink)] hover:underline">
+          Striver DP Series ↗
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let currentVideoId = "myPeWb3Y68A";
+    let currentStartSeconds = 969;
+
+    function playVideoClip(videoId, startSeconds, title, itemEl) {
+      currentVideoId = videoId;
+      currentStartSeconds = startSeconds;
+      
+      document.getElementById('playerTitle').innerText = title || videoId;
+      const mins = Math.floor(startSeconds / 60).toString().padStart(2, '0');
+      const secs = Math.floor(startSeconds % 60).toString().padStart(2, '0');
+      document.getElementById('playerTimestamp').innerText = `${mins}:${secs}`;
+      document.getElementById('externalLink').href = `https://www.youtube.com/watch?v=${videoId}&t=${startSeconds}s`;
+
+      // Highlight active row
+      document.querySelectorAll('.timeline-row').forEach(r => r.classList.remove('active'));
+      if (itemEl) itemEl.classList.add('active');
+
+      // Update iframe source
+      const iframe = document.getElementById('videoIframe');
+      if (iframe) {
+        iframe.src = `https://www.youtube.com/embed/${videoId}?start=${startSeconds}&autoplay=1`;
+      }
+    }
+
+    // Health check on load
+    async function checkHealth() {
+      try {
+        const res = await fetch('/health');
+        const data = await res.json();
+        if (data.status === 'healthy') {
+          document.getElementById('healthBadge').innerHTML = `
+            <span class="w-2 h-2 rounded-full bg-[var(--success)]"></span>
+            <span>31 lectures ready</span>
+          `;
+        }
+      } catch (e) {}
+    }
+    checkHealth();
+
+    // Sample chip buttons
+    document.querySelectorAll('.sample-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const q = btn.getAttribute('data-q');
+        document.getElementById('queryInput').value = q;
+        submitQuery(q);
+      });
+    });
+
+    // Form submit
+    document.getElementById('searchForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const q = document.getElementById('queryInput').value.trim();
+      if (q) submitQuery(q);
+    });
+
+    async function submitQuery(query) {
+      const submitBtn = document.getElementById('submitBtn');
+      const btnLabel = document.getElementById('btnLabel');
+      const spinner = document.getElementById('spinner');
+      submitBtn.disabled = true;
+      btnLabel.classList.add('hidden');
+      spinner.classList.remove('hidden');
+
+      try {
+        const res = await fetch('/api/v1/query', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: query, top_k: 5 })
+        });
+
+        if (!res.ok) throw new Error(`Server returned ${res.status}`);
+        const data = await res.json();
+
+        // Update Latency Pill
+        const total = Math.round(data.latency.total_ms);
+        const qd = Math.round(data.latency.qdrant_ms);
+        const rr = Math.round(data.latency.rerank_ms);
+        const llm = Math.round(data.latency.llm_ms);
+        document.getElementById('latencyPill').innerText = `⚡ ${total}ms (Search: ${qd}ms · Rerank: ${rr}ms · LLM: ${llm}ms)`;
+
+        // Update Answer
+        document.getElementById('answerContent').innerHTML = marked.parse(data.answer);
+
+        // Update Transcripts Timeline
+        document.getElementById('sourceCount').innerText = data.sources.length;
+        const list = document.getElementById('transcriptList');
+        list.innerHTML = '';
+
+        data.sources.forEach((src, idx) => {
+          const row = document.createElement('div');
+          row.className = `timeline-row ${idx === 0 ? 'active' : ''}`;
+          row.innerHTML = `
+            <div class="font-mono-code text-xs">
+              <span class="inline-block px-2 py-0.5 bg-white border border-[#E7E2D9] rounded text-[var(--accent)] font-bold">
+                ${src.start_formatted}
+              </span>
+              <div class="text-[10px] text-[var(--muted)] mt-1">#${src.rank} · ${(src.rerank_score).toFixed(2)}</div>
+            </div>
+            <div class="text-xs text-[var(--ink)] leading-relaxed">
+              <div class="font-semibold text-xs mb-0.5">${src.lecture_title}</div>
+              <div class="text-[var(--muted)]">${src.text}</div>
+            </div>
+          `;
+          row.addEventListener('click', () => {
+            playVideoClip(src.video_id, src.start_seconds, src.lecture_title, row);
+          });
+          list.appendChild(row);
+        });
+
+        // Auto-play top source video
+        if (data.sources.length > 0) {
+          const top = data.sources[0];
+          document.getElementById('activeTopicBadge').innerText = top.lecture_title;
+          playVideoClip(top.video_id, top.start_seconds, top.lecture_title, list.children[0]);
+        }
+
+      } catch (err) {
+        alert("Query error: " + err.message);
+      } finally {
+        submitBtn.disabled = false;
+        btnLabel.classList.remove('hidden');
+        spinner.classList.add('hidden');
+      }
+    }
+
+    function copyAnswer() {
+      const text = document.getElementById('answerContent').innerText;
+      navigator.clipboard.writeText(text);
+      const btn = document.getElementById('copyBtn');
+      btn.innerText = "Copied";
+      setTimeout(() => { btn.innerText = "Copy"; }, 2000);
+    }
+  </script>
+</body>
+</html>
