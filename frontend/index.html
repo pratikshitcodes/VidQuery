@@ -337,6 +337,68 @@
     </div>
   </footer>
 
+  <!-- Add Video Modal -->
+  <div id="addVideoModal" onclick="if(event.target===this)closeModal()" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white border border-[#E7E2D9] rounded-xl max-w-lg w-full p-6 shadow-xl relative animate-in fade-in duration-150" onclick="event.stopPropagation()">
+      
+      <div class="flex items-center justify-between pb-3 border-b border-[#E7E2D9] mb-4">
+        <div class="flex items-center gap-2">
+          <span class="text-[var(--accent)] font-bold text-sm">▸</span>
+          <h3 class="font-serif-title text-xl text-[var(--ink)]">Add YouTube Lecture</h3>
+        </div>
+        <button id="closeAddModalBtn" onclick="closeModal()" class="text-[var(--muted)] hover:text-[var(--ink)] text-xl leading-none cursor-pointer">&times;</button>
+      </div>
+
+      <p class="text-xs text-[var(--muted)] mb-4 leading-relaxed">
+        Paste any YouTube link. The system transcribes, chunks, and indexes <strong>only this new video</strong> directly into Qdrant Cloud. Existing lectures are untouched.
+      </p>
+
+      <form id="addVideoForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-mono-code text-[var(--muted)] mb-1">YouTube URL or Video ID *</label>
+          <input 
+            type="text" 
+            id="videoUrlInput" 
+            placeholder="https://www.youtube.com/watch?v=... or Video ID" 
+            required 
+            class="w-full px-3 py-2 text-sm border border-[#E7E2D9] rounded-lg bg-[#FAF8F4] text-[var(--ink)] focus:outline-none focus:border-[var(--accent)]"
+          />
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono-code text-[var(--muted)] mb-1">Custom Title (Optional)</label>
+          <input 
+            type="text" 
+            id="videoTitleInput" 
+            placeholder="e.g. DP 32: Distinct Subsequences (leave empty to auto-fetch)" 
+            class="w-full px-3 py-2 text-sm border border-[#E7E2D9] rounded-lg bg-[#FAF8F4] text-[var(--ink)] focus:outline-none focus:border-[var(--accent)]"
+          />
+        </div>
+
+        <div id="addVideoStatus" class="text-xs font-mono-code hidden p-3 rounded-lg"></div>
+
+        <div class="flex items-center justify-end gap-2 pt-2">
+          <button 
+            type="button" 
+            id="cancelAddBtn" 
+            onclick="closeModal()"
+            class="px-4 py-2 text-xs font-mono-code text-[var(--muted)] hover:text-[var(--ink)] border border-[#E7E2D9] rounded-lg bg-white transition hover:bg-neutral-50 cursor-pointer"
+          >
+            Cancel
+          </button>
+          <button 
+            type="submit" 
+            id="submitAddBtn" 
+            class="px-5 py-2 text-xs font-mono-code bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white rounded-lg transition disabled:opacity-50 font-medium cursor-pointer"
+          >
+            <span id="addBtnLabel">Index Video</span>
+            <span id="addSpinner" class="hidden">Indexing...</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <script>
     let currentVideoId = "myPeWb3Y68A";
     let currentStartSeconds = 969;
@@ -491,69 +553,6 @@
     }
     loadLectures();
 
-  <!-- Add Video Modal (Placed before script so DOM is ready immediately) -->
-  <div id="addVideoModal" onclick="if(event.target===this)closeModal()" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white border border-[#E7E2D9] rounded-xl max-w-lg w-full p-6 shadow-xl relative animate-in fade-in duration-150" onclick="event.stopPropagation()">
-      
-      <div class="flex items-center justify-between pb-3 border-b border-[#E7E2D9] mb-4">
-        <div class="flex items-center gap-2">
-          <span class="text-[var(--accent)] font-bold text-sm">▸</span>
-          <h3 class="font-serif-title text-xl text-[var(--ink)]">Add YouTube Lecture</h3>
-        </div>
-        <button id="closeAddModalBtn" onclick="closeModal()" class="text-[var(--muted)] hover:text-[var(--ink)] text-xl leading-none cursor-pointer">&times;</button>
-      </div>
-
-      <p class="text-xs text-[var(--muted)] mb-4 leading-relaxed">
-        Paste any YouTube link. The system transcribes, chunks, and indexes <strong>only this new video</strong> directly into Qdrant Cloud. Existing lectures are untouched.
-      </p>
-
-      <form id="addVideoForm" class="space-y-4">
-        <div>
-          <label class="block text-xs font-mono-code text-[var(--muted)] mb-1">YouTube URL or Video ID *</label>
-          <input 
-            type="text" 
-            id="videoUrlInput" 
-            placeholder="https://www.youtube.com/watch?v=... or Video ID" 
-            required 
-            class="w-full px-3 py-2 text-sm border border-[#E7E2D9] rounded-lg bg-[#FAF8F4] text-[var(--ink)] focus:outline-none focus:border-[var(--accent)]"
-          />
-        </div>
-
-        <div>
-          <label class="block text-xs font-mono-code text-[var(--muted)] mb-1">Custom Title (Optional)</label>
-          <input 
-            type="text" 
-            id="videoTitleInput" 
-            placeholder="e.g. DP 32: Distinct Subsequences (leave empty to auto-fetch)" 
-            class="w-full px-3 py-2 text-sm border border-[#E7E2D9] rounded-lg bg-[#FAF8F4] text-[var(--ink)] focus:outline-none focus:border-[var(--accent)]"
-          />
-        </div>
-
-        <div id="addVideoStatus" class="text-xs font-mono-code hidden p-3 rounded-lg"></div>
-
-        <div class="flex items-center justify-end gap-2 pt-2">
-          <button 
-            type="button" 
-            id="cancelAddBtn" 
-            onclick="closeModal()"
-            class="px-4 py-2 text-xs font-mono-code text-[var(--muted)] hover:text-[var(--ink)] border border-[#E7E2D9] rounded-lg bg-white transition hover:bg-neutral-50 cursor-pointer"
-          >
-            Cancel
-          </button>
-          <button 
-            type="submit" 
-            id="submitAddBtn" 
-            class="px-5 py-2 text-xs font-mono-code bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white rounded-lg transition disabled:opacity-50 font-medium cursor-pointer"
-          >
-            <span id="addBtnLabel">Index Video</span>
-            <span id="addSpinner" class="hidden">Indexing...</span>
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script>
     // Global Modal Functions
     function openAddModal() {
       const modal = document.getElementById('addVideoModal');
