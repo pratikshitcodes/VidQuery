@@ -140,6 +140,12 @@
 
     <!-- Search Bar with Inline Gray SVG Magnifier & Solid Orange Ask Button -->
     <div class="max-w-2xl mx-auto">
+      <div class="flex items-center justify-between mb-2 px-1 text-xs font-mono-code">
+        <span class="text-[var(--muted)]">Search Scope:</span>
+        <select id="lectureFilterSelect" onchange="onLectureFilterChange()" class="bg-white border border-[#E7E2D9] rounded-md px-2.5 py-1 text-xs text-[var(--ink)] outline-none max-w-xs sm:max-w-md truncate cursor-pointer hover:border-[var(--accent)] transition">
+          <option value="">All Lectures (Search Everything)</option>
+        </select>
+      </div>
       <form id="searchForm" class="search-container p-1.5 flex items-center gap-2">
         <div class="pl-2.5 text-[var(--muted)]">
           <svg class="w-4 h-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
@@ -464,10 +470,13 @@
       spinner.classList.remove('hidden');
 
       try {
+        const payload = { query: query, top_k: 5 };
+        if (selectedVideoFilter) payload.video_id = selectedVideoFilter;
+
         const res = await fetch('/api/v1/query', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ query: query, top_k: 5 })
+          body: JSON.stringify(payload)
         });
 
         if (!res.ok) throw new Error(`Server returned ${res.status}`);
@@ -533,6 +542,20 @@
       setTimeout(() => { btn.innerText = "Copy"; }, 2000);
     }
 
+    // Lecture scope filtering
+    let selectedVideoFilter = "";
+
+    function onLectureFilterChange() {
+      const select = document.getElementById('lectureFilterSelect');
+      selectedVideoFilter = select.value;
+      if (selectedVideoFilter) {
+        const selectedOpt = select.options[select.selectedIndex];
+        const title = selectedOpt.getAttribute('data-title') || selectedOpt.text;
+        playVideoClip(selectedVideoFilter, 0, title);
+        document.getElementById('activeTopicBadge').innerText = title;
+      }
+    }
+
     // Dynamic lectures loading & stats
     async function loadLectures() {
       try {
@@ -548,6 +571,21 @@
           const chunkSpan = document.getElementById('statsChunkCount');
           if (lecSpan) lecSpan.innerText = totalLec;
           if (chunkSpan && totalChunks > 0) chunkSpan.innerText = totalChunks.toLocaleString();
+
+          // Populate Lecture Filter Dropdown
+          const select = document.getElementById('lectureFilterSelect');
+          if (select) {
+            const currentVal = selectedVideoFilter || select.value;
+            select.innerHTML = '<option value="">All Lectures (Search Everything)</option>';
+            data.lectures.forEach(lec => {
+              const opt = document.createElement('option');
+              opt.value = lec.video_id;
+              opt.setAttribute('data-title', lec.lecture_title);
+              opt.textContent = `${lec.lecture_title} (${lec.chunk_count} chunks)`;
+              if (lec.video_id === currentVal) opt.selected = true;
+              select.appendChild(opt);
+            });
+          }
         }
       } catch (e) {}
     }
@@ -607,13 +645,30 @@
           addStatus.className = "text-xs font-mono-code p-3 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 block";
           addStatus.innerText = `✅ ${data.message}`;
 
-          // Reload lectures count
-          if (typeof loadLectures === 'function') await loadLectures();
+          // Immediately switch player to the newly added video!
+          playVideoClip(data.video_id, 0, data.lecture_title);
+          document.getElementById('activeTopicBadge').innerText = data.lecture_title;
+          selectedVideoFilter = data.video_id;
+
+          // Welcome notice in answer box
+          document.getElementById('answerContent').innerHTML = `
+            <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-emerald-900 text-xs font-mono-code mb-2">
+              ✅ <b>${data.lecture_title}</b> is now playing!
+            </div>
+            <p class="text-sm">Video is indexed with ${data.chunk_count} timestamps. Ask any question in the search bar to jump to exact moments in this video.</p>
+          `;
+
+          // Reload lectures list and select this video in dropdown
+          if (typeof loadLectures === 'function') {
+            await loadLectures();
+            const select = document.getElementById('lectureFilterSelect');
+            if (select) select.value = data.video_id;
+          }
 
           setTimeout(() => {
             closeModal();
             addForm.reset();
-          }, 2200);
+          }, 2000);
 
         } catch (err) {
           addStatus.className = "text-xs font-mono-code p-3 rounded-lg bg-rose-50 text-rose-800 border border-rose-200 block";

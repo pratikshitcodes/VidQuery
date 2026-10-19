@@ -4,6 +4,7 @@ from typing import List, Optional
 class QueryRequest(BaseModel):
     query: str = Field(..., description="Technical or conceptual question regarding the DP lectures")
     top_k: Optional[int] = Field(default=5, ge=1, le=10, description="Number of re-ranked context chunks to feed into LLM")
+    video_id: Optional[str] = Field(default=None, description="Optional video_id to filter search to a single lecture")
 
 class SourceChunk(BaseModel):
     rank: int

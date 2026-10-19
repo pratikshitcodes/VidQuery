@@ -49,7 +49,8 @@ class RAGService:
         # Step 1: Qdrant dense retrieval
         candidates, qdrant_ms = vector_store_service.search_candidates(
             query=query,
-            limit=settings.DENSE_SEARCH_LIMIT
+            limit=settings.DENSE_SEARCH_LIMIT,
+            video_id=request.video_id
         )
 
         # Step 2: Cross-Encoder re-ranking

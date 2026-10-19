@@ -1,5 +1,5 @@
 import time
-from typing import List, Tuple, Any
+from typing import List, Tuple, Any, Optional
 from qdrant_client import QdrantClient
 from backend.app.config import settings
 
@@ -34,9 +34,10 @@ class VectorStoreService:
         except Exception:
             return False
 
-    def search_candidates(self, query: str, limit: int = 15) -> Tuple[List[Any], float]:
+    def search_candidates(self, query: str, limit: int = 15, video_id: Optional[str] = None) -> Tuple[List[Any], float]:
         """
         Embeds the query using FastEmbed and searches Qdrant for top candidate chunks.
+        Optionally filters candidates to a specific video_id.
         Returns candidates and latency in milliseconds.
         """
         if self.client is None or self.embedding_model is None:
@@ -45,10 +46,16 @@ class VectorStoreService:
         t0 = time.perf_counter()
         query_vector = list(self.embedding_model.embed([query]))[0].tolist()
         
+        query_filter = None
+        if video_id:
+            from qdrant_client.models import Filter, FieldCondition, MatchValue
+            query_filter = Filter(must=[FieldCondition(key="video_id", match=MatchValue(value=video_id))])
+
         results = self.client.query_points(
             collection_name=settings.COLLECTION_NAME,
             limit=limit,
             query=query_vector,
+            query_filter=query_filter,
             with_payload=True
         )
         qdrant_ms = (time.perf_counter() - t0) * 1000.0
