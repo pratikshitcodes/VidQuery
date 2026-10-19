@@ -102,12 +102,15 @@
         <span class="font-serif-title text-2xl tracking-normal">Striver DP Reviser</span>
       </a>
 
-      <!-- Status indicator -->
-      <div class="flex items-center gap-4 text-xs font-mono-code">
+      <!-- Status indicator & Add Video Button -->
+      <div class="flex items-center gap-3 text-xs font-mono-code">
         <span id="healthBadge" class="inline-flex items-center gap-1.5 text-[var(--muted)]">
           <span class="w-2 h-2 rounded-full bg-[var(--success)]"></span>
-          <span>31 lectures ready</span>
+          <span id="lectureCountNav">31 lectures ready</span>
         </span>
+        <button id="openAddModalBtn" class="inline-flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E7E2D9] rounded-md hover:border-[var(--accent)] hover:text-[var(--accent)] transition font-mono-code text-xs text-[var(--ink)] shadow-2xs">
+          <span class="font-bold text-[var(--accent)]">+</span> Add Video
+        </button>
         <a href="/docs" target="_blank" class="text-[var(--muted)] hover:text-[var(--ink)] underline transition">
           API docs
         </a>
@@ -178,8 +181,8 @@
       </div>
 
       <!-- Single Quiet Line Under the Search Bar -->
-      <div class="font-mono-code text-xs text-[var(--muted)] mt-5 pt-3 border-t border-[#E7E2D9]">
-        31 lectures · 1,098 indexed chunks · 95.7% benchmark accuracy · every answer cites a timestamp
+      <div id="statsRow" class="font-mono-code text-xs text-[var(--muted)] mt-5 pt-3 border-t border-[#E7E2D9]">
+        <span id="statsLectureCount">32</span> lectures · <span id="statsChunkCount">1,510</span> indexed chunks · every answer cites a timestamp
       </div>
     </div>
 
@@ -467,6 +470,161 @@
       btn.innerText = "Copied";
       setTimeout(() => { btn.innerText = "Copy"; }, 2000);
     }
+
+    // Dynamic lectures loading & stats
+    async function loadLectures() {
+      try {
+        const res = await fetch('/api/v1/lectures');
+        const data = await res.json();
+        if (data.total_lectures) {
+          const totalLec = data.total_lectures;
+          const totalChunks = data.lectures.reduce((acc, l) => acc + (l.chunk_count || 0), 0);
+          
+          document.getElementById('lectureCountNav').innerText = `${totalLec} lectures ready`;
+          
+          const lecSpan = document.getElementById('statsLectureCount');
+          const chunkSpan = document.getElementById('statsChunkCount');
+          if (lecSpan) lecSpan.innerText = totalLec;
+          if (chunkSpan && totalChunks > 0) chunkSpan.innerText = totalChunks.toLocaleString();
+        }
+      } catch (e) {}
+    }
+    loadLectures();
+
+    // Add Video Modal logic
+    const addModal = document.getElementById('addVideoModal');
+    const openAddBtn = document.getElementById('openAddModalBtn');
+    const closeAddBtn = document.getElementById('closeAddModalBtn');
+    const cancelAddBtn = document.getElementById('cancelAddBtn');
+    const addForm = document.getElementById('addVideoForm');
+    const addStatus = document.getElementById('addVideoStatus');
+    const submitAddBtn = document.getElementById('submitAddBtn');
+    const addBtnLabel = document.getElementById('addBtnLabel');
+    const addSpinner = document.getElementById('addSpinner');
+
+    if (openAddBtn) {
+      openAddBtn.addEventListener('click', () => {
+        addModal.classList.remove('hidden');
+        document.getElementById('videoUrlInput').focus();
+      });
+    }
+
+    function closeModal() {
+      addModal.classList.add('hidden');
+      addStatus.classList.add('hidden');
+      addStatus.innerText = '';
+    }
+
+    if (closeAddBtn) closeAddBtn.addEventListener('click', closeModal);
+    if (cancelAddBtn) cancelAddBtn.addEventListener('click', closeModal);
+
+    if (addForm) {
+      addForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const url = document.getElementById('videoUrlInput').value.trim();
+        const title = document.getElementById('videoTitleInput').value.trim();
+
+        if (!url) return;
+
+        submitAddBtn.disabled = true;
+        addBtnLabel.classList.add('hidden');
+        addSpinner.classList.remove('hidden');
+
+        addStatus.className = "text-xs font-mono-code p-3 rounded-lg bg-[#FFF9F2] text-[#8C4A15] border border-[#E7E2D9] block";
+        addStatus.innerText = "⏳ Fetching transcript & indexing ONLY this video into Qdrant Cloud...";
+
+        try {
+          const res = await fetch('/api/v1/videos/add', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ url, title: title || null })
+          });
+
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.detail || "Failed to add video");
+
+          addStatus.className = "text-xs font-mono-code p-3 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 block";
+          addStatus.innerText = `✅ ${data.message}`;
+
+          // Reload lectures count
+          await loadLectures();
+
+          setTimeout(() => {
+            closeModal();
+            addForm.reset();
+          }, 2200);
+
+        } catch (err) {
+          addStatus.className = "text-xs font-mono-code p-3 rounded-lg bg-rose-50 text-rose-800 border border-rose-200 block";
+          addStatus.innerText = `❌ ${err.message}`;
+        } finally {
+          submitAddBtn.disabled = false;
+          addBtnLabel.classList.remove('hidden');
+          addSpinner.classList.add('hidden');
+        }
+      });
+    }
   </script>
+
+  <!-- Add Video Modal -->
+  <div id="addVideoModal" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white border border-[#E7E2D9] rounded-xl max-w-lg w-full p-6 shadow-xl relative animate-in fade-in duration-150">
+      
+      <div class="flex items-center justify-between pb-3 border-b border-[#E7E2D9] mb-4">
+        <div class="flex items-center gap-2">
+          <span class="text-[var(--accent)] font-bold text-sm">▸</span>
+          <h3 class="font-serif-title text-xl text-[var(--ink)]">Add YouTube Lecture</h3>
+        </div>
+        <button id="closeAddModalBtn" class="text-[var(--muted)] hover:text-[var(--ink)] text-xl leading-none">&times;</button>
+      </div>
+
+      <p class="text-xs text-[var(--muted)] mb-4 leading-relaxed">
+        Paste any YouTube link. The system transcribes, chunks, and indexes <strong>only this new video</strong> directly into Qdrant Cloud. Existing lectures are untouched.
+      </p>
+
+      <form id="addVideoForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-mono-code text-[var(--muted)] mb-1">YouTube URL or Video ID *</label>
+          <input 
+            type="text" 
+            id="videoUrlInput" 
+            placeholder="https://www.youtube.com/watch?v=... or Video ID" 
+            required 
+            class="w-full px-3 py-2 text-sm border border-[#E7E2D9] rounded-lg bg-[#FAF8F4] text-[var(--ink)] focus:outline-none focus:border-[var(--accent)]"
+          />
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono-code text-[var(--muted)] mb-1">Custom Title (Optional)</label>
+          <input 
+            type="text" 
+            id="videoTitleInput" 
+            placeholder="e.g. DP 32: Distinct Subsequences (leave empty to auto-fetch)" 
+            class="w-full px-3 py-2 text-sm border border-[#E7E2D9] rounded-lg bg-[#FAF8F4] text-[var(--ink)] focus:outline-none focus:border-[var(--accent)]"
+          />
+        </div>
+
+        <div id="addVideoStatus" class="text-xs font-mono-code hidden p-3 rounded-lg"></div>
+
+        <div class="flex items-center justify-end gap-2 pt-2">
+          <button 
+            type="button" 
+            id="cancelAddBtn" 
+            class="px-4 py-2 text-xs font-mono-code text-[var(--muted)] hover:text-[var(--ink)] border border-[#E7E2D9] rounded-lg bg-white transition hover:bg-neutral-50"
+          >
+            Cancel
+          </button>
+          <button 
+            type="submit" 
+            id="submitAddBtn" 
+            class="px-5 py-2 text-xs font-mono-code bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white rounded-lg transition disabled:opacity-50 font-medium"
+          >
+            <span id="addBtnLabel">Index Video</span>
+            <span id="addSpinner" class="hidden">Indexing...</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 </body>
 </html>

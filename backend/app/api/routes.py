@@ -3,9 +3,12 @@ from backend.app.schemas import (
     QueryRequest,
     QueryResponse,
     HealthResponse,
-    LecturesResponse
+    LecturesResponse,
+    AddVideoRequest,
+    AddVideoResponse
 )
 from backend.app.services.rag_service import rag_service
+from backend.app.services.video_ingestion import video_ingestion_service
 from backend.app.services.vector_store import vector_store_service
 from backend.app.config import settings
 
@@ -56,7 +59,7 @@ def query_dp_knowledge(request: QueryRequest):
 @router.get("/lectures", response_model=LecturesResponse, tags=["Lectures"])
 def list_available_lectures():
     """
-    Returns list of all 31 indexed Striver DP lectures with titles and video IDs.
+    Returns list of all indexed Striver DP lectures with titles and video IDs.
     Used by frontend for dropdown filters and information panels.
     """
     try:
@@ -65,4 +68,33 @@ def list_available_lectures():
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Error loading lectures: {str(e)}"
+        )
+
+@router.post("/videos/add", response_model=AddVideoResponse, tags=["Video Ingestion"])
+def add_youtube_video(request: AddVideoRequest):
+    """
+    On-demand incremental video ingestion:
+    Transcribes (via fast YouTube Captions API), chunks with lecture context,
+    embeds via FastEmbed ONNX, and upserts ONLY this new video into Qdrant Cloud.
+    If the video is already indexed, skips processing immediately without redundant work.
+    """
+    if not request.url.strip():
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="YouTube URL or video ID cannot be empty."
+        )
+
+    try:
+        result = video_ingestion_service.ingest_video(
+            url_or_id=request.url,
+            custom_title=request.title
+        )
+        return AddVideoResponse(**result)
+    except Exception as e:
+        import traceback
+        print(f"[ERROR] Video ingestion failed: {e}", flush=True)
+        traceback.print_exc()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Failed to ingest video: {str(e)}"
         )

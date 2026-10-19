@@ -45,3 +45,15 @@ class LectureInfo(BaseModel):
 class LecturesResponse(BaseModel):
     total_lectures: int
     lectures: List[LectureInfo]
+
+class AddVideoRequest(BaseModel):
+    url: str = Field(..., description="YouTube video URL or 11-character video ID")
+    title: Optional[str] = Field(default=None, description="Optional custom lecture title. If omitted, fetched automatically via YouTube.")
+
+class AddVideoResponse(BaseModel):
+    status: str
+    video_id: str
+    lecture_title: str
+    chunk_count: int
+    total_lectures: int
+    message: str
