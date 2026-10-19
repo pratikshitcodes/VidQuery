@@ -108,7 +108,7 @@
           <span class="w-2 h-2 rounded-full bg-[var(--success)]"></span>
           <span id="lectureCountNav">31 lectures ready</span>
         </span>
-        <button id="openAddModalBtn" class="inline-flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E7E2D9] rounded-md hover:border-[var(--accent)] hover:text-[var(--accent)] transition font-mono-code text-xs text-[var(--ink)] shadow-2xs">
+        <button id="openAddModalBtn" onclick="openAddModal()" class="inline-flex items-center gap-1 px-2.5 py-1 bg-white border border-[#E7E2D9] rounded-md hover:border-[var(--accent)] hover:text-[var(--accent)] transition font-mono-code text-xs text-[var(--ink)] shadow-2xs cursor-pointer">
           <span class="font-bold text-[var(--accent)]">+</span> Add Video
         </button>
         <a href="/docs" target="_blank" class="text-[var(--muted)] hover:text-[var(--ink)] underline transition">
@@ -491,91 +491,16 @@
     }
     loadLectures();
 
-    // Add Video Modal logic
-    const addModal = document.getElementById('addVideoModal');
-    const openAddBtn = document.getElementById('openAddModalBtn');
-    const closeAddBtn = document.getElementById('closeAddModalBtn');
-    const cancelAddBtn = document.getElementById('cancelAddBtn');
-    const addForm = document.getElementById('addVideoForm');
-    const addStatus = document.getElementById('addVideoStatus');
-    const submitAddBtn = document.getElementById('submitAddBtn');
-    const addBtnLabel = document.getElementById('addBtnLabel');
-    const addSpinner = document.getElementById('addSpinner');
-
-    if (openAddBtn) {
-      openAddBtn.addEventListener('click', () => {
-        addModal.classList.remove('hidden');
-        document.getElementById('videoUrlInput').focus();
-      });
-    }
-
-    function closeModal() {
-      addModal.classList.add('hidden');
-      addStatus.classList.add('hidden');
-      addStatus.innerText = '';
-    }
-
-    if (closeAddBtn) closeAddBtn.addEventListener('click', closeModal);
-    if (cancelAddBtn) cancelAddBtn.addEventListener('click', closeModal);
-
-    if (addForm) {
-      addForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const url = document.getElementById('videoUrlInput').value.trim();
-        const title = document.getElementById('videoTitleInput').value.trim();
-
-        if (!url) return;
-
-        submitAddBtn.disabled = true;
-        addBtnLabel.classList.add('hidden');
-        addSpinner.classList.remove('hidden');
-
-        addStatus.className = "text-xs font-mono-code p-3 rounded-lg bg-[#FFF9F2] text-[#8C4A15] border border-[#E7E2D9] block";
-        addStatus.innerText = "⏳ Fetching transcript & indexing ONLY this video into Qdrant Cloud...";
-
-        try {
-          const res = await fetch('/api/v1/videos/add', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ url, title: title || null })
-          });
-
-          const data = await res.json();
-          if (!res.ok) throw new Error(data.detail || "Failed to add video");
-
-          addStatus.className = "text-xs font-mono-code p-3 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 block";
-          addStatus.innerText = `✅ ${data.message}`;
-
-          // Reload lectures count
-          await loadLectures();
-
-          setTimeout(() => {
-            closeModal();
-            addForm.reset();
-          }, 2200);
-
-        } catch (err) {
-          addStatus.className = "text-xs font-mono-code p-3 rounded-lg bg-rose-50 text-rose-800 border border-rose-200 block";
-          addStatus.innerText = `❌ ${err.message}`;
-        } finally {
-          submitAddBtn.disabled = false;
-          addBtnLabel.classList.remove('hidden');
-          addSpinner.classList.add('hidden');
-        }
-      });
-    }
-  </script>
-
-  <!-- Add Video Modal -->
-  <div id="addVideoModal" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white border border-[#E7E2D9] rounded-xl max-w-lg w-full p-6 shadow-xl relative animate-in fade-in duration-150">
+  <!-- Add Video Modal (Placed before script so DOM is ready immediately) -->
+  <div id="addVideoModal" onclick="if(event.target===this)closeModal()" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white border border-[#E7E2D9] rounded-xl max-w-lg w-full p-6 shadow-xl relative animate-in fade-in duration-150" onclick="event.stopPropagation()">
       
       <div class="flex items-center justify-between pb-3 border-b border-[#E7E2D9] mb-4">
         <div class="flex items-center gap-2">
           <span class="text-[var(--accent)] font-bold text-sm">▸</span>
           <h3 class="font-serif-title text-xl text-[var(--ink)]">Add YouTube Lecture</h3>
         </div>
-        <button id="closeAddModalBtn" class="text-[var(--muted)] hover:text-[var(--ink)] text-xl leading-none">&times;</button>
+        <button id="closeAddModalBtn" onclick="closeModal()" class="text-[var(--muted)] hover:text-[var(--ink)] text-xl leading-none cursor-pointer">&times;</button>
       </div>
 
       <p class="text-xs text-[var(--muted)] mb-4 leading-relaxed">
@@ -610,14 +535,15 @@
           <button 
             type="button" 
             id="cancelAddBtn" 
-            class="px-4 py-2 text-xs font-mono-code text-[var(--muted)] hover:text-[var(--ink)] border border-[#E7E2D9] rounded-lg bg-white transition hover:bg-neutral-50"
+            onclick="closeModal()"
+            class="px-4 py-2 text-xs font-mono-code text-[var(--muted)] hover:text-[var(--ink)] border border-[#E7E2D9] rounded-lg bg-white transition hover:bg-neutral-50 cursor-pointer"
           >
             Cancel
           </button>
           <button 
             type="submit" 
             id="submitAddBtn" 
-            class="px-5 py-2 text-xs font-mono-code bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white rounded-lg transition disabled:opacity-50 font-medium"
+            class="px-5 py-2 text-xs font-mono-code bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white rounded-lg transition disabled:opacity-50 font-medium cursor-pointer"
           >
             <span id="addBtnLabel">Index Video</span>
             <span id="addSpinner" class="hidden">Indexing...</span>
@@ -626,5 +552,80 @@
       </form>
     </div>
   </div>
+
+  <script>
+    // Global Modal Functions
+    function openAddModal() {
+      const modal = document.getElementById('addVideoModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        const input = document.getElementById('videoUrlInput');
+        if (input) setTimeout(() => input.focus(), 50);
+      }
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('addVideoModal');
+      const status = document.getElementById('addVideoStatus');
+      if (modal) modal.classList.add('hidden');
+      if (status) {
+        status.classList.add('hidden');
+        status.innerText = '';
+      }
+    }
+
+    // Modal submit handler
+    const addForm = document.getElementById('addVideoForm');
+    if (addForm) {
+      addForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const url = document.getElementById('videoUrlInput').value.trim();
+        const title = document.getElementById('videoTitleInput').value.trim();
+        const submitAddBtn = document.getElementById('submitAddBtn');
+        const addBtnLabel = document.getElementById('addBtnLabel');
+        const addSpinner = document.getElementById('addSpinner');
+        const addStatus = document.getElementById('addVideoStatus');
+
+        if (!url) return;
+
+        submitAddBtn.disabled = true;
+        addBtnLabel.classList.add('hidden');
+        addSpinner.classList.remove('hidden');
+
+        addStatus.className = "text-xs font-mono-code p-3 rounded-lg bg-[#FFF9F2] text-[#8C4A15] border border-[#E7E2D9] block";
+        addStatus.innerText = "⏳ Fetching transcript & indexing ONLY this video into Qdrant Cloud...";
+
+        try {
+          const res = await fetch('/api/v1/videos/add', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ url, title: title || null })
+          });
+
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.detail || "Failed to add video");
+
+          addStatus.className = "text-xs font-mono-code p-3 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 block";
+          addStatus.innerText = `✅ ${data.message}`;
+
+          // Reload lectures count
+          if (typeof loadLectures === 'function') await loadLectures();
+
+          setTimeout(() => {
+            closeModal();
+            addForm.reset();
+          }, 2200);
+
+        } catch (err) {
+          addStatus.className = "text-xs font-mono-code p-3 rounded-lg bg-rose-50 text-rose-800 border border-rose-200 block";
+          addStatus.innerText = `❌ ${err.message}`;
+        } finally {
+          submitAddBtn.disabled = false;
+          addBtnLabel.classList.remove('hidden');
+          addSpinner.classList.add('hidden');
+        }
+      });
+    }
+  </script>
 </body>
 </html>
