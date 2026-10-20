@@ -171,15 +171,120 @@ class VideoIngestionService:
 
         return chunks
 
+    def detect_hindi_or_non_english(self, text: str) -> bool:
+        """
+        Detects whether transcript text contains Hindi (Devanagari script or Romanized Hinglish).
+        """
+        if not text:
+            return False
+
+        # 1. Check Devanagari Unicode characters (\u0900 - \u097F)
+        devanagari_count = sum(1 for c in text if '\u0900' <= c <= '\u097f')
+        if devanagari_count >= 10:
+            return True
+
+        # 2. Check Romanized Hindi / Hinglish markers
+        hinglish_markers = {
+            'karna', 'karenge', 'karega', 'karte', 'karein', 'hoga', 'hogi', 'hote', 'hota',
+            'hai', 'hain', 'hum', 'humne', 'yeh', 'woh', 'toh', 'agar', 'kyunki',
+            'kuch', 'samajh', 'rahe', 'raha', 'rahi', 'dekho', 'kaise', 'bhai',
+            'sabse', 'pehle', 'baad', 'andar', 'baahar', 'dosto', 'dost'
+        }
+        words = re.findall(r'\b[a-zA-Z]+\b', text.lower())
+        if words:
+            hinglish_count = sum(1 for w in words if w in hinglish_markers)
+            if (hinglish_count / len(words) > 0.06) and hinglish_count >= 5:
+                return True
+
+        return False
+
+    def translate_chunks_to_english(self, chunks: List[Dict[str, Any]], lecture_title: str) -> List[Dict[str, Any]]:
+        """
+        Translates Hindi/Hinglish chunks into high-quality technical English using Groq LLM.
+        Processes chunks in small batches with strict JSON schema and exponential backoff.
+        Preserves timestamps and metadata exactly.
+        """
+        if not chunks:
+            return chunks
+
+        try:
+            from groq import Groq
+            client = Groq(api_key=settings.GROQ_API_KEY)
+        except Exception as e:
+            print(f"[WARN] Groq client initialization failed for translation: {e}", flush=True)
+            return chunks
+
+        prefix_pat = r'^\[Video:.*?\]\s*\[Topics:.*?\]\s*'
+        clean_bodies = [re.sub(prefix_pat, '', c["text"]).strip() for c in chunks]
+
+        BATCH_SIZE = 3
+        translated_bodies = []
+        prompt = (
+            "You are an expert translator for computer science and Data Structures & Algorithms lectures. "
+            "Translate each text item in the JSON array from Hindi or Hinglish into clear, fluent, precise technical English. "
+            "Preserve all technical concepts and keywords (e.g., Segment Tree, 4*n, Lazy Propagation, Time Complexity, Array, Index, Leaf, Root, Query, Update). "
+            "Return a JSON object with key 'items' containing the translated list of strings in the exact same order and length."
+        )
+
+        for i in range(0, len(clean_bodies), BATCH_SIZE):
+            batch = clean_bodies[i : i + BATCH_SIZE]
+            batch_success = False
+
+            for attempt in range(5):
+                try:
+                    res = client.chat.completions.create(
+                        model="openai/gpt-oss-120b",
+                        response_format={"type": "json_object"},
+                        max_tokens=4096,
+                        messages=[
+                            {"role": "system", "content": prompt},
+                            {"role": "user", "content": json.dumps({"items": batch}, ensure_ascii=False)}
+                        ],
+                        temperature=0.1
+                    )
+                    parsed = json.loads(res.choices[0].message.content)
+                    items = parsed.get("items", [])
+                    if len(items) == len(batch):
+                        # Clean non-breaking / narrow spaces
+                        cleaned = [it.replace('\u202f', ' ').replace('\xa0', ' ') for it in items]
+                        translated_bodies.extend(cleaned)
+                        batch_success = True
+                        break
+                    else:
+                        print(f"[WARN] Translation batch count mismatch {len(items)} vs {len(batch)}. Retrying...", flush=True)
+                except Exception as e:
+                    err_msg = str(e).lower()
+                    if "429" in err_msg or "rate_limit" in err_msg:
+                        wait_time = 3.5 * (1.5 ** attempt)
+                        print(f"[WARN] Groq rate limited during translation. Sleeping {wait_time:.1f}s...", flush=True)
+                        time.sleep(wait_time)
+                    else:
+                        print(f"[WARN] Groq translation attempt {attempt+1} failed: {e}", flush=True)
+                        time.sleep(1.5 * (attempt + 1))
+
+            if not batch_success:
+                print(f"[ERROR] Batch {i//BATCH_SIZE + 1} translation failed after 5 attempts. Keeping original text for these chunks.", flush=True)
+                translated_bodies.extend(batch)
+
+        # Reassemble chunks with technical headers
+        translated_chunks = []
+        for orig, tr in zip(chunks, translated_bodies):
+            new_c = dict(orig)
+            new_c["text"] = f"[Video: {lecture_title}] [Topics: {lecture_title}] {tr}"
+            translated_chunks.append(new_c)
+
+        return translated_chunks
+
     def ingest_video(self, url_or_id: str, custom_title: Optional[str] = None) -> Dict[str, Any]:
         """
         Incrementally processes and adds a single new YouTube video to the RAG knowledge base:
-        1. Checks if video is already indexed -> skips immediately if present.
+        1. Checks if video is already indexed -> skips immediately if present (or upgrades if in Hindi).
         2. Fetches metadata and timed transcript.
         3. Creates contextual chunks.
-        4. Embeds via FastEmbed ONNX.
-        5. Upserts points into Qdrant collection with deterministic UUIDs.
-        6. Saves local chunk cache & updates lecture list.
+        4. Detects Hindi/Hinglish and translates automatically to technical English.
+        5. Embeds via FastEmbed ONNX.
+        6. Upserts points into Qdrant collection with deterministic UUIDs.
+        7. Saves local chunk cache & updates lecture list.
         """
         video_id = self.extract_video_id(url_or_id)
         chunk_file = os.path.join(self.chunks_dir, f"{video_id}.json")
@@ -188,20 +293,24 @@ class VideoIngestionService:
         if os.path.exists(chunk_file):
             with open(chunk_file, "r", encoding="utf-8") as f:
                 existing_chunks = json.load(f)
-            title = custom_title or (
-                extract_lecture_title(existing_chunks[0]["text"], video_id)
-                if existing_chunks else f"Lecture {video_id}"
-            )
-            rag_service._lectures_cache = None
-            total_lectures = rag_service.get_lectures().total_lectures
-            return {
-                "status": "already_indexed",
-                "video_id": video_id,
-                "lecture_title": title,
-                "chunk_count": len(existing_chunks),
-                "total_lectures": total_lectures,
-                "message": f"'{title}' is already indexed ({len(existing_chunks)} chunks). Ready for search!"
-            }
+            sample_existing = " ".join(c["text"] for c in existing_chunks[:5]) if existing_chunks else ""
+            if existing_chunks and self.detect_hindi_or_non_english(sample_existing):
+                print(f"[INGEST] Video {video_id} exists but is in Hindi. Re-translating to English and updating index...", flush=True)
+            else:
+                title = custom_title or (
+                    extract_lecture_title(existing_chunks[0]["text"], video_id)
+                    if existing_chunks else f"Lecture {video_id}"
+                )
+                rag_service._lectures_cache = None
+                total_lectures = rag_service.get_lectures().total_lectures
+                return {
+                    "status": "already_indexed",
+                    "video_id": video_id,
+                    "lecture_title": title,
+                    "chunk_count": len(existing_chunks),
+                    "total_lectures": total_lectures,
+                    "message": f"'{title}' is already indexed ({len(existing_chunks)} chunks). Ready for search!"
+                }
 
         print(f"[INGEST] Processing new video: {video_id}...", flush=True)
 
@@ -216,16 +325,27 @@ class VideoIngestionService:
         if not chunks:
             raise ValueError(f"No valid transcript content found in video '{video_id}'.")
 
-        # 4. Save chunks locally
+        # 4. Automatic Language Detection & English Translation
+        sample_text = " ".join(c["text"] for c in chunks[:5])
+        was_translated = False
+        if self.detect_hindi_or_non_english(sample_text):
+            print(f"[INGEST] Hindi/Hinglish detected in transcript for '{title}'. Translating {len(chunks)} chunks to technical English...", flush=True)
+            chunks = self.translate_chunks_to_english(chunks, title)
+            was_translated = True
+            print(f"[INGEST-OK] Translated {len(chunks)} chunks to English successfully!", flush=True)
+        else:
+            print(f"[INGEST] Transcript for '{title}' is in English. Skipping translation.", flush=True)
+
+        # 5. Save chunks locally
         with open(chunk_file, "w", encoding="utf-8") as f:
             json.dump(chunks, f, ensure_ascii=False, indent=2)
 
-        # 5. Embed with FastEmbed
+        # 6. Embed with FastEmbed
         vector_store_service.initialize()
         texts = [c["text"] for c in chunks]
         embeddings = list(vector_store_service.embedding_model.embed(texts))
 
-        # 6. Upsert to Qdrant Cloud with deterministic UUIDs
+        # 7. Upsert to Qdrant Cloud with deterministic UUIDs
         points = []
         for i, chunk in enumerate(chunks):
             pt_id = str(uuid.uuid5(uuid.NAMESPACE_DNS, f"{video_id}_{i}"))
@@ -254,13 +374,15 @@ class VideoIngestionService:
         rag_service._lectures_cache = None
         total_lectures = rag_service.get_lectures().total_lectures
 
+        msg = f"Successfully indexed '{title}' ({len(chunks)} chunks, translated to English). Available for search immediately!" if was_translated else f"Successfully indexed '{title}' ({len(chunks)} chunks). Available for search immediately!"
+
         return {
             "status": "success",
             "video_id": video_id,
             "lecture_title": title,
             "chunk_count": len(chunks),
             "total_lectures": total_lectures,
-            "message": f"Successfully indexed '{title}' ({len(chunks)} chunks). Available for search immediately!"
+            "message": msg
         }
 
 video_ingestion_service = VideoIngestionService()

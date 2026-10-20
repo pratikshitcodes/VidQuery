@@ -1,0 +1,128 @@
+[
+  {
+    "start": 0.08,
+    "end": 55.48,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] Hello everyone, welcome to my channel Code Series with Mike. Today we are going to record video number four of the Segment Tree concept and questions playlist. OK, before we start, pay attention to this: This is a very strong line – the only thing I can control is how hard I work, because in an interview any question can appear and you have no control over it. The only control you have is how hard you work to be able to solve those questions on the spot. This is very important. OK, video number four – let's do a quick recap. We understood what a Segment Tree is, what it is for, and when to use it. We learned how to build a Segment Tree. Using the range‑sum query example we learned everything so far. We also learned how to perform a point update – how to update any index – and we learned range‑sum queries and range queries using which method.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 40.56,
+    "end": 98.28,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] From the example we learned everything so far. We learned how to perform a point update – how to update any index – and we learned range‑sum queries and range queries using which example. Now many people commented that when they were coding on GFG or elsewhere, the size of the array for the Segment Tree had to be four times n, otherwise they got an out‑of‑bounds error. I didn’t mention this in the previous video, so today we will understand why we need to take an array of size 4 *n for a Segment Tree. First, let’s take some examples to understand a few things. Pay attention: I take an example where the size of the array is eight, i.e., n = 8. As I have taught before, with n = 8 elements there will be eight leaf nodes: 1 2 3 4 5 6 7 8.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 84.28,
+    "end": 140.28,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] With n = 8, as I have already taught, there are eight leaf nodes: 1 2 3 4 5 6 7 8. Every pair of leaves forms a parent node. Those two are paired to create a node; the same pairing repeats. After that, those parent nodes are paired again, and then those resulting nodes are paired again. So we had eight nodes at the leaf level, then four nodes, then two nodes, then one node. 8 + 4 + 2 + 1 = 15. We derived this by the formula 2 * n - 1. Therefore, if we take the size of the Segment‑Tree array as 2 * n - 1, we can represent all the nodes of the Segment Tree.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 125.52,
+    "end": 181.96,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] Subtract 1 and you get the formula we were using: 2 * n - 1. If we take the size of the segment‑tree array as 2 * n - 1, we can represent exactly that many nodes in the segment tree. For example, if n = 16 then the number of nodes is 2 * 16 - 1 = 31. A smaller data point: if n = 4, then 2 * 4 - 1 = 7; if n = 8, then 2 * 8 - 1 = 15; if n = 16, then 2 * 16 - 1 = 31. So the pattern holds. In fact there is nothing mysterious here; you can also express the same idea by noting that the size is related to the next power of two (2^t).",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 168.68,
+    "end": 224.92,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] Notice that after a power of two, the next integer that is also a power of two is the next power itself. After 4 the next power‑of‑two is 8, not 5, 6 or 7. You can write 8 as 2^3 and then subtract 1 to get 7. Similarly, after 8 the next power‑of‑two is 16 (2^4); subtract 1 to obtain 15. So the pattern is: next power of two = 2^k, and (2^k - 1) gives the size of the segment‑tree array for the previous n.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 212.4,
+    "end": 268.08,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] Thus the next power of two after 16 is 16 itself (2^4); writing it as 2^4 - 1 yields 15. The next power after 16 is 32 (2^5); writing it as 2^5 - 1 yields 31. In general, for any n you first find the smallest power of two ≥ n (let it be 2^k) and then compute 2^k - 1 to get the required array size. This makes calculating the number of nodes in a segment tree trivial: find the next power of two for n, then subtract 1.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 254.08,
+    "end": 310.64,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] Compute the next power of two greater than the given number. Whatever the number is, find the smallest power‑of‑two that is not less than it; subtract the original number from that power‑of‑two and you will obtain the number of dummy nodes needed. This method worked every time because it is very simple. For example, as I just demonstrated, if n = 8 then there are 8 leaf nodes. You can see that each pair of leaf nodes merges easily, creating a new internal node each time. In other words, when there are eight nodes, all of them can be paired, and the next level contains exactly half as many nodes. The same reasoning applies at every higher level: two nodes are always available to form a pair, which is why the process proceeds smoothly.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 297.88,
+    "end": 355.04,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] The next level contains half as many nodes because, again, two nodes are found to form a pair. This works because eight is a power of two; therefore the next level will have 8/2 = 4 nodes, and so on. Notice that all numbers we are dealing with are powers of two. If the size of the array is not a power of two, for example n = 10, constructing the tree becomes problematic. Consider the indices 1,2,3,4,5,6,7,8,9,10. The first few pairs can be formed, but after pairing the first eight elements we are left with two unpaired nodes, which breaks the regular halving pattern.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 342.6,
+    "end": 399.0,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] Continuing the example with n = 10, after pairing the first eight elements we obtain four parent nodes, and the remaining two elements (9 and 10) also form a pair, giving a total of five nodes at the next level (10/2 = 5). However, a problem arises because 10 is not divisible by a power of two. The pairs that could be formed are fine, but the remaining nodes cannot be paired further without additional dummy nodes. To resolve this, we should append some dummy leaf nodes to the array so that the total number of leaves becomes a power of two, allowing every node to be paired at each level. This is the essential insight: if n is not a power of two, we need to add dummy elements to make the leaf count a power of two.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 387.76,
+    "end": 443.8,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] Suppose n, i.e., the number of elements, is not a power of two. In that case we have to append some extra (dummy) nodes. I have already shown you the tree diagram. We represent the segment tree in an array form. Assume n = 9, so we have nine leaves. This is my segment tree (illustrated). Indexing from 0: 0 1 2 3 4 5 6 7 8. Since we have nine leaves, the obvious fact is that these are nine leaves, and we will pair them up.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 430.72,
+    "end": 486.56,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] Continuing the indexing: 0 1 2 3 4 5 6 7 8. Assuming nine leaves, it is obvious that we have nine leaves, and we would try to pair them. However, they cannot be fully paired, which means we need to append some extra dummy nodes. Remember I said we should append enough dummy nodes so that later we can still form pairs of two. Pairing two‑by‑two is guaranteed only when the number of leaves is exactly a power of two, because a perfect power‑of‑two tree splits evenly at every level. When the size is a power of two, each division yields perfect pairs. Therefore, when n is not a power of two (e.g., n = 10), we must find the next power of two.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 472.56,
+    "end": 530.24,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] So the pair is formed; now we know what to do whenever n is not a power of two. For example, n = 10 is not a power of two; the nearest higher power of two is 16. Hence we add dummy elements until we have 16 leaves. Once we have 16 leaves we can pair them comfortably. This is the procedure we should follow each time. Notice that the original size was n (e.g., 11), but we had to extend it to 16.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 516.68,
+    "end": 572.64,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] Look, here we had to create 16 nodes. Now suppose we take n = 11; then … suppose we take n = 17. Since 17 is not a power of two, we consider the next power of two after 17, which is 32. We will append nodes until the total number of nodes becomes 32. For example, if n = 9 we have nine nodes (1 2 3 4 5 6 7 8 9); because 9 is not a power of two, proper pairing cannot be achieved.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 559.16,
+    "end": 615.92,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] You may observe that when n = 9 we have nine nodes (1 2 3 4 5 6 7 8 9). Since 9 is not a power of two, the nodes cannot be paired perfectly, leaving one node unpaired. Therefore we need to append extra nodes up to the next power of two so that pairing works. The next power of two after 9 is 16, so we create a total of 16 leaf nodes. Similarly, when n = 17 we have 17 leaf nodes, but they cannot be paired correctly. The next power of two after 17 is 32, so we add nodes to reach 32 total, which ensures correct pairing.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 601.84,
+    "end": 658.12,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] The next power of two after n is 32. Because 32 is the next power of two, we add nodes until we have 32 nodes, which guarantees correct pairing at the current level and also yields proper pairing at the upper level. Notice that when n was 16 we had exactly 16 nodes, and when n = 17 we added nodes up to 32 (not 34). The problem is that if n is not a power of two we approximate by creating roughly 2 × n leaf nodes—or more precisely the next power of two—which in this case is 32.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 644.28,
+    "end": 701.76,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] What we do is approximately create 2 × n leaf nodes. In other words, we consider about 2 × n leaf nodes (not exactly 2 × n). For example, when n = 9 we get roughly 18 leaf nodes (actually 16, but I am approximating). The idea is that by making the number of leaf nodes a power of two (2^t), we can easily pair them later. The benefit of using 2 × leaf nodes is that the total becomes a power of two, which simplifies pairing.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 686.8,
+    "end": 744.52,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] Now you can pair them, which means we have realized that the leaf level contained a total of 2 × n nodes. After pairing, the number of nodes halves to n at the next level, then to n/2, and so on. By repeatedly halving, we obtain correct pairings because we forced the size to be a power of two. Consequently, after each level the node count becomes n/4, n/8, and continues until it reaches 1.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 729.96,
+    "end": 785.24,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] It is now clear how to compute the sum. Assume an infinite number of terms; the sum of an infinite geometric series is a / (1 − r). Here the first term a is 2n and the common ratio r is (n / 2n) = 1/2, so the series sums to 4n. Therefore, when you want to avoid index‑out‑of‑bounds errors, you can always know the total number of nodes in a segment tree by summing the nodes at each level, which yields 4n.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 772.24,
+    "end": 828.32,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] Knowing the total number of nodes, we sum the notes at each level. We found that it comes out to 4 × n, so taking 4 × n is fine. If an interviewer asks why we take 4 × n, a fresh graduate can answer briefly, but for a more advanced interview you should explain in detail: first discuss the power‑of‑two case where the number of nodes is 2 n − 1, then show that when n is not a power of two, the derived bound leads to 4 × n being the safest size. In an interview you may be asked what the total number of nodes in a segment tree should be; the safest answer is 4 × n because if n is not a power of two we remain safe by allocating an array of size 4 n. This clears the doubt. I hope everyone understood this.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 814.6,
+    "end": 871.6,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] In that case we are safe if we allocate an array of that size; the point is clear. I hope everyone got it. From an interview point of view this will be a very good and helpful video with plenty of information. By now you should know the concepts from this video. I think we are ready to solve some segment‑tree questions. In the next video we will solve some segment‑tree questions. Also, an important note: sometimes there is a delay in uploading because I have a very occupied schedule during weekdays, I also travel and engage in extra‑curricular activities, which keeps me busy, so uploads may be delayed, and I also have office work on weekdays. I hope you understand. See you in the next video.",
+    "video_id": "3Iq5x56g_dM"
+  },
+  {
+    "start": 857.76,
+    "end": 871.6,
+    "text": "[Video: Segment Tree | Why size is 4*n | With Proof | Video 4] [Topics: Segment Tree | Why size is 4*n | With Proof | Video 4] I am quite occupied, so there may be some delay, and I also have office work on weekdays. I hope you understand. See you in the next video. Thank you.",
+    "video_id": "3Iq5x56g_dM"
+  }
+]
