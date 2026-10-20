@@ -146,7 +146,7 @@ class VideoIngestionService:
 
             chunk_end = current_segs[-1]["end"]
             raw_body = " ".join(s["text"].strip() for s in current_segs if s["text"].strip())
-            contextual_text = f"[Video: {lecture_title}] {raw_body}"
+            contextual_text = f"[Video: {lecture_title}] [Topics: {lecture_title}] {raw_body}"
 
             chunks.append({
                 "start": chunk_start,

@@ -645,24 +645,26 @@
           addStatus.className = "text-xs font-mono-code p-3 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 block";
           addStatus.innerText = `✅ ${data.message}`;
 
-          // Immediately switch player to the newly added video!
+          // Immediately switch player to the newly added video so user can watch it!
           playVideoClip(data.video_id, 0, data.lecture_title);
           document.getElementById('activeTopicBadge').innerText = data.lecture_title;
-          selectedVideoFilter = data.video_id;
+          
+          // Keep search scope on "All Lectures" so user can freely query DP questions or the new video!
+          selectedVideoFilter = "";
 
           // Welcome notice in answer box
           document.getElementById('answerContent').innerHTML = `
             <div class="p-4 bg-emerald-50 border border-emerald-200 rounded-lg text-emerald-900 text-xs font-mono-code mb-2">
               ✅ <b>${data.lecture_title}</b> is now playing!
             </div>
-            <p class="text-sm">Video is indexed with ${data.chunk_count} timestamps. Ask any question in the search bar to jump to exact moments in this video.</p>
+            <p class="text-sm">Video is indexed with ${data.chunk_count} timestamps. You can ask any question about DP or this new video in the search bar above.</p>
           `;
 
-          // Reload lectures list and select this video in dropdown
+          // Reload lectures list and keep scope on All Lectures
           if (typeof loadLectures === 'function') {
             await loadLectures();
             const select = document.getElementById('lectureFilterSelect');
-            if (select) select.value = data.video_id;
+            if (select) select.value = "";
           }
 
           setTimeout(() => {
