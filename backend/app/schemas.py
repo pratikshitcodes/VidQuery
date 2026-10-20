@@ -50,6 +50,7 @@ class LecturesResponse(BaseModel):
 class AddVideoRequest(BaseModel):
     url: str = Field(..., description="YouTube video URL or 11-character video ID")
     title: Optional[str] = Field(default=None, description="Optional custom lecture title. If omitted, fetched automatically via YouTube.")
+    admin_key: Optional[str] = Field(default=None, description="Admin secret passkey required to add new videos")
 
 class AddVideoResponse(BaseModel):
     status: str

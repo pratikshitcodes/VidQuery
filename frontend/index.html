@@ -188,7 +188,7 @@
 
       <!-- Single Quiet Line Under the Search Bar -->
       <div id="statsRow" class="font-mono-code text-xs text-[var(--muted)] mt-5 pt-3 border-t border-[#E7E2D9]">
-        <span id="statsLectureCount">32</span> lectures · <span id="statsChunkCount">1,510</span> indexed chunks · every answer cites a timestamp
+        <span id="statsLectureCount">32</span> lectures · <span id="statsChunkCount">1,167</span> indexed chunks · 95.7% benchmark accuracy · every answer cites a timestamp
       </div>
     </div>
 
@@ -379,6 +379,18 @@
             placeholder="e.g. DP 32: Distinct Subsequences (leave empty to auto-fetch)" 
             class="w-full px-3 py-2 text-sm border border-[#E7E2D9] rounded-lg bg-[#FAF8F4] text-[var(--ink)] focus:outline-none focus:border-[var(--accent)]"
           />
+        </div>
+
+        <div>
+          <label class="block text-xs font-mono-code text-[var(--muted)] mb-1">Admin Passkey *</label>
+          <input 
+            type="password" 
+            id="adminKeyInput" 
+            placeholder="Enter admin secret passkey" 
+            required 
+            class="w-full px-3 py-2 text-sm border border-[#E7E2D9] rounded-lg bg-[#FAF8F4] text-[var(--ink)] focus:outline-none focus:border-[var(--accent)]"
+          />
+          <p class="text-[10px] text-[var(--muted)] mt-1">Only the site administrator can ingest new video content.</p>
         </div>
 
         <div id="addVideoStatus" class="text-xs font-mono-code hidden p-3 rounded-lg"></div>
@@ -596,6 +608,11 @@
       const modal = document.getElementById('addVideoModal');
       if (modal) {
         modal.classList.remove('hidden');
+        const adminInput = document.getElementById('adminKeyInput');
+        const savedKey = localStorage.getItem('adminKey') || new URLSearchParams(window.location.search).get('admin') || '';
+        if (adminInput && savedKey) {
+          adminInput.value = savedKey;
+        }
         const input = document.getElementById('videoUrlInput');
         if (input) setTimeout(() => input.focus(), 50);
       }
@@ -618,12 +635,16 @@
         e.preventDefault();
         const url = document.getElementById('videoUrlInput').value.trim();
         const title = document.getElementById('videoTitleInput').value.trim();
+        const adminKey = document.getElementById('adminKeyInput').value.trim();
         const submitAddBtn = document.getElementById('submitAddBtn');
         const addBtnLabel = document.getElementById('addBtnLabel');
         const addSpinner = document.getElementById('addSpinner');
         const addStatus = document.getElementById('addVideoStatus');
 
         if (!url) return;
+        if (adminKey) {
+          localStorage.setItem('adminKey', adminKey);
+        }
 
         submitAddBtn.disabled = true;
         addBtnLabel.classList.add('hidden');
@@ -636,7 +657,7 @@
           const res = await fetch('/api/v1/videos/add', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ url, title: title || null })
+            body: JSON.stringify({ url, title: title || null, admin_key: adminKey || null })
           });
 
           const data = await res.json();

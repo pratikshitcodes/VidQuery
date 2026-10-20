@@ -74,10 +74,16 @@ def list_available_lectures():
 def add_youtube_video(request: AddVideoRequest):
     """
     On-demand incremental video ingestion:
-    Transcribes (via fast YouTube Captions API), chunks with lecture context,
-    embeds via FastEmbed ONNX, and upserts ONLY this new video into Qdrant Cloud.
-    If the video is already indexed, skips processing immediately without redundant work.
+    Protected by Admin Passkey to ensure only the site owner can ingest new lectures.
     """
+    # Verify Admin Authorization
+    if settings.ADMIN_INGEST_KEY:
+        if not request.admin_key or request.admin_key.strip() != settings.ADMIN_INGEST_KEY.strip():
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Unauthorized: Incorrect Admin Passkey. Only the site owner can add new videos."
+            )
+
     if not request.url.strip():
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,

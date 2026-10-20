@@ -33,6 +33,9 @@ class Settings:
     DENSE_SEARCH_LIMIT: int = 15
     DEFAULT_TOP_K: int = 5
     
+    # Security: Only owner can ingest new videos
+    ADMIN_INGEST_KEY: str = os.getenv("ADMIN_INGEST_KEY", "striverdp_admin")
+    
     # Data directory
     CHUNKS_DIR: str = os.path.join(
         os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))),
