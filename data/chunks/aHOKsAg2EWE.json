@@ -1,0 +1,194 @@
+[
+  {
+    "start": 0.28,
+    "end": 57.32,
+    "text": "[Video: Update query] [Topics: Update query] Hello everyone, welcome to my channel. Sorry about the mic. Today we are going to record video number two of the Segment Tree concepts and questions playlist, okay? Before starting, keep in mind that every topic will become easy once you give it time. As soon as you start reading, any topic, no matter how tough, will start feeling easy. You will remember that in the Graph concepts and questions playlist I made the graph clear and easy; this playlist has the same goal. Okay, let's start with a quick recap of what we learned in video one. We understood what a Segment Tree is, why and when we use it. We also went through the code to build a Segment Tree, and now we can write that code from memory. We also saw how a Segment Tree is constructed through a dry run. As an example to understand Segment Trees, we took ... (example).",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 43.48,
+    "end": 100.96,
+    "text": "[Video: Update query] [Topics: Update query] Right? Now we can write that code without looking at it, and we also saw how a Segment Tree is built through a dry run. As an example to understand Segment Trees, we used the range‑sum‑in‑an‑array problem, so today we will continue using the range‑sum‑in‑an‑array example. We have already learned how to build the tree; now let's see what an update query looks like in a Segment Tree. First, I'll explain with a simple example: suppose we have a given array `nums`. If someone asks for the sum from index 1 to index 2, you can simply use the prefix sums. What is the prefix sum up to index 2? It is 6. What is the prefix sum up to just before index 1? It is 3. Subtracting the two gives 3, which is the answer.",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 88.92,
+    "end": 145.36,
+    "text": "[Video: Update query] [Topics: Update query] The prefix sum up to just before index 1 is 3; subtracting gives 3, meaning the sum from index 1 to 2 is 3, which is correct. Thanks to prefix sums we can solve this in O(1) time. Using prefix sums we can easily compute any range sum. We have computed the sum from 1 to 2; we can also compute the sum from 1 to 3. What is the sum from 1 to 3? The prefix sum up to index 3 is 13, right? The prefix sum up to just before index 1 is 3, so 13 − 3 = 10. Thus the sum from 1 to 3 is 10. Now suppose a problem arises: someone says, “please update my `nums` …”",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 131.68,
+    "end": 188.2,
+    "text": "[Video: Update query] [Topics: Update query] The problem occurs when, for example, someone asks to update the value at index 1 of the array `nums` to 4 (i.e., replace the existing value at index 1 with 4). After performing this update, the prefix‑sum array becomes incorrect: the prefix sum up to index 0 remains correct, but the prefix sum up to index 1 is no longer the original value (it changes from 4 to 3, etc.). Therefore we must adjust the prefix sums from index 1 onward. The element that was previously 4 must be removed and the new value added, causing the prefix sum at index 1 to become 9, the prefix sum at index 2 to become 16, and so on. Now a range‑sum query will be issued.",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 174.4,
+    "end": 230.12,
+    "text": "[Video: Update query] [Topics: Update query] Because we have to perform the update, the prefix sums also change: the value at position 2 becomes 9, then it becomes 16, etc. Now a range‑sum query will be asked, and you can answer it easily. Suppose we are asked for the sum from index 1 to index 3. The prefix sum up to index 3 is 16, and the prefix sum up to index 0 (just before index 1) is 3, so the range sum is 16 − 3 = 13. Thus the prefix sum is correct and the range sum is now 13. However, the problem reappears when another update call is made: this time the request is to change the value at index 2 to 1. Consequently, we must update again; the prefix sums up to index 2 will remain the same (they stay at 3), etc.",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 216.4,
+    "end": 271.48,
+    "text": "[Video: Update query] [Topics: Update query] Changing the value at index 2 to 1 means we must update again. The prefix sums up to index 2 remain unchanged (they stay at 3), the prefix sum at index 3 stays at 7, which is still correct, but all subsequent prefix sums change: the sum up to index 3 becomes 4, the sum up to index 4 becomes 8, and the sum up to index 5 becomes 15, and so on. Performing these updates repeatedly requires O(n) time for each update of the prefix‑sum array. If n is large, doing O(n) work for every update becomes prohibitive; each update would cost O(n) time. Moreover, after each update the prefix‑sum array itself must be recomputed, adding further overhead.",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 256.6,
+    "end": 313.44,
+    "text": "[Video: Update query] [Topics: Update query] The algorithm works in O(N) time, which is fine initially, but after each update the prefix‑sum array also has to be updated. Only after updating the prefix sum can you answer range‑sum queries comfortably. This O(N) update is very slow, so we need a better solution that allows us to update the array and answer range‑sum queries efficiently. In such cases the prefix‑sum technique does not help because updating the prefix‑sum array also takes O(N) time. That is why a Segment Tree is very useful; it will help here as well. Many problems will ask two types of queries: give the sum from index 1 to 2 or from index 3 to 4.",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 299.96,
+    "end": 356.36,
+    "text": "[Video: Update query] [Topics: Update query] The Segment Tree will also help here. Many problems will present two kinds of queries: “give the sum from 1 to 2” or “give the sum from 3 to 4”. That covers the range‑sum query. Another query type is an update, e.g., go to index 1 and change its value to 7, and so on. Now we understand the query types. From this we realize that we need a Segment Tree, and we need to see how it avoids the O(N) time complexity. So let’s see how a Segment Tree helps when we receive frequent update queries. Using the same example as before, as always we first build the Segment Tree, which we already learned in video 1. Recall how we built it: we had a root node…",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 341.52,
+    "end": 397.08,
+    "text": "[Video: Update query] [Topics: Update query] This was my example, and as usual the first step is to build the Segment Tree, which we have already covered in video 1. Remember how to build it: the root node represents the entire array, i.e., from index 0 to index n‑1. When we make the recursive call on the root, the root says it will compute its value later, but first you must construct the left and right sub‑trees. The left sub‑tree represents the segment from the start index to the middle index (mid = (0 + n‑1)/2), for example indices 0 to 1, and the right sub‑tree represents the segment from mid+1 to the end, e.g., indices 2 to 3. Similarly, the recursion continues to create left and right sub‑trees for each segment.",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 382.92,
+    "end": 439.16,
+    "text": "[Video: Update query] [Topics: Update query] The function will represent the segment from the leftmost index (0) to the rightmost index (3), i.e., the range [0,3]. In the same way, it will recursively call itself to build the left subtree and the right subtree. Observe how the parameters evolve: first l = 0, r = 0; then l = 1, r = 1; then l = 2, r = 2; and finally l = 3, r = 3. We stop because the base case l == r is reached, which means we are at a leaf node. I explained this clearly in video #1. Remember that the variable ‘node’ (or index) represents the segment [l, r]. For example, node 1 corresponds to element 3, node 1 also corresponds to index 1 (element 1), node 2 corresponds to index 2 (element 2), and node 3 corresponds to index 3 (element 3).",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 425.16,
+    "end": 480.88,
+    "text": "[Video: Update query] [Topics: Update query] Element 3 is represented by node 1, which in turn represents index 1 (element 1); node 2 represents index 2 (element 2); node 3 represents index 3 (element 3). When the recursion returns to this point, let the current node index be i. The value stored at node i should be the sum of the values of its left child and right child. The left child is located at 2*i + 1 and the right child at 2*i + 2. We compute the sum of the elements at those child indices and store it at index i. (Refer to video #1 for a detailed walkthrough if anything is unclear.) For example, 3 + 1 becomes 4. Verify that the range sum from the root to index 1 equals 4, which it does, confirming that the calculation is correct.",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 467.72,
+    "end": 524.16,
+    "text": "[Video: Update query] [Topics: Update query] Now verify that the range sum from the root to index 1 is indeed 4 – it is. Next, check the sum for the range [2,7]; it should be 9, and it is. Then examine the range [0,3]; the left side contributes 4 and the right side contributes 9, so the node automatically stores 13. This matches the sum of elements 0 through 3 (3 + 1 + 2 + 6 + 7 = 13). Thus the segment tree has been built completely. Finally, consider an update query: suppose we need to update the value at index 1 to a new value.",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 512.24,
+    "end": 569.04,
+    "text": "[Video: Update query] [Topics: Update query] मान लेते किसी ने बोला कि अपडेट करना है आईडी एक इंडेक्स इक्वल टू वन पर जो वैल्यू है उसका वैल्यू तुमको बनाना है टू में ठीक है मतलब इंडेक्स नंबर वन में जो वैल्यू है उसको टू में कन्वर्ट करना है ठीक है तो देखते हैं कि ओबवियस बात है यह अपडेट कर दिया हमने तो हमारा सेगमेंट ट्री भी अब चेंज हो जाएगा ना है ना तो अब देखते सेगमेंट्री कैसे अपडेट होगा मेरा तो देखो आपको क्या करना है इंडेक्स वन में जो वैल्यू है उसको टू में कन्वर्ट करना है ठीक है तो सबसे पहले तो ओबवियस है हमेशा की तरह सबसे पहले आप रूट पर आओगे और आप रूट से पूछोगे कि भाई इंडेक्स नंबर वन किस साइड पड़ेगा तो रूट बताएगा कि लेफ्ट साइड पड़ेगा और वो हमने हम कैसे पता करेंगे ऐसे पता करेंगे सिंपली मिड निकालेंगे मिड इ 0 प् 3/2 दैट इज 1 है ना तो अब यहां पर ध्यान दो जिस इंडेक्स को आपको अपडेट करना है आईडी एक जिसको आपको अपडेट करना है वो",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 554.28,
+    "end": 609.32,
+    "text": "[Video: Update query] [Topics: Update query] पता करेंगे सिंपली मिड निकालेंगे मिड इ 0 प् 3/2 दैट इज 1 है ना तो अब यहां पर ध्यान दो जिस इंडेक्स को आपको अपडेट करना है आईडी एक जिसको आपको अपडेट करना है वो लेसर दन इक्वल टू मिड है तो यस सी बात है वो लेफ्ट साइड में होगा ना ठीक है हमारा इंडेक्स क्या था वन था अगर मान लेते इंडेक्स हमारा टू होता तो पक्का वो राइट साइड में होता क्यक देखो व मिड से बड़ा है मिड में रना है तो ट कहीं पर राइट साइड में होगा सही बात है देखो राइट साइड में है बट हमारा इस बार केस क्या है कि हमारा जो आईडी एक्स है व लेसन इक्वल टू मिड है ठीक है तो बात लेफ्ट साइड में कहीं पर होगा ठीक है तो रूट ने बोला कि लेफ्ट साइड में चले जाओ तो मैं लेफ्ट साइड में गया ठीक है अब मैं यहां पर आया तो अब मैं फिर से यहां पर मिड निकालू ठीक है यानी कि 0 प् 1 बा 2 क्या हो गया जीरो हो गया तो यहां पर मैं फिर से चेक",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 594.36,
+    "end": 651.72,
+    "text": "[Video: Update query] [Topics: Update query] ठीक है अब मैं यहां पर आया तो अब मैं फिर से यहां पर मिड निकालू ठीक है यानी कि 0 प् 1 बा 2 क्या हो गया जीरो हो गया तो यहां पर मैं फिर से चेक करूंगा कि जो इंडेक्स है क्या वो ग्रेटर दन मेड है हां इस बार देखो इंडेक्स लेस दन इक्वल टू मेड नहीं है इंडेक्स ग्रेटर दन मेड है इसका मतलब कि हमारा जो आईडी एक होगा वो राइट साइड में होगा सही बात है देखो राइट साइड में ही है हमारा आईडी एक आईडी एक हमारा वन था ना राइट साइड में ही है ठीक है अब आप यहां पर आ गए अब यहां पर आ गया अब देखो यानी यहां पर बेस केस आ चुका है l इ r आ चुका है मतलब पक्का आप अपने आईडीएक्स पर पहुंच चुके होगे ये गारंटी होगी ये गारंटीड है क्योंकि आप उसी के हिसाब से फिल्टर करते आ रहे हो यहां पर आपको आईडीएक्स नहीं मिला आपने मिड ढूंढा और लेफ्ट साइड चले गए यहां पर भी आपको आपने मिड ढूंढा और राइट साइड चले गए जब आप बेस केस प पहुंचो ग तो आपको अपना आईडीएस मिल चुका होगा अब देखो एक चीज यहां पर ध्यान से",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 638.04,
+    "end": 694.28,
+    "text": "[Video: Update query] [Topics: Update query] और लेफ्ट साइड चले गए यहां पर भी आपको आपने मिड ढूंढा और राइट साइड चले गए जब आप बेस केस प पहुंचो ग तो आपको अपना आईडीएस मिल चुका होगा अब देखो एक चीज यहां पर ध्यान से सुनना यहां पर आप आए हो तो इसका मतलब क्या हुआ इसका रेंज देखो यह वन से वन को रिप्रेजेंट कर रहा है मतलब यह मेरा वन से वन मतलब देख रहे हो आईडी एक से आईडी को कर रहा है मतलब मुझे आई एक अपना मिल चुका है ठीक है बट एक बात बताओ यह वन जो है सेगमेंट ट्री में कहां पर प्रेजेंट होगा यहां तो मुझे ट्री में यहां दिख रहा है ना बट सेगमेंट ट्री वाला जो अरे हम बनाते हैं उसमें कौन से इंडेक्स में वो प्रेजेंट होगा वो हम कैसे निकालते थे याद करो रूट को हम कहां कौन से इंडेक्स से स्टार्ट करते थे i = 0 से स्टार्ट करते थे फिर लेफ्ट साइड गए तो 2i + 1 करते थे फिर राइट साइड गए तो 2i + 2 करते थे तो यहां पर जो i का वैल्यू होगा 2i + 2 जो भी वैल्यू होगा ठीक है वो इंडेक्स होगा एक्चुअली में जहां वन प्रेजेंट होगा अपना सेगमेंट ट्री",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 681.52,
+    "end": 740.32,
+    "text": "[Video: Update query] [Topics: Update query] साइड गए तो 2i + 2 करते थे तो यहां पर जो i का वैल्यू होगा 2i + 2 जो भी वैल्यू होगा ठीक है वो इंडेक्स होगा एक्चुअली में जहां वन प्रेजेंट होगा अपना सेगमेंट ट्री वाले अरे में तो वहां पर मुझे क्या करना है यहां पर मान लेते हैं वो इंडेक्स यह था यहां पर वन था तो मैं क्या करूंगा इसको अपडेट करके वन को अपडेट करके क्या वैल्यू डालना था वैल्यू इट डालना था तो मैंने यहां पर वैल्यू इक्वल टूटू डाल दिया ठीक है यहां तक क्लियर है अब देखो ध्यान दो यहां पर बहुत ही इंपॉर्टेंट है यहां पर ध्यान देना अच्छे से इसको मैं हटा रहा हूं 2i प्व ये सब हटा देता हूं तो सिंस आप यहां पर पहुंच चुके हो तो आपने इसको टू में कन्वर्ट कर दिया मान के चलते हैं तो आपने इसको टू में कन्वर्ट कर दिया सेगमेंट्री अरे जो है वहां पर आपने टू में अपडेट कर दिया और ट्री के फॉर्म में कुछ ऐसा दिख रहा है ये है ना ठीक है तो यहां पर टू आपने डाल दिया अब ओबवियस सी बात है ये बेस केस आप यहां से रिटर्न कर जाओगे है ना यहां से रिटर्न कर जाओगे अब देखना",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 726.88,
+    "end": 782.16,
+    "text": "[Video: Update query] [Topics: Update query] ऐसा दिख रहा है ये है ना ठीक है तो यहां पर टू आपने डाल दिया अब ओबवियस सी बात है ये बेस केस आप यहां से रिटर्न कर जाओगे है ना यहां से रिटर्न कर जाओगे अब देखना ध्यान देना ये अब वापस से फोर के पास आओगे है ना याद करो फोर का इंडेक्स मान लेते हैं आ रहा होगा ठीक है मान लेते हैं ये आ है इसका और इसका आई कुछ और रहा होगा आड मान लेते हैं तो फर का वैल्यू क्या हो जाएगा तो फ इसका वैल्यू भी अपडेट होगा फॉर श्यर ठीक है तो कैसे निकालेंगे इसका लेफ्ट साइड का वैल्यू यानी कि 2 * आड + 1 और इसका राइट साइड का वैल्यू 2 * आड + 2 जो भी वैल्यू होगा उन दोनों का सम होता था हमेशा हमेशा से वही तो होता था ठीक है तो जब मैं यहां पर आया तो 2 * ' + 1 का वैल्यू क्या है 3 है और 2 * ' + 2 का वैल्यू हमने देखो टू बना दिया था है ना तो टू हो गया",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 768.28,
+    "end": 823.64,
+    "text": "[Video: Update query] [Topics: Update query] तो होता था ठीक है तो जब मैं यहां पर आया तो 2 * ' + 1 का वैल्यू क्या है 3 है और 2 * ' + 2 का वैल्यू हमने देखो टू बना दिया था है ना तो टू हो गया तो यहां पर अब वैल्यू क्या हो चुका है पा हो चुका है तो मैंने इसका वैल्यू अपडेट कर दिया ठीक है तो देखो यहां पर हमने क्या किया अल्टीमेटली जैसे ही मैं अपने लेफ्ट राइट लेफ्ट सॉरी जैसे ही मैं यहां से लौटा रिकर्स से वापस से लौटा फोर पर तो फोर का मुझे अपडेट करना पड़ेगा जो भी मेरा सेगमेंट ट्री वाला अरे है उसका जो भी इंडेक्स रहा होगा आई आईड जो भी रहा होगा उसका वैल्यू हमने क्या कर दिया हमेशा की तरह वही करते थे 2i प्व प्लस सेगमेंट ट्री 2y + 2 ये तो पहले भी करते आ रहे थे जब हम बिल्ड ट्री वाला फंक्शन हमने लिखा था ठीक है बस हमने यहां पर क्या किया यहां पर अपडेट मार दिया है इसको टू को तो इसका वैल्यू भी अपडेट हो जाएगा ओबवियस सी बात",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 810.32,
+    "end": 865.8,
+    "text": "[Video: Update query] [Topics: Update query] 2y + 2 ये तो पहले भी करते आ रहे थे जब हम बिल्ड ट्री वाला फंक्शन हमने लिखा था ठीक है बस हमने यहां पर क्या किया यहां पर अपडेट मार दिया है इसको टू को तो इसका वैल्यू भी अपडेट हो जाएगा ओबवियस सी बात है ठीक है अब वापस से जब यहां से मैं रिकर्स लौटेगा मेरा इधर मैं वापस से रूट पर आऊंगा तो फिर से यहां पर वही करूंगा ये भी अपडेट होगा ना ओबवियस सी बात है तो इसका इसका लेफ्ट साइड का वैल्यू क्या होगा 2 * i + 1 यानी कि पांच हो चुका है वो ना इसका वैल्यू पांच हो चुका है तो 5 प् 2 * i प् 2 कौन कौन रहेगा यह रहेगा उसका वैल्यू ना है तो ना अब देखो यह 14 हो गया है ना वेरीफाई भी कर लेते हैं रो से 3 तक का वैल्यू क्या हो जाएगा 14 हो जाना चाहिए 3 दो 5 2 7 7 14 रो से वन तक का वैल्यू पाच हो जाना चाहिए देखते हैं जीरो से वन का वैल्यू देखो पा है 3 प् 2 5 ठीक है तो यहां पर हमने बहुत इजीली अपडेट कर लिया अब इसी ट्री डायग्राम को अगर मैं कोड में",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 853.2,
+    "end": 909.24,
+    "text": "[Video: Update query] [Topics: Update query] पाच हो जाना चाहिए देखते हैं जीरो से वन का वैल्यू देखो पा है 3 प् 2 5 ठीक है तो यहां पर हमने बहुत इजीली अपडेट कर लिया अब इसी ट्री डायग्राम को अगर मैं कोड में कन्वर्ट करना चाहूं ठीक है तो देखते हैं कैसे कर सकते हैं तो अब देखो जो हमने रिकर्स ट्री बनाया जो स्टोरी टाइप हमने रशन ट्री बनाया उसको कोड में कैसे कन्वर्ट करेंगे मैंने क्या बोला था कि हम हम यस रूट के पास जाके रूट में से पूछेंगे सबसे पहले तो पहले मैं रूट को कॉल करता हूं अपडेट नाम का एक फंक्शन लिख देते हैं अपडेट सेगमेंट ट्री ठीक है और मुझे इस इंडेक्स में आईडी एक्स में जो भी वैल्यू है एक नया वैल्यू अपडेट करना है इस वैल्यू को डालना है तो इस आईडी में जाक इस वैल्यू को डालना है ठीक है उसके हिसाब मुझे सेगमेंट्री अपडेट करना है यह तो मेरा इनपुट रहेगा आईडी और वैल्यू और मैं सिस मैं रूट के पास आया तो रूट का इंडेक्स आ होगा याद करो रूट का इंडेक्स क्या होता था",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 894.6,
+    "end": 951.2,
+    "text": "[Video: Update query] [Topics: Update query] को डालना है तो इस आईडी में जाक इस वैल्यू को डालना है ठीक है उसके हिसाब मुझे सेगमेंट्री अपडेट करना है यह तो मेरा इनपुट रहेगा आईडी और वैल्यू और मैं सिस मैं रूट के पास आया तो रूट का इंडेक्स आ होगा याद करो रूट का इंडेक्स क्या होता था रूट का इंडेक्स जीरो होता था ठीक है तो जीरो पास करेंगे यहां पर और रूट रेंज कहां से कहां को कवर करता था एल से आर को कवर करता था तो इस केस में हमारा रूट जो है जीरो से थ को कवर कर रहा है तो मैं जीथ पास कर दूंगा य पर ठीक है अब आ जाते हैं अपने फंक्शन पर वॉइड अपडेट सेगमेंट ट्री क्या क्या पास किया हमने आईडी एक्स वैल्यू इस रूट का जो भी इंडेक्स है है ना देखो ध्यान देना यह इंडेक्स आई जो है ना यह इंडेक्स यह बताता है कि सेगमेंट ट्री वाला जो अरे है उसमें कौन सा इंडेक्स में यह करंट नोड मेरा",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 938.52,
+    "end": 994.24,
+    "text": "[Video: Update query] [Topics: Update query] इंडेक्स है है ना देखो ध्यान देना यह इंडेक्स आई जो है ना यह इंडेक्स यह बताता है कि सेगमेंट ट्री वाला जो अरे है उसमें कौन सा इंडेक्स में यह करंट नोड मेरा प्रेजेंट होगा ठीक है और वह किस एल से किस आर तक को रिप्रेजेंट कर रहा है ओके ठीक है अब इसके बाद आगे बढ़ते हैं तो सबसे पहले मैंने क्या बोला था कि मैं रूट से पूछूंगा कि लेफ्ट साइड जाना है या राइट साइड जाना है इस इंडेक्स वाले रूट नोड को ढूंढने के लिए तो उससे पहले रूट क्या बोला था कि पहले मिड निकाल लो मिड इक्वल ट एल प् आर बाटू ठीक है और यहां पर हम यह चेक करेंगे कि जो हमारा इंडेक्स है जिसको हम ढूंढ रहे हैं है ना अगर वह लेस देन या इक्वल टू मिड होता है ठीक है तो मैंने क्या बोला था कि हम लेफ्ट साइड कॉल कर देंगे लेफ्ट साइड चले जाएंगे सेम फंक्शन कॉल कर देंगे",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 982.12,
+    "end": 1039.08,
+    "text": "[Video: Update query] [Topics: Update query] देन या इक्वल टू मिड होता है ठीक है तो मैंने क्या बोला था कि हम लेफ्ट साइड कॉल कर देंगे लेफ्ट साइड चले जाएंगे सेम फंक्शन कॉल कर देंगे अपडेट सेगमेंट ट्री और आईडी एकस और वैल्यू तो वही रहेगा ठीक है और मेरा इंडेक्स चेंज हो जाएगा याद करो मैं अभी लेफ्ट साइड जा रहा हूं ना यह है मेरा लेफ्ट चाइल्ड के पास जा रहा हूं मैं उसका इंडेक्स क्या होता था याद करो 2 इन आ प्व है ना ओके और वो एल से लेकर मिड तक को रिप्रेजेंट करेगा यह तो आपको पता होगा सिमिलर कोड है अब जैसे बिल्ड सेगमेंट ट्री वाला कोड था उसी की तरह कोड है बस यहां पर आईडी और वल एक ऐड हो गया है ठीक है और अगर ऐसा नहीं है तो एल्स के केस में हम क्या करेंगे राइट चाइल्ड के पास जाएंगे राइट",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 1027.32,
+    "end": 1084.96,
+    "text": "[Video: Update query] [Topics: Update query] एल्स के केस में हम क्या करेंगे राइट चाइल्ड के पास जाएंगे राइट चाइल्ड ठीक है और सेम फंक्शन कॉल करेंगे अपडेट सेगमेंट्री आई एकमा वेल 2 * आ + 2 ठीक है यह किसको रिपेंट करेगा मिड प्लस व से लेकर आ तक को रिप्रेजेंट करेगा ठीक है तो यहां पर जो मैंने रिकर्स कॉल कर दिया यह वाला चाहे यह कॉल होगा या तो यह कॉल होगा तो मैं उम्मीद करूंगा कि रिकर्स फदर आगे जाकर उस नोड का वैल्यू अपडेट कर देगा जहां पर जो जो इस इंडेक्स को रिप्रेजेंट कर रहा होगा ठीक है अब जैसे ही मैं वापस से लौटूंगा रिकर्स से तो यस स बात है जो करंट मेरा नोड है सेगमेंट ट्री वो कौन से इंडेक्स पर है आई पर है याद करो ये फंक्शन",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 1070.88,
+    "end": 1130.32,
+    "text": "[Video: Update query] [Topics: Update query] लौटूंगा रिकर्स से तो यस स बात है जो करंट मेरा नोड है सेगमेंट ट्री वो कौन से इंडेक्स पर है आई पर है याद करो ये फंक्शन आई के लिए कॉल हुआ था ठीक है तो इसके इसका इसका लेफ्ट चाइल्ड या तो राइट चाइल्ड में हम जाके हमने अपडेट कर दिया अपने ट्री को जब वापस से रिकर्स से लौटे तो इसका लेफ्ट साइड का जो भी वैल्यू रहा होगा सेगमेंट ट्री लेफ्ट चाइल्ड का वैल्यू कहां पर प्रेजेंट होगा 2 * आ प् 1 पर प्रेजेंट होगा और इसका राइट चाइल्ड का जो भी वैल्यू रहा होगा और वो किस इंडेक्स में प्रेजेंट होगा 2 * आ प् 2 प प्रेजेंट होगा ठीक है ये हम असाइन कर देंगे दोनों का ऐड करके ठीक है अब 2 इन आ प्व में या 2 इन आ पटू में आगे ये कहां पर वैल्यू फिल हुआ होगा ये रिकसिवली जब हमने कॉल किया होगा तो अंदर जाके इसने रशन में इसने वैल्यू को अपडेट कर दिया होगा ठीक है और याद करो बेस केस हमारा क्या होता था यहां पर मैं लिख",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 1117.4,
+    "end": 1173.44,
+    "text": "[Video: Update query] [Topics: Update query] अंदर जाके इसने रशन में इसने वैल्यू को अपडेट कर दिया होगा ठीक है और याद करो बेस केस हमारा क्या होता था यहां पर मैं लिख देता हूं बेस केस कि अगर एल इ इ आ आ गया इसका मतलब आप बेस केस पर पहुंच चुके हो ठीक है और बेस केस में याद करो क्या करता था ट्री डायग्राम पर ध्यान दो जिस नोड पर आप आए हो वो उस आईडीएक्स को रिप्रेजेंट कर रहा होगा फॉर श्यर ठीक है तो उसका इंडेक्स क्या होगा उसका इंडेक्स यह होगा जिस नोट पर मैं खड़ा हूं उसका इंडेक्स यह होगा तो सेगमेंट ट्री में उसका इंडेक्स जो भी होगा वहां पर मैंने वैल्यू क्या अपडेट कर दिया जो भी वैल्यू मुझे अपडेट करना था ठीक है और यहां से मैं रिटर्न हो जाऊंगा यहां तक क्लियर है तो देखो कितना इजली आपने अपडेट क्वेरी का भी अपडेट सेगमेंट्री का भी कोड लिख लिया और एकदम सिमिलर है ये बि सेगमेंट्री की तरह है ना लेफ्ट साइड और राइट साइड के पास जा रहे",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 1159.04,
+    "end": 1215.0,
+    "text": "[Video: Update query] [Topics: Update query] रिटर्न हो जाऊंगा यहां तक क्लियर है तो देखो कितना इजली आपने अपडेट क्वेरी का भी अपडेट सेगमेंट्री का भी कोड लिख लिया और एकदम सिमिलर है ये बि सेगमेंट्री की तरह है ना लेफ्ट साइड और राइट साइड के पास जा रहे हैं और अपडेट करते चल रहे हैं अपने वैल्यूज को सेगमेंट्री अरे के वैल्यूज को ठीक है तो अब देखते हैं कि कैसे यह बेटर है हमारे प्रीवियस ओ ऑफ ए वाले अप्रोच से याद करो जब प्रीफिक्स अरे से हम लोग सॉल्व करते थे इस प्रॉब्लम को तो अपडेट जब आता था तो ऑफ ए टाइम लगता था वर्स्ट केस में है ना क्योंकि हम सारे एलिमेंट को अपडेट करना पड़ता था तो यह कैसे बेटर है है ना इसका टाइम कंपलेक्सिटी समझते हैं एक बार तो मैंने ट्री डायग्राम यहां पर दोबारा से बना दिया है ओके तो अब एक चीज ध्यान दो मुझे इंडेक्स नंबर वन वा एलिमेंट का वैल्यू टू करना था तो मैं रूट के पास आया ठीक है यह मुझे यहां लेकर गया फिर ये मुझे यहां लेकर गया मैंने इसका वैल्यू टू किया वापस से मैं इसके पास आया और वापस से मैं इसके पास आ गया ठीक है तो अब एक चीज ध्यान",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 1201.08,
+    "end": 1256.8,
+    "text": "[Video: Update query] [Topics: Update query] वैल्यू टू करना था तो मैं रूट के पास आया ठीक है यह मुझे यहां लेकर गया फिर ये मुझे यहां लेकर गया मैंने इसका वैल्यू टू किया वापस से मैं इसके पास आया और वापस से मैं इसके पास आ गया ठीक है तो अब एक चीज ध्यान दो हम सारे एलिमेंट्स को नहीं विजिट कर रहे हैं हम बस इस हाइट इतने हाइट तक का ट्रैवर्सल मार रहे हैं देखो यहां से यहां गए यहां से यहां आ गए इस इस पाथ में बस ट्रैवर्सल किया हमने ठीक है तो इसका हाइट कितना है आपको मैंने बताया था इसका हाइट है लॉग ऑफ n n क्या था टोटल नंबर ऑफ नट्स थे हमारे नम्स अरे में ठीक है जो भी हमारा नम्स अरे था है ना उसका मान लेते साइज n है तो याद करो इसका हाइट मैंने आपको बताया था वीडियो नंबर वन में कि इसका हाइट होगा लॉग ऑफ n टू द बेसटू और क्यों ल ऑफ n टू द बेसटू है वो भी मैंने आपको बता रखा था ऑस हाफ हाफ में आप डिवाइड कर रहे हो इडी से इसको तो इसका हाइट लॉग ऑफ n है तो अब एक चीज ध्यान दे रहे हो जब भी हम अपडेट कर रहे हैं तो",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 1241.88,
+    "end": 1299.16,
+    "text": "[Video: Update query] [Topics: Update query] नंबर वन में कि इसका हाइट होगा लॉग ऑफ n टू द बेसटू और क्यों ल ऑफ n टू द बेसटू है वो भी मैंने आपको बता रखा था ऑस हाफ हाफ में आप डिवाइड कर रहे हो इडी से इसको तो इसका हाइट लॉग ऑफ n है तो अब एक चीज ध्यान दे रहे हो जब भी हम अपडेट कर रहे हैं तो बस जितना हाइट है उतना ही ट्रैवर्सल मार रहे हैं यहां से यहां गए यहां से यहां आ गए यानी कि टोटल नंबर ऑफ नोड्स जिसको आप अपडेट करोगे उनका काउंट पता है कितना होगा लॉग ऑफ n नोट्स को ही आप विजिट करोगे इतने ही नोट्स को आप विजिट करके उनका वैल्यू अपडेट करोगे और आपका काम बन जाएगा ठीक है तो याद कर दो ध्यान दो आप ओव में जब कर रहे थे और उससे आप बेटर टाइम पर आ चुके हो लॉग ऑफ n में अब आप कर पा रहे हो अपने सेगमेंट्री को अपडेट ठीक है अब सेगमेंट्री अपडेट हो गया अब आप इसमें रेंज सम का क्वेरी आप मार सकते है ना इस सेगमेंट्री में ठीक है तो अब आपने इस वीडियो में एक और चीज क्या सीख ली कि अपडेट क्वेरी जब होता है तब हमारा",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 1284.8,
+    "end": 1344.44,
+    "text": "[Video: Update query] [Topics: Update query] अब सेगमेंट्री अपडेट हो गया अब आप इसमें रेंज सम का क्वेरी आप मार सकते है ना इस सेगमेंट्री में ठीक है तो अब आपने इस वीडियो में एक और चीज क्या सीख ली कि अपडेट क्वेरी जब होता है तब हमारा सेगमेंट्री कैसे अपडेट होता है ठीक है और आपने ऑलरेडी बिल्ड सेगमेंट्री सीख रखा है ठीक है तो आपने यह भी सीख लिया आपने यह भी सीख लिया अब हमारा लास्ट और सबसे इंपॉर्टेंट चीज जिस पर हम हमेशा से डिस्कस करते आ रहे हैं कि हर बार याद करो क्वेरी मुझसे पूछा जाएगा कि भाई इंडेक्स नंबर i से लेकर j तक का सम बताओ रेंज सम क्वेरी है ना आई ड से लेकर जे ड तक का सम बताओ है ना तो वह हम लोग देखेंगे कि कैसे सेगमेंट्री हमारा यह काम आसान करता है ठीक है तो वह नेक्स्ट वीडियो में आएगा तो हमने इस वीडियो में क्या सीख लिया अपडेट द सेगमेंट्री का फंक्शन जो है वह कैसे लिखते हैं और उसका टाइम कंप्लीट भी हमने समझ लिया ठीक है तो आई होप आई वाज एबल टू",
+    "video_id": "aHOKsAg2EWE"
+  },
+  {
+    "start": 1331.0,
+    "end": 1344.44,
+    "text": "[Video: Update query] [Topics: Update query] इस वीडियो में क्या सीख लिया अपडेट द सेगमेंट्री का फंक्शन जो है वह कैसे लिखते हैं और उसका टाइम कंप्लीट भी हमने समझ लिया ठीक है तो आई होप आई वाज एबल टू हेल्प सी यू न नेक्स्ट वीडियो थैंक यू",
+    "video_id": "aHOKsAg2EWE"
+  }
+]
