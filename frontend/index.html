@@ -483,150 +483,160 @@
         </div>
       </div>
 
-      <!-- Video-First Grid: 
-           Left Column (lg:col-span-7): Video Centerpiece + LLM Answer (just below the video)
-           Right Column (lg:col-span-5): Sources & Excerpts (immediately right of the video playback)
+      <!-- Two-Row Layout Requested by User:
+           ROW 1: Video (Left) + Timestamps / Sources (Right)
+           ROW 2: Grounded LLM Answer (Full Width across bottom)
       -->
-      <div class="p-4 sm:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+      <div class="p-4 sm:p-6 flex flex-col space-y-6">
         
-        <!-- Left Column: Video + LLM Answer (just below video) -->
-        <div class="lg:col-span-7 flex flex-col space-y-5">
+        <!-- ROW 1: Video (Left, ~68%) + Stamps / Sources (Right, ~32%) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
           
-          <!-- 1. Centerpiece 16:9 Video Player -->
-          <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-col space-y-3.5 shadow-xl border border-[var(--border-color)]">
-            
-            <!-- Video Player Header -->
-            <div class="flex items-center justify-between text-xs font-mono-code">
-              <span class="font-semibold text-[var(--text-color)] flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-[var(--accent-rose)]"></span>
-                <span>SYNCHRONIZED VIDEO PLAYBACK</span>
-              </span>
-              <div class="flex items-center gap-2">
-                <span class="text-[10px] text-[var(--text-muted)]">ACTIVE TIME:</span>
-                <span id="playerTimestamp" class="text-[var(--accent-rose)] bg-[var(--card-bg)] px-2.5 py-0.5 rounded-md border border-[var(--accent-rose)]/40 font-bold">
-                  16:09
+          <!-- Top Left: Video Player (8 cols) -->
+          <div class="lg:col-span-8 flex flex-col">
+            <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between h-full space-y-3.5 shadow-xl border border-[var(--border-color)]">
+              
+              <!-- Video Player Header -->
+              <div class="flex items-center justify-between text-xs font-mono-code">
+                <span class="font-semibold text-[var(--text-color)] flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[var(--accent-rose)]"></span>
+                  <span>SYNCHRONIZED VIDEO PLAYBACK</span>
                 </span>
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] text-[var(--text-muted)]">ACTIVE TIME:</span>
+                  <span id="playerTimestamp" class="text-[var(--accent-rose)] bg-[var(--card-bg)] px-2.5 py-0.5 rounded-md border border-[var(--accent-rose)]/40 font-bold">
+                    16:09
+                  </span>
+                </div>
               </div>
-            </div>
 
-            <!-- YouTube Video Embed (16:9 Aspect Ratio) -->
-            <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black/70 border border-[var(--border-color)] shadow-2xl">
-              <iframe 
-                id="videoIframe" 
-                class="w-full h-full" 
-                src="https://www.youtube.com/embed/myPeWb3Y68A?start=969&autoplay=0" 
-                title="YouTube Video Player"
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
-              </iframe>
-            </div>
-
-            <!-- Video Meta & YouTube External Link -->
-            <div class="pt-1 flex items-center justify-between text-xs font-mono-code">
-              <div class="truncate mr-2 font-medium text-[var(--text-color)] text-xs sm:text-sm" id="playerTitle">
-                DP 20: Minimum Coins
+              <!-- YouTube Video Embed (16:9 Aspect Ratio) -->
+              <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black/70 border border-[var(--border-color)] shadow-2xl">
+                <iframe 
+                  id="videoIframe" 
+                  class="w-full h-full" 
+                  src="https://www.youtube.com/embed/myPeWb3Y68A?start=969&autoplay=0" 
+                  title="YouTube Video Player"
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen>
+                </iframe>
               </div>
-              <a id="externalLink" href="https://www.youtube.com/watch?v=myPeWb3Y68A&t=969s" target="_blank" class="inline-flex items-center gap-1 text-[var(--accent-rose)] hover:underline shrink-0 font-medium px-2.5 py-1 rounded-lg bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-[var(--accent-rose)] transition">
-                <span>YouTube</span>
-                <span>↗</span>
-              </a>
-            </div>
 
-            <!-- Navigation Helper Tip -->
-            <div class="border-t border-[var(--border-color)] pt-2.5 text-[11px] text-[var(--text-muted)] font-mono-code flex items-center gap-2">
-              <span class="text-[var(--accent-rose)]">✦</span>
-              <span>Clicking any timestamp citation or excerpt row immediately seeks the video to that exact second.</span>
-            </div>
+              <!-- Video Meta & YouTube External Link -->
+              <div class="pt-1 flex items-center justify-between text-xs font-mono-code">
+                <div class="truncate mr-2 font-medium text-[var(--text-color)] text-xs sm:text-sm" id="playerTitle">
+                  DP 20: Minimum Coins
+                </div>
+                <a id="externalLink" href="https://www.youtube.com/watch?v=myPeWb3Y68A&t=969s" target="_blank" class="inline-flex items-center gap-1 text-[var(--accent-rose)] hover:underline shrink-0 font-medium px-2.5 py-1 rounded-lg bg-[var(--card-bg)] border border-[var(--border-color)] hover:border-[var(--accent-rose)] transition">
+                  <span>YouTube</span>
+                  <span>↗</span>
+                </a>
+              </div>
 
+              <!-- Navigation Helper Tip -->
+              <div class="border-t border-[var(--border-color)] pt-2 text-[11px] text-[var(--text-muted)] font-mono-code flex items-center gap-2">
+                <span class="text-[var(--accent-rose)]">✦</span>
+                <span>Clicking any timestamp citation immediately seeks video playback.</span>
+              </div>
+
+            </div>
           </div>
 
-          <!-- 2. LLM Grounded Answer (Just below the video) -->
-          <div class="glass-card rounded-2xl p-5 sm:p-6 relative flex flex-col justify-between border border-[var(--border-color)]">
-            <div>
-              <div class="flex items-center justify-between mb-3 border-b border-[var(--border-color)] pb-2 text-xs font-mono-code text-[var(--text-muted)]">
-                <span class="tracking-wider uppercase text-[10px] font-semibold text-[var(--text-color)]">GROUNDED ANSWER</span>
-                <button 
-                  id="copyBtn" 
-                  onclick="copyAnswer()" 
-                  class="text-[var(--text-muted)] hover:text-[var(--text-color)] bg-[var(--card-bg)] px-2.5 py-1 rounded-lg border border-[var(--border-color)] hover:border-[var(--accent-rose)] transition text-[11px] cursor-pointer"
-                >
-                  Copy
-                </button>
+          <!-- Top Right: STAMPS / Sources & Excerpts (4 cols) -->
+          <div class="lg:col-span-4 flex flex-col">
+            <div class="glass-card rounded-2xl p-4 sm:p-5 flex flex-col justify-between h-full border border-[var(--border-color)] shadow-xl">
+              <div>
+                <div class="flex items-center justify-between mb-3 text-xs font-mono-code text-[var(--text-muted)] uppercase tracking-wider">
+                  <span class="text-[10px] font-semibold text-[var(--text-color)]">TIMESTAMPS (<span id="sourceCount" class="text-[var(--accent-rose)] font-bold">2</span>)</span>
+                  <span class="text-[10px]">Click to seek</span>
+                </div>
+
+                <!-- List of Verbatim Excerpts -->
+                <div id="transcriptList" class="rounded-xl overflow-hidden divide-y divide-[var(--border-color)] max-h-[380px] overflow-y-auto pr-0.5">
+                  
+                  <!-- Pre-populated Example Row 1 -->
+                  <div class="timeline-row active" onclick="playVideoClip('myPeWb3Y68A', 969, 'DP 20: Minimum Coins (Coin Change)', this)">
+                    <div class="font-mono-code text-xs">
+                      <span class="inline-block px-2 py-0.5 rounded-md bg-[var(--card-bg)] border border-[var(--accent-rose)] text-[var(--accent-rose)] font-bold text-center w-full">
+                        16:09
+                      </span>
+                      <div class="text-[9px] text-[var(--text-muted)] mt-1 text-center">#1 · 0.94</div>
+                    </div>
+                    <div class="text-xs text-[var(--text-color)] leading-relaxed">
+                      <div class="font-semibold text-xs mb-0.5">DP 20: Minimum Coins</div>
+                      <div class="text-[var(--text-muted)] font-light text-[11px] line-clamp-3">"You're adding one plus one plus if any of the function gives INT_MAX it'll be INT_MAX + 1 which will overflow... so you return something as 1e9 to prevent overflow."</div>
+                    </div>
+                  </div>
+
+                  <!-- Pre-populated Example Row 2 -->
+                  <div class="timeline-row" onclick="playVideoClip('myPeWb3Y68A', 1015, 'DP 20: Minimum Coins (Coin Change)', this)">
+                    <div class="font-mono-code text-xs">
+                      <span class="inline-block px-2 py-0.5 rounded-md bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--text-color)] font-bold text-center w-full">
+                        17:06
+                      </span>
+                      <div class="text-[9px] text-[var(--text-muted)] mt-1 text-center">#2 · 0.89</div>
+                    </div>
+                    <div class="text-xs text-[var(--text-color)] leading-relaxed">
+                      <div class="font-semibold text-xs mb-0.5">DP 20: Minimum Coins</div>
+                      <div class="text-[var(--text-muted)] font-light text-[11px] line-clamp-3">"...if the answer goes beyond we return 1e9 otherwise INT_MAX + 1 + 1 would overflow."</div>
+                    </div>
+                  </div>
+
+                </div>
               </div>
-              
-              <!-- Live Answer Content -->
-              <div id="answerContent" class="text-xs sm:text-sm text-[var(--text-color)] leading-relaxed space-y-2.5 font-light">
-                <p><b>INT_MAX</b> is the maximum representable integer in C++. In the Minimum Coins recurrence, when a subproblem is impossible and returns <code>INT_MAX</code>, adding <code>1</code> for the current coin causes an <b>integer overflow</b>, wrapping to a negative value.</p>
-                <p>To avoid this, Striver returns <code>1e9</code> (one billion) as a safe infinity sentinel. It is larger than any possible path sum, yet adding <code>1</code> to it never overflows standard 32-bit integers.</p>
+
+              <!-- Footer Tip -->
+              <div class="border-t border-[var(--border-color)] pt-2 text-[10px] font-mono-code text-[var(--text-muted)] flex items-center gap-1.5 mt-2">
+                <span>⚡</span>
+                <span>Exact second-level speech alignment</span>
               </div>
             </div>
-
-            <!-- Collapsible Technical Diagnostics (Keeps primary UI clean) -->
-            <details class="mt-4 pt-3 border-t border-[var(--border-color)]/60 text-xs font-mono-code text-[var(--text-muted)] group">
-              <summary class="cursor-pointer select-none text-[11px] hover:text-[var(--text-color)] transition flex items-center justify-between">
-                <span>⚡ Technical Diagnostics</span>
-                <span class="group-open:rotate-180 transition-transform">▼</span>
-              </summary>
-              <div class="mt-2.5 space-y-2 text-[11px] bg-[var(--card-bg-subtle)] p-2.5 rounded-xl border border-[var(--border-color)]">
-                <div id="latencyPill" class="text-[var(--accent-orange)]">
-                  ⚡ 418 ms (Search: 28ms · Rerank: 35ms · LLM: 355ms)
-                </div>
-                <div class="text-[10px] text-[var(--text-muted)]">
-                  FastEmbed ONNX 384d · Qdrant HNSW · MiniLM Re-ranker
-                </div>
-                <div class="pt-1 border-t border-[var(--border-color)]/50">
-                  <a href="/evaluation" class="text-[var(--accent-rose)] hover:underline">
-                    View complete system benchmark →
-                  </a>
-                </div>
-              </div>
-            </details>
           </div>
 
         </div>
 
-        <!-- Right Column: Sources & Excerpts (Immediately right of the video playback) -->
-        <div class="lg:col-span-5 lg:sticky lg:top-24">
-          <div class="glass-card rounded-2xl p-4 sm:p-5 border border-[var(--border-color)] shadow-xl">
-            <div class="flex items-center justify-between mb-3 text-xs font-mono-code text-[var(--text-muted)] uppercase tracking-wider">
-              <span class="text-[10px] font-semibold text-[var(--text-color)]">SOURCES & EXCERPTS (<span id="sourceCount" class="text-[var(--accent-rose)] font-bold">2</span>)</span>
-              <span class="text-[10px]">Click to seek</span>
+        <!-- ROW 2: LLM ANS (Full Width across the bottom) -->
+        <div class="glass-card rounded-2xl p-5 sm:p-6 relative flex flex-col justify-between border border-[var(--border-color)] w-full shadow-lg">
+          <div>
+            <div class="flex items-center justify-between mb-3 border-b border-[var(--border-color)] pb-2 text-xs font-mono-code text-[var(--text-muted)]">
+              <span class="tracking-wider uppercase text-[10px] font-semibold text-[var(--text-color)]">GROUNDED ANSWER</span>
+              <button 
+                id="copyBtn" 
+                onclick="copyAnswer()" 
+                class="text-[var(--text-muted)] hover:text-[var(--text-color)] bg-[var(--card-bg)] px-2.5 py-1 rounded-lg border border-[var(--border-color)] hover:border-[var(--accent-rose)] transition text-[11px] cursor-pointer"
+              >
+                Copy
+              </button>
             </div>
-
-            <!-- List of Verbatim Excerpts -->
-            <div id="transcriptList" class="rounded-xl overflow-hidden divide-y divide-[var(--border-color)] max-h-[520px] overflow-y-auto pr-0.5">
-              
-              <!-- Pre-populated Example Row 1 -->
-              <div class="timeline-row active" onclick="playVideoClip('myPeWb3Y68A', 969, 'DP 20: Minimum Coins (Coin Change)', this)">
-                <div class="font-mono-code text-xs">
-                  <span class="inline-block px-2 py-0.5 rounded-md bg-[var(--card-bg)] border border-[var(--accent-rose)] text-[var(--accent-rose)] font-bold text-center w-full">
-                    16:09
-                  </span>
-                  <div class="text-[9px] text-[var(--text-muted)] mt-1 text-center">#1 · 0.94</div>
-                </div>
-                <div class="text-xs text-[var(--text-color)] leading-relaxed">
-                  <div class="font-semibold text-xs mb-0.5">DP 20: Minimum Coins</div>
-                  <div class="text-[var(--text-muted)] font-light text-[11px] line-clamp-3">"You're adding one plus one plus if any of the function gives INT_MAX it'll be INT_MAX + 1 which will overflow... so you return something as 1e9 to prevent overflow."</div>
-                </div>
-              </div>
-
-              <!-- Pre-populated Example Row 2 -->
-              <div class="timeline-row" onclick="playVideoClip('myPeWb3Y68A', 1015, 'DP 20: Minimum Coins (Coin Change)', this)">
-                <div class="font-mono-code text-xs">
-                  <span class="inline-block px-2 py-0.5 rounded-md bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--text-color)] font-bold text-center w-full">
-                    17:06
-                  </span>
-                  <div class="text-[9px] text-[var(--text-muted)] mt-1 text-center">#2 · 0.89</div>
-                </div>
-                <div class="text-xs text-[var(--text-color)] leading-relaxed">
-                  <div class="font-semibold text-xs mb-0.5">DP 20: Minimum Coins</div>
-                  <div class="text-[var(--text-muted)] font-light text-[11px] line-clamp-3">"...if the answer goes beyond we return 1e9 otherwise INT_MAX + 1 + 1 would overflow."</div>
-                </div>
-              </div>
-
+            
+            <!-- Live Answer Content -->
+            <div id="answerContent" class="text-xs sm:text-sm text-[var(--text-color)] leading-relaxed space-y-2.5 font-light">
+              <p><b>INT_MAX</b> is the maximum representable integer in C++. In the Minimum Coins recurrence, when a subproblem is impossible and returns <code>INT_MAX</code>, adding <code>1</code> for the current coin causes an <b>integer overflow</b>, wrapping to a negative value.</p>
+              <p>To avoid this, Striver returns <code>1e9</code> (one billion) as a safe infinity sentinel. It is larger than any possible path sum, yet adding <code>1</code> to it never overflows standard 32-bit integers.</p>
             </div>
           </div>
+
+          <!-- Collapsible Technical Diagnostics (Keeps primary UI clean) -->
+          <details class="mt-4 pt-3 border-t border-[var(--border-color)]/60 text-xs font-mono-code text-[var(--text-muted)] group">
+            <summary class="cursor-pointer select-none text-[11px] hover:text-[var(--text-color)] transition flex items-center justify-between">
+              <span>⚡ Technical Diagnostics</span>
+              <span class="group-open:rotate-180 transition-transform">▼</span>
+            </summary>
+            <div class="mt-2.5 space-y-2 text-[11px] bg-[var(--card-bg-subtle)] p-2.5 rounded-xl border border-[var(--border-color)]">
+              <div id="latencyPill" class="text-[var(--accent-orange)]">
+                ⚡ 418 ms (Search: 28ms · Rerank: 35ms · LLM: 355ms)
+              </div>
+              <div class="text-[10px] text-[var(--text-muted)]">
+                FastEmbed ONNX 384d · Qdrant HNSW · MiniLM Re-ranker
+              </div>
+              <div class="pt-1 border-t border-[var(--border-color)]/50">
+                <a href="/evaluation" class="text-[var(--accent-rose)] hover:underline">
+                  View complete system benchmark →
+                </a>
+              </div>
+            </div>
+          </details>
         </div>
 
       </div>
