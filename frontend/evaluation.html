@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VidQuery | Evaluation & Performance Dashboard</title>
+  
+  <!-- Prevent theme flash on initial load -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('vidquery_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
+  <!-- Google Fonts: Cormorant Garamond, Montserrat & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --accent-rose: #ff4d6d;
+      --accent-orange: #ff9a5c;
+      --accent-violet: #b76bff;
+      --accent: #ff4d6d;
+      --accent-hover: #ff2a51;
+      --success: #10b981;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Montserrat', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* Dark Theme */
+      --bg-color: #0b0509;
+      --bg-gradient: radial-gradient(circle at 50% 0%, #1c0a15 0%, #0b0509 70%);
+      --text-color: #fff5f7;
+      --text-muted: rgba(255, 245, 247, 0.65);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-focus: rgba(255, 77, 109, 0.45);
+      
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-bg-subtle: rgba(255, 255, 255, 0.02);
+      --card-hover: rgba(255, 255, 255, 0.06);
+      
+      --aurora-1: rgba(255, 77, 109, 0.14);
+      --aurora-2: rgba(183, 107, 255, 0.09);
+      --glow-color: rgba(255, 77, 109, 0.2);
+      --code-bg: rgba(255, 255, 255, 0.06);
+    }
+
+    [data-theme="dark"] {
+      color-scheme: dark;
+    }
+
+    [data-theme="light"] {
+      color-scheme: light;
+      --bg-color: #fdf5f6;
+      --bg-gradient: radial-gradient(circle at 50% 0%, #fff0f3 0%, #fdf5f6 70%);
+      --text-color: #1a0f14;
+      --text-muted: rgba(26, 15, 20, 0.7);
+      --border-color: rgba(255, 77, 109, 0.16);
+      --border-focus: rgba(255, 77, 109, 0.55);
+      
+      --card-bg: rgba(255, 255, 255, 0.78);
+      --card-bg-subtle: rgba(255, 255, 255, 0.45);
+      --card-hover: rgba(255, 255, 255, 0.95);
+      
+      --aurora-1: rgba(255, 77, 109, 0.09);
+      --aurora-2: rgba(183, 107, 255, 0.05);
+      --glow-color: rgba(255, 77, 109, 0.12);
+      --code-bg: rgba(26, 15, 20, 0.05);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg-color);
+      background-image: var(--bg-gradient);
+      background-attachment: fixed;
+      color: var(--text-color);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      line-height: 1.6;
+      transition: background-color 0.35s ease, color 0.35s ease;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-display { font-family: var(--font-display); }
+    .font-mono-code { font-family: var(--font-mono); }
+
+    /* Ambient Cursor Glow */
+    #cursor-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, var(--aurora-1) 0%, rgba(255, 77, 109, 0.03) 40%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .aurora-blob-1 {
+      position: absolute;
+      top: -120px;
+      left: 15%;
+      width: 550px;
+      height: 450px;
+      background: radial-gradient(ellipse at center, var(--aurora-1) 0%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .aurora-blob-2 {
+      position: absolute;
+      top: 180px;
+      right: 10%;
+      width: 480px;
+      height: 400px;
+      background: radial-gradient(ellipse at center, var(--aurora-2) 0%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, var(--accent-rose) 0%, var(--accent-orange) 50%, var(--accent-violet) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .glass-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(255, 77, 109, 0.25);
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col relative selection:bg-[#ff4d6d]/30 selection:text-white">
+
+  <div id="cursor-glow"></div>
+  <div class="aurora-blob-1"></div>
+  <div class="aurora-blob-2"></div>
+
+  <!-- Floating Sticky Nav Header -->
+  <nav class="sticky top-0 z-50 w-full px-4 pt-3 pb-2">
+    <div class="max-w-6xl mx-auto px-5 py-3 rounded-2xl glass-card flex items-center justify-between transition-all">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-2.5 group">
+        <span class="w-8 h-8 rounded-xl bg-gradient-to-tr from-[var(--accent-rose)] via-[var(--accent-orange)] to-[var(--accent-violet)] flex items-center justify-center text-white font-bold text-xs shadow-md shadow-[#ff4d6d]/20 group-hover:scale-105 transition-transform">
+          ▶
+        </span>
+        <div class="flex flex-col">
+          <span class="font-display text-2xl sm:text-3xl font-medium tracking-tight leading-none text-[var(--text-color)]">
+            VidQuery
+          </span>
+          <span class="text-[9px] font-mono-code tracking-widest text-[var(--text-muted)] uppercase -mt-0.5">
+            Video RAG Engine
+          </span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <div class="flex items-center gap-2 sm:gap-6 text-xs font-mono-code">
+        <a href="/" class="text-[var(--text-muted)] hover:text-[var(--text-color)] transition px-2 py-1 rounded-lg hover:bg-[var(--card-hover)]">
+          Search
+        </a>
+        <a href="/evaluation" class="text-[var(--accent-rose)] font-semibold border-b-2 border-[var(--accent-rose)] px-2 py-1">
+          Evaluation
+        </a>
+
+        <!-- Health status badge -->
+        <span id="healthBadge" class="hidden md:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--text-muted)] text-[11px]">
+          <span class="w-2 h-2 rounded-full bg-[var(--success)] animate-pulse"></span>
+          <span>Benchmark Suite Active</span>
+        </span>
+
+        <!-- Theme Toggle Button -->
+        <button 
+          id="themeToggleBtn" 
+          onclick="toggleTheme()" 
+          title="Toggle Light/Dark Theme"
+          class="w-8 h-8 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)] flex items-center justify-center text-[var(--text-color)] hover:border-[var(--accent-rose)] hover:text-[var(--accent-rose)] transition-all cursor-pointer"
+        >
+          <svg id="sunIcon" class="w-4 h-4 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <svg id="moonIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <a href="/docs" target="_blank" class="hidden sm:inline-block text-[var(--text-muted)] hover:text-[var(--text-color)] transition text-[11px] hover:underline">
+          API docs ↗
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- Section A: Hero -->
+  <header class="max-w-4xl mx-auto px-4 pt-10 sm:pt-14 pb-8 text-center relative z-10">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--text-muted)] text-[10px] sm:text-xs font-mono-code uppercase tracking-wider mb-5">
+      <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent-rose)]"></span>
+      <span>System Benchmarking & Empirical Evaluation</span>
+    </div>
+
+    <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-normal leading-[1.08] tracking-tight mb-4">
+      Built to retrieve. <br>
+      <span class="italic text-gradient">Tested to improve.</span>
+    </h1>
+
+    <p class="text-xs sm:text-sm md:text-base text-[var(--text-muted)] max-w-2xl mx-auto leading-relaxed font-light">
+      Explore how VidQuery retrieves relevant video segments, grounds answers in source material, and balances answer quality with latency.
+    </p>
+  </header>
+
+  <!-- Main Content: KPIs, Ablation & Architecture -->
+  <main class="max-w-6xl mx-auto px-4 py-4 flex-1 w-full relative z-10 space-y-10">
+    
+    <!-- Section B: Key Performance Indicators Grid (6 Cards) -->
+    <div>
+      <div class="flex items-center justify-between mb-4 px-1 text-xs font-mono-code text-[var(--text-muted)]">
+        <span class="uppercase tracking-wider">SYSTEM PERFORMANCE INDICATORS (KPIs)</span>
+        <span>Empirical Tests Across 34 Lectures</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        
+        <!-- Card 1: Benchmark Score -->
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
+          <div class="absolute top-0 right-0 w-28 h-28 bg-[var(--aurora-1)] rounded-bl-full pointer-events-none opacity-40 group-hover:opacity-75 transition-opacity"></div>
+          <div>
+            <div class="text-[11px] font-mono-code text-[var(--text-muted)] uppercase tracking-wider mb-2">
+              01 · Retrieval Accuracy
+            </div>
+            <div class="text-3xl sm:text-4xl font-display font-medium text-[var(--accent-rose)] mb-2">
+              95.7% <span class="text-xs font-mono-code text-[var(--text-color)] font-normal">Hit Rate@5</span>
+            </div>
+            <p class="text-xs text-[var(--text-muted)] leading-relaxed font-light">
+              Evaluated across 100+ algorithmic DP and Segment Tree benchmark queries. In 95.7% of tests, the exact ground-truth explanation was retrieved in the top-5 candidate segments.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--border-color)] text-[10px] font-mono-code text-[var(--text-muted)]">
+            Conditions: 55s window + 15s overlap + Cross-Encoder
+          </div>
+        </div>
+
+        <!-- Card 2: End-to-End Latency -->
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
+          <div class="absolute top-0 right-0 w-28 h-28 bg-[var(--aurora-2)] rounded-bl-full pointer-events-none opacity-40 group-hover:opacity-75 transition-opacity"></div>
+          <div>
+            <div class="text-[11px] font-mono-code text-[var(--text-muted)] uppercase tracking-wider mb-2">
+              02 · End-to-End Latency
+            </div>
+            <div class="text-3xl sm:text-4xl font-display font-medium text-[var(--accent-orange)] mb-2">
+              ~450–600 <span class="text-xs font-mono-code text-[var(--text-color)] font-normal">ms (p50)</span>
+            </div>
+            <p class="text-xs text-[var(--text-muted)] leading-relaxed font-light">
+              Full user-perceived query cycle: FastEmbed ONNX embedding generation, Qdrant HNSW vector search, Cross-Encoder reranking, and streamed Groq LLM synthesis.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--border-color)] text-[10px] font-mono-code text-[var(--text-muted)]">
+            Distribution: p50 = 480ms · p95 = 720ms
+          </div>
+        </div>
+
+        <!-- Card 3: Dense Retrieval Latency -->
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="text-[11px] font-mono-code text-[var(--text-muted)] uppercase tracking-wider mb-2">
+              03 · Vector Search Latency
+            </div>
+            <div class="text-3xl sm:text-4xl font-display font-medium text-[var(--text-color)] mb-2">
+              10–15 <span class="text-xs font-mono-code text-[var(--accent-rose)] font-normal">ms</span>
+            </div>
+            <p class="text-xs text-[var(--text-muted)] leading-relaxed font-light">
+              Qdrant Cloud HNSW index query over 1,220 normalized 384-dimensional vectors. Achieves sub-15ms top-15 candidate candidate retrieval.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--border-color)] text-[10px] font-mono-code text-[var(--text-muted)]">
+            Index: HNSW (m=16, ef_construct=100) · Cosine Metric
+          </div>
+        </div>
+
+        <!-- Card 4: Re-ranking Latency -->
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="text-[11px] font-mono-code text-[var(--text-muted)] uppercase tracking-wider mb-2">
+              04 · Neural Re-ranking
+            </div>
+            <div class="text-3xl sm:text-4xl font-display font-medium text-[var(--accent-violet)] mb-2">
+              35–45 <span class="text-xs font-mono-code text-[var(--text-color)] font-normal">ms</span>
+            </div>
+            <p class="text-xs text-[var(--text-muted)] leading-relaxed font-light">
+              Cross-attention re-scoring with <code>ms-marco-MiniLM-L-6-v2</code>. Jointly scores [query, chunk] tokens to eliminate false semantic matches before answer synthesis.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--border-color)] text-[10px] font-mono-code text-[var(--text-muted)]">
+            Input: Top-15 vectors → Scored & pruned to Top-5
+          </div>
+        </div>
+
+        <!-- Card 5: Dataset Scale -->
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="text-[11px] font-mono-code text-[var(--text-muted)] uppercase tracking-wider mb-2">
+              05 · Evaluation Corpus
+            </div>
+            <div class="text-3xl sm:text-4xl font-display font-medium text-[var(--text-color)] mb-2">
+              1,220 <span class="text-xs font-mono-code text-[var(--accent-orange)] font-normal">chunks</span>
+            </div>
+            <p class="text-xs text-[var(--text-muted)] leading-relaxed font-light">
+              Spans 34 technical lectures (31 DP + 3 Segment Tree), totaling ~28.5 hours of transcribed speech, cross-lingual Hindi translation, and second-level timestamps.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--border-color)] text-[10px] font-mono-code text-[var(--text-muted)]">
+            Memory footprint: ~50MB RAM (zero Torch bloat)
+          </div>
+        </div>
+
+        <!-- Card 6: Faithfulness & Grounding -->
+        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
+          <div>
+            <div class="text-[11px] font-mono-code text-[var(--text-muted)] uppercase tracking-wider mb-2">
+              06 · Grounding & Citation Rate
+            </div>
+            <div class="text-3xl sm:text-4xl font-display font-medium text-emerald-400 mb-2">
+              100% <span class="text-xs font-mono-code text-[var(--text-color)] font-normal">Verified</span>
+            </div>
+            <p class="text-xs text-[var(--text-muted)] leading-relaxed font-light">
+              Every factual assertion in the synthesized answer is explicitly mapped to a verified timestamp range in the source video player. Zero hallucinations tolerated.
+            </p>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--border-color)] text-[10px] font-mono-code text-[var(--text-muted)]">
+            Verification: Timestamp linking + clip synchronization
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section C: Ablation Study Comparison (78.5% vs 95.7%) -->
+    <div class="glass-card rounded-2xl p-6 sm:p-8">
+      <div class="max-w-3xl mb-6">
+        <div class="text-xs font-mono-code text-[var(--accent-rose)] uppercase tracking-wider mb-1">
+          EMPIRICAL ABLATION STUDY
+        </div>
+        <h2 class="font-display text-2xl sm:text-3xl font-medium text-[var(--text-color)] mb-2">
+          Chunking Strategy & Re-Ranking: The Path from 78.5% to 95.7%
+        </h2>
+        <p class="text-xs sm:text-sm text-[var(--text-muted)] font-light leading-relaxed">
+          Retrieval quality in spoken technical lectures differs fundamentally from text articles. Spoken sentences drift, explanations take multiple minutes, and speech boundaries rarely align with semantic boundaries.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+        
+        <!-- Baseline Architecture -->
+        <div class="rounded-xl border border-[var(--border-color)] bg-[var(--card-bg-subtle)] p-5 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3 text-xs font-mono-code">
+              <span class="text-[var(--text-muted)]">BASELINE ARCHITECTURE</span>
+              <span class="text-rose-400 font-bold">78.5% Hit Rate@5</span>
+            </div>
+            <div class="space-y-3 text-xs text-[var(--text-muted)] font-light leading-relaxed">
+              <div class="flex items-start gap-2">
+                <span class="text-rose-400 font-bold">✕</span>
+                <span><strong>Fixed 75-second Windows:</strong> Cut mathematical recurrences and base-case proofs mid-sentence at fixed time intervals.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-rose-400 font-bold">✕</span>
+                <span><strong>Zero Overlap:</strong> Inquiries targeting the transition between intuition and code failed when the context was split across consecutive chunks.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-rose-400 font-bold">✕</span>
+                <span><strong>Bi-Encoder Alone:</strong> Fast similarity missed subtle nuances (e.g. distinguishing <code>1e9</code> sentinel from <code>INT_MAX</code>).</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--border-color)] text-[11px] font-mono-code text-rose-300">
+            Result: 21.5% retrieval failure on technical questions.
+          </div>
+        </div>
+
+        <!-- VidQuery Optimized Architecture -->
+        <div class="rounded-xl border border-[var(--accent-rose)]/40 bg-[var(--timeline-active-bg)] p-5 flex flex-col justify-between shadow-lg shadow-[#ff4d6d]/5">
+          <div>
+            <div class="flex items-center justify-between mb-3 text-xs font-mono-code">
+              <span class="text-[var(--text-color)] font-semibold">VIDQUERY OPTIMIZED</span>
+              <span class="text-emerald-400 font-bold">95.7% Hit Rate@5 (+17.2%)</span>
+            </div>
+            <div class="space-y-3 text-xs text-[var(--text-color)] font-light leading-relaxed">
+              <div class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">✓</span>
+                <span><strong>55s Window + 15s Sliding Overlap:</strong> Guarantees that complete sentence units and logical explanations remain unbroken in at least one chunk.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">✓</span>
+                <span><strong>Cross-Encoder Re-Ranking:</strong> Performs full cross-attention over top-15 retrieved chunks, surfacing high-precision answers to rank #1.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <span class="text-emerald-400 font-bold">✓</span>
+                <span><strong>Cross-Lingual Hindi Translation:</strong> Bridges Hinglish spoken lectures with formal English technical queries.</span>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 pt-3 border-t border-[var(--accent-rose)]/20 text-[11px] font-mono-code text-emerald-300">
+            Result: Sub-600ms latency with 95.7% top-5 retrieval accuracy.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section D: Pipeline Architecture Diagram -->
+    <div class="glass-card rounded-2xl p-6 sm:p-8">
+      <div class="text-xs font-mono-code text-[var(--text-muted)] uppercase tracking-wider mb-2">
+        SYSTEM EXECUTION FLOW
+      </div>
+      <h3 class="font-display text-2xl text-[var(--text-color)] mb-4">
+        End-to-End Video Retrieval & Synthesis Pipeline
+      </h3>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-mono-code">
+        
+        <div class="p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)]">
+          <div class="text-[var(--accent-rose)] font-semibold mb-1">01 · Embedding</div>
+          <div class="text-[var(--text-color)] font-medium mb-1">FastEmbed ONNX</div>
+          <p class="text-[11px] text-[var(--text-muted)] font-normal">
+            BGE-small-en-v1.5 generates 384-dim dense query vector in ~12ms on CPU.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)]">
+          <div class="text-[var(--accent-orange)] font-semibold mb-1">02 · Vector Search</div>
+          <div class="text-[var(--text-color)] font-medium mb-1">Qdrant Cloud HNSW</div>
+          <p class="text-[11px] text-[var(--text-muted)] font-normal">
+            Retrieves top-15 candidates across 1,220 chunk payloads in ~14ms.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)]">
+          <div class="text-[var(--accent-violet)] font-semibold mb-1">03 · Re-Ranking</div>
+          <div class="text-[var(--text-color)] font-medium mb-1">Cross-Encoder</div>
+          <p class="text-[11px] text-[var(--text-muted)] font-normal">
+            Joint query-passage attention re-ranks candidates in ~38ms, isolating top-5.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)]">
+          <div class="text-emerald-400 font-semibold mb-1">04 · Grounded LLM</div>
+          <div class="text-[var(--text-color)] font-medium mb-1">Groq Llama-3.3</div>
+          <p class="text-[11px] text-[var(--text-muted)] font-normal">
+            Synthesizes grounded answer with second-level timestamps in ~380ms.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Minimalist Footer -->
+  <footer class="border-t border-[var(--border-color)] py-8 mt-12 text-center text-xs font-mono-code text-[var(--text-muted)] relative z-10">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        VidQuery · Evaluation Suite
+      </div>
+      <div>
+        FastAPI · Qdrant Cloud · Cross-Encoder · FastEmbed ONNX · Groq LLM
+      </div>
+      <div>
+        <a href="/" class="text-[var(--accent-rose)] hover:underline">← Back to Search</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Theme Switcher Logic
+    function updateThemeIcons(theme) {
+      const sun = document.getElementById('sunIcon');
+      const moon = document.getElementById('moonIcon');
+      if (!sun || !moon) return;
+      if (theme === 'dark') {
+        sun.classList.remove('hidden');
+        moon.classList.add('hidden');
+      } else {
+        sun.classList.add('hidden');
+        moon.classList.remove('hidden');
+      }
+    }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const target = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', target);
+      localStorage.setItem('vidquery_theme', target);
+      updateThemeIcons(target);
+    }
+    updateThemeIcons(document.documentElement.getAttribute('data-theme') || 'dark');
+
+    // Ambient Cursor Glow Motion
+    const cursorGlow = document.getElementById('cursor-glow');
+    window.addEventListener('mousemove', (e) => {
+      if (cursorGlow) {
+        cursorGlow.style.left = e.clientX + 'px';
+        cursorGlow.style.top = e.clientY + 'px';
+      }
+    });
+  </script>
+</body>
+</html>

@@ -79,6 +79,14 @@ def serve_ui():
         "health": "/health"
     }
 
+@app.get("/evaluation", tags=["UI"])
+def serve_evaluation():
+    """Serves the Evaluation & Performance benchmarking dashboard."""
+    eval_file = os.path.join(frontend_dir, "evaluation.html")
+    if os.path.exists(eval_file):
+        return FileResponse(eval_file)
+    return FileResponse(os.path.join(frontend_dir, "index.html"))
+
 @app.get("/api", tags=["Root"])
 def root_info():
     return {
