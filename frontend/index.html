@@ -22,6 +22,10 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Marked.js for Markdown -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <!-- KaTeX for crisp mathematical equations -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
 
   <style>
     /* Base & Theme Variables inspired by Aymora */
@@ -203,7 +207,44 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  background 0.32s ease;
+      will-change: transform, box-shadow;
+    }
+
+    /* Enhanced Card Hover Scaling & Elevation */
+    .card-hover-lift {
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, box-shadow;
+    }
+
+    .card-hover-lift:hover {
+      transform: translateY(-4px) scale(1.025);
+      border-color: rgba(255, 77, 109, 0.45) !important;
+      box-shadow: 0 16px 36px -8px rgba(255, 77, 109, 0.2), 0 0 20px rgba(255, 154, 92, 0.12);
+      z-index: 5;
+    }
+
+    /* Prompt Chips: Smooth Scale up on Hover & Smooth Return */
+    .sample-chip {
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                  color 0.28s ease,
+                  background-color 0.28s ease !important;
+      will-change: transform;
+    }
+
+    .sample-chip:hover {
+      transform: translateY(-2px) scale(1.06) !important;
+      border-color: var(--accent-rose) !important;
+      color: var(--accent-rose) !important;
+      box-shadow: 0 8px 20px -4px rgba(255, 77, 109, 0.35) !important;
+      z-index: 5;
     }
 
     .timeline-row {
@@ -213,14 +254,18 @@
       padding: 11px 14px;
       border-radius: 12px;
       border: 1px solid transparent;
-      transition: all 0.2s ease;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.25s ease,
+                  border-color 0.25s ease,
+                  background 0.25s ease;
       cursor: pointer;
     }
 
     .timeline-row:hover {
       background: var(--card-hover);
       border-color: var(--border-color);
-      transform: translateY(-1px);
+      transform: translateY(-2px) scale(1.015);
+      box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.2);
     }
 
     .timeline-row.active {
@@ -298,6 +343,39 @@
   </style>
 </head>
 <body class="min-h-screen flex flex-col relative selection:bg-[#ff4d6d]/30 selection:text-white">
+
+  <!-- Welcome Intro Animation Overlay (Aymora Luxury Style) -->
+  <div id="welcomeSplash" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0b0509] transition-all duration-700 ease-out select-none">
+    <!-- Ambient Aurora Glow Behind Logo -->
+    <div class="absolute w-[420px] h-[420px] bg-gradient-to-tr from-[#ff4d6d]/25 via-[#ff9a5c]/20 to-[#b76bff]/20 rounded-full blur-[100px] pointer-events-none animate-pulse"></div>
+
+    <div class="relative z-10 flex flex-col items-center text-center px-6 max-w-md">
+      <!-- Glowing Animated Play Badge -->
+      <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[var(--accent-rose)] via-[var(--accent-orange)] to-[var(--accent-violet)] flex items-center justify-center text-white text-2xl font-bold shadow-2xl shadow-[#ff4d6d]/50 mb-5 transform transition-transform duration-700 hover:scale-110">
+        ▶
+      </div>
+
+      <!-- Cormorant Garamond Title with Gradient -->
+      <h1 class="font-display text-4xl sm:text-5xl font-medium tracking-tight text-white mb-2 leading-none">
+        VidQuery
+      </h1>
+
+      <p class="font-mono-code text-[10px] sm:text-xs text-[var(--accent-rose)] uppercase tracking-widest mb-3">
+        Algorithmic Knowledge Engine
+      </p>
+
+      <!-- Headline -->
+      <p class="font-body text-xs sm:text-sm text-white/70 font-light leading-relaxed mb-6 max-w-sm">
+        Don’t rewatch 40 minutes. <span class="italic text-[var(--accent-orange)]">Find the exact 90 seconds.</span>
+      </p>
+
+      <!-- Sleek Glowing Progress Bar -->
+      <div class="w-48 sm:w-56 h-1 rounded-full bg-white/10 overflow-hidden relative shadow-inner">
+        <div id="splashProgress" class="h-full bg-gradient-to-r from-[var(--accent-rose)] via-[var(--accent-orange)] to-[var(--accent-violet)] rounded-full w-0 transition-all duration-1000 ease-out"></div>
+      </div>
+      <span class="text-[9px] font-mono-code text-white/40 mt-2.5 tracking-wider">INITIALIZING RAG PIPELINE...</span>
+    </div>
+  </div>
 
   <!-- Ambient Glow Elements -->
   <div id="cursor-glow"></div>
@@ -435,16 +513,16 @@
       <!-- Sample Question Chips -->
       <div class="flex flex-wrap items-center justify-center gap-2 mt-4 text-xs font-mono-code">
         <span class="text-[var(--text-muted)] text-[11px]">PROMPTS:</span>
-        <button class="sample-chip px-3 py-1 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--text-color)] hover:border-[var(--accent-rose)] hover:text-[var(--accent-rose)] transition-all cursor-pointer text-[11px]" data-q="Why is 1e9 returned instead of INT_MAX in Minimum Coins?">
+        <button class="sample-chip px-3.5 py-1.5 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--text-color)] cursor-pointer text-[11px]" data-q="Why is 1e9 returned instead of INT_MAX in Minimum Coins?">
           Min Coins (1e9 sentinel)
         </button>
-        <button class="sample-chip px-3 py-1 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--text-color)] hover:border-[var(--accent-rose)] hover:text-[var(--accent-rose)] transition-all cursor-pointer text-[11px]" data-q="why is the size of segment tree 4*n?">
+        <button class="sample-chip px-3.5 py-1.5 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--text-color)] cursor-pointer text-[11px]" data-q="why is the size of segment tree 4*n?">
           Segment Tree 4*n Proof
         </button>
-        <button class="sample-chip px-3 py-1 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--text-color)] hover:border-[var(--accent-rose)] hover:text-[var(--accent-rose)] transition-all cursor-pointer text-[11px]" data-q="what is lazy propagation?">
+        <button class="sample-chip px-3.5 py-1.5 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--text-color)] cursor-pointer text-[11px]" data-q="what is lazy propagation?">
           Lazy Propagation
         </button>
-        <button class="sample-chip px-3 py-1 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--text-color)] hover:border-[var(--accent-rose)] hover:text-[var(--accent-rose)] transition-all cursor-pointer text-[11px]" data-q="How does the author reduce LPS to LCS?">
+        <button class="sample-chip px-3.5 py-1.5 rounded-full bg-[var(--card-bg)] border border-[var(--border-color)] text-[var(--text-color)] cursor-pointer text-[11px]" data-q="How does the author reduce LPS to LCS?">
           LPS reduction to LCS
         </button>
       </div>
@@ -735,6 +813,65 @@
   </div>
 
   <script>
+    // Welcome Intro Animation Controller (Plays smoothly on initial open)
+    (function initWelcomeSplash() {
+      const splash = document.getElementById('welcomeSplash');
+      const bar = document.getElementById('splashProgress');
+      if (!splash) return;
+
+      const shown = sessionStorage.getItem('vidquery_splash_seen');
+      if (shown) {
+        splash.style.display = 'none';
+        return;
+      }
+
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          if (bar) bar.style.width = '100%';
+        }, 80);
+      });
+
+      setTimeout(() => {
+        splash.style.opacity = '0';
+        splash.style.transform = 'scale(1.02)';
+        sessionStorage.setItem('vidquery_splash_seen', 'true');
+        setTimeout(() => {
+          splash.style.display = 'none';
+        }, 700);
+      }, 1200);
+    })();
+
+    // Helper: Clean raw LaTeX artifacts & render KaTeX math cleanly
+    function cleanAndRenderMarkdown(rawText, containerEl) {
+      if (!rawText || !containerEl) return;
+      
+      let cleaned = rawText
+        .replace(/\\begin\{cases\}/g, '')
+        .replace(/\\end\{cases\}/g, '')
+        .replace(/\\text\{([^}]+)\}/g, '$1')
+        .replace(/\\left\(/g, '(')
+        .replace(/\\right\)/g, ')')
+        .replace(/\\frac\{([^}]+)\}\{([^}]+)\}/g, '($1 / $2)')
+        .replace(/\\\[/g, '$$')
+        .replace(/\\\]/g, '$$')
+        .replace(/\\\(/g, '$')
+        .replace(/\\\)/g, '$');
+
+      containerEl.innerHTML = marked.parse(cleaned);
+
+      if (window.renderMathInElement) {
+        try {
+          renderMathInElement(containerEl, {
+            delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false}
+            ],
+            throwOnError: false
+          });
+        } catch (e) {}
+      }
+    }
+
     // Theme Switcher Logic
     function updateThemeIcons(theme) {
       const sun = document.getElementById('sunIcon');
@@ -883,9 +1020,9 @@
           latencyEl.innerText = `⚡ ${total}ms (Search: ${qd}ms · Rerank: ${rr}ms · LLM: ${llm}ms)`;
         }
 
-        // Update Answer
+        // Update Answer with clean LaTeX handling & KaTeX rendering
         const ansEl = document.getElementById('answerContent');
-        if (ansEl) ansEl.innerHTML = marked.parse(data.answer);
+        if (ansEl) cleanAndRenderMarkdown(data.answer, ansEl);
 
         // Update Transcripts Timeline
         const srcCountEl = document.getElementById('sourceCount');

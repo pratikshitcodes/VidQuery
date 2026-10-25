@@ -143,11 +143,29 @@
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.12);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.32s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .glass-card:hover {
-      border-color: rgba(255, 77, 109, 0.25);
+      border-color: rgba(255, 77, 109, 0.35);
+    }
+
+    /* Enhanced Smooth Scale & Float Hover effects */
+    .card-hover-lift {
+      transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  border-color 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+                  background 0.32s ease;
+      will-change: transform, box-shadow;
+    }
+
+    .card-hover-lift:hover {
+      transform: translateY(-5px) scale(1.035);
+      border-color: rgba(255, 77, 109, 0.5) !important;
+      box-shadow: 0 20px 40px -10px rgba(255, 77, 109, 0.25), 0 0 20px rgba(255, 154, 92, 0.15);
+      z-index: 10;
     }
   </style>
 </head>
@@ -244,7 +262,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         
         <!-- Card 1: Benchmark Score -->
-        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
+        <div class="glass-card card-hover-lift cursor-pointer rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
           <div class="absolute top-0 right-0 w-28 h-28 bg-[var(--aurora-1)] rounded-bl-full pointer-events-none opacity-40 group-hover:opacity-75 transition-opacity"></div>
           <div>
             <div class="text-[11px] font-mono-code text-[var(--text-muted)] uppercase tracking-wider mb-2">
@@ -263,7 +281,7 @@
         </div>
 
         <!-- Card 2: End-to-End Latency -->
-        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
+        <div class="glass-card card-hover-lift cursor-pointer rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
           <div class="absolute top-0 right-0 w-28 h-28 bg-[var(--aurora-2)] rounded-bl-full pointer-events-none opacity-40 group-hover:opacity-75 transition-opacity"></div>
           <div>
             <div class="text-[11px] font-mono-code text-[var(--text-muted)] uppercase tracking-wider mb-2">
@@ -282,7 +300,7 @@
         </div>
 
         <!-- Card 3: Dense Retrieval Latency -->
-        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
+        <div class="glass-card card-hover-lift cursor-pointer rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
           <div>
             <div class="text-[11px] font-mono-code text-[var(--text-muted)] uppercase tracking-wider mb-2">
               03 · Vector Search Latency
@@ -300,7 +318,7 @@
         </div>
 
         <!-- Card 4: Re-ranking Latency -->
-        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
+        <div class="glass-card card-hover-lift cursor-pointer rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
           <div>
             <div class="text-[11px] font-mono-code text-[var(--text-muted)] uppercase tracking-wider mb-2">
               04 · Neural Re-ranking
@@ -318,7 +336,7 @@
         </div>
 
         <!-- Card 5: Dataset Scale -->
-        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
+        <div class="glass-card card-hover-lift cursor-pointer rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
           <div>
             <div class="text-[11px] font-mono-code text-[var(--text-muted)] uppercase tracking-wider mb-2">
               05 · Evaluation Corpus
@@ -336,7 +354,7 @@
         </div>
 
         <!-- Card 6: Faithfulness & Grounding -->
-        <div class="glass-card rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
+        <div class="glass-card card-hover-lift cursor-pointer rounded-2xl p-6 relative overflow-hidden flex flex-col justify-between group">
           <div>
             <div class="text-[11px] font-mono-code text-[var(--text-muted)] uppercase tracking-wider mb-2">
               06 · Grounding & Citation Rate
@@ -440,7 +458,7 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-mono-code">
         
-        <div class="p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)]">
+        <div class="p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)] card-hover-lift cursor-pointer">
           <div class="text-[var(--accent-rose)] font-semibold mb-1">01 · Embedding</div>
           <div class="text-[var(--text-color)] font-medium mb-1">FastEmbed ONNX</div>
           <p class="text-[11px] text-[var(--text-muted)] font-normal">
@@ -448,7 +466,7 @@
           </p>
         </div>
 
-        <div class="p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)]">
+        <div class="p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)] card-hover-lift cursor-pointer">
           <div class="text-[var(--accent-orange)] font-semibold mb-1">02 · Vector Search</div>
           <div class="text-[var(--text-color)] font-medium mb-1">Qdrant Cloud HNSW</div>
           <p class="text-[11px] text-[var(--text-muted)] font-normal">
@@ -456,7 +474,7 @@
           </p>
         </div>
 
-        <div class="p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)]">
+        <div class="p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)] card-hover-lift cursor-pointer">
           <div class="text-[var(--accent-violet)] font-semibold mb-1">03 · Re-Ranking</div>
           <div class="text-[var(--text-color)] font-medium mb-1">Cross-Encoder</div>
           <p class="text-[11px] text-[var(--text-muted)] font-normal">
@@ -464,7 +482,7 @@
           </p>
         </div>
 
-        <div class="p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)]">
+        <div class="p-4 rounded-xl bg-[var(--card-bg)] border border-[var(--border-color)] card-hover-lift cursor-pointer">
           <div class="text-emerald-400 font-semibold mb-1">04 · Grounded LLM</div>
           <div class="text-[var(--text-color)] font-medium mb-1">Groq Llama-3.3</div>
           <p class="text-[11px] text-[var(--text-muted)] font-normal">
