@@ -67,41 +67,59 @@ frontend_dir = os.path.join(
 if os.path.exists(frontend_dir):
     app.mount("/static", StaticFiles(directory=frontend_dir), name="static")
 
+NO_CACHE_HEADERS = {
+    "Cache-Control": "no-cache, no-store, must-revalidate, max-age=0",
+    "Pragma": "no-cache",
+    "Expires": "0"
+}
+
 @app.get("/", tags=["UI"])
 def serve_ui():
     """Serves the interactive web UI with synchronized YouTube video player."""
     index_file = os.path.join(frontend_dir, "index.html")
     if os.path.exists(index_file):
-        return FileResponse(index_file)
+        return FileResponse(index_file, headers=NO_CACHE_HEADERS)
     return {
         "project": settings.PROJECT_NAME,
         "docs_url": "/docs",
         "health": "/health"
     }
 
+@app.get("/index.html", tags=["UI"])
+def serve_index_html():
+    return serve_ui()
+
 @app.get("/evaluation", tags=["UI"])
 def serve_evaluation():
     """Serves the Evaluation & Performance benchmarking dashboard."""
     eval_file = os.path.join(frontend_dir, "evaluation.html")
     if os.path.exists(eval_file):
-        return FileResponse(eval_file)
-    return FileResponse(os.path.join(frontend_dir, "index.html"))
+        return FileResponse(eval_file, headers=NO_CACHE_HEADERS)
+    return FileResponse(os.path.join(frontend_dir, "index.html"), headers=NO_CACHE_HEADERS)
+
+@app.get("/evaluation/", tags=["UI"])
+def serve_evaluation_trailing():
+    return serve_evaluation()
+
+@app.get("/evaluation.html", tags=["UI"])
+def serve_evaluation_html():
+    return serve_evaluation()
 
 @app.get("/logo.png", tags=["UI"])
 def serve_logo():
     """Serves the VidQuery brand logo."""
     logo_file = os.path.join(frontend_dir, "logo.png")
     if os.path.exists(logo_file):
-        return FileResponse(logo_file, media_type="image/png")
-    return FileResponse(os.path.join(frontend_dir, "index.html"))
+        return FileResponse(logo_file, media_type="image/png", headers=NO_CACHE_HEADERS)
+    return FileResponse(os.path.join(frontend_dir, "index.html"), headers=NO_CACHE_HEADERS)
 
 @app.get("/favicon.ico", tags=["UI"])
 def serve_favicon():
     """Serves the VidQuery favicon."""
     logo_file = os.path.join(frontend_dir, "logo.png")
     if os.path.exists(logo_file):
-        return FileResponse(logo_file, media_type="image/png")
-    return FileResponse(os.path.join(frontend_dir, "index.html"))
+        return FileResponse(logo_file, media_type="image/png", headers=NO_CACHE_HEADERS)
+    return FileResponse(os.path.join(frontend_dir, "index.html"), headers=NO_CACHE_HEADERS)
 
 @app.get("/api", tags=["Root"])
 def root_info():
