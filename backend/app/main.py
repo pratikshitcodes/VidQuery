@@ -87,6 +87,22 @@ def serve_evaluation():
         return FileResponse(eval_file)
     return FileResponse(os.path.join(frontend_dir, "index.html"))
 
+@app.get("/logo.png", tags=["UI"])
+def serve_logo():
+    """Serves the VidQuery brand logo."""
+    logo_file = os.path.join(frontend_dir, "logo.png")
+    if os.path.exists(logo_file):
+        return FileResponse(logo_file, media_type="image/png")
+    return FileResponse(os.path.join(frontend_dir, "index.html"))
+
+@app.get("/favicon.ico", tags=["UI"])
+def serve_favicon():
+    """Serves the VidQuery favicon."""
+    logo_file = os.path.join(frontend_dir, "logo.png")
+    if os.path.exists(logo_file):
+        return FileResponse(logo_file, media_type="image/png")
+    return FileResponse(os.path.join(frontend_dir, "index.html"))
+
 @app.get("/api", tags=["Root"])
 def root_info():
     return {
